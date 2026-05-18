@@ -1,0 +1,115 @@
+netlink: 4 bytes leftover after parsing attributes in process `syz.9.3051'.
+netlink: 8 bytes leftover after parsing attributes in process `syz.9.3051'.
+netlink: 'syz.2.3052': attribute type 11 has an invalid length.
+Failed to initialize the IGMP autojoin socket (err -2)
+INFO: task syz.1.1615:17694 blocked for more than 140 seconds.
+      Not tainted 6.19.0-rc8 #2
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.1.1615      state:D stack:25432 pid:17694 tgid:17665 ppid:14187  task_flags:0x400640 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5260 [inline]
+ __schedule+0x11ac/0x3f90 kernel/sched/core.c:6867
+ __schedule_loop kernel/sched/core.c:6949 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:6964
+ schedule_timeout+0x244/0x280 kernel/time/sleep_timeout.c:75
+ do_wait_for_common kernel/sched/completion.c:100 [inline]
+ __wait_for_common kernel/sched/completion.c:121 [inline]
+ wait_for_common kernel/sched/completion.c:132 [inline]
+ wait_for_completion_state+0x2d3/0x460 kernel/sched/completion.c:269
+ coredump_wait fs/coredump.c:534 [inline]
+ vfs_coredump+0x8b5/0x3f60 fs/coredump.c:1196
+ get_signal+0x1998/0x24a0 kernel/signal.c:3019
+ arch_do_signal_or_restart+0x80/0x890 arch/x86/kernel/signal.c:337
+ __exit_to_user_mode_loop kernel/entry/common.c:41 [inline]
+ exit_to_user_mode_loop+0xaf/0x520 kernel/entry/common.c:75
+ __exit_to_user_mode_prepare include/linux/irq-entry-common.h:226 [inline]
+ syscall_exit_to_user_mode_prepare include/linux/irq-entry-common.h:256 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:159 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:194 [inline]
+ do_syscall_64+0x390/0x430 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f878d98fba9
+RSP: 002b:00007f878bf6d058 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+RAX: ffffffffffffffda RBX: 00007f878dc16160 RCX: 00007f878d98fba9
+RDX: 0000000000000000 RSI: 0000200000000000 RDI: ffffffffffffff9c
+RBP: 00007f878da3b44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f878dc16160 R15: 00007ffedec28d88
+ </TASK>
+
+Showing all locks held in the system:
+1 lock held by khungtaskd/40:
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: rcu_read_lock include/linux/rcupdate.h:867 [inline]
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: debug_show_all_locks+0x36/0x1c0 kernel/locking/lockdep.c:6775
+2 locks held by systemd-udevd/121:
+ #0: ffff888107e903f8 (sb_writers#8){.+.+}-{0:0}, at: open_last_lookups fs/namei.c:4538 [inline]
+ #0: ffff888107e903f8 (sb_writers#8){.+.+}-{0:0}, at: path_openat+0x18f5/0x2bf0 fs/namei.c:4793
+ #1: ffff888110b9bbc8 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: inode_lock include/linux/fs.h:1027 [inline]
+ #1: ffff888110b9bbc8 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: open_last_lookups fs/namei.c:4546 [inline]
+ #1: ffff888110b9bbc8 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: path_openat+0x105c/0x2bf0 fs/namei.c:4793
+4 locks held by systemd-udevd/124:
+2 locks held by systemd-udevd/126:
+ #0: ffff888107e903f8 (sb_writers#8){.+.+}-{0:0}, at: open_last_lookups fs/namei.c:4538 [inline]
+ #0: ffff888107e903f8 (sb_writers#8){.+.+}-{0:0}, at: path_openat+0x18f5/0x2bf0 fs/namei.c:4793
+ #1: ffff888110b9bbc8 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: inode_lock include/linux/fs.h:1027 [inline]
+ #1: ffff888110b9bbc8 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: open_last_lookups fs/namei.c:4546 [inline]
+ #1: ffff888110b9bbc8 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: path_openat+0x105c/0x2bf0 fs/namei.c:4793
+2 locks held by systemd-udevd/135:
+2 locks held by systemd-udevd/140:
+ #0: ffff888107e903f8 (sb_writers#8){.+.+}-{0:0}, at: open_last_lookups fs/namei.c:4538 [inline]
+ #0: ffff888107e903f8 (sb_writers#8){.+.+}-{0:0}, at: path_openat+0x18f5/0x2bf0 fs/namei.c:4793
+ #1: ffff888110b9bbc8 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: inode_lock include/linux/fs.h:1027 [inline]
+ #1: ffff888110b9bbc8 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: open_last_lookups fs/namei.c:4546 [inline]
+ #1: ffff888110b9bbc8 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: path_openat+0x105c/0x2bf0 fs/namei.c:4793
+2 locks held by systemd-udevd/143:
+ #0: ffff888107e903f8 (sb_writers#8){.+.+}-{0:0}, at: open_last_lookups fs/namei.c:4538 [inline]
+ #0: ffff888107e903f8 (sb_writers#8){.+.+}-{0:0}, at: path_openat+0x18f5/0x2bf0 fs/namei.c:4793
+ #1: ffff888110b9bbc8 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: inode_lock include/linux/fs.h:1027 [inline]
+ #1: ffff888110b9bbc8 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: open_last_lookups fs/namei.c:4546 [inline]
+ #1: ffff888110b9bbc8 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: path_openat+0x105c/0x2bf0 fs/namei.c:4793
+1 lock held by in:imklog/171:
+1 lock held by syz-executor/239:
+2 locks held by kworker/u16:11/2560:
+ #0: ffff888100079148 ((wq_completion)events_unbound#2){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff888100079148 ((wq_completion)events_unbound#2){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff88810ebdfcc0 ((work_completion)(&sub_info->work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff88810ebdfcc0 ((work_completion)(&sub_info->work)){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+2 locks held by login/13229:
+ #0: ffff888110be20a0 (&tty->ldisc_sem){++++}-{0:0}, at: tty_ldisc_ref_wait+0x26/0x80 drivers/tty/tty_ldisc.c:243
+ #1: ffffc900001f82f0 (&ldata->atomic_read_lock){+.+.}-{4:4}, at: n_tty_read+0xe31/0x14e0 drivers/tty/n_tty.c:2211
+2 locks held by kworker/u16:12/14039:
+ #0: ffff888100079948 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff888100079948 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff88810a5bfcc0 (connector_reaper_work){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff88810a5bfcc0 (connector_reaper_work){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+2 locks held by kworker/u16:15/14044:
+ #0: ffff888100079948 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff888100079948 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff888107e67cc0 ((reaper_work).work){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff888107e67cc0 ((reaper_work).work){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+1 lock held by syz-executor/14408:
+1 lock held by syz-executor/18197:
+1 lock held by syz-executor/19671:
+1 lock held by syz-executor/19812:
+1 lock held by syz-executor/21465:
+1 lock held by syz-executor/24290:
+1 lock held by syz.3.2432/24685:
+3 locks held by syz.3.2435/24703:
+3 locks held by syz.3.2757/26114:
+1 lock held by syz.1.2775/26183:
+ #0: ffffffff85c2fd38 (rcu_state.exp_mutex){+.+.}-{4:4}, at: exp_funnel_lock+0x3f8/0xa20 kernel/rcu/tree_exp.h:343
+1 lock held by syz-executor/26502:
+1 lock held by syz.3.2934/26888:
+1 lock held by syz.3.2938/26899:
+ #0: ffff88801f4e3b88 (&sb->s_type->i_mutex_key#13){+.+.}-{4:4}, at: inode_lock include/linux/fs.h:1027 [inline]
+ #0: ffff88801f4e3b88 (&sb->s_type->i_mutex_key#13){+.+.}-{4:4}, at: __sock_release+0x86/0x270 net/socket.c:661
+1 lock held by syz-executor/26986:
+2 locks held by syz.7.3021/27313:
+1 lock held by syz.9.3064/27522:
+ #0: ffffffff85c2fd38 (rcu_state.exp_mutex){+.+.}-{4:4}, at: exp_funnel_lock+0x8c3/0xa20 kernel/rcu/tree_exp.h:311
+1 lock held by kworker/u16:11/27529:
+
+=============================================
+

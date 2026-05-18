@@ -1,0 +1,464 @@
+EXT4-fs error (device loop2): ext4_orphan_get:1395: comm syz.2.1572: couldn't read orphan inode 15 (err -117)
+EXT4-fs (loop2): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+INFO: task syz.5.142:4575 blocked for more than 116 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+      Blocked by coredump.
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.5.142       state:D stack:26680 pid:4575  tgid:4575  ppid:271    task_flags:0x40044c flags:0x00080003
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ wb_wait_for_completion+0x183/0x280 fs/fs-writeback.c:216
+ sync_inodes_sb+0x1b2/0xb00 fs/fs-writeback.c:2873
+ sync_filesystem fs/sync.c:64 [inline]
+ sync_filesystem+0x17a/0x2a0 fs/sync.c:30
+ generic_shutdown_super+0x78/0x4a0 fs/super.c:621
+ kill_block_super+0x3b/0x90 fs/super.c:1722
+ ext4_kill_sb+0x6c/0xb0 fs/ext4/super.c:7403
+ deactivate_locked_super+0xbb/0x130 fs/super.c:473
+ deactivate_super fs/super.c:506 [inline]
+ deactivate_super+0xb1/0xd0 fs/super.c:502
+ cleanup_mnt+0x378/0x510 fs/namespace.c:1327
+ task_work_run+0x172/0x280 kernel/task_work.c:227
+ exit_task_work include/linux/task_work.h:40 [inline]
+ do_exit+0x8c1/0x2da0 kernel/exit.c:966
+ do_group_exit+0xd3/0x2a0 kernel/exit.c:1107
+ get_signal+0x2389/0x2500 kernel/signal.c:3034
+ arch_do_signal_or_restart+0x80/0x870 arch/x86/kernel/signal.c:337
+ exit_to_user_mode_loop+0x95/0x120 kernel/entry/common.c:40
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2eb/0x380 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f23296c2465
+RSP: 002b:00007f2327cb6fa0 EFLAGS: 00000293 ORIG_RAX: 00000000000000e6
+RAX: fffffffffffffdfc RBX: 00007f2329915fa0 RCX: 00007f23296c2465
+RDX: 00007f2327cb6fe0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007f232973b44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000293 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f2329915fa0 R15: 00007ffd0330ee18
+ </TASK>
+INFO: task syz.9.391:6762 blocked for more than 116 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.9.391       state:D stack:28280 pid:6762  tgid:6757  ppid:4646   task_flags:0x400040 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ rwsem_down_read_slowpath+0x601/0x1020 kernel/locking/rwsem.c:1086
+ __down_read_common kernel/locking/rwsem.c:1261 [inline]
+ __down_read kernel/locking/rwsem.c:1274 [inline]
+ down_read+0xec/0x3f0 kernel/locking/rwsem.c:1539
+ __super_lock fs/super.c:59 [inline]
+ super_lock+0x179/0x3e0 fs/super.c:121
+ __iterate_supers+0x2b8/0x390 fs/super.c:922
+ ksys_sync+0x89/0x150 fs/sync.c:102
+ __do_sys_sync+0xe/0x20 fs/sync.c:113
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f5f4beafba9
+RSP: 002b:00007f5f4a4d7058 EFLAGS: 00000246 ORIG_RAX: 00000000000000a2
+RAX: ffffffffffffffda RBX: 00007f5f4c135fa0 RCX: 00007f5f4beafba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007f5f4c135fa0 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f5f4c135fa0 R15: 00007ffc1a3738b8
+ </TASK>
+INFO: task syz.9.391:6762 <reader> blocked on an rw-semaphore likely owned by task syz.5.142:4575 <writer>
+INFO: task syz.3.483:7514 blocked for more than 116 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.3.483       state:D stack:28056 pid:7514  tgid:7512  ppid:5256   task_flags:0x400040 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ rwsem_down_read_slowpath+0x601/0x1020 kernel/locking/rwsem.c:1086
+ __down_read_common kernel/locking/rwsem.c:1261 [inline]
+ __down_read kernel/locking/rwsem.c:1274 [inline]
+ down_read+0xec/0x3f0 kernel/locking/rwsem.c:1539
+ __super_lock fs/super.c:59 [inline]
+ super_lock+0x179/0x3e0 fs/super.c:121
+ __iterate_supers+0x2b8/0x390 fs/super.c:922
+ ksys_sync+0x89/0x150 fs/sync.c:102
+ __do_sys_sync+0xe/0x20 fs/sync.c:113
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fe5b540fba9
+RSP: 002b:00007fe5b3a37058 EFLAGS: 00000246 ORIG_RAX: 00000000000000a2
+RAX: ffffffffffffffda RBX: 00007fe5b5695fa0 RCX: 00007fe5b540fba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007fe5b5695fa0 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007fe5b5695fa0 R15: 00007fff5cdc0908
+ </TASK>
+INFO: task syz.3.483:7514 <reader> blocked on an rw-semaphore likely owned by task syz.5.142:4575 <writer>
+INFO: task syz.1.626:9631 blocked for more than 95 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.1.626       state:D stack:28456 pid:9631  tgid:9625  ppid:270    task_flags:0x400140 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ rwsem_down_read_slowpath+0x601/0x1020 kernel/locking/rwsem.c:1086
+ __down_read_common kernel/locking/rwsem.c:1261 [inline]
+ __down_read kernel/locking/rwsem.c:1274 [inline]
+ down_read+0xec/0x3f0 kernel/locking/rwsem.c:1539
+ __super_lock fs/super.c:59 [inline]
+ super_lock+0x179/0x3e0 fs/super.c:121
+ __iterate_supers+0x2b8/0x390 fs/super.c:922
+ ksys_sync+0x89/0x150 fs/sync.c:102
+ __do_sys_sync+0xe/0x20 fs/sync.c:113
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7faab215fba9
+RSP: 002b:00007faaa8366058 EFLAGS: 00000246 ORIG_RAX: 00000000000000a2
+RAX: ffffffffffffffda RBX: 00007faab23e6080 RCX: 00007faab215fba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007faab23e6080 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007faab23e6080 R15: 00007ffc3d295868
+ </TASK>
+INFO: task syz.1.626:9631 <reader> blocked on an rw-semaphore likely owned by task syz.5.142:4575 <writer>
+INFO: task syz.5.758:11357 blocked for more than 75 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.5.758       state:D stack:26440 pid:11357 tgid:11356 ppid:8458   task_flags:0x400140 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ rwsem_down_read_slowpath+0x601/0x1020 kernel/locking/rwsem.c:1086
+ __down_read_common kernel/locking/rwsem.c:1261 [inline]
+ __down_read kernel/locking/rwsem.c:1274 [inline]
+ down_read+0xec/0x3f0 kernel/locking/rwsem.c:1539
+ __super_lock fs/super.c:59 [inline]
+ super_lock+0x179/0x3e0 fs/super.c:121
+ __iterate_supers+0x2b8/0x390 fs/super.c:922
+ quota_sync_all+0xc8/0xd0 fs/quota/quota.c:69
+ __do_sys_quotactl fs/quota/quota.c:938 [inline]
+ __se_sys_quotactl fs/quota/quota.c:917 [inline]
+ __x64_sys_quotactl+0x253/0x3b0 fs/quota/quota.c:917
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fd5e4d5fba9
+RSP: 002b:00007fd5e337f058 EFLAGS: 00000246 ORIG_RAX: 00000000000000b3
+RAX: ffffffffffffffda RBX: 00007fd5e4fe5fa0 RCX: 00007fd5e4d5fba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff80000100
+RBP: 00007fd5e4e0b44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007fd5e4fe5fa0 R15: 00007fffc67c5838
+ </TASK>
+INFO: task syz.5.758:11357 <reader> blocked on an rw-semaphore likely owned by task syz.5.142:4575 <writer>
+INFO: task syz.4.788:11736 blocked for more than 75 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.4.788       state:D stack:26408 pid:11736 tgid:11733 ppid:8169   task_flags:0x400140 flags:0x00480002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ rwsem_down_read_slowpath+0x601/0x1020 kernel/locking/rwsem.c:1086
+ __down_read_common kernel/locking/rwsem.c:1261 [inline]
+ __down_read kernel/locking/rwsem.c:1274 [inline]
+ down_read+0xec/0x3f0 kernel/locking/rwsem.c:1539
+ __super_lock fs/super.c:59 [inline]
+ super_lock+0x179/0x3e0 fs/super.c:121
+ __iterate_supers+0x2b8/0x390 fs/super.c:922
+ quota_sync_all+0xc8/0xd0 fs/quota/quota.c:69
+ __do_sys_quotactl fs/quota/quota.c:938 [inline]
+ __se_sys_quotactl fs/quota/quota.c:917 [inline]
+ __x64_sys_quotactl+0x253/0x3b0 fs/quota/quota.c:917
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f484529fba9
+RSP: 002b:00007f48438bf058 EFLAGS: 00000246 ORIG_RAX: 00000000000000b3
+RAX: ffffffffffffffda RBX: 00007f4845525fa0 RCX: 00007f484529fba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff80000100
+RBP: 00007f484534b44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f4845525fa0 R15: 00007fff57efd698
+ </TASK>
+INFO: task syz.4.788:11736 <reader> blocked on an rw-semaphore likely owned by task syz.5.142:4575 <writer>
+INFO: task syz.0.976:13818 blocked for more than 54 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.0.976       state:D stack:28216 pid:13818 tgid:13816 ppid:6937   task_flags:0x400140 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ rwsem_down_read_slowpath+0x601/0x1020 kernel/locking/rwsem.c:1086
+ __down_read_common kernel/locking/rwsem.c:1261 [inline]
+ __down_read kernel/locking/rwsem.c:1274 [inline]
+ down_read+0xec/0x3f0 kernel/locking/rwsem.c:1539
+ __super_lock fs/super.c:59 [inline]
+ super_lock+0x179/0x3e0 fs/super.c:121
+ __iterate_supers+0x2b8/0x390 fs/super.c:922
+ ksys_sync+0x89/0x150 fs/sync.c:102
+ __do_sys_sync+0xe/0x20 fs/sync.c:113
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f8068b9fba9
+RSP: 002b:00007f80671bf058 EFLAGS: 00000246 ORIG_RAX: 00000000000000a2
+RAX: ffffffffffffffda RBX: 00007f8068e25fa0 RCX: 00007f8068b9fba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007f8068e25fa0 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f8068e25fa0 R15: 00007ffd9dc6ce18
+ </TASK>
+INFO: task syz.0.976:13818 <reader> blocked on an rw-semaphore likely owned by task syz.5.142:4575 <writer>
+INFO: task syz.9.1175:15605 blocked for more than 34 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.9.1175      state:D stack:29624 pid:15605 tgid:15603 ppid:9798   task_flags:0x400040 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ rwsem_down_read_slowpath+0x601/0x1020 kernel/locking/rwsem.c:1086
+ __down_read_common kernel/locking/rwsem.c:1261 [inline]
+ __down_read kernel/locking/rwsem.c:1274 [inline]
+ down_read+0xec/0x3f0 kernel/locking/rwsem.c:1539
+ __super_lock fs/super.c:59 [inline]
+ super_lock+0x179/0x3e0 fs/super.c:121
+ __iterate_supers+0x2b8/0x390 fs/super.c:922
+ ksys_sync+0x89/0x150 fs/sync.c:102
+ __do_sys_sync+0xe/0x20 fs/sync.c:113
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fb6a9a5fba9
+RSP: 002b:00007fb6a8087058 EFLAGS: 00000246 ORIG_RAX: 00000000000000a2
+RAX: ffffffffffffffda RBX: 00007fb6a9ce5fa0 RCX: 00007fb6a9a5fba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007fb6a9ce5fa0 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007fb6a9ce5fa0 R15: 00007ffcc02dd2b8
+ </TASK>
+INFO: task syz.9.1175:15605 <reader> blocked on an rw-semaphore likely owned by task syz.5.142:4575 <writer>
+INFO: task syz.9.1175:15614 blocked for more than 34 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.9.1175      state:D stack:29624 pid:15614 tgid:15603 ppid:9798   task_flags:0x400040 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ rwsem_down_read_slowpath+0x601/0x1020 kernel/locking/rwsem.c:1086
+ __down_read_common kernel/locking/rwsem.c:1261 [inline]
+ __down_read kernel/locking/rwsem.c:1274 [inline]
+ down_read+0xec/0x3f0 kernel/locking/rwsem.c:1539
+ __super_lock fs/super.c:59 [inline]
+ super_lock+0x179/0x3e0 fs/super.c:121
+ __iterate_supers+0x2b8/0x390 fs/super.c:922
+ ksys_sync+0x89/0x150 fs/sync.c:102
+ __do_sys_sync+0xe/0x20 fs/sync.c:113
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fb6a9a5fba9
+RSP: 002b:00007fb6a8045058 EFLAGS: 00000246 ORIG_RAX: 00000000000000a2
+RAX: ffffffffffffffda RBX: 00007fb6a9ce6160 RCX: 00007fb6a9a5fba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007fb6a9ce6160 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000001 R14: 00007fb6a9ce6160 R15: 00007ffcc02dd2b8
+ </TASK>
+INFO: task syz.9.1175:15614 <reader> blocked on an rw-semaphore likely owned by task syz.5.142:4575 <writer>
+INFO: task syz.7.1295:18690 blocked for more than 14 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.7.1295      state:D stack:28136 pid:18690 tgid:18684 ppid:15520  task_flags:0x400140 flags:0x00080003
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ rwsem_down_read_slowpath+0x601/0x1020 kernel/locking/rwsem.c:1086
+ __down_read_common kernel/locking/rwsem.c:1261 [inline]
+ __down_read kernel/locking/rwsem.c:1274 [inline]
+ down_read+0xec/0x3f0 kernel/locking/rwsem.c:1539
+ __super_lock fs/super.c:59 [inline]
+ super_lock+0x179/0x3e0 fs/super.c:121
+ __iterate_supers+0x2b8/0x390 fs/super.c:922
+ ksys_sync+0x89/0x150 fs/sync.c:102
+ __do_sys_sync+0xe/0x20 fs/sync.c:113
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fe0b5aafba9
+RSP: 002b:00007fe0abcb6058 EFLAGS: 00000246 ORIG_RAX: 00000000000000a2
+RAX: ffffffffffffffda RBX: 00007fe0b5d36080 RCX: 00007fe0b5aafba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007fe0b5d36080 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007fe0b5d36080 R15: 00007ffff149a5c8
+ </TASK>
+INFO: task syz.7.1295:18690 <reader> blocked on an rw-semaphore likely owned by task syz.5.142:4575 <writer>
+Future hung task reports are suppressed, see sysctl kernel.hung_task_warnings
+
+Showing all locks held in the system:
+1 lock held by khungtaskd/40:
+ #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: rcu_read_lock include/linux/rcupdate.h:867 [inline]
+ #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: debug_show_all_locks+0x36/0x1c0 kernel/locking/lockdep.c:6775
+2 locks held by kworker/u16:1/42:
+ #0: ffff888100079148 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3238 [inline]
+ #0: ffff888100079148 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_scheduled_works+0x1096/0x19c0 kernel/workqueue.c:3346
+ #1: ffff888100b7fd38 ((work_completion)(&sub_info->work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3239 [inline]
+ #1: ffff888100b7fd38 ((work_completion)(&sub_info->work)){+.+.}-{0:0}, at: process_scheduled_works+0x4d1/0x19c0 kernel/workqueue.c:3346
+7 locks held by kworker/u16:2/52:
+2 locks held by systemd-udevd/123:
+2 locks held by systemd-udevd/137:
+2 locks held by systemd-udevd/141:
+ #0: ffff8881095b43f8 (sb_writers#8){.+.+}-{0:0}, at: open_last_lookups fs/namei.c:3884 [inline]
+ #0: ffff8881095b43f8 (sb_writers#8){.+.+}-{0:0}, at: path_openat+0x1ed1/0x2850 fs/namei.c:4131
+ #1: ffff888103cc3570 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: inode_lock include/linux/fs.h:980 [inline]
+ #1: ffff888103cc3570 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: open_last_lookups fs/namei.c:3892 [inline]
+ #1: ffff888103cc3570 (&type->i_mutex_dir_key#5){++++}-{4:4}, at: path_openat+0xe09/0x2850 fs/namei.c:4131
+2 locks held by systemd-udevd/142:
+1 lock held by in:imklog/170:
+2 locks held by kworker/u16:5/268:
+ #0: ffff888100079148 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3238 [inline]
+ #0: ffff888100079148 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_scheduled_works+0x1096/0x19c0 kernel/workqueue.c:3346
+ #1: ffff8880192f7d38 ((work_completion)(&sub_info->work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3239 [inline]
+ #1: ffff8880192f7d38 ((work_completion)(&sub_info->work)){+.+.}-{0:0}, at: process_scheduled_works+0x4d1/0x19c0 kernel/workqueue.c:3346
+5 locks held by kworker/u16:7/274:
+ #0: ffff888100195148 ((wq_completion)netns){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3238 [inline]
+ #0: ffff888100195148 ((wq_completion)netns){+.+.}-{0:0}, at: process_scheduled_works+0x1096/0x19c0 kernel/workqueue.c:3346
+ #1: ffff888111247d38 (net_cleanup_work){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3239 [inline]
+ #1: ffff888111247d38 (net_cleanup_work){+.+.}-{0:0}, at: process_scheduled_works+0x4d1/0x19c0 kernel/workqueue.c:3346
+ #2: ffffffff8623bc90 (pernet_ops_rwsem){++++}-{4:4}, at: cleanup_net+0xad/0x770 net/core/net_namespace.c:669
+ #3: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: ops_exit_rtnl_list net/core/net_namespace.c:173 [inline]
+ #3: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: ops_undo_list+0x7cc/0xa50 net/core/net_namespace.c:248
+ #4: ffffffff85c2ba78 (rcu_state.exp_mutex){+.+.}-{4:4}, at: exp_funnel_lock+0x8dd/0xa70 kernel/rcu/tree_exp.h:311
+2 locks held by syz.5.142/4575:
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:57 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock_excl fs/super.c:72 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: deactivate_super fs/super.c:505 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: deactivate_super+0xa9/0xd0 fs/super.c:502
+ #1: ffff888103c98820 (&bdi->wb_switch_rwsem){++++}-{4:4}, at: bdi_down_write_wb_switch_rwsem fs/fs-writeback.c:387 [inline]
+ #1: ffff888103c98820 (&bdi->wb_switch_rwsem){++++}-{4:4}, at: sync_inodes_sb+0x198/0xb00 fs/fs-writeback.c:2871
+1 lock held by syz.9.391/6762:
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.3.483/7514:
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.1.626/9631:
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.5.758/11357:
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.4.788/11736:
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.0.976/13818:
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz-executor/14681:
+1 lock held by syz.9.1175/15605:
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.9.1175/15614:
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz-executor/16076:
+1 lock held by syz-executor/16085:
+4 locks held by syz-executor/17177:
+1 lock held by syz-executor/17639:
+1 lock held by syz.7.1295/18690:
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.4.1319/18823:
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.4.1319/18824:
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888118bf40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz-executor/19609:
+ #0: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_lock net/core/rtnetlink.c:80 [inline]
+ #0: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_nets_lock net/core/rtnetlink.c:341 [inline]
+ #0: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_newlink+0x803/0xd00 net/core/rtnetlink.c:4064
+1 lock held by syz-executor/20118:
+1 lock held by syz-executor/20146:
+ #0: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_lock net/core/rtnetlink.c:80 [inline]
+ #0: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_nets_lock net/core/rtnetlink.c:341 [inline]
+ #0: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_newlink+0x803/0xd00 net/core/rtnetlink.c:4064
+1 lock held by syz-executor/20255:
+1 lock held by syz-executor/20292:
+ #0: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_lock net/core/rtnetlink.c:80 [inline]
+ #0: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_nets_lock net/core/rtnetlink.c:341 [inline]
+ #0: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_newlink+0x803/0xd00 net/core/rtnetlink.c:4064
+1 lock held by syz-executor/20649:
+ #0: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_lock net/core/rtnetlink.c:80 [inline]
+ #0: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_nets_lock net/core/rtnetlink.c:341 [inline]
+ #0: ffffffff862483c8 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_newlink+0x803/0xd00 net/core/rtnetlink.c:4064
+3 locks held by syz.2.1573/20865:
+
+=============================================
+
+pimreg (unregistering): left allmulticast mode
+EXT4-fs warning: 80627 callbacks suppressed
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning: 126905 callbacks suppressed
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop5): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377

@@ -1,0 +1,261 @@
+audit: type=1326 audit(1771456052.933:1381): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=10491 comm="syz.2.338" exe="/syz-executor" sig=31 arch=c000003e syscall=202 compat=0 ip=0x7f83cee5fba9 code=0x0
+mmap: syz.3.330 (10512) uses deprecated remap_file_pages() syscall. See Documentation/mm/remap_file_pages.rst.
+loop0: detected capacity change from 0 to 512
+EXT4-fs: Invalid want_extra_isize 8
+INFO: task syz.8.293:6238 blocked for more than 61 seconds.
+      Not tainted 6.19.0-rc8 #2
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.8.293       state:D stack:27928 pid:6238  tgid:6215  ppid:3926   task_flags:0x400740 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5260 [inline]
+ __schedule+0x11ac/0x3f90 kernel/sched/core.c:6867
+ __schedule_loop kernel/sched/core.c:6949 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:6964
+ schedule_timeout+0x244/0x280 kernel/time/sleep_timeout.c:75
+ do_wait_for_common kernel/sched/completion.c:100 [inline]
+ __wait_for_common kernel/sched/completion.c:121 [inline]
+ wait_for_common kernel/sched/completion.c:132 [inline]
+ wait_for_completion_state+0x2d3/0x460 kernel/sched/completion.c:269
+ coredump_wait fs/coredump.c:534 [inline]
+ vfs_coredump+0x8b5/0x3f60 fs/coredump.c:1196
+ get_signal+0x1998/0x24a0 kernel/signal.c:3019
+ arch_do_signal_or_restart+0x80/0x890 arch/x86/kernel/signal.c:337
+ __exit_to_user_mode_loop kernel/entry/common.c:41 [inline]
+ exit_to_user_mode_loop+0xaf/0x520 kernel/entry/common.c:75
+ __exit_to_user_mode_prepare include/linux/irq-entry-common.h:226 [inline]
+ syscall_exit_to_user_mode_prepare include/linux/irq-entry-common.h:256 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:159 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:194 [inline]
+ do_syscall_64+0x390/0x430 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f60a4a4fba9
+RSP: 002b:00007f60a304e058 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+RAX: ffffffffffffffda RBX: 00007f60a4cd6080 RCX: 00007f60a4a4fba9
+RDX: 0000200000000000 RSI: 0000000000004b72 RDI: 000000000000000a
+RBP: 00007f60a4afb44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f60a4cd6080 R15: 00007ffc781d9658
+ </TASK>
+
+Showing all locks held in the system:
+1 lock held by pool_workqueue_/3:
+ #0: ffffffff85c2fd38 (rcu_state.exp_mutex){+.+.}-{4:4}, at: exp_funnel_lock+0x8c3/0xa20 kernel/rcu/tree_exp.h:311
+3 locks held by kworker/0:0/9:
+ #0: ffff888100063148 ((wq_completion)events_power_efficient){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff888100063148 ((wq_completion)events_power_efficient){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff88810030fcc0 ((reg_check_chans).work){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff88810030fcc0 ((reg_check_chans).work){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+ #2: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: reg_check_chans_work+0x8c/0xf20 net/wireless/reg.c:2453
+1 lock held by khungtaskd/40:
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: rcu_read_lock include/linux/rcupdate.h:867 [inline]
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: debug_show_all_locks+0x36/0x1c0 kernel/locking/lockdep.c:6775
+2 locks held by kworker/3:1/54:
+ #0: ffff888100063548 ((wq_completion)events_freezable_pwr_efficient){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff888100063548 ((wq_completion)events_freezable_pwr_efficient){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff888101167cc0 ((work_completion)(&(&ev->dwork)->work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff888101167cc0 ((work_completion)(&(&ev->dwork)->work)){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+2 locks held by kworker/u16:3/59:
+ #0: ffff888101762948 ((wq_completion)iou_exit){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff888101762948 ((wq_completion)iou_exit){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff8881013e7cc0 ((work_completion)(&ctx->exit_work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff8881013e7cc0 ((work_completion)(&ctx->exit_work)){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+1 lock held by in:imklog/171:
+ #0: ffff88810a6409b8 (&f->f_pos_lock){+.+.}-{4:4}, at: fdget_pos+0x2a4/0x370 fs/file.c:1255
+5 locks held by kworker/u16:7/280:
+ #0: ffff88810019d148 ((wq_completion)netns){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff88810019d148 ((wq_completion)netns){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff88810fff7cc0 (net_cleanup_work){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff88810fff7cc0 (net_cleanup_work){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+ #2: ffffffff86256c10 (pernet_ops_rwsem){++++}-{4:4}, at: cleanup_net+0xad/0x770 net/core/net_namespace.c:670
+ #3: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: ops_exit_rtnl_list net/core/net_namespace.c:173 [inline]
+ #3: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: ops_undo_list+0x7cc/0xa50 net/core/net_namespace.c:248
+ #4: ffffffff85c2fd38 (rcu_state.exp_mutex){+.+.}-{4:4}, at: exp_funnel_lock+0x3f8/0xa20 kernel/rcu/tree_exp.h:343
+2 locks held by kworker/3:2H/4929:
+ #0: ffff8881008e5948 ((wq_completion)kblockd){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff8881008e5948 ((wq_completion)kblockd){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff88810ec8fcc0 ((work_completion)(&q->timeout_work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff88810ec8fcc0 ((work_completion)(&q->timeout_work)){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+2 locks held by syz-executor/5125:
+ #0: ffff8881051dc0e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:57 [inline]
+ #0: ffff8881051dc0e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock_excl fs/super.c:72 [inline]
+ #0: ffff8881051dc0e0 (&type->s_umount_key#46){++++}-{4:4}, at: deactivate_super fs/super.c:506 [inline]
+ #0: ffff8881051dc0e0 (&type->s_umount_key#46){++++}-{4:4}, at: deactivate_super+0xa9/0xd0 fs/super.c:503
+ #1: ffffffff85cc05c8 (lock#6){+.+.}-{4:4}, at: __lru_add_drain_all mm/swap.c:840 [inline]
+ #1: ffffffff85cc05c8 (lock#6){+.+.}-{4:4}, at: lru_add_drain_all+0x68/0x5f0 mm/swap.c:893
+1 lock held by syz.6.204/5255:
+ #0: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_destroy+0x27/0x1c0 kernel/trace/trace_event_perf.c:239
+1 lock held by syz.6.248/5658:
+ #0: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_destroy+0x27/0x1c0 kernel/trace/trace_event_perf.c:239
+5 locks held by syz.8.293/6219:
+1 lock held by syz.2.321/7025:
+ #0: ffffffff85c2fc00 (rcu_state.barrier_mutex){+.+.}-{4:4}, at: rcu_barrier+0x49/0x650 kernel/rcu/tree.c:3816
+1 lock held by syz.5.328/7313:
+ #0: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_destroy+0x27/0x1c0 kernel/trace/trace_event_perf.c:239
+1 lock held by syz.9.329/7363:
+ #0: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_destroy+0x27/0x1c0 kernel/trace/trace_event_perf.c:239
+2 locks held by syz.6.333/10472:
+ #0: ffff888101f980e0 (&type->s_umount_key#23/1){+.+.}-{4:4}, at: alloc_super.isra.0+0x16c/0x9f0 fs/super.c:344
+ #1: ffffffff85cc05c8 (lock#6){+.+.}-{4:4}, at: __lru_add_drain_all mm/swap.c:840 [inline]
+ #1: ffffffff85cc05c8 (lock#6){+.+.}-{4:4}, at: lru_add_drain_all+0x68/0x5f0 mm/swap.c:893
+3 locks held by syz.4.275/10477:
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x31e/0x29a0 kernel/events/core.c:13554
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_init_event kernel/events/core.c:12758 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc kernel/events/core.c:13072 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc+0xf3e/0x4870 kernel/events/core.c:12937
+ #2: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_init+0x4d/0x2f0 kernel/trace/trace_event_perf.c:221
+1 lock held by syz.7.326/10480:
+ #0: ffff888118050d88 (&sb->s_type->i_mutex_key#13){+.+.}-{4:4}, at: inode_lock include/linux/fs.h:1027 [inline]
+ #0: ffff888118050d88 (&sb->s_type->i_mutex_key#13){+.+.}-{4:4}, at: __sock_release+0x86/0x270 net/socket.c:661
+3 locks held by syz.7.326/10494:
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x31e/0x29a0 kernel/events/core.c:13554
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_init_event kernel/events/core.c:12758 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc kernel/events/core.c:13072 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc+0xf3e/0x4870 kernel/events/core.c:12937
+ #2: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_init+0x4d/0x2f0 kernel/trace/trace_event_perf.c:221
+2 locks held by syz.7.326/10501:
+ #0: ffffffff8629c7b0 (cb_lock){++++}-{4:4}, at: genl_rcv+0x19/0x40 net/netlink/genetlink.c:1218
+ #1: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: ethnl_set_features+0x1ae/0xb80 net/ethtool/features.c:238
+3 locks held by syz.7.326/10509:
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x31e/0x29a0 kernel/events/core.c:13554
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_init_event kernel/events/core.c:12758 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc kernel/events/core.c:13072 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc+0xf3e/0x4870 kernel/events/core.c:12937
+ #2: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_init+0x4d/0x2f0 kernel/trace/trace_event_perf.c:221
+3 locks held by syz.8.336/10486:
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x31e/0x29a0 kernel/events/core.c:13554
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_init_event kernel/events/core.c:12758 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc kernel/events/core.c:13072 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc+0xf3e/0x4870 kernel/events/core.c:12937
+ #2: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_init+0x4d/0x2f0 kernel/trace/trace_event_perf.c:221
+3 locks held by syz.2.338/10492:
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x31e/0x29a0 kernel/events/core.c:13554
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_init_event kernel/events/core.c:12758 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc kernel/events/core.c:13072 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc+0xf3e/0x4870 kernel/events/core.c:12937
+ #2: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_init+0x4d/0x2f0 kernel/trace/trace_event_perf.c:221
+3 locks held by syz.2.338/10493:
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x31e/0x29a0 kernel/events/core.c:13554
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_init_event kernel/events/core.c:12758 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc kernel/events/core.c:13072 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc+0xf3e/0x4870 kernel/events/core.c:12937
+ #2: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_init+0x4d/0x2f0 kernel/trace/trace_event_perf.c:221
+3 locks held by syz.3.341/10520:
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x31e/0x29a0 kernel/events/core.c:13554
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_init_event kernel/events/core.c:12758 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc kernel/events/core.c:13072 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc+0xf3e/0x4870 kernel/events/core.c:12937
+ #2: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_init+0x4d/0x2f0 kernel/trace/trace_event_perf.c:221
+3 locks held by syz.3.341/10527:
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x31e/0x29a0 kernel/events/core.c:13554
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_init_event kernel/events/core.c:12758 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc kernel/events/core.c:13072 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc+0xf3e/0x4870 kernel/events/core.c:12937
+ #2: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_init+0x4d/0x2f0 kernel/trace/trace_event_perf.c:221
+3 locks held by syz.3.341/10528:
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x31e/0x29a0 kernel/events/core.c:13554
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_init_event kernel/events/core.c:12758 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc kernel/events/core.c:13072 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc+0xf3e/0x4870 kernel/events/core.c:12937
+ #2: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_init+0x4d/0x2f0 kernel/trace/trace_event_perf.c:221
+1 lock held by syz.3.341/10529:
+ #0: ffff888104bc4258 (sk_lock-AF_PACKET){+.+.}-{0:0}, at: lock_sock include/net/sock.h:1700 [inline]
+ #0: ffff888104bc4258 (sk_lock-AF_PACKET){+.+.}-{0:0}, at: packet_setsockopt+0x13f/0x3470 net/packet/af_packet.c:3818
+3 locks held by syz.1.342/10524:
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x31e/0x29a0 kernel/events/core.c:13554
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_init_event kernel/events/core.c:12758 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc kernel/events/core.c:13072 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc+0xf3e/0x4870 kernel/events/core.c:12937
+ #2: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_init+0x4d/0x2f0 kernel/trace/trace_event_perf.c:221
+2 locks held by syz.0.331/10533:
+ #0: ffff888110aba0e0 (&type->s_umount_key#24/1){+.+.}-{4:4}, at: alloc_super.isra.0+0x16c/0x9f0 fs/super.c:344
+ #1: ffffffff85cc05c8 (lock#6){+.+.}-{4:4}, at: __lru_add_drain_all mm/swap.c:840 [inline]
+ #1: ffffffff85cc05c8 (lock#6){+.+.}-{4:4}, at: lru_add_drain_all+0x68/0x5f0 mm/swap.c:893
+1 lock held by syz-executor/10536:
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_net_lock include/linux/rtnetlink.h:130 [inline]
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: inet_rtm_newaddr+0x300/0x14c0 net/ipv4/devinet.c:978
+1 lock held by syz-executor/10543:
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_net_lock include/linux/rtnetlink.h:130 [inline]
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: inet_rtm_newaddr+0x300/0x14c0 net/ipv4/devinet.c:978
+1 lock held by syz-executor/10546:
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_net_lock include/linux/rtnetlink.h:130 [inline]
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: inet_rtm_newaddr+0x300/0x14c0 net/ipv4/devinet.c:978
+1 lock held by syz-executor/10548:
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_net_lock include/linux/rtnetlink.h:130 [inline]
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: inet_rtm_newaddr+0x300/0x14c0 net/ipv4/devinet.c:978
+1 lock held by syz-executor/10551:
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_net_lock include/linux/rtnetlink.h:130 [inline]
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: inet_rtm_newaddr+0x300/0x14c0 net/ipv4/devinet.c:978
+1 lock held by syz-executor/10556:
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_net_lock include/linux/rtnetlink.h:130 [inline]
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: inet_rtm_newaddr+0x300/0x14c0 net/ipv4/devinet.c:978
+1 lock held by syz-executor/10559:
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_net_lock include/linux/rtnetlink.h:130 [inline]
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: inet_rtm_newaddr+0x300/0x14c0 net/ipv4/devinet.c:978
+1 lock held by syz-executor/10563:
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: rtnl_net_lock include/linux/rtnetlink.h:130 [inline]
+ #0: ffffffff86263848 (rtnl_mutex){+.+.}-{4:4}, at: inet_rtm_newaddr+0x300/0x14c0 net/ipv4/devinet.c:978
+
+=============================================
+

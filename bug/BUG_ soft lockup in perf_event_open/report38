@@ -1,0 +1,180 @@
+EXT4-fs error (device loop3): __ext4_new_inode:1072: comm syz.3.611: reserved inode found cleared - inode=1
+modprobe (9982) used greatest stack depth: 20504 bytes left
+modprobe (9981) used greatest stack depth: 20264 bytes left
+watchdog: BUG: soft lockup - CPU#0 stuck for 26s! [syz.9.604:9023]
+Modules linked in:
+irq event stamp: 5237385
+hardirqs last  enabled at (5237384): [<ffffffff815cf701>] rcu_read_unlock_special kernel/rcu/tree_plugin.h:766 [inline]
+hardirqs last  enabled at (5237384): [<ffffffff815cf701>] __rcu_read_unlock+0x201/0x510 kernel/rcu/tree_plugin.h:438
+hardirqs last disabled at (5237385): [<ffffffff84a96c9f>] sysvec_apic_timer_interrupt+0xf/0x80 arch/x86/kernel/apic/apic.c:1056
+softirqs last  enabled at (5213658): [<ffffffff813b9880>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (5213658): [<ffffffff813b9880>] handle_softirqs+0x490/0x700 kernel/softirq.c:650
+softirqs last disabled at (5213661): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (5213661): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (5213661): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (5213661): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+CPU: 0 UID: 0 PID: 9023 Comm: syz.9.604 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:tracing_gen_ctx_irq_test+0x167/0x1f0 kernel/trace/trace.c:2619
+Code: 90 00 00 00 48 8b 6d 00 31 ff 48 c1 ed 05 83 e5 01 89 ee e8 db 2f fa ff 40 84 ed 74 08 e8 21 2e fa ff 83 cb 02 e8 19 2e fa ff <41> 80 fc 0f ba 0f 00 00 00 41 0f b6 c4 0f 47 c2 c1 e3 10 65 48 8b
+RSP: 0018:ffff88811ae084f8 EFLAGS: 00000246
+RAX: 0000000000000000 RBX: 0000000000000034 RCX: ffffffff817b0b55
+RDX: 0000000000000000 RSI: ffff888114a19bc0 RDI: 0000000000000002
+RBP: 0000000000000000 R08: 0000000000000000 R09: ffffe8ffffc08f50
+R10: ffff88811ae087d0 R11: ffffe8ffffc21164 R12: 0000000000000103
+R13: 000000000000002c R14: dffffc0000000000 R15: ffffe8ffffc21140
+FS:  00007f403c57f6c0(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f5353dd4fb8 CR3: 00000001167f1000 CR4: 0000000000350ef0
+Call Trace:
+ <IRQ>
+ tracing_gen_ctx_flags include/linux/trace_events.h:201 [inline]
+ tracing_gen_ctx include/linux/trace_events.h:208 [inline]
+ perf_trace_buf_update+0x37/0x190 kernel/trace/trace_event_perf.c:429
+ perf_tp_event+0x10a/0xcd0 kernel/events/core.c:11076
+ perf_trace_run_bpf_submit+0xef/0x180 kernel/events/core.c:11014
+ do_perf_trace_lock include/trace/events/lock.h:50 [inline]
+ perf_trace_lock+0x32d/0x5e0 include/trace/events/lock.h:50
+ __do_trace_lock_release include/trace/events/lock.h:69 [inline]
+ trace_lock_release include/trace/events/lock.h:69 [inline]
+ lock_release+0x1ab/0x270 kernel/locking/lockdep.c:5879
+ rcu_lock_release include/linux/rcupdate.h:341 [inline]
+ rcu_read_unlock include/linux/rcupdate.h:897 [inline]
+ class_rcu_destructor include/linux/rcupdate.h:1195 [inline]
+ unwind_next_frame+0x598/0x2070 arch/x86/kernel/unwind_orc.c:495
+ arch_stack_walk+0x86/0xf0 arch/x86/kernel/stacktrace.c:25
+ stack_trace_save+0x8e/0xc0 kernel/stacktrace.c:122
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:57
+ kasan_save_track+0x14/0x30 mm/kasan/common.c:78
+ kasan_save_free_info+0x3a/0x60 mm/kasan/generic.c:584
+ poison_slab_object mm/kasan/common.c:253 [inline]
+ __kasan_slab_free+0x43/0x70 mm/kasan/common.c:285
+ kasan_slab_free include/linux/kasan.h:235 [inline]
+ slab_free_hook mm/slub.c:2540 [inline]
+ __rcu_free_sheaf_prepare+0x5d/0x2a0 mm/slub.c:2763
+ rcu_free_sheaf+0x1b/0xc0 mm/slub.c:6230
+ rcu_do_batch kernel/rcu/tree.c:2605 [inline]
+ rcu_core+0xa6d/0x2240 kernel/rcu/tree.c:2857
+ handle_softirqs+0x19b/0x700 kernel/softirq.c:622
+ __do_softirq kernel/softirq.c:656 [inline]
+ invoke_softirq kernel/softirq.c:496 [inline]
+ __irq_exit_rcu kernel/softirq.c:723 [inline]
+ irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1056 [inline]
+ sysvec_apic_timer_interrupt+0x70/0x80 arch/x86/kernel/apic/apic.c:1056
+ </IRQ>
+ <TASK>
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+RIP: 0010:__raw_spin_unlock_irqrestore include/linux/spinlock_api_smp.h:152 [inline]
+RIP: 0010:_raw_spin_unlock_irqrestore+0x34/0x50 kernel/locking/spinlock.c:194
+Code: c7 18 53 48 89 f3 48 8b 74 24 10 e8 96 50 a6 fc 48 89 ef e8 de 9f a6 fc 80 e7 02 74 06 e8 a4 65 d1 fc fb 65 ff 0d 8c db d1 02 <74> 07 5b 5d e9 53 27 00 00 0f 1f 44 00 00 5b 5d e9 47 27 00 00 0f
+RSP: 0018:ffff88811660f978 EFLAGS: 00000202
+RAX: 000000000045f4f3 RBX: 0000000000000287 RCX: 0000000000000007
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff84ac349c
+RBP: ffff88810bf42530 R08: 0000000000000001 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: ffff88810bf41bd4
+R13: ffff88810bf41bc0 R14: ffff88810bf4252f R15: 0000000000000001
+ class_raw_spinlock_irqsave_destructor include/linux/spinlock.h:557 [inline]
+ try_to_wake_up+0xb41/0x1860 kernel/sched/core.c:4106
+ wake_up_process kernel/sched/core.c:4349 [inline]
+ wake_up_q+0xa1/0x130 kernel/sched/core.c:1087
+ raw_spin_unlock_irqrestore_wake include/linux/sched/wake_q.h:96 [inline]
+ __mutex_unlock_slowpath+0x2dd/0x760 kernel/locking/mutex.c:981
+ perf_trace_init+0x23f/0x2f0 kernel/trace/trace_event_perf.c:232
+ perf_tp_event_init+0xa6/0x120 kernel/events/core.c:10950
+ perf_try_init_event+0x140/0x9f0 kernel/events/core.c:12699
+ perf_init_event kernel/events/core.c:12797 [inline]
+ perf_event_alloc kernel/events/core.c:13072 [inline]
+ perf_event_alloc+0x1da2/0x4870 kernel/events/core.c:12937
+ __do_sys_perf_event_open+0x69f/0x29a0 kernel/events/core.c:13590
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x430 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f403df5fba9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f403c57f058 EFLAGS: 00000246 ORIG_RAX: 000000000000012a
+RAX: ffffffffffffffda RBX: 00007f403e1e5fa0 RCX: 00007f403df5fba9
+RDX: ffffffffffffffff RSI: 0000000000000000 RDI: 0000200000000100
+RBP: 00007f403e00b44c R08: 0000000000000000 R09: 0000000000000000
+R10: ffffffffffffffff R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f403e1e5fa0 R15: 00007ffdcefcb0d8
+ </TASK>
+Sending NMI from CPU 0 to CPUs 1-3:
+NMI backtrace for cpu 1
+CPU: 1 UID: 0 PID: 0 Comm: swapper/1 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:pv_native_safe_halt+0x1e/0x30 arch/x86/kernel/paravirt.c:82
+Code: 90 90 90 90 90 90 90 90 90 90 90 90 f3 0f 1e fa 0f 1f 44 00 00 eb 0c 0f 1f 44 00 00 0f 00 2d f9 2d 1c 00 0f 1f 44 00 00 fb f4 <e9> 6d ea 02 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 00 90 90 90 90
+RSP: 0018:ffff8881003e7e60 EFLAGS: 00000202
+RAX: 000000000005d085 RBX: 0000000000000001 RCX: ffffffff84a98827
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff814cfe5a
+RBP: dffffc0000000000 R08: 0000000000000001 R09: ffffed10235d63db
+R10: ffffed10235d63da R11: ffff88811aeb1ed3 R12: ffffffff8642c850
+R13: 1ffff1102007cfd2 R14: 0000000000000000 R15: 0000000000000000
+FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 000055556ee554a8 CR3: 0000000110b0e000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ arch_safe_halt arch/x86/include/asm/paravirt.h:107 [inline]
+ default_idle+0xe/0x20 arch/x86/kernel/process.c:767
+ default_idle_call+0x6c/0xb0 kernel/sched/idle.c:122
+ cpuidle_idle_call kernel/sched/idle.c:191 [inline]
+ do_idle+0x2fa/0x3c0 kernel/sched/idle.c:332
+ cpu_startup_entry+0x4f/0x60 kernel/sched/idle.c:430
+ start_secondary+0x1bd/0x210 arch/x86/kernel/smpboot.c:312
+ common_startup_64+0x13e/0x148
+ </TASK>
+NMI backtrace for cpu 3
+CPU: 3 UID: 0 PID: 0 Comm: swapper/3 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:pv_native_safe_halt+0x1e/0x30 arch/x86/kernel/paravirt.c:82
+Code: 90 90 90 90 90 90 90 90 90 90 90 90 f3 0f 1e fa 0f 1f 44 00 00 eb 0c 0f 1f 44 00 00 0f 00 2d f9 2d 1c 00 0f 1f 44 00 00 fb f4 <e9> 6d ea 02 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 00 90 90 90 90
+RSP: 0018:ffff8881003ffe60 EFLAGS: 00000202
+RAX: 000000000006ec7f RBX: 0000000000000003 RCX: ffffffff84a98827
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff814cfe5a
+RBP: dffffc0000000000 R08: 0000000000000001 R09: ffffed10235f63db
+R10: ffffed10235f63da R11: ffff88811afb1ed3 R12: ffffffff8642c850
+R13: 1ffff1102007ffd2 R14: 0000000000000000 R15: 0000000000000000
+FS:  0000000000000000(0000) GS:ffff8881937bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f4ca3759550 CR3: 000000011380a000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ arch_safe_halt arch/x86/include/asm/paravirt.h:107 [inline]
+ default_idle+0xe/0x20 arch/x86/kernel/process.c:767
+ default_idle_call+0x6c/0xb0 kernel/sched/idle.c:122
+ cpuidle_idle_call kernel/sched/idle.c:191 [inline]
+ do_idle+0x2fa/0x3c0 kernel/sched/idle.c:332
+ cpu_startup_entry+0x4f/0x60 kernel/sched/idle.c:430
+ start_secondary+0x1bd/0x210 arch/x86/kernel/smpboot.c:312
+ common_startup_64+0x13e/0x148
+ </TASK>
+NMI backtrace for cpu 2
+CPU: 2 UID: 0 PID: 0 Comm: swapper/2 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:pv_native_safe_halt+0x1e/0x30 arch/x86/kernel/paravirt.c:82
+Code: 90 90 90 90 90 90 90 90 90 90 90 90 f3 0f 1e fa 0f 1f 44 00 00 eb 0c 0f 1f 44 00 00 0f 00 2d f9 2d 1c 00 0f 1f 44 00 00 fb f4 <e9> 6d ea 02 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 00 90 90 90 90
+RSP: 0018:ffff8881003efe60 EFLAGS: 00000206
+RAX: 0000000000090c09 RBX: 0000000000000002 RCX: ffffffff84a98827
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff814cfe5a
+RBP: dffffc0000000000 R08: 0000000000000001 R09: ffffed10235e63db
+R10: ffffed10235e63da R11: ffff88811af31ed3 R12: ffffffff8642c850
+R13: 1ffff1102007dfd2 R14: 0000000000000000 R15: 0000000000000000
+FS:  0000000000000000(0000) GS:ffff88819373f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f4ca1dced58 CR3: 0000000110b0e000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ arch_safe_halt arch/x86/include/asm/paravirt.h:107 [inline]
+ default_idle+0xe/0x20 arch/x86/kernel/process.c:767
+ default_idle_call+0x6c/0xb0 kernel/sched/idle.c:122
+ cpuidle_idle_call kernel/sched/idle.c:191 [inline]
+ do_idle+0x2fa/0x3c0 kernel/sched/idle.c:332
+ cpu_startup_entry+0x4f/0x60 kernel/sched/idle.c:430
+ start_secondary+0x1bd/0x210 arch/x86/kernel/smpboot.c:312
+ common_startup_64+0x13e/0x148
+ </TASK>
+EXT4-fs (loop3): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+pimreg (unregistering): left allmulticast mode
+pimreg (unregistering): left allmulticast mode

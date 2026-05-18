@@ -1,0 +1,1244 @@
+last executing test programs:
+
+17.898003929s ago: executing program 1 (id=2):
+write$binfmt_misc(0xffffffffffffffff, 0x0, 0x0) (async)
+write$binfmt_misc(0xffffffffffffffff, 0x0, 0x0)
+write$selinux_load(0xffffffffffffffff, 0x0, 0x5c)
+perf_event_open(&(0x7f0000000080)={0x0, 0x80, 0x66, 0x1, 0x0, 0x0, 0x0, 0x3fffffffffffe, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}, 0x88d64cab877e6c5c, 0x9, 0xfffffffb, 0x2, 0x1, 0x4, 0x8}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x1)
+write$P9_RVERSION(0xffffffffffffffff, 0x0, 0x15)
+mount$9p_fd(0x0, 0x0, 0x0, 0x0, 0x0)
+prctl$PR_SET_SECCOMP(0x16, 0x2, &(0x7f0000000180)={0x1, &(0x7f0000000040)=[{0x200000000006, 0x0, 0x9, 0x7ffc0001}]}) (async)
+prctl$PR_SET_SECCOMP(0x16, 0x2, &(0x7f0000000180)={0x1, &(0x7f0000000040)=[{0x200000000006, 0x0, 0x9, 0x7ffc0001}]})
+r0 = fsopen(&(0x7f00000001c0)='ramfs\x00', 0x0)
+fsconfig$FSCONFIG_SET_FLAG(r0, 0x6, 0x0, 0x0, 0x0) (async)
+fsconfig$FSCONFIG_SET_FLAG(r0, 0x6, 0x0, 0x0, 0x0)
+syz_read_part_table(0x595, &(0x7f00000001c0)="$eJzs0r1LY2kUB+A3F2bT7BAZBqZwC8FgFRVioUVSiMSQxoi4YmEtWGghWFhIJFr78Q8ofoHYiH1KMYIoxEpSivWCYpMqy653G6uVRWWH52ku7znn3sPL7wb+16LwR7vdToQQ2sm3v/37SWG01DU+PDEZQiLMhBAKv/36dycRT/zz1bP4XI7PpWS2sXc18nTScd19W08fRHG/FoWwGkKYvz9M/de78fM7zV+k1tYXixvL+bm74srDwGxvoXOzsLA9uJ+rTP3ITcc/Vi36mP3pxtDRTbv8uPO170u90cpexnOZxPvs53O9zn/3e7VZbY31HC/1Z741zytbce7P8gcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN7Zaf4itba+WNxYzs/dFVceBmZ7C52bhYXtwf1cZepHbjp6matFH7M/3Rg6ummXH3e+9n2p/9LKXsZzmcT77Odzvc5/93u1WW2N9Rwv9We+Nc8rW3Huz/IHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP6lwmipa3x4YjKERJgJIYxEHYd/1dvJl34injuLn+W4XkpmG3tXI08nHdfdt/X0wXhcr0UhrIYQ5u8PUx9+Gd7szwAAAP//rRGGgA==")
+
+17.892050293s ago: executing program 6 (id=7):
+syz_mount_image$ext4(&(0x7f0000000040)='ext4\x00', &(0x7f0000000500)='./file0\x00', 0xc901, &(0x7f0000000280), 0x1, 0x4bb, &(0x7f0000000a00)="$eJzs3V9rHGsZAPBnJtnaP6lJ1YtasBZbSYt2N2lsG7yoLYi9Kqj1vsZkE0I22ZDdtE0omuIHEERU8MorbwQ/gCD9CCIU9F5UFNH2nItzcU73sLuz/ZOzm6ScTaZkfz94M+/M7OzzvFlmdt6Zl50ABta5iLgZES8ajcaliBjNlqdZia12ab7u+bNHs82SRKNx939JJNmyznsl2fREttnRiPj+7YgfJZ+MW9vYXJqpVMpr2Xypvrxaqm1sXl5cnlkoL5RXpqYmr01fn746PdGXdjZzuvHtf/3yZ7/7zo0/ff3B3+/95+KPm2mNZOtfb0c/tZteaP0vOoYjYm0/guVgKGtPIe9EAADYk+Y5/uci4isRcSlGY6h1NgcAAAAcJo1vjcSHSUQDAAAAOLTS1hjYJC1mYwFGIk2LxfZ42S/E8bRSrdW/Nl9dX5lrj5Udi0I6v1gpT2RjhceikDTnJ1v1V/NXts1PRcSpiPjF6LHWfHG2WpnL++IHAAAADIgT2/r/74+2+/8AAADAITOWdwIAAADAvtP/BwAAgMNP/x8AAAAOte/eudMsjc7zr+fub6wvVe9fnivXlorL67PF2eraanGhWl1o/Wbf8m7vV6lWV78RK+sPS/VyrV6qbWzeW66ur9TvLb7xCGwAAADgAJ368pO/JRGx9c1jrdJ0JO+kgANx+21e/M/9ywM4eEN5JwDkZjjvBIDcFPJOAMhdssv6noN3/tz/XAAAgP0x/sXe9/93vjawlR5AesA+shPD4HL/HwaX+/8wuArOAGDg7f/9/0bjrRICAAD6bqRVkrSY3QsciTQtFiNOth4LUEjmFyvliYj4bET8dbTwmeb8ZGvLZNc+AwAAAAAAAAAAAAAAAAAAAAAAAADQ1mgk0QAAAAAOtYj030n2/K/x0Qsj268PHEk+GG1NI+LBb+7+6uFMvb422Vz+/5fL67/Oll/J4woGAAAAsF2nn97pxwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAPz1/9mi2Uw4y7n9vRcRYt/jDcbQ1PRqFiDj+XhLDr22XRMRQH+JvPY6I093iJ820YizLolv8YznGTyPiVh/iwyB70tyJbnbb/9I415p23/+Gs/Jp9T7+pS+Pf0M9jj8n9xjjzNM/lHrGfxxxZrj78acTP+kR//we4//wB5ubvdY1fhsx3vX7J3kjVqm+vFqqbWxeXlyeWSgvlFempiavTV+fvjo9UZpfrJSzv11j/PxLf3yxU/uP94g/tkv7L+yx/R89ffjs8+1qoVv8i+e7f/6ne8RPs+++r2b15vrxTn2rXX/d2d//5exO7Z/r0f7dPv+Le2z/pe/99B97fCkAcABqG5tLM5VKeU1FZeAqP3k30ngnK3kfmQAAgH57ddKfdyYAAAAAAAAAAAAAAAAAAAAwuA7i58S2x9zKp6kAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADv6OAAA//9kXtoZ")
+r0 = fspick(0xffffffffffffff9c, &(0x7f0000000000)='.\x00', 0x0)
+fsconfig$FSCONFIG_CMD_RECONFIGURE(r0, 0x7, 0x0, 0x0, 0x0)
+syz_mount_image$ext4(&(0x7f00000004c0)='ext4\x00', &(0x7f0000000500)='./file0\x00', 0x200810, &(0x7f0000000000)={[{@nombcache}, {@barrier}, {@nouid32}, {@grpquota}]}, 0x1, 0x4a6, &(0x7f0000000580)="$eJzs3cFPG9kZAPBvBgiEkEDaHNqqbdI0bVpFscFJUJRTemlVRZGqRj31kFBwEMLGCJs00BzI/1CpkXpq/4QeKvVQKae97233tpfsYaXsbrSrsNIevJqxIYRgYDcES/j3k55m3jzj7z2sec98gF8APetcRKxFxLGIuBcRo+3rSbvEzVbJHvfyxaPp9RePppNoNu98luTt2bXY8jWZE+3nHIqIP/4u4i/Jm3HrK6vzU5VKealdLzaqi8X6yurluerUbHm2vFAqTU5Mjl+/cq10YGM9W/3P89/O3frT///3k2fvr/36b1m3RtptW8dxkFpDH9iMk+mPiFvvIlgX9LXHc6zbHeE7SSPiexFxPr//R6MvfzUBgKOs2RyN5ujWOgBw1KV5DixJC+1cwEikaaHQyuGdieG0Uqs3Lt2vLS/MtHJlYzGQ3p+rlMfbucKxGEiy+kR+/qpe2la/EhGnI+Lvg8fzemG6Vpnp5hsfAOhhJ7at/18OttZ/AOCIG+p2BwCAQ2f9B4DeY/0HgN5j/QeA3mP9B4DeY/0HgN5j/QeAnvKH27ez0lxvf/71zIOV5fnag8sz5fp8obo8XZiuLS0WZmu12fwze6p7PV+lVlucuBrLD4uNcr1RrK+s3q3Wlhcad/PP9b5bHjiUUQEAuzl99umHSUSs3Tiel9iyl4O1Go62tNsdALqmr9sdALrGbl/Qu/yMD+ywRe9rOv6J0JOD7wtwOC7+UP4fepX8P/Qu+X/oXfL/0LuazcSe/wDQY+T4Ab//BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgG9vJC9JWmjvBT4SaVooRJyMiLEYSO7PVcrjEXEqIj4YHBjM6hPd7jQA8JbST5L2/l8XRy+MbG89lnw1mB8j4q//vPOPh1ONxtJEdv3zzeuNJ+3rpW70HwDYy8Y6vbGOb3j54tH0RjnM/jz/TWtz0Szueru0WvqjPz8OxUBEDH+RtOst2fuVvgOIv/Y4In6w0/iTPDcy1t75dHv8LPbJQ42fvhY/zdtax+x78f0D6Av0mqfZ/HNzp/svjXP5cef7fyifod7exvy3/sb8l27Of30d5r9z+41x9b3fd2x7HPGj/p3iJ5vxkw7xL+wz/kc//un5Tm3Nf0VcjJ3jb41VbFQXi/WV1ctz1anZ8mx5oVSanJgcv37lWqmY56iLG5nqN31649Kp3cY/3CH+0B7j/8U+x//vr+/9+We7xP/Vz3d+/c/sEj9bE3+5z/hTw//tuH13Fn+mw/j3ev0v7TP+s49XZ/b5UADgENRXVuenKpXykhMnTpxsnnR7ZgLetVc3fbd7AgAAAAAAAAAAAAAAdHIY/07U7TECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwdH0TAAD//yyP2UE=")
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0x5, 0xdc8}, 0x40, 0x9, 0xb8, 0x2, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+syz_open_dev$usbmon(&(0x7f0000000040), 0x0, 0x0)
+r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000000)='blkio.bfq.io_wait_time\x00', 0x275a, 0x0)
+write$binfmt_script(r1, &(0x7f0000003a80), 0x208e24b)
+mmap(&(0x7f0000000000/0xb36000)=nil, 0xb36000, 0x2, 0x28011, r1, 0x0)
+ftruncate(r1, 0x0)
+syz_open_dev$usbmon(&(0x7f0000000100), 0xfffffffffffbfff9, 0x50980)
+openat$cgroup_ro(0xffffffffffffff9c, 0x0, 0x275a, 0x0)
+
+17.791311578s ago: executing program 2 (id=3):
+socketpair$unix(0x1, 0x2, 0x0, &(0x7f0000000180)={<r0=>0xffffffffffffffff})
+r1 = openat$ptmx(0xffffffffffffff9c, &(0x7f0000bbfff6), 0x0, 0x0)
+ioctl$TCSETS(r1, 0x40045431, &(0x7f0000000000)={0xfffffffc, 0xfffffffc, 0x7fffffff, 0x0, 0x19, "000000110000000400"})
+r2 = socket(0x10, 0x3, 0x0)
+getsockopt$sock_cred(r2, 0x1, 0x11, &(0x7f0000caaffb)={0x0, 0x0, <r3=>0x0}, &(0x7f0000cab000)=0xc)
+setregid(0xffffffffffffffff, r3)
+setfsgid(r3)
+syz_open_pts(r1, 0x0)
+poll(&(0x7f00003be000), 0x0, 0x5d)
+ioctl$VT_RELDISP(r1, 0x5605)
+close_range(r0, 0xffffffffffffffff, 0x0)
+
+17.724847345s ago: executing program 1 (id=9):
+seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0xa, 0x0)
+ioctl$INCFS_IOC_FILL_BLOCKS(0xffffffffffffffff, 0x80106720, 0x0)
+syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+wait4(0x0, 0x0, 0xc0000000, 0x0)
+write$binfmt_script(0xffffffffffffffff, &(0x7f0000000900)={'#! ', './file0', [], 0xa, "5e92b5b12e820e2ba196a6a4e1bed445ecc0e468d00dc855375747f8ce40f4453c5492425fae3b9fff83c23e664c22dea75c654e9ad4e8c3150a290901f32da47775742bf1d7cdae973521aeaaf62975e30679b6ea2487113c65693270c7af2d95c790defec24784afb3d541a9c4ef07cc41a24ff1880172c983baab26ff3fc5ab4d921f69285f78fe48e12c45d724a4000e4a990f465c7e7f96987bafc7883d7280b54c4b9797fc243c55f359783dffdbb713da76cdb29067e9ac339bb069ab777ce8f63c3d5cfdaca3b3ee31603564cfd2350f6ef2b40f93c4c2e049454f99a27fd89d893d567765e2d5ff1dfaa5094f94f5a3f6792d1df406451d16543c0c53a305128249f36c4328a1472f702333fcaa0034542c1e43fc0600f1f6a4a76f3605edba3e9493c226299a0d8b74075f3a14969eea9a22b0e4c47f823a6be7ba99703a27119bad823053d1547fe943327fa1b6bd01c59fa90a7e9d9120905dadc52e6156669804a633dfd3fa3cc501852cfeeb45d12fdd27a035035c2f1b6c5625650aed06bdea7dbf0a34f396068681b252545421570f0cafe1bae8b616c80ed29a9fffb39518fc8ac253c067a751e1c3db77de003541eae05bdc07fe0f11135ad270de682c0494ba2f96541a8ba045d37db709962383b80a1fd91f13fab1e616101f966c70854382ade9c5fc6720167b37eca8519a2941813384b43de07968bf3d58925244d05d6acf8fef8fda8c0b774a07a98bf3e04d7ca67376970dcd3d4b9cfcdfb4ff1d499cdd3920e714d46367f1663ffc6afc847e463495f4941d684daddf8ad86a5945c13f6516f9a8097d6f9ef8317a2749ca1824abd19716f8a2c53552e4400ff0413fb0237e4ff5d5496ea99732642fed3bfe7ad7a13b310b3ddabf414bf40dcedcab63736aa852f914b38bb4a4c1ef800087e91435e7c4abfef7267e462cee06a741d18f64dfdf8bab144c5089233aa75461f4f5c48816d5e6a854ba75a147b9f19eb59c85cced16dd54fd2261676a9fce1775dabc535a504b92669d2132f69c8100ec4b1ef7379fb2f561a92fddc9ee05da1a29998d85a5939630843840e9964d7dd726dd2c7ae0551fd217ce5f05d4374717032aa0f98604885f4143e6e7f18df03095a4d6cc719c0f81ab6ad2690fb10e5fbe826637ad76e3408ff07d53e162665345518f9a9d6cfd4250d50306874e4c065d7c6b36b45d2175b17a7a6e948cf2b96cda41bb4af44cc669a6105e52ec483fa21a23f6640b4e5b64d5c6f8f114659888631642904651705d2be516bdb3a12be5aed5900d9384eeb2c53f6f71b153583d941f2af72b9fade37f0bcc981025df62aff53c8d50d976a3b72228e1da3335ee3189899c01e594998ba57e6f5926a212cba038443c425eea291f52e85fd94c6870c2dadc039ee7bbbe7942034c62bbd40234bf45714c94605dc4f6c678c82ddb9040df66696f0d0f846d82d377a85adf24ed3d8d3b2890b17ffb64998e66de6b1db5403f5a814069d86769a0fbacc94fa89f87b388ad2e1818da58ac915ff725bbea874d29aecfe9e18aa6946295eb07833209035da956d5a319d464f11ddbf6ed57f8412ba8281e3c6e5bbc1133653003e80ef8959148a51ea62ea8efca82608a2ef75accfdb59b613fc37d705a992d7cf833abddf331fb36953e5c7ff30641df56df0e7c327c1f2dec89398ad6ff29d5aa17ccbc60f292238ffb0dd8c1495eb2a4ca85fbfa70a807e60f63df550bd72a6295c776c026df8d99745b1abc9a0cba1d9a4df7c7f603ac189f527049ee824f356ed8d32a1c2de7ad80e9441df220b4e1c06b5abe9d1e84986c4a276dbdf163a615c60fbd2983b1cc2673722d44e0ab12031be2384af118ea9b33b103419abf78068bd1c01f629cce04eba0e8f8e846e03e39a8e9575ef6e1c95d86ab8890b2418f1ae45a33072aca21f3123abbc834fd125e232fc02535a8ed0bac08210696e6ddfcca8be96c04245fe8ad41c90a06d059ab08173cb27888b5e0b64e8905c6c1dc6e3d0c8ca618b42125e4c3a0ebbd16959fa8204406ff3c1c8ca8855083ac150b3d30f1e3f6999c81152c4442d96b90f40c1982ca99a382e2e85618636381a809d6d4575e456f00d823c978dd6fed6df3db19e71d51c4a35627fc45a248e24b2a2ed1e57abc421b8a51a6c88682a17a2c9978810e9c39b346900f2380a215f06f1144d1615540ac79477e5d5cef7bed4216aba356b5282f3b809a143f1081e456405e412373106bd2fb0cfd6cb25d9a540a29b97bdedbded1514e5cbdfa1d0626b0863c4ab423eca74226b48718d092a7f88af169b774ac9e989c6d19e0b5718b4e86b3e1402199417c728a743ebcd726377e0af4c1d46ec45b95779072aa8e83e158372f548dd035473fae7344ef4e0f051d0df66d30be4984bacfcb231dc61af349fef5e7"}, 0x6ce)
+r0 = semget$private(0x0, 0x5, 0x600)
+semop(r0, &(0x7f00000000c0)=[{0x0, 0xd90d, 0x1000}], 0x1)
+semctl$GETZCNT(r0, 0x0, 0xf, &(0x7f0000000080)=""/12)
+r1 = memfd_create(&(0x7f0000000480)='\xff\x00l\x1e\xa0</\x00\x8eO4._\x14zC\x8a\xe8\xe0u\xe0\xff\xf1\xb2\xfd\xf6nz\x05-]\xc2Vk\xaeky\xd3\x83\xe2\xc7\xd3\xe6M^\x98ox\x14\t\xe9Q1\x1dK\x9a\x045\xd37\xb22\xfdD(\xd2\xdd\xa0\xff\x0f\x00\x00\x00\x00\x00\x00v\n\xd8?]k\x14N\x18\xf4\xc2j\xed6g\xfd\xd2\xd4\xe3\x1f\xa6 \xa0\x8d\xb5\x9aE<2`]<\x8cR\xd69\x0fO\xbf\xc3\xbd\xb0\x96\x90\x91k\x86\x1a\x10\xd2\xf5\x8b\xfc\xf4\xd0[\x12\xf5+\x1aS\x02/Yx\xf2jJb\x97\x9c/\x1f5i\xc6\x861\x9a\xff\xc3\xe7\xbfU\xd5\xac\xccB=\x8f\xfd\x84\xeepQ\x93nn\x0f\xc6\xa9?\xad\x8b~\x96@i=G\x9ft\x1d\xcc\xc6Ys7\x7f\x8ehv\xd3$\x13s\xa0\xbfi\xfaFS\xa9=Xe\xf8tI\x15\x882\x8b\x8e-X\xb8\xf2\x9du\x15S^\xec\xce\xfaf$S\x9f\xe7Ed\n\x84\\ u\xd2\x16\xc1\xa5\xa0\xaa\xe8.i\xc8\x0e\vt\xe2\xf1lA\x93\xdd\xce\x8f$\x06v\xbe\xe7\x95nN\xc5\xaa\x1ev\xc6P\x9c\\G&y\x8bYA\xc3}\xd9\x86[\xb2\xf3\x0f\x90%\xcb\x81\xe8\xea\xbcs\x95\xe9\x8eXH\x19m\xdfOY\xf1E9-\xc8\xe7\x13^+(\x034\x82\xafiOO\x14\x8f^\x8c', 0x7)
+socket$nl_generic(0x10, 0x3, 0x10)
+r2 = socket$inet(0x2, 0xa, 0x0)
+ioctl$sock_inet_udp_SIOCOUTQ(r2, 0x5411, &(0x7f0000000080))
+getsockopt$inet_IP_IPSEC_POLICY(r2, 0x0, 0x10, &(0x7f00000011c0)={{{@in=@multicast1, @in6=@dev}}, {{@in=@initdev}, 0x0, @in=@broadcast}}, &(0x7f00000003c0)=0xe8)
+getegid()
+read$eventfd(0xffffffffffffffff, &(0x7f0000000640), 0x8)
+mmap(&(0x7f0000000000/0x2000)=nil, 0x2000, 0x0, 0x4d091, r1, 0x0)
+ftruncate(r1, 0x0)
+ioctl$SECCOMP_IOCTL_NOTIF_ADDFD(0xffffffffffffffff, 0x40182103, 0x0)
+socketpair(0x1, 0x1, 0x0, &(0x7f0000002c40)={<r3=>0xffffffffffffffff, <r4=>0xffffffffffffffff})
+sendto$inet_nvme_of_msg(r4, &(0x7f00000000c0), 0xfffffe3d, 0x0, 0x0, 0x0)
+recvfrom$inet_nvme(r3, &(0x7f00000001c0)=""/4096, 0xfffffffffffffc82, 0x0, 0x0, 0x0)
+r5 = syz_open_dev$tty20(0xc, 0x4, 0x1)
+r6 = ioctl$TIOCGPTPEER(r5, 0x5441, 0x3)
+ioctl$TIOCL_PASTESEL(r6, 0x541c, &(0x7f0000000000))
+mkdir(&(0x7f00000001c0)='./file0\x00', 0x0)
+mount(0x0, &(0x7f000001c000)='./file0\x00', 0x0, 0x0, 0x0)
+symlink(0x0, &(0x7f0000000100)='./file0/bus\x00')
+creat(&(0x7f0000000080)='./file0/bus\x00', 0x0)
+readv(r5, &(0x7f0000000000), 0x0)
+
+17.700566668s ago: executing program 7 (id=8):
+perf_event_open(&(0x7f0000000000)={0x2, 0x80, 0x79, 0x0, 0x0, 0x0, 0x0, 0xe40f, 0x48010, 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x200000, 0x1, @perf_config_ext={0x5, 0xdc8}, 0x440, 0x4, 0xb5, 0x2, 0x1, 0x4, 0x9, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0) (async)
+perf_event_open(&(0x7f0000000000)={0x2, 0x80, 0x79, 0x0, 0x0, 0x0, 0x0, 0xe40f, 0x48010, 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x200000, 0x1, @perf_config_ext={0x5, 0xdc8}, 0x440, 0x4, 0xb5, 0x2, 0x1, 0x4, 0x9, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r0 = openat$sndseq(0xffffffffffffff9c, &(0x7f0000000340), 0x0)
+ioctl$SNDRV_SEQ_IOCTL_SET_CLIENT_INFO(r0, 0x40bc5311, &(0x7f0000000380)={0x80, 0x1, 'client1\x00', 0x0, "09952be30bc57a11", "4cbc2afde7fa7bc724f3d7b83d837bbcd6009e02b4040b37f13cd68b44b0a1d1"})
+r1 = socket$nl_xfrm(0x10, 0x3, 0x6)
+sendmsg$nl_xfrm(r1, &(0x7f0000000180)={0x0, 0x0, &(0x7f0000000040)={&(0x7f00000001c0)=ANY=[@ANYBLOB="f0000000100001000000000000000000fc010000000000000000000000000000fe88000000000000000000000000000100"/64, @ANYRES32=0x0, @ANYRES32=0x0, @ANYBLOB="00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000c77ad3bd5f15dba40000"], 0xf0}}, 0x0)
+
+17.690644164s ago: executing program 0 (id=1):
+r0 = memfd_create(&(0x7f0000000100)='\vem1\xc1\xf8\xa6\x8dN\xc0\xa3w\xe2\xcb\xa2\xba\xe5\xf4\x97\xac#*\xff', 0x0)
+write(r0, &(0x7f0000000040)="06", 0x1) (async)
+mmap(&(0x7f0000000000/0x7000)=nil, 0x7000, 0x80000000004, 0x11, r0, 0x0) (async)
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0x5, 0xdc8}, 0x40, 0x9, 0xb8, 0x2, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x6, 0x0, 0x0, 0x0, 0x0, 0x0, 0x3, 0x0, 0x0, 0x0, 0xfffffffffffffffe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xfffffffffffffffd, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0) (async)
+openat$rfkill(0xffffffffffffff9c, &(0x7f0000000000), 0x28840, 0x0)
+newfstatat(0xffffffffffffff9c, &(0x7f0000000c00)='./file0\x00', 0x0, 0x1000)
+r1 = socket$inet6_tcp(0xa, 0x1, 0x0)
+shutdown(r1, 0x0) (async)
+ppoll(&(0x7f0000000100)=[{r1}], 0x1, 0x0, 0x0, 0x0) (async)
+r2 = socket(0x10, 0x3, 0x0)
+setsockopt$netlink_NETLINK_TX_RING(r2, 0x10e, 0xc, &(0x7f0000000280)={0x4000}, 0x10) (async)
+sendmsg$nl_generic(r2, &(0x7f0000000040)={0x0, 0x0, &(0x7f0000000080)={&(0x7f0000000d00)={0x24, 0x1a, 0xa01, 0x3, 0x0, {0xe}, [@typed={0x8, 0x0, 0x0, 0x0, @pid}, @nested={0x8, 0x6, 0x0, 0x1, [@generic="e02e8bce"]}]}, 0x24}}, 0x0)
+r3 = memfd_create(&(0x7f00000000c0)='[\v\xdbX\xae[\x1a\xa9\xfd\xfa\xad\xd1md\xc8\x85HX\xa9%\f\x1ae\xe0\x00\x00\x00\x00\xfb\xff\x00\x00\x81\x9eG\xd9,\xe2\xc6a\x9f\xe8\xf1\xb3\x86\xe2+Op\xd0\xa2\x82\x1eb;(\xb5\xe1jS\xd6\x91%||\xa0\x8ez\xadT\xc8\f\xe5\x89\xbf3:\x99\x1e\xac`\xc3\xcf\xd3\xae\xd2\a\x11\xa9\xa5^\xff\xf5\x95\xd2q#\xc6\xca\x97\x9d\xcb\x1e\x80\xd6\xd5%N&\xf8#\x80z8Z\xd2}\xf5\xe4\x9f5\x9b\x01\xf9t\xbb\x1er\x14\xdb\xd3\xcd\xfd\xbdnC\xec', 0x0)
+write$binfmt_script(r3, &(0x7f0000000280)={'#! ', '', [{0x20, 'A\x18\xc6\xce\x83\x8b\x06^\xc0-\x9f\x86\x91\xff|G\x8e\xcc\x852\xb1\xba\xedC\xf7\xc0\x83W\xa1\t\xe1\xd0t\xc9\xf0v\x0e\xfe;\xa2O\xb1\xa4!\x18\xd8I\xa8\bG\\;\xb0\x91WzW\xb3\xc1\xd2\x87\x01\xcb\xac\x016V\x89Y\xaf1\x8f'}, {0x20, '[\v\xdbX\xae[\x1a\xa9\xfd\xfa\xad\xd1md\xc8\x85HX\xa9%\f\x1ae\xe0\x00\x00\x00\x00\xfb\xff\x00\x00\x81\x9eG\xd9,\xe2\xc6a\x9f\xe8\xf1\xb3\x86\xe2+Op\xd0\xa2\x82\x1eb;(\xb5\xe1jS\xd6\x91%||\xa0\x8ez\xadT\xc8\f\xe5\x89\xbf3:\x99\x1e\xac`\xc3\xcf\xd3\xae\xd2\a\x11\xa9\xa5^\xff\xf5\x95\xd2q#\xc6\xca\x97\x9d\xcb\x1e\x80\xd6\xd5%N&\xf8#\x80z8Z\xd2}\xf5\xe4\x9f5\x9b\x01\xf9t\xbb\x1er\x14\xdb\xd3\xcd\xfd\xbdnC\xec'}]}, 0xd7)
+execveat(r3, &(0x7f0000000000)='\x00', 0x0, 0x0, 0x1000)
+keyctl$clear(0x7, 0xfffffffffffffffc)
+
+17.680473224s ago: executing program 7 (id=10):
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x5, 0xdc8}, 0x40, 0x9, 0xb8, 0x2, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r0 = syz_mount_image$vfat(&(0x7f00000000c0), &(0x7f0000000300)='./file0\x00', 0x0, &(0x7f0000000ac0)=ANY=[], 0x5, 0x2b7, &(0x7f0000000800)="$eJzs3MtrE18UwPHT9JWmtMnix08UpAfd6GZoo2sxSAtiwFIb8QHCtJ1oyJiUTKhExOrKrfhHuChddlfQ/gPduNONG3fdCC7sQhzJPPpMaWmbTNt8PxDuTe49M/dOJuHcIZO1B++fF/OOkTerEourdIiIrIukJCahjqCMefUe2eqNXO3/9fXivYeP7mSy2dEJ1bHM5LW0qg4OfXrxqi/ottwrq6knaz/TP1b/Xz2/9nfyWcHRgqOlclVNnSp/r5pTtqUzBadoqI7blulYWig5VsVvL/vtebs8O1tTszQzkJitWI6jZqmmRaum1bJWKzU1n5qFkhqGoQMJwX5yCxMTZuaQwdPHPBg0SaWSMTtFpG9XS24hkgEBAIBI7cz/Y/WU/vjy/8VLK9X++0uDQf6/3NMo/7/+zd/Wtvw/LiJNz/93Z0Tt5Uj5P06Jev6fCD6/nrePF4e9Cvk/AAAAAAAAAAAAAAAAAAAAAACnwbrrJl3XTYZl+OgVkbiIhM+jHieag/e/vW3euNc1KGK/m8vN5fwy6LAiIrZYMixJ+eOdD4F6PbwXUOtS8tmeD+Ln53KdXksmLwUvfkSSktoZ77pjt7OjI+rbHt8tia3xaUnKf43j0w3je+TK5S3xhiTly7SUxZYZ77zejH89onrrbnZHfJ/XDwAAAACAs8DQDQ3X74axV7sfv7G+bnh9wF9fDzdcn3fJha5o5w4AAAAAQLtwai+Lpm1blTNXCWd40KjwtwyRjDnc+ck4dAeoxA411CERsfWoew8vG+3VR8ajOiznPnz8fXwbvLEU32emTat0t/ZbCAAAAEArbCb94Ss3ox0QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABtqBV/Jxb1HAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICT4l8AAAD//3uREoU=")
+r1 = socket$inet_udplite(0x2, 0x2, 0x88)
+bind$unix(r1, 0x0, 0x0)
+r2 = open(&(0x7f00000005c0)='./bus\x00', 0x147b42, 0x0)
+r3 = dup(r0)
+sendmsg$AUDIT_MAKE_EQUIV(r3, &(0x7f0000000340)={&(0x7f00000001c0)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f00000002c0)={&(0x7f0000000200)={0x24, 0x3f7, 0x100, 0x70bd26, 0x25dfdbfd, {0x7, 0x5, './file1', './bus'}, ["", "", "", ""]}, 0x24}, 0x1, 0x0, 0x0, 0x4000800}, 0x20004000)
+pwritev2(r2, &(0x7f0000000240)=[{&(0x7f0000000000)="85", 0x1}], 0x1, 0x2000, 0x0, 0x0)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x3, 0x0, 0x0, 0x0, 0xfffffffffffffffe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xfffffffffffffffd, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+rt_sigprocmask(0x0, 0x0, 0x0, 0x0)
+r4 = socket$inet_udplite(0x2, 0x2, 0x88)
+getsockopt$sock_cred(r4, 0x1, 0x11, &(0x7f0000000240)={0x0, <r5=>0x0}, &(0x7f0000000280)=0x5)
+setreuid(0x0, r5)
+quotactl$Q_GETQUOTA(0xffffffff80000700, &(0x7f0000000040)=@sg0, r5, &(0x7f0000000100))
+mmap(&(0x7f0000000000/0x400000)=nil, 0x400000, 0x3000003, 0x200000006c832, 0xffffffffffffffff, 0x0)
+socket$inet_udp(0x2, 0x2, 0x0)
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000180)='./file1\x00', 0x0, &(0x7f0000000d40), 0x7d, 0x421, &(0x7f0000000900)="$eJzs28tvG8UfAPDvrpP29+uDhFIeLQUMBRHxSJq0QA9cQCBxAAkJDuUYkrQKdRvUBIlWEQSEyhFV4o44IvEXcIILAk5IXOGOKlUolxZORmvvJq5jhzycurCfj7TtjHecma9nx56dsQMorWr2TxKxLyJ+jYihZvbmAtXmfzeWF6f+XF6cSqJef+OPpFHu+vLiVFG0eN7ePDOSRqSfJG1/sGn+4qWzk7XazIU8P7Zw7t2x+YuXnp49N3lm5szM+YmTJ08cH3/u2YlnehJnFtf1wx/MHTn0yltXXps6deXtH7/OmrUvP98aR69Uo9op9IbHel1Zn+1vSScDfWwIm1KJiKy7Bhvjfygqsdp5Q/Hyx31tHLCj6vV6fXf300t14D8siX63AOiP4oM+u/8tjls09bgtXHuheQOUxX0jP5pnBiLNywy23d/2UjUiTi399UV2xA6tQwAAtPo2m/881Wn+l8Y9LeXuyPdQhiPizog4EBF3RcTBiLg7olH23oi4b5P1V9vya+c/6dUtBbZB2fzv+Xxv6+b5XzH7i+FKntvfiH8wOT1bmzmWvyYjMbg7y4+vU8d3L/3yWbdzrfO/7MjqL+aCeTuuDrQt0E1PLkxuJ+ZW1z6KODzQKf5kZScgiYhDEXF4i3XMPvHVkW7n/jn+dfRgn6n+ZcTjzf5firb4C8n6+5Nj/4vazLGx4qpY66efL7/erf5txd8DWf/v6Xj9r8Q/nLTu185vvo7Lv33a9Z5mq9f/ruTNRnpX/tj7kwsLF8YjdiWvrn18YvW5Rb4on8U/crTz+D8Qq6/E/RGRXcQPRMSDEfFQ3vaHI+KRiDi6Tvw/vPjoO1uPf2dl8U9vqv83n6ic/f6bbvVvrP9PNFIj+SMbef/baAO389oBAADAv0Xa+A58ko6upNN0dLT5Hf6DsSetzc0vPHl67r3z083vyg/HYFqsdA21rIeO52vDRX6iLX88Xzf+vPL/Rn50aq423e/goeT2dhn/md8r/W4dsOP8XgvKy/iH8jL+obyMfygv4x/Kq9P4/7AP7QBuPZ//UF7GP5SX8Q/lZfxDKW3nd/0SZU5Eels0Q2KHEv1+ZwIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOiNvwMAAP//8HXmZw==")
+setxattr$trusted_overlay_upper(&(0x7f0000000000)='./file1\x00', &(0x7f00000000c0), &(0x7f0000000480)=ANY=[@ANYBLOB="00fb710000cdffffff5b8ef08d434b0b0000b2520021641d35eeba273fb17d19037706e32abbb720e54ab3745b255ad6c2d1f692a2f08f01a9ce1d0e82cbbe6c5529b2554f3849f53f0c1f1f51adf54ac801cc23f7ebd57c666b5d6d626d3336b51f40b914cc8d2d1cb7dd2068ed31f13f89d87f7a6cdf95c7ba12361f2daf4517fd483aeb65ce34be1b47e0ac06dcb963dba6130e709e15db2d9c2af07ccc313e3b3077618a345f40d9cb4a932e27162eee1d96cb7cd668d94c0e552c8691ae20550d9f9af3e0bb0b34595673e2ab1480758daa4784cbf6c7e1303aad6439b7af5bde502ccec42c915116398fa96c011607480abf1a6eb807e758fcd88f35fc0e217f3bae1da7ae06dc3d3e37f7d1981747aa726e4eb78bc276f60aad2b4f50d7877f3d3d32a19704b13c078f0456d5e2246f07e1778bf16c3654066e583407bdd0c88d33d83de8b4874efb8c3c8cee119b6c90494f6e0d9e96a7482b7c799c2f834c6796a8c436ec136cc3fde6fb3af8c45182af716647f70b17de5aa88e02000000bc95dc58c86432a6fa0a13ba410ca498fbd56f660961bff77ed7f334a1bd9c60b7b18cc1030779c0beed45b7317161124adfc835741ecd20a053dd03b79a8158025313258344dcfd97b6285e1f3840f80f5248979361f4c37fc60f68cb8ff27dc5c1838aa179c29418e0592f8ab7ee636c927c0090619e49b245f7a2d0be61e06cacb1342d428e5436e4677e3653bd8b213e45f881a41765f105c1ff9a7f656e870d2dc71c977498867de193273b2516f1d41e0b4e15591b52c0a3d2442ca37a6cf5b4df0336b35e76fc9bab97fe2bd789143b72c5f925a63aac747a00ffb1ffa87c3e66914b92ab807304b57f516d421b7cad25de0297824128c6c9800f6bbffae7331e64a51681df482ccc3dfda289c058a28609386e64e7232cf5522cfcee898e85cf42407301d36e32a9ed3d57121cc4666d751c817be375217d56afa8d47085a3c8cba635068b36609865cf15ec844dbc5d718bad5c3ab8763561099a187e4607705d78d4842fe969e4888ab1429015fcdc21e66e3de4a626b3ad0518b8544f58c6b4a2d0389bbbb05d451784f8388578fda7dd836792bfc9ee91ec959efd307a2edd24df7f58a0eb999b0e9322ee81091a1a709494c9706851d9206ae2b263c64cf64be1253715c4874bdedd638caba34db209d3ddf800"/881], 0xfe57, 0x0)
+
+17.677798962s ago: executing program 6 (id=11):
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0x5, 0xdc8}, 0x40, 0x9, 0xb8, 0x2, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+set_mempolicy(0x6, &(0x7f0000001e40)=0x3, 0x40)
+syz_open_dev$tty20(0xc, 0x4, 0x0)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0xa, 0x0, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x3, 0x0, 0x0, 0x0, 0xfffffffffffffffe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xfffffffffffffffd, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x2, @perf_config_ext={0x8000000000000000, 0xb}}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+mount(0x0, 0x0, &(0x7f0000000300)='ramfs\x00', 0x0, 0x0)
+openat$zero(0xffffffffffffff9c, 0x0, 0x0, 0x0)
+r0 = socket(0x80000000000000a, 0x2, 0x0)
+mkdir(&(0x7f00000002c0)='./file0\x00', 0x0)
+writev(r0, &(0x7f00000003c0)=[{&(0x7f0000000340)="71b711fb71c33a467ed51103398eca1f221b234a65371a543a5de74a5b85220fbcf49828d86c363878c0b5369ca5f351bc434d01f05c3ecb1ab2c3341006702054360cc06be4824238f6d985db91845a76d0c58639083e3eec54da25b2e02e9571dd4b87b43c079e5aae572049b7c906d6", 0x71}], 0x1)
+setxattr$security_capability(0x0, &(0x7f0000000280), 0x0, 0x0, 0x0)
+setxattr$security_capability(&(0x7f0000000040)='./file0\x00', &(0x7f00000000c0), &(0x7f0000000240)=@v3, 0x18, 0x0)
+lgetxattr(&(0x7f0000000000)='./file0\x00', &(0x7f0000000280)=ANY=[], 0x0, 0x0)
+socket$inet6(0xa, 0x3, 0xff)
+r1 = socket$inet6(0xa, 0x3, 0xff)
+perf_event_open(&(0x7f0000000000)={0x2, 0x80, 0x7a, 0x0, 0x0, 0x0, 0x0, 0xe40f, 0x48000, 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x200000, 0x1, @perf_bp={0x0, 0x4d0d232cca7a44bc}, 0x0, 0x4, 0xb5, 0x2, 0x1, 0x7, 0x9, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r2 = socket$nl_netfilter(0x10, 0x3, 0xc)
+sendmsg$IPCTNL_MSG_CT_NEW(r2, &(0x7f0000000080)={0x0, 0x0, &(0x7f00000001c0)={&(0x7f0000000100)=ANY=[@ANYBLOB="980000000001010400000000000000000a0000003c0001802c00018014000300fc00000000000000000000000000000014000400ff0100000000000000000000000000010c0002c64e0001000000000004d8e9ae0a6b5a8cc400018014000300fe8000000000000000000000000000bb14000400fe8800000000000000000000000000010c00028005000100000000000800074000000000"], 0x98}}, 0x0)
+setsockopt$inet6_group_source_req(r1, 0x29, 0x16, &(0x7f0000000040)={0x0, {{0xa, 0x0, 0x0, @dev}}, {{0xa, 0x0, 0x0, @private2}}}, 0x108)
+openat$selinux_context(0xffffffffffffff9c, &(0x7f00000000c0), 0x2, 0x0)
+r3 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='blkio.bfq.io_service_time_recursive\x00', 0x275a, 0x0)
+write$binfmt_aout(r3, &(0x7f00000002c0)=ANY=[], 0xc1)
+mmap(&(0x7f0000000000/0x4000)=nil, 0x4000, 0x2000005, 0x12, r3, 0xffffc000)
+r4 = socket$inet6_icmp_raw(0xa, 0x3, 0x3a)
+timer_create(0x0, &(0x7f0000000680)={0x0, 0x21}, &(0x7f0000000100))
+r5 = open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fcntl$setlease(r5, 0x400, 0x1)
+truncate(&(0x7f0000000000)='./file0\x00', 0x0)
+ioctl$sock_SIOCOUTQNSD(r0, 0x894b, &(0x7f0000000200))
+getsockopt(r4, 0x400000000000003a, 0x1, 0x0, &(0x7f00000000c0))
+
+17.655375672s ago: executing program 2 (id=12):
+fcntl$notify(0xffffffffffffffff, 0x402, 0x25) (async)
+syz_mount_image$ext4(&(0x7f0000000040)='ext4\x00', &(0x7f0000000000)='./bus\x00', 0xe, &(0x7f00000001c0)={[{@noload}, {@resuid={'resuid', 0x3d, 0xee01}}, {@debug_want_extra_isize={'debug_want_extra_isize', 0x3d, 0x2e}}, {@jqfmt_vfsv1}, {@errors_remount}, {@nouid32}]}, 0x3, 0x431, &(0x7f0000000500)="$eJzs289PHFUcAPDvzAKV/hCs9UdpVbQaiT+g0Ko9eNFo4kETEz3UIwJtsNtiCia2IYrG1KNp4t14NPEv8KQXo55MvOrdNGkMl1ZPa2Z3BpZllwJdWO1+Psm07828zXvfffN235vHBtC1hrN/koj9EfF7RAzUsmsLDNf+u7m8OPX38uJUEpXKW38l1XI3lheniqLF6/blmZE0Iv0siSNN6p2/dPncZLk8czHPjy2cf39s/tLlZ2fPT56dOTtzYeLUqZMnxl94fuK5tsSZxXVj6KO5o4dfe+fqG1Onr77787dJEX9DHG0yvNHFJyqVNlfXWQfq0klPBxvClpQiIuuu3ur4H4hSrHbeQLz6aUcbB+yoSq7F5aUKcAdLotMtADqj+KLP1r/FsXuzj867/lJtAZTFfTM/ald6Is3L9Dasb9tpOCJOL/3zVXbEzjyHAABY4/ts/vNMs/lfGvfXlbs730MZjIh7IuJgRNwbEYci4r6IatkHIuLBLdbfuEmyfv6TXttWYJuUzf9ezPe21s7/itlfDJby3IFq/L3JmdnyzPH8PRmJ3j1ZfnyDOn545bcvWl2rn/9lR1Z/MRfM23GtZ8/a10xPLkzeTsz1rn8SMdTTLP5kZScgiYjDETG0zTpmn/rmaKtrt45/A23YZ6p8HfFkrf+XoiH+QrLx/uTYXVGeOT5W3BXr/fLrlTdb1X9b8bdB1v97m97/K/EPJvX7tfNbr+PKH5+3XNNs9/7vS96upvvycx9OLixcHI/oS16vNbr+/MTqa4t8UT6Lf+RY8/F/MFbfiSMRkd3ED0XEwxHxSN72RyPisYg4tkH8P738+Hvbj39nZfFPb6n/VxN90XimeaJ07sfv1lQ6uJX4s/4/WU2N5Gc28/m3mXZt724GAACA/580IvZHko6upNN0dLT2N/yHYm9anptfePrM3AcXpmu/ERiM3rR40jVQ9zx0PF/WF/mJhvyJ/Lnxl6X+an50aq483engocvtazH+M3+WOt06YMf5vRZ0L+MfupfxD93L+Ifu1WT893eiHcDua/b9/3EH2gHsvobxb9sPuoj1P3Qv4x+6l/EPXWm+P279I3kJiXWJSP8TzZDYoUSnP5kAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADa498AAAD//wgz6sQ=") (async)
+pipe(&(0x7f0000000400)={0xffffffffffffffff, <r0=>0xffffffffffffffff})
+write$binfmt_misc(r0, &(0x7f0000000000), 0xfffffecc) (async)
+perf_event_open(&(0x7f0000000080)={0x5, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0x8, 0xdc8}, 0x40, 0x9, 0xb8, 0x3, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0) (async)
+syz_open_pts(r0, 0x189000) (async)
+sendmsg$netlink(0xffffffffffffffff, 0x0, 0x0) (async)
+socketpair$unix(0x1, 0x1, 0x0, &(0x7f0000000100)) (async)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x18a, 0x0, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x9, 0xf340}}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+ioctl$sock_inet_udp_SIOCINQ(r0, 0x541b, &(0x7f0000000000))
+lremovexattr(&(0x7f00000003c0)='./file0\x00', &(0x7f0000000400)=@known='system.posix_acl_default\x00') (async)
+r1 = socket(0x10, 0x80803, 0x0)
+write(r1, &(0x7f0000000000)="120000001a003517fc85bc00fef6000d0a0d", 0x12) (async)
+perf_event_open(&(0x7f0000000000)={0x2, 0x80, 0x7a, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x200000, 0x2, @perf_config_ext={0x5, 0xdc8}, 0x0, 0x1, 0xb5, 0x8, 0x1, 0x4, 0x4, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+ptrace$pokeuser(0x6, 0x0, 0x368, 0x0)
+perf_event_open(&(0x7f000025c000)={0x5, 0x80, 0x3e3, 0x0, 0x0, 0x0, 0x0, 0x0, 0x400, 0xa, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, @perf_config_ext={0x5, 0x8}, 0x0, 0x3, 0x0, 0x4, 0x0, 0x0, 0x7ff, 0x0, 0x0, 0x0, 0x9}, 0x0, 0x4000000000000000, 0xffffffffffffffff, 0x0) (async)
+syz_proc_sys_generated_933(0x2c, 0x0, 0x3, 0x1, 0x1, 0x0, 0x7663a, 0x1)
+r2 = socket$inet_tcp(0x2, 0x1, 0x0)
+setsockopt$inet_opts(r2, 0x0, 0x19, 0x0, 0x0)
+pread64(0xffffffffffffffff, 0x0, 0x0, 0x0)
+
+17.654878953s ago: executing program 3 (id=4):
+mmap(&(0x7f00007fd000/0x800000)=nil, 0x800000, 0x0, 0x40a8871, 0xffffffffffffffff, 0x0)
+r0 = socket$inet6(0xa, 0x3, 0x1)
+timerfd_create(0x7, 0xc00)
+connect$inet6(r0, &(0x7f00000000c0)={0xa, 0x0, 0x0, @loopback}, 0x1c)
+setsockopt$inet6_IPV6_XFRM_POLICY(r0, 0x29, 0x23, &(0x7f0000000340)={{{@in=@dev, @in=@multicast1, 0x0, 0x0, 0x0, 0x0, 0xa}, {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x6}, {}, 0x0, 0x0, 0x1}, {{@in=@empty, 0x4d4, 0x33}, 0x0, @in=@local, 0x0, 0x0, 0x0, 0x4, 0x0, 0x0, 0x1}}, 0xe8)
+sendmmsg(r0, &(0x7f0000000480), 0x2e9, 0x0)
+mlock(&(0x7f0000e4b000/0x3000)=nil, 0x3000)
+mlock(&(0x7f0000800000/0x800000)=nil, 0x800000)
+
+17.647852765s ago: executing program 4 (id=5):
+r0 = openat$cgroup_ro(0xffffffffffffffff, 0x0, 0x0, 0x0)
+socketpair$unix(0x1, 0x1, 0x0, 0x0)
+syz_clone(0x42928100, &(0x7f0000001340), 0x0, &(0x7f0000001380), 0x0, &(0x7f0000001400)="3272837d664e63af58a5d10ae901338ae4bd6d8ebf5b0f5fac1fceec82cc336d4145e830bb5cc381ea96a56db833ad0749dbe3213a2517551ee0fee5bee5fc7b4e2600bed1e24da92e26212325c679962c8630c13af70ceca9ca1c53dc1cc2eea111ccc11e534cf42e1d73224780777bdf1cc774ef58b1be65db9d0fd6ffe4b42e6e1872dd689005ef0a76d7a2e505b50ef3c335e1d72b3618dc72282e9eae785f")
+r1 = socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$ethtool(&(0x7f0000000100), 0xffffffffffffffff)
+sendmsg$ETHTOOL_MSG_LINKMODES_GET(r1, &(0x7f0000000180)={0x0, 0x0, &(0x7f0000000040)={&(0x7f0000000440)=ANY=[@ANYBLOB="14000000", @ANYRES16=r2, @ANYBLOB="e60a0000000000000012282cdf00"], 0x14}}, 0x0)
+mbind(&(0x7f0000ffb000/0x2000)=nil, 0x2000, 0x3, 0x0, 0x4, 0x0)
+setsockopt$inet6_tcp_int(r0, 0x6, 0x24, &(0x7f0000000000)=0x421, 0x4)
+socketpair$unix(0x1, 0x1, 0x0, 0x0)
+
+17.593872106s ago: executing program 2 (id=13):
+syz_mount_image$ext4(&(0x7f0000000040)='ext4\x00', &(0x7f0000000240)='./file0\x00', 0x0, &(0x7f00000001c0), 0x1, 0x79e, &(0x7f00000018c0)="$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")
+r0 = openat$cdrom(0xffffffffffffff9c, &(0x7f0000000000), 0x800, 0x0)
+ioctl$CDROMVOLREAD(0xffffffffffffffff, 0x5313, 0x0)
+ioctl$DVD_WRITE_STRUCT(r0, 0x5390, &(0x7f0000000100)=@physical={0x0, 0x1, [{0x0, 0x0, 0x0, 0x1, 0xb, 0x0, 0x0, 0x5, 0x3, 0x0, 0x0, 0x0, 0x1}, {0x0, 0x0, 0x1, 0x4, 0x7}, {0x0, 0x0, 0x0, 0x9, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x1}, {0x0, 0x0, 0x5, 0x0, 0x0, 0x0, 0x0, 0x4}]})
+fsopen(0x0, 0x1)
+syz_clone(0x0, &(0x7f0000003080), 0x0, 0x0, 0x0, 0x0)
+modify_ldt$write2(0x11, &(0x7f0000000040)={0x0, 0x0, 0x0, 0x0, 0x1, 0x1, 0x1}, 0x10)
+ioprio_set$uid(0x3, 0x0, 0x0)
+r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f00000000c0)='blkio.bfq.io_merged\x00', 0x275a, 0x0)
+write$binfmt_script(r1, &(0x7f0000000940)={'#! ', '', [{0x20, 'blkio.bfq.io_merged\x00'}], 0xa, "6fff159a6c772b471b595ab6d964d6db98cc8088dc5864fe49df627210c1da9d4f7b44bc3be4610bbbe621539dbded42433baf579d7bdcc7c18733eda88cb4b4c6c21f80f0a60406000000b869c410936d66d1c9197766e6f35e5723f48bb927d94697663d6fc51a82dbdd122f013013140034dbf64314303fa981f3e12da2dbd98b1b9300e69acd73ceaabe5fb5845f6da28fdf48560e59d9a996e11d5560b12ca94f9e77864bb0dccda01c11903fd82f9f98afc80b"}, 0xcf)
+pwritev2(r1, &(0x7f0000001800)=[{&(0x7f0000000440)="b00c3a4728e1b3577b2bf0ba6994313f8616c4f7f5c3b4f410d05624ee12bf3ca3187bbee77a853a64257d5a84db336d1a4fdbc0a22263096da6e2bb2af301e73fc597db8ecb8887cde3a8df91fb3781b120399b004da7c52ddbd37a2a35b9a8bc0de9dec036bb5560b958fac70eb86735cfbb29f885f24140757d96b2a99ce18a3129d62b5575609fd1f77abb105240acc194e4258fbb40601d7fd7203f4fe8a5acb5c86c63adfbe95b617db33f0856a59f5740243005a06f0687a3ae44595735404349b109", 0xc6}, {&(0x7f0000000540)="4b40ab72e9133c71fdaa263e4f16c668d0f4c5cc440b645222043e8723a34f734e609915b24c32b4f214439716a37c05d9af217432c6614fc0b92ee36bea6ee087e6576322d8e15fb40ffda77fa625b9160f0eb55eabcc878c00765d1fb2ae2c632ddd2470445db5a27de9ef2a49306caa96b879c35c5a4e979371bfc21433d4146616f82d1ea325928dd54fac1ded0d57a37fee3b45fe39dcd10e8e4e266d46c0b28c49925173352bad7818ce4294b1909855e2947f2e1bb069b5", 0xbb}], 0x2, 0x0, 0x0, 0x14)
+
+17.584229428s ago: executing program 5 (id=6):
+r0 = socket$igmp6(0xa, 0x3, 0x2)
+r1 = openat$cgroup_int(0xffffffffffffffff, &(0x7f0000000000)='memory.low\x00', 0x2, 0x0)
+r2 = dup2(r0, r1)
+ioctl$sock_ipv4_tunnel_SIOCCHGTUNNEL(r2, 0x89f3, &(0x7f00000000c0)={'tunl0\x00', &(0x7f0000000040)={'tunl0\x00', <r3=>0x0, 0x800e, 0x80, 0x81, 0x13, {{0x9, 0x4, 0x1, 0x4, 0x24, 0x65, 0x0, 0x4, 0x29, 0x0, @dev={0xac, 0x14, 0x14, 0x1f}, @broadcast, {[@rr={0x7, 0xb, 0xba, [@multicast2, @rand_addr=0x64010100]}, @end, @generic={0x8c, 0x3, "a9"}, @noop]}}}}})
+setsockopt$inet6_mreq(r2, 0x29, 0x1b, &(0x7f0000000100)={@initdev={0xfe, 0x88, '\x00', 0x0, 0x0}, r3}, 0x14) (async)
+tkill(0xffffffffffffffff, 0x3c) (async)
+io_uring_setup(0x2d1b, &(0x7f0000000140)={0x0, 0xfea5, 0x200, 0x0, 0x336, 0x0, r2})
+recvmsg$unix(r2, &(0x7f0000001680)={&(0x7f00000001c0)=@abs, 0x6e, &(0x7f0000001580)=[{&(0x7f0000000240)=""/186, 0xba}, {&(0x7f0000000300)=""/66, 0x42}, {&(0x7f0000000380)=""/169, 0xa9}, {&(0x7f0000000440)=""/4096, 0x1000}, {&(0x7f0000001440)=""/214, 0xd6}, {&(0x7f0000001540)=""/51, 0x33}], 0x6, &(0x7f0000001600)=[@cred={{0x1c}}, @rights={{0x10}}, @rights={{0x20, 0x1, 0x1, [<r4=>0xffffffffffffffff, 0xffffffffffffffff, <r5=>0xffffffffffffffff, <r6=>0xffffffffffffffff]}}], 0x50}, 0x40000000)
+getsockopt$netlink(r2, 0x10e, 0xa, &(0x7f00000016c0)=""/249, &(0x7f00000017c0)=0xf9) (async)
+sendfile(0xffffffffffffffff, r4, &(0x7f0000001800)=0x3c, 0x5)
+mq_open(&(0x7f0000001840)='\x00', 0x40, 0x12, &(0x7f0000001880)={0x7, 0x4, 0x5, 0x81}) (async)
+mmap$IORING_OFF_CQ_RING(&(0x7f0000ffe000/0x1000)=nil, 0x1000, 0x0, 0x88012, r6, 0x8000000)
+r7 = accept4$packet(r5, &(0x7f00000018c0)={0x11, 0x0, 0x0, 0x1, 0x0, 0x6, @random}, &(0x7f0000001900)=0x14, 0x0)
+sendmsg$inet(r7, &(0x7f0000001ec0)={&(0x7f0000001940)={0x2, 0x4e23, @dev={0xac, 0x14, 0x14, 0x12}}, 0x10, &(0x7f0000001dc0)=[{&(0x7f0000001980)="25fa93", 0x3}, {&(0x7f00000019c0)="bc9f59605dd7aef847bc40b0527ac149d3012ca8a28fd0bd0c147440221a98619948a05699fb5cf9ef1af6", 0x2b}, {&(0x7f0000001a00)="6b98d910a5f14f389346ef51c77b49da1c2b4ae55b91e30e98ec2f088be98fa0c32d62d93d6dc94148bc6ee5b6d43d281d5a5e271cdd0e65ad7f1fa91af01b202424e1380b3b9bd32b1382b279b96da21f1e8f1bd4438655810782340ef6367996f31075f12c17bdcee28e8f92987aa7c68d51b3f04e93c18e35dd38ae43df78451c331ab5433ba276b22d488e97383ebd868d01abfba7d2133f92bdfa4788a6510ba7e22d34b92bd53589f085702acfcacade61e0c4b067be7feff3da21dd26e8f5210fc323cf4ebb6c01705f122bee061580313c3e6030fc367cbd7f125f935fa10bb7ae98a5c9c04d865a05", 0xed}, {&(0x7f0000001b00)="f1dec57ce9857d7fcb8411b783ca22ef3ef43179ffa0cf5898e8b8bc56199976855ab9e69740623d1adaf8377d2c646648728e531053fab1a439391255271208560eec02ac7c45f3c8f4403fbc2e472eb041ed9c6b52fa1e945bf5815ceb5a393d2f71a1f26f40ddbe61bc1551c7c0fe797f23c359148880c265e51bb95acf751cab020aa3ed3aefa5c0d8ef015b91c38f629b8bac80792ab1932bd8e4d08c00bc4606237ced84d555ddc9fad3ad71ae56636a185df8d2814f9d347fabf54d59613217759e094a5339398d78f1e1c3e2172e40c3d454ee5804ac31e4d3f1d2c66832827f50ace0595f2f11b98196", 0xee}, {&(0x7f0000001c00)="b5838cc6bed8a7c493a6a462a6562f6e034eb5677983771c49a44ba18ad2402458c81f76d3e33fcb064559d2bc", 0x2d}, {&(0x7f0000001c40)="e1532639fc798dc22c99e753d440862e758e7d41bd126ffe7bde1e3211ea94920411e8b36d2aa9aaebf579c3a7a1d4522a1019ab4e0b16b0d409b480df48df904a898df2044e56178475ebad71d9c6d11740179341a7d324adb284919ba1dc29c3657e553d22216cf26d710449fa93a37f843f776c2e82ab14a58ec33f84ae1dee89b769bae626aad03c45c9fff1b1259d7e115e17c0afe9d79043b3414f90cce67e3f5be44d5388d1d14375e26ee34c71a808a1b5c61836c7", 0xb9}, {&(0x7f0000001d00)="6c888a6f69e1311268167c8ee2e5df27b2", 0x11}, {&(0x7f0000001d40)}, {&(0x7f0000001d80)="c28c4f560c8c78a051bad531cdbbb62e886e90ece65751a1eceb4ca83a16e57cea20a559ada5392abccc5a9d0a03baa8e4263ba2bebafa", 0x37}], 0x9, &(0x7f0000001e80)=[@ip_tos_int={{0x14, 0x0, 0x1, 0x4}}, @ip_tos_int={{0x14}}], 0x30}, 0x4) (async)
+readv(r4, &(0x7f0000002200)=[{&(0x7f0000001f00)=""/128, 0x80}, {&(0x7f0000001f80)=""/235, 0xeb}, {&(0x7f0000002080)=""/70, 0x46}, {&(0x7f0000002100)=""/30, 0x1e}, {&(0x7f0000002140)=""/178, 0xb2}], 0x5) (async)
+r8 = socket$nl_generic(0x10, 0x3, 0x10)
+r9 = syz_genetlink_get_family_id$tipc2(&(0x7f00000022c0), r4)
+sendmsg$TIPC_NL_BEARER_ENABLE(r8, &(0x7f0000002400)={&(0x7f0000002280)={0x10, 0x0, 0x0, 0x100000}, 0xc, &(0x7f00000023c0)={&(0x7f0000002300)={0xb8, r9, 0x200, 0x70bd25, 0x25dfdbfb, {}, [@TIPC_NLA_LINK={0x58, 0x4, 0x0, 0x1, [@TIPC_NLA_LINK_NAME={0x13, 0x1, 'broadcast-link\x00'}, @TIPC_NLA_LINK_NAME={0x9, 0x1, 'syz0\x00'}, @TIPC_NLA_LINK_NAME={0x13, 0x1, 'broadcast-link\x00'}, @TIPC_NLA_LINK_PROP={0x14, 0x7, 0x0, 0x1, [@TIPC_NLA_PROP_TOL={0x8, 0x2, 0x7}, @TIPC_NLA_PROP_PRIO={0x8, 0x1, 0x17}]}, @TIPC_NLA_LINK_NAME={0x9, 0x1, 'syz1\x00'}]}, @TIPC_NLA_NODE={0x4c, 0x6, 0x0, 0x1, [@TIPC_NLA_NODE_KEY={0x48, 0x4, {'gcm(aes)\x00', 0x20, "f5dca46cd80eb6cb7ba22f18ec0af48eb18b92c70fb9bacaafb4b2265ee9c0c9"}}]}]}, 0xb8}, 0x1, 0x0, 0x0, 0x48021}, 0x80) (async)
+newfstatat(0xffffffffffffff9c, &(0x7f0000002440)='./file0\x00', &(0x7f0000002480), 0x0)
+r10 = inotify_init()
+sendto$inet6(r2, &(0x7f0000002500)="3a5942c32962aa640b7e1e8f6dc5f0fc1f3b6e899448b3a34c1f9b0387c0134c8553233904d053349b7ce885c65fbaec7b361ccd826799dde01b5d49da65876827e8fe86a74f2013d8b7949f45ce16d4ae093f956a657e3c8c3b17429b8b94ef60a0cae3fcf999b2501fc86a3beba47bb1a92d7e", 0x74, 0x8000, &(0x7f0000002580)={0xa, 0x4e21, 0x6, @mcast1, 0x4}, 0x1c)
+shmat(0x0, &(0x7f0000ffc000/0x3000)=nil, 0x4000) (async)
+r11 = syz_genetlink_get_family_id$nl80211(&(0x7f0000002600), r2)
+sendmsg$NL80211_CMD_FRAME_WAIT_CANCEL(r4, &(0x7f0000002700)={&(0x7f00000025c0)={0x10, 0x0, 0x0, 0x400}, 0xc, &(0x7f00000026c0)={&(0x7f0000002640)={0x80, r11, 0x2, 0x70bd27, 0x25dfdbfd, {{}, {@void, @val={0xc, 0x99, {0x23, 0x33}}}}, [@NL80211_ATTR_COOKIE={0xc, 0x58, 0x4}, @NL80211_ATTR_COOKIE={0xc, 0x58, 0x27}, @NL80211_ATTR_COOKIE={0xc, 0x58, 0x7d}, @NL80211_ATTR_COOKIE={0xc, 0x58, 0x23}, @NL80211_ATTR_COOKIE={0xc, 0x58, 0x31}, @NL80211_ATTR_COOKIE={0xc, 0x58, 0x9}, @NL80211_ATTR_COOKIE={0xc, 0x58, 0x7a}, @NL80211_ATTR_COOKIE={0xc, 0x58, 0x1d}]}, 0x80}, 0x1, 0x0, 0x0, 0x80}, 0x20000800) (async)
+ioctl$FAT_IOCTL_SET_ATTRIBUTES(r10, 0x40047211, &(0x7f0000002740)=0x4) (async)
+ioctl$sock_SIOCETHTOOL(r4, 0x8946, &(0x7f0000002800)={'vlan1\x00', &(0x7f0000002780)=@ethtool_coalesce={0xe, 0x5, 0x0, 0x9, 0x1, 0x8, 0x9, 0x0, 0x0, 0x2, 0x30, 0x0, 0x0, 0x400, 0x8, 0x14, 0x80000000, 0x8, 0xfffffffe, 0x8, 0x9af, 0x1}}) (async)
+r12 = open(&(0x7f0000002840)='./file0\x00', 0x4000, 0x9ba458b4bb9e0151)
+mkdir(&(0x7f0000002880)='./file0\x00', 0xe) (async)
+ioctl$sock_SIOCGIFINDEX_80211(r12, 0x8933, &(0x7f0000002900)={'wlan0\x00', <r13=>0x0})
+sendmsg$NL80211_CMD_SET_CQM(r4, &(0x7f0000002a40)={&(0x7f00000028c0)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000002a00)={&(0x7f0000002940)={0xc0, r11, 0x400, 0x70bd27, 0x25dfdbff, {{}, {@val={0x8, 0x3, r13}, @val={0xc, 0x99, {0x6, 0x1a}}}}, [@NL80211_ATTR_CQM={0x50, 0x5e, 0x0, 0x1, [@NL80211_ATTR_CQM_RSSI_THOLD={0x4}, @NL80211_ATTR_CQM_RSSI_THOLD={0x28, 0x1, [0xe2b0, 0x3ff, 0x1, 0x9, 0x6, 0x717a002f, 0x6, 0x8, 0x4]}, @NL80211_ATTR_CQM_TXE_RATE={0x8, 0x5, 0x41}, @NL80211_ATTR_CQM_TXE_RATE={0x8, 0x5, 0x27}, @NL80211_ATTR_CQM_RSSI_LEVEL={0x8, 0x9, 0xe2e5}, @NL80211_ATTR_CQM_RSSI_HYST={0x8, 0x2, 0x2}]}, @NL80211_ATTR_CQM={0x3c, 0x5e, 0x0, 0x1, [@NL80211_ATTR_CQM_RSSI_HYST={0x8, 0x2, 0xee}, @NL80211_ATTR_CQM_TXE_PKTS={0x8}, @NL80211_ATTR_CQM_TXE_PKTS={0x8, 0x6, 0x2}, @NL80211_ATTR_CQM_TXE_RATE={0x8, 0x5, 0x1f}, @NL80211_ATTR_CQM_TXE_PKTS={0x8}, @NL80211_ATTR_CQM_TXE_RATE={0x8, 0x5, 0x10}, @NL80211_ATTR_CQM_TXE_RATE={0x8, 0x5, 0x3a}]}, @NL80211_ATTR_CQM={0xc, 0x5e, 0x0, 0x1, [@NL80211_ATTR_CQM_RSSI_LEVEL={0x8, 0x9, 0xd94c}]}]}, 0xc0}, 0x1, 0x0, 0x0, 0x4880}, 0x40)
+
+17.538721095s ago: executing program 4 (id=14):
+r0 = socket(0x2, 0x2, 0x1)
+shutdown(r0, 0x1) (async)
+unshare(0x400) (async)
+creat(&(0x7f0000000240)='./file0\x00', 0x0) (async)
+r1 = open$dir(&(0x7f0000000000)='./file0\x00', 0x101000, 0x81) (async)
+socketpair$unix(0x1, 0x2, 0x0, &(0x7f00000001c0)={<r2=>0xffffffffffffffff}) (async, rerun: 64)
+pipe(&(0x7f0000000000)={0xffffffffffffffff, <r3=>0xffffffffffffffff}) (rerun: 64)
+splice(r2, 0x0, r3, 0x0, 0x3, 0x0) (async, rerun: 64)
+move_mount(r1, 0x0, 0xffffffffffffff9c, &(0x7f0000000180)='./file0\x00', 0x125) (async, rerun: 64)
+connect$inet(r0, &(0x7f0000000080)={0x2, 0x0, @remote}, 0x10) (async)
+sendto$inet(r0, &(0x7f00000000c0)="eae75e4a49eccf12f662611110d1b942dedbcbadb0c09a6abf8b2e9f1701e58c832857157906768f269eb0fd1e36913c4f324aea131b8936f1b518e8ab72f9998c9047702630dea80398a0a3a3e7415e6e3a83948831cd0ef5465502a107596ef800000000000000e22d8b5bf30af00302f563cee50967aa81f68ff4560a14c519a3dc3727135f0e19c805", 0x8b, 0x0, 0x0, 0x0)
+
+17.53639821s ago: executing program 7 (id=15):
+r0 = socket$nl_xfrm(0x10, 0x3, 0x6)
+getpid()
+r1 = syz_io_uring_setup(0x2152, &(0x7f0000000100), &(0x7f0000000080), &(0x7f0000185000))
+fcntl$lock(r1, 0x6, &(0x7f0000000040))
+ioperm(0x0, 0x8, 0x2)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000280))
+syz_proc_sys_generated_414(0x2b80, 0x20, 0x1, 0x4000, 0x1)
+sendmsg$netlink(r0, &(0x7f0000003c00)={0x0, 0x0, &(0x7f0000003b40)=[{&(0x7f0000003a00)={0xbc, 0x13, 0x1, 0x0, 0x0, "", [@generic="d8e2ba9374bb07bb92b9154cf2db91bbc6010803d36b96a309c2432e88618527713a0bad2ace5687a4523034bb40a037d3f81a962978948ad5e44338", @generic="91d25ae60830040c0fa327b08d96b17b65228ecabfaf5b4e5aa6f17bf56a4db7eacc58b54a1aa3723308c5b0d6cc24a55d86469a5ab02f289d74b8d854a99abc07895349672d684b3805df0bb0cd140823bc193f28267820404403f1831ab2ccf77fc82967a9f6c125f8910706"]}, 0xbc}], 0x1}, 0x0)
+
+17.535844889s ago: executing program 6 (id=16):
+mount(&(0x7f0000000000)=@md0, &(0x7f0000000140)='./file0\x00', &(0x7f0000000180)='gfs2\x00', 0x46080, &(0x7f00000001c0)=')^\x00')
+perf_event_open(&(0x7f0000000300)={0x2, 0x80, 0x47, 0x1, 0x0, 0x0, 0x0, 0x400, 0x48011, 0x9, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x8, 0x2}, 0x6000, 0x9, 0xb8, 0x7, 0x1, 0x2, 0x8, 0x0, 0x0, 0x0, 0x4}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r0 = openat$selinux_validatetrans(0xffffffffffffff9c, &(0x7f0000000440), 0x1, 0x0)
+writev(r0, &(0x7f0000000700)=[{&(0x7f0000000540)='k', 0x1}], 0x1)
+r1 = socket$netlink(0x10, 0x3, 0x0)
+sendmsg$netlink(r1, &(0x7f0000004d80)={0x0, 0x0, &(0x7f0000004d00)=[{&(0x7f0000004980)={0x18, 0x1e, 0x1, 0x0, 0x0, "", [@typed={0x7, 0x0, 0x0, 0x0, @str=')^\x00'}]}, 0x18}], 0x1}, 0x0)
+r2 = shmget$private(0x0, 0x400000, 0x0, &(0x7f000000e000/0x400000)=nil)
+shmat(r2, &(0x7f0000000000/0x13000)=nil, 0x6000)
+shmctl$SHM_LOCK(r2, 0xb)
+shmctl$SHM_STAT(r2, 0xd, &(0x7f0000000040)=""/214)
+shmctl$SHM_UNLOCK(r2, 0xc)
+
+17.535317028s ago: executing program 5 (id=17):
+r0 = socket$nl_generic(0x10, 0x3, 0x10)
+ioctl$sock_SIOCGIFINDEX(r0, 0x8933, &(0x7f00000004c0)={'lo\x00', <r1=>0x0})
+perf_event_open(&(0x7f0000000100)={0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x1, 0x0, 0x0, 0x1, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+perf_event_open(&(0x7f0000000040)={0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}, 0x0, 0x0, 0x0, 0x9}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+madvise(&(0x7f0000bdc000/0x4000)=nil, 0x86ac726dff2f4713, 0xa)
+lstat(&(0x7f00000001c0)='./file0\x00', &(0x7f0000000200)={0x0, 0x0, 0x0, 0x0, <r2=>0x0})
+mount$tmpfs(0x0, &(0x7f0000000000)='./file0\x00', &(0x7f00000000c0), 0x3014820, &(0x7f0000000500)={[{@mode={'mode', 0x3d, 0x3}}, {@usrquota_inode_hardlimit={'usrquota_inode_hardlimit', 0x3d, [0x34, 0x33, 0x6b, 0x31, 0x32, 0x70, 0x65, 0x39]}}, {@huge_advise}, {@huge_within_size}], [{@subj_user={'subj_user', 0x3d, 'ethtool\x00'}}, {@appraise_type}, {@fowner_eq}, {@fowner_lt={'fowner<', r2}}, {@hash}]})
+syz_clone3(&(0x7f0000000400)={0x200, 0x0, 0x0, 0x0, {0x20}, 0x0, 0x0, 0x0, &(0x7f0000000280)=[0x0], 0x1}, 0x58)
+r3 = syz_genetlink_get_family_id$ethtool(&(0x7f0000000040), 0xffffffffffffffff)
+sendmsg$ETHTOOL_MSG_PRIVFLAGS_SET(r0, &(0x7f0000000340)={0x0, 0x0, &(0x7f0000000180)={&(0x7f0000000600)=ANY=[@ANYBLOB='$\x00\x00\x00', @ANYRES16=r3, @ANYBLOB="010000000000000000000e000000040002800c00018008000100", @ANYRES32=r1, @ANYBLOB="fc23b4fad9e7a84840588a9c962521ef7abfed71944931808a783b16de0354e202eb7ddd9da63571091f2ad5f04c1f355635cfe49d5c760d87bde26363998b156b65b5fc82e7e174f3c4f108243da2f22745970638c53749c0b6c6d119a73fa0aaad664608e98e192aafd12fc19415"], 0x24}}, 0x0)
+
+17.478530865s ago: executing program 4 (id=18):
+r0 = socket$inet_udplite(0x2, 0x2, 0x88)
+ioctl$sock_ipv4_tunnel_SIOCADDTUNNEL(r0, 0x89f1, &(0x7f0000000200)={'sit0\x00', &(0x7f0000000240)={'syztnl1\x00', 0x0, 0x0, 0x0, 0x0, 0x0, {{0xd, 0x4, 0x0, 0x0, 0x34, 0x2, 0x0, 0x0, 0x0, 0x0, @broadcast, @rand_addr, {[@lsrr={0x83, 0x1f, 0x7, [@empty, @local, @loopback, @broadcast, @private=0xa010102, @broadcast, @empty]}]}}}}})
+setsockopt$packet_drop_memb(0xffffffffffffffff, 0x107, 0x2, 0x0, 0x0)
+r1 = socket$packet(0x11, 0x2, 0x300)
+ioctl$sock_SIOCGIFINDEX(r1, 0x8933, &(0x7f0000000180)={'lo\x00', <r2=>0x0})
+setsockopt$packet_add_memb(r1, 0x107, 0x1, &(0x7f0000000000)={r2, 0x1, 0x6, @broadcast}, 0x10)
+ioctl$sock_ipv6_tunnel_SIOCGETTUNNEL(0xffffffffffffffff, 0x89f0, 0x0)
+ioctl$sock_ipv6_tunnel_SIOCADDTUNNEL(0xffffffffffffffff, 0x89f1, 0x0)
+ioctl$sock_ipv6_tunnel_SIOCDELTUNNEL(0xffffffffffffffff, 0x89f2, 0x0)
+socket$inet6(0xa, 0x0, 0x0)
+r3 = socket$inet_udplite(0x2, 0x2, 0x88)
+ioctl$sock_inet_udp_SIOCOUTQ(r3, 0x5411, &(0x7f0000000000))
+connect$inet6(0xffffffffffffffff, 0x0, 0x0)
+r4 = socket(0x10, 0x803, 0x0)
+setsockopt$inet_tcp_TCP_CONGESTION(0xffffffffffffffff, 0x6, 0xd, 0x0, 0x0)
+openat$sysfs(0xffffffffffffff9c, 0x0, 0x294400, 0x0)
+syz_mount_image$ext4(&(0x7f0000000040)='ext4\x00', &(0x7f0000000080)='./file0\x00', 0x2010010, &(0x7f0000000000), 0x1, 0x4a7, &(0x7f0000000780)="$eJzs3E1sVEUcAPD/27a0fNkF8YMPZRWNxI8WCioHLxhNuJiY6AGPtRSCFEpoTYQQW43Bo+Fuoh5NPHg2HvBilJPGq568GBNiuIgezDNvd1+7bXfb3e0XdH+/ZNuZ92bfzL/zpp03wxJAxyplX5KIbRHxa0T0V7JzC5Qq3+7cvjryz+2rI0mk6Rt/JeVyf9++OpIXzd+3tZq5mEQUPkpib516Jy5fOTc8NjZ6qZofnDx/cXDi8pXnzp4fPjN6ZvTC0LFjR48cfvGFoedXJM7tWVv3vD++b/eJt66/NnLy+ts/fhXfJuW4Y14cFcVl11mK0tyfZY0nl331u8vNHbPppLv2zO954sbatohmdEVE1l095fHfH10x23n98eqH69o4YLUVehcc6soT0ymwgWWzeaAT5X/os+ff/LWGc491d+t4RBI95fjvVF+VM91RyJ7hi5Vno+2rVH8pIk5O//tZ9oq66xAAACvrxvGIeLbe/K8QD9aUu6+6N1SMiB0RsTMi7o+IXRHxQES57EMR8XCL9Zfm5RfOf37e3FZgTcrmfy9V97bmzv8KeZFiVzW3vRx/T3L67NjooerP5GD09Gb5w4vU8d0rv3zS6FzN/K8v+57Vn88FI6azmv/snrdAd2p4cni5cedufRCxp7te/MmmvEwSEbsjYk8b18867+zTX+5rdL6UXbw6/10Y/xK622jQPOkXEU9V+n865sY/UyZZfH9ysC/GRg8N5nfFQjd/uvZ6o/pr5/9LxN9oK3FZsv7fUvf+n6mumNTu1060Xse13z5u+EyzdPz17/9NyZvldH6Tvjc8OXnpcMSmZHrh8aHZ9+b5vHwW/8ED9cf/zoj/Pq++b29EZDfxIxHxaETsr7b9sYh4PCIOLBL/Dy8/8c4S8ecRtnb/r4As/lMt9X8TiWxc1hzpOvf9N43qb67/j5ZTB6tHmvn912RL27ibAQAA4N5TiIhtkRQGZtKFwsBA5d/w74othbHxiclnTo+/e+FU5TMCxegp5Ctd/TXroZura8PF6JmKiNGh2Xz5/JHyunGapunmcn5gZHxstfbUgeZsbTD+M390rXfrgFW3xD7a/vLX3oj4erW2oYD1sgL76MA9yviHzmX8Q+daYvynaTq1Vk0B1li98T8VcWfh0cTyH2wwi//9twsIG5nnf+hcxj90LuMfOlJLn+tvIbHzxGpdeaMlumaOfDr3v024yxNRuCua0V6iUO9UX0S0f+U0TdPmCu+fd6S3hX6faruFfS2+a+ZXhBV/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgnvZ/AAAA//+DgOOU")
+open(0x0, 0x0, 0x0)
+r5 = syz_io_uring_setup(0x76f7, &(0x7f0000000080)={0x0, 0xe50, 0x10000, 0x1, 0xce}, &(0x7f0000000100), &(0x7f0000000140))
+io_uring_enter(r5, 0x75e5, 0x6951, 0x8, 0x0, 0x0)
+r6 = syz_io_uring_setup(0x4e65, &(0x7f0000000840), &(0x7f00000008c0), &(0x7f0000000900))
+io_uring_enter(r6, 0x0, 0xc46d, 0x1, 0x0, 0x0)
+sendmsg$IPSET_CMD_DEL(0xffffffffffffffff, 0x0, 0x0)
+socket$inet_udp(0x2, 0x2, 0x0)
+connect$inet6(0xffffffffffffffff, 0x0, 0x0)
+getsockname$packet(0xffffffffffffffff, 0x0, 0x0)
+ioctl$sock_ipv4_tunnel_SIOCDELTUNNEL(0xffffffffffffffff, 0x89f2, 0x0)
+ioctl$ifreq_SIOCGIFINDEX_batadv_mesh(0xffffffffffffffff, 0x8933, 0x0)
+socket$nl_route(0x10, 0x3, 0x0)
+ioctl$sock_ipv4_tunnel_SIOCDELTUNNEL(r4, 0x89f2, &(0x7f0000000540)={'syztnl1\x00', &(0x7f0000002800)={'syztnl1\x00', 0x0, 0x0, 0x0, 0x0, 0x3c, {{0x19, 0x4, 0x1, 0x2d, 0x64, 0x66, 0x0, 0x3f, 0x4, 0x0, @multicast1, @multicast1, {[@timestamp_addr={0x44, 0xc, 0xac, 0x1, 0x8, [{@empty, 0x40}]}, @ra={0x94, 0x4, 0x1}, @timestamp={0x44, 0x28, 0x11, 0x0, 0x6, [0x9, 0x0, 0x7fffffff, 0x8000, 0x800, 0x20, 0x7fff, 0x0, 0x2]}, @end, @timestamp={0x44, 0xc, 0x46, 0x0, 0x7, [0xeb7, 0x2]}, @generic={0x82, 0x8, "510da26ac284"}]}}}}})
+
+17.477714119s ago: executing program 3 (id=19):
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0x5, 0xdc8}, 0x40, 0x9, 0xb8, 0x2, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000180)='cgroup.controllers\x00', 0x275a, 0x0)
+r0 = syz_io_uring_setup(0x10aa, &(0x7f00000005c0), &(0x7f0000000640), &(0x7f0000000680))
+io_uring_register$IORING_UNREGISTER_PBUF_RING(r0, 0x17, 0x0, 0x1)
+mlock(&(0x7f0000bff000/0x400000)=nil, 0x400000)
+r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000180)='cgroup.controllers\x00', 0x275a, 0x0)
+ioctl$FS_IOC_SETFLAGS(r1, 0x40086602, &(0x7f0000000000)=0x2000000)
+mremap(&(0x7f0000e95000/0x1000)=nil, 0x1000, 0x1000, 0x7, &(0x7f0000ffc000/0x1000)=nil)
+socketpair$unix(0x1, 0x1, 0x0, &(0x7f0000000040)={<r2=>0xffffffffffffffff, <r3=>0xffffffffffffffff})
+sendmsg$unix(r2, &(0x7f0000000080)={0x0, 0x0, &(0x7f0000000000)=[{&(0x7f00000000c0)='\b', 0x1}], 0x1}, 0x1)
+recvfrom$unix(r3, 0x0, 0x0, 0x0, 0x0, 0x0)
+sendto$unix(r2, &(0x7f0000000240)='g', 0x1, 0x24000881, 0x0, 0x0)
+mlock2(&(0x7f0000f78000/0x3000)=nil, 0x3000, 0x0)
+syz_proc_sys_generated_1243(0x1f8, 0x1, 0x3, 0x1, 0x215, 0x1, 0x249, 0x1, 0x11)
+syz_proc_sys_generated_1243(0x112, 0x0, 0x0, 0x0, 0x1e, 0x0, 0x168, 0x0, 0x0)
+syz_proc_sys_generated_1243(0x23d, 0x1, 0x0, 0x1, 0x19, 0x1, 0x6, 0x0, 0x4)
+
+17.474764151s ago: executing program 5 (id=20):
+creat(&(0x7f0000000300)='./bus\x00', 0x0)
+io_setup(0x80, &(0x7f0000000800)=<r0=>0x0)
+r1 = openat$sr(0xffffffffffffff9c, &(0x7f0000000000), 0x2800, 0x0)
+r2 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x8002, 0x0)
+write$vga_arbiter(r2, 0x0, 0xc)
+ioctl$SG_IO(r1, 0x2285, &(0x7f0000000280)={0x53, 0xfffffffffffffffe, 0x6, 0x0, @buffer={0x0, 0x0, 0x0}, &(0x7f0000000180)="c665d470c706", 0x0, 0x0, 0x18, 0x0, &(0x7f0000000240)})
+openat$cgroup_procs(0xffffffffffffffff, &(0x7f0000000000)='cgroup.procs\x00', 0x2, 0x0)
+prlimit64(0x0, 0xe, &(0x7f0000000140)={0x8, 0x8b}, 0x0)
+syz_mount_image$vfat(&(0x7f00000000c0), &(0x7f00000001c0)='./file0\x00', 0x4204, &(0x7f0000000080)=ANY=[@ANYRES16=0x0, @ANYRESOCT], 0x8, 0x2eb, &(0x7f0000000480)="$eJzs3M9PE0EUwPFHKaUtoe3BaDQxTPSilw1Uz8bGQGJsIgFqBBOTBbbadG1Jt8HUGNGTV+Mf4YFw5Eai/ANcvOnFizcuJh7kYFyzv2gLBUyhFOH7Sci+7sxbZjKFvGl2u/nw3bNi3tLyelVCUSU9IiJbIikJSaDHP4bcOCKNXsv1gZ9fLk9Oz9zLZLOjE0qNZaZupJVSiaGPz1/G/G5r/bKRerz5I/194/zGxc0/U08LlipYqlSuKl3Nlr9V9VnTUPMFq6gpNW4aumWoQskyKl572WvPm+WFhZrSS/OD8YWKYVlKL9VU0aipallVKzWlP9ELJaVpmhqMCw6SW56Y0DNtJs8d8WDQIZVKRu8VkdiultxyVwYEAAC6amf9H3JK+rbqf0m49b/TuV7/r1xZrw48WE349f9apFX9f/Ord62m+j8qIh2v/3dXRGfLoep/nAxDkV2neppeOfV/3P/7db15tDLsBtT/AAAAAAAAAAAAAAAAAAAAAAD8D7ZsO2nbdjI4Bj/1Rwj81ziV9lr/fhGJOqtvs/6n2eT0jETdB/fCCRHz7WJuMecd/Q7rImKKIcOSlN/u+8HnxMGTR8qRkk/mkp+/tJjrdVsyeSm4+SOSlNTOfNseu5sdHVGe5vw+iTfmpyUp51rnp1vmR+Ta1YZ8TZLyeU7KYsq8+76u578aUerO/eyO/JjbDwAAAACA00BT21ru3zVtr3Yvf3t/3fLzAW9/Pdxyfx5OXgp3d+4AAAAAAJwVVu1FUTdNo7JPEJOD+7QfhNtL79uvT2/DDP/1ghH3fheRzs10nyC4kaKpKeqfbO/Kwfw7M+aQtJM15IxHHfa3Bx8b7dVHxruwgm5w4f2HX0d3wVur0QNm2rGg7zj+9wAAAAA4XvWiPzhzu7sDAgAAAAAAAAAAAAAAAAAAAAAAAAAAAADgDDqOrxPr9hwBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAk+JvAAAA//9/4QRx")
+mkdirat(0xffffffffffffff9c, &(0x7f0000000600)='./file0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\x00', 0x0)
+openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='memory.events\x00', 0x275a, 0x0)
+timer_settime(0x0, 0x0, 0x0, 0x0)
+sendmsg$DCCPDIAG_GETSOCK(0xffffffffffffffff, 0x0, 0x4008000)
+sched_setscheduler(0x0, 0x1, &(0x7f0000000080)=0x7)
+getpid()
+sched_setaffinity(0x0, 0x8, &(0x7f00000002c0)=0x2)
+socketpair$unix(0x1, 0x2, 0x0, &(0x7f00000000c0)={<r3=>0xffffffffffffffff, <r4=>0xffffffffffffffff})
+connect$unix(0xffffffffffffffff, &(0x7f0000000180)=@abs={0x1, 0x0, 0x4e21}, 0x6e)
+sendmmsg$unix(r4, &(0x7f00000bd000), 0x318, 0x0)
+recvmmsg(r3, &(0x7f0000001fc0)=[{{&(0x7f0000000840)=@tipc=@id, 0x80, &(0x7f00000008c0), 0x0, &(0x7f00000008c0)=""/16, 0x10}, 0x3}, {{&(0x7f0000002040)=@pppol2tp={0x18, 0x1, {0x0, 0xffffffffffffffff, {0x2, 0x0, @empty}}}, 0x80, &(0x7f0000001e80)=[{&(0x7f00000009c0)=""/90, 0x5a}, {&(0x7f0000000a40)=""/71, 0x47}, {&(0x7f0000000ac0)=""/246, 0xf6}, {&(0x7f0000000900)=""/117, 0x75}, {&(0x7f0000000c40)}, {&(0x7f0000000c80)=""/240, 0xf0}, {&(0x7f0000000d80)=""/4096, 0x1000}, {&(0x7f0000001d80)=""/213, 0xd5}], 0x8, &(0x7f0000001f00)=""/146, 0x92}, 0x9}], 0x2, 0x2, 0x0)
+sched_setaffinity(0x0, 0x8, &(0x7f0000000240)=0xb2)
+io_submit(r0, 0x0, &(0x7f0000000840))
+r5 = socket$inet(0x2, 0x4000000000000001, 0x0)
+setsockopt$inet_tcp_int(r5, 0x6, 0x80000000000002, &(0x7f00000000c0)=0x7a, 0x4)
+bind$inet(r5, &(0x7f0000000080)={0x2, 0x4e23, @loopback}, 0x10)
+setsockopt$SO_ATTACH_FILTER(r1, 0x1, 0x1a, &(0x7f0000000140)={0x3, &(0x7f00000007c0)=[{0x6, 0x0, 0x0, 0xe4}, {0x8, 0x8, 0x7, 0x8}, {0xb, 0xf, 0x21, 0x8}]}, 0x10)
+sendto$inet(r5, 0x0, 0x0, 0x20008040, &(0x7f0000e68000)={0x2, 0x4e23, @empty}, 0x50)
+sendmmsg(r5, &(0x7f0000002f80)=[{{0x0, 0x0, &(0x7f0000000180)=[{&(0x7f0000000340)="b1114a86467579ba8d4d40dce20eb9f0455e57caaa9885e3480525325871f4fe95a927112f5f7f0a0d9b52ff437fc90a54d4032d9bfdfe1f962a394280be15edaf638a0bb830802e3d49229e8300422cd69986f00eb82bfd7da99cc55f75495897f00af6771c57db4eba0b2cdbb25b", 0x6f}], 0x1}}], 0x1, 0x8000)
+writev(r5, &(0x7f0000000100)=[{&(0x7f0000000000)="55c14b6a8cea6a295f2e19ebc8de2a49cf6a4d0c1337360aa4f27c73f89bbc68f8bb730a4a428ee964e822e36b12c9520db58e9b26fcbf6b59dd567d3213522dd10c635034e1a992", 0x48}, {&(0x7f00000002c0)="a01d5da359d80e8be92100d5b0a7294ebab64917fbb4973b436ee945136ba38d631e12ec5d91875768e999153c8c99220f043f175a5ed62e65614eb828f5649aad7961f4971a59ca2f11d99b8596ecae3846d3d5a72af9efd959f12d1bdb1f183dd1aa421b829913838d", 0x6a}, {&(0x7f0000000200)="f8d5a9287ca7d9da23c710d7f64aa051aede3cd10a894462af67add0fd64b49cf5291790b7123d01b418f2", 0x2b}], 0x3)
+sendto$inet(r5, &(0x7f00000003c0)="7a8b7c67c05391e44848db2e0283fba78b947a1705a6d1a1192c90e20ff8f95bede3af7083312d84a8992cab76a25f2f02766ba955c3138f2f3db2c3f14c7c245dee4bca10643ec4923dd5bec1bb34071e6aec53f3d007a40fb644fe55b54a9919ea7b13d85242c2627a7dafc9e685b95f9dfcff93ae21b23662a06921a45d1346dfc44e14c7a12c80bd957f98e26158713258715db7603e3d7056243595e6cdc6ab1d02f5b201c9e525ce7b5a22d83d0125a73358a3fd6fbbc7f0c6a641d96f3496af39dd3435d29e30ec6654207cbd4066c3bea8aa6e6b537323a632c89bf7f9d4687a1b4adbbf9f8cc1a41f47026229770b50d7ef9c732954d52ba6fbf58ecc816a3bdd3241315d30a0f9303437063bf901174b29c7ec43f989bc79e99aa61ef21e42a7c67a42356a336b5483d8df78ab435de6ffaf7fdbd8b421b3fa88e9d2058199c4dde3913c2004dd9f5e2aaecfd6de30ac47dcbeb234b55dd9e7320e45889c47c5cc274021e777962f7b7a0d6690faaf71af9c7cb5ffe2144e3a49ded96a0886068b41386d8f14a6050825e34a2aea4cca1dc141163048c7b85d767fae1fd7790927e08868479c8d0512f0a23171ce17869473eec505e7cbc2d8ddb51b6874fec61691d2cabc49da24f56fca8db40263f88a039954e449ad96122a318f9cb871e843facd6e2c17583363b6a55779e66532fc558e7972004c489ad9303dfea3ae041acbe5daea08bd32fb4e635bee9421adba0bcc314a41742db162cdf34a153b47b426c45649daebfa1b4675c40d444f0aec5f0c0526252ab83cb1f556352c29345583adfd21dc8d5fd6ce5596663202245237ea90c9486d0bdaa3a5394b3d9f833e2c25068e63b8e1d48ebea2c0a0a1ee966e406cb1ca878f29d767f016017ee09f334415e2aa59b6ae694c5544135d4a1a1a70751f5305f2812d82d296f5fbb109e2537fecef0a82ec6595e99b73ca4a10cbef3ead45f14350ac098cac84a669c956d56943b5b0b148913d52186807ade8c8c8346b266a7f8209b6aa5202162b9ab78456e963e18ff76b9b64e70e16284881383dc5514ded19317d50757cdb1834c53ab447ee5a6f20d7db55e532fc52028a87accbb1aefe0c6b82fa0b287156e38daafd1eb09694aa6ea333b608bde6b61f7a387af00cb395133f492c886099e6abfe99c6ca4571bb9fda6c62860419d0c9ad01d34c838954649ad600a20f346583941b30c279a143e1de9e3b6289c84b2a701f904bdda17b7aacb1c002476769d9a3ab9f1d1e0b67094f133473e77d901e0e1dca035e543f983c52d6ddd73b2eab56917afdf2641d30fc59b0c6a1428dc79588354ac8f2b5faaa1d86e338977250edd7b643746dbd5e139a875cf65505460cd44c5703ebfb", 0x3de, 0x0, 0x0, 0x0)
+
+17.473974236s ago: executing program 6 (id=21):
+r0 = perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0x5, 0xdc8}, 0x100100, 0x9, 0xb8, 0x7, 0x1, 0x10004, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r1 = memfd_create(&(0x7f0000001580)='\xff\x00l\x1e\xa0</\x00\x8e._\x14zC\x9a\xe8\xe0u\xe0\xff\xf1\xb2\xfd\xf6nz\x05-\xe2\xc7\xd3\xe6M^\x98\x85x\x14\t\xe9Q1\x1dK\x9a\x045\xd3\x17\xb22\xfdD(\xd2\xdd\xa0\xff\x1f\x00\x00\n\x00\x00\x00v\n\xd8?]k\x14N\x18\xf4\xc2j\xe36g\xfd\xd2\xd4\xe3\x1f\xa6\xc6\xe2\xa6!\x9aE<2`]<\xf2R?8\xb8\xa3\xbf\xc3\x18s\xf7!~0\xc7y\xe2\xb2VP\xbd\xb0\x96\x90\x91k\x86\x1a\x10\xd2\xf5\x8b\xfc\xf4\xd0[\x12\xf5+\x1aS\x02/Yxm\x96\xbfS\x97\x9c/\x1f5i\xc6\x861\x8a\xff\xc3\xe7\xbfU\xd5\xac\xccB=\x8f\xfd26<Z|U6\r\xd7\x18\xad\x1d`\x06\xcfN\a\xf9\xd7 \x1a\xd8\xef\xb6\x9e8Z\t:#r\xa2\xb1h\xc0\xc0a\xa9\xc46A\x01\xac\xe6\xbf !5I\xc9<\x19{)\xa4\xad\v\x923\b\x9d\xbd>,\xc1\x8d\\Rxt\'\xb6\xbf\xc8*\n\xaf\x1b\xec\xfd\xbbY\x99\xb3\x06c\xd6\xf6\xb0\xcd=\xf3\x03`\x93\xff\x05e\xaa$\x00\xeaw\xd9\x10\x0f\x1d\x888\x8cS\x12?R\x99\xda7\xce)\x8f\xcc\x87\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xd32J\xd7\x9f\xea:=\xcc\x17(|L\xda\xc3\x1ca\xe8s\xb6\xebw\xc7\xabS\xd7pJ\xd2\xa1\xcf\xae\x1f2\x9f\x98\xa80\r\x85\xb4\x86\xbc\xd0\xea\xbf\xb1Z\xb7e$\xcf<\ra\x9b\xa5\xdc\v\x1e\xfd\xc7\x91\xf22\xcf\x96\x99\xc1\xbb\xa1j\xe5\xa8\x7f\a\xa9\xa7G\xad\xa3\x8b\xf1\xdb\\]R\x8cf\xac1\xd7V\xaf\xb5\x8e\x10\x95\x9f=2\xd0-\xe1K:\xc3b\x89\x15OS\xa5\x98Ky\x12\xe7Qt#\xeb\x99\a\x10\x1c\xb3N\x85\xeb\x80\x05\x82_\x15\xdc\xbc\xf93\xdd\xf5g\x98\xd4\x8az\xe4`\xa5\x00\x00\x00\x00\xcd\x13\xfc+\xac\xe5\x8bI\f\xd6\x89\xc7HY\xcf\x00O\x88\xe6\x8b\x8bF/\x82u\xffCng@y\xa6=4\xb1}\xa8Yr\xad9\xb9b)\xec}\x87=\x91:IV\xab\xdf\xa2\xba+6D\x1fuf\xdeJYw$L\xa1\x83NH\xe3\xf2\x91\x8cW\xb7\b\x04\x12\x8b\x8bV\x19\xf1\r\xcb\x94\xa3\xf4\xe4\x97$\x99c\rG\xd7#\xe2\xfd\x80\xadR\x83\xdc\xb8d\x15|\xac\xb8g$\x0f@\xca3\x9f\xb1\xea\xc6vQ\x1b\xdb#\xa3\"\x9f\x9e\xd8\xba\x13d\x9bx\x9a\xbf\xee\xf2kQ\xe0\xc4/~7\xcd\xd1\x06\xe5\x17\x9b\bW|\xbc\x86D\x05\xaf<\xdfy,I2f\xa7G\xe3Qp<\'6 x\n\x94f\xf8\xa2\xea\xf4\xa5\x9eY\xf80C\x91\x7f\x16u\x8c(Xl\x90\xd2\x9f\xa9\xb9kJy[\x93\xfe{\xe5\x1a\xe9\xb7T\x19;\xb9\t\xe7\x0ei\xfaZ\xfbS:\x9b\xc1r\xcbM.\xf8\xb8wR\xb3p~b\xcb\v1-\a-\x8a#\xaa1\xa9\x9a\x88\a\xc5\xb9*\xd3?\xac\n\x9c\xcd\xe2\xc9\xbd\xeb\xb3\xf65\xbdaP\t\xd6\x06\x1c\xeeNg\x92>\x92>\xaf\b3\x05\xfdM\xd2F\v\xbd\xeb\x83 \x9d\x90S\x11w\xefg\\\xca\xe2\xfc~w\xbe\xefh#\xc1\xeah\xec\xbfr\xc8Bi\x90\"(\xf2\xc6\xcc\xfbX\x14{\x9e5\x87\x91\xe2\x9b\xd4\xc6\xc2whk+\x0f\x82\xca\xc1@\xcb~P\xe4\x18\xf9E\'\xab\xc7z\xd7\x05V{\xa1X\xa3\x10\x13.]tlz\x12\xde\xf2\xa43\xee#\x92J~\xda \x9b\xc4\xc0V\xb3\x9dCO\x1fu\x1c4\x1d\v}\x1b\xe5>w\xfbsm\xa3\fI|\x96-p\x86\xd3O\xfa\x9a\x8f\xb2\x8e\x88qGEG', 0x7)
+mmap(&(0x7f0000000000/0x800000)=nil, 0x800000, 0x2000002, 0x4d091, r1, 0x0) (async, rerun: 32)
+r2 = perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x1, 0x0, 0x0, 0x7f, 0x8804, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x3, 0x0, 0x0, 0x0, 0xfffffffffffffffe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xfffffffffffffffd, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0) (async, rerun: 32)
+socketpair$unix(0x1, 0x2, 0x0, &(0x7f0000000000)={<r3=>0xffffffffffffffff, <r4=>0xffffffffffffffff}) (async)
+r5 = fsopen(&(0x7f0000000000)='cgroup2\x00', 0x0)
+fsconfig$FSCONFIG_CMD_CREATE(r5, 0x6, 0x0, 0x0, 0x0) (async, rerun: 32)
+r6 = openat$selinux_access(0xffffffffffffff9c, &(0x7f0000000280), 0x2, 0x0) (async, rerun: 32)
+r7 = openat$selinux_avc_cache_stats(0xffffffffffffff9c, &(0x7f00000001c0), 0x0, 0x0)
+preadv2(r7, &(0x7f0000000400)=[{&(0x7f0000000200)=""/234, 0xea}], 0x1, 0x7, 0x3, 0x0) (async)
+r8 = syz_open_dev$ttys(0xc, 0x2, 0x0) (async)
+ioctl$sock_FIOGETOWN(r3, 0x8903, &(0x7f0000000040)=<r9=>0x0)
+ptrace(0x4207, r9) (async)
+sendmsg$unix(r4, &(0x7f0000000300)={&(0x7f0000000100)=@file={0x1, './file0\x00'}, 0x6e, &(0x7f0000000240)=[{&(0x7f0000000180)="62aefa5a5340747aa29e5fa88d0556fcec4053bb595bbec5afe98ea6c6eb5e1fd0eff18a7671a73ceb5f9b786ec5e2dfa6487d63be0915ca065458407cd37b67cb11a2a677597f9a93eb48231a1119ebc24d76d837c37a968683fb61af5d10cd39d0c297baa7286d729cc8de2086005830f993f6e35d2eeffe61d27cea4b249f5b", 0x81}, {&(0x7f0000000040)}], 0x2, &(0x7f00000002c0)=[@rights={{0x34, 0x1, 0x1, [r5, r2, r6, r2, r0, r7, r0, r8, r2]}}], 0x38, 0x40}, 0x2004c040) (async)
+read(r1, &(0x7f0000000580)=""/4096, 0x7ffff000)
+
+17.398009536s ago: executing program 2 (id=22):
+r0 = socket$packet(0x11, 0x2, 0x300)
+setsockopt$packet_rx_ring(r0, 0x107, 0x5, &(0x7f0000000040)=@req3={0x8000, 0x200, 0x80, 0x20000}, 0x1c)
+socket$inet6_tcp(0xa, 0x1, 0x0) (async)
+r1 = socket$inet6_tcp(0xa, 0x1, 0x0)
+sendto$inet6(r1, 0x0, 0x0, 0x20000840, &(0x7f0000b63fe4)={0xa, 0x0, 0x40, @local, 0x4}, 0x1c)
+
+17.397439285s ago: executing program 6 (id=23):
+llistxattr(0x0, 0x0, 0x0)
+r0 = socket$inet_udp(0x2, 0x2, 0x0)
+connect$inet(r0, &(0x7f0000000380)={0x2, 0x0, @remote}, 0x10)
+setsockopt$inet_IP_XFRM_POLICY(r0, 0x0, 0x11, 0x0, 0x0)
+getsockopt$inet6_mreq(0xffffffffffffffff, 0x29, 0x14, &(0x7f00000008c0)={@private2}, &(0x7f0000000900)=0x14)
+sendmmsg(r0, &(0x7f0000007fc0), 0x800001d, 0x0)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x3, 0x0, 0x0, 0x0, 0xfffffffffffffffe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xfffffffffffffffd, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}, 0x0, 0x0, 0x0, 0x0, 0x4, 0x7fff, 0x80}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+socketpair$unix(0x1, 0x2, 0x0, &(0x7f0000000040))
+r1 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000040)='fdinfo/3\x00')
+lseek(r1, 0xc7a7, 0x0)
+mbind(&(0x7f0000001000/0x800000)=nil, 0x800000, 0x0, 0x0, 0x0, 0x2)
+r2 = socket$inet6(0xa, 0x802, 0x0)
+setsockopt$inet6_buf(r2, 0x29, 0x39, &(0x7f0000000040)="ff02040000000001000000000000000000000000000002", 0x17)
+sendmmsg$inet6(r2, &(0x7f00000061c0)=[{{0x0, 0x0, 0x0}}], 0x1, 0x0)
+
+17.30947326s ago: executing program 7 (id=24):
+syz_proc_sys_generated_1062(0x0, 0x1, 0x0, 0x0, 0x10, 0x0, 0x0, 0x2) (async)
+syz_genetlink_get_family_id$ieee802154(0x0, 0xffffffffffffffff)
+perf_event_open(&(0x7f0000000000)={0x2, 0x80, 0x7a, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x200000, 0x2, @perf_config_ext={0x5, 0xdc8}, 0x0, 0x1, 0xb5, 0x8, 0x1, 0x4, 0x4, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0) (async, rerun: 32)
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000040)='./bus\x00', 0x0, &(0x7f0000000480)={[{@resgid={'resgid', 0x3d, 0xee01}}, {@bsdgroups}, {@debug_want_extra_isize={'debug_want_extra_isize', 0x3d, 0x80}}, {@nolazytime}, {@init_itable_val={'init_itable', 0x3d, 0xcc72}}, {@usrquota}, {@errors_remount}, {@resgid}]}, 0xff, 0x431, &(0x7f0000000d40)="$eJzs28tvG8UfAPDvrpO++0t+VXm0FDAURMQjadIWekBIIJA4gIQEh3IMTlqVug1qgkSrCgpC5YgqcUcckfgLOMEF8bggcYU7qlShXlo4Ga29m7iOHfJw6sJ+PtLGM95xZr7eHXt2xhtAaVWzP0nEroj4NSJGWtlbC1RbDzevX6z9ef1iLYlG4/U/kma5G9cv1oqixet25pmxNCL9OOn4hy3z5y+cnq7XZ8/l+YmFM+9MzJ+/8NSpM9MnZ0/Onp06duzI4clnnp462pc4szbd2P/+3IF9L7955dXa8Stv/fBV1qxd+f72OPqlGtVuoTc92u/KBmx3WzoZGmBDWJNKRGSHa7jZ/0eiEksHbyRe+migjQM2VaPRaGztvftSA/gPS6L1uC3/NADKoviiz65/i+02DT3uCNeeb10AZXHfzLfWnqFI8zLDHde3/VSNiOOX/vo822KT5iEAANp9k41/nuw2/kvj7rZy/8vXhkYj4v8Rsac1dRx7I+KuiGbZeyLi3jXWX+3ILx//pFfXE9dqZeO/Z/O1rVvHf8XoL0YreW53M/7h5MSp+uyh/D0Zi+GtWX5yhTq+ffGXT3vtax//ZVtWfzEWzNtxdahjgm5memF6IzG3u/ZhxP6hbvEniysBSUTsi4j966zj1ONfHui175/jX0Ef1pkaX0Q81jr+l6Ij/kKy8vrkxLaozx6aKM6K5X78+fJrverfUPx9kB3/HV3P/8X4R5P29dr5tddx+bdPel7TrPf835K80UxvyZ97b3ph4dxkxJbkleXPTy29tsgX5bP4xw527/97YumduC8ispP4/oh4ICIezNv+UEQ8HBEHV4j/+xceeXv98W+uLP6ZNR3/tScqp7/7ulf9qzv+R5qpsfyZ1Xz+rbaBG3nvAAAA4N8ibf4GPknHF9NpOj7e+r383tiR1ufmF544Mffu2ZnWb+VHYzgtZrpG2uZDJ/O54SI/1ZE/nM8bf1bZ3syP1+bqM4MOHkpuZ4/+n/m9MujWAZvO/VpQXvo/lJf+D+Wl/0N56f9QXt36/wcDaAdw+/n+h7Larv9Dien/UF76P5RS93vjn/vpaG09d/pLlCcR6aZWsS0i7pBIy5kY9CcTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAf/wdAAD//7vP4Js=") (rerun: 32)
+r0 = socket(0x10, 0x3, 0x0)
+setsockopt$netlink_NETLINK_TX_RING(r0, 0x10e, 0xc, &(0x7f0000000040)={0x5}, 0x10)
+write(r0, &(0x7f0000000000)="240000001a005f0214f9f407000904001f00000000000000000000000800040001000000", 0x24)
+mkdirat(0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00', 0x0)
+mount(0x0, &(0x7f0000000240)='./file0\x00', &(0x7f0000000280)='tracefs\x00', 0x0, 0x0) (async)
+r1 = creat(&(0x7f0000000000)='./file0/bus\x00', 0x0) (async, rerun: 64)
+r2 = socket$inet6_udp(0xa, 0x2, 0x0) (rerun: 64)
+setsockopt$inet6_mreq(r2, 0x29, 0x1b, &(0x7f0000000700)={@mcast1}, 0x14)
+r3 = socket$inet_udplite(0x2, 0x2, 0x88)
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0x1, 0x1, 0x15, 0xf9, 0x0, 0x0, 0xa00, 0xe, 0x1, 0x1, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x1, 0x1, 0x0, 0x0, 0x0, 0x2, 0x1, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x1, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x2, 0x4, @perf_config_ext={0x6e, 0x1aa}, 0x8510, 0x7, 0x3, 0x7, 0x1, 0x5, 0x7, 0x0, 0x8, 0x0, 0x7}, 0xffffffffffffffff, 0x2, r1, 0xb) (async)
+setsockopt$inet_udp_int(r3, 0x11, 0x67, &(0x7f0000000040), 0x4) (async)
+r4 = openat$sndtimer(0xffffffffffffff9c, &(0x7f0000000000), 0x0)
+ioctl$SNDRV_TIMER_IOCTL_TREAD(r4, 0x40045402, &(0x7f0000000140)=0x1) (async)
+syz_mount_image$ext4(&(0x7f0000000000)='ext4\x00', &(0x7f00000007c0)='./file0\x00', 0x4c0, &(0x7f0000000040), 0x1, 0x79b, &(0x7f0000000800)="$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") (async)
+chdir(&(0x7f0000004340)='./file0\x00')
+r5 = open(&(0x7f0000000280)='.\x00', 0x0, 0x0) (async)
+r6 = syz_open_procfs$pagemap(0xffffffffffffffff, &(0x7f0000000000))
+ioctl$PAGEMAP_SCAN(r6, 0xc0606610, &(0x7f00000002c0)={0x60, 0x3, &(0x7f0000ffc000/0x4000)=nil, &(0x7f0000ffd000/0x1000)=nil, 0x82, &(0x7f0000000040), 0x0, 0x0, 0x22, 0x11, 0x4, 0x10})
+unlinkat(r5, &(0x7f00000001c0)='./file1\x00', 0x0) (async)
+fcntl$setstatus(r4, 0x4, 0x2800) (async)
+ioctl$SNDRV_TIMER_IOCTL_SELECT(r4, 0x40345410, &(0x7f0000000100)={{0x1, 0x2, 0x0, 0x0, 0xfffffffc}}) (async)
+ioctl$BTRFS_IOC_GET_SUBVOL_INFO(r4, 0x81f8943c, &(0x7f00000bf980)={<r7=>0x0, ""/256, <r8=>0x0, <r9=>0x0})
+ioctl$BTRFS_IOC_GET_SUBVOL_ROOTREF(0xffffffffffffffff, 0xd000943d, &(0x7f00000bfb80)={0x10001, [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {r7}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {0x0, r9}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {r8}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {r7}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {0x0, r9}], 0x40, "6ac3114da0d1fc"}) (async, rerun: 64)
+sendmsg$unix(0xffffffffffffffff, &(0x7f0000000040)={0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4000801}, 0xc044) (async, rerun: 64)
+shutdown(r3, 0x1)
+linkat(r5, &(0x7f0000000180)='./file0\x00', r1, &(0x7f0000000200)='./file0\x00', 0x400)
+
+17.307764367s ago: executing program 6 (id=25):
+r0 = perf_event_open(&(0x7f0000000380)={0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xff9}, 0xffffffffffffffff, 0x0, 0xffffffffffffffff, 0x0)
+mmap$perf(&(0x7f0000ffb000/0x3000)=nil, 0x3000, 0x0, 0x11, r0, 0x0) (async)
+mremap(&(0x7f0000ffc000/0x2000)=nil, 0x2000, 0x2000, 0x3, &(0x7f0000ffe000/0x1000)=nil) (async)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0xe9, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48050, 0xb, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x2, @perf_config_ext={0x4, 0x100}, 0xa, 0x9, 0xb8, 0x9, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x181a}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0) (async, rerun: 64)
+r1 = socket$inet6_tcp(0xa, 0x1, 0x0) (rerun: 64)
+getsockopt$inet6_tcp_int(r1, 0x6, 0xc, &(0x7f0000001000), &(0x7f0000001040)=0x4)
+
+17.224850731s ago: executing program 4 (id=26):
+perf_event_open(&(0x7f0000000000)={0x2, 0x80, 0x7a, 0x0, 0x0, 0x0, 0x0, 0xe40f, 0x48000, 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x200000, 0x1, @perf_bp={0x0, 0x4d0d232cca7a44bc}, 0x0, 0x4, 0xb5, 0x0, 0x1, 0x7, 0x4009, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r0 = socket(0x10, 0x803, 0x0)
+sendmsg$nl_generic(r0, &(0x7f00000001c0)={&(0x7f0000000140)={0x10, 0x0, 0x0, 0x300}, 0xc, &(0x7f0000000180)={&(0x7f0000000340)={0x14, 0x17, 0x2, 0x70bd27, 0x25dfdbfb, {0x3}}, 0x14}, 0x1, 0x0, 0x0, 0x4000000}, 0x40) (async)
+ioctl$sock_ipv6_tunnel_SIOCDELTUNNEL(r0, 0x89f2, &(0x7f0000000080)={'syztnl0\x00', &(0x7f0000000000)={'syztnl2\x00', 0x0, 0x2f, 0x9, 0x1, 0x4, 0x4, @mcast1, @private2={0xfc, 0x2, '\x00', 0x1}, 0x8000, 0x8, 0x7, 0x800}}) (async, rerun: 32)
+r1 = open(&(0x7f0000000040)='./bus\x00', 0x4001c1042, 0x0) (rerun: 32)
+mmap(&(0x7f0000001000/0xa000)=nil, 0xa000, 0x7800007, 0x12, r1, 0x0) (async)
+open(&(0x7f0000000000)='./bus\x00', 0x0, 0x0)
+r2 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+ptrace(0x10, r2)
+r3 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f00000001c0)='memory.current\x00', 0x275a, 0x0)
+write$binfmt_script(r3, &(0x7f0000000000), 0x208e24b)
+mmap(&(0x7f0000000000/0xb36000)=nil, 0xb36000, 0x2000001, 0x13, r3, 0x0)
+ptrace$getregset(0x4204, r2, 0x2, &(0x7f00000004c0)={0x0}) (async)
+perf_event_open(&(0x7f0000000000)={0x2, 0x80, 0x7a, 0x0, 0x0, 0x0, 0x0, 0xe40d, 0x48000, 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x200000, 0x1, @perf_bp={0x0, 0x4d0d232cca7a44bc}, 0x0, 0x4, 0xb5, 0x2, 0x1, 0x591, 0x9, 0x0, 0x0, 0x0, 0x2}, 0x0, 0x3, 0xffffffffffffffff, 0x0) (async)
+connect$inet6(0xffffffffffffffff, 0x0, 0x0) (async)
+mkdir(0x0, 0x0)
+mount(0x0, 0x0, 0x0, 0x0, 0x0)
+umount2(0x0, 0x0) (async)
+r4 = socket$nl_xfrm(0x10, 0x3, 0x6)
+sendmsg$nl_xfrm(r4, 0x0, 0x0) (async)
+r5 = memfd_create(&(0x7f00000001c0)='\xff\x00l\x1e\xa0<.\x00\x8eO4._\x14zC\x8a\xe8\xe0u\xe0\xff\xf1\xb2\xfd\xf6nz\x05-\xe2\xc7\xd3\x06M^\x01ox\x14\t\xe9Q1\x1dK\x9a\x045\xd37\xb22\xfdD(\xd2\xdd\xa0\xff\x0f\x00\x00\x00\x00\a\x00\x00\x00\xb4\xa5\xfd\xf4NR\xd0\x94\xc6\x92\x9b\x00\x00v\n\xd8?]k\x14N\x18\xf4\xc2j\xed6g\xfd\xd2\xd4\xe3\x1f\xa6 \xa0\x8d\xb5\x9aE<2`]<\x8cR\xd69\x0fO\xbf\xc3\xbd\xb0\x96\x90\x91k\x86\x1a\x10\xd2\xf5\x8b\xfc\xf4\xd0[\x12\xf5+\x1aS\x02/Yx\xf2jJb\x97\x9c/\x1f5i\xc6\xd0\xc0\x9a\xff\xc3\xe7\xbf\xbf\xdb\x85\xb4U\xd5\xac\xccB=\x8f\xfd\x95\x0f\xcd\x03}\xfcaq!\xd6\xcd\xe5P\xe6\x87\xf9W\xc3\xb3\x9f=\xb2\x9f\xd0\x1epe\xb1X\xae\xad\xdf\xcc\xe4\xa7C\xb8\xc1pC\x88\xb7\xac\x89,f\xe3\xf0/}\xcf\xad\xa9\xe3\x9dklT\xee&\xa5\xf3\xd5\x03\xf7\xf6\xf61\x00TAp}\\b\x8d\xff\r\'\x9a&\x8b3E\xf4\xb7\xceU\x89\xeb\xef*DY]w\xef\'\xc5V\xd9\xff\x12\x95\xf2\xc8\xab\xa1\xb6\x00\v\x80p\xaf\xf4', 0x4)
+chdir(0x0) (async)
+mkdir(0x0, 0x0) (async)
+creat(0x0, 0x162)
+mmap(&(0x7f0000000000/0x2000)=nil, 0x2000, 0x1000003, 0x12, r5, 0x0) (async)
+mremap(&(0x7f0000a96000/0x1000)=nil, 0x1000, 0x400000, 0x3, &(0x7f0000000000/0x400000)=nil) (async)
+syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+perf_event_open(&(0x7f0000000100)={0x9, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x80084, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xffffffffffffffff, 0xbe7, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xa00000000, 0xfffffffffffffffc, 0x10000000, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp, 0x0, 0x6, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x80000000, 0x0, 0xfffffffffffffffb}, 0x0, 0x0, 0xffffffffffffffff, 0x0) (async)
+r6 = socket$netlink(0x10, 0x3, 0x0)
+sendmsg$netlink(r6, &(0x7f0000006440)={0x0, 0x0, &(0x7f00000063c0)=[{&(0x7f0000000040)=ANY=[@ANYBLOB="2000000010000100000000000000000008000000", @ANYRES32=0x0, @ANYBLOB="08000100e0ed3b00"], 0x20}], 0x1}, 0x0)
+
+17.060899477s ago: executing program 4 (id=27):
+perf_event_open(&(0x7f0000000300)={0x2, 0x80, 0x47, 0x1, 0x0, 0x0, 0x0, 0x400, 0x48011, 0x9, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x8, 0x2}, 0x6000, 0x9, 0xb8, 0x7, 0x1, 0x2, 0x8, 0x0, 0x0, 0x0, 0x4}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r0 = socket$inet_tcp(0x2, 0x1, 0x0)
+bind$inet(r0, &(0x7f0000000000)={0x2, 0x4e20, @multicast2}, 0x10)
+connect$inet(r0, &(0x7f0000000080)={0x2, 0x4e20, @loopback}, 0x10)
+shutdown(r0, 0x1)
+close(r0)
+syz_mount_image$ext4(&(0x7f0000000200)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f00000000c0)={[{@noblock_validity}, {@noinit_itable}, {@inode_readahead_blks={'inode_readahead_blks', 0x3d, 0x8000000}}, {@grpjquota}, {@jqfmt_vfsv0}, {@usrjquota, 0x30}]}, 0x84, 0x47d, &(0x7f00000004c0)="$eJzs3E1vVFUfAPD/vdNCeenTgQeVN3UUjcSXlhZUFm4wmrAxMdEFLmspBCnU0JoIIVKNwaXhE6hLEz+BK9wYZaPGre6NCTHdiC7MmDtzZxjamTJDOx3q/H7J0HPuPbfnf+69p3PmnDsE0LdK2T9JxPaI+CUiRiIiXVqgVP1xa/Hy1F+Ll6eSKJff+CPJDos/Fy9P1Yom+c9t9Uwx0o+T2Nek3rmLl85OzsxMX8jzY/Pn3h2bu3jpuTPnJk9Pn54+P3H06JHD4y++MPH8mrRzOIt17wez+/ccf+vaa1Mnrr39/VdZiNvz/Y3tqCquus5SlOrnZKkn49FV//77yY0dt9PJQNMi19P1C4c2FSIiu1yDlf4/EoW4ffFG4tWPehoc0G3p5mWbCrXEQhn4D8tG80A/qr3RZ59/a691HHv03M1jUZ/HuJW/qnsGKvMgpWL1s9Fwl+ovRcSJhb8/y17RdB4iIrZ0qXIAoC9dPxYRzzYb/6XxYEO5/+VrQ8WI2BEROyPi/xGxKyIeiKiUfSgidndYf2lJfvn456eujn6y8d9L+drWneO/+mpFsZDnhivtH0xOnZmZPpSfk4MxuDnLj69Qxzev/Pxpq32N47/sldVfGwvmcfw+sGSC7uTk/ORq2tzo5ocRMdSs/Ul9JSAbH++JiL338Puzc3bm6S/3t9p/9/avoPk6U0fKX0Q8Vb3+C7HYuCaX3JFaYX1ybChmpg+N1e6K5W78ePX1VvWvqv1rILv+W5ve//X2F5PG9dq5zuu4+usnLT9T3uv9vyl5s5LelG97f3J+/sJ4xKZkYfn2idvH1vK18ln7Dx5o3v93RvzzeX7cvojIbuKHI+KRiMrqbRb7YxHxeEQcWKH93738xDvLNjYshvb6+p/s6Pp3niic/fbrVvW3d/2PVFIH8y3t/P1rN8DVnDsAAADYKNLKM/BJOlpPp+noaPUZ/l2xNZ2ZnZt/5tTse+dPVp+VL8ZgWpvpGmmYDx3P54Zr+Ykl+cOVeeNyuVzeUsmPTs3OdGtNHWjPthb9P/NbodfRAV3X1jpabRGm1TfagA3p7v1/aF3iANbfGjxHA2xQ+j/0L/0f+lez/n8l4lYPQgHW0YD3f+hr+j/0r877f+N/HQRsZN7/oS+t5nv9KyV+ON5e4VocXQpjAyQK90cYHSci7eSo3cMRvY+5nkib7Rrq0X24OSLaLXxl3SLs7d8lAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAtfJvAAAA//9mkeEy")
+perf_event_open(&(0x7f0000000300)={0x2, 0x80, 0x47, 0x1, 0x0, 0x0, 0x0, 0x400, 0x48011, 0x9, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x8, 0x2}, 0x6000, 0x9, 0xb8, 0x7, 0x1, 0x2, 0x8, 0x0, 0x0, 0x0, 0x4}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0) (async)
+socket$inet_tcp(0x2, 0x1, 0x0) (async)
+bind$inet(r0, &(0x7f0000000000)={0x2, 0x4e20, @multicast2}, 0x10) (async)
+connect$inet(r0, &(0x7f0000000080)={0x2, 0x4e20, @loopback}, 0x10) (async)
+shutdown(r0, 0x1) (async)
+close(r0) (async)
+syz_mount_image$ext4(&(0x7f0000000200)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f00000000c0)={[{@noblock_validity}, {@noinit_itable}, {@inode_readahead_blks={'inode_readahead_blks', 0x3d, 0x8000000}}, {@grpjquota}, {@jqfmt_vfsv0}, {@usrjquota, 0x30}]}, 0x84, 0x47d, &(0x7f00000004c0)="$eJzs3E1vVFUfAPD/vdNCeenTgQeVN3UUjcSXlhZUFm4wmrAxMdEFLmspBCnU0JoIIVKNwaXhE6hLEz+BK9wYZaPGre6NCTHdiC7MmDtzZxjamTJDOx3q/H7J0HPuPbfnf+69p3PmnDsE0LdK2T9JxPaI+CUiRiIiXVqgVP1xa/Hy1F+Ll6eSKJff+CPJDos/Fy9P1Yom+c9t9Uwx0o+T2Nek3rmLl85OzsxMX8jzY/Pn3h2bu3jpuTPnJk9Pn54+P3H06JHD4y++MPH8mrRzOIt17wez+/ccf+vaa1Mnrr39/VdZiNvz/Y3tqCquus5SlOrnZKkn49FV//77yY0dt9PJQNMi19P1C4c2FSIiu1yDlf4/EoW4ffFG4tWPehoc0G3p5mWbCrXEQhn4D8tG80A/qr3RZ59/a691HHv03M1jUZ/HuJW/qnsGKvMgpWL1s9Fwl+ovRcSJhb8/y17RdB4iIrZ0qXIAoC9dPxYRzzYb/6XxYEO5/+VrQ8WI2BEROyPi/xGxKyIeiKiUfSgidndYf2lJfvn456eujn6y8d9L+drWneO/+mpFsZDnhivtH0xOnZmZPpSfk4MxuDnLj69Qxzev/Pxpq32N47/sldVfGwvmcfw+sGSC7uTk/ORq2tzo5ocRMdSs/Ul9JSAbH++JiL338Puzc3bm6S/3t9p/9/avoPk6U0fKX0Q8Vb3+C7HYuCaX3JFaYX1ybChmpg+N1e6K5W78ePX1VvWvqv1rILv+W5ve//X2F5PG9dq5zuu4+usnLT9T3uv9vyl5s5LelG97f3J+/sJ4xKZkYfn2idvH1vK18ln7Dx5o3v93RvzzeX7cvojIbuKHI+KRiMrqbRb7YxHxeEQcWKH93738xDvLNjYshvb6+p/s6Pp3niic/fbrVvW3d/2PVFIH8y3t/P1rN8DVnDsAAADYKNLKM/BJOlpPp+noaPUZ/l2xNZ2ZnZt/5tTse+dPVp+VL8ZgWpvpGmmYDx3P54Zr+Ykl+cOVeeNyuVzeUsmPTs3OdGtNHWjPthb9P/NbodfRAV3X1jpabRGm1TfagA3p7v1/aF3iANbfGjxHA2xQ+j/0L/0f+lez/n8l4lYPQgHW0YD3f+hr+j/0r877f+N/HQRsZN7/oS+t5nv9KyV+ON5e4VocXQpjAyQK90cYHSci7eSo3cMRvY+5nkib7Rrq0X24OSLaLXxl3SLs7d8lAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAtfJvAAAA//9mkeEy") (async)
+
+17.05954842s ago: executing program 2 (id=28):
+r0 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r1 = syz_genetlink_get_family_id$netlbl_mgmt(&(0x7f00000000c0), r0)
+syz_proc_sys_generated_848(0xa, 0x0, 0x14, 0x1, 0x1, 0x0, 0x0, 0x0)
+sendmsg$NLBL_MGMT_C_ADD(r0, &(0x7f0000000200)={0x0, 0x0, &(0x7f00000001c0)={&(0x7f0000000440)=ANY=[@ANYBLOB='L\x00\x00\x00', @ANYRES16=r1, @ANYBLOB="0100000f980000000000010000000600010000400000080002000500000014030500fe00000100000000000000000000000014000600000000000000000000000000000000001a4b17a9a0bf2a3df086d02c2b003720295eb94bbe47bad29278855e38889533d7ded74146640c86e9"], 0x4c}}, 0x0)
+syz_genetlink_get_family_id$nl802154(&(0x7f0000000180), 0xffffffffffffffff)
+syz_mount_image$ext4(&(0x7f00000005c0)='ext4\x00', &(0x7f0000000000)='./bus\x00', 0x1200454, &(0x7f0000000280)={[{@nomblk_io_submit}, {@grpquota}]}, 0x4, 0x4f7, &(0x7f00000035c0)="$eJzs3U1vW1kZAODXzpeTyUwywywAAVOGgYKqOonbRlUXUFYIoUqILkFqg+NGUew4ip3ShC5SiZ+ARCXEAlaIH8C6K/ZsgO7YlAUSHxGoqcTC6F7fpG4aJylJ4xA/j3R1z7nH9ntOk3uO/Fa5J4C+dSEiNiNiOCLuRsREdj2XHXGzfSSve771sLy99bCci1br9j9yaXtyLTrek3gn+8xCRHzvWxE/zL0et7G+sTRXrVZWs/pUs7Yy1VjfuLxYm1uoLFSWS6XZmdnp61eulU5srB/VhrPS55/9fvNrP066NZ5d6RzHSWoPfWg3TmIw/hjfeRvBemAgHU/794f/P/mI+CAiPk7v/4kYSH+aAMB51mpNRGuisw4AnHf5NAeWyxezXMB45PPFYjuH92GM5av1RvPSvfra8nw7VzYZQ/l7i9XKdJYrnIyhXFKfScsv66U99SsR8X5E/HRkNK0Xy/IMANAr7+xZ//890l7/AYBzrtDrDgAAp876DwD9x/oPAP3H+g8A/cf6DwD9x/oPAP3H+g8AfeW7t24lR2s7e/71/P31taX6/cvzlcZSsbZWLpbrqyvFhXp9oVopluu1wz6vWq+vzFyNtQeTX19pNKca6xt3avW15ead9LnedypDpzIqAOAg73/05GkuIjZvjKZHdOzlYK2G8y3f6w4APTPQ6w4APeMp3NC/jvEdX3oAzol9tuh9RSEiRvdebLVarbfXJeAtu/gZ+X/oV/L/0L/k/6F/yf9D/2q1ckfd8z+O+kIA4GyT4we6/P//B9n5N9kjQn4wv/cVjw/75OFj9gwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADOrp39f4vZXuDjkc8XixHvRsRkDOXuLVYr0xHxXkT8aWRoJKnP9LjPAMBx5f+ay/b/ujjxyfje1uHci5HIdvH60c9v/+zBXLO5+ofk+j93rzcfZ9dLveg/AHCYnXU6PXd8kX++9bC8c5xmf/72zYgotONvbw3H9m78wRhMz4UYioixf+WyeluuI3dxHJuPIuLT+40/F+NpDqS98+ne+Ensd081fv6V+Pm0rX1O/i0+dQJ9gX7zJJl/bu53/+XjQnre//4vpDPU8WXzX/JR5e10DnwZf2f+G+gy/104aoyrv/t2uzT6etujiM8ORuzE3u6Yf3bi57rE/+SI8f/8uS983K2t9cuIi7F//M5YU83aylRjfePyYm1uobJQWS6VZmdmp69fuVaaSnPUU91Xg7/fuPRet7Zk/GNd4hcOGf+Xjzj+X/3n7ve/eED8r35pv/j5+PCA+Mma+JUjxp8b+22hW1sSf77L+A/7+V86Yvxnf9l4bdtwAKB3GusbS3PVaiUKWWG1oaBwUOEnv375a3MW+nNWCt84rVjD8UbvarW6Nm0e8PZuM8ZJZN2As2D3po+IF73uDAAAAAAAAAAAAAAAsK//6Y+Qnv7ijd7V6zECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwfv03AAD//4O00rs=")
+accept(0xffffffffffffffff, 0x0, &(0x7f0000000240))
+syz_open_dev$sg(0x0, 0x0, 0x805)
+r2 = socket$inet6_tcp(0xa, 0x1, 0x0)
+r3 = getuid()
+syz_mount_image$msdos(&(0x7f0000000140), &(0x7f0000000040)='./file0\x00', 0x0, &(0x7f0000000100)=ANY=[@ANYRES64=r3, @ANYRESDEC, @ANYRES32=r3], 0x1, 0x525, &(0x7f0000000180)="$eJzs2D9rE2EcB/Bf01ijU2dxeMDFqVQ3JyOSQvFAUDLoZKBxyYmQWy6Z+hJ8Ab4wB1+EZOoWKXdVUxx7f2g/nyU/8j3ueb7PcAf36fGXxdnX4vOPb99jNN6LwTgeDC724jAGceU8AIDb5GK7jV/bShx0vRsAoA07738A4E54/+Hjm1dZNnmX0ihic15Oy2n1W+Unp9nkOF369+PApiyn+3/yZ6mym9+Lh3X+/L/5QTx9UuWX2eu32bX8fpw13h4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO62o5SGEZFSSod//92U5XS/yo/SlWt5NZ2cZpPj+oLdfBiPhq3VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG5AsVovZnk+X96yIeJntLzoqD7SlpuO62X7cvJNDi+buPOLiOhLwR4NHT6UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAThWr9WKW5/Nl0fVOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC+KFbrxSzP58sGh647AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN34HQAA//+kWi5A")
+mkdir(&(0x7f00000002c0)='./file0\x00', 0x0)
+r4 = open(&(0x7f0000001100)='./bus\x00', 0x14d27e, 0x0)
+r5 = open(&(0x7f0000000080)='./bus\x00', 0x400141042, 0x0)
+fallocate(r5, 0x0, 0x0, 0x1000f0)
+sendfile(r4, r5, 0x0, 0x8801400)
+setsockopt$inet6_tcp_int(r2, 0x6, 0xc, &(0x7f0000000140)=0x8, 0x33)
+r6 = memfd_create(&(0x7f0000000080)='\xff\x00l\x1e\xa0</\x00\x8e._\x14zC\x9a\xe8\xe0u\xe0\xff\xf1\xb2\xfd\xf6nz\x05-\xe2\xc7\xd3\xe6M^\x98\x85x\x14\t\xe9Q1\x1dK\x9a\x045\xd3\x17\xb22\xfdD(\xd2\xdde\xa0\xff\x1f\x00\x00\n\x00\x00\x00v\n\xd8?]k\x14N\x18\xf4\xc2j\xe36g\xfd\xd2\xd4\xe3\x1f\xa6\xc6\xe2\xa6!\x9aE<2`]<\xf2R?8\xb8\xa3\xbf\xc3\x18s\xf7!~0\xc7y\xe2\xb2VP\xbd\xb0\x96\x90\x91k\x86\x1a\x10\xd2\xf5\x8b\xfc\xf4\xd0[\x12\xf5+\x1aS\x02/Yxm\x96\xbfS\x97\x9c/\x1f5i\xc6\x861\x8a\xff\xc3\xe7\xbfU\xd5\xac\xccB=\x8f\xfd26<Z|U6\r\xd7\x18\xad\x1d`\x06\xcfN\a\xf9\xd7 \x1a\xd8\xef\xb6\x9e8Z\t:#r\xa2\xb1h\xc0\xc0a\xa9\xc46A\x01\xac\xe6\xbf !5I\xc9<\x19{)\xa4\xad\v\x923\b\x9d\xbd>,\xc1\x8d\\Rxt\'\xb6\xbf\xc8*\n\xaf\x1b\xec\xfd\xbbY\x99\xb3\x06c\xd6\xf6\xce\xcd=\xf3\x03`\x93\xff\x05e\xaa$\x00\xeaw\xd9\x10\x0f\x1d\x888\x8cS\x12?R\x99\xda7\xce)\x8f\xcc\x87\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\t\x002J\xd7\x9f\xea:=\xcc\x17(|L\xda\xc3\x1ca\xe8s\xb6\xebw\xc7\xabS\xd7pJ\xd2\xa1\xcf\xae\x1f2\x9f\x98\xa80\r\x85\xb4\x86\xbc\xd0\xea\xbf\xb1Z\xb7e$\xcf<\ra\x9b\xa5\xdc\v\x1e\xfd\xc7\x91\xf22\xcf\x96\x99\xc1\xbb\xa1j\xe5\xa8\x7f\a\xa9\xa7G\xad\xa3\x8b\xf1\xdb\\]R\x8cf\xac1\xd7V\xaf\xb5\x8e\x10\x95\x9f=2\xd0-\xe1K:\xc3b\x89\x15OS\xa5\x98Ky\x12\xe7Qt#\xeb\x99\a\x10\x1c\xb3N\x85\xeb\x80\x05\x82_\x15\xdc\xbc\xf93\xdd\xf5g\x98\xd4\x8az\xe4`\xa5\x00\x00\x00\x00\xcd\x13\xfc+\xac\xe5\x8bI\f\xd6\x89\xc7HY\xcf\x00O\x88\xe6\x8b\x8bF/\x82u\xffCng@y\xa6=4\xb1}\xa8Yr\xad9\xb9b)\xec}\x87=\x91:IV\xab\xdf\xa2\xba+6D\x1fuf\xdeJYw$L\xa1\x83NH\xe3\xf2\x91\x8cW\xb7\b\x04\x12\x8b\x8bV\x19\xf1\r\xcb\x94\xa3\xf4\xe4\x97$\x99c\rG\xd7#\x04\x82\x85\xe9uMW\x1ea\x85\b\x0f\xee\xe2\xfd\x80\xadR\x83\xdc\xb8d\x15|\xac\xb8g$\x0f@\xca3\x9f\xb1\xea\xc6vQ\x1b\xdb#\xa3\"\x9f\x9e\xd8\xba\x13d\x9bx\x9a\xbf\xee\xf2kQ\xe0\xc4/~7\xcd\xd1\x06\xe5\x17\x9b\bW|\xbc\x86D\x05\xaf<\xdfy,I2f\xa7G\xe3Qp<\'6 x\n\x94f\xf8\xa2\xea\xf4\xa5\x9eY\xf80C\x91\x7f\x16u\x8c(Xl\x90\xd2\x9f\xa9\xb9kJy[\x93\xfe{\xe5\x1a\xe9\xb7T\x19;\xb9\t\xe7\x0ei\xfaZ\xfbS:\x9b\xc1r\xcbM.\xf8\xb8wR\xb3p~b\xcb\v1-\a-\x8a#\xaa1\xa9\x9a\x88\a\xc5\xb9*\xd3?\xac\n\x9c\xcd\xe2\xc9\xbd\xeb\xb3\xf65\xbdaP\t\xd6\x06\x1c\xeeNg\x92>\x92>\xaf\b3\x00\x00\x00\x00F\v\xbd\xeb\x83 \x9d\x90S\x11w\xefg\\\xca\xe2\xfc~w\xbe\xefh#\xc1\xeah\xec\xbfr\xc8&\x9d\x00b\xdfmI\xc6\xfbX\x14{\x9e5\x87\x91\xe2\x9b\xd4\xc6\xc2whk+\x0f\x82\xca\xc1@\xcb~P\xe4\x18\xf9E\'\xab\xc7z\xd7\x05V{\xa1X\xa3\x10\x13.]tlz\x12\xde\xf2\xa43\xee#\x92J~\xda \x9b\xc4\xc0V\xb3\x9dCO\x1fu\x1c4\x1d\v}\x1b\xe5>w\xfbsO\xfa\x9a\x8f\xb2\x8e\x88qGEG\x00\x00\x00\x00\x00\x00\x00\x00\x007\xdbX\xe7\xc3\xdf', 0x7)
+fcntl$addseals(r6, 0x409, 0xc)
+fcntl$addseals(r6, 0x409, 0xa)
+open(&(0x7f0000000100)='.\x00', 0x555502, 0x0)
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0x5, 0xdc8}, 0x40, 0x9, 0xb8, 0x2, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x3, 0x0, 0x0, 0x0, 0xfffffffffffffffe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xfffffffffffffffd, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xfffffffc}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r7 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r8 = syz_genetlink_get_family_id$netlbl_mgmt(&(0x7f0000000000), r7)
+sendmsg$NLBL_MGMT_C_ADD(r7, &(0x7f0000000280)={0x0, 0x0, &(0x7f0000000240)={&(0x7f0000000100)={0x3c, r8, 0x1, 0x0, 0x0, {0x1, 0x0, 0x1400}, [@NLBL_MGMT_A_PROTOCOL={0x8, 0x2, 0x5}, @NLBL_MGMT_A_DOMAIN={0xe, 0x1, 'NLBL\x04\tGoT\x00'}, @NLBL_MGMT_A_IPV4MASK={0x8, 0x8, @empty=0x8000004}, @NLBL_MGMT_A_IPV4ADDR={0x8, 0x7, @initdev={0xac, 0x1e, 0x0, 0x0}}]}, 0x3c}, 0x9}, 0x0)
+creat(&(0x7f0000000100)='./bus\x00', 0x100)
+r9 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r10 = syz_genetlink_get_family_id$netlbl_cipso(&(0x7f0000000040), r9)
+sendmsg$NLBL_CIPSOV4_C_LISTALL(r9, &(0x7f0000000200)={0x0, 0x0, &(0x7f0000000140)={&(0x7f0000001580)={0x14, r10, 0xa2689f87ea504f63}, 0x14}}, 0x0)
+
+16.770303329s ago: executing program 0 (id=29):
+r0 = openat$bsg(0xffffffffffffff9c, &(0x7f0000000040), 0x513002, 0x0)
+mmap$IORING_OFF_SQES(&(0x7f0000ffd000/0x3000)=nil, 0x3000, 0x0, 0x13, r0, 0x10000000)
+syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+perf_event_open(&(0x7f0000000000)={0x2, 0x80, 0x78, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x200000, 0x2, @perf_config_ext={0x5, 0xdc8}, 0x0, 0x1, 0xb5, 0x2, 0x1, 0x4, 0x4, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+perf_event_open(&(0x7f0000000040)={0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0xa, 0x2, 0x2, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x6fffffff, 0x8}, 0x100854, 0xfffffffffffffffe, 0x0, 0x0, 0x0, 0xffffffff, 0xfffc}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+madvise(&(0x7f0000bdc000/0x4000)=nil, 0x86ac726dff2f4713, 0xa)
+syz_clone(0x4c840200, 0x0, 0x0, 0x0, 0x0, 0x0)
+mmap$IORING_OFF_SQES(&(0x7f0000ffa000/0x4000)=nil, 0x4000, 0x0, 0x13, r0, 0x10000000)
+syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+mmap$IORING_OFF_SQES(&(0x7f0000ffc000/0x3000)=nil, 0x3000, 0x0, 0x13, r0, 0x10000000)
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0x5, 0xdc8}, 0x40, 0x9, 0xb8, 0x2, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r1 = signalfd(0xffffffffffffffff, &(0x7f0000000040), 0x8)
+signalfd(r1, &(0x7f0000002040), 0x8)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x18a, 0x0, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x9, 0xf340}}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r2 = socket$packet(0x11, 0x3, 0x300)
+close(r2)
+
+15.437489697s ago: executing program 2 (id=30):
+r0 = socket$nl_generic(0x10, 0x3, 0x10)
+sendmsg$DEVLINK_CMD_PORT_GET(r0, &(0x7f0000000d40)={&(0x7f0000000c00), 0xc, 0x0, 0x1, 0x0, 0x0, 0x100}, 0xc001)
+sendmsg$SEG6_CMD_DUMPHMAC(r0, 0x0, 0x48000)
+setsockopt$inet_mreqn(0xffffffffffffffff, 0x0, 0x23, 0x0, 0x0)
+setsockopt$inet_msfilter(0xffffffffffffffff, 0x0, 0x29, 0x0, 0x0)
+setsockopt$inet_msfilter(0xffffffffffffffff, 0x0, 0x29, &(0x7f0000000000)={@multicast2, @loopback, 0x1, 0x2, [@dev={0xac, 0x14, 0x14, 0x21}, @dev={0xac, 0x14, 0x14, 0x43}]}, 0x18)
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0x5, 0xdc8}, 0x40, 0x9, 0xb8, 0x2, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+socket$inet6(0xa, 0x2, 0x3a)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x18a, 0x0, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x9, 0xf340}}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r1 = inotify_init1(0x0)
+inotify_add_watch(r1, &(0x7f0000000000)='.\x00', 0x80000002)
+readv(r1, 0x0, 0x0)
+r2 = open(0x0, 0x60142, 0x0)
+fallocate(r2, 0x0, 0x0, 0x3)
+r3 = socket$packet(0x11, 0x3, 0x300)
+memfd_create(&(0x7f0000000000)='&\x01{\x00', 0xc)
+setsockopt$packet_tx_ring(r3, 0x107, 0xd, 0x0, 0x0)
+ioctl$sock_inet_SIOCSARP(0xffffffffffffffff, 0x8955, 0x0)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x3, 0x0, 0x0, 0x0, 0xfffffffffffffffe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xfffffffffffffffd, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}, 0x0, 0x0, 0x0, 0x7}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+perf_event_open(&(0x7f0000000440)={0x5, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0xffffffff84ac50c0, 0x8}}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+ioctl$FS_IOC_GETFSMAP(r0, 0xc0c0583b, &(0x7f0000000140)={0x0, 0x0, 0x8, 0x0, '\x00', [{0xfff, 0x9, 0x9d, 0x1, 0x8, 0x400}, {0x9, 0x2, 0x6, 0x100000000, 0x401, 0x4}], ['\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00']})
+r4 = perf_event_open(&(0x7f0000000040)={0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+rt_sigpending(&(0x7f0000000000), 0x8)
+mmap$perf(&(0x7f0000ffa000/0x4000)=nil, 0x4000, 0x0, 0x12, r4, 0x0)
+unshare(0x64000600)
+io_uring_register$IORING_REGISTER_BUFFERS2(0xffffffffffffffff, 0x1f, &(0x7f0000000100)={0x28, 0x0, 0x0, 0x0, 0x0}, 0x1)
+shmget$private(0x0, 0x2000, 0x0, &(0x7f0000ffc000/0x2000)=nil)
+sendmsg$NL80211_CMD_GET_PROTOCOL_FEATURES(0xffffffffffffffff, &(0x7f0000000100)={0x0, 0x0, &(0x7f00000000c0)={0x0}, 0x1, 0x0, 0x0, 0x840}, 0x48044)
+r5 = io_uring_setup(0x2ac7, &(0x7f0000000000))
+io_uring_enter(r5, 0x0, 0xcb, 0xb, &(0x7f0000000100), 0x18)
+
+13.14556275s ago: executing program 1 (id=31):
+socket$packet(0x11, 0x2, 0x300)
+r0 = socket$inet(0x2, 0x4000000000000001, 0x0)
+setsockopt$inet_tcp_int(r0, 0x6, 0x80000000000002, &(0x7f00000000c0)=0x7a, 0x4)
+bind$inet(r0, &(0x7f0000000080)={0x2, 0x4e23, @multicast1}, 0x10)
+setsockopt$SO_ATTACH_FILTER(r0, 0x1, 0x1a, &(0x7f0000000140)={0x1, &(0x7f0000000280)=[{0x6, 0x0, 0x0, 0xe4}]}, 0x10)
+r1 = socket$nl_generic(0x10, 0x3, 0x10)
+io_setup(0x8, &(0x7f00000002c0)=<r2=>0x0)
+io_submit(r2, 0x1, &(0x7f0000001a40)=[&(0x7f0000000380)={0x0, 0x0, 0x0, 0x0, 0x0, r1, 0x0, 0x0, 0x6}])
+sendto$inet(r0, 0x0, 0x0, 0x200007bd, &(0x7f0000e68000)={0x2, 0x4e23, @empty}, 0x10)
+sendto$inet(r0, &(0x7f0000001340)="433979ff559928ef32b21dc4b4a0e3755c2cce0db0bf034ddb16acba55f23e7bc900fb01452630f8098e782a319244b50a4487d750fb8463578c6a22341c664314d85cd1e7c348ecea4bc15a28d2b856c06303d210a860fb668ee62de2b6fdbfdbf3cce111942cd2072731ddc0e819662de5db049031b55aed6a6cb748b1926025dc61b20e5eb86a715245bc88ebd09228b425f870d9e671ab01e028d632ff15084991e8e6688b51989e3156bd6fea1ffd71d11fcf308b3bda8203ebd4dc05a5c562d9d1c7", 0xc5, 0x0, 0x0, 0x0)
+setsockopt$sock_int(r0, 0x1, 0x8, &(0x7f0000000600)=0x1801, 0x4)
+sendto$inet(r0, &(0x7f00000012c0)="09268a927f1f6588b967481241ba7860fcfaf65ac618ded8974895abeaf4b4834ff922b3f1e0b02bd67aa03059bcecc7a95425a3a07e758044ab4ea6f7ae55d88fecf90b1a7511bf746bec66ba", 0x20c8, 0x11, 0x0, 0x27)
+sendmmsg$inet(r0, &(0x7f0000003700)=[{{0x0, 0x0, &(0x7f0000000280)=[{&(0x7f0000000080)=';', 0x1}], 0x1}}, {{0x0, 0x0, &(0x7f00000008c0)=[{&(0x7f00000003c0)="64b2a41b632908d0c8b81c1d7f65cb8f4d728317d03cc4237bd9dac5631395e09c1b1905aa0824a441607b8def47a51d27f0ce", 0x33}, {&(0x7f0000000400)="c2757e21694ac72f017bf052ab7f37692fb3fae1aea11c88e81cc83b2626b2407a44d92b91bf26d56e5ca91fbfc2672e30c382472fb6c8b73aa03cbd368424b6dd1ec0c76065b39ae2c76038794447cdd4dd136366df11eec8c0c7e08beaefb28c83de4fddf9c38cef4eea4ccb876cb9421d437c0d82b675c386f91c26a70afa49e3387a078a70245f614f18c2366a235964253307083787a720189cb8d7290333f997e37dc47f036f3288e8b8b4fc510c05f00205a9176205375bf3a3fc26f36e9a1ab779ab5750bbb4b435", 0xcc}, {&(0x7f0000000500)="7ef92358b55dac3dff9e30a3ee0ea9b0fe7b89caeaa5ac1f5b50a1b1dfc0e251d4164eca7c38dc04c61e3ee5e7289686de7c4220a17fc75c0b72d3691939d7215358f04de75d72d204aee003468766dfb11ae8d1ab9e54ae7ca230999ef52f68669335905cc07baa5bf7c17c30", 0x6d}, {&(0x7f0000000580)="85fb4da3fc1b5bc4c3f6ae7f707c88cc10bbc921be1d348903b612d6ca4c822608f4f9b53b95fc8a45509749f8aa04e0f4fcafd898dc89f27e0d9118eb567ef3", 0x40}, {&(0x7f00000005c0)="226748ba93b4f445f4f9f79003f3c9d87d524be4ed87666dafbf3c0ad34d4a02faa33373067108d176213ec1693b4a03c4d97d1ef357ff199fbc630e6f26e42709832ee55de5332b9be83c28d3e6472320be0cd2924b70698e028bcc1cfb4b6a019f48286861be166216180566251fd61857f0c6aac5868e03829d30594be42f22c309911d95fe31e127ec01229307943302423bc7b3604fe96243f59fd6745a22b159337893", 0xa6}, {&(0x7f0000000680)="a761eb8fe881e3a0edc81dba790cf0a21db5c66c2d8a0f0e6b22238e3f3c93dc9635f8f3642a3dae1e890ba26ae01e9f4e3bf1558f863aea8b09e4638a7fa765824984", 0x43}], 0x6}}], 0x2, 0x0)
+
+2.116457367s ago: executing program 32 (id=19):
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0x5, 0xdc8}, 0x40, 0x9, 0xb8, 0x2, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000180)='cgroup.controllers\x00', 0x275a, 0x0)
+r0 = syz_io_uring_setup(0x10aa, &(0x7f00000005c0), &(0x7f0000000640), &(0x7f0000000680))
+io_uring_register$IORING_UNREGISTER_PBUF_RING(r0, 0x17, 0x0, 0x1)
+mlock(&(0x7f0000bff000/0x400000)=nil, 0x400000)
+r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000180)='cgroup.controllers\x00', 0x275a, 0x0)
+ioctl$FS_IOC_SETFLAGS(r1, 0x40086602, &(0x7f0000000000)=0x2000000)
+mremap(&(0x7f0000e95000/0x1000)=nil, 0x1000, 0x1000, 0x7, &(0x7f0000ffc000/0x1000)=nil)
+socketpair$unix(0x1, 0x1, 0x0, &(0x7f0000000040)={<r2=>0xffffffffffffffff, <r3=>0xffffffffffffffff})
+sendmsg$unix(r2, &(0x7f0000000080)={0x0, 0x0, &(0x7f0000000000)=[{&(0x7f00000000c0)='\b', 0x1}], 0x1}, 0x1)
+recvfrom$unix(r3, 0x0, 0x0, 0x0, 0x0, 0x0)
+sendto$unix(r2, &(0x7f0000000240)='g', 0x1, 0x24000881, 0x0, 0x0)
+mlock2(&(0x7f0000f78000/0x3000)=nil, 0x3000, 0x0)
+syz_proc_sys_generated_1243(0x1f8, 0x1, 0x3, 0x1, 0x215, 0x1, 0x249, 0x1, 0x11)
+syz_proc_sys_generated_1243(0x112, 0x0, 0x0, 0x0, 0x1e, 0x0, 0x168, 0x0, 0x0)
+syz_proc_sys_generated_1243(0x23d, 0x1, 0x0, 0x1, 0x19, 0x1, 0x6, 0x0, 0x4)
+
+2.075909542s ago: executing program 33 (id=27):
+perf_event_open(&(0x7f0000000300)={0x2, 0x80, 0x47, 0x1, 0x0, 0x0, 0x0, 0x400, 0x48011, 0x9, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x8, 0x2}, 0x6000, 0x9, 0xb8, 0x7, 0x1, 0x2, 0x8, 0x0, 0x0, 0x0, 0x4}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r0 = socket$inet_tcp(0x2, 0x1, 0x0)
+bind$inet(r0, &(0x7f0000000000)={0x2, 0x4e20, @multicast2}, 0x10)
+connect$inet(r0, &(0x7f0000000080)={0x2, 0x4e20, @loopback}, 0x10)
+shutdown(r0, 0x1)
+close(r0)
+syz_mount_image$ext4(&(0x7f0000000200)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f00000000c0)={[{@noblock_validity}, {@noinit_itable}, {@inode_readahead_blks={'inode_readahead_blks', 0x3d, 0x8000000}}, {@grpjquota}, {@jqfmt_vfsv0}, {@usrjquota, 0x30}]}, 0x84, 0x47d, &(0x7f00000004c0)="$eJzs3E1vVFUfAPD/vdNCeenTgQeVN3UUjcSXlhZUFm4wmrAxMdEFLmspBCnU0JoIIVKNwaXhE6hLEz+BK9wYZaPGre6NCTHdiC7MmDtzZxjamTJDOx3q/H7J0HPuPbfnf+69p3PmnDsE0LdK2T9JxPaI+CUiRiIiXVqgVP1xa/Hy1F+Ll6eSKJff+CPJDos/Fy9P1Yom+c9t9Uwx0o+T2Nek3rmLl85OzsxMX8jzY/Pn3h2bu3jpuTPnJk9Pn54+P3H06JHD4y++MPH8mrRzOIt17wez+/ccf+vaa1Mnrr39/VdZiNvz/Y3tqCquus5SlOrnZKkn49FV//77yY0dt9PJQNMi19P1C4c2FSIiu1yDlf4/EoW4ffFG4tWPehoc0G3p5mWbCrXEQhn4D8tG80A/qr3RZ59/a691HHv03M1jUZ/HuJW/qnsGKvMgpWL1s9Fwl+ovRcSJhb8/y17RdB4iIrZ0qXIAoC9dPxYRzzYb/6XxYEO5/+VrQ8WI2BEROyPi/xGxKyIeiKiUfSgidndYf2lJfvn456eujn6y8d9L+drWneO/+mpFsZDnhivtH0xOnZmZPpSfk4MxuDnLj69Qxzev/Pxpq32N47/sldVfGwvmcfw+sGSC7uTk/ORq2tzo5ocRMdSs/Ul9JSAbH++JiL338Puzc3bm6S/3t9p/9/avoPk6U0fKX0Q8Vb3+C7HYuCaX3JFaYX1ybChmpg+N1e6K5W78ePX1VvWvqv1rILv+W5ve//X2F5PG9dq5zuu4+usnLT9T3uv9vyl5s5LelG97f3J+/sJ4xKZkYfn2idvH1vK18ln7Dx5o3v93RvzzeX7cvojIbuKHI+KRiMrqbRb7YxHxeEQcWKH93738xDvLNjYshvb6+p/s6Pp3niic/fbrVvW3d/2PVFIH8y3t/P1rN8DVnDsAAADYKNLKM/BJOlpPp+noaPUZ/l2xNZ2ZnZt/5tTse+dPVp+VL8ZgWpvpGmmYDx3P54Zr+Ykl+cOVeeNyuVzeUsmPTs3OdGtNHWjPthb9P/NbodfRAV3X1jpabRGm1TfagA3p7v1/aF3iANbfGjxHA2xQ+j/0L/0f+lez/n8l4lYPQgHW0YD3f+hr+j/0r877f+N/HQRsZN7/oS+t5nv9KyV+ON5e4VocXQpjAyQK90cYHSci7eSo3cMRvY+5nkib7Rrq0X24OSLaLXxl3SLs7d8lAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAtfJvAAAA//9mkeEy")
+perf_event_open(&(0x7f0000000300)={0x2, 0x80, 0x47, 0x1, 0x0, 0x0, 0x0, 0x400, 0x48011, 0x9, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x8, 0x2}, 0x6000, 0x9, 0xb8, 0x7, 0x1, 0x2, 0x8, 0x0, 0x0, 0x0, 0x4}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0) (async)
+socket$inet_tcp(0x2, 0x1, 0x0) (async)
+bind$inet(r0, &(0x7f0000000000)={0x2, 0x4e20, @multicast2}, 0x10) (async)
+connect$inet(r0, &(0x7f0000000080)={0x2, 0x4e20, @loopback}, 0x10) (async)
+shutdown(r0, 0x1) (async)
+close(r0) (async)
+syz_mount_image$ext4(&(0x7f0000000200)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f00000000c0)={[{@noblock_validity}, {@noinit_itable}, {@inode_readahead_blks={'inode_readahead_blks', 0x3d, 0x8000000}}, {@grpjquota}, {@jqfmt_vfsv0}, {@usrjquota, 0x30}]}, 0x84, 0x47d, &(0x7f00000004c0)="$eJzs3E1vVFUfAPD/vdNCeenTgQeVN3UUjcSXlhZUFm4wmrAxMdEFLmspBCnU0JoIIVKNwaXhE6hLEz+BK9wYZaPGre6NCTHdiC7MmDtzZxjamTJDOx3q/H7J0HPuPbfnf+69p3PmnDsE0LdK2T9JxPaI+CUiRiIiXVqgVP1xa/Hy1F+Ll6eSKJff+CPJDos/Fy9P1Yom+c9t9Uwx0o+T2Nek3rmLl85OzsxMX8jzY/Pn3h2bu3jpuTPnJk9Pn54+P3H06JHD4y++MPH8mrRzOIt17wez+/ccf+vaa1Mnrr39/VdZiNvz/Y3tqCquus5SlOrnZKkn49FV//77yY0dt9PJQNMi19P1C4c2FSIiu1yDlf4/EoW4ffFG4tWPehoc0G3p5mWbCrXEQhn4D8tG80A/qr3RZ59/a691HHv03M1jUZ/HuJW/qnsGKvMgpWL1s9Fwl+ovRcSJhb8/y17RdB4iIrZ0qXIAoC9dPxYRzzYb/6XxYEO5/+VrQ8WI2BEROyPi/xGxKyIeiKiUfSgidndYf2lJfvn456eujn6y8d9L+drWneO/+mpFsZDnhivtH0xOnZmZPpSfk4MxuDnLj69Qxzev/Pxpq32N47/sldVfGwvmcfw+sGSC7uTk/ORq2tzo5ocRMdSs/Ul9JSAbH++JiL338Puzc3bm6S/3t9p/9/avoPk6U0fKX0Q8Vb3+C7HYuCaX3JFaYX1ybChmpg+N1e6K5W78ePX1VvWvqv1rILv+W5ve//X2F5PG9dq5zuu4+usnLT9T3uv9vyl5s5LelG97f3J+/sJ4xKZkYfn2idvH1vK18ln7Dx5o3v93RvzzeX7cvojIbuKHI+KRiMrqbRb7YxHxeEQcWKH93738xDvLNjYshvb6+p/s6Pp3niic/fbrVvW3d/2PVFIH8y3t/P1rN8DVnDsAAADYKNLKM/BJOlpPp+noaPUZ/l2xNZ2ZnZt/5tTse+dPVp+VL8ZgWpvpGmmYDx3P54Zr+Ykl+cOVeeNyuVzeUsmPTs3OdGtNHWjPthb9P/NbodfRAV3X1jpabRGm1TfagA3p7v1/aF3iANbfGjxHA2xQ+j/0L/0f+lez/n8l4lYPQgHW0YD3f+hr+j/0r877f+N/HQRsZN7/oS+t5nv9KyV+ON5e4VocXQpjAyQK90cYHSci7eSo3cMRvY+5nkib7Rrq0X24OSLaLXxl3SLs7d8lAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAtfJvAAAA//9mkeEy") (async)
+
+2.071371493s ago: executing program 34 (id=20):
+creat(&(0x7f0000000300)='./bus\x00', 0x0)
+io_setup(0x80, &(0x7f0000000800)=<r0=>0x0)
+r1 = openat$sr(0xffffffffffffff9c, &(0x7f0000000000), 0x2800, 0x0)
+r2 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x8002, 0x0)
+write$vga_arbiter(r2, 0x0, 0xc)
+ioctl$SG_IO(r1, 0x2285, &(0x7f0000000280)={0x53, 0xfffffffffffffffe, 0x6, 0x0, @buffer={0x0, 0x0, 0x0}, &(0x7f0000000180)="c665d470c706", 0x0, 0x0, 0x18, 0x0, &(0x7f0000000240)})
+openat$cgroup_procs(0xffffffffffffffff, &(0x7f0000000000)='cgroup.procs\x00', 0x2, 0x0)
+prlimit64(0x0, 0xe, &(0x7f0000000140)={0x8, 0x8b}, 0x0)
+syz_mount_image$vfat(&(0x7f00000000c0), &(0x7f00000001c0)='./file0\x00', 0x4204, &(0x7f0000000080)=ANY=[@ANYRES16=0x0, @ANYRESOCT], 0x8, 0x2eb, &(0x7f0000000480)="$eJzs3M9PE0EUwPFHKaUtoe3BaDQxTPSilw1Uz8bGQGJsIgFqBBOTBbbadG1Jt8HUGNGTV+Mf4YFw5Eai/ANcvOnFizcuJh7kYFyzv2gLBUyhFOH7Sci+7sxbZjKFvGl2u/nw3bNi3tLyelVCUSU9IiJbIikJSaDHP4bcOCKNXsv1gZ9fLk9Oz9zLZLOjE0qNZaZupJVSiaGPz1/G/G5r/bKRerz5I/194/zGxc0/U08LlipYqlSuKl3Nlr9V9VnTUPMFq6gpNW4aumWoQskyKl572WvPm+WFhZrSS/OD8YWKYVlKL9VU0aipallVKzWlP9ELJaVpmhqMCw6SW56Y0DNtJs8d8WDQIZVKRu8VkdiultxyVwYEAAC6amf9H3JK+rbqf0m49b/TuV7/r1xZrw48WE349f9apFX9f/Ord62m+j8qIh2v/3dXRGfLoep/nAxDkV2neppeOfV/3P/7db15tDLsBtT/AAAAAAAAAAAAAAAAAAAAAAD8D7ZsO2nbdjI4Bj/1Rwj81ziV9lr/fhGJOqtvs/6n2eT0jETdB/fCCRHz7WJuMecd/Q7rImKKIcOSlN/u+8HnxMGTR8qRkk/mkp+/tJjrdVsyeSm4+SOSlNTOfNseu5sdHVGe5vw+iTfmpyUp51rnp1vmR+Ta1YZ8TZLyeU7KYsq8+76u578aUerO/eyO/JjbDwAAAACA00BT21ru3zVtr3Yvf3t/3fLzAW9/Pdxyfx5OXgp3d+4AAAAAAJwVVu1FUTdNo7JPEJOD+7QfhNtL79uvT2/DDP/1ghH3fheRzs10nyC4kaKpKeqfbO/Kwfw7M+aQtJM15IxHHfa3Bx8b7dVHxruwgm5w4f2HX0d3wVur0QNm2rGg7zj+9wAAAAA4XvWiPzhzu7sDAgAAAAAAAAAAAAAAAAAAAAAAAAAAAADgDDqOrxPr9hwBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAk+JvAAAA//9/4QRx")
+mkdirat(0xffffffffffffff9c, &(0x7f0000000600)='./file0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\x00', 0x0)
+openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='memory.events\x00', 0x275a, 0x0)
+timer_settime(0x0, 0x0, 0x0, 0x0)
+sendmsg$DCCPDIAG_GETSOCK(0xffffffffffffffff, 0x0, 0x4008000)
+sched_setscheduler(0x0, 0x1, &(0x7f0000000080)=0x7)
+getpid()
+sched_setaffinity(0x0, 0x8, &(0x7f00000002c0)=0x2)
+socketpair$unix(0x1, 0x2, 0x0, &(0x7f00000000c0)={<r3=>0xffffffffffffffff, <r4=>0xffffffffffffffff})
+connect$unix(0xffffffffffffffff, &(0x7f0000000180)=@abs={0x1, 0x0, 0x4e21}, 0x6e)
+sendmmsg$unix(r4, &(0x7f00000bd000), 0x318, 0x0)
+recvmmsg(r3, &(0x7f0000001fc0)=[{{&(0x7f0000000840)=@tipc=@id, 0x80, &(0x7f00000008c0), 0x0, &(0x7f00000008c0)=""/16, 0x10}, 0x3}, {{&(0x7f0000002040)=@pppol2tp={0x18, 0x1, {0x0, 0xffffffffffffffff, {0x2, 0x0, @empty}}}, 0x80, &(0x7f0000001e80)=[{&(0x7f00000009c0)=""/90, 0x5a}, {&(0x7f0000000a40)=""/71, 0x47}, {&(0x7f0000000ac0)=""/246, 0xf6}, {&(0x7f0000000900)=""/117, 0x75}, {&(0x7f0000000c40)}, {&(0x7f0000000c80)=""/240, 0xf0}, {&(0x7f0000000d80)=""/4096, 0x1000}, {&(0x7f0000001d80)=""/213, 0xd5}], 0x8, &(0x7f0000001f00)=""/146, 0x92}, 0x9}], 0x2, 0x2, 0x0)
+sched_setaffinity(0x0, 0x8, &(0x7f0000000240)=0xb2)
+io_submit(r0, 0x0, &(0x7f0000000840))
+r5 = socket$inet(0x2, 0x4000000000000001, 0x0)
+setsockopt$inet_tcp_int(r5, 0x6, 0x80000000000002, &(0x7f00000000c0)=0x7a, 0x4)
+bind$inet(r5, &(0x7f0000000080)={0x2, 0x4e23, @loopback}, 0x10)
+setsockopt$SO_ATTACH_FILTER(r1, 0x1, 0x1a, &(0x7f0000000140)={0x3, &(0x7f00000007c0)=[{0x6, 0x0, 0x0, 0xe4}, {0x8, 0x8, 0x7, 0x8}, {0xb, 0xf, 0x21, 0x8}]}, 0x10)
+sendto$inet(r5, 0x0, 0x0, 0x20008040, &(0x7f0000e68000)={0x2, 0x4e23, @empty}, 0x50)
+sendmmsg(r5, &(0x7f0000002f80)=[{{0x0, 0x0, &(0x7f0000000180)=[{&(0x7f0000000340)="b1114a86467579ba8d4d40dce20eb9f0455e57caaa9885e3480525325871f4fe95a927112f5f7f0a0d9b52ff437fc90a54d4032d9bfdfe1f962a394280be15edaf638a0bb830802e3d49229e8300422cd69986f00eb82bfd7da99cc55f75495897f00af6771c57db4eba0b2cdbb25b", 0x6f}], 0x1}}], 0x1, 0x8000)
+writev(r5, &(0x7f0000000100)=[{&(0x7f0000000000)="55c14b6a8cea6a295f2e19ebc8de2a49cf6a4d0c1337360aa4f27c73f89bbc68f8bb730a4a428ee964e822e36b12c9520db58e9b26fcbf6b59dd567d3213522dd10c635034e1a992", 0x48}, {&(0x7f00000002c0)="a01d5da359d80e8be92100d5b0a7294ebab64917fbb4973b436ee945136ba38d631e12ec5d91875768e999153c8c99220f043f175a5ed62e65614eb828f5649aad7961f4971a59ca2f11d99b8596ecae3846d3d5a72af9efd959f12d1bdb1f183dd1aa421b829913838d", 0x6a}, {&(0x7f0000000200)="f8d5a9287ca7d9da23c710d7f64aa051aede3cd10a894462af67add0fd64b49cf5291790b7123d01b418f2", 0x2b}], 0x3)
+sendto$inet(r5, &(0x7f00000003c0)="7a8b7c67c05391e44848db2e0283fba78b947a1705a6d1a1192c90e20ff8f95bede3af7083312d84a8992cab76a25f2f02766ba955c3138f2f3db2c3f14c7c245dee4bca10643ec4923dd5bec1bb34071e6aec53f3d007a40fb644fe55b54a9919ea7b13d85242c2627a7dafc9e685b95f9dfcff93ae21b23662a06921a45d1346dfc44e14c7a12c80bd957f98e26158713258715db7603e3d7056243595e6cdc6ab1d02f5b201c9e525ce7b5a22d83d0125a73358a3fd6fbbc7f0c6a641d96f3496af39dd3435d29e30ec6654207cbd4066c3bea8aa6e6b537323a632c89bf7f9d4687a1b4adbbf9f8cc1a41f47026229770b50d7ef9c732954d52ba6fbf58ecc816a3bdd3241315d30a0f9303437063bf901174b29c7ec43f989bc79e99aa61ef21e42a7c67a42356a336b5483d8df78ab435de6ffaf7fdbd8b421b3fa88e9d2058199c4dde3913c2004dd9f5e2aaecfd6de30ac47dcbeb234b55dd9e7320e45889c47c5cc274021e777962f7b7a0d6690faaf71af9c7cb5ffe2144e3a49ded96a0886068b41386d8f14a6050825e34a2aea4cca1dc141163048c7b85d767fae1fd7790927e08868479c8d0512f0a23171ce17869473eec505e7cbc2d8ddb51b6874fec61691d2cabc49da24f56fca8db40263f88a039954e449ad96122a318f9cb871e843facd6e2c17583363b6a55779e66532fc558e7972004c489ad9303dfea3ae041acbe5daea08bd32fb4e635bee9421adba0bcc314a41742db162cdf34a153b47b426c45649daebfa1b4675c40d444f0aec5f0c0526252ab83cb1f556352c29345583adfd21dc8d5fd6ce5596663202245237ea90c9486d0bdaa3a5394b3d9f833e2c25068e63b8e1d48ebea2c0a0a1ee966e406cb1ca878f29d767f016017ee09f334415e2aa59b6ae694c5544135d4a1a1a70751f5305f2812d82d296f5fbb109e2537fecef0a82ec6595e99b73ca4a10cbef3ead45f14350ac098cac84a669c956d56943b5b0b148913d52186807ade8c8c8346b266a7f8209b6aa5202162b9ab78456e963e18ff76b9b64e70e16284881383dc5514ded19317d50757cdb1834c53ab447ee5a6f20d7db55e532fc52028a87accbb1aefe0c6b82fa0b287156e38daafd1eb09694aa6ea333b608bde6b61f7a387af00cb395133f492c886099e6abfe99c6ca4571bb9fda6c62860419d0c9ad01d34c838954649ad600a20f346583941b30c279a143e1de9e3b6289c84b2a701f904bdda17b7aacb1c002476769d9a3ab9f1d1e0b67094f133473e77d901e0e1dca035e543f983c52d6ddd73b2eab56917afdf2641d30fc59b0c6a1428dc79588354ac8f2b5faaa1d86e338977250edd7b643746dbd5e139a875cf65505460cd44c5703ebfb", 0x3de, 0x0, 0x0, 0x0)
+
+2.057918579s ago: executing program 35 (id=25):
+r0 = perf_event_open(&(0x7f0000000380)={0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xff9}, 0xffffffffffffffff, 0x0, 0xffffffffffffffff, 0x0)
+mmap$perf(&(0x7f0000ffb000/0x3000)=nil, 0x3000, 0x0, 0x11, r0, 0x0) (async)
+mremap(&(0x7f0000ffc000/0x2000)=nil, 0x2000, 0x2000, 0x3, &(0x7f0000ffe000/0x1000)=nil) (async)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0xe9, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48050, 0xb, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x2, @perf_config_ext={0x4, 0x100}, 0xa, 0x9, 0xb8, 0x9, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x181a}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0) (async, rerun: 64)
+r1 = socket$inet6_tcp(0xa, 0x1, 0x0) (rerun: 64)
+getsockopt$inet6_tcp_int(r1, 0x6, 0xc, &(0x7f0000001000), &(0x7f0000001040)=0x4)
+
+2.040174731s ago: executing program 36 (id=24):
+syz_proc_sys_generated_1062(0x0, 0x1, 0x0, 0x0, 0x10, 0x0, 0x0, 0x2) (async)
+syz_genetlink_get_family_id$ieee802154(0x0, 0xffffffffffffffff)
+perf_event_open(&(0x7f0000000000)={0x2, 0x80, 0x7a, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x200000, 0x2, @perf_config_ext={0x5, 0xdc8}, 0x0, 0x1, 0xb5, 0x8, 0x1, 0x4, 0x4, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0) (async, rerun: 32)
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000040)='./bus\x00', 0x0, &(0x7f0000000480)={[{@resgid={'resgid', 0x3d, 0xee01}}, {@bsdgroups}, {@debug_want_extra_isize={'debug_want_extra_isize', 0x3d, 0x80}}, {@nolazytime}, {@init_itable_val={'init_itable', 0x3d, 0xcc72}}, {@usrquota}, {@errors_remount}, {@resgid}]}, 0xff, 0x431, &(0x7f0000000d40)="$eJzs28tvG8UfAPDvrpO++0t+VXm0FDAURMQjadIWekBIIJA4gIQEh3IMTlqVug1qgkSrCgpC5YgqcUcckfgLOMEF8bggcYU7qlShXlo4Ga29m7iOHfJw6sJ+PtLGM95xZr7eHXt2xhtAaVWzP0nEroj4NSJGWtlbC1RbDzevX6z9ef1iLYlG4/U/kma5G9cv1oqixet25pmxNCL9OOn4hy3z5y+cnq7XZ8/l+YmFM+9MzJ+/8NSpM9MnZ0/Onp06duzI4clnnp462pc4szbd2P/+3IF9L7955dXa8Stv/fBV1qxd+f72OPqlGtVuoTc92u/KBmx3WzoZGmBDWJNKRGSHa7jZ/0eiEksHbyRe+migjQM2VaPRaGztvftSA/gPS6L1uC3/NADKoviiz65/i+02DT3uCNeeb10AZXHfzLfWnqFI8zLDHde3/VSNiOOX/vo822KT5iEAANp9k41/nuw2/kvj7rZy/8vXhkYj4v8Rsac1dRx7I+KuiGbZeyLi3jXWX+3ILx//pFfXE9dqZeO/Z/O1rVvHf8XoL0YreW53M/7h5MSp+uyh/D0Zi+GtWX5yhTq+ffGXT3vtax//ZVtWfzEWzNtxdahjgm5memF6IzG3u/ZhxP6hbvEniysBSUTsi4j966zj1ONfHui175/jX0Ef1pkaX0Q81jr+l6Ij/kKy8vrkxLaozx6aKM6K5X78+fJrverfUPx9kB3/HV3P/8X4R5P29dr5tddx+bdPel7TrPf835K80UxvyZ97b3ph4dxkxJbkleXPTy29tsgX5bP4xw527/97YumduC8ispP4/oh4ICIezNv+UEQ8HBEHV4j/+xceeXv98W+uLP6ZNR3/tScqp7/7ulf9qzv+R5qpsfyZ1Xz+rbaBG3nvAAAA4N8ibf4GPknHF9NpOj7e+r383tiR1ufmF544Mffu2ZnWb+VHYzgtZrpG2uZDJ/O54SI/1ZE/nM8bf1bZ3syP1+bqM4MOHkpuZ4/+n/m9MujWAZvO/VpQXvo/lJf+D+Wl/0N56f9QXt36/wcDaAdw+/n+h7Larv9Dien/UF76P5RS93vjn/vpaG09d/pLlCcR6aZWsS0i7pBIy5kY9CcTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAf/wdAAD//7vP4Js=") (rerun: 32)
+r0 = socket(0x10, 0x3, 0x0)
+setsockopt$netlink_NETLINK_TX_RING(r0, 0x10e, 0xc, &(0x7f0000000040)={0x5}, 0x10)
+write(r0, &(0x7f0000000000)="240000001a005f0214f9f407000904001f00000000000000000000000800040001000000", 0x24)
+mkdirat(0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00', 0x0)
+mount(0x0, &(0x7f0000000240)='./file0\x00', &(0x7f0000000280)='tracefs\x00', 0x0, 0x0) (async)
+r1 = creat(&(0x7f0000000000)='./file0/bus\x00', 0x0) (async, rerun: 64)
+r2 = socket$inet6_udp(0xa, 0x2, 0x0) (rerun: 64)
+setsockopt$inet6_mreq(r2, 0x29, 0x1b, &(0x7f0000000700)={@mcast1}, 0x14)
+r3 = socket$inet_udplite(0x2, 0x2, 0x88)
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0x1, 0x1, 0x15, 0xf9, 0x0, 0x0, 0xa00, 0xe, 0x1, 0x1, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x1, 0x1, 0x0, 0x0, 0x0, 0x2, 0x1, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x1, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x2, 0x4, @perf_config_ext={0x6e, 0x1aa}, 0x8510, 0x7, 0x3, 0x7, 0x1, 0x5, 0x7, 0x0, 0x8, 0x0, 0x7}, 0xffffffffffffffff, 0x2, r1, 0xb) (async)
+setsockopt$inet_udp_int(r3, 0x11, 0x67, &(0x7f0000000040), 0x4) (async)
+r4 = openat$sndtimer(0xffffffffffffff9c, &(0x7f0000000000), 0x0)
+ioctl$SNDRV_TIMER_IOCTL_TREAD(r4, 0x40045402, &(0x7f0000000140)=0x1) (async)
+syz_mount_image$ext4(&(0x7f0000000000)='ext4\x00', &(0x7f00000007c0)='./file0\x00', 0x4c0, &(0x7f0000000040), 0x1, 0x79b, &(0x7f0000000800)="$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") (async)
+chdir(&(0x7f0000004340)='./file0\x00')
+r5 = open(&(0x7f0000000280)='.\x00', 0x0, 0x0) (async)
+r6 = syz_open_procfs$pagemap(0xffffffffffffffff, &(0x7f0000000000))
+ioctl$PAGEMAP_SCAN(r6, 0xc0606610, &(0x7f00000002c0)={0x60, 0x3, &(0x7f0000ffc000/0x4000)=nil, &(0x7f0000ffd000/0x1000)=nil, 0x82, &(0x7f0000000040), 0x0, 0x0, 0x22, 0x11, 0x4, 0x10})
+unlinkat(r5, &(0x7f00000001c0)='./file1\x00', 0x0) (async)
+fcntl$setstatus(r4, 0x4, 0x2800) (async)
+ioctl$SNDRV_TIMER_IOCTL_SELECT(r4, 0x40345410, &(0x7f0000000100)={{0x1, 0x2, 0x0, 0x0, 0xfffffffc}}) (async)
+ioctl$BTRFS_IOC_GET_SUBVOL_INFO(r4, 0x81f8943c, &(0x7f00000bf980)={<r7=>0x0, ""/256, <r8=>0x0, <r9=>0x0})
+ioctl$BTRFS_IOC_GET_SUBVOL_ROOTREF(0xffffffffffffffff, 0xd000943d, &(0x7f00000bfb80)={0x10001, [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {r7}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {0x0, r9}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {r8}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {r7}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {0x0, r9}], 0x40, "6ac3114da0d1fc"}) (async, rerun: 64)
+sendmsg$unix(0xffffffffffffffff, &(0x7f0000000040)={0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4000801}, 0xc044) (async, rerun: 64)
+shutdown(r3, 0x1)
+linkat(r5, &(0x7f0000000180)='./file0\x00', r1, &(0x7f0000000200)='./file0\x00', 0x400)
+
+1.019209523s ago: executing program 37 (id=29):
+r0 = openat$bsg(0xffffffffffffff9c, &(0x7f0000000040), 0x513002, 0x0)
+mmap$IORING_OFF_SQES(&(0x7f0000ffd000/0x3000)=nil, 0x3000, 0x0, 0x13, r0, 0x10000000)
+syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+perf_event_open(&(0x7f0000000000)={0x2, 0x80, 0x78, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x200000, 0x2, @perf_config_ext={0x5, 0xdc8}, 0x0, 0x1, 0xb5, 0x2, 0x1, 0x4, 0x4, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+perf_event_open(&(0x7f0000000040)={0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0xa, 0x2, 0x2, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x6fffffff, 0x8}, 0x100854, 0xfffffffffffffffe, 0x0, 0x0, 0x0, 0xffffffff, 0xfffc}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+madvise(&(0x7f0000bdc000/0x4000)=nil, 0x86ac726dff2f4713, 0xa)
+syz_clone(0x4c840200, 0x0, 0x0, 0x0, 0x0, 0x0)
+mmap$IORING_OFF_SQES(&(0x7f0000ffa000/0x4000)=nil, 0x4000, 0x0, 0x13, r0, 0x10000000)
+syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+mmap$IORING_OFF_SQES(&(0x7f0000ffc000/0x3000)=nil, 0x3000, 0x0, 0x13, r0, 0x10000000)
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0x5, 0xdc8}, 0x40, 0x9, 0xb8, 0x2, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r1 = signalfd(0xffffffffffffffff, &(0x7f0000000040), 0x8)
+signalfd(r1, &(0x7f0000002040), 0x8)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x18a, 0x0, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x9, 0xf340}}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r2 = socket$packet(0x11, 0x3, 0x300)
+close(r2)
+
+0s ago: executing program 38 (id=30):
+r0 = socket$nl_generic(0x10, 0x3, 0x10)
+sendmsg$DEVLINK_CMD_PORT_GET(r0, &(0x7f0000000d40)={&(0x7f0000000c00), 0xc, 0x0, 0x1, 0x0, 0x0, 0x100}, 0xc001)
+sendmsg$SEG6_CMD_DUMPHMAC(r0, 0x0, 0x48000)
+setsockopt$inet_mreqn(0xffffffffffffffff, 0x0, 0x23, 0x0, 0x0)
+setsockopt$inet_msfilter(0xffffffffffffffff, 0x0, 0x29, 0x0, 0x0)
+setsockopt$inet_msfilter(0xffffffffffffffff, 0x0, 0x29, &(0x7f0000000000)={@multicast2, @loopback, 0x1, 0x2, [@dev={0xac, 0x14, 0x14, 0x21}, @dev={0xac, 0x14, 0x14, 0x43}]}, 0x18)
+perf_event_open(&(0x7f0000000080)={0x2, 0x80, 0xea, 0x0, 0x0, 0x0, 0x0, 0x0, 0x48010, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0x5, 0xdc8}, 0x40, 0x9, 0xb8, 0x2, 0x1, 0x4, 0x8, 0x0, 0x0, 0x0, 0x2}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+socket$inet6(0xa, 0x2, 0x3a)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x18a, 0x0, 0xc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x9, 0xf340}}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+r1 = inotify_init1(0x0)
+inotify_add_watch(r1, &(0x7f0000000000)='.\x00', 0x80000002)
+readv(r1, 0x0, 0x0)
+r2 = open(0x0, 0x60142, 0x0)
+fallocate(r2, 0x0, 0x0, 0x3)
+r3 = socket$packet(0x11, 0x3, 0x300)
+memfd_create(&(0x7f0000000000)='&\x01{\x00', 0xc)
+setsockopt$packet_tx_ring(r3, 0x107, 0xd, 0x0, 0x0)
+ioctl$sock_inet_SIOCSARP(0xffffffffffffffff, 0x8955, 0x0)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x3, 0x0, 0x0, 0x0, 0xfffffffffffffffe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xfffffffffffffffd, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}, 0x0, 0x0, 0x0, 0x7}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+perf_event_open(&(0x7f0000000440)={0x5, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, @perf_config_ext={0xffffffff84ac50c0, 0x8}}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+ioctl$FS_IOC_GETFSMAP(r0, 0xc0c0583b, &(0x7f0000000140)={0x0, 0x0, 0x8, 0x0, '\x00', [{0xfff, 0x9, 0x9d, 0x1, 0x8, 0x400}, {0x9, 0x2, 0x6, 0x100000000, 0x401, 0x4}], ['\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00', '\x00']})
+r4 = perf_event_open(&(0x7f0000000040)={0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+rt_sigpending(&(0x7f0000000000), 0x8)
+mmap$perf(&(0x7f0000ffa000/0x4000)=nil, 0x4000, 0x0, 0x12, r4, 0x0)
+unshare(0x64000600)
+io_uring_register$IORING_REGISTER_BUFFERS2(0xffffffffffffffff, 0x1f, &(0x7f0000000100)={0x28, 0x0, 0x0, 0x0, 0x0}, 0x1)
+shmget$private(0x0, 0x2000, 0x0, &(0x7f0000ffc000/0x2000)=nil)
+sendmsg$NL80211_CMD_GET_PROTOCOL_FEATURES(0xffffffffffffffff, &(0x7f0000000100)={0x0, 0x0, &(0x7f00000000c0)={0x0}, 0x1, 0x0, 0x0, 0x840}, 0x48044)
+r5 = io_uring_setup(0x2ac7, &(0x7f0000000000))
+io_uring_enter(r5, 0x0, 0xcb, 0xb, &(0x7f0000000100), 0x18)
+
+kernel console output (not intermixed with test programs):
+
+Warning: Permanently added '[localhost]:25881' (ED25519) to the list of known hosts.
+syzkaller login: [   23.578320] cgroup: Unknown subsys name 'net'
+[   23.630591] cgroup: Unknown subsys name 'cpuset'
+[   23.635205] cgroup: Unknown subsys name 'rlimit'
+[   23.636192] cgroup: Unknown subsys name 'memory'
+Setting up swapspace version 1, size = 122.1 MiB (127995904 bytes)
+no label, UUID=cada0ec3-9484-484f-ba33-880a45ec2c65
+[   23.773179] Adding 124996k swap on ./swap-file.  Priority:0 extents:1 across:124996k 
+[   24.880835] audit: type=1400 audit(1771801816.111:7): avc:  denied  { execmem } for  pid=243 comm="syz-executor" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=process permissive=1
+[   35.036126] loop6: detected capacity change from 0 to 512
+[   35.041322] audit: type=1400 audit(1771801826.270:8): avc:  denied  { open } for  pid=3819 comm="syz.1.2" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+[   35.053522] EXT4-fs (loop6): orphan cleanup on readonly fs
+[   35.055040] audit: type=1400 audit(1771801826.270:9): avc:  denied  { kernel } for  pid=3819 comm="syz.1.2" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+[   35.060165] EXT4-fs error (device loop6): ext4_ext_check_inode:523: inode #4: comm syz.6.7: pblk 0 bad header/extent: invalid extent entries - magic f30a, entries 1, max 4(4), depth 0(0)
+[   35.065153] audit: type=1326 audit(1771801826.279:10): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=3819 comm="syz.1.2" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f4fa04bfba9 code=0x7ffc0000
+[   35.069503] audit: type=1326 audit(1771801826.279:11): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=3819 comm="syz.1.2" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f4fa04bfba9 code=0x7ffc0000
+[   35.074940] audit: type=1326 audit(1771801826.283:12): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=3819 comm="syz.1.2" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f4fa04bfba9 code=0x7ffc0000
+[   35.079744] loop1: detected capacity change from 0 to 2048
+[   35.080169] EXT4-fs error (device loop6): ext4_quota_enable:7179: comm syz.6.7: Bad quota inode: 4, type: 1
+[   35.084127] audit: type=1326 audit(1771801826.283:13): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=3819 comm="syz.1.2" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f4fa04bfba9 code=0x7ffc0000
+[   35.090857] EXT4-fs warning (device loop6): ext4_enable_quotas:7217: Failed to enable quota tracking (type=1, err=-117, ino=4). Please run e2fsck to fix.
+[   35.095586] audit: type=1326 audit(1771801826.283:14): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=3819 comm="syz.1.2" exe="/syz-executor" sig=0 arch=c000003e syscall=430 compat=0 ip=0x7f4fa04bfba9 code=0x7ffc0000
+[   35.096316] EXT4-fs (loop6): Cannot turn on quotas: error -117
+[   35.101162] audit: type=1326 audit(1771801826.283:15): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=3819 comm="syz.1.2" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f4fa04bfba9 code=0x7ffc0000
+[   35.106512] audit: type=1326 audit(1771801826.283:16): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=3819 comm="syz.1.2" exe="/syz-executor" sig=0 arch=c000003e syscall=431 compat=0 ip=0x7f4fa04bfba9 code=0x7ffc0000
+[   35.111382] audit: type=1326 audit(1771801826.290:17): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=3819 comm="syz.1.2" exe="/syz-executor" sig=0 arch=c000003e syscall=431 compat=0 ip=0x7f4fa04bfba9 code=0x7ffc0000
+[   35.112773] Alternate GPT is invalid, using primary GPT.
+[   35.117772] EXT4-fs (loop6): mounted filesystem 00000000-0000-0000-0000-000000000000 ro without journal. Quota mode: writeback.
+[   35.117947]  loop1: p2 p3 p7
+[   35.135005] EXT4-fs (loop6): warning: mounting fs with errors, running e2fsck is recommended
+[   35.142548] EXT4-fs error (device loop6): ext4_ext_check_inode:523: inode #4: comm syz.6.7: pblk 0 bad header/extent: invalid extent entries - magic f30a, entries 1, max 4(4), depth 0(0)
+[   35.150175] EXT4-fs error (device loop6): ext4_quota_enable:7179: comm syz.6.7: Bad quota inode: 4, type: 1
+[   35.155118] EXT4-fs warning (device loop6): ext4_enable_quotas:7217: Failed to enable quota tracking (type=1, err=-117, ino=4). Please run e2fsck to fix.
+[   35.262874] EXT4-fs (loop6): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   35.280801] loop7: detected capacity change from 0 to 128
+[   35.280802] loop2: detected capacity change from 0 to 512
+[   35.283952] Zero length message leads to an empty skb
+[   35.293842] UDPLite: UDP-Lite is deprecated and scheduled to be removed in 2025, please contact the netdev mailing list
+[   35.312540] loop2: detected capacity change from 0 to 2048
+[   35.315441] netlink: 72 bytes leftover after parsing attributes in process `syz.6.11'.
+[   35.320972] syz.1.9 uses obsolete (PF_INET,SOCK_PACKET)
+[   35.331848] EXT4-fs (loop2): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   35.402991] EXT4-fs error (device loop2): ext4_mb_generate_buddy:1303: group 0, block bitmap and bg descriptor inconsistent: 25 vs 150994969 free clusters
+[   35.411727] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 1 with error 28
+[   35.414889] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   35.414889] 
+[   35.417125] EXT4-fs (loop2): Total free blocks count 0
+[   35.418487] EXT4-fs (loop2): Free/Dirty block details
+[   35.419555] EXT4-fs (loop2): free_blocks=2415919104
+[   35.420939] EXT4-fs (loop2): dirty_blocks=16
+[   35.422391] EXT4-fs (loop2): Block reservation details
+[   35.424267] EXT4-fs (loop2): i_reserved_data_blocks=1
+[   35.429306] lo: entered promiscuous mode
+[   35.432816] netlink: 4 bytes leftover after parsing attributes in process `syz.7.15'.
+[   35.467760] loop4: detected capacity change from 0 to 512
+[   35.475010] EXT4-fs error (device loop4): ext4_orphan_get:1391: inode #13: comm syz.4.18: iget: bad extra_isize 288 (inode size 256)
+[   35.479677] EXT4-fs error (device loop4): ext4_orphan_get:1394: comm syz.4.18: couldn't read orphan inode 13 (err -117)
+[   35.480154] syz.2.13 (3890) used greatest stack depth: 23912 bytes left
+[   35.494823] EXT4-fs (loop4): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   35.511724] sr 1:0:0:0: [sr0] tag#0 FAILED Result: hostbyte=DID_ERROR driverbyte=DRIVER_OK cmd_age=0s
+[   35.513612] sr 1:0:0:0: [sr0] tag#0 CDB: opcode=0xc6 (vendor) c6 65 d4 70 c7 06
+[   35.517443] loop5: detected capacity change from 0 to 128
+[   35.525407] EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   35.603287] loop7: detected capacity change from 0 to 512
+[   35.623274] lo: left promiscuous mode
+[   35.627690] EXT4-fs error (device loop7): __ext4_iget:5426: inode #11: block 50331666: comm syz.7.24: invalid block
+[   35.642358] EXT4-fs (loop7): Remounting filesystem read-only
+[   35.651713] EXT4-fs (loop7): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+[   35.667429] EXT4-fs (loop4): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   35.728094] SELinux: unrecognized netlink message: protocol=0 nlmsg_type=23 sclass=netlink_route_socket pid=3964 comm=syz.4.26
+[   35.789447] loop4: detected capacity change from 0 to 512
+[   35.796075] EXT4-fs (loop4): Cannot turn on journaled quota: type 0: error -2
+[   35.798485] EXT4-fs error (device loop4): ext4_clear_blocks:874: inode #13: comm syz.4.27: attempt to clear invalid blocks 2 len 1
+[   35.801131] netlink: 40 bytes leftover after parsing attributes in process `syz.2.28'.
+[   35.804191] EXT4-fs error (device loop4): ext4_validate_block_bitmap:431: comm syz.4.27: bg 0: block 3: invalid block bitmap
+[   35.821578] EXT4-fs error (device loop4) in ext4_mb_clear_bb:6689: Corrupt filesystem
+[   35.825773] EXT4-fs error (device loop4): ext4_free_branches:1020: inode #13: comm syz.4.27: invalid indirect mapped block 1819239214 (level 0)
+[   35.830615] EXT4-fs error (device loop4): ext4_free_branches:1020: inode #13: comm syz.4.27: invalid indirect mapped block 1819239214 (level 1)
+[   35.834091] loop2: detected capacity change from 0 to 512
+[   35.835617] =======================================================
+[   35.835617] WARNING: The mand mount option has been deprecated and
+[   35.835617]          and is ignored by this kernel. Remove the mand
+[   35.835617]          option from the mount to silence this warning.
+[   35.835617] =======================================================
+[   35.846681] EXT4-fs (loop4): 1 truncate cleaned up
+[   35.849230] EXT4-fs (loop4): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+[   35.851845] EXT4-fs: Ignoring removed nomblk_io_submit option
+[   35.860066] EXT4-fs (loop2): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+[   35.863072] ext4 filesystem being mounted at /4/bus supports timestamps until 2038-01-19 (0x7fffffff)
+[   35.876352] EXT4-fs error (device loop2): ext4_lookup:1785: inode #12: comm syz.2.28: iget: bad i_size value: 2533274857506816
+[   36.256067] hrtimer: interrupt took 29730 ns
+[   60.842845] watchdog: BUG: soft lockup - CPU#2 stuck for 22s! [syz.6.25:3957]
+[   60.842869] Modules linked in:
+[   60.842879] irq event stamp: 5176111
+[   60.842886] hardirqs last  enabled at (5176110): [<ffffffff84a97fc4>] irqentry_exit+0x184/0x6d0
+[   60.842940] hardirqs last disabled at (5176111): [<ffffffff84a96c9f>] sysvec_apic_timer_interrupt+0xf/0x80
+[   60.842972] softirqs last  enabled at (5174622): [<ffffffff813b9880>] handle_softirqs+0x490/0x700
+[   60.843001] softirqs last disabled at (5174625): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110
+[   60.843036] CPU: 2 UID: 0 PID: 3957 Comm: syz.6.25 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+[   60.843059] Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[   60.843072] RIP: 0010:stack_access_ok+0x13/0x1d0
+[   60.843099] Code: ff ff 0f 1f 44 00 00 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 48 b8 00 00 00 00 00 fc ff df 41 56 41 55 41 54 49 89 d4 <48> 89 fa 55 48 c1 ea 03 48 89 f5 53 48 89 fb 48 83 ec 08 0f b6 04
+[   60.843117] RSP: 0018:ffff88811af086d8 EFLAGS: 00000292
+[   60.843132] RAX: dffffc0000000000 RBX: ffff88811af08870 RCX: ffffffff8688abd2
+[   60.843145] RDX: 0000000000000008 RSI: ffff88811af08b98 RDI: ffff88811af08818
+[   60.843157] RBP: ffff88811af08b98 R08: ffffffff8688abd6 R09: ffffffff8688abb4
+[   60.843183] R10: 000000000003aca3 R11: 0000000000024e1a R12: 0000000000000008
+[   60.843195] R13: ffff88811af08860 R14: ffff88811af08818 R15: ffff88811af08b98
+[   60.843210] FS:  00007ff5f51af6c0(0000) GS:ffff88819373f000(0000) knlGS:0000000000000000
+[   60.843227] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[   60.843240] CR2: 0000001b32f20220 CR3: 000000010c87f000 CR4: 0000000000350ff0
+[   60.843252] Call Trace:
+[   60.843258]  <IRQ>
+[   60.843267]  deref_stack_reg+0x18/0x80
+[   60.843291]  ? unwind_next_frame+0xe0b/0x2070
+[   60.843317]  unwind_next_frame+0xe2c/0x2070
+[   60.843342]  ? __kasan_kmalloc+0x7f/0x90
+[   60.843372]  ? __pfx_unwind_next_frame+0x10/0x10
+[   60.843398]  ? __pfx_stack_trace_consume_entry+0x10/0x10
+[   60.843428]  ? __kasan_kmalloc+0x7f/0x90
+[   60.843453]  ? __kasan_kmalloc+0x7f/0x90
+[   60.843477]  ? __pfx_stack_trace_consume_entry+0x10/0x10
+[   60.843506]  arch_stack_walk+0x86/0xf0
+[   60.843535]  ? __kasan_kmalloc+0x7f/0x90
+[   60.843571]  stack_trace_save+0x8e/0xc0
+[   60.843598]  ? __pfx_stack_trace_save+0x10/0x10
+[   60.843627]  ? perf_trace_run_bpf_submit+0xef/0x180
+[   60.843651]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   60.843677]  ? perf_trace_run_bpf_submit+0xef/0x180
+[   60.843701]  kasan_save_stack+0x24/0x50
+[   60.843726]  ? kasan_save_stack+0x24/0x50
+[   60.843750]  ? kasan_save_track+0x14/0x30
+[   60.843775]  ? __kasan_kmalloc+0x7f/0x90
+[   60.843799]  ? perf_trace_preemptirq_template+0x259/0x430
+[   60.843825]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   60.843852]  ? __pfx_perf_trace_preemptirq_template+0x10/0x10
+[   60.843878]  ? write_comp_data+0x29/0x80
+[   60.843902]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   60.843929]  ? mark_held_locks+0x49/0x80
+[   60.843949]  ? lockdep_hardirqs_on_prepare+0xa8/0x190
+[   60.843968]  ? irqentry_exit+0x184/0x6d0
+[   60.843996]  ? irqentry_exit+0x184/0x6d0
+[   60.844038]  ? kasan_save_alloc_info+0x32/0x40
+[   60.844060]  kasan_save_track+0x14/0x30
+[   60.844085]  __kasan_kmalloc+0x7f/0x90
+[   60.844111]  __kmalloc_cache_noprof+0x263/0x740
+[   60.844148]  ? kmem_cache_free+0x120/0x670
+[   60.844168]  kmem_cache_free+0x120/0x670
+[   60.844201]  ? mempool_free+0xdb/0x130
+[   60.844220]  ? __pfx_mempool_free_slab+0x10/0x10
+[   60.844239]  ? mempool_free+0xdb/0x130
+[   60.844255]  mempool_free+0xdb/0x130
+[   60.844271]  ? __pfx_mempool_free+0x10/0x10
+[   60.844294]  bio_put+0x3e4/0xbd0
+[   60.844314]  ? __pfx_end_swap_bio_write+0x10/0x10
+[   60.844344]  bio_endio+0x64d/0x930
+[   60.844365]  blk_update_request+0x30f/0x1200
+[   60.844391]  scsi_end_request+0x7a/0x790
+[   60.844418]  scsi_io_completion+0xbf/0x13c0
+[   60.844441]  ? __pfx_sd_done+0x10/0x10
+[   60.844459]  ? scsi_finish_command+0x217/0x4a0
+[   60.844482]  ? __pfx_scsi_io_completion+0x10/0x10
+[   60.844507]  ? write_comp_data+0x29/0x80
+[   60.844531]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   60.844560]  scsi_complete+0x21f/0x340
+[   60.844582]  blk_complete_reqs+0xb2/0xf0
+[   60.844614]  handle_softirqs+0x19b/0x700
+[   60.844644]  irq_exit_rcu+0xd6/0x110
+[   60.844669]  sysvec_apic_timer_interrupt+0x70/0x80
+[   60.844696]  </IRQ>
+[   60.844702]  <TASK>
+[   60.844709]  asm_sysvec_apic_timer_interrupt+0x1a/0x20
+[   60.844731] RIP: 0010:finish_task_switch+0x122/0x5b0
+[   60.844751] Code: 8d 7d 18 31 f6 e8 0e a5 0a 00 31 f6 4c 89 ef e8 a4 fb ff ff 4c 89 ef e8 3c 50 64 03 e8 e7 b6 35 00 fb 65 48 8b 1d b6 2c 36 06 <48> 8d bb d8 14 00 00 48 b8 00 00 00 00 00 fc ff df 48 89 fa 48 c1
+[   60.844770] RSP: 0018:ffff8881146df9f0 EFLAGS: 00000206
+[   60.844784] RAX: 0000000000057d1d RBX: ffff88810bdb3780 RCX: 0000000000000007
+[   60.844796] RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff8147e359
+[   60.844807] RBP: ffff8881146dfa38 R08: 0000000000000001 R09: 0000000000000001
+[   60.844819] R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: ffff88810efc9bc0
+[   60.844832] R13: ffff88811af37740 R14: ffff8881028f9780 R15: 0000000000000000
+[   60.844851]  ? finish_task_switch+0x119/0x5b0
+[   60.844873]  ? finish_task_switch+0xe0/0x5b0
+[   60.844891]  ? __switch_to+0x859/0x1210
+[   60.844923]  __schedule+0x11b4/0x3f90
+[   60.844953]  ? __pfx___schedule+0x10/0x10
+[   60.844978]  ? __might_resched+0x30c/0x510
+[   60.845013]  preempt_schedule_common+0x2f/0x60
+[   60.845039]  __cond_resched+0x22/0x30
+[   60.845061]  __kmalloc_noprof+0x537/0x820
+[   60.845094]  ? lsm_blob_alloc.part.0+0x22/0x70
+[   60.845129]  ? lsm_blob_alloc.part.0+0x22/0x70
+[   60.845158]  lsm_blob_alloc.part.0+0x22/0x70
+[   60.845196]  security_perf_event_alloc+0x145/0x1a0
+[   60.845218]  perf_event_alloc+0x18fd/0x4870
+[   60.845244]  ? perf_event_alloc+0x1c88/0x4870
+[   60.845272]  ? __do_sys_perf_event_open+0xdaf/0x29a0
+[   60.845305]  ? __pfx_perf_event_alloc+0x10/0x10
+[   60.845328]  ? find_held_lock+0x2b/0x80
+[   60.845354]  ? __do_sys_perf_event_open+0xfde/0x29a0
+[   60.845389]  __do_sys_perf_event_open+0x69f/0x29a0
+[   60.845426]  ? lockdep_hardirqs_on_prepare+0xdb/0x190
+[   60.845445]  ? irqentry_exit+0x184/0x6d0
+[   60.845473]  ? __pfx___do_sys_perf_event_open+0x10/0x10
+[   60.845503]  ? irqentry_exit+0x184/0x6d0
+[   60.845545]  ? __do_sys_perf_event_open+0x11/0x29a0
+[   60.845580]  do_syscall_64+0xc3/0x430
+[   60.845599]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
+[   60.845618] RIP: 0033:0x7ff5f6b8fba9
+[   60.845633] Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+[   60.845651] RSP: 002b:00007ff5f51af058 EFLAGS: 00000246 ORIG_RAX: 000000000000012a
+[   60.845668] RAX: ffffffffffffffda RBX: 00007ff5f6e15fa0 RCX: 00007ff5f6b8fba9
+[   60.845680] RDX: ffffffffffffffff RSI: 0000000000000000 RDI: 0000200000000100
+[   60.845692] RBP: 00007ff5f6c3b44c R08: 0000000000000000 R09: 0000000000000000
+[   60.845704] R10: ffffffffffffffff R11: 0000000000000246 R12: 0000000000000000
+[   60.845715] R13: 0000000000000000 R14: 00007ff5f6e15fa0 R15: 00007ffec1e81b78
+[   60.845738]  </TASK>
+[   60.845745] Sending NMI from CPU 2 to CPUs 0-1,3:
+[   60.974471] NMI backtrace for cpu 1
+[   60.974495] CPU: 1 UID: 0 PID: 0 Comm: swapper/1 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+[   60.974531] Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[   60.974549] RIP: 0010:pv_native_safe_halt+0x1e/0x30
+[   60.974599] Code: 90 90 90 90 90 90 90 90 90 90 90 90 f3 0f 1e fa 0f 1f 44 00 00 eb 0c 0f 1f 44 00 00 0f 00 2d f9 2d 1c 00 0f 1f 44 00 00 fb f4 <e9> 6d ea 02 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 00 90 90 90 90
+[   60.974627] RSP: 0018:ffff8881003e7e60 EFLAGS: 00000202
+[   60.974651] RAX: 0000000000043a3b RBX: 0000000000000001 RCX: ffffffff84a98827
+[   60.974670] RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff814cfe5a
+[   60.974689] RBP: dffffc0000000000 R08: 0000000000000001 R09: ffffed10235d63db
+[   60.974708] R10: ffffed10235d63da R11: ffff88811aeb1ed3 R12: ffffffff8642c850
+[   60.974728] R13: 1ffff1102007cfd2 R14: 0000000000000000 R15: 0000000000000000
+[   60.974750] FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+[   60.974776] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[   60.974796] CR2: 0000555557d994a8 CR3: 0000000104271000 CR4: 0000000000350ef0
+[   60.974816] Call Trace:
+[   60.974825]  <TASK>
+[   60.974835]  default_idle+0xe/0x20
+[   60.974882]  default_idle_call+0x6c/0xb0
+[   60.974909]  do_idle+0x2fa/0x3c0
+[   60.974938]  ? cpuhp_online_idle+0xa3/0xc0
+[   60.974991]  ? __pfx_do_idle+0x10/0x10
+[   60.975019]  ? lockdep_hardirqs_on_prepare+0xdb/0x190
+[   60.975049]  ? _raw_spin_unlock_irqrestore+0x2c/0x50
+[   60.975093]  cpu_startup_entry+0x4f/0x60
+[   60.975123]  start_secondary+0x1bd/0x210
+[   60.975165]  common_startup_64+0x13e/0x148
+[   60.975235]  </TASK>
+[   60.975250] NMI backtrace for cpu 0
+[   60.975290] CPU: 0 UID: 0 PID: 0 Comm: swapper/0 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+[   60.975337] Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[   60.975361] RIP: 0010:pv_native_safe_halt+0x1e/0x30
+[   60.975429] Code: 90 90 90 90 90 90 90 90 90 90 90 90 f3 0f 1e fa 0f 1f 44 00 00 eb 0c 0f 1f 44 00 00 0f 00 2d f9 2d 1c 00 0f 1f 44 00 00 fb f4 <e9> 6d ea 02 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 00 90 90 90 90
+[   60.975466] RSP: 0018:ffffffff85a07e08 EFLAGS: 00000206
+[   60.975497] RAX: 00000000000736f9 RBX: 0000000000000000 RCX: ffffffff84a98827
+[   60.975522] RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff814cfe5a
+[   60.975545] RBP: dffffc0000000000 R08: 0000000000000001 R09: ffffed10235c63db
+[   60.975569] R10: ffffed10235c63da R11: ffff88811ae31ed3 R12: ffffffff8642c850
+[   60.975594] R13: 1ffffffff0b40fc7 R14: 0000000000000000 R15: 0000000000000000
+[   60.975622] FS:  0000000000000000(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+[   60.975655] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[   60.975680] CR2: 00007fd8121b4010 CR3: 000000010c147000 CR4: 0000000000350ef0
+[   60.975705] Call Trace:
+[   60.975716]  <TASK>
+[   60.975728]  default_idle+0xe/0x20
+[   60.975788]  default_idle_call+0x6c/0xb0
+[   60.975821]  do_idle+0x2fa/0x3c0
+[   60.975861]  ? __pfx_do_idle+0x10/0x10
+[   60.975897]  ? rest_init+0x18e/0x2d0
+[   60.975931]  ? write_comp_data+0x29/0x80
+[   60.975984]  cpu_startup_entry+0x4f/0x60
+[   60.976022]  ? __pfx_x86_late_time_init+0x10/0x10
+[   60.976080]  rest_init+0x1a2/0x2d0
+[   60.976113]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   60.976162]  start_kernel+0x3fa/0x510
+[   60.976241]  x86_64_start_reservations+0x18/0x30
+[   60.976296]  x86_64_start_kernel+0xd0/0xe0
+[   60.976349]  common_startup_64+0x13e/0x148
+[   60.976415]  </TASK>
+[   60.976432] NMI backtrace for cpu 3
+[   60.976472] CPU: 3 UID: 0 PID: 0 Comm: swapper/3 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+[   60.976520] Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[   60.976545] RIP: 0010:pv_native_safe_halt+0x1e/0x30
+[   60.976615] Code: 90 90 90 90 90 90 90 90 90 90 90 90 f3 0f 1e fa 0f 1f 44 00 00 eb 0c 0f 1f 44 00 00 0f 00 2d f9 2d 1c 00 0f 1f 44 00 00 fb f4 <e9> 6d ea 02 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 00 90 90 90 90
+[   60.976653] RSP: 0018:ffff8881003ffe60 EFLAGS: 00000206
+[   60.976685] RAX: 000000000005432b RBX: 0000000000000003 RCX: ffffffff84a98827
+[   60.976712] RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff814cfe5a
+[   60.976736] RBP: dffffc0000000000 R08: 0000000000000001 R09: ffffed10235f63db
+[   60.976762] R10: ffffed10235f63da R11: ffff88811afb1ed3 R12: ffffffff8642c850
+[   60.976789] R13: 1ffff1102007ffd2 R14: 0000000000000000 R15: 0000000000000000
+[   60.976817] FS:  0000000000000000(0000) GS:ffff8881937bf000(0000) knlGS:0000000000000000
+[   60.976853] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[   60.976879] CR2: 00007f49037ca000 CR3: 000000010f744000 CR4: 0000000000350ef0
+[   60.976906] Call Trace:
+[   60.976917]  <TASK>
+[   60.976931]  default_idle+0xe/0x20
+[   60.976995]  default_idle_call+0x6c/0xb0
+[   60.977031]  do_idle+0x2fa/0x3c0
+[   60.977071]  ? cpuhp_online_idle+0xa3/0xc0
+[   60.977131]  ? __pfx_do_idle+0x10/0x10
+[   60.977182]  ? lockdep_hardirqs_on_prepare+0xdb/0x190
+[   60.977223]  ? _raw_spin_unlock_irqrestore+0x2c/0x50
+[   60.977280]  cpu_startup_entry+0x4f/0x60
+[   60.977319]  start_secondary+0x1bd/0x210
+[   60.977372]  common_startup_64+0x13e/0x148
+[   60.977442]  </TASK>
+[   61.141227] EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   61.158624] EXT4-fs (loop4): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   61.162469] EXT4-fs (loop7): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   61.217404] syz-executor (261) used greatest stack depth: 23280 bytes left
+[   61.357498] syz.0.29 (3998) used greatest stack depth: 19016 bytes left
+SYZFAIL: failed to recv rpc
+fd=3 want=4 recv=0 n=0 (errno 9: Bad file descriptor)
+
+VM DIAGNOSIS:
+07:10:52  Registers:
+info registers vcpu 0
+
+CPU#0
+RAX=00000000000732e1 RBX=0000000000000000 RCX=ffffffff84a98827 RDX=0000000000000000
+RSI=0000000000000000 RDI=ffffffff814cfe5a RBP=dffffc0000000000 RSP=ffffffff85a07e08
+R8 =0000000000000001 R9 =ffffed10235c63db R10=ffffed10235c63da R11=ffff88811ae31ed3
+R12=ffffffff8642c850 R13=1ffffffff0b40fc7 R14=0000000000000000 R15=0000000000000000
+RIP=ffffffff84a9718e RFL=00000206 [-----P-] CPL=0 II=0 A20=1 SMM=0 HLT=1
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 0000000000000000 00000000 00000000
+GS =0000 ffff88819363f000 00000000 00000000
+LDT=0000 ffff888100000000 00000000 00000000
+TR =0040 fffffe0000003000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe0000001000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=00007fd8121b4010 CR3=000000010c147000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 0000000000058608 00007fd811e203c0
+YMM01=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM02=0000000000000000 0000000000000000 0000000000000000 0000000000058608
+YMM03=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM04=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM05=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM06=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM07=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM08=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+info registers vcpu 1
+
+CPU#1
+RAX=000000000004363f RBX=0000000000000001 RCX=ffffffff84a98827 RDX=0000000000000000
+RSI=0000000000000000 RDI=ffffffff814cfe5a RBP=dffffc0000000000 RSP=ffff8881003e7e60
+R8 =0000000000000001 R9 =ffffed10235d63db R10=ffffed10235d63da R11=ffff88811aeb1ed3
+R12=ffffffff8642c850 R13=1ffff1102007cfd2 R14=0000000000000000 R15=0000000000000000
+RIP=ffffffff84a9718e RFL=00000206 [-----P-] CPL=0 II=0 A20=1 SMM=0 HLT=1
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 0000000000000000 00000000 00000000
+GS =0000 ffff8881936bf000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe000004a000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe0000048000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=0000555557d994a8 CR3=0000000104271000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM01=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM02=0000000000000000 0000000000000000 0000000000000000 00000000000000ff
+YMM03=0000000000000000 0000000000000000 0000000000000000 00000000000000ff
+YMM04=0000000000000000 0000000000000000 0000000000000000 00007f4fa056d106
+YMM05=0000000000000000 0000000000000000 0000000000000000 00007f4fa056d113
+YMM06=0000000000000000 0000000000000000 0000000000000000 00007f4fa056d10d
+YMM07=0000000000000000 0000000000000000 0000000000000000 00007f4fa056d121
+YMM08=0000000000000000 0000000000000000 0000000000000000 00007f4fa056d1a7
+YMM09=0000000000000000 0000000000000000 0000000000000000 00007f4fa056d285
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+info registers vcpu 2
+
+CPU#2
+RAX=0000000000000035 RBX=0000000000000000 RCX=0000000000000000 RDX=00000000000003f8
+RSI=ffff88810bdb3780 RDI=ffffffff883385c0 RBP=ffffffff88338580 RSP=ffff88811af07f28
+R8 =0000000000000000 R9 =ffffed1020704047 R10=ffffed1020704046 R11=ffff888103820237
+R12=0000000000000035 R13=0000000000000010 R14=0000000000000035 R15=0000000000000000
+RIP=ffffffff829706ad RFL=00000002 [-------] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 00007ff5f51af6c0 00000000 00000000
+GS =0000 ffff88819373f000 00000000 00000000
+LDT=0000 ffff888100000000 00000000 00000000
+TR =0040 fffffe0000091000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe000008f000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=0000001b32f20220 CR3=000000010c87f000 CR4=00350ff0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 ac04dd06512e7e9f 1843908e862cb93d
+YMM01=0000000000000000 0000000000000000 457cf1eaee3de5ff 1f1f360a8c2bedef
+YMM02=0000000000000000 0000000000000000 c7a1afe63a3f731a 1f255c703a32a2ee
+YMM03=0000000000000000 0000000000000000 7dc885f75bed8e51 b6e66e91d74bb4a8
+YMM04=0000000000000000 0000000000000000 0000000000000000 0000000000800100
+YMM05=0000000000000000 0000000000000000 0000000000000000 36579ee000800100
+YMM06=0000000000000000 0000000000000000 0000000000000000 0000000036579ee0
+YMM07=0000000000000000 0000000000000000 36579ee000800100 00800100fa91c364
+YMM08=0000000000000000 0000000000000000 24000000a2000000 f0000000ce000000
+YMM09=0000000000000000 0000000000000000 0000000000000000 00007f8dcd54d285
+YMM10=0000000000000000 0000000000000000 ffd65bddb7f9c5d9 7a9bc6face845650
+YMM11=0000000000000000 0000000000000000 1d94de7b16e794be 588a75c6952fd528
+YMM12=0000000000000000 0000000000000000 0d0c0f0e09080b0a 0504070601000302
+YMM13=0000000000000000 0000000000000000 0c0f0e0d080b0a09 0407060500030201
+YMM14=0000000000000000 0000000000000000 0000000000000000 00000000000007c0
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000040
+info registers vcpu 3
+
+CPU#3
+RAX=0000000000053e11 RBX=0000000000000003 RCX=ffffffff84a98827 RDX=0000000000000000
+RSI=0000000000000000 RDI=ffffffff814cfe5a RBP=dffffc0000000000 RSP=ffff8881003ffe60
+R8 =0000000000000001 R9 =ffffed10235f63db R10=ffffed10235f63da R11=ffff88811afb1ed3
+R12=ffffffff8642c850 R13=1ffff1102007ffd2 R14=0000000000000000 R15=0000000000000000
+RIP=ffffffff84a9718e RFL=00000206 [-----P-] CPL=0 II=0 A20=1 SMM=0 HLT=1
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 0000000000000000 00000000 00000000
+GS =0000 ffff8881937bf000 00000000 00000000
+LDT=0000 ffff888100000000 00000000 00000000
+TR =0040 fffffe00000d8000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe00000d6000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=00007f49037ca000 CR3=000000010f744000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM01=0000000000000000 0000000000000000 0000000000000000 00007f49b6a60e30
+YMM02=0000000000000000 0000000000000000 ffffffff00000072 8a9a000200000000
+YMM03=0000000000000000 0000000000000000 0000080800000073 f400020000000000
+YMM04=0000000000000000 0000000000000000 3ca01e6c00000074 ffffffff00000000
+YMM05=0000000000000000 0000000000000000 3c459ab500000000 1fe3d4d200000077
+YMM06=0000000000000000 0000000000000000 0000000000000000 00007f4900000076
+YMM07=0000000000000000 0000000000000000 4b1d315100000000 6f015e4d00000075
+YMM08=0000000000000000 0000000000000000 145f2e3400000000 3ca01e6c00000074
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000

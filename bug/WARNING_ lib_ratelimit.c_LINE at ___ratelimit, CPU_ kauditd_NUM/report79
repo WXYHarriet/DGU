@@ -1,0 +1,100 @@
+audit: type=1400 audit(2000000105.748:2669): avc:  denied  { open } for  pid=12526 comm="syz.9.1212" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+------------[ cut here ]------------
+Negative interval (-1000) or burst (16): Uninitialized ratelimit_state structure?
+WARNING: lib/ratelimit.c:43 at ___ratelimit+0x340/0x910 lib/ratelimit.c:43, CPU#0: kauditd/39
+Modules linked in:
+CPU: 0 UID: 0 PID: 39 Comm: kauditd Tainted: P S                  6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [P]=PROPRIETARY_MODULE, [S]=CPU_OUT_OF_SPEC
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:___ratelimit+0x345/0x910 lib/ratelimit.c:43
+Code: 00 00 00 e8 8d f0 cf fc 31 ff 89 de e8 94 f2 cf fc 85 db 0f 84 a2 00 00 00 e8 77 f0 cf fc 48 8d 3d e0 14 a3 01 44 89 f2 89 de <67> 48 0f b9 3a e8 61 f0 cf fc 31 ff 89 de e8 68 f2 cf fc 85 db 0f
+RSP: 0018:ffff888100a1fc30 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: fffffffffffffc18 RCX: ffffffff84a548fc
+RDX: 0000000000000010 RSI: 00000000fffffc18 RDI: ffffffff86485df0
+RBP: ffffffff85b34740 R08: 0000000000000000 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: ffffffff85b34784
+R13: ffffffff84cc0060 R14: 0000000000000010 R15: 0000000000000001
+FS:  0000000000000000(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f010f6b9eb0 CR3: 0000000103f3c000 CR4: 0000000000350ef0
+DR0: ffffffff84ac50c0 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000600
+loop4: detected capacity change from 0 to 2048
+Call Trace:
+ <TASK>
+ kauditd_printk_skb+0x9b/0x120 kernel/audit.c:582
+ kauditd_hold_skb+0x1a/0x130 kernel/audit.c:618
+ kauditd_send_queue+0x233/0x290 kernel/audit.c:803
+ kauditd_thread+0x6b1/0xad0 kernel/audit.c:927
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+irq event stamp: 122855
+hardirqs last  enabled at (122865): [<ffffffff8154eb28>] __up_console_sem+0x78/0x80 kernel/printk/printk.c:345
+hardirqs last disabled at (122878): [<ffffffff8154eb0d>] __up_console_sem+0x5d/0x80 kernel/printk/printk.c:343
+EXT4-fs (loop4): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+softirqs last  enabled at (122730): [<ffffffff813b9880>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (122730): [<ffffffff813b9880>] handle_softirqs+0x490/0x700 kernel/softirq.c:650
+softirqs last disabled at (122717): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (122717): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (122717): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (122717): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+audit: type=1400 audit(2000000105.802:2677): avc:  denied  { open } for  pid=12523 comm="syz.1.1210" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+loop7: detected capacity change from 0 to 512
+EXT4-fs: Ignoring removed oldalloc option
+[EXT4 FS bs=4096, gc=1, bpg=32768, ipg=32, mo=c842c018, mo2=0002]
+EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz.7.1213: bg 0: block 41: padding at end of block bitmap is not set
+Quota error (device loop7): write_blk: dquota write failed
+Quota error (device loop7): qtree_write_dquot: Error -117 occurred while creating quota
+EXT4-fs error (device loop7): ext4_acquire_dquot:6984: comm syz.7.1213: Failed to acquire dquot type 0
+audit: type=1400 audit(2000000105.804:2678): avc:  denied  { kernel } for  pid=12523 comm="syz.1.1210" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+EXT4-fs (loop7): 1 truncate cleaned up
+audit: type=1400 audit(2000000105.867:2679): avc:  denied  { open } for  pid=12530 comm="syz.7.1213" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+audit: type=1400 audit(2000000105.868:2680): avc:  denied  { kernel } for  pid=12530 comm="syz.7.1213" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+EXT4-fs (loop7): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+ext4 filesystem being mounted at /21/file0 supports timestamps until 2038-01-19 (0x7fffffff)
+audit: type=1400 audit(2000000106.004:2681): avc:  denied  { open } for  pid=12539 comm="syz.2.1214" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+audit: type=1400 audit(2000000106.015:2682): avc:  denied  { open } for  pid=12539 comm="syz.2.1214" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+audit: type=1400 audit(2000000106.017:2683): avc:  denied  { kernel } for  pid=12539 comm="syz.2.1214" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+EXT4-fs (loop7): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+audit: type=1400 audit(2000000106.182:2684): avc:  denied  { open } for  pid=12546 comm="syz.0.1216" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+audit: type=1400 audit(2000000106.184:2685): avc:  denied  { kernel } for  pid=12546 comm="syz.0.1216" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+audit: type=1400 audit(2000000106.189:2686): avc:  denied  { write } for  pid=12546 comm="syz.0.1216" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+pimreg (unregistering): left allmulticast mode
+EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm kworker/u16:12: bg 0: block 234: padding at end of block bitmap is not set
+EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 1 with error 28
+EXT4-fs (loop4): This should not happen!! Data will be lost
+
+EXT4-fs (loop4): Total free blocks count 0
+EXT4-fs (loop4): Free/Dirty block details
+EXT4-fs (loop4): free_blocks=0
+EXT4-fs (loop4): dirty_blocks=16
+EXT4-fs (loop4): Block reservation details
+EXT4-fs (loop4): i_reserved_data_blocks=1
+EXT4-fs (loop4): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+----------------
+Code disassembly (best guess):
+   0:	00 00                	add    %al,(%rax)
+   2:	00 e8                	add    %ch,%al
+   4:	8d                   	lea    (bad),%esi
+   5:	f0 cf                	lock iret
+   7:	fc                   	cld
+   8:	31 ff                	xor    %edi,%edi
+   a:	89 de                	mov    %ebx,%esi
+   c:	e8 94 f2 cf fc       	call   0xfccff2a5
+  11:	85 db                	test   %ebx,%ebx
+  13:	0f 84 a2 00 00 00    	je     0xbb
+  19:	e8 77 f0 cf fc       	call   0xfccff095
+  1e:	48 8d 3d e0 14 a3 01 	lea    0x1a314e0(%rip),%rdi        # 0x1a31505
+  25:	44 89 f2             	mov    %r14d,%edx
+  28:	89 de                	mov    %ebx,%esi
+* 2a:	67 48 0f b9 3a       	ud1    (%edx),%rdi <-- trapping instruction
+  2f:	e8 61 f0 cf fc       	call   0xfccff095
+  34:	31 ff                	xor    %edi,%edi
+  36:	89 de                	mov    %ebx,%esi
+  38:	e8 68 f2 cf fc       	call   0xfccff2a5
+  3d:	85 db                	test   %ebx,%ebx
+  3f:	0f                   	.byte 0xf

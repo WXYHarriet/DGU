@@ -1,0 +1,3141 @@
+ext4: Unknown parameter 'smackfstransmute'
+loop2: detected capacity change from 0 to 527
+loop6: detected capacity change from 0 to 512
+------------[ cut here ]------------
+strnlen: detected buffer overflow: 65 byte read of buffer size 64
+WARNING: CPU: 1 PID: 7920 at lib/string_helpers.c:1035 __fortify_report+0x97/0xb0 lib/string_helpers.c:1035
+Modules linked in:
+CPU: 1 UID: 0 PID: 7920 Comm: syz.2.402 Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+EXT4-fs: quotafile must be on filesystem root
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__fortify_report+0x97/0xb0 lib/string_helpers.c:1035
+Code: 84 49 c7 c5 c0 ce e2 84 4c 0f 45 e9 e8 d2 34 1e ff 49 89 e8 4c 89 e2 4c 89 f6 4c 89 e9 48 c7 c7 40 cf e2 84 e8 fa c5 e3 fe 90 <0f> 0b 90 90 5b 5d 41 5c 41 5d 41 5e e9 48 4e 4f 02 e8 d3 0e 5c ff
+RSP: 0018:ffff888113db79f0 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff888104c4b700 RDI: 0000000000000002
+RBP: 0000000000000040 R08: fffffbfff0b5df00 R09: ffffed10235d4802
+R10: ffffed10235d4801 R11: ffff88811aea400b R12: 0000000000000041
+R13: ffffffff84e2cec0 R14: ffffffff84e2d880 R15: ffff8881110a4400
+FS:  00007fc684d8e6c0(0000) GS:ffff888193716000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007fc686772680 CR3: 0000000115034000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ __fortify_panic+0x23/0x30 lib/string_helpers.c:1042
+ strnlen include/linux/fortify-string.h:235 [inline]
+ sized_strscpy include/linux/fortify-string.h:309 [inline]
+ parse_apply_sb_mount_options fs/ext4/super.c:2486 [inline]
+ __ext4_fill_super fs/ext4/super.c:5306 [inline]
+ ext4_fill_super+0x34bc/0xa890 fs/ext4/super.c:5736
+ get_tree_bdev_flags+0x38a/0x620 fs/super.c:1691
+ vfs_get_tree+0x93/0x340 fs/super.c:1751
+ fc_mount+0x18/0x110 fs/namespace.c:1208
+ do_new_mount_fc fs/namespace.c:3651 [inline]
+ do_new_mount fs/namespace.c:3727 [inline]
+ path_mount+0x771/0x1e00 fs/namespace.c:4037
+ do_mount+0xc5/0x120 fs/namespace.c:4050
+ __do_sys_mount fs/namespace.c:4238 [inline]
+ __se_sys_mount fs/namespace.c:4215 [inline]
+ __x64_sys_mount+0x193/0x230 fs/namespace.c:4215
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fc68679134a
+Code: d8 64 89 02 48 c7 c0 ff ff ff ff eb a6 e8 de 1a 00 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 49 89 ca b8 a5 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007fc684d8de88 EFLAGS: 00000246 ORIG_RAX: 00000000000000a5
+RAX: ffffffffffffffda RBX: 00007fc684d8df10 RCX: 00007fc68679134a
+RDX: 00002000000005c0 RSI: 0000200000000000 RDI: 00007fc684d8ded0
+RBP: 00002000000005c0 R08: 00007fc684d8df10 R09: 0000000000a00004
+R10: 0000000000a00004 R11: 0000000000000246 R12: 0000200000000000
+R13: 00007fc684d8ded0 R14: 00000000000004f8 R15: 0000200000000b00
+ </TASK>
+irq event stamp: 1723
+hardirqs last  enabled at (1729): [<ffffffff8154af96>] console_trylock_spinning kernel/printk/printk.c:2016 [inline]
+hardirqs last  enabled at (1729): [<ffffffff8154af96>] vprintk_emit+0x846/0x890 kernel/printk/printk.c:2422
+hardirqs last disabled at (1734): [<ffffffff8154af2c>] console_trylock_spinning kernel/printk/printk.c:1995 [inline]
+hardirqs last disabled at (1734): [<ffffffff8154af2c>] vprintk_emit+0x7dc/0x890 kernel/printk/printk.c:2422
+softirqs last  enabled at (1552): [<ffffffff813b4ab8>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (1552): [<ffffffff813b4ab8>] handle_softirqs+0x4c8/0x740 kernel/softirq.c:650
+softirqs last disabled at (1537): [<ffffffff813b6546>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (1537): [<ffffffff813b6546>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (1537): [<ffffffff813b6546>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (1537): [<ffffffff813b6546>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+------------[ cut here ]------------
+kernel BUG at lib/string_helpers.c:1043!
+Oops: invalid opcode: 0000 [#1] SMP KASAN NOPTI
+CPU: 1 UID: 0 PID: 7920 Comm: syz.2.402 Tainted: G        W           6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Tainted: [W]=WARN
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__fortify_panic+0x24/0x30 lib/string_helpers.c:1043
+Code: 90 90 90 90 90 90 f3 0f 1e fa 41 54 49 89 d4 55 48 89 f5 53 89 fb e8 7b 34 1e ff 0f b6 fb 4c 89 e2 48 89 ee e8 1d ff ff ff 90 <0f> 0b 90 66 0f 1f 84 00 00 00 00 00 90 90 90 90 90 90 90 90 90 90
+RSP: 0018:ffff888113db7a20 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000002 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff888104c4b700 RDI: 0000000000000002
+RBP: 0000000000000040 R08: fffffbfff0b5df00 R09: ffffed10235d4802
+R10: ffffed10235d4801 R11: ffff88811aea400b R12: 0000000000000041
+R13: ffff888017748000 R14: ffff8881110a444c R15: ffff8881110a4400
+FS:  00007fc684d8e6c0(0000) GS:ffff888193716000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007fc686772680 CR3: 0000000115034000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ strnlen include/linux/fortify-string.h:235 [inline]
+ sized_strscpy include/linux/fortify-string.h:309 [inline]
+ parse_apply_sb_mount_options fs/ext4/super.c:2486 [inline]
+ __ext4_fill_super fs/ext4/super.c:5306 [inline]
+ ext4_fill_super+0x34bc/0xa890 fs/ext4/super.c:5736
+ get_tree_bdev_flags+0x38a/0x620 fs/super.c:1691
+ vfs_get_tree+0x93/0x340 fs/super.c:1751
+ fc_mount+0x18/0x110 fs/namespace.c:1208
+ do_new_mount_fc fs/namespace.c:3651 [inline]
+ do_new_mount fs/namespace.c:3727 [inline]
+ path_mount+0x771/0x1e00 fs/namespace.c:4037
+ do_mount+0xc5/0x120 fs/namespace.c:4050
+ __do_sys_mount fs/namespace.c:4238 [inline]
+ __se_sys_mount fs/namespace.c:4215 [inline]
+ __x64_sys_mount+0x193/0x230 fs/namespace.c:4215
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fc68679134a
+Code: d8 64 89 02 48 c7 c0 ff ff ff ff eb a6 e8 de 1a 00 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 49 89 ca b8 a5 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007fc684d8de88 EFLAGS: 00000246 ORIG_RAX: 00000000000000a5
+RAX: ffffffffffffffda RBX: 00007fc684d8df10 RCX: 00007fc68679134a
+RDX: 00002000000005c0 RSI: 0000200000000000 RDI: 00007fc684d8ded0
+RBP: 00002000000005c0 R08: 00007fc684d8df10 R09: 0000000000a00004
+R10: 0000000000a00004 R11: 0000000000000246 R12: 0000200000000000
+R13: 00007fc684d8ded0 R14: 00000000000004f8 R15: 0000200000000b00
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:__fortify_panic+0x24/0x30 lib/string_helpers.c:1043
+Code: 90 90 90 90 90 90 f3 0f 1e fa 41 54 49 89 d4 55 48 89 f5 53 89 fb e8 7b 34 1e ff 0f b6 fb 4c 89 e2 48 89 ee e8 1d ff ff ff 90 <0f> 0b 90 66 0f 1f 84 00 00 00 00 00 90 90 90 90 90 90 90 90 90 90
+RSP: 0018:ffff888113db7a20 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000002 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff888104c4b700 RDI: 0000000000000002
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ smpboot_thread_fn+0x67c/0x9d0 kernel/smpboot.c:156
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:migration/3     state:S stack:30232 pid:31    tgid:31    ppid:2      task_flags:0x4208040 flags:0x00080000
+Stopper: 0x0 <- 0x0
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ smpboot_thread_fn+0x67c/0x9d0 kernel/smpboot.c:156
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:ksoftirqd/3     state:S stack:26888 pid:32    tgid:32    ppid:2      task_flags:0x4208040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ smpboot_thread_fn+0x67c/0x9d0 kernel/smpboot.c:156
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/3:0     state:I stack:29576 pid:33    tgid:33    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (ata_sff)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/3:0H    state:I stack:27248 pid:34    tgid:34    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (kblockd)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kdevtmpfs       state:S stack:26312 pid:35    tgid:35    ppid:2      task_flags:0x208140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ devtmpfs_work_loop+0x84b/0xc40 drivers/base/devtmpfs.c:409
+ devtmpfsd+0x52/0x60 drivers/base/devtmpfs.c:442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-inet_ state:I stack:30888 pid:36    tgid:36    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:rcu_tasks_kthre state:I stack:29440 pid:37    tgid:37    ppid:2      task_flags:0x208040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rcu_tasks_one_gp+0x56b/0xdc0 kernel/rcu/tasks.h:611
+ rcu_tasks_kthread+0x1a9/0x220 kernel/rcu/tasks.h:658
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:rcu_tasks_trace state:I stack:29440 pid:38    tgid:38    ppid:2      task_flags:0x208040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rcu_tasks_one_gp+0x56b/0xdc0 kernel/rcu/tasks.h:611
+ rcu_tasks_kthread+0x1a9/0x220 kernel/rcu/tasks.h:658
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kauditd         state:S stack:29552 pid:39    tgid:39    ppid:2      task_flags:0x200040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ kauditd_thread+0x4c0/0xa80 kernel/audit.c:948
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:khungtaskd      state:S stack:30808 pid:40    tgid:40    ppid:2      task_flags:0x208040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_timeout+0x11a/0x280 kernel/time/sleep_timeout.c:99
+ watchdog+0xf1/0x1580 kernel/hung_task.c:499
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:oom_reaper      state:S stack:30648 pid:41    tgid:41    ppid:2      task_flags:0x200040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ oom_reaper+0xb5b/0xcf0 mm/oom_kill.c:656
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/u16:1   state:I stack:25416 pid:42    tgid:42    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (loop6)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-write state:I stack:30888 pid:43    tgid:43    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kcompactd0      state:S stack:29752 pid:44    tgid:44    ppid:2      task_flags:0x210040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_timeout+0x11a/0x280 kernel/time/sleep_timeout.c:99
+ kcompactd+0x746/0xa20 mm/compaction.c:3187
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-kbloc state:I stack:30888 pid:45    tgid:45    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:irq/9-acpi      state:S stack:30216 pid:46    tgid:46    ppid:2      task_flags:0x208040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ irq_wait_for_interrupt kernel/irq/manage.c:1065 [inline]
+ irq_thread+0x1ba/0x760 kernel/irq/manage.c:1253
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/2:1     state:I stack:28216 pid:47    tgid:47    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (events)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-ata_s state:I stack:30888 pid:48    tgid:48    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-md_bi state:I stack:30888 pid:49    tgid:49    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-md    state:I stack:30888 pid:50    tgid:50    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/1:1     state:I stack:27800 pid:51    tgid:51    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (events)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/3:1     state:I stack:26560 pid:52    tgid:52    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (ata_sff)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/u16:2   state:I stack:25216 pid:53    tgid:53    ppid:2      task_flags:0x4208160 flags:0x00080000
+Workqueue:  0x0 (events_unbound)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-quota state:I stack:30888 pid:54    tgid:54    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/1:1H    state:I stack:27488 pid:55    tgid:55    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (kblockd)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-rpcio state:I stack:30888 pid:56    tgid:56    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-xprti state:I stack:30888 pid:57    tgid:57    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-cfg80 state:I stack:30888 pid:58    tgid:58    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/u16:3   state:I stack:27416 pid:59    tgid:59    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (flush-8:0)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kswapd0         state:S stack:30456 pid:60    tgid:60    ppid:2      task_flags:0x220840 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ kswapd_try_to_sleep mm/vmscan.c:7301 [inline]
+ kswapd+0x971/0xae0 mm/vmscan.c:7359
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-nfsio state:I stack:30888 pid:61    tgid:61    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-acpi_ state:I stack:30888 pid:62    tgid:62    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:scsi_eh_0       state:S stack:27856 pid:63    tgid:63    ppid:2      task_flags:0x208040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ scsi_error_handler+0x53e/0xf60 drivers/scsi/scsi_error.c:2332
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-scsi_ state:I stack:30760 pid:64    tgid:64    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:scsi_eh_1       state:S stack:28000 pid:65    tgid:65    ppid:2      task_flags:0x208040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ scsi_error_handler+0x53e/0xf60 drivers/scsi/scsi_error.c:2332
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-scsi_ state:I stack:30888 pid:66    tgid:66    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/3:1H    state:I stack:29304 pid:67    tgid:67    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (kblockd)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/3:2     state:I stack:27480 pid:68    tgid:68    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (rcu_gp)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-mld   state:I stack:30888 pid:69    tgid:69    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-ipv6_ state:I stack:30760 pid:70    tgid:70    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/0:1H    state:I stack:27712 pid:74    tgid:74    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (kblockd)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/2:1H    state:I stack:28152 pid:75    tgid:75    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (kblockd)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:jbd2/sda-8      state:S stack:26344 pid:76    tgid:76    ppid:2      task_flags:0x240040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ kjournald2+0x587/0x720 fs/jbd2/journal.c:230
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/R-ext4- state:I stack:30888 pid:77    tgid:77    ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ rescuer_thread+0x812/0xbe0 kernel/workqueue.c:3577
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/1:2     state:I stack:29800 pid:78    tgid:78    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (events)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:systemd-journal state:R  running task     stack:24664 pid:103   tgid:103   ppid:1      task_flags:0x440100 flags:0x00000000
+Call Trace:
+ <TASK>
+ </TASK>
+task:kworker/0:2     state:I stack:30256 pid:110   tgid:110   ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/2:2     state:I stack:27176 pid:118   tgid:118   ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (events)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:systemd-udevd   state:S stack:25576 pid:120   tgid:120   ppid:1      task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f7838 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 00005625309c3520 RCX: 00007f0881ceddb6
+RDX: 000000000000000c RSI: 0000562531244bd0 RDI: 000000000000000a
+RBP: ffffffffffffffff R08: 000000000000000c R09: 00007f0881e92070
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 000000000000000c R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:26520 pid:121   tgid:121   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75c8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 0000562531226a00 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000004
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:27688 pid:122   tgid:122   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75c8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 000056253122e220 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000004
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:26520 pid:123   tgid:123   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75c8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 000056253122eec0 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:26520 pid:124   tgid:124   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 000056253122f430 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:26520 pid:125   tgid:125   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 000056253122f580 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000004
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:25736 pid:126   tgid:126   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 000056253122f7e0 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:25736 pid:128   tgid:128   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 000056253122e250 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:26520 pid:129   tgid:129   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75c8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 000056253122fb50 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:25464 pid:130   tgid:130   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 0000562531238f70 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:26520 pid:131   tgid:131   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 0000562531226b50 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:27144 pid:132   tgid:132   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 0000562531226a40 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:26088 pid:133   tgid:133   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 000056253122e250 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:25864 pid:134   tgid:134   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 000056253122e250 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:27928 pid:135   tgid:135   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 00005625312411d0 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:27688 pid:136   tgid:136   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 00005625312411d0 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:26520 pid:137   tgid:137   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 0000562531241db0 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:25464 pid:138   tgid:138   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 0000562531241db0 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:25464 pid:139   tgid:139   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 00005625312405f0 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:25064 pid:140   tgid:140   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 000056253122e6b0 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:26520 pid:141   tgid:141   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 00005625312405f0 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:26520 pid:142   tgid:142   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 00005625312405f0 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:S stack:27144 pid:143   tgid:143   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 00005625312405f0 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000004
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:systemd-udevd   state:R  running task     stack:25464 pid:144   tgid:144   ppid:120    task_flags:0x400140 flags:0x00000000
+Call Trace:
+ <TASK>
+ </TASK>
+task:systemd-udevd   state:S stack:26520 pid:145   tgid:145   ppid:120    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ __do_sys_epoll_wait fs/eventpoll.c:2481 [inline]
+ __se_sys_epoll_wait fs/eventpoll.c:2476 [inline]
+ __x64_sys_epoll_wait+0x142/0x1d0 fs/eventpoll.c:2476
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0881ceddb6
+RSP: 002b:00007ffce26f75a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000e8
+RAX: ffffffffffffffda RBX: 0000562531226a40 RCX: 00007f0881ceddb6
+RDX: 0000000000000002 RSI: 000056253121dfd0 RDI: 0000000000000003
+RBP: ffffffffffffffff R08: 0000000000000002 R09: 0000000000000004
+R10: 00000000ffffffff R11: 0000000000000246 R12: 0000000000000001
+R13: 0000000000000002 R14: 0000562503c3f1e7 R15: 0000000000000000
+ </TASK>
+task:cron            state:S stack:25576 pid:152   tgid:152   ppid:1      task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_nanosleep+0x216/0x550 kernel/time/hrtimer.c:2116
+ hrtimer_nanosleep+0x11e/0x320 kernel/time/hrtimer.c:2163
+ common_nsleep+0xaa/0xd0 kernel/time/posix-timers.c:1352
+ __do_sys_clock_nanosleep kernel/time/posix-timers.c:1398 [inline]
+ __se_sys_clock_nanosleep kernel/time/posix-timers.c:1375 [inline]
+ __x64_sys_clock_nanosleep+0x331/0x470 kernel/time/posix-timers.c:1375
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f9d320631ea
+RSP: 002b:00007ffe6cf7ce80 EFLAGS: 00000246 ORIG_RAX: 00000000000000e6
+RAX: ffffffffffffffda RBX: fffffffffffffe98 RCX: 00007f9d320631ea
+RDX: 00007ffe6cf7cec0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 0000000000000002 R08: 0000000000000004 R09: 0000000000000001
+R10: 00007ffe6cf7cec0 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+ </TASK>
+task:rsyslogd        state:S stack:24712 pid:164   tgid:164   ppid:1      task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x11f/0x310 kernel/time/sleep_timeout.c:216
+ poll_schedule_timeout.constprop.0+0xc4/0x1c0 fs/select.c:241
+ do_select+0x140d/0x1850 fs/select.c:603
+ core_sys_select+0x3b1/0xa30 fs/select.c:677
+ do_pselect.constprop.0+0x17d/0x1c0 fs/select.c:759
+ __do_sys_pselect6 fs/select.c:802 [inline]
+ __se_sys_pselect6 fs/select.c:793 [inline]
+ __x64_sys_pselect6+0x182/0x200 fs/select.c:793
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f4e4926dfd6
+RSP: 002b:00007ffc2acc79b0 EFLAGS: 00000293 ORIG_RAX: 000000000000010e
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007f4e4926dfd6
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 0000000000000000 R08: 00007ffc2acc79e0 R09: 00007ffc2acc79f0
+R10: 0000000000000000 R11: 0000000000000293 R12: 00007ffc2acc7ac0
+R13: 00007ffc2acc7a40 R14: 0000000000000000 R15: 0000000000000000
+ </TASK>
+task:in:imuxsock     state:S stack:27160 pid:169   tgid:164   ppid:1      task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ poll_schedule_timeout.constprop.0+0xc4/0x1c0 fs/select.c:241
+ do_poll fs/select.c:958 [inline]
+ do_sys_poll+0x7b9/0xe10 fs/select.c:1009
+ __do_sys_poll fs/select.c:1074 [inline]
+ __se_sys_poll fs/select.c:1062 [inline]
+ __x64_sys_poll+0xe5/0x480 fs/select.c:1062
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f4e4926ba0f
+RSP: 002b:00007f4e48debcf0 EFLAGS: 00000293 ORIG_RAX: 0000000000000007
+RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007f4e4926ba0f
+RDX: 00000000ffffffff RSI: 0000000000000001 RDI: 00007f4e3c000b80
+RBP: 0000000000000058 R08: 0000000000000000 R09: 000055d265644ec8
+R10: 0000000000000000 R11: 0000000000000293 R12: 0000000000000000
+R13: 00007f4e3c000b80 R14: 000055d236ee5a50 R15: 00007f4e48ebf840
+ </TASK>
+task:in:imklog       state:R  running task     stack:26664 pid:170   tgid:164   ppid:1      task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ syslog_print+0x1c4/0x5c0 kernel/printk/printk.c:1606
+ do_syslog.part.0+0x21c/0x5e0 kernel/printk/printk.c:1758
+ do_syslog+0xcd/0x110 kernel/printk/printk.c:1743
+ kmsg_read+0x8e/0xc0 fs/proc/kmsg.c:37
+ pde_read fs/proc/inode.c:308 [inline]
+ proc_reg_read+0x11e/0x2a0 fs/proc/inode.c:318
+ vfs_read fs/read_write.c:570 [inline]
+ vfs_read+0x1fc/0xca0 fs/read_write.c:552
+ ksys_read+0x121/0x240 fs/read_write.c:715
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f4e4943b08c
+RSP: 002b:00007f4e489ca4d0 EFLAGS: 00000246 ORIG_RAX: 0000000000000000
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007f4e4943b08c
+RDX: 0000000000001fa0 RSI: 00007f4e489cad00 RDI: 0000000000000005
+RBP: 000055d265648500 R08: 0000000000000000 R09: 0000000000000000
+R10: a3d70a3d70a3d70b R11: 0000000000000246 R12: 00007f4e489cad00
+R13: 0000000000001fa0 R14: 00007f4e489cad00 R15: 00007f4e489cc4e9
+ </TASK>
+task:rs:main Q:Reg   state:S stack:27448 pid:171   tgid:164   ppid:1      task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ futex_do_wait+0x88/0x180 kernel/futex/waitwake.c:358
+ __futex_wait+0x1b6/0x300 kernel/futex/waitwake.c:687
+ futex_wait+0xdc/0x190 kernel/futex/waitwake.c:715
+ do_futex+0x2f0/0x370 kernel/futex/syscalls.c:130
+ __do_sys_futex kernel/futex/syscalls.c:207 [inline]
+ __se_sys_futex kernel/futex/syscalls.c:188 [inline]
+ __x64_sys_futex+0x1c9/0x480 kernel/futex/syscalls.c:188
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f4e494377b2
+RSP: 002b:00007f4e43ffeac0 EFLAGS: 00000282 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 000000000000047c RCX: 00007f4e494377b2
+RDX: 0000000000000000 RSI: 0000000000000080 RDI: 000055d265644ed0
+RBP: 000055d265644ea8 R08: 0000000000000001 R09: 000000000000004d
+R10: 0000000000000000 R11: 0000000000000282 R12: 0000000000000000
+R13: 000055d265644c90 R14: 000055d265644ed0 R15: 00007f4e43ffeaf0
+ </TASK>
+task:dhclient        state:S stack:25800 pid:191   tgid:191   ppid:1      task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ futex_do_wait+0x88/0x180 kernel/futex/waitwake.c:358
+ __futex_wait+0x1b6/0x300 kernel/futex/waitwake.c:687
+ futex_wait+0xdc/0x190 kernel/futex/waitwake.c:715
+ do_futex+0x2f0/0x370 kernel/futex/syscalls.c:130
+ __do_sys_futex kernel/futex/syscalls.c:207 [inline]
+ __se_sys_futex kernel/futex/syscalls.c:188 [inline]
+ __x64_sys_futex+0x1c9/0x480 kernel/futex/syscalls.c:188
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f7c3f4cb7b2
+RSP: 002b:00007ffc365c91e0 EFLAGS: 00000282 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007f7c3f4cb7b2
+RDX: 0000000000000000 RSI: 0000000000000080 RDI: 00007f7c3f1830d0
+RBP: 00007f7c3f1830a8 R08: 0000000000000000 R09: 00007f7c3f188098
+R10: 0000000000000000 R11: 0000000000000282 R12: 0000000000000000
+R13: 00007f7c3f183080 R14: 00007f7c3f1830d0 R15: 00007ffc365c9210
+ </TASK>
+task:isc-worker0000  state:S stack:26664 pid:192   tgid:191   ppid:1      task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ futex_do_wait+0x88/0x180 kernel/futex/waitwake.c:358
+ __futex_wait+0x1b6/0x300 kernel/futex/waitwake.c:687
+ futex_wait+0xdc/0x190 kernel/futex/waitwake.c:715
+ do_futex+0x2f0/0x370 kernel/futex/syscalls.c:130
+ __do_sys_futex kernel/futex/syscalls.c:207 [inline]
+ __se_sys_futex kernel/futex/syscalls.c:188 [inline]
+ __x64_sys_futex+0x1c9/0x480 kernel/futex/syscalls.c:188
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f7c3f4cb7b2
+RSP: 002b:00007f7c3f181df0 EFLAGS: 00000282 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 0000000000000004 RCX: 00007f7c3f4cb7b2
+RDX: 0000000000000000 RSI: 0000000000000080 RDI: 00007f7c3f1840c8
+RBP: 00007f7c3f1840a0 R08: 0000000000000000 R09: 0000000000000002
+R10: 0000000000000000 R11: 0000000000000282 R12: 0000000000000000
+R13: 00007f7c3f184028 R14: 00007f7c3f1840c8 R15: 00007f7c3f181e20
+ </TASK>
+task:isc-socket      state:S stack:27992 pid:193   tgid:191   ppid:1      task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ poll_schedule_timeout.constprop.0+0xc4/0x1c0 fs/select.c:241
+ do_select+0x140d/0x1850 fs/select.c:603
+ core_sys_select+0x3b1/0xa30 fs/select.c:677
+ kern_select+0x13f/0x1c0 fs/select.c:718
+ __do_sys_select fs/select.c:725 [inline]
+ __se_sys_select fs/select.c:722 [inline]
+ __x64_sys_select+0xbe/0x160 fs/select.c:722
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f7c3f5d6ec3
+RSP: 002b:00007f7c3e980d90 EFLAGS: 00000293 ORIG_RAX: 0000000000000017
+RAX: ffffffffffffffda RBX: 000000000000000a RCX: 00007f7c3f5d6ec3
+RDX: 00007f7c3f187190 RSI: 00007f7c3f187090 RDI: 000000000000000a
+RBP: 00007f7c3f186028 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000293 R12: 0000000000000009
+R13: 00007f7c3f186010 R14: 00007f7c3f70a550 R15: 00007f7c3f706e40
+ </TASK>
+task:isc-timer       state:S stack:29224 pid:194   tgid:191   ppid:1      task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ futex_do_wait+0x88/0x180 kernel/futex/waitwake.c:358
+ __futex_wait+0x1b6/0x300 kernel/futex/waitwake.c:687
+ futex_wait+0xdc/0x190 kernel/futex/waitwake.c:715
+ do_futex+0x2f0/0x370 kernel/futex/syscalls.c:130
+ __do_sys_futex kernel/futex/syscalls.c:207 [inline]
+ __se_sys_futex kernel/futex/syscalls.c:188 [inline]
+ __x64_sys_futex+0x1c9/0x480 kernel/futex/syscalls.c:188
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f7c3f4cbad8
+RSP: 002b:00007f7c3e17fcf0 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 00007f7c3e17fd50 RCX: 00007f7c3f4cbad8
+RDX: 0000000000000000 RSI: 0000000000000189 RDI: 00007f7c3f1880a4
+RBP: 00007f7c3f188078 R08: 0000000000000000 R09: 00000000ffffffff
+R10: 00007f7c3e17fdc0 R11: 0000000000000246 R12: 0000000000000000
+R13: 00007f7c3f188028 R14: 00007f7c3e17fdc0 R15: 00007f7c3f1880a4
+ </TASK>
+task:sshd            state:S stack:25096 pid:209   tgid:209   ppid:1      task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ poll_schedule_timeout.constprop.0+0xc4/0x1c0 fs/select.c:241
+ do_select+0x140d/0x1850 fs/select.c:603
+ core_sys_select+0x3b1/0xa30 fs/select.c:677
+ kern_select+0x13f/0x1c0 fs/select.c:718
+ __do_sys_select fs/select.c:725 [inline]
+ __se_sys_select fs/select.c:722 [inline]
+ __x64_sys_select+0xbe/0x160 fs/select.c:722
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7ff32c016e76
+RSP: 002b:00007ffe0d2aebf8 EFLAGS: 00000246 ORIG_RAX: 0000000000000017
+RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007ff32c016e76
+RDX: 0000000000000000 RSI: 0000562e317680f0 RDI: 0000000000000007
+RBP: 0000562e01d286a0 R08: 0000000000000000 R09: 0000000000000010
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000562e317680f0
+R13: 0000000000000064 R14: 0000000000000000 R15: 0000000000000001
+ </TASK>
+task:agetty          state:S stack:26152 pid:211   tgid:211   ppid:1      task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ poll_schedule_timeout.constprop.0+0xc4/0x1c0 fs/select.c:241
+ do_select+0x140d/0x1850 fs/select.c:603
+ core_sys_select+0x3b1/0xa30 fs/select.c:677
+ kern_select+0x13f/0x1c0 fs/select.c:718
+ __do_sys_select fs/select.c:725 [inline]
+ __se_sys_select fs/select.c:722 [inline]
+ __x64_sys_select+0xbe/0x160 fs/select.c:722
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7ff4f51bbe76
+RSP: 002b:00007ffff83203d8 EFLAGS: 00000246 ORIG_RAX: 0000000000000017
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007ff4f51bbe76
+RDX: 0000000000000000 RSI: 00007ffff8320450 RDI: 0000000000000005
+RBP: 0000000000000004 R08: 0000000000000000 R09: 00007ff4f5298be0
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007ffff8321630
+R13: 00007ffff8321ed0 R14: 00007ffff83215f0 R15: 00007ffff8320450
+ </TASK>
+task:agetty          state:S stack:26152 pid:212   tgid:212   ppid:1      task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ poll_schedule_timeout.constprop.0+0xc4/0x1c0 fs/select.c:241
+ do_select+0x140d/0x1850 fs/select.c:603
+ core_sys_select+0x3b1/0xa30 fs/select.c:677
+ kern_select+0x13f/0x1c0 fs/select.c:718
+ __do_sys_select fs/select.c:725 [inline]
+ __se_sys_select fs/select.c:722 [inline]
+ __x64_sys_select+0xbe/0x160 fs/select.c:722
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f4352f29e76
+RSP: 002b:00007fff7f67d998 EFLAGS: 00000246 ORIG_RAX: 0000000000000017
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007f4352f29e76
+RDX: 0000000000000000 RSI: 00007fff7f67da10 RDI: 0000000000000005
+RBP: 0000000000000004 R08: 0000000000000000 R09: 00007f4353006be0
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007fff7f67ebf0
+R13: 00007fff7f67f490 R14: 00007fff7f67ebb0 R15: 00007fff7f67da10
+ </TASK>
+task:agetty          state:S stack:26152 pid:213   tgid:213   ppid:1      task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ poll_schedule_timeout.constprop.0+0xc4/0x1c0 fs/select.c:241
+ do_select+0x140d/0x1850 fs/select.c:603
+ core_sys_select+0x3b1/0xa30 fs/select.c:677
+ kern_select+0x13f/0x1c0 fs/select.c:718
+ __do_sys_select fs/select.c:725 [inline]
+ __se_sys_select fs/select.c:722 [inline]
+ __x64_sys_select+0xbe/0x160 fs/select.c:722
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fd3229f4e76
+RSP: 002b:00007ffc9c3cb358 EFLAGS: 00000246 ORIG_RAX: 0000000000000017
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007fd3229f4e76
+RDX: 0000000000000000 RSI: 00007ffc9c3cb3d0 RDI: 0000000000000005
+RBP: 0000000000000004 R08: 0000000000000000 R09: 00007fd322ad1be0
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007ffc9c3cc5b0
+R13: 00007ffc9c3cce50 R14: 00007ffc9c3cc570 R15: 00007ffc9c3cb3d0
+ </TASK>
+task:agetty          state:S stack:25608 pid:214   tgid:214   ppid:1      task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ poll_schedule_timeout.constprop.0+0xc4/0x1c0 fs/select.c:241
+ do_select+0x140d/0x1850 fs/select.c:603
+ core_sys_select+0x3b1/0xa30 fs/select.c:677
+ kern_select+0x13f/0x1c0 fs/select.c:718
+ __do_sys_select fs/select.c:725 [inline]
+ __se_sys_select fs/select.c:722 [inline]
+ __x64_sys_select+0xbe/0x160 fs/select.c:722
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f32e5aa6e76
+RSP: 002b:00007fff6197e8a8 EFLAGS: 00000246 ORIG_RAX: 0000000000000017
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007f32e5aa6e76
+RDX: 0000000000000000 RSI: 00007fff6197e920 RDI: 0000000000000005
+RBP: 0000000000000004 R08: 0000000000000000 R09: 00007f32e5b83be0
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007fff6197fb00
+R13: 00007fff619803a0 R14: 00007fff6197fac0 R15: 00007fff6197e920
+ </TASK>
+task:agetty          state:S stack:25864 pid:215   tgid:215   ppid:1      task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ poll_schedule_timeout.constprop.0+0xc4/0x1c0 fs/select.c:241
+ do_select+0x140d/0x1850 fs/select.c:603
+ core_sys_select+0x3b1/0xa30 fs/select.c:677
+ kern_select+0x13f/0x1c0 fs/select.c:718
+ __do_sys_select fs/select.c:725 [inline]
+ __se_sys_select fs/select.c:722 [inline]
+ __x64_sys_select+0xbe/0x160 fs/select.c:722
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f3faea2ae76
+RSP: 002b:00007ffd7b9888d8 EFLAGS: 00000246 ORIG_RAX: 0000000000000017
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007f3faea2ae76
+RDX: 0000000000000000 RSI: 00007ffd7b988950 RDI: 0000000000000005
+RBP: 0000000000000004 R08: 0000000000000000 R09: 00007f3faeb07be0
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007ffd7b989b30
+R13: 00007ffd7b98a3d0 R14: 00007ffd7b989af0 R15: 00007ffd7b988950
+ </TASK>
+task:agetty          state:S stack:25096 pid:216   tgid:216   ppid:1      task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ poll_schedule_timeout.constprop.0+0xc4/0x1c0 fs/select.c:241
+ do_select+0x140d/0x1850 fs/select.c:603
+ core_sys_select+0x3b1/0xa30 fs/select.c:677
+ kern_select+0x13f/0x1c0 fs/select.c:718
+ __do_sys_select fs/select.c:725 [inline]
+ __se_sys_select fs/select.c:722 [inline]
+ __x64_sys_select+0xbe/0x160 fs/select.c:722
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f31229ece76
+RSP: 002b:00007ffc7b23f3c8 EFLAGS: 00000246 ORIG_RAX: 0000000000000017
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007f31229ece76
+RDX: 0000000000000000 RSI: 00007ffc7b23f440 RDI: 0000000000000005
+RBP: 0000000000000004 R08: 0000000000000000 R09: 00007f3122ac9be0
+R10: 0000000000000000 R11: 0000000000000246 R12: 000000000000000d
+R13: 00007ffc7b240ec0 R14: 00007ffc7b2405e0 R15: 00007ffc7b23f440
+ </TASK>
+task:sshd            state:S stack:25096 pid:232   tgid:232   ppid:209    task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ poll_schedule_timeout.constprop.0+0xc4/0x1c0 fs/select.c:241
+ do_select+0x140d/0x1850 fs/select.c:603
+ core_sys_select+0x3b1/0xa30 fs/select.c:677
+ kern_select+0x13f/0x1c0 fs/select.c:718
+ __do_sys_select fs/select.c:725 [inline]
+ __se_sys_select fs/select.c:722 [inline]
+ __x64_sys_select+0xbe/0x160 fs/select.c:722
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fb5198dbe76
+RSP: 002b:00007fffb597a9e8 EFLAGS: 00000246 ORIG_RAX: 0000000000000017
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007fb5198dbe76
+RDX: 000056458a735220 RSI: 000056458a7354e0 RDI: 000000000000000f
+RBP: 000056458a747270 R08: 0000000000000000 R09: 0000000000004000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000564568f96768
+R13: 0000000000000000 R14: 0000000000000004 R15: 0000564568f4bac0
+ </TASK>
+task:syz-executor    state:R  running task     stack:26152 pid:238   tgid:238   ppid:232    task_flags:0x400100 flags:0x00080001
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_nanosleep+0x216/0x550 kernel/time/hrtimer.c:2116
+ hrtimer_nanosleep+0x11e/0x320 kernel/time/hrtimer.c:2163
+ common_nsleep+0xaa/0xd0 kernel/time/posix-timers.c:1352
+ __do_sys_clock_nanosleep kernel/time/posix-timers.c:1398 [inline]
+ __se_sys_clock_nanosleep kernel/time/posix-timers.c:1375 [inline]
+ __x64_sys_clock_nanosleep+0x331/0x470 kernel/time/posix-timers.c:1375
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fc927f62423
+RSP: 002b:00007fffa1d5cea8 EFLAGS: 00000202 ORIG_RAX: 00000000000000e6
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007fc927f62423
+RDX: 00007fffa1d5cec0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 0000000000000000 R08: 00007fc928cf5000 R09: 00007fc928cf5010
+R10: 0000000000000000 R11: 0000000000000202 R12: 00007fffa1d5d2f0
+R13: 0000000000000004 R14: 00007fffa1d5cefc R15: 00007fffa1d5cf80
+ </TASK>
+task:syz-executor    state:S stack:25096 pid:248   tgid:248   ppid:238    task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_wait+0x19c/0x560 kernel/exit.c:1716
+ kernel_wait4+0x14e/0x260 kernel/exit.c:1870
+ __do_sys_wait4+0x149/0x160 kernel/exit.c:1898
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f99f4a35dd3
+RSP: 002b:00007ffd025439d8 EFLAGS: 00000202 ORIG_RAX: 000000000000003d
+RAX: ffffffffffffffda RBX: 0000000000000102 RCX: 00007f99f4a35dd3
+RDX: 0000000040000000 RSI: 00007ffd025439ec RDI: 00000000ffffffff
+RBP: 00007ffd025439ec R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000008
+R13: 0000000000000003 R14: 0000000000000009 R15: 0000000000000000
+ </TASK>
+task:syz-executor    state:S stack:26152 pid:249   tgid:249   ppid:238    task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_wait+0x19c/0x560 kernel/exit.c:1716
+ kernel_wait4+0x14e/0x260 kernel/exit.c:1870
+ __do_sys_wait4+0x149/0x160 kernel/exit.c:1898
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fe213375dd3
+RSP: 002b:00007ffca4464358 EFLAGS: 00000202 ORIG_RAX: 000000000000003d
+RAX: ffffffffffffffda RBX: 00000000000000fe RCX: 00007fe213375dd3
+RDX: 0000000040000000 RSI: 00007ffca446436c RDI: 00000000ffffffff
+RBP: 00007ffca446436c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000008
+R13: 0000000000000003 R14: 0000000000000009 R15: 0000000000000000
+ </TASK>
+task:syz-executor    state:S stack:24792 pid:254   tgid:254   ppid:249    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ anon_pipe_read+0x82b/0xe00 fs/pipe.c:388
+ new_sync_read fs/read_write.c:491 [inline]
+ vfs_read fs/read_write.c:572 [inline]
+ vfs_read+0xa4f/0xca0 fs/read_write.c:552
+ ksys_read+0x1ef/0x240 fs/read_write.c:715
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fe21337e57d
+RSP: 002b:00007ffca4464188 EFLAGS: 00000246 ORIG_RAX: 0000000000000000
+RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fe21337e57d
+RDX: 0000000000000030 RSI: 00007ffca4464220 RDI: 00000000000000f9
+RBP: 00007ffca44641cc R08: 000000000000000a R09: 00007ffca4463ed7
+R10: 0000000000000000 R11: 0000000000000246 R12: 000000000000003e
+R13: 00000000000927c0 R14: 000000000000cb22 R15: 00007ffca4464220
+ </TASK>
+task:syz-executor    state:S stack:24792 pid:258   tgid:258   ppid:248    task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ anon_pipe_read+0x82b/0xe00 fs/pipe.c:388
+ new_sync_read fs/read_write.c:491 [inline]
+ vfs_read fs/read_write.c:572 [inline]
+ vfs_read+0xa4f/0xca0 fs/read_write.c:552
+ ksys_read+0x1ef/0x240 fs/read_write.c:715
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f99f4a3e57d
+RSP: 002b:00007ffd02543808 EFLAGS: 00000246 ORIG_RAX: 0000000000000000
+RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f99f4a3e57d
+RDX: 0000000000000030 RSI: 00007ffd025438a0 RDI: 00000000000000f9
+RBP: 00007ffd0254384c R08: 000000000000000a R09: 00007ffd02543557
+R10: 0000000000000000 R11: 0000000000000246 R12: 000000000000006e
+R13: 00000000000927c0 R14: 000000000000cb26 R15: 00007ffd025438a0
+ </TASK>
+task:kworker/u16:4   state:I stack:25960 pid:261   tgid:261   ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (loop2)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/u16:5   state:I stack:28168 pid:265   tgid:265   ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (loop2)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/u16:6   state:I stack:26408 pid:267   tgid:267   ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (events_unbound)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/u16:7   state:I stack:27032 pid:272   tgid:272   ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (loop5)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/u16:8   state:I stack:24568 pid:279   tgid:279   ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (events_unbound)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/u16:9   state:D stack:25064 pid:289   tgid:289   ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue: netns cleanup_net
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ synchronize_rcu_expedited+0x3f7/0x5b0 kernel/rcu/tree_exp.h:972
+ synchronize_net+0x72/0xa0 net/core/dev.c:12117
+ unregister_netdevice_many_notify+0x1160/0x1f60 net/core/dev.c:12326
+ unregister_netdevice_many net/core/dev.c:12347 [inline]
+ default_device_exit_batch+0x5bc/0x770 net/core/dev.c:12851
+ ops_exit_list net/core/net_namespace.c:205 [inline]
+ ops_undo_list+0x34c/0xa50 net/core/net_namespace.c:252
+ cleanup_net+0x3cc/0x770 net/core/net_namespace.c:695
+ process_one_work kernel/workqueue.c:3263 [inline]
+ process_scheduled_works+0x54d/0x19c0 kernel/workqueue.c:3346
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3427
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/u16:10  state:I stack:26208 pid:324   tgid:324   ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (flush-8:0)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/u16:11  state:I stack:31128 pid:1004  tgid:1004  ppid:2      task_flags:0x4208060 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:kworker/2:2H    state:I stack:28456 pid:3906  tgid:3906  ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (kblockd)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:syz-executor    state:S stack:26152 pid:3964  tgid:3964  ppid:238    task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_wait+0x19c/0x560 kernel/exit.c:1716
+ kernel_wait4+0x14e/0x260 kernel/exit.c:1870
+ __do_sys_wait4+0x149/0x160 kernel/exit.c:1898
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fd776245dd3
+RSP: 002b:00007ffc988d42d8 EFLAGS: 00000202 ORIG_RAX: 000000000000003d
+RAX: ffffffffffffffda RBX: 0000000000000f85 RCX: 00007fd776245dd3
+RDX: 0000000040000000 RSI: 00007ffc988d42ec RDI: 00000000ffffffff
+RBP: 00007ffc988d42ec R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000008
+R13: 0000000000000003 R14: 0000000000000009 R15: 0000000000000000
+ </TASK>
+task:syz-executor    state:S stack:24792 pid:3973  tgid:3973  ppid:3964   task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_nanosleep+0x216/0x550 kernel/time/hrtimer.c:2116
+ hrtimer_nanosleep+0x11e/0x320 kernel/time/hrtimer.c:2163
+ common_nsleep+0xaa/0xd0 kernel/time/posix-timers.c:1352
+ __do_sys_clock_nanosleep kernel/time/posix-timers.c:1398 [inline]
+ __se_sys_clock_nanosleep kernel/time/posix-timers.c:1375 [inline]
+ __x64_sys_clock_nanosleep+0x331/0x470 kernel/time/posix-timers.c:1375
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fd776282423
+RSP: 002b:00007ffc988d40c8 EFLAGS: 00000202 ORIG_RAX: 00000000000000e6
+RAX: ffffffffffffffda RBX: 0000000000000061 RCX: 00007fd776282423
+RDX: 00007ffc988d40e0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007ffc988d414c R08: 00007fd77700f000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000001388
+R13: 00000000000927c0 R14: 000000000000c951 R15: 00007ffc988d41a0
+ </TASK>
+task:kworker/3:2H    state:I stack:28744 pid:4004  tgid:4004  ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue:  0x0 (kblockd)
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ worker_thread+0x112/0xd10 kernel/workqueue.c:3442
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:syz.6.50        state:T stack:29848 pid:4038  tgid:4038  ppid:258    task_flags:0x400040 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_signal_stop+0x59e/0x7a0 kernel/signal.c:2641
+ get_signal+0x792/0x2500 kernel/signal.c:2985
+ arch_do_signal_or_restart+0x80/0x870 arch/x86/kernel/signal.c:337
+ exit_to_user_mode_loop+0x95/0x120 kernel/entry/common.c:40
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2eb/0x380 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f99f4a72465
+RSP: 002b:00007f99f305efa0 EFLAGS: 00000293 ORIG_RAX: 00000000000000e6
+RAX: fffffffffffffdfc RBX: 00007f99f4cc5fa0 RCX: 00007f99f4a72465
+RDX: 00007f99f305efe0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007f99f4aeb44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000293 R12: 0000000000000000
+R13: 0000000000000001 R14: 00007f99f4cc5fa0 R15: 00007ffd02543498
+ </TASK>
+task:syz-executor    state:S stack:26152 pid:4064  tgid:4064  ppid:238    task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_wait+0x19c/0x560 kernel/exit.c:1716
+ kernel_wait4+0x14e/0x260 kernel/exit.c:1870
+ __do_sys_wait4+0x149/0x160 kernel/exit.c:1898
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f6486ef5dd3
+RSP: 002b:00007ffcee0ae3d8 EFLAGS: 00000202 ORIG_RAX: 000000000000003d
+RAX: ffffffffffffffda RBX: 0000000000000ffe RCX: 00007f6486ef5dd3
+RDX: 0000000040000000 RSI: 00007ffcee0ae3ec RDI: 00000000ffffffff
+RBP: 00007ffcee0ae3ec R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000008
+R13: 0000000000000003 R14: 0000000000000009 R15: 0000000000000000
+ </TASK>
+task:syz-executor    state:S stack:24792 pid:4094  tgid:4094  ppid:4064   task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ anon_pipe_read+0x82b/0xe00 fs/pipe.c:388
+ new_sync_read fs/read_write.c:491 [inline]
+ vfs_read fs/read_write.c:572 [inline]
+ vfs_read+0xa4f/0xca0 fs/read_write.c:552
+ ksys_read+0x1ef/0x240 fs/read_write.c:715
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f6486efe57d
+RSP: 002b:00007ffcee0ae208 EFLAGS: 00000246 ORIG_RAX: 0000000000000000
+RAX: ffffffffffffffda RBX: 00000000ffffffff RCX: 00007f6486efe57d
+RDX: 0000000000000030 RSI: 00007ffcee0ae2a0 RDI: 00000000000000f9
+RBP: 00007ffcee0ae24c R08: 000000000000000a R09: 00007ffcee0adf57
+R10: 0000000000000000 R11: 0000000000000246 R12: 000000000000002c
+R13: 00000000000927c0 R14: 000000000000cb26 R15: 00007ffcee0ae2a0
+ </TASK>
+task:syz.7.93        state:T stack:29672 pid:4277  tgid:4277  ppid:254    task_flags:0x400040 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_signal_stop+0x59e/0x7a0 kernel/signal.c:2641
+ get_signal+0x792/0x2500 kernel/signal.c:2985
+ arch_do_signal_or_restart+0x80/0x870 arch/x86/kernel/signal.c:337
+ exit_to_user_mode_loop+0x95/0x120 kernel/entry/common.c:40
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2eb/0x380 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fe2133b2465
+RSP: 002b:00007fe2119a6fa0 EFLAGS: 00000293 ORIG_RAX: 00000000000000e6
+RAX: fffffffffffffdfc RBX: 00007fe213605fa0 RCX: 00007fe2133b2465
+RDX: 00007fe2119a6fe0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007fe21342b44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000293 R12: 0000000000000000
+R13: 0000000000000001 R14: 00007fe213605fa0 R15: 00007ffca4463e18
+ </TASK>
+task:syz-executor    state:S stack:25096 pid:4328  tgid:4328  ppid:238    task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_wait+0x19c/0x560 kernel/exit.c:1716
+ kernel_wait4+0x14e/0x260 kernel/exit.c:1870
+ __do_sys_wait4+0x149/0x160 kernel/exit.c:1898
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f1a1d2c5dd3
+RSP: 002b:00007ffdc5c6d598 EFLAGS: 00000202 ORIG_RAX: 000000000000003d
+RAX: ffffffffffffffda RBX: 00000000000010f2 RCX: 00007f1a1d2c5dd3
+RDX: 0000000040000000 RSI: 00007ffdc5c6d5ac RDI: 00000000ffffffff
+RBP: 00007ffdc5c6d5ac R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000008
+R13: 0000000000000003 R14: 0000000000000009 R15: 0000000000000000
+ </TASK>
+task:syz-executor    state:S stack:24792 pid:4338  tgid:4338  ppid:4328   task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_nanosleep+0x216/0x550 kernel/time/hrtimer.c:2116
+ hrtimer_nanosleep+0x11e/0x320 kernel/time/hrtimer.c:2163
+ common_nsleep+0xaa/0xd0 kernel/time/posix-timers.c:1352
+ __do_sys_clock_nanosleep kernel/time/posix-timers.c:1398 [inline]
+ __se_sys_clock_nanosleep kernel/time/posix-timers.c:1375 [inline]
+ __x64_sys_clock_nanosleep+0x331/0x470 kernel/time/posix-timers.c:1375
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f1a1d302423
+RSP: 002b:00007ffdc5c6d388 EFLAGS: 00000202 ORIG_RAX: 00000000000000e6
+RAX: ffffffffffffffda RBX: 000000000000002f RCX: 00007f1a1d302423
+RDX: 00007ffdc5c6d3a0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007ffdc5c6d40c R08: 00007f1a1d0f8000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000001388
+R13: 00000000000927c0 R14: 000000000000c98e R15: 00007ffdc5c6d460
+ </TASK>
+task:syz.7.110       state:T stack:29736 pid:4437  tgid:4437  ppid:254    task_flags:0x400040 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_signal_stop+0x59e/0x7a0 kernel/signal.c:2641
+ get_signal+0x792/0x2500 kernel/signal.c:2985
+ arch_do_signal_or_restart+0x80/0x870 arch/x86/kernel/signal.c:337
+ exit_to_user_mode_loop+0x95/0x120 kernel/entry/common.c:40
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ ret_from_fork+0x3e7/0x470 arch/x86/kernel/process.c:167
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:syz-executor    state:S stack:26152 pid:4653  tgid:4653  ppid:238    task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_wait+0x19c/0x560 kernel/exit.c:1716
+ kernel_wait4+0x14e/0x260 kernel/exit.c:1870
+ __do_sys_wait4+0x149/0x160 kernel/exit.c:1898
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f8beca65dd3
+RSP: 002b:00007ffcc3412248 EFLAGS: 00000202 ORIG_RAX: 000000000000003d
+RAX: ffffffffffffffda RBX: 0000000000001237 RCX: 00007f8beca65dd3
+RDX: 0000000040000000 RSI: 00007ffcc341225c RDI: 00000000ffffffff
+RBP: 00007ffcc341225c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000008
+R13: 0000000000000003 R14: 0000000000000009 R15: 0000000000000000
+ </TASK>
+task:syz-executor    state:S stack:24792 pid:4663  tgid:4663  ppid:4653   task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_nanosleep+0x216/0x550 kernel/time/hrtimer.c:2116
+ hrtimer_nanosleep+0x11e/0x320 kernel/time/hrtimer.c:2163
+ common_nsleep+0xaa/0xd0 kernel/time/posix-timers.c:1352
+ __do_sys_clock_nanosleep kernel/time/posix-timers.c:1398 [inline]
+ __se_sys_clock_nanosleep kernel/time/posix-timers.c:1375 [inline]
+ __x64_sys_clock_nanosleep+0x331/0x470 kernel/time/posix-timers.c:1375
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f8becaa2423
+RSP: 002b:00007ffcc3412038 EFLAGS: 00000202 ORIG_RAX: 00000000000000e6
+RAX: ffffffffffffffda RBX: 000000000000001d RCX: 00007f8becaa2423
+RDX: 00007ffcc3412050 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007ffcc34120bc R08: 00007f8bed835000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000001388
+R13: 00000000000927c0 R14: 000000000000ca99 R15: 00007ffcc3412110
+ </TASK>
+task:syz.6.172       state:T stack:29848 pid:5078  tgid:5078  ppid:258    task_flags:0x400040 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_signal_stop+0x59e/0x7a0 kernel/signal.c:2641
+ get_signal+0x792/0x2500 kernel/signal.c:2985
+ arch_do_signal_or_restart+0x80/0x870 arch/x86/kernel/signal.c:337
+ exit_to_user_mode_loop+0x95/0x120 kernel/entry/common.c:40
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2eb/0x380 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0xd19acdab00000009
+RSP: 002b:00007f99f305efa0 EFLAGS: 00000293 ORIG_RAX: c56f0ec0a811c74b
+RAX: 001abf4428c1556e RBX: fa5dadc263f42b9b RCX: 706b368d15cf80b2
+RDX: 7494af2ee147b736 RSI: 9317022243807892 RDI: c5d402292b37279e
+RBP: 8fc27213ef38d355 R08: 91add98bc050e207 R09: 86b4cd589db3f171
+R10: 15a90b748ab1fd2d R11: 38940e9fa3ea30f5 R12: da95cc446eaee43a
+R13: a815b2c869973f38 R14: bb95b3898f91c3df R15: a53540a2173c9b79
+ </TASK>
+task:syz-executor    state:S stack:26152 pid:5409  tgid:5409  ppid:238    task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_wait+0x19c/0x560 kernel/exit.c:1716
+ kernel_wait4+0x14e/0x260 kernel/exit.c:1870
+ __do_sys_wait4+0x149/0x160 kernel/exit.c:1898
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fc686785dd3
+RSP: 002b:00007ffee88094a8 EFLAGS: 00000202 ORIG_RAX: 000000000000003d
+RAX: ffffffffffffffda RBX: 0000000000001531 RCX: 00007fc686785dd3
+RDX: 0000000040000000 RSI: 00007ffee88094bc RDI: 00000000ffffffff
+RBP: 00007ffee88094bc R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000008
+R13: 0000000000000003 R14: 0000000000000009 R15: 0000000000000000
+ </TASK>
+task:syz-executor    state:S stack:24792 pid:5425  tgid:5425  ppid:5409   task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_nanosleep+0x216/0x550 kernel/time/hrtimer.c:2116
+ hrtimer_nanosleep+0x11e/0x320 kernel/time/hrtimer.c:2163
+ common_nsleep+0xaa/0xd0 kernel/time/posix-timers.c:1352
+ __do_sys_clock_nanosleep kernel/time/posix-timers.c:1398 [inline]
+ __se_sys_clock_nanosleep kernel/time/posix-timers.c:1375 [inline]
+ __x64_sys_clock_nanosleep+0x331/0x470 kernel/time/posix-timers.c:1375
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fc6867c2423
+RSP: 002b:00007ffee8809298 EFLAGS: 00000202 ORIG_RAX: 00000000000000e6
+RAX: ffffffffffffffda RBX: 0000000000000009 RCX: 00007fc6867c2423
+RDX: 00007ffee88092b0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007ffee880931c R08: 00007fc6865b8000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000001388
+R13: 00000000000927c0 R14: 000000000000cb1a R15: 00007ffee8809370
+ </TASK>
+task:syz-executor    state:S stack:26152 pid:6086  tgid:6086  ppid:238    task_flags:0x400100 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_wait+0x19c/0x560 kernel/exit.c:1716
+ kernel_wait4+0x14e/0x260 kernel/exit.c:1870
+ __do_sys_wait4+0x149/0x160 kernel/exit.c:1898
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f4f83d65dd3
+RSP: 002b:00007ffed8effec8 EFLAGS: 00000202 ORIG_RAX: 000000000000003d
+RAX: ffffffffffffffda RBX: 00000000000017dd RCX: 00007f4f83d65dd3
+RDX: 0000000040000000 RSI: 00007ffed8effedc RDI: 00000000ffffffff
+RBP: 00007ffed8effedc R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000008
+R13: 0000000000000003 R14: 0000000000000009 R15: 0000000000000000
+ </TASK>
+task:syz-executor    state:D stack:24792 pid:6109  tgid:6109  ppid:6086   task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ __mutex_lock_common kernel/locking/mutex.c:676 [inline]
+ __mutex_lock+0x119e/0x25b0 kernel/locking/mutex.c:760
+ rtnl_net_lock include/linux/rtnetlink.h:130 [inline]
+ inet_rtm_newaddr+0x300/0x14c0 net/ipv4/devinet.c:978
+ rtnetlink_rcv_msg+0x9c6/0xfc0 net/core/rtnetlink.c:6951
+ netlink_rcv_skb+0x147/0x430 net/netlink/af_netlink.c:2552
+ netlink_unicast_kernel net/netlink/af_netlink.c:1320 [inline]
+ netlink_unicast+0x5a7/0x7d0 net/netlink/af_netlink.c:1346
+ netlink_sendmsg+0x8a3/0xd80 net/netlink/af_netlink.c:1896
+ sock_sendmsg_nosec net/socket.c:727 [inline]
+ __sock_sendmsg+0x224/0x2a0 net/socket.c:742
+ __sys_sendto+0x299/0x390 net/socket.c:2244
+ __do_sys_sendto net/socket.c:2251 [inline]
+ __se_sys_sendto net/socket.c:2247 [inline]
+ __x64_sys_sendto+0xe1/0x1c0 net/socket.c:2247
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f4f83d719e3
+RSP: 002b:00007ffed8eff5f8 EFLAGS: 00000202 ORIG_RAX: 000000000000002c
+RAX: ffffffffffffffda RBX: 00007f4f84b24620 RCX: 00007f4f83d719e3
+RDX: 0000000000000028 RSI: 00007f4f84b24670 RDI: 0000000000000003
+RBP: 0000000000000001 R08: 00007ffed8eff614 R09: 000000000000000c
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000003
+R13: 0000000000000000 R14: 00007f4f84b24670 R15: 0000000000000000
+ </TASK>
+task:syz.8.279       state:T stack:29672 pid:6783  tgid:6783  ppid:3973   task_flags:0x400040 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_signal_stop+0x59e/0x7a0 kernel/signal.c:2641
+ get_signal+0x792/0x2500 kernel/signal.c:2985
+ arch_do_signal_or_restart+0x80/0x870 arch/x86/kernel/signal.c:337
+ exit_to_user_mode_loop+0x95/0x120 kernel/entry/common.c:40
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2eb/0x380 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fd776282465
+RSP: 002b:00007fd774876fa0 EFLAGS: 00000293 ORIG_RAX: 00000000000000e6
+RAX: fffffffffffffdfc RBX: 00007fd7764d5fa0 RCX: 00007fd776282465
+RDX: 00007fd774876fe0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007fd7762fb44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000293 R12: 0000000000000000
+R13: 0000000000000001 R14: 00007fd7764d5fa0 R15: 00007ffc988d3d98
+ </TASK>
+task:syz.9.318       state:T stack:29448 pid:7178  tgid:7178  ppid:4094   task_flags:0x400040 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_signal_stop+0x59e/0x7a0 kernel/signal.c:2641
+ get_signal+0x792/0x2500 kernel/signal.c:2985
+ arch_do_signal_or_restart+0x80/0x870 arch/x86/kernel/signal.c:337
+ exit_to_user_mode_loop+0x95/0x120 kernel/entry/common.c:40
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2eb/0x380 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f6486f32465
+RSP: 002b:00007f6485526fa0 EFLAGS: 00000293 ORIG_RAX: 00000000000000e6
+RAX: fffffffffffffdfc RBX: 00007f6487185fa0 RCX: 00007f6486f32465
+RDX: 00007f6485526fe0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007f6486fab44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000293 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f6487185fa0 R15: 00007ffcee0ade98
+ </TASK>
+task:ext4lazyinit    state:S stack:30784 pid:7683  tgid:7683  ppid:2      task_flags:0x200040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_timeout+0x11a/0x280 kernel/time/sleep_timeout.c:99
+ ext4_lazyinit_thread fs/ext4/super.c:3856 [inline]
+ ext4_lazyinit_thread+0x98e/0x15f0 fs/ext4/super.c:3781
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x386/0x470 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+task:syz.0.390       state:S stack:26920 pid:7813  tgid:7813  ppid:4663   task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_nanosleep+0x216/0x550 kernel/time/hrtimer.c:2116
+ hrtimer_nanosleep+0x11e/0x320 kernel/time/hrtimer.c:2163
+ common_nsleep+0xaa/0xd0 kernel/time/posix-timers.c:1352
+ __do_sys_clock_nanosleep kernel/time/posix-timers.c:1398 [inline]
+ __se_sys_clock_nanosleep kernel/time/posix-timers.c:1375 [inline]
+ __x64_sys_clock_nanosleep+0x331/0x470 kernel/time/posix-timers.c:1375
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f8becaa2465
+RSP: 002b:00007ffcc3411e00 EFLAGS: 00000293 ORIG_RAX: 00000000000000e6
+RAX: ffffffffffffffda RBX: 00007f8beccf5fa0 RCX: 00007f8becaa2465
+RDX: 00007ffcc3411e40 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007f8beccf7ba0 R08: 0000000000000000 R09: 00007f8bed835010
+R10: 0000000000000000 R11: 0000000000000293 R12: 000000000000cbfc
+R13: 0000000000000032 R14: 00007f8beccf616c R15: ffffffffffffffff
+ </TASK>
+task:syz.0.390       state:S stack:28056 pid:7815  tgid:7813  ppid:4663   task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ futex_do_wait+0x88/0x180 kernel/futex/waitwake.c:358
+ __futex_wait+0x1b6/0x300 kernel/futex/waitwake.c:687
+ futex_wait+0xdc/0x190 kernel/futex/waitwake.c:715
+ do_futex+0x2f0/0x370 kernel/futex/syscalls.c:130
+ __do_sys_futex kernel/futex/syscalls.c:207 [inline]
+ __se_sys_futex kernel/futex/syscalls.c:188 [inline]
+ __x64_sys_futex+0x1c9/0x480 kernel/futex/syscalls.c:188
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f8beca6fba9
+RSP: 002b:00007f8beb0970e8 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 00007f8beccf5fa8 RCX: 00007f8beca6fba9
+RDX: 0000000000000000 RSI: 0000000000000080 RDI: 00007f8beccf5fa8
+RBP: 00007f8beccf5fa0 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007f8beccf5fac
+R13: 0000000000000000 R14: 00007ffcc3411c20 R15: 00007ffcc3411d08
+ </TASK>
+task:syz.0.390       state:S stack:29120 pid:7821  tgid:7813  ppid:4663   task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_timeout+0x244/0x280 kernel/time/sleep_timeout.c:75
+ unix_stream_data_wait net/unix/af_unix.c:2745 [inline]
+ unix_stream_read_generic+0x112f/0x2990 net/unix/af_unix.c:3009
+ unix_stream_recvmsg+0xb4/0xf0 net/unix/af_unix.c:3172
+ sock_recvmsg_nosec net/socket.c:1078 [inline]
+ sock_recvmsg+0x21b/0x290 net/socket.c:1100
+ ____sys_recvmsg+0x20f/0x6e0 net/socket.c:2850
+ ___sys_recvmsg+0xfe/0x190 net/socket.c:2892
+ do_recvmmsg+0x2c7/0x740 net/socket.c:2987
+ __sys_recvmmsg+0x244/0x260 net/socket.c:3061
+ __do_sys_recvmmsg net/socket.c:3084 [inline]
+ __se_sys_recvmmsg net/socket.c:3077 [inline]
+ __x64_sys_recvmmsg+0xe2/0x130 net/socket.c:3077
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f8beca6fba9
+RSP: 002b:00007f8beb076058 EFLAGS: 00000246 ORIG_RAX: 000000000000012b
+RAX: ffffffffffffffda RBX: 00007f8beccf6080 RCX: 00007f8beca6fba9
+RDX: 0000000000000001 RSI: 0000200000003880 RDI: 0000000000000005
+RBP: 00007f8becb1b44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f8beccf6080 R15: 00007ffcc3411d08
+ </TASK>
+task:syz.0.390       state:S stack:23208 pid:7832  tgid:7813  ppid:4663   task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ futex_do_wait+0x88/0x180 kernel/futex/waitwake.c:358
+ __futex_wait+0x1b6/0x300 kernel/futex/waitwake.c:687
+ futex_wait+0xdc/0x190 kernel/futex/waitwake.c:715
+ do_futex+0x2f0/0x370 kernel/futex/syscalls.c:130
+ __do_sys_futex kernel/futex/syscalls.c:207 [inline]
+ __se_sys_futex kernel/futex/syscalls.c:188 [inline]
+ __x64_sys_futex+0x1c9/0x480 kernel/futex/syscalls.c:188
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f8beca6fba9
+RSP: 002b:00007f8beb0550e8 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 00007f8beccf6168 RCX: 00007f8beca6fba9
+RDX: 0000000000000000 RSI: 0000000000000080 RDI: 00007f8beccf6168
+RBP: 00007f8beccf6160 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007f8beccf616c
+R13: 0000000000000000 R14: 00007ffcc3411c20 R15: 00007ffcc3411d08
+ </TASK>
+task:syz.0.390       state:S stack:30328 pid:7851  tgid:7813  ppid:4663   task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ futex_do_wait+0x88/0x180 kernel/futex/waitwake.c:358
+ __futex_wait+0x1b6/0x300 kernel/futex/waitwake.c:687
+ futex_wait+0xdc/0x190 kernel/futex/waitwake.c:715
+ do_futex+0x2f0/0x370 kernel/futex/syscalls.c:130
+ __do_sys_futex kernel/futex/syscalls.c:207 [inline]
+ __se_sys_futex kernel/futex/syscalls.c:188 [inline]
+ __x64_sys_futex+0x1c9/0x480 kernel/futex/syscalls.c:188
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f8beca6fba9
+RSP: 002b:00007f8beac320e8 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 00007f8beccf6248 RCX: 00007f8beca6fba9
+RDX: 0000000000000000 RSI: 0000000000000080 RDI: 00007f8beccf6248
+RBP: 00007f8beccf6240 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007f8beccf624c
+R13: 0000000000000000 R14: 00007ffcc3411c20 R15: 00007ffcc3411d08
+ </TASK>
+task:syz.8.392       state:R  running task     stack:28296 pid:7822  tgid:7822  ppid:3973   task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ do_nanosleep+0x216/0x550 kernel/time/hrtimer.c:2116
+ hrtimer_nanosleep+0x11e/0x320 kernel/time/hrtimer.c:2163
+ common_nsleep+0xaa/0xd0 kernel/time/posix-timers.c:1352
+ __do_sys_clock_nanosleep kernel/time/posix-timers.c:1398 [inline]
+ __se_sys_clock_nanosleep kernel/time/posix-timers.c:1375 [inline]
+ __x64_sys_clock_nanosleep+0x331/0x470 kernel/time/posix-timers.c:1375
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fd776282465
+RSP: 002b:00007ffc988d3e90 EFLAGS: 00000293 ORIG_RAX: 00000000000000e6
+RAX: ffffffffffffffda RBX: 00007fd7764d5fa0 RCX: 00007fd776282465
+RDX: 00007ffc988d3ed0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007fd7764d7ba0 R08: 0000000000000000 R09: 00007fd77700f010
+R10: 0000000000000000 R11: 0000000000000293 R12: 000000000000cc37
+R13: 0000000000000fd2 R14: 00007fd7764d608c R15: ffffffffffffffff
+ </TASK>
+task:syz.8.392       state:S stack:26728 pid:7823  tgid:7822  ppid:3973   task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_hrtimeout_range_clock+0x2d0/0x310 kernel/time/sleep_timeout.c:207
+ ep_poll fs/eventpoll.c:2028 [inline]
+ do_epoll_wait+0xcb6/0xf20 fs/eventpoll.c:2473
+ do_compat_epoll_pwait.part.0+0x29/0x1e0 fs/eventpoll.c:2503
+ do_epoll_pwait fs/eventpoll.c:2510 [inline]
+ __do_sys_epoll_pwait fs/eventpoll.c:2516 [inline]
+ __se_sys_epoll_pwait fs/eventpoll.c:2510 [inline]
+ __x64_sys_epoll_pwait+0x1bf/0x280 fs/eventpoll.c:2510
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fd77624fba9
+RSP: 002b:00007fd774877058 EFLAGS: 00000246 ORIG_RAX: 0000000000000119
+RAX: ffffffffffffffda RBX: 00007fd7764d5fa0 RCX: 00007fd77624fba9
+RDX: 0000000000000001 RSI: 0000200000000080 RDI: 0000000000000004
+RBP: 00007fd7762fb44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000080000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007fd7764d5fa0 R15: 00007ffc988d3d98
+ </TASK>
+task:syz.8.392       state:S stack:25608 pid:7838  tgid:7822  ppid:3973   task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ futex_do_wait+0x88/0x180 kernel/futex/waitwake.c:358
+ __futex_wait+0x1b6/0x300 kernel/futex/waitwake.c:687
+ futex_wait+0xdc/0x190 kernel/futex/waitwake.c:715
+ do_futex+0x2f0/0x370 kernel/futex/syscalls.c:130
+ __do_sys_futex kernel/futex/syscalls.c:207 [inline]
+ __se_sys_futex kernel/futex/syscalls.c:188 [inline]
+ __x64_sys_futex+0x1c9/0x480 kernel/futex/syscalls.c:188
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fd77624fba9
+RSP: 002b:00007fd7748560e8 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 00007fd7764d6088 RCX: 00007fd77624fba9
+RDX: 0000000000000000 RSI: 0000000000000080 RDI: 00007fd7764d6088
+RBP: 00007fd7764d6080 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007fd7764d608c
+R13: 0000000000000000 R14: 00007ffc988d3cb0 R15: 00007ffc988d3d98
+ </TASK>
+task:syz.5.391       state:R  running task     stack:28296 pid:7825  tgid:7825  ppid:4338   task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ exit_to_user_mode_loop+0x76/0x120 kernel/entry/common.c:31
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2eb/0x380 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f1a1d2f82e0
+RSP: 002b:00007ffdc5c6cbb8 EFLAGS: 00000293
+RAX: 0000000000000000 RBX: 00007f1a1d555fa0 RCX: 00007f1a1d302465
+RDX: 00007ffdc5c6cbc0 RSI: 00007ffdc5c6ccf0 RDI: 0000000000000021
+RBP: 00007f1a1d557ba0 R08: 0000000000000000 R09: 00007f1a1d0f8010
+R10: 0000000000000000 R11: 0000000000000293 R12: 000000000000cc41
+R13: 0000000000000032 R14: 00007f1a1d55608c R15: ffffffffffffffff
+ </TASK>
+task:syz.5.391       state:S stack:29256 pid:7826  tgid:7825  ppid:4338   task_flags:0x400140 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_timeout+0x244/0x280 kernel/time/sleep_timeout.c:75
+ do_wait_for_common kernel/sched/completion.c:100 [inline]
+ __wait_for_common kernel/sched/completion.c:121 [inline]
+ wait_for_common kernel/sched/completion.c:132 [inline]
+ wait_for_completion_interruptible+0x278/0x3f0 kernel/sched/completion.c:221
+ seccomp_do_user_notification.isra.0+0x5a2/0xd50 kernel/seccomp.c:1202
+ __seccomp_filter+0xb8d/0x1710 kernel/seccomp.c:1338
+ __secure_computing+0x1ac/0x290 kernel/seccomp.c:1404
+ syscall_trace_enter+0x8d/0x240 kernel/entry/syscall-common.c:44
+ syscall_enter_from_user_mode_work include/linux/entry-common.h:95 [inline]
+ syscall_enter_from_user_mode include/linux/entry-common.h:125 [inline]
+ do_syscall_64+0x2d5/0x380 arch/x86/entry/syscall_64.c:90
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f1a1d26bd79
+RSP: 002b:00007f1a1b8eeb40 EFLAGS: 00000206 ORIG_RAX: 000000000000000f
+RAX: ffffffffffffffda RBX: 00007f1a1d555fa8 RCX: 00007f1a1d26bd79
+RDX: 00007f1a1b8eeb40 RSI: 00007f1a1b8eec70 RDI: 0000000000000021
+RBP: 00007f1a1d555fa0 R08: 00007f1a1d0f8010 R09: 0000000000000000
+R10: 0000000000000004 R11: 0000000000000206 R12: 00007f1a1d555fac
+R13: 0000000000000000 R14: 00007ffdc5c6cf70 R15: 00007ffdc5c6d058
+ </TASK>
+task:syz.5.391       state:R  running task     stack:29392 pid:7842  tgid:7825  ppid:4338   task_flags:0x400040 flags:0x00000012
+Call Trace:
+ <TASK>
+ </TASK>
+task:syz.2.402       state:S stack:28632 pid:7917  tgid:7917  ppid:5425   task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ futex_do_wait+0x88/0x180 kernel/futex/waitwake.c:358
+ __futex_wait+0x1b6/0x300 kernel/futex/waitwake.c:687
+ futex_wait+0xdc/0x190 kernel/futex/waitwake.c:715
+ do_futex+0x2f0/0x370 kernel/futex/syscalls.c:130
+ __do_sys_futex kernel/futex/syscalls.c:207 [inline]
+ __se_sys_futex kernel/futex/syscalls.c:188 [inline]
+ __x64_sys_futex+0x1c9/0x480 kernel/futex/syscalls.c:188
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fc68678fba9
+RSP: 002b:00007ffee88090c8 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 000000000000cb1f RCX: 00007fc68678fba9
+RDX: 0000000000000000 RSI: 0000000000000080 RDI: 00007fc686a1608c
+RBP: 00007ffee88091c0 R08: 00007fc6865b8010 R09: 0000000200000000
+R10: 00007ffee88091c0 R11: 0000000000000246 R12: 000000000000daf1
+R13: 0000000000000fd2 R14: 00007fc686a1608c R15: 00007ffee88091d0
+ </TASK>
+task:syz.2.402       state:S stack:30168 pid:7919  tgid:7917  ppid:5425   task_flags:0x400040 flags:0x00080000
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ futex_do_wait+0x88/0x180 kernel/futex/waitwake.c:358
+ __futex_wait+0x1b6/0x300 kernel/futex/waitwake.c:687
+ futex_wait+0xdc/0x190 kernel/futex/waitwake.c:715
+ do_futex+0x2f0/0x370 kernel/futex/syscalls.c:130
+ __do_sys_futex kernel/futex/syscalls.c:207 [inline]
+ __se_sys_futex kernel/futex/syscalls.c:188 [inline]
+ __x64_sys_futex+0x1c9/0x480 kernel/futex/syscalls.c:188
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fc68678fba9
+RSP: 002b:00007fc684daf0e8 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 00007fc686a15fa8 RCX: 00007fc68678fba9
+RDX: 0000000000000000 RSI: 0000000000000080 RDI: 00007fc686a15fa8
+RBP: 00007fc686a15fa0 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007fc686a15fac
+R13: 0000000000000000 R14: 00007ffee8808e80 R15: 00007ffee8808f68
+ </TASK>
+task:syz.2.402       state:R  running task     stack:26616 pid:7920  tgid:7917  ppid:5425   task_flags:0x400140 flags:0x00080011
+Call Trace:
+ <TASK>
+ sched_show_task kernel/sched/core.c:7901 [inline]
+ sched_show_task+0x3b5/0x660 kernel/sched/core.c:7876
+ show_state_filter+0xf7/0x390 kernel/sched/core.c:7946
+ show_state include/linux/sched/debug.h:21 [inline]
+ sys_info+0xe2/0x160 lib/sys_info.c:104
+ vpanic+0x5b1/0x6e0 kernel/panic.c:521
+ panic+0xc2/0xd0 kernel/panic.c:626
+ oops_end arch/x86/kernel/dumpstack.c:379 [inline]
+ oops_end+0xa5/0xe0 arch/x86/kernel/dumpstack.c:356
+ do_trap_no_signal arch/x86/kernel/traps.c:206 [inline]
+ do_trap+0x20d/0x270 arch/x86/kernel/traps.c:247
+ do_error_trap+0xf9/0x240 arch/x86/kernel/traps.c:267
+ handle_invalid_op+0x34/0x40 arch/x86/kernel/traps.c:304
+ exc_invalid_op+0x5d/0x80 arch/x86/kernel/traps.c:397
+ asm_exc_invalid_op+0x1a/0x20 arch/x86/include/asm/idtentry.h:616
+RIP: 0010:__fortify_panic+0x24/0x30 lib/string_helpers.c:1043
+Code: 90 90 90 90 90 90 f3 0f 1e fa 41 54 49 89 d4 55 48 89 f5 53 89 fb e8 7b 34 1e ff 0f b6 fb 4c 89 e2 48 89 ee e8 1d ff ff ff 90 <0f> 0b 90 66 0f 1f 84 00 00 00 00 00 90 90 90 90 90 90 90 90 90 90
+RSP: 0018:ffff888113db7a20 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000002 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff888104c4b700 RDI: 0000000000000002
+RBP: 0000000000000040 R08: fffffbfff0b5df00 R09: ffffed10235d4802
+R10: ffffed10235d4801 R11: ffff88811aea400b R12: 0000000000000041
+R13: ffff888017748000 R14: ffff8881110a444c R15: ffff8881110a4400
+ strnlen include/linux/fortify-string.h:235 [inline]
+ sized_strscpy include/linux/fortify-string.h:309 [inline]
+ parse_apply_sb_mount_options fs/ext4/super.c:2486 [inline]
+ __ext4_fill_super fs/ext4/super.c:5306 [inline]
+ ext4_fill_super+0x34bc/0xa890 fs/ext4/super.c:5736
+ get_tree_bdev_flags+0x38a/0x620 fs/super.c:1691
+ vfs_get_tree+0x93/0x340 fs/super.c:1751
+ fc_mount+0x18/0x110 fs/namespace.c:1208
+ do_new_mount_fc fs/namespace.c:3651 [inline]
+ do_new_mount fs/namespace.c:3727 [inline]
+ path_mount+0x771/0x1e00 fs/namespace.c:4037
+ do_mount+0xc5/0x120 fs/namespace.c:4050
+ __do_sys_mount fs/namespace.c:4238 [inline]
+ __se_sys_mount fs/namespace.c:4215 [inline]
+ __x64_sys_mount+0x193/0x230 fs/namespace.c:4215
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fc68679134a
+Code: d8 64 89 02 48 c7 c0 ff ff ff ff eb a6 e8 de 1a 00 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 49 89 ca b8 a5 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007fc684d8de88 EFLAGS: 00000246 ORIG_RAX: 00000000000000a5
+RAX: ffffffffffffffda RBX: 00007fc684d8df10 RCX: 00007fc68679134a
+RDX: 00002000000005c0 RSI: 0000200000000000 RDI: 00007fc684d8ded0
+RBP: 00002000000005c0 R08: 00007fc684d8df10 R09: 0000000000a00004
+R10: 0000000000a00004 R11: 0000000000000246 R12: 0000200000000000
+R13: 00007fc684d8ded0 R14: 00000000000004f8 R15: 0000200000000b00
+ </TASK>
+Sched Debug Version: v0.11, 6.18.0-rc2-00120-g6fab32bb6508 #1
+ktime                                   : 52252.684725
+sched_clk                               : 52413.822030
+cpu_clk                                 : 52382.106723
+jiffies                                 : 4294719034
+sched_clock_stable()                    : 1
+
+sysctl_sched
+  .sysctl_sched_base_slice                 : 2.100000
+  .sysctl_sched_features                   : 32696287
+  .sysctl_sched_tunable_scaling            : 1 (logarithmic)
+
+cpu#1, 2249.998 MHz
+  .nr_running                    : 2
+  .nr_switches                   : 49231
+  .nr_uninterruptible            : 84
+  .next_balance                  : 4294.719084
+  .curr->pid                     : 7920
+  .clock                         : 52245.747973
+  .clock_task                    : 52245.747973
+  .avg_idle                      : 544729
+  .max_idle_balance_cost         : 500000
+  .yld_count                     : 0
+  .sched_count                   : 36232
+  .sched_goidle                  : 240
+  .ttwu_count                    : 19044
+  .ttwu_local                    : 15349
+
+cfs_rq[1]:/system.slice
+  .left_deadline                 : 1895.232688
+  .left_vruntime                 : 1893.132688
+  .min_vruntime                  : 1893.132688
+  .avg_vruntime                  : 1893.132688
+  .right_vruntime                : 1893.132688
+  .spread                        : 0.000000
+  .nr_queued                     : 1
+  .h_nr_runnable                 : 1
+  .h_nr_queued                   : 1
+  .h_nr_idle                     : 0
+  .load                          : 1048576
+  .load_avg                      : 455
+  .runnable_avg                  : 452
+  .util_avg                      : 12
+  .util_est                      : 0
+  .removed.load_avg              : 0
+  .removed.util_avg              : 0
+  .removed.runnable_avg          : 0
+  .tg_load_avg_contrib           : 455
+  .tg_load_avg                   : 2793
+  .se->exec_start                : 52073.079756
+  .se->vruntime                  : 33252.897659
+  .se->sum_exec_runtime          : 2373.972567
+  .wait_start                    : 52240.831760
+  .sleep_start                   : 0.000000
+  .block_start                   : 0.000000
+  .sleep_max                     : 0.000000
+  .block_max                     : 0.000000
+  .exec_max                      : 1.263491
+  .slice_max                     : 15.406868
+  .wait_max                      : 325.089704
+  .wait_sum                      : 3304.024589
+  .wait_count                    : 3396
+  .se->load.weight               : 280277
+  .se->avg.load_avg              : 121
+  .se->avg.util_avg              : 12
+  .se->avg.runnable_avg          : 452
+
+cfs_rq[1]:/syz6
+  .left_deadline                 : 0.000001
+  .left_vruntime                 : 0.000001
+  .min_vruntime                  : 983.644245
+  .avg_vruntime                  : 983.644245
+  .right_vruntime                : 0.000001
+  .spread                        : 0.000000
+  .nr_queued                     : 0
+  .h_nr_runnable                 : 0
+  .h_nr_queued                   : 0
+  .h_nr_idle                     : 0
+  .load                          : 0
+  .load_avg                      : 0
+  .runnable_avg                  : 0
+  .util_avg                      : 0
+  .util_est                      : 0
+  .removed.load_avg              : 0
+  .removed.util_avg              : 0
+  .removed.runnable_avg          : 0
+  .tg_load_avg_contrib           : 0
+  .tg_load_avg                   : 91
+  .se->exec_start                : 52086.531552
+  .se->vruntime                  : 33172.357606
+  .se->sum_exec_runtime          : 1037.771034
+  .wait_start                    : 0.000000
+  .sleep_start                   : 0.000000
+  .block_start                   : 0.000000
+  .sleep_max                     : 0.000000
+  .block_max                     : 0.000000
+  .exec_max                      : 2.099071
+  .slice_max                     : 13.914926
+  .wait_max                      : 35.944606
+  .wait_sum                      : 1414.983438
+  .wait_count                    : 2562
+  .se->load.weight               : 470114
+  .se->avg.load_avg              : 0
+  .se->avg.util_avg              : 0
+  .se->avg.runnable_avg          : 0
+
+cfs_rq[1]:/syz5
+  .left_deadline                 : 0.000001
+  .left_vruntime                 : 0.000001
+  .min_vruntime                  : 395.666086
+  .avg_vruntime                  : 395.666086
+  .right_vruntime                : 0.000001
+  .spread                        : 0.000000
+  .nr_queued                     : 0
+  .h_nr_runnable                 : 0
+  .h_nr_queued                   : 0
+  .h_nr_idle                     : 0
+  .load                          : 0
+  .load_avg                      : 0
+  .runnable_avg                  : 0
+  .util_avg                      : 0
+  .util_est                      : 0
+  .removed.load_avg              : 0
+  .removed.util_avg              : 0
+  .removed.runnable_avg          : 0
+  .tg_load_avg_contrib           : 0
+  .tg_load_avg                   : 2400
+  .se->exec_start                : 52135.065764
+  .se->vruntime                  : 33206.656895
+  .se->sum_exec_runtime          : 933.787578
+  .wait_start                    : 0.000000
+  .sleep_start                   : 0.000000
+  .block_start                   : 0.000000
+  .sleep_max                     : 0.000000
+  .block_max                     : 0.000000
+  .exec_max                      : 1.729401
+  .slice_max                     : 27.559582
+  .wait_max                      : 25.504811
+  .wait_sum                      : 588.703495
+  .wait_count                    : 1116
+  .se->load.weight               : 350666
+  .se->avg.load_avg              : 0
+  .se->avg.util_avg              : 0
+  .se->avg.runnable_avg          : 0
+
+cfs_rq[1]:/syz0
+  .left_deadline                 : 0.000001
+  .left_vruntime                 : 0.000001
+  .min_vruntime                  : 428.995044
+  .avg_vruntime                  : 428.995044
+  .right_vruntime                : 0.000001
+  .spread                        : 0.000000
+  .nr_queued                     : 0
+  .h_nr_runnable                 : 0
+  .h_nr_queued                   : 0
+  .h_nr_idle                     : 0
+  .load                          : 0
+  .load_avg                      : 0
+  .runnable_avg                  : 0
+  .util_avg                      : 0
+  .util_est                      : 0
+  .removed.load_avg              : 0
+  .removed.util_avg              : 0
+  .removed.runnable_avg          : 0
+  .tg_load_avg_contrib           : 0
+  .tg_load_avg                   : 735
+  .se->exec_start                : 52137.763025
+  .se->vruntime                  : 33209.485578
+  .se->sum_exec_runtime          : 452.773354
+  .wait_start                    : 0.000000
+  .sleep_start                   : 0.000000
+  .block_start                   : 0.000000
+  .sleep_max                     : 0.000000
+  .block_max                     : 0.000000
+  .exec_max                      : 5.780991
+  .slice_max                     : 4.042172
+  .wait_max                      : 22.290921
+  .wait_sum                      : 426.375082
+  .wait_count                    : 1296
+  .se->load.weight               : 844800
+  .se->avg.load_avg              : 0
+  .se->avg.util_avg              : 0
+  .se->avg.runnable_avg          : 0
+
+cfs_rq[1]:/syz7
+  .left_deadline                 : 0.000001
+  .left_vruntime                 : 0.000001
+  .min_vruntime                  : 938.627478
+  .avg_vruntime                  : 938.627478
+  .right_vruntime                : 0.000001
+  .spread                        : 0.000000
+  .nr_queued                     : 0
+  .h_nr_runnable                 : 0
+  .h_nr_queued                   : 0
+  .h_nr_idle                     : 0
+  .load                          : 0
+  .load_avg                      : 0
+  .runnable_avg                  : 1
+  .util_avg                      : 0
+  .util_est                      : 0
+  .removed.load_avg              : 0
+  .removed.util_avg              : 0
+  .removed.runnable_avg          : 0
+  .tg_load_avg_contrib           : 0
+  .tg_load_avg                   : 109
+  .se->exec_start                : 52113.054654
+  .se->vruntime                  : 33191.556271
+  .se->sum_exec_runtime          : 1027.069317
+  .wait_start                    : 0.000000
+  .sleep_start                   : 0.000000
+  .block_start                   : 0.000000
+  .sleep_max                     : 0.000000
+  .block_max                     : 0.000000
+  .exec_max                      : 2.006621
+  .slice_max                     : 7.681133
+  .wait_max                      : 77.196154
+  .wait_sum                      : 1986.700415
+  .wait_count                    : 2853
+  .se->load.weight               : 669176
+  .se->avg.load_avg              : 0
+  .se->avg.util_avg              : 0
+  .se->avg.runnable_avg          : 1
+
+cfs_rq[1]:/syz9
+  .left_deadline                 : 0.000001
+  .left_vruntime                 : 0.000001
+  .min_vruntime                  : 290.640654
+  .avg_vruntime                  : 290.640654
+  .right_vruntime                : 0.000001
+  .spread                        : 0.000000
+  .nr_queued                     : 0
+  .h_nr_runnable                 : 0
+  .h_nr_queued                   : 0
+  .h_nr_idle                     : 0
+  .load                          : 0
+  .load_avg                      : 0
+  .runnable_avg                  : 0
+  .util_avg                      : 0
+  .util_est                      : 0
+  .removed.load_avg              : 0
+  .removed.util_avg              : 0
+  .removed.runnable_avg          : 0
+  .tg_load_avg_contrib           : 0
+  .tg_load_avg                   : 35
+  .se->exec_start                : 52140.565606
+  .se->vruntime                  : 33210.128628
+  .se->sum_exec_runtime          : 307.115536
+  .wait_start                    : 0.000000
+  .sleep_start                   : 0.000000
+  .block_start                   : 0.000000
+  .sleep_max                     : 0.000000
+  .block_max                     : 0.000000
+  .exec_max                      : 1.057721
+  .slice_max                     : 6.759493
+  .wait_max                      : 20.741269
+  .wait_sum                      : 634.495653
+  .wait_count                    : 900
+  .se->load.weight               : 897027
+  .se->avg.load_avg              : 0
+  .se->avg.util_avg              : 0
+  .se->avg.runnable_avg          : 0
+
+cfs_rq[1]:/syz2
+  .left_deadline                 : 0.000001
+  .left_vruntime                 : 0.000001
+  .min_vruntime                  : 393.306077
+  .avg_vruntime                  : 393.306077
+  .right_vruntime                : 0.000001
+  .spread                        : 0.000000
+  .nr_queued                     : 1
+  .h_nr_runnable                 : 1
+  .h_nr_queued                   : 1
+  .h_nr_idle                     : 0
+  .load                          : 1048576
+  .load_avg                      : 1115
+  .runnable_avg                  : 999
+  .util_avg                      : 983
+  .util_est                      : 0
+  .removed.load_avg              : 0
+  .removed.util_avg              : 0
+  .removed.runnable_avg          : 0
+  .tg_load_avg_contrib           : 1120
+  .tg_load_avg                   : 1549
+  .se->exec_start                : 52245.747973
+  .se->vruntime                  : 33290.233377
+  .se->sum_exec_runtime          : 420.184611
+  .wait_start                    : 0.000000
+  .sleep_start                   : 0.000000
+  .block_start                   : 0.000000
+  .sleep_max                     : 0.000000
+  .block_max                     : 0.000000
+  .exec_max                      : 35.241075
+  .slice_max                     : 6.112743
+  .wait_max                      : 18.322878
+  .wait_sum                      : 376.078749
+  .wait_count                    : 596
+  .se->load.weight               : 757229
+  .se->avg.load_avg              : 738
+  .se->avg.util_avg              : 983
+  .se->avg.runnable_avg          : 1001
+
+cfs_rq[1]:/
+  .left_deadline                 : 33260.774581
+  .left_vruntime                 : 33252.897659
+  .min_vruntime                  : 33274.818593
+  .avg_vruntime                  : 33280.161587
+  .right_vruntime                : 33252.897659
+  .spread                        : 0.000000
+  .nr_queued                     : 2
+  .h_nr_runnable                 : 2
+  .h_nr_queued                   : 2
+  .h_nr_idle                     : 0
+  .load                          : 1037506
+  .load_avg                      : 886
+  .runnable_avg                  : 1518
+  .util_avg                      : 1002
+  .util_est                      : 288
+  .removed.load_avg              : 0
+  .removed.util_avg              : 0
+  .removed.runnable_avg          : 0
+  .tg_load_avg_contrib           : 0
+  .tg_load_avg                   : 0
+
+rt_rq[1]:
+  .rt_nr_running                 : 0
+
+dl_rq[1]:
+  .dl_nr_running                 : 0
+  .dl_bw->bw                     : 996147
+  .dl_bw->total_bw               : 209712
+
+runnable tasks:
+ S            task   PID       vruntime   eligible    deadline             slice          sum-exec      switches  prio         wait-time        sum-sleep       sum-block  group-path
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ S        kthreadd     2     33199.371973   E       33201.383663           2.100000        20.550018       168     120         9.921245     16718.830286         0.000000        /
+ I   kworker/u16:0    12     30745.131130   E       30747.171120           2.100000      3506.806523      2509     120       405.543973     13254.564253      9165.429017        /
+ S         cpuhp/1    20      3108.559246   E        3110.654157           2.100000         5.084442        14     120         0.000000         0.000000         0.000000        /
+ S     migration/1    21        30.312071   E          31.008711           0.700000       639.835688        79       0         0.000000         0.000000         0.000000        /
+ S     ksoftirqd/1    22     33208.990207   E       33211.059776           2.100000       568.161053      3080     120       391.465368     16068.201432         0.000000        /
+ I     kworker/1:0    23      3427.303600   E        3429.363740           2.100000         0.179851         7     120         0.000000         0.000000         0.000000        /
+ I    kworker/1:0H    24       469.961142   E         469.983990           2.100000         0.133251         4     100         0.000000         0.000000         0.000000        /
+ S      oom_reaper    41         0.652792   E           2.752792           2.100000         0.000000         2     120         0.000000         0.000000         0.000000        /
+ S      irq/9-acpi    46        72.569068   E           2.083080           2.100000         0.038200         3      49         0.000000         0.000000         0.000000        /
+ I     kworker/1:1    51     33197.650503   E       33199.714003           2.100000        74.303878       730     120       211.535259     16526.289652     16526.289652        /
+ I    kworker/1:1H    55     32771.189849   E       32771.213902           2.100000        29.498039       293     100         3.162619     16157.181485     16157.181485        /
+ I   kworker/u16:3    59     20323.421340   E       20325.301120           2.100000        67.808763       727     120         0.000000         0.000000         0.000000        /
+ S         kswapd0    60      2909.131518   E        2911.213868           2.100000         0.105000         3     120         0.000000         0.000000         0.000000        /
+ I kworker/R-nfsio    61      2908.295507   E        2908.319570           2.100000         0.062790         2     100         0.000000         0.000000         0.000000        /
+ I kworker/R-scsi_    64      2911.649370   E        2911.673157           2.100000         0.178740         2     100         0.000000         0.000000         0.000000        /
+ I kworker/R-scsi_    66      2911.972076   E        2911.995865           2.100000         0.174192         2     100         0.000000         0.000000         0.000000        /
+ I     kworker/1:2    78     31141.891844   E       31143.438404           2.100000         1.167500        13     120         1.658222      3983.187390      3983.187390        /
+ S   systemd-udevd   126      1886.054028   E        1887.783579           2.100000       203.868758       336     120       787.346701     14634.637457        51.035623        /system.slice
+ S   systemd-udevd   136      5543.988665   N        5544.952935           2.100000        46.848900        72     120         0.000000         0.000000         0.000000        /system.slice
+ S   systemd-udevd   137      5534.018877   N        5535.957388           2.100000        47.020538        72     120         0.000000         0.000000         0.000000        /system.slice
+ S   systemd-udevd   141      5534.314061   N        5535.866020           2.100000        49.371427        78     120         0.000000         0.000000         0.000000        /system.slice
+ S   systemd-udevd   142      5544.568501   N        5546.072731           2.100000        52.881073        75     120         0.000000         0.000000         0.000000        /system.slice
+ R       in:imklog   170      1893.132688   E        1895.232688           2.100000        51.774103       905     120       971.074000     15848.294941         0.000000        /system.slice
+ S        dhclient   191     14838.328045   N       14839.005065           2.100000        39.307927        15     120         0.000000         0.000000         0.000000        /system.slice
+ S      isc-socket   193     14900.864800   N       14902.852459           2.100000         0.891413         6     120         0.000000         0.000000         0.000000        /system.slice
+ S            sshd   209     15521.956250   N       15523.839309           2.100000        79.114766        17     120         0.000000         0.000000         0.000000        /system.slice
+ S          agetty   214     15259.307230   N       15261.187949           2.100000        39.333551        57     120         0.000000         0.000000         0.000000        /system.slice
+ I  kworker/u16:10   324     30748.660874   E       30750.755234           2.100000       201.289769      2391     120       525.417106     12983.966954      6911.542891        /
+ S    syz-executor  4328       694.543026   E         695.074286           2.100000        34.068064        27     120        21.088531         0.000000         0.000000        /system.slice
+ S       syz.0.390  7832       347.396708   E         349.476278           2.100000        73.968770       112     120        77.524684        17.724831         6.278063        /syz0
+ S       syz.5.391  7826       391.532336   E         393.602266           2.100000         0.982632         4     120         3.149170       109.591199         0.000000        /syz5
+ S       syz.2.402  7919       284.797710   E         285.591380           2.100000         0.256330         1     120         1.017230         0.000000         0.000000        /syz2
+>R       syz.2.402  7920       393.306077   E         395.406077           2.100000       108.523687         7     120         7.392425         0.925770         0.925770        /syz2
+
+INFO: lockdep is turned off.

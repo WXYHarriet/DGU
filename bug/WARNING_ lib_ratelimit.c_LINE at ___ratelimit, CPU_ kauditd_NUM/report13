@@ -1,0 +1,142 @@
+sr 1:0:0:0: [sr0] tag#0 CDB: opcode=0xc6 (vendor) c6 65 d4 70 c7 06
+EXT4-fs (loop1): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+------------[ cut here ]------------
+Negative interval (-1000) or burst (10): Uninitialized ratelimit_state structure?
+WARNING: lib/ratelimit.c:43 at ___ratelimit+0x340/0x910 lib/ratelimit.c:43, CPU#0: kauditd/39
+Modules linked in:
+CPU: 0 UID: 0 PID: 39 Comm: kauditd Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:___ratelimit+0x345/0x910 lib/ratelimit.c:43
+Code: 00 00 00 e8 8d f0 cf fc 31 ff 89 de e8 94 f2 cf fc 85 db 0f 84 a2 00 00 00 e8 77 f0 cf fc 48 8d 3d e0 14 a3 01 44 89 f2 89 de <67> 48 0f b9 3a e8 61 f0 cf fc 31 ff 89 de e8 68 f2 cf fc 85 db 0f
+RSP: 0018:ffff888100a1fc30 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: fffffffffffffc18 RCX: ffffffff84a548fc
+RDX: 000000000000000a RSI: 00000000fffffc18 RDI: ffffffff86485df0
+RBP: ffffffff85b34740 R08: 0000000000000000 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: ffffffff85b34784
+R13: ffffffff84cc0060 R14: 000000000000000a R15: 0000000000000001
+FS:  0000000000000000(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007fefaf246000 CR3: 000000010e95e000 CR4: 0000000000350ef0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000600
+Call Trace:
+ <TASK>
+ kauditd_printk_skb+0x9b/0x120 kernel/audit.c:582
+ kauditd_hold_skb+0x1a/0x130 kernel/audit.c:618
+ kauditd_send_queue+0x233/0x290 kernel/audit.c:803
+ kauditd_thread+0x6b1/0xad0 kernel/audit.c:927
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+irq event stamp: 2335
+hardirqs last  enabled at (2341): [<ffffffff81558511>] console_trylock_spinning kernel/printk/printk.c:2019 [inline]
+hardirqs last  enabled at (2341): [<ffffffff81558511>] vprintk_emit+0x941/0x990 kernel/printk/printk.c:2425
+hardirqs last disabled at (2346): [<ffffffff815584a7>] console_trylock_spinning kernel/printk/printk.c:1998 [inline]
+hardirqs last disabled at (2346): [<ffffffff815584a7>] vprintk_emit+0x8d7/0x990 kernel/printk/printk.c:2425
+softirqs last  enabled at (2032): [<ffffffff813b9880>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (2032): [<ffffffff813b9880>] handle_softirqs+0x490/0x700 kernel/softirq.c:650
+softirqs last disabled at (1969): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (1969): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (1969): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (1969): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+audit: type=1326 audit(2000000005.658:41): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+loop6: detected capacity change from 0 to 512
+ext4: Unknown parameter '/dev/hpet'
+audit: type=1326 audit(2000000005.658:42): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+EXT4-fs (loop2): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+audit: type=1326 audit(2000000005.658:43): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=298 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+ext4 filesystem being mounted at /12/file0 supports timestamps until 2038-01-19 (0x7fffffff)
+audit: type=1326 audit(2000000005.658:44): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+EXT4-fs error (device loop3): ext4_clear_blocks:874: inode #13: comm syz.3.75: attempt to clear invalid blocks 2 len 1
+audit: type=1326 audit(2000000005.658:45): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.658:46): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=298 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+loop4: detected capacity change from 0 to 8192
+EXT4-fs error (device loop3): ext4_validate_block_bitmap:431: comm syz.3.75: bg 0: block 3: invalid block bitmap
+audit: type=1326 audit(2000000005.715:47): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+EXT4-fs error (device loop3) in ext4_mb_clear_bb:6689: Corrupt filesystem
+audit: type=1326 audit(2000000005.715:48): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+EXT4-fs error (device loop3): ext4_free_branches:1020: inode #13: comm syz.3.75: invalid indirect mapped block 1819239214 (level 0)
+audit: type=1326 audit(2000000005.721:49): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=25 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+EXT4-fs error (device loop3): ext4_free_branches:1020: inode #13: comm syz.3.75: invalid indirect mapped block 1819239214 (level 1)
+audit: type=1326 audit(2000000005.721:50): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+EXT4-fs (loop3): 1 truncate cleaned up
+audit: type=1326 audit(2000000005.722:51): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+EXT4-fs (loop3): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+audit: type=1326 audit(2000000005.726:52): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=298 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.726:53): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.726:54): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+EXT4-fs (loop3): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+audit: type=1326 audit(2000000005.726:55): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=111 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.726:56): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.727:57): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.729:58): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=298 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.729:59): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.729:60): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.736:61): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=41 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.736:62): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.736:63): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.737:64): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=44 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.737:65): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.737:66): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.737:67): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=1 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.737:68): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.737:69): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=41 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.739:70): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.739:71): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=49 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.739:72): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.739:73): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=41 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.739:74): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.739:75): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=54 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.739:76): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.739:77): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=54 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.739:78): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.739:79): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=44 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.739:80): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.739:81): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=56 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.753:82): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.755:83): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4347 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=230 compat=0 ip=0x7f56aa902465 code=0x7ffc0000
+audit: type=1326 audit(2000000005.755:84): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.792:85): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=141 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.792:86): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.792:87): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=319 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.792:88): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=9 compat=0 ip=0x7f56aa8cfbe3 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:89): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:90): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:91): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=1 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:92): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:93): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:94): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=41 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:95): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:96): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=322 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:97): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:98): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=16 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:99): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:100): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=28 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+audit: type=1326 audit(2000000005.794:101): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+audit: type=1326 audit(2000000005.794:102): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=4340 comm="syz.1.79" exe="/syz-executor" sig=0 arch=c000003e syscall=202 compat=0 ip=0x7f56aa8cfba9 code=0x7ffc0000
+----------------
+Code disassembly (best guess):
+   0:	00 00                	add    %al,(%rax)
+   2:	00 e8                	add    %ch,%al
+   4:	8d                   	lea    (bad),%esi
+   5:	f0 cf                	lock iret
+   7:	fc                   	cld
+   8:	31 ff                	xor    %edi,%edi
+   a:	89 de                	mov    %ebx,%esi
+   c:	e8 94 f2 cf fc       	call   0xfccff2a5
+  11:	85 db                	test   %ebx,%ebx
+  13:	0f 84 a2 00 00 00    	je     0xbb
+  19:	e8 77 f0 cf fc       	call   0xfccff095
+  1e:	48 8d 3d e0 14 a3 01 	lea    0x1a314e0(%rip),%rdi        # 0x1a31505
+  25:	44 89 f2             	mov    %r14d,%edx
+  28:	89 de                	mov    %ebx,%esi
+* 2a:	67 48 0f b9 3a       	ud1    (%edx),%rdi <-- trapping instruction
+  2f:	e8 61 f0 cf fc       	call   0xfccff095
+  34:	31 ff                	xor    %edi,%edi
+  36:	89 de                	mov    %ebx,%esi
+  38:	e8 68 f2 cf fc       	call   0xfccff2a5
+  3d:	85 db                	test   %ebx,%ebx
+  3f:	0f                   	.byte 0xf

@@ -1,0 +1,75 @@
+EXT4-fs (loop7): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+input: Macintosh mouse button emulation as /devices/virtual/input/input4
+EXT4-fs (loop7): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+Oops: general protection fault, probably for non-canonical address 0xdffffc00000000f0: 0000 [#1] SMP KASAN NOPTI
+KASAN: null-ptr-deref in range [0x0000000000000780-0x0000000000000787]
+CPU: 2 UID: 0 PID: 4584 Comm: syz.4.156 Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:input_unregister_device+0x26/0x100 drivers/input/input.c:2407
+Code: 90 90 90 90 f3 0f 1e fa 55 48 89 fd 53 e8 82 40 ec fd 48 8d bd 80 07 00 00 48 b8 00 00 00 00 00 fc ff df 48 89 fa 48 c1 ea 03 <0f> b6 04 02 84 c0 74 06 0f 8e ac 00 00 00 0f b6 9d 80 07 00 00 31
+RSP: 0018:ffff888027eefc20 EFLAGS: 00010216
+RAX: dffffc0000000000 RBX: ffffffff882f30e0 RCX: ffffffff84a352a7
+RDX: 00000000000000f0 RSI: ffff88810cac8000 RDI: 0000000000000780
+RBP: 0000000000000000 R08: 0000000000000000 R09: ffffed1004fddf67
+R10: ffffed1004fddf66 R11: ffff888027eefb37 R12: 0000000000000000
+R13: 0000000000000001 R14: 0000000000000001 R15: ffff888027eefdf8
+FS:  00007f0f3a0556c0(0000) GS:ffff888193796000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00005555562f84a8 CR3: 000000011452d000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ mac_hid_destroy_emumouse drivers/macintosh/mac_hid.c:68 [inline]
+ mac_hid_stop_emulation+0x1d/0x30 drivers/macintosh/mac_hid.c:183
+ mac_hid_toggle_emumouse+0x1c8/0x640 drivers/macintosh/mac_hid.c:203
+ proc_sys_call_handler+0x377/0x550 fs/proc/proc_sysctl.c:600
+ new_sync_write fs/read_write.c:593 [inline]
+ vfs_write fs/read_write.c:686 [inline]
+ vfs_write+0xb9b/0x1190 fs/read_write.c:666
+ ksys_write+0x121/0x240 fs/read_write.c:738
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0f3ba6e65f
+Code: 89 54 24 18 48 89 74 24 10 89 7c 24 08 e8 f9 92 02 00 48 8b 54 24 18 48 8b 74 24 10 41 89 c0 8b 7c 24 08 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 31 44 89 c7 48 89 44 24 08 e8 4c 93 02 00 48
+RSP: 002b:00007f0f3a054f80 EFLAGS: 00000293 ORIG_RAX: 0000000000000001
+RAX: ffffffffffffffda RBX: 0000000000000005 RCX: 00007f0f3ba6e65f
+RDX: 0000000000000001 RSI: 00007f0f3a054fb0 RDI: 0000000000000005
+RBP: 0000000000000001 R08: 0000000000000000 R09: 00007f0f3a054cf7
+R10: 0000000000000000 R11: 0000000000000293 R12: 00007f0f3a054fb0
+R13: 0000000000000000 R14: 00007f0f3bcf6160 R15: 00007ffe4ca83f88
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:input_unregister_device+0x26/0x100 drivers/input/input.c:2407
+Code: 90 90 90 90 f3 0f 1e fa 55 48 89 fd 53 e8 82 40 ec fd 48 8d bd 80 07 00 00 48 b8 00 00 00 00 00 fc ff df 48 89 fa 48 c1 ea 03 <0f> b6 04 02 84 c0 74 06 0f 8e ac 00 00 00 0f b6 9d 80 07 00 00 31
+RSP: 0018:ffff888027eefc20 EFLAGS: 00010216
+RAX: dffffc0000000000 RBX: ffffffff882f30e0 RCX: ffffffff84a352a7
+RDX: 00000000000000f0 RSI: ffff88810cac8000 RDI: 0000000000000780
+RBP: 0000000000000000 R08: 0000000000000000 R09: ffffed1004fddf67
+R10: ffffed1004fddf66 R11: ffff888027eefb37 R12: 0000000000000000
+R13: 0000000000000001 R14: 0000000000000001 R15: ffff888027eefdf8
+FS:  00007f0f3a0556c0(0000) GS:ffff888193796000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00005555562f84a8 CR3: 000000011452d000 CR4: 0000000000350ef0
+----------------
+Code disassembly (best guess):
+   0:	90                   	nop
+   1:	90                   	nop
+   2:	90                   	nop
+   3:	90                   	nop
+   4:	f3 0f 1e fa          	endbr64
+   8:	55                   	push   %rbp
+   9:	48 89 fd             	mov    %rdi,%rbp
+   c:	53                   	push   %rbx
+   d:	e8 82 40 ec fd       	call   0xfdec4094
+  12:	48 8d bd 80 07 00 00 	lea    0x780(%rbp),%rdi
+  19:	48 b8 00 00 00 00 00 	movabs $0xdffffc0000000000,%rax
+  20:	fc ff df
+  23:	48 89 fa             	mov    %rdi,%rdx
+  26:	48 c1 ea 03          	shr    $0x3,%rdx
+* 2a:	0f b6 04 02          	movzbl (%rdx,%rax,1),%eax <-- trapping instruction
+  2e:	84 c0                	test   %al,%al
+  30:	74 06                	je     0x38
+  32:	0f 8e ac 00 00 00    	jle    0xe4
+  38:	0f b6 9d 80 07 00 00 	movzbl 0x780(%rbp),%ebx
+  3f:	31                   	.byte 0x31

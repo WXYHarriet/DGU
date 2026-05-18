@@ -1,0 +1,651 @@
+Node 0 Normal free:1984kB boost:0kB min:908kB low:1324kB high:1740kB reserved_highatomic:0KB free_highatomic:0KB active_anon:4kB inactive_anon:84kB active_file:92kB inactive_file:88kB unevictable:0kB writepending:0kB zspages:0kB present:1048576kB managed:419204kB mlocked:0kB bounce:0kB free_pcp:324kB local_pcp:0kB free_cma:0kB
+watchdog: BUG: soft lockup - CPU#1 stuck for 26s! [syz.3.1558:20620]
+Modules linked in:
+irq event stamp: 5214205
+hardirqs last  enabled at (5214204): [<ffffffff84a97fc4>] irqentry_exit+0x184/0x6d0 kernel/entry/common.c:219
+hardirqs last disabled at (5214205): [<ffffffff84a96c9f>] sysvec_apic_timer_interrupt+0xf/0x80 arch/x86/kernel/apic/apic.c:1056
+softirqs last  enabled at (5174952): [<ffffffff813b9880>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (5174952): [<ffffffff813b9880>] handle_softirqs+0x490/0x700 kernel/softirq.c:650
+softirqs last disabled at (5174955): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (5174955): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (5174955): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (5174955): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+CPU: 1 UID: 0 PID: 20620 Comm: syz.3.1558 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:get_current arch/x86/include/asm/current.h:25 [inline]
+RIP: 0010:__rcu_read_unlock+0xc6/0x510 kernel/rcu/tree_plugin.h:441
+Code: b8 00 00 00 00 00 fc ff df 48 89 fa 48 c1 ea 03 0f b6 04 02 84 c0 74 08 3c 03 0f 8e 7a 01 00 00 8b 85 00 04 00 00 85 c0 75 57 <65> 48 8b 1d 4a 1a 21 06 48 8d bb fc 03 00 00 48 b8 00 00 00 00 00
+RSP: 0018:ffff88811ae88938 EFLAGS: 00000202
+RAX: 00000000004f8ff2 RBX: ffff88811aeb8540 RCX: 0000000000000002
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff815cf701
+RBP: ffffffff85c2e101 R08: 0000000000000001 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: 0000000000000002
+R13: 0000000000000200 R14: ffff88811ae88a00 R15: ffff88801daa7d30
+FS:  00007f6d51d776c0(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f6e534456c0 CR3: 0000000105b14000 CR4: 0000000000350ef0
+Call Trace:
+ <IRQ>
+ rcu_read_unlock include/linux/rcupdate.h:899 [inline]
+ class_rcu_destructor include/linux/rcupdate.h:1195 [inline]
+ unwind_next_frame+0x59d/0x2070 arch/x86/kernel/unwind_orc.c:495
+ arch_stack_walk+0x86/0xf0 arch/x86/kernel/stacktrace.c:25
+ stack_trace_save+0x8e/0xc0 kernel/stacktrace.c:122
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:57
+ kasan_save_track+0x14/0x30 mm/kasan/common.c:78
+ kasan_save_free_info+0x3a/0x60 mm/kasan/generic.c:584
+ poison_slab_object mm/kasan/common.c:253 [inline]
+ __kasan_slab_free+0x43/0x70 mm/kasan/common.c:285
+ kasan_slab_free include/linux/kasan.h:235 [inline]
+ slab_free_hook mm/slub.c:2540 [inline]
+ __rcu_free_sheaf_prepare+0x5d/0x2a0 mm/slub.c:2763
+ rcu_free_sheaf+0x1b/0xc0 mm/slub.c:6230
+ rcu_do_batch kernel/rcu/tree.c:2605 [inline]
+ rcu_core+0xa6d/0x2240 kernel/rcu/tree.c:2857
+ handle_softirqs+0x19b/0x700 kernel/softirq.c:622
+ __do_softirq kernel/softirq.c:656 [inline]
+ invoke_softirq kernel/softirq.c:496 [inline]
+ __irq_exit_rcu kernel/softirq.c:723 [inline]
+ irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1056 [inline]
+ sysvec_apic_timer_interrupt+0x70/0x80 arch/x86/kernel/apic/apic.c:1056
+ </IRQ>
+ <TASK>
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+RIP: 0010:get_current arch/x86/include/asm/current.h:25 [inline]
+RIP: 0010:__rcu_read_unlock+0xc6/0x510 kernel/rcu/tree_plugin.h:441
+Code: b8 00 00 00 00 00 fc ff df 48 89 fa 48 c1 ea 03 0f b6 04 02 84 c0 74 08 3c 03 0f 8e 7a 01 00 00 8b 85 00 04 00 00 85 c0 75 57 <65> 48 8b 1d 4a 1a 21 06 48 8d bb fc 03 00 00 48 b8 00 00 00 00 00
+RSP: 0018:ffff88801daa7ab0 EFLAGS: 00000206
+RAX: 00000000004cacaf RBX: ffff88811aeb8540 RCX: 0000000000000006
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff815cf701
+RBP: ffffffff85c2e101 R08: 0000000000000001 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: 0000000000000002
+R13: 0000000000000200 R14: 0000000000000000 R15: ffff888106d53e98
+ refill_obj_stock+0x1fb/0x800 mm/memcontrol.c:3064
+ obj_cgroup_charge_account+0xb2/0x600 mm/memcontrol.c:3128
+ __memcg_slab_post_alloc_hook+0x349/0x940 mm/memcontrol.c:3212
+ memcg_slab_post_alloc_hook mm/slub.c:2338 [inline]
+ slab_post_alloc_hook mm/slub.c:4964 [inline]
+ slab_alloc_node mm/slub.c:5263 [inline]
+ kmem_cache_alloc_noprof+0x547/0x730 mm/slub.c:5270
+ alloc_empty_file+0x58/0x1e0 fs/file_table.c:237
+ alloc_file fs/file_table.c:354 [inline]
+ alloc_file_pseudo+0x12b/0x230 fs/file_table.c:383
+ __anon_inode_getfile+0xe1/0x280 fs/anon_inodes.c:166
+ __do_sys_perf_event_open+0x16e6/0x29a0 kernel/events/core.c:13769
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x430 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f6d5374fba9
+Code: Unable to access opcode bytes at 0x7f6d5374fb7f.
+RSP: 002b:00007f6d51d77058 EFLAGS: 00000246 ORIG_RAX: 000000000000012a
+RAX: ffffffffffffffda RBX: 00007f6d539d5fa0 RCX: 00007f6d5374fba9
+RDX: ffffffffffffffff RSI: 0000000000000000 RDI: 0000200000000100
+RBP: 00007f6d537fb44c R08: 0000000000000000 R09: 0000000000000000
+R10: ffffffffffffffff R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f6d539d5fa0 R15: 00007ffc32a1dc08
+ </TASK>
+Sending NMI from CPU 1 to CPUs 0,2-3:
+lowmem_reserve[]:
+NMI backtrace for cpu 3
+CPU: 3 UID: 0 PID: 21727 Comm: modprobe Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__sanitizer_cov_trace_pc+0x0/0x50 kernel/kcov.c:210
+Code: 48 8b 05 bb d6 08 06 48 8b 80 f0 14 00 00 e9 97 22 37 03 0f 1f 80 00 00 00 00 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 <f3> 0f 1e fa 55 bf 02 00 00 00 53 48 8b 6c 24 10 65 48 8b 1d 80 d6
+RSP: 0018:ffff88802fc171f8 EFLAGS: 00000206
+RAX: 0000000000001c03 RBX: 1ffff11005f82e41 RCX: 0000000000000006
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff81558450
+RBP: 0000000000000000 R08: 0000000000000001 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: 0000000000000011
+R13: 0000000000000200 R14: ffff8881185d1bc0 R15: ffff88802fc172c0
+FS:  0000000000000000(0000) GS:ffff8881937bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f41d628c2b0 CR3: 00000001178fe000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ console_trylock_spinning kernel/printk/printk.c:2037 [inline]
+ vprintk_emit+0x886/0x990 kernel/printk/printk.c:2425
+ _printk+0xbe/0xf0 kernel/printk/printk.c:2451
+ show_free_areas+0x116b/0x1ef0 mm/show_mem.c:349
+ __show_mem+0x34/0x140 mm/show_mem.c:408
+ dump_header+0x21c/0x840 mm/oom_kill.c:471
+ oom_kill_process+0x16e/0x8c0 mm/oom_kill.c:1047
+ out_of_memory+0x1329/0x1630 mm/oom_kill.c:1167
+ __alloc_pages_may_oom mm/page_alloc.c:4122 [inline]
+ __alloc_pages_slowpath.constprop.0+0x1a4b/0x20b0 mm/page_alloc.c:4927
+ __alloc_frozen_pages_noprof+0x599/0x6b0 mm/page_alloc.c:5253
+ alloc_pages_mpol+0xed/0x340 mm/mempolicy.c:2486
+ alloc_pages_noprof mm/mempolicy.c:2577 [inline]
+ folio_alloc_noprof+0x22/0x290 mm/mempolicy.c:2587
+ filemap_alloc_folio_noprof+0x3b4/0x450 mm/filemap.c:1013
+ __filemap_get_folio_mpol+0x397/0x970 mm/filemap.c:2006
+ __filemap_get_folio include/linux/pagemap.h:774 [inline]
+ filemap_fault+0x18e5/0x3550 mm/filemap.c:3559
+ __do_fault+0x10d/0x480 mm/memory.c:5323
+ do_read_fault mm/memory.c:5758 [inline]
+ do_fault mm/memory.c:5892 [inline]
+ do_pte_missing mm/memory.c:4404 [inline]
+ handle_pte_fault mm/memory.c:6276 [inline]
+ __handle_mm_fault+0x15c5/0x33d0 mm/memory.c:6414
+ handle_mm_fault+0x2d8/0x9d0 mm/memory.c:6583
+ do_user_addr_fault+0x6be/0x1840 arch/x86/mm/fault.c:1334
+ handle_page_fault arch/x86/mm/fault.c:1474 [inline]
+ exc_page_fault+0xb0/0x180 arch/x86/mm/fault.c:1527
+ asm_exc_page_fault+0x26/0x30 arch/x86/include/asm/idtentry.h:618
+RIP: 0033:0x7f41d628c2da
+Code: Unable to access opcode bytes at 0x7f41d628c2b0.
+RSP: 002b:00007ffd5fa6a268 EFLAGS: 00010287
+RAX: 000000000000001d RBX: 0000000000000000 RCX: 0000000000000000
+RDX: 00007f41d6260e80 RSI: 00007f41d623bcc0 RDI: 000055e6cf0ec4dd
+RBP: 0000000000000000 R08: 000000000000003d R09: 0000000000000000
+R10: 0000000070000022 R11: 0000000000000246 R12: 00007f41d629c180
+R13: 000055e6cf0ec4dd R14: 00007f41d629b060 R15: 00007f41d6262000
+ </TASK>
+NMI backtrace for cpu 2
+CPU: 2 UID: 0 PID: 3924 Comm: kworker/2:2H Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Workqueue: kblockd blk_mq_run_work_fn
+RIP: 0010:iowrite8+0x5e/0x90 lib/iomap.c:208
+Code: 98 2d 17 ff e8 93 2d 17 ff 4c 89 e6 bf 00 00 01 00 e8 c6 2f 17 ff 49 81 fc 00 00 01 00 76 13 e8 78 2d 17 ff 89 d8 44 89 e2 ee <5b> 41 5c e9 6a 2d 17 ff e8 65 2d 17 ff 4c 89 e7 48 c7 c6 80 da e3
+RSP: 0018:ffff88810ee97720 EFLAGS: 00000046
+RAX: 0000000000000009 RBX: 0000000000000009 RCX: ffffffff825e0bfa
+RDX: 000000000001c060 RSI: ffff88810cd15340 RDI: 0000000000000002
+RBP: ffff888103b18180 R08: 0000006b02dda400 R09: fffffbfff0c8590b
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: 000000000001c060
+R13: ffff888103b181a0 R14: ffff888103b18008 R15: ffff888103b1a680
+FS:  0000000000000000(0000) GS:ffff88819373f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007fe434316f30 CR3: 000000011af5e000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ ata_bmdma_qc_issue+0x5c8/0xe10 drivers/ata/libata-sff.c:2662
+ ata_qc_issue+0x672/0xdd0 drivers/ata/libata-core.c:5113
+ ata_scsi_translate drivers/ata/libata-scsi.c:1755 [inline]
+ __ata_scsi_queuecmd+0xa45/0x1450 drivers/ata/libata-scsi.c:4355
+ ata_scsi_queuecmd+0xad/0x170 drivers/ata/libata-scsi.c:4400
+ scsi_dispatch_cmd drivers/scsi/scsi_lib.c:1646 [inline]
+ scsi_queue_rq+0x1b05/0x30c0 drivers/scsi/scsi_lib.c:1903
+ blk_mq_dispatch_rq_list+0x3ae/0x1a50 block/blk-mq.c:2138
+ __blk_mq_do_dispatch_sched block/blk-mq-sched.c:168 [inline]
+ blk_mq_do_dispatch_sched block/blk-mq-sched.c:182 [inline]
+ __blk_mq_sched_dispatch_requests+0xcad/0x1510 block/blk-mq-sched.c:307
+ blk_mq_sched_dispatch_requests+0xd7/0x1b0 block/blk-mq-sched.c:329
+ blk_mq_run_work_fn+0x1fd/0x380 block/blk-mq.c:2552
+ process_one_work kernel/workqueue.c:3257 [inline]
+ process_scheduled_works+0x54f/0x1910 kernel/workqueue.c:3340
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3421
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+NMI backtrace for cpu 0
+CPU: 0 UID: 0 PID: 21718 Comm: syz-executor Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:csd_lock_wait kernel/smp.c:351 [inline]
+RIP: 0010:smp_call_function_many_cond+0x6b3/0x15f0 kernel/smp.c:877
+Code: 85 e4 74 4f 48 b8 00 00 00 00 00 fc ff df 4d 89 f5 4d 89 f4 49 c1 ed 03 41 83 e4 07 49 01 c5 41 83 c4 03 e8 ff 3d 0b 00 f3 90 <41> 0f b6 45 00 41 38 c4 7c 08 84 c0 0f 85 2d 0d 00 00 8b 43 08 31
+RSP: 0018:ffff88801a8aec60 EFLAGS: 00000246
+RAX: 0000000000000000 RBX: ffff88811afbcf00 RCX: ffffffff8169fba7
+RDX: 0000000000000001 RSI: ffff888113c5b780 RDI: 0000000000000002
+RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: 0000000000000003
+R13: ffffed10235f79e1 R14: ffff88811afbcf08 R15: 0000000000000001
+FS:  0000555586e82500(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f4b30f4bc4e CR3: 000000011516d000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ on_each_cpu_cond_mask+0x57/0xa0 kernel/smp.c:1043
+ kvm_flush_tlb_multi+0x1e4/0x300 arch/x86/kernel/kvm.c:692
+ __flush_tlb_multi arch/x86/include/asm/paravirt.h:91 [inline]
+ flush_tlb_multi arch/x86/mm/tlb.c:1382 [inline]
+ arch_tlbbatch_flush+0x106/0x2a0 arch/x86/mm/tlb.c:1746
+ try_to_unmap_flush+0x6a/0xf0 mm/rmap.c:625
+ shrink_folio_list+0x3200/0x4760 mm/vmscan.c:1602
+ shrink_inactive_list+0x4e1/0xe50 mm/vmscan.c:2016
+ shrink_list mm/vmscan.c:2253 [inline]
+ shrink_lruvec+0xa8f/0x17a0 mm/vmscan.c:5818
+ shrink_node_memcgs mm/vmscan.c:6020 [inline]
+ shrink_node+0x984/0x2300 mm/vmscan.c:6061
+ shrink_zones mm/vmscan.c:6300 [inline]
+ do_try_to_free_pages+0x2fb/0x15b0 mm/vmscan.c:6362
+ try_to_free_pages+0x293/0x5b0 mm/vmscan.c:6608
+ __perform_reclaim mm/page_alloc.c:4407 [inline]
+ __alloc_pages_direct_reclaim mm/page_alloc.c:4429 [inline]
+ __alloc_pages_slowpath.constprop.0+0x7f6/0x20b0 mm/page_alloc.c:4873
+ __alloc_frozen_pages_noprof+0x599/0x6b0 mm/page_alloc.c:5253
+ alloc_pages_mpol+0xed/0x340 mm/mempolicy.c:2486
+ alloc_pages_noprof+0x1c/0x250 mm/mempolicy.c:2577
+ vm_area_alloc_pages mm/vmalloc.c:3718 [inline]
+ __vmalloc_area_node mm/vmalloc.c:3863 [inline]
+ __vmalloc_node_range_noprof+0xda6/0x14f0 mm/vmalloc.c:4051
+ vmalloc_user_noprof+0x9e/0xe0 mm/vmalloc.c:4205
+ kcov_ioctl+0x4c/0x570 kernel/kcov.c:716
+ vfs_ioctl fs/ioctl.c:51 [inline]
+ __do_sys_ioctl fs/ioctl.c:597 [inline]
+ __se_sys_ioctl fs/ioctl.c:583 [inline]
+ __x64_sys_ioctl+0x199/0x220 fs/ioctl.c:583
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x430 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f8a444ff7ab
+Code: Unable to access opcode bytes at 0x7f8a444ff781.
+RSP: 002b:00007fff9cc8aed0 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+RAX: ffffffffffffffda RBX: 0000000000080000 RCX: 00007f8a444ff7ab
+RDX: 0000000000080000 RSI: ffffffff80086301 RDI: 00000000000000d8
+RBP: 00007f8a44786038 R08: 0000000000000005 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000003 R14: 0000000000000009 R15: 0000000000000000
+ </TASK>
+ 0 0 0 0
+Node 0 DMA: 2*4kB (U) 0*8kB 0*16kB 1*32kB (U) 0*64kB 1*128kB (U) 1*256kB (U) 1*512kB (U) 0*1024kB 0*2048kB 3*4096kB (M) = 13224kB
+Node 0 DMA32: 2*4kB (M) 2*8kB (M) 2*16kB (M) 3*32kB (UM) 4*64kB (UM) 6*128kB (UM) 7*256kB (UM) 4*512kB (UM) 3*1024kB (UM) 0*2048kB 0*4096kB = 8088kB
+Node 0 Normal: 150*4kB (UE) 58*8kB (UE) 28*16kB (UE) 2*32kB (U) 0*64kB 0*128kB 0*256kB 0*512kB 0*1024kB 0*2048kB 0*4096kB = 1576kB
+Node 0 hugepages_total=1163 hugepages_free=1163 hugepages_surp=0 hugepages_size=2048kB
+97 total pagecache pages
+4 pages in swap cache
+Free swap  = 868kB
+Total swap = 124996kB
+1048446 pages RAM
+0 pages HighMem/MovableOnly
+200311 pages reserved
+Unreclaimable slab info:
+Name                      Used          Total
+pid_3                     23KB         23KB
+pid_2                    126KB        157KB
+p9_req_t                  31KB         31KB
+fib6_node                 32KB         32KB
+ip6_dst_cache             31KB         31KB
+PINGv6                   160KB        256KB
+RAWv6                    288KB        288KB
+UDPLITEv6                122KB        122KB
+UDPv6                    122KB        122KB
+tw_sock_TCPv6             15KB         15KB
+request_sock_TCPv6         30KB         30KB
+TCPv6                    506KB        506KB
+nf_conntrack              31KB         31KB
+scsi_sense_cache          16KB         16KB
+virtio_scsi_cmd           16KB         16KB
+bio-120                   43KB         43KB
+io_kiocb                  15KB         15KB
+bio-248                    7KB          7KB
+mqueue_inode_cache        121KB        121KB
+nfs_commit_data           15KB         15KB
+nfs_write_data            63KB         63KB
+jbd2_inode                15KB         15KB
+ext4_system_zone          15KB         15KB
+ext4_io_end_vec           15KB         15KB
+kioctx                   127KB        127KB
+aio_kiocb                 31KB         31KB
+dnotify_mark              15KB         15KB
+dnotify_struct            15KB         15KB
+dio                       30KB         30KB
+fasync_cache              15KB         15KB
+pid_namespace             61KB         61KB
+rpc_buffers               31KB         31KB
+rpc_tasks                  7KB          7KB
+UNIX-STREAM              418KB        446KB
+UNIX                     524KB        605KB
+ip4-frags                  7KB          7KB
+mfc_cache                 12KB         12KB
+UDP-Lite                 278KB        278KB
+tcp_bind2_bucket          16KB         16KB
+tcp_bind_bucket           16KB         16KB
+inet_peer                  4KB          4KB
+xfrm_state               159KB        159KB
+ip_fib_trie               16KB         16KB
+ip_fib_alias              19KB         19KB
+rtable                    49KB         76KB
+PING                     121KB        121KB
+RAW                      127KB        127KB
+UDP                      123KB        123KB
+tw_sock_TCP               31KB         31KB
+request_sock_TCP          23KB         23KB
+TCP                      395KB        541KB
+hugetlbfs_inode_cache        124KB        124KB
+netfs_subrequest          31KB         31KB
+netfs_request             95KB         95KB
+bio-264                   15KB         15KB
+ep_head                   16KB         16KB
+eventpoll_pwq             23KB         23KB
+eventpoll_epi             51KB         51KB
+inotify_inode_mark         82KB         82KB
+sgpool-128                59KB         59KB
+sgpool-64                733KB        733KB
+sgpool-32                472KB        472KB
+sgpool-16                281KB        281KB
+sgpool-8                 382KB        382KB
+request_queue             92KB         92KB
+blkdev_ioc                16KB         16KB
+bio-184                 3988KB       3988KB
+biovec-max               429KB        654KB
+biovec-128               478KB        478KB
+biovec-64                633KB        633KB
+biovec-16                203KB        203KB
+swap_table               350KB        350KB
+uid_cache                 31KB         31KB
+dmaengine-unmap-2          4KB          4KB
+audit_buffer              46KB         46KB
+skbuff_small_head        429KB        497KB
+skbuff_fclone_cache        218KB        296KB
+skbuff_head_cache        198KB        210KB
+configfs_dir_cache          8KB          8KB
+file_lease_cache          23KB         23KB
+file_lock_cache           87KB        118KB
+file_lock_ctx             15KB         15KB
+fsnotify_mark_connector         51KB         51KB
+posix_timers_cache         80KB         80KB
+taskstats                154KB        154KB
+mem_cgroup_per_node         78KB         78KB
+mem_cgroup               190KB        190KB
+proc_dir_entry           484KB        484KB
+pde_opener                15KB         15KB
+seq_file                 109KB        140KB
+sigqueue                  59KB         78KB
+shmem_inode_cache       1570KB       1934KB
+kernfs_iattrs_cache        316KB        316KB
+kernfs_node_cache       4960KB       4960KB
+mnt_cache                236KB        236KB
+filp                    5796KB       5796KB
+names_cache            25011KB      25563KB
+net_namespace            181KB        181KB
+hashtab_node             278KB        278KB
+ebitmap_node            1149KB       1149KB
+avtab_node              4976KB       4976KB
+avc_node                  43KB         43KB
+lsm_inode_cache         1264KB       1434KB
+lsm_file_cache           171KB        236KB
+key_jar                   55KB         55KB
+uts_namespace             62KB         62KB
+nsproxy                   19KB         19KB
+vm_area_struct         14596KB      14596KB
+fs_cache                 112KB        116KB
+files_cache              416KB        430KB
+signal_cache            1756KB       1756KB
+sighand_cache           2044KB       2044KB
+task_struct             6646KB       6646KB
+cred                     664KB        664KB
+anon_vma_chain           591KB        610KB
+anon_vma                2872KB       2872KB
+pid                      342KB        342KB
+Acpi-Operand             123KB        186KB
+Acpi-ParseExt             74KB         74KB
+Acpi-Parse                66KB         86KB
+Acpi-State                51KB         66KB
+Acpi-Namespace            32KB         32KB
+shared_policy_node         12KB         12KB
+numa_policy               15KB         15KB
+perf_event               345KB        439KB
+trace_event_file         208KB        208KB
+ftrace_event_field        486KB        486KB
+pool_workqueue           362KB        362KB
+task_group                32KB         32KB
+maple_node             24608KB      24608KB
+mm_struct               1060KB       1175KB
+vmap_area                 71KB         71KB
+page->ptl                874KB        874KB
+kmalloc-cg-8k            160KB        160KB
+kmalloc-cg-4k           3408KB       3456KB
+kmalloc-cg-2k           1816KB       1984KB
+kmalloc-cg-1k            518KB        672KB
+kmalloc-cg-512           335KB        464KB
+kmalloc-cg-256           112KB        112KB
+kmalloc-cg-128            60KB         60KB
+kmalloc-cg-64             60KB         60KB
+kmalloc-cg-32            340KB        340KB
+kmalloc-cg-16             16KB         16KB
+kmalloc-cg-8              20KB         20KB
+kmalloc-cg-192            64KB         64KB
+kmalloc-cg-96            324KB        376KB
+kmalloc-8k              1408KB       1408KB
+kmalloc-4k             68696KB      68696KB
+kmalloc-2k              3696KB       3840KB
+kmalloc-1k              2214KB       2400KB
+kmalloc-512             3840KB       3888KB
+kmalloc-256             2464KB       2464KB
+kmalloc-128              474KB        568KB
+kmalloc-64               942KB       1068KB
+kmalloc-32              5620KB       5620KB
+kmalloc-16               330KB        360KB
+kmalloc-8                209KB        268KB
+kmalloc-192              838KB        948KB
+kmalloc-96               572KB        572KB
+kmem_cache_node           59KB         59KB
+kmem_cache               101KB        101KB
+Memory cgroup min protection 0kB -- low protection 0kB
+oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/,task=modprobe,pid=21727,uid=0
+Out of memory (oom_kill_allocating_task): Killed process 21727 (modprobe) total-vm:3720kB, anon-rss:0kB, file-rss:172kB, shmem-rss:0kB, UID:0 pgtables:40kB oom_score_adj:0
+modprobe invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=0
+CPU: 0 UID: 0 PID: 21713 Comm: modprobe Tainted: G             L      6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [L]=SOFTLOCKUP
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0xfa/0x120 lib/dump_stack.c:120
+ dump_header+0x105/0x840 mm/oom_kill.c:467
+ oom_kill_process+0x16e/0x8c0 mm/oom_kill.c:1047
+ out_of_memory+0x1329/0x1630 mm/oom_kill.c:1167
+ __alloc_pages_may_oom mm/page_alloc.c:4122 [inline]
+ __alloc_pages_slowpath.constprop.0+0x1a4b/0x20b0 mm/page_alloc.c:4927
+ __alloc_frozen_pages_noprof+0x599/0x6b0 mm/page_alloc.c:5253
+ alloc_pages_mpol+0xed/0x340 mm/mempolicy.c:2486
+ alloc_pages_noprof mm/mempolicy.c:2577 [inline]
+ folio_alloc_noprof+0x22/0x290 mm/mempolicy.c:2587
+ filemap_alloc_folio_noprof+0x3b4/0x450 mm/filemap.c:1013
+ __filemap_get_folio_mpol+0x397/0x970 mm/filemap.c:2006
+ __filemap_get_folio include/linux/pagemap.h:774 [inline]
+ filemap_fault+0x18e5/0x3550 mm/filemap.c:3559
+ __do_fault+0x10d/0x480 mm/memory.c:5323
+ do_read_fault mm/memory.c:5758 [inline]
+ do_fault mm/memory.c:5892 [inline]
+ do_pte_missing mm/memory.c:4404 [inline]
+ handle_pte_fault mm/memory.c:6276 [inline]
+ __handle_mm_fault+0x15c5/0x33d0 mm/memory.c:6414
+ handle_mm_fault+0x2d8/0x9d0 mm/memory.c:6583
+ do_user_addr_fault+0x6be/0x1840 arch/x86/mm/fault.c:1334
+ handle_page_fault arch/x86/mm/fault.c:1474 [inline]
+ exc_page_fault+0xb0/0x180 arch/x86/mm/fault.c:1527
+ asm_exc_page_fault+0x26/0x30 arch/x86/include/asm/idtentry.h:618
+RIP: 0033:0x7f4b30f4bcc1
+Code: Unable to access opcode bytes at 0x7f4b30f4bc97.
+RSP: 002b:00007ffefc7066b0 EFLAGS: 00010202
+RAX: 0000000000000010 RBX: 00007ffefc707a40 RCX: 00000000fffbff00
+RDX: 00005621acf89d27 RSI: 00007ffefc707a18 RDI: 00005621acf89d27
+RBP: 00005621acf881b0 R08: 0000000000007fff R09: 00007f4b3141f1b0
+R10: 00000000078bfbff R11: 0000000000000010 R12: 00007ffefc707fb4
+R13: 00005621acf89d29 R14: 0000000000000000 R15: 0000000000000000
+ </TASK>
+Mem-Info:
+active_anon:0 inactive_anon:19 isolated_anon:2
+ active_file:35 inactive_file:22 isolated_file:0
+ unevictable:0 dirty:0 writeback:0
+ slab_reclaimable:4484 slab_unreclaimable:58953
+ mapped:51217 shmem:6 pagetables:11277
+ sec_pagetables:0 bounce:0
+ kernel_misc_reclaimable:0
+ free:5514 free_pcp:126 free_cma:0
+Node 0 active_anon:0kB inactive_anon:76kB active_file:140kB inactive_file:0kB unevictable:0kB isolated(anon):8kB isolated(file):0kB mapped:204868kB dirty:0kB writeback:0kB shmem:24kB kernel_stack:5152kB pagetables:45108kB sec_pagetables:0kB all_unreclaimable? no Balloon:0kB
+Node 0 DMA free:13224kB boost:0kB min:32kB low:44kB high:56kB reserved_highatomic:0KB free_highatomic:0KB active_anon:0kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB writepending:0kB zspages:0kB present:15992kB managed:15360kB mlocked:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+lowmem_reserve[]: 0 2888 3298 3298
+Node 0 DMA32 free:7656kB boost:0kB min:6404kB low:9348kB high:12292kB reserved_highatomic:0KB free_highatomic:0KB active_anon:0kB inactive_anon:136kB active_file:0kB inactive_file:0kB unevictable:0kB writepending:0kB zspages:0kB present:3129216kB managed:2957976kB mlocked:0kB bounce:0kB free_pcp:500kB local_pcp:0kB free_cma:0kB
+lowmem_reserve[]: 0 0 409 409
+Node 0 Normal free:1028kB boost:2608kB min:3516kB low:3932kB high:4348kB reserved_highatomic:0KB free_highatomic:0KB active_anon:0kB inactive_anon:28kB active_file:36kB inactive_file:180kB unevictable:0kB writepending:0kB zspages:0kB present:1048576kB managed:419204kB mlocked:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+lowmem_reserve[]: 0 0 0 0
+Node 0 DMA: 2*4kB (U) 0*8kB 0*16kB 1*32kB (U) 0*64kB 1*128kB (U) 1*256kB (U) 1*512kB (U) 0*1024kB 0*2048kB 3*4096kB (M) = 13224kB
+Node 0 DMA32: 3*4kB (UM) 1*8kB (M) 4*16kB (UM) 2*32kB (M) 3*64kB (M) 6*128kB (UM) 5*256kB (UM) 4*512kB (UM) 3*1024kB (UM) 0*2048kB 0*4096kB = 7508kB
+Node 0 Normal: 55*4kB (UE) 60*8kB (UE) 19*16kB (UE) 1*32kB (U) 0*64kB 0*128kB 0*256kB 0*512kB 0*1024kB 0*2048kB 0*4096kB = 1036kB
+Node 0 hugepages_total=1163 hugepages_free=1163 hugepages_surp=0 hugepages_size=2048kB
+74 total pagecache pages
+1 pages in swap cache
+Free swap  = 920kB
+Total swap = 124996kB
+1048446 pages RAM
+0 pages HighMem/MovableOnly
+200311 pages reserved
+Unreclaimable slab info:
+Name                      Used          Total
+pid_3                     23KB         23KB
+pid_2                    126KB        157KB
+p9_req_t                  31KB         31KB
+fib6_node                 32KB         32KB
+ip6_dst_cache             31KB         31KB
+PINGv6                   160KB        256KB
+RAWv6                    288KB        288KB
+UDPLITEv6                122KB        122KB
+UDPv6                    122KB        122KB
+tw_sock_TCPv6             15KB         15KB
+request_sock_TCPv6         30KB         30KB
+TCPv6                    506KB        506KB
+nf_conntrack              31KB         31KB
+scsi_sense_cache          16KB         16KB
+virtio_scsi_cmd           16KB         16KB
+bio-120                   43KB         43KB
+io_kiocb                  15KB         15KB
+bio-248                    7KB          7KB
+mqueue_inode_cache        121KB        121KB
+nfs_commit_data           15KB         15KB
+nfs_write_data            63KB         63KB
+jbd2_inode                15KB         15KB
+ext4_system_zone          15KB         15KB
+ext4_io_end_vec           15KB         15KB
+kioctx                   127KB        127KB
+aio_kiocb                 31KB         31KB
+dnotify_mark              15KB         15KB
+dnotify_struct            15KB         15KB
+dio                       30KB         30KB
+fasync_cache              15KB         15KB
+pid_namespace             61KB         61KB
+rpc_buffers               31KB         31KB
+rpc_tasks                  7KB          7KB
+UNIX-STREAM              418KB        446KB
+UNIX                     524KB        605KB
+ip4-frags                  7KB          7KB
+mfc_cache                 12KB         12KB
+UDP-Lite                 278KB        278KB
+tcp_bind2_bucket          16KB         16KB
+tcp_bind_bucket           16KB         16KB
+inet_peer                  4KB          4KB
+xfrm_state               159KB        159KB
+ip_fib_trie               16KB         16KB
+ip_fib_alias              19KB         19KB
+rtable                    49KB         76KB
+PING                     121KB        121KB
+RAW                      127KB        127KB
+UDP                      123KB        123KB
+tw_sock_TCP               31KB         31KB
+request_sock_TCP          23KB         23KB
+TCP                      395KB        541KB
+hugetlbfs_inode_cache        124KB        124KB
+netfs_subrequest          31KB         31KB
+netfs_request             95KB         95KB
+bio-264                   15KB         15KB
+ep_head                   16KB         16KB
+eventpoll_pwq             23KB         23KB
+eventpoll_epi             51KB         51KB
+inotify_inode_mark         82KB         82KB
+sgpool-128                59KB         59KB
+sgpool-64                733KB        733KB
+sgpool-32                472KB        472KB
+sgpool-16                312KB        312KB
+sgpool-8                 390KB        390KB
+request_queue             92KB         92KB
+blkdev_ioc                16KB         16KB
+bio-184                 4052KB       4052KB
+biovec-max               429KB        654KB
+biovec-128               478KB        478KB
+biovec-64                633KB        633KB
+biovec-16                218KB        218KB
+swap_table               350KB        350KB
+uid_cache                 31KB         31KB
+dmaengine-unmap-2          4KB          4KB
+audit_buffer              46KB         46KB
+skbuff_small_head        429KB        497KB
+skbuff_fclone_cache        218KB        296KB
+skbuff_head_cache        198KB        210KB
+configfs_dir_cache          8KB          8KB
+file_lease_cache          23KB         23KB
+file_lock_cache           87KB        118KB
+file_lock_ctx             15KB         15KB
+fsnotify_mark_connector         51KB         51KB
+posix_timers_cache         80KB         80KB
+taskstats                154KB        154KB
+mem_cgroup_per_node         78KB         78KB
+mem_cgroup               190KB        190KB
+proc_dir_entry           484KB        484KB
+pde_opener                15KB         15KB
+seq_file                 109KB        140KB
+sigqueue                  59KB         78KB
+shmem_inode_cache       1570KB       1934KB
+kernfs_iattrs_cache        316KB        316KB
+kernfs_node_cache       4960KB       4960KB
+mnt_cache                236KB        236KB
+filp                    5796KB       5796KB
+names_cache            24824KB      25444KB
+net_namespace            181KB        181KB
+hashtab_node             278KB        278KB
+ebitmap_node            1149KB       1149KB
+avtab_node              4976KB       4976KB
+avc_node                  43KB         43KB
+lsm_inode_cache         1264KB       1434KB
+lsm_file_cache           171KB        236KB
+key_jar                   55KB         55KB
+uts_namespace             62KB         62KB
+nsproxy                   19KB         19KB
+vm_area_struct         14596KB      14596KB
+fs_cache                 112KB        116KB
+files_cache              416KB        430KB
+signal_cache            1756KB       1756KB
+sighand_cache           2044KB       2044KB
+task_struct             6673KB       6673KB
+cred                     664KB        664KB
+anon_vma_chain           589KB        610KB
+anon_vma                2872KB       2872KB
+pid                      342KB        342KB
+Acpi-Operand             123KB        186KB
+Acpi-ParseExt             74KB         74KB
+Acpi-Parse                66KB         86KB
+Acpi-State                51KB         66KB
+Acpi-Namespace            32KB         32KB
+shared_policy_node         12KB         12KB
+numa_policy               15KB         15KB
+perf_event               345KB        439KB
+trace_event_file         208KB        208KB
+ftrace_event_field        486KB        486KB
+pool_workqueue           362KB        362KB
+task_group                32KB         32KB
+maple_node             24608KB      24608KB
+mm_struct               1060KB       1175KB
+vmap_area                 71KB         71KB
+page->ptl                874KB        874KB
+kmalloc-cg-8k            160KB        160KB
+kmalloc-cg-4k           3352KB       3456KB
+kmalloc-cg-2k           1816KB       1984KB
+kmalloc-cg-1k            518KB        672KB
+kmalloc-cg-512           335KB        464KB
+kmalloc-cg-256           112KB        112KB
+kmalloc-cg-128            60KB         60KB
+kmalloc-cg-64             60KB         60KB
+kmalloc-cg-32            340KB        340KB
+kmalloc-cg-16             16KB         16KB
+kmalloc-cg-8              20KB         20KB
+kmalloc-cg-192            64KB         64KB
+kmalloc-cg-96            324KB        376KB
+kmalloc-8k              1408KB       1408KB
+kmalloc-4k             67784KB      67992KB
+kmalloc-2k              3696KB       3840KB
+kmalloc-1k              2214KB       2400KB
+kmalloc-512             3840KB       3888KB
+kmalloc-256             2464KB       2464KB
+kmalloc-128              474KB        568KB
+kmalloc-64               942KB       1068KB
+kmalloc-32              5640KB       5640KB
+kmalloc-16               330KB        360KB
+kmalloc-8                209KB        268KB
+kmalloc-192              838KB        948KB
+kmalloc-96               572KB        572KB
+kmem_cache_node           59KB         59KB
+kmem_cache               101KB        101KB
+Memory cgroup min protection 0kB -- low protection 0kB
+oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/,task=modprobe,pid=21713,uid=0
+Out of memory (oom_kill_allocating_task): Killed process 21713 (modprobe) total-vm:5744kB, anon-rss:128kB, file-rss:156kB, shmem-rss:0kB, UID:0 pgtables:48kB oom_score_adj:0

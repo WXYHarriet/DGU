@@ -1,0 +1,9 @@
+# {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:false Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}
+syz_clone3(0x0, 0x0)
+syz_proc_sys_generated_170(0x8, 0x2004b188, 0x0, 0x313, 0x0)
+syz_open_procfs$namespace(0x0, &(0x7f0000000000)='ns/cgroup\x00') (async)
+syz_open_procfs$namespace(0x0, 0x0)
+getsockopt$sock_int(0xffffffffffffffff, 0x1, 0x9, 0x0, &(0x7f0000000040)) (async)
+getsockopt$sock_int(0xffffffffffffffff, 0x1, 0x9, 0x0, 0x0)
+umount2(0x0, 0x3f)
+syz_open_procfs$namespace(0xffffffffffffffff, &(0x7f0000000100)='ns/time\x00')

@@ -1,0 +1,419 @@
+Warning: Permanently added '[localhost]:9849' (ED25519) to the list of known hosts.
+syzkaller login: [   96.814871] audit: type=1400 audit(1763495947.844:7): avc:  denied  { execmem } for  pid=261 comm="syz-executor427" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=process permissive=1
+Setting up swapspace version 1, size = 122.1 MiB (127995904 bytes)
+no label, UUID=43e91a29-8c9b-410f-8fde-9c6b0dc16ecf
+[   96.876870] Adding 124996k swap on ./swap-file.  Priority:0 extents:1 across:124996k 
+executing program
+executing program
+executing program
+executing program
+executing program
+executing program
+executing program
+executing program
+[   97.067975] loop0: detected capacity change from 0 to 512
+[   97.096921] EXT4-fs (loop0): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+[   97.103267] ext4 filesystem being mounted at /0/file0 supports timestamps until 2038-01-19 (0x7fffffff)
+[   97.177754] EXT4-fs error (device loop0): ext4_map_blocks:814: inode #18: block 29: comm syz-executor427: lblock 12 mapped to illegal pblock 29 (length 2)
+[   97.179365] EXT4-fs error (device loop0) in ext4_reserve_inode_write:6313: Out of memory
+[   97.181098] EXT4-fs (loop0): Delayed block allocation failed for inode 18 at logical offset 12 with max blocks 2 with error 117
+[   97.181705] EXT4-fs error (device loop0): ext4_dirty_inode:6517: inode #18: comm kworker/u16:2: mark_inode_dirty error
+[   97.184907] EXT4-fs (loop0): This should not happen!! Data will be lost
+[   97.184907] 
+[   97.186370] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 2370949693
+[   97.189340] EXT4-fs error (device loop0) in ext4_reserve_inode_write:6313: Out of memory
+[   97.191981] EXT4-fs error (device loop0): ext4_dirty_inode:6517: inode #18: comm kworker/u16:2: mark_inode_dirty error
+[   97.195455] EXT4-fs warning (device loop0): ext4_convert_unwritten_extents:4980: inode #18: block 10: len 2: ext4_ext_map_blocks returned -12
+[   97.200058] EXT4-fs error (device loop0) in ext4_reserve_inode_write:6313: Out of memory
+[   97.201474] EXT4-fs error (device loop0): ext4_convert_unwritten_extents:4985: inode #18: comm kworker/u16:2: mark_inode_dirty error
+[   97.203394] EXT4-fs (loop0): failed to convert unwritten extents to written extents -- potential data loss!  (inode 18, error -12)
+[   97.213076] loop2: detected capacity change from 0 to 512
+[   97.232235] EXT4-fs (loop2): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+[   97.236056] ext4 filesystem being mounted at /0/file0 supports timestamps until 2038-01-19 (0x7fffffff)
+[   97.301885] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 2370949693
+[   97.303674] EXT4-fs error (device loop0): ext4_discard_preallocations:5681: comm syz-executor427: Error -12 reading block bitmap for 0
+[   97.306636] syz-executor427 (305) used greatest stack depth: 23208 bytes left
+[   97.330801] EXT4-fs error (device loop0): ext4_map_blocks:778: inode #2: block 3: comm syz-executor427: lblock 0 mapped to illegal pblock 3 (length 1)
+[   97.333931] EXT4-fs warning (device loop0): htree_dirblock_to_tree:1051: inode #2: lblock 0: comm syz-executor427: error -117 reading directory block
+[   97.343655] EXT4-fs (loop0): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   97.349285] EXT4-fs error (device loop0): ext4_map_blocks:778: inode #3: block 15: comm kworker/u16:3: lblock 2 mapped to illegal pblock 15 (length 1)
+[   97.352001] Quota error (device loop0): qtree_write_dquot: dquota write failed
+[   97.355685] Quota error (device loop0): dquot_write_dquot: Can't write quota structure (error -117). Quota may get out of sync!
+[   97.357666] Quota error (device loop0): qtree_write_dquot: dquota write failed
+[   97.358938] Quota error (device loop0): dquot_write_dquot: Can't write quota structure (error -117). Quota may get out of sync!
+[   97.412768] EXT4-fs error (device loop2): ext4_map_blocks:778: inode #2: block 3: comm syz-executor427: lblock 0 mapped to illegal pblock 3 (length 1)
+[   97.420451] EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   97.450762] loop7: detected capacity change from 0 to 512
+[   97.461855] EXT4-fs (loop7): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+[   97.465096] ext4 filesystem being mounted at /0/file0 supports timestamps until 2038-01-19 (0x7fffffff)
+[   97.477357] loop1: detected capacity change from 0 to 512
+[   97.483910] loop6: detected capacity change from 0 to 512
+[   97.494235] EXT4-fs (loop1): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+[   97.501025] ext4 filesystem being mounted at /0/file0 supports timestamps until 2038-01-19 (0x7fffffff)
+[   97.504102] EXT4-fs (loop6): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+[   97.513215] ext4 filesystem being mounted at /0/file0 supports timestamps until 2038-01-19 (0x7fffffff)
+[   97.514498] loop3: detected capacity change from 0 to 512
+[   97.534573] loop4: detected capacity change from 0 to 512
+[   97.544925] loop5: detected capacity change from 0 to 512
+[   97.548474] EXT4-fs (loop3): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+[   97.557221] EXT4-fs error (device loop7): ext4_map_blocks:814: inode #18: block 46: comm syz-executor427: lblock 0 mapped to illegal pblock 46 (length 2)
+[   97.569257] EXT4-fs error (device loop1): ext4_free_blocks:6705: comm syz-executor427: Freeing blocks not in datazone - block = 187342285598257, count = 7800
+[   97.572445] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 2 with error 117
+[   97.574140] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   97.574140] 
+[   97.576278] EXT4-fs (loop4): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+[   97.587974] ext4 filesystem being mounted at /0/file0 supports timestamps until 2038-01-19 (0x7fffffff)
+[   97.590054] EXT4-fs error (device loop1): ext4_free_blocks:6705: comm syz-executor427: Freeing blocks not in datazone - block = 203518720968073, count = 21095
+[   97.598888] EXT4-fs error (device loop6): ext4_map_blocks:814: inode #18: block 28: comm syz-executor427: lblock 13 mapped to illegal pblock 28 (length 1)
+[   97.604779] ext4 filesystem being mounted at /0/file0 supports timestamps until 2038-01-19 (0x7fffffff)
+[   97.623155] EXT4-fs (loop5): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+[   97.630052] EXT4-fs error (device loop1): ext4_free_blocks:6705: comm syz-executor427: Freeing blocks not in datazone - block = 250874392328189, count = 30520
+[   97.636085] ext4 filesystem being mounted at /0/file0 supports timestamps until 2038-01-19 (0x7fffffff)
+[   97.637918] EXT4-fs error (device loop6): __ext4_get_inode_loc:4831: comm syz-executor427: Invalid inode table block 1236318531 in block_group 0
+[   97.644423] EXT4-fs error (device loop1): ext4_free_blocks:6705: comm syz-executor427: Freeing blocks not in datazone - block = 142122591960552, count = 15796
+[   97.650825] EXT4-fs error (device loop6) in ext4_reserve_inode_write:6313: Corrupt filesystem
+[   97.656293] EXT4-fs error (device loop1): ext4_free_blocks:6705: comm syz-executor427: Freeing blocks not in datazone - block = 80535776814460, count = 28237
+[   97.670441] EXT4-fs error (device loop6): ext4_ext_truncate:4475: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.674549] EXT4-fs error (device loop6): __ext4_get_inode_loc:4831: comm syz-executor427: Invalid inode table block 1236318531 in block_group 0
+[   97.676490] EXT4-fs error (device loop1): __ext4_get_inode_loc:4831: comm syz-executor427: Invalid inode table block 3888383601 in block_group 0
+[   97.684475] EXT4-fs error (device loop1) in ext4_reserve_inode_write:6313: Corrupt filesystem
+[   97.695491] EXT4-fs error (device loop1): __ext4_ext_dirty:206: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.699978] EXT4-fs error (device loop3): ext4_map_blocks:814: inode #18: block 48: comm syz-executor427: lblock 12 mapped to illegal pblock 48 (length 1)
+[   97.702084] EXT4-fs error (device loop6) in ext4_reserve_inode_write:6313: Corrupt filesystem
+[   97.708158] EXT4-fs error (device loop1): __ext4_get_inode_loc:4831: comm syz-executor427: Invalid inode table block 3888383601 in block_group 0
+[   97.717264] EXT4-fs error (device loop6): ext4_truncate:4637: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.718959] EXT4-fs error (device loop3): __ext4_get_inode_loc:4831: comm syz-executor427: Invalid inode table block 1026844489 in block_group 0
+[   97.725009] EXT4-fs error (device loop6): __ext4_get_inode_loc:4831: comm syz-executor427: Invalid inode table block 1236318531 in block_group 0
+[   97.730230] EXT4-fs error (device loop5): ext4_map_blocks:814: inode #18: block 72: comm syz-executor427: lblock 14 mapped to illegal pblock 72 (length 1)
+[   97.733309] EXT4-fs error (device loop4): ext4_map_blocks:814: inode #18: block 70: comm syz-executor427: lblock 12 mapped to illegal pblock 70 (length 1)
+[   97.738322] EXT4-fs error (device loop1) in ext4_reserve_inode_write:6313: Corrupt filesystem
+[   97.740698] EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Corrupt filesystem
+[   97.757846] EXT4-fs error (device loop3): ext4_ext_truncate:4475: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.760112] EXT4-fs error (device loop6) in ext4_reserve_inode_write:6313: Corrupt filesystem
+[   97.760577] EXT4-fs error (device loop5) in ext4_reserve_inode_write:6313: Out of memory
+[   97.763997] EXT4-fs error (device loop4): __ext4_get_inode_loc:4831: comm syz-executor427: Invalid inode table block 3454500224 in block_group 0
+[   97.767294] EXT4-fs error (device loop6): ext4_dirty_inode:6517: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.767786] EXT4-fs error (device loop3): __ext4_get_inode_loc:4831: comm syz-executor427: Invalid inode table block 1026844489 in block_group 0
+[   97.772849] EXT4-fs error (device loop7): ext4_map_blocks:778: inode #2: block 3: comm syz-executor427: lblock 0 mapped to illegal pblock 3 (length 1)
+[   97.773390] EXT4-fs error (device loop4) in ext4_reserve_inode_write:6313: Corrupt filesystem
+[   97.774766] EXT4-fs error (device loop5): ext4_ext_truncate:4475: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.775590] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 2 with error 117
+[   97.778121] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   97.778121] 
+[   97.781170] EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Corrupt filesystem
+[   97.781175] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 2 with error 5
+[   97.782373] EXT4-fs error (device loop3): ext4_truncate:4637: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.783700] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   97.783700] 
+[   97.787862] EXT4-fs error (device loop4): ext4_ext_truncate:4475: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.794295] EXT4-fs error (device loop5) in ext4_reserve_inode_write:6313: Out of memory
+[   97.798094] EXT4-fs error (device loop7): __ext4_get_inode_loc:4831: comm kworker/u16:2: Invalid inode table block 1520650854 in block_group 0
+[   97.800432] EXT4-fs error (device loop5): ext4_truncate:4637: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.802769] EXT4-fs error (device loop4): __ext4_get_inode_loc:4831: comm syz-executor427: Invalid inode table block 3454500224 in block_group 0
+[   97.805376] EXT4-fs error (device loop4) in ext4_reserve_inode_write:6313: Corrupt filesystem
+[   97.807502] EXT4-fs error (device loop5) in ext4_reserve_inode_write:6313: Out of memory
+[   97.809401] EXT4-fs error (device loop7): __ext4_get_inode_loc:4831: comm kworker/u16:2: Invalid inode table block 1520650854 in block_group 0
+[   97.810577] EXT4-fs error (device loop4): ext4_truncate:4637: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.811193] EXT4-fs error (device loop5): ext4_dirty_inode:6517: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.821214] ==================================================================
+[   97.822041] BUG: KASAN: use-after-free in ext4_find_extent+0x97c/0xa10
+[   97.822822] Read of size 4 at addr ffff8881190c37e8 by task syz-executor427/319
+[   97.823644] 
+[   97.823847] CPU: 1 UID: 0 PID: 319 Comm: syz-executor427 Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+[   97.823871] Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[   97.823882] Call Trace:
+[   97.823889]  <TASK>
+[   97.823896]  dump_stack_lvl+0xca/0x120
+[   97.823920]  print_report+0xcf/0x610
+[   97.823948]  ? __virt_addr_valid+0x100/0x5d0
+[   97.823970]  ? ext4_find_extent+0x97c/0xa10
+[   97.823997]  kasan_report+0x96/0xd0
+[   97.824024]  ? ext4_find_extent+0x97c/0xa10
+[   97.824053]  ext4_find_extent+0x97c/0xa10
+[   97.824082]  ext4_ext_map_blocks+0x194/0x3ed0
+[   97.824101]  ? __pfx_ext4_ext_map_blocks+0x10/0x10
+[   97.824117]  ? ext4_map_blocks+0x55e/0x1380
+[   97.824141]  ? down_write+0x119/0x1f0
+[   97.824161]  ? __pfx_down_write+0x10/0x10
+[   97.824180]  ? ext4_es_lookup_extent+0xc8/0xb50
+[   97.824202]  ext4_map_blocks+0x628/0x1380
+[   97.824225]  ? __pfx_ext4_map_blocks+0x10/0x10
+[   97.824246]  ? kasan_save_track+0x14/0x30
+[   97.824271]  ? kmem_cache_alloc_noprof+0x42b/0x6e0
+[   97.824290]  ? write_comp_data+0x29/0x80
+[   97.824316]  ? write_comp_data+0x29/0x80
+[   97.824342]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   97.824368]  ? write_comp_data+0x29/0x80
+[   97.824393]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   97.824419]  ? __ext4_journal_ensure_credits+0x267/0x2f0
+[   97.824445]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   97.824472]  ext4_do_writepages+0x21e3/0x3c10
+[   97.824505]  ? __pfx_ext4_do_writepages+0x10/0x10
+[   97.824533]  ? rcu_read_lock_any_held+0xd3/0x100
+[   97.824556]  ? __pfx_rcu_read_lock_any_held+0x10/0x10
+[   97.824579]  ? ext4_writepages+0x369/0x7a0
+[   97.824618]  ext4_writepages+0x369/0x7a0
+[   97.824642]  ? __lock_acquire+0x674/0x1b40
+[   97.824669]  ? __pfx_ext4_writepages+0x10/0x10
+[   97.824697]  ? find_held_lock+0x2b/0x80
+[   97.824717]  ? wbc_attach_and_unlock_inode+0x472/0x900
+[   97.824741]  ? lock_release+0xc8/0x290
+[   97.824767]  ? __pfx_ext4_writepages+0x10/0x10
+[   97.824792]  do_writepages+0x244/0x5c0
+[   97.824815]  filemap_fdatawrite_wbc+0x114/0x160
+[   97.824839]  __filemap_fdatawrite_range+0xb9/0x100
+[   97.824867]  ? __pfx___filemap_fdatawrite_range+0x10/0x10
+[   97.824905]  ? balance_dirty_pages_ratelimited_flags+0x8f/0x1d10
+[   97.824927]  ? write_comp_data+0x29/0x80
+[   97.824956]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   97.824985]  file_write_and_wait_range+0xcc/0x140
+[   97.825014]  generic_buffers_fsync_noflush+0x6e/0x350
+[   97.825039]  ext4_sync_file+0x807/0xe30
+[   97.825063]  ? __pfx_ext4_sync_file+0x10/0x10
+[   97.825086]  vfs_fsync_range+0x13d/0x230
+[   97.825105]  ext4_buffered_write_iter+0x318/0x430
+[   97.825128]  ext4_file_write_iter+0x568/0x1910
+[   97.825153]  ? __pfx_ext4_file_write_iter+0x10/0x10
+[   97.825176]  ? rcu_read_lock_any_held+0xd3/0x100
+[   97.825198]  ? __pfx_rcu_read_lock_any_held+0x10/0x10
+[   97.825223]  vfs_write+0xb9b/0x1190
+[   97.825241]  ? __pfx_ext4_file_write_iter+0x10/0x10
+[   97.825264]  ? __pfx_vfs_write+0x10/0x10
+[   97.825281]  ? find_held_lock+0x2b/0x80
+[   97.825302]  ? lock_release+0xc8/0x290
+[   97.825332]  ksys_write+0x121/0x240
+[   97.825350]  ? __pfx_ksys_write+0x10/0x10
+[   97.825368]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   97.825395]  ? write_comp_data+0x29/0x80
+[   97.825421]  do_syscall_64+0xc3/0x380
+[   97.825443]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
+[   97.825462] RIP: 0033:0x7f9d2eeb103d
+[   97.825476] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
+[   97.825494] RSP: 002b:00007f9d2ee5a208 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+[   97.825510] RAX: ffffffffffffffda RBX: 00007f9d2ef5cd70 RCX: 00007f9d2eeb103d
+[   97.825522] RDX: 000000000000fea7 RSI: 0000200000000080 RDI: 0000000000000004
+[   97.825533] RBP: 00007f9d2ef2bc70 R08: 0000000000000000 R09: 0000000000000000
+[   97.825544] R10: 0000000000002123 R11: 0000000000000246 R12: 00007f9d2ef5cd78
+[   97.825555] R13: 00007f9d2ef5cd7c R14: 00007f9d2ef5b020 R15: 00007f9d2ef2bc6c
+[   97.825572]  </TASK>
+[   97.825578] 
+[   97.830449] EXT4-fs error (device loop5): ext4_read_block_bitmap_nowait:482: comm syz-executor427: Invalid block bitmap block 2528882506 in block_group 0
+[   97.830741] The buggy address belongs to the physical page:
+[   97.830750] page: refcount:0 mapcount:0 mapping:0000000000000000 index:0x200000893 pfn:0x1190c3
+[   97.877554] flags: 0x200000000000000(node=0|zone=2)
+[   97.878127] raw: 0200000000000000 ffffea0004643088 ffffea0004643108 0000000000000000
+[   97.878991] raw: 0000000200000893 0000000000000000 00000000ffffffff 0000000000000000
+[   97.879849] page dumped because: kasan: bad access detected
+[   97.880468] 
+[   97.880671] Memory state around the buggy address:
+[   97.881212]  ffff8881190c3680: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+[   97.882022]  ffff8881190c3700: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+[   97.882831] >ffff8881190c3780: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+[   97.883637]                                                           ^
+[   97.884369]  ffff8881190c3800: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+[   97.885178]  ffff8881190c3880: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+[   97.885986] ==================================================================
+[   97.886855] Disabling lock debugging due to kernel taint
+[   97.887967] EXT4-fs (loop7): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   97.892183] EXT4-fs error (device loop4): __ext4_get_inode_loc:4831: comm syz-executor427: Invalid inode table block 3454500224 in block_group 0
+[   97.892275] EXT4-fs error (device loop3): ext4_map_blocks:778: inode #2: block 3: comm syz-executor427: lblock 0 mapped to illegal pblock 3 (length 1)
+[   97.894345] EXT4-fs warning (device loop1): htree_dirblock_to_tree:1051: inode #2: lblock 0: comm syz-executor427: error -117 reading directory block
+[   97.898483] EXT4-fs error (device loop5) in ext4_reserve_inode_write:6313: Out of memory
+[   97.899080] EXT4-fs error (device loop4) in ext4_reserve_inode_write:6313: Corrupt filesystem
+[   97.901031] EXT4-fs error (device loop5): ext4_dirty_inode:6517: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.901285] EXT4-fs error (device loop4): ext4_dirty_inode:6517: inode #18: comm syz-executor427: mark_inode_dirty error
+[   97.902407] EXT4-fs error (device loop3): __ext4_get_inode_loc:4831: comm kworker/u16:0: Invalid inode table block 1026844489 in block_group 0
+[   97.902581] EXT4-fs (loop5): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 2 with error 117
+[   97.902615] EXT4-fs (loop5): This should not happen!! Data will be lost
+[   97.902615] 
+[   97.906139] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 2 with error 117
+[   97.908594] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   97.908594] 
+[   97.912737] EXT4-fs (loop6): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   97.912853] EXT4-fs warning (device loop5): htree_dirblock_to_tree:1051: inode #2: lblock 0: comm syz-executor427: error -117 reading directory block
+[   97.915061] EXT4-fs error (device loop3): __ext4_get_inode_loc:4831: comm kworker/u16:0: Invalid inode table block 1026844489 in block_group 0
+[   97.916483] Quota error (device loop6): qtree_write_dquot: dquota write failed
+[   97.921526] Quota error (device loop6): dquot_write_dquot: Can't write quota structure (error -117). Quota may get out of sync!
+[   97.923641] Quota error (device loop6): qtree_write_dquot: dquota write failed
+[   97.924962] Quota error (device loop6): dquot_write_dquot: Can't write quota structure (error -117). Quota may get out of sync!
+[   97.927857] EXT4-fs (loop5): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   97.928000] EXT4-fs (loop3): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   97.928068] EXT4-fs warning (device loop4): htree_dirblock_to_tree:1051: inode #2: lblock 0: comm syz-executor427: error -117 reading directory block
+[   97.931932] Quota error (device loop5): qtree_write_dquot: dquota write failed
+[   97.935213] EXT4-fs (loop1): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   97.935392] EXT4-fs (loop4): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+
+VM DIAGNOSIS:
+03:59:09  Registers:
+info registers vcpu 0
+
+CPU#0
+RAX=0000000000000000 RBX=ffffffff8256c40c RCX=ffffffff8256c40c RDX=0000000000000006
+RSI=ffff888103120000 RDI=0000000000000003 RBP=0000000000000006 RSP=ffff888101fbfbf0
+R8 =0000000000000000 R9 =0000000056f22657 R10=0000000014d14bbc R11=00000000b0185671
+R12=0000000000000010 R13=0000000000000005 R14=ffff888103120000 R15=dffffc0000000000
+RIP=ffffffff8173f8ab RFL=00000246 [---Z-P-] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 00007f9d2ee7b6c0 00000000 00000000
+GS =0000 ffff888193696000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe0000003000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe0000001000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=0000200000932000 CR3=0000000107b09000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM01=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM02=0000000000000000 0000000000000000 0000000000000000 00007f9d2ef62880
+YMM03=0000000000000000 0000000000000000 0000000000000064 0000000000000004
+YMM04=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM05=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM06=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM07=0000000000000000 0000000000000000 0000000000000018 0000000000000000
+YMM08=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+info registers vcpu 1
+
+CPU#1
+RAX=0000000000000034 RBX=0000000000000000 RCX=0000000000000000 RDX=00000000000003f8
+RSI=ffff888103125280 RDI=ffffffff882dff60 RBP=ffffffff882dff20 RSP=ffff888110b5ec00
+R8 =00000000ffffff00 R9 =ffffed1020787047 R10=ffffed1020787046 R11=ffff888103c38237
+R12=0000000000000034 R13=0000000000000010 R14=0000000000000034 R15=0000000000000000
+RIP=ffffffff8292e7ad RFL=00000002 [-------] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 00007f9d2ee5a6c0 00000000 00000000
+GS =0000 ffff888193716000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe000004a000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe0000048000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=000020000080e000 CR3=0000000107b09000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 00000000a60ce07b 00000000cec3662e
+YMM01=0000000000000000 0000000000000000 0000000000000000 132f2e94fc5ff990
+YMM02=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM03=0000000000000000 0000000000000000 0000000000ff0000 00000000000000ff
+YMM04=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM05=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM06=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM07=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM08=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+info registers vcpu 2
+
+CPU#2
+RAX=ffff888107aa8000 RBX=0000000000000004 RCX=ffff888107aa80ac RDX=0000000000000000
+RSI=0000000000000004 RDI=0000000000000000 RBP=ffff888101e61b80 RSP=ffff888105d67cd8
+R8 =ffffed1020bacf8d R9 =ffffed1020bacf8e R10=ffffed1020bacf8d R11=0000000000000003
+R12=0000000000080003 R13=dffffc0000000000 R14=ffff888101e61b80 R15=dffffc0000000000
+RIP=ffffffff813e1a9d RFL=00000046 [---Z-P-] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 00007f9d2ee7b6c0 00000000 00000000
+GS =0000 ffff888193796000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe0000091000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe000008f000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=0000200001000000 CR3=0000000104cde000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM01=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM02=0000000000000000 0000000000000000 0000000000000000 00000000000000ff
+YMM03=0000000000000000 0000000000000000 0000000000000000 00000000000000ff
+YMM04=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM05=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM06=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM07=0000000000000000 0000000000000000 0000000000000018 0000000000000000
+YMM08=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+info registers vcpu 3
+
+CPU#3
+RAX=0000000000000000 RBX=0000000000000002 RCX=0000000000000001 RDX=0000000000000000
+RSI=ffff88810a8d4088 RDI=ffff8881036a8a80 RBP=ffff88810a8d4088 RSP=ffff88811af88b88
+R8 =00000000ffffffff R9 =ffff88810a8d3768 R10=fffffbfff0c81bca R11=ffffffff8640de57
+R12=ffff8881036a8000 R13=ffff8881036a8a58 R14=00000000ffffffff R15=ffff8881036a8a80
+RIP=ffffffff84a22755 RFL=00000097 [--S-APC] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 00007f9cc0b868c0 00000000 00000000
+GS =0000 ffff888193816000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe00000d8000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe00000d6000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=00007ffd618c7000 CR3=000000011359b000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM01=0000000000000000 0000000000000000 ffff000000000000 ff00000000000000
+YMM02=0000000000000000 0000000000000000 ffffffffffffffff ff00000000000000
+YMM03=0000000000000000 0000000000000000 0000563309379010 0000563309378ff0
+YMM04=0000000000000000 0000000000000000 ffffffff00000001 0000563309379010
+YMM05=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM06=0000000000000000 0000000000000000 0000563308b04300 0000000400000002
+YMM07=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM08=0000000000000000 0000000000000000 0000000000000000 00646d6574737973
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000

@@ -1,0 +1,234 @@
+input: Macintosh mouse button emulation as /devices/virtual/input/input23
+input: Macintosh mouse button emulation as /devices/virtual/input/input24
+input: Macintosh mouse button emulation as /devices/virtual/input/input25
+Oops: general protection fault, probably for non-canonical address 0xdffffc00000000f0: 0000 [#1] SMP KASAN NOPTI
+KASAN: null-ptr-deref in range [0x0000000000000780-0x0000000000000787]
+CPU: 3 UID: 0 PID: 21255 Comm: syz.1.1608 Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:input_unregister_device+0x26/0x100 drivers/input/input.c:2407
+Code: 90 90 90 90 f3 0f 1e fa 55 48 89 fd 53 e8 82 40 ec fd 48 8d bd 80 07 00 00 48 b8 00 00 00 00 00 fc ff df 48 89 fa 48 c1 ea 03 <0f> b6 04 02 84 c0 74 06 0f 8e ac 00 00 00 0f b6 9d 80 07 00 00 31
+RSP: 0018:ffff8881161c7c20 EFLAGS: 00010216
+loop2: detected capacity change from 0 to 512
+RAX: dffffc0000000000 RBX: ffffffff882f30e0 RCX: ffffffff84a352a7
+RDX: 00000000000000f0 RSI: ffff8881065eb700 RDI: 0000000000000780
+RBP: 0000000000000000 R08: 0000000000000000 R09: ffffed1022c38f67
+R10: ffffed1022c38f66 R11: ffff8881161c7b37 R12: 0000000000000000
+R13: 0000000000000001 R14: 0000000000000001 R15: ffff8881161c7df8
+ext4: Unknown parameter 'cpuset.effective_cpus'
+FS:  00007f2f0d40d6c0(0000) GS:ffff888193816000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffdae4b6f88 CR3: 000000010488d000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ mac_hid_destroy_emumouse drivers/macintosh/mac_hid.c:68 [inline]
+ mac_hid_stop_emulation+0x1d/0x30 drivers/macintosh/mac_hid.c:183
+ mac_hid_toggle_emumouse+0x1c8/0x640 drivers/macintosh/mac_hid.c:203
+ proc_sys_call_handler+0x377/0x550 fs/proc/proc_sysctl.c:600
+ new_sync_write fs/read_write.c:593 [inline]
+ vfs_write fs/read_write.c:686 [inline]
+ vfs_write+0xb9b/0x1190 fs/read_write.c:666
+ ksys_write+0x121/0x240 fs/read_write.c:738
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f2f0ee2e65f
+Code: 89 54 24 18 48 89 74 24 10 89 7c 24 08 e8 f9 92 02 00 48 8b 54 24 18 48 8b 74 24 10 41 89 c0 8b 7c 24 08 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 31 44 89 c7 48 89 44 24 08 e8 4c 93 02 00 48
+RSP: 002b:00007f2f0d40cf80 EFLAGS: 00000293 ORIG_RAX: 0000000000000001
+RAX: ffffffffffffffda RBX: 0000000000000007 RCX: 00007f2f0ee2e65f
+RDX: 0000000000000001 RSI: 00007f2f0d40cfb0 RDI: 0000000000000007
+RBP: 0000000000000001 R08: 0000000000000000 R09: 00007f2f0d40ccf7
+R10: 0000000000000000 R11: 0000000000000293 R12: 00007f2f0d40cfb0
+R13: 0000000000000000 R14: 00007f2f0f0b6160 R15: 00007ffdf0338638
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:input_unregister_device+0x26/0x100 drivers/input/input.c:2407
+Code: 90 90 90 90 f3 0f 1e fa 55 48 89 fd 53 e8 82 40 ec fd 48 8d bd 80 07 00 00 48 b8 00 00 00 00 00 fc ff df 48 89 fa 48 c1 ea 03 <0f> b6 04 02 84 c0 74 06 0f 8e ac 00 00 00 0f b6 9d 80 07 00 00 31
+RSP: 0018:ffff8881161c7c20 EFLAGS: 00010216
+RAX: dffffc0000000000 RBX: ffffffff882f30e0 RCX: ffffffff84a352a7
+RDX: 00000000000000f0 RSI: ffff8881065eb700 RDI: 0000000000000780
+RBP: 0000000000000000 R08: 0000000000000000 R09: ffffed1022c38f67
+R10: ffffed1022c38f66 R11: ffff8881161c7b37 R12: 0000000000000000
+R13: 0000000000000001 R14: 0000000000000001 R15: ffff8881161c7df8
+FS:  00007f2f0d40d6c0(0000) GS:ffff888193816000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffdae4b6f88 CR3: 000000010488d000 CR4: 0000000000350ef0
+rfkill: input handler enabled
+==================================================================
+BUG: KASAN: slab-use-after-free in owner_on_cpu include/linux/sched.h:2282 [inline]
+BUG: KASAN: slab-use-after-free in mutex_spin_on_owner+0x24e/0x2a0 kernel/locking/mutex.c:361
+Read of size 4 at addr ffff8881065eb734 by task syz.1.1608/21254
+
+CPU: 3 UID: 0 PID: 21254 Comm: syz.1.1608 Tainted: G      D             6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Tainted: [D]=DIE
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0xca/0x120 lib/dump_stack.c:120
+ print_address_description mm/kasan/report.c:378 [inline]
+ print_report+0xcf/0x610 mm/kasan/report.c:482
+ kasan_report+0x96/0xd0 mm/kasan/report.c:595
+ owner_on_cpu include/linux/sched.h:2282 [inline]
+ mutex_spin_on_owner+0x24e/0x2a0 kernel/locking/mutex.c:361
+ mutex_optimistic_spin kernel/locking/mutex.c:464 [inline]
+ __mutex_lock_common kernel/locking/mutex.c:703 [inline]
+ __mutex_lock+0x16fc/0x25b0 kernel/locking/mutex.c:760
+ mac_hid_toggle_emumouse+0x8a/0x640 drivers/macintosh/mac_hid.c:193
+ proc_sys_call_handler+0x377/0x550 fs/proc/proc_sysctl.c:600
+ new_sync_write fs/read_write.c:593 [inline]
+ vfs_write fs/read_write.c:686 [inline]
+ vfs_write+0xb9b/0x1190 fs/read_write.c:666
+ ksys_write+0x121/0x240 fs/read_write.c:738
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f2f0ee2e65f
+Code: 89 54 24 18 48 89 74 24 10 89 7c 24 08 e8 f9 92 02 00 48 8b 54 24 18 48 8b 74 24 10 41 89 c0 8b 7c 24 08 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 31 44 89 c7 48 89 44 24 08 e8 4c 93 02 00 48
+RSP: 002b:00007f2f0d42df80 EFLAGS: 00000293 ORIG_RAX: 0000000000000001
+RAX: ffffffffffffffda RBX: 0000000000000008 RCX: 00007f2f0ee2e65f
+RDX: 0000000000000001 RSI: 00007f2f0d42dfb0 RDI: 0000000000000008
+RBP: 0000000000000001 R08: 0000000000000000 R09: 00007f2f0d42dcf7
+R10: 0000000000000000 R11: 0000000000000293 R12: 00007f2f0d42dfb0
+R13: 0000000000000000 R14: 00007f2f0f0b6080 R15: 00007ffdf0338638
+ </TASK>
+
+Allocated by task 21252:
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:56
+ kasan_save_track+0x14/0x30 mm/kasan/common.c:77
+ unpoison_slab_object mm/kasan/common.c:342 [inline]
+ __kasan_slab_alloc+0x59/0x70 mm/kasan/common.c:368
+ kasan_slab_alloc include/linux/kasan.h:252 [inline]
+ slab_post_alloc_hook mm/slub.c:4962 [inline]
+ slab_alloc_node mm/slub.c:5272 [inline]
+ kmem_cache_alloc_node_noprof+0x1f0/0x6f0 mm/slub.c:5324
+ alloc_task_struct_node kernel/fork.c:184 [inline]
+ dup_task_struct kernel/fork.c:873 [inline]
+ copy_process+0x472/0x7460 kernel/fork.c:2012
+ kernel_clone+0xea/0xe30 kernel/fork.c:2609
+ __do_sys_clone3+0x1f5/0x2a0 kernel/fork.c:2911
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+
+Freed by task 18335:
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:56
+ kasan_save_track+0x14/0x30 mm/kasan/common.c:77
+ __kasan_save_free_info+0x3a/0x60 mm/kasan/generic.c:587
+ kasan_save_free_info mm/kasan/kasan.h:406 [inline]
+ poison_slab_object mm/kasan/common.c:252 [inline]
+ __kasan_slab_free+0x43/0x70 mm/kasan/common.c:284
+ kasan_slab_free include/linux/kasan.h:234 [inline]
+ slab_free_hook mm/slub.c:2530 [inline]
+ slab_free mm/slub.c:6619 [inline]
+ kmem_cache_free+0x31d/0x630 mm/slub.c:6729
+ rcu_do_batch kernel/rcu/tree.c:2605 [inline]
+ rcu_core+0x9fc/0x2280 kernel/rcu/tree.c:2861
+ handle_softirqs+0x19b/0x740 kernel/softirq.c:622
+ __do_softirq kernel/softirq.c:656 [inline]
+ invoke_softirq kernel/softirq.c:496 [inline]
+ __irq_exit_rcu kernel/softirq.c:723 [inline]
+ irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1052 [inline]
+ sysvec_apic_timer_interrupt+0x70/0x80 arch/x86/kernel/apic/apic.c:1052
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+
+Last potentially related work creation:
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:56
+ kasan_record_aux_stack+0x89/0xa0 mm/kasan/generic.c:559
+ __call_rcu_common.constprop.0+0x70/0xae0 kernel/rcu/tree.c:3123
+ put_task_struct include/linux/sched/task.h:159 [inline]
+ delayed_put_task_struct+0x1bb/0x260 kernel/exit.c:231
+ rcu_do_batch kernel/rcu/tree.c:2605 [inline]
+ rcu_core+0x9fc/0x2280 kernel/rcu/tree.c:2861
+ handle_softirqs+0x19b/0x740 kernel/softirq.c:622
+ __do_softirq kernel/softirq.c:656 [inline]
+ invoke_softirq kernel/softirq.c:496 [inline]
+ __irq_exit_rcu kernel/softirq.c:723 [inline]
+ irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1052 [inline]
+ sysvec_apic_timer_interrupt+0x70/0x80 arch/x86/kernel/apic/apic.c:1052
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+
+Second to last potentially related work creation:
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:56
+ kasan_record_aux_stack+0x89/0xa0 mm/kasan/generic.c:559
+ __call_rcu_common.constprop.0+0x70/0xae0 kernel/rcu/tree.c:3123
+ put_task_struct_rcu_user+0x75/0xc0 kernel/exit.c:237
+ finish_task_switch+0x447/0x5f0 kernel/sched/core.c:5228
+ context_switch kernel/sched/core.c:5328 [inline]
+ __schedule+0x1118/0x4a50 kernel/sched/core.c:6929
+ preempt_schedule_common+0x2f/0x60 kernel/sched/core.c:7113
+ __cond_resched+0x22/0x30 kernel/sched/core.c:7458
+ _cond_resched include/linux/sched.h:2076 [inline]
+ zap_pte_range mm/memory.c:1896 [inline]
+ zap_pmd_range mm/memory.c:1946 [inline]
+ zap_pud_range mm/memory.c:1975 [inline]
+ zap_p4d_range mm/memory.c:1996 [inline]
+ unmap_page_range+0x1c5c/0x3760 mm/memory.c:2017
+ unmap_single_vma.constprop.0+0x153/0x230 mm/memory.c:2060
+ unmap_vmas+0x1e2/0x440 mm/memory.c:2104
+ exit_mmap+0x17a/0xad0 mm/mmap.c:1280
+ __mmput kernel/fork.c:1133 [inline]
+ mmput+0xd9/0x340 kernel/fork.c:1156
+ exit_mm kernel/exit.c:582 [inline]
+ do_exit+0x81e/0x2da0 kernel/exit.c:954
+ do_group_exit+0xd3/0x2a0 kernel/exit.c:1107
+ get_signal+0x2389/0x2500 kernel/signal.c:3034
+ arch_do_signal_or_restart+0x80/0x870 arch/x86/kernel/signal.c:337
+ exit_to_user_mode_loop+0x95/0x120 kernel/entry/common.c:40
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2eb/0x380 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+
+The buggy address belongs to the object at ffff8881065eb700
+ which belongs to the cache task_struct of size 6784
+The buggy address is located 52 bytes inside of
+ freed 6784-byte region [ffff8881065eb700, ffff8881065ed180)
+
+The buggy address belongs to the physical page:
+page: refcount:0 mapcount:0 mapping:0000000000000000 index:0xffff8881065e9b80 pfn:0x1065e8
+head: order:3 mapcount:0 entire_mapcount:0 nr_pages_mapped:0 pincount:0
+memcg:ffff888111261c41
+flags: 0x200000000000240(workingset|head|node=0|zone=2)
+page_type: f5(slab)
+raw: 0200000000000240 ffff8881001d2000 ffffea00043e6a10 ffffea0004174e10
+raw: ffff8881065e9b80 0000000000040003 00000000f5000000 ffff888111261c41
+head: 0200000000000240 ffff8881001d2000 ffffea00043e6a10 ffffea0004174e10
+head: ffff8881065e9b80 0000000000040003 00000000f5000000 ffff888111261c41
+head: 0200000000000003 ffffea0004197a01 00000000ffffffff 00000000ffffffff
+head: 000000020000060a 0000000000000000 00000000ffffffff 0000000000000008
+page dumped because: kasan: bad access detected
+
+Memory state around the buggy address:
+ ffff8881065eb600: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
+ ffff8881065eb680: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
+>ffff8881065eb700: fa fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+                                     ^
+ ffff8881065eb780: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+ ffff8881065eb800: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+==================================================================
+----------------
+Code disassembly (best guess):
+   0:	90                   	nop
+   1:	90                   	nop
+   2:	90                   	nop
+   3:	90                   	nop
+   4:	f3 0f 1e fa          	endbr64
+   8:	55                   	push   %rbp
+   9:	48 89 fd             	mov    %rdi,%rbp
+   c:	53                   	push   %rbx
+   d:	e8 82 40 ec fd       	call   0xfdec4094
+  12:	48 8d bd 80 07 00 00 	lea    0x780(%rbp),%rdi
+  19:	48 b8 00 00 00 00 00 	movabs $0xdffffc0000000000,%rax
+  20:	fc ff df
+  23:	48 89 fa             	mov    %rdi,%rdx
+  26:	48 c1 ea 03          	shr    $0x3,%rdx
+* 2a:	0f b6 04 02          	movzbl (%rdx,%rax,1),%eax <-- trapping instruction
+  2e:	84 c0                	test   %al,%al
+  30:	74 06                	je     0x38
+  32:	0f 8e ac 00 00 00    	jle    0xe4
+  38:	0f b6 9d 80 07 00 00 	movzbl 0x780(%rbp),%ebx
+  3f:	31                   	.byte 0x31

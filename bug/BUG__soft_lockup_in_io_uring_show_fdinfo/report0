@@ -1,0 +1,91 @@
+msr: See https://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git/about for details.
+netlink: 176 bytes leftover after parsing attributes in process `syz.3.17632'.
+netlink: 24 bytes leftover after parsing attributes in process `syz.6.17647'.
+watchdog: BUG: soft lockup - CPU#1 stuck for 21s! [syz.0.17490:105702]
+Modules linked in:
+CPU: 1 UID: 0 PID: 105702 Comm: syz.0.17490 Tainted: G S                  6.19.0-rc7 #2 PREEMPT(voluntary) 
+Tainted: [S]=CPU_OUT_OF_SPEC
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__sanitizer_cov_trace_pc+0x0/0x50 kernel/kcov.c:210
+Code: 65 8b 15 23 9c c4 05 81 e2 00 01 ff 00 75 0f 65 48 8b 05 03 9c c4 05 48 8b 80 60 15 00 00 c3 66 66 2e 0f 1f 84 00 00 00 00 00 <f3> 0f 1e fa 65 48 8b 15 e4 9b c4 05 bf 02 00 00 00 48 89 d6 4c 8b
+RSP: 0018:ffffc90000e0f958 EFLAGS: 00000246
+RAX: 0000000000000000 RBX: fffff520001c1f2c RCX: ffffffff82006322
+RDX: ffff88800c928040 RSI: ffffffff850af840 RDI: ffff88801402fb88
+RBP: ffffc90000e0fa28 R08: 0000000000000000 R09: ffffffff8200650e
+R10: 0000000000000006 R11: ffffc90032600ffa R12: ffff88801402fb88
+R13: ffffffff850af840 R14: 0000000002c86cec R15: 0000000000000000
+FS:  00007f95b120a6c0(0000) GS:ffff8880e5b52000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f2645afe490 CR3: 000000004d7a4000 CR4: 0000000000350ef0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000600
+Call Trace:
+ <TASK>
+ seq_printf+0x90/0xf0 fs/seq_file.c:405
+ __io_uring_show_fdinfo io_uring/fdinfo.c:164 [inline]
+ io_uring_show_fdinfo+0x9b6/0x1920 io_uring/fdinfo.c:261
+ seq_show+0x469/0x730 fs/proc/fd.c:68
+ seq_read_iter+0x4cc/0x11d0 fs/seq_file.c:230
+ seq_read+0x391/0x570 fs/seq_file.c:162
+ vfs_read fs/read_write.c:570 [inline]
+ vfs_read+0x1f9/0xc90 fs/read_write.c:552
+ ksys_read+0x121/0x240 fs/read_write.c:715
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xac/0x3b0 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x4b/0x53
+RIP: 0033:0x7f95b038ebe9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f95b120a038 EFLAGS: 00000246 ORIG_RAX: 0000000000000000
+RAX: ffffffffffffffda RBX: 00007f95b05c5fa0 RCX: 00007f95b038ebe9
+RDX: 00000000000000f1 RSI: 0000200000000040 RDI: 0000000000000005
+RBP: 00007f95b0411e19 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 00007f95b05c6038 R14: 00007f95b05c5fa0 R15: 00007ffe5d389828
+ </TASK>
+Sending NMI from CPU 1 to CPUs 0:
+NMI backtrace for cpu 0
+CPU: 0 UID: 0 PID: 84719 Comm: kworker/u8:38 Tainted: G S                  6.19.0-rc7 #2 PREEMPT(voluntary) 
+Tainted: [S]=CPU_OUT_OF_SPEC
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Workqueue: events_unbound toggle_allocation_gate
+RIP: 0010:csd_lock_wait kernel/smp.c:351 [inline]
+RIP: 0010:smp_call_function_many_cond+0x425/0x1370 kernel/smp.c:877
+Code: 85 e4 74 4f 48 b8 00 00 00 00 00 fc ff df 4d 89 f5 4d 89 f4 49 c1 ed 03 41 83 e4 07 49 01 c5 41 83 c4 03 e8 fd 3a 0b 00 f3 90 <41> 0f b6 45 00 41 38 c4 7c 08 84 c0 0f 85 7f 0d 00 00 8b 43 08 31
+RSP: 0018:ffffc90001807830 EFLAGS: 00000246
+RAX: 0000000000000000 RBX: ffff88806cf6a740 RCX: ffffffff816d8959
+RDX: ffff88800f791e00 RSI: ffff88800f791e00 RDI: 0000000000000002
+RBP: 0000000000000001 R08: 0000000000000000 R09: ffffffff816d8933
+R10: 0000000000000005 R11: ffffffff86759c57 R12: 0000000000000003
+R13: ffffed100d9ed4e9 R14: ffff88806cf6a748 R15: 0000000000000001
+FS:  0000000000000000(0000) GS:ffff8880e5a52000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f469a5fd940 CR3: 0000000005c97000 CR4: 0000000000350ef0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000200000000080
+DR3: 0000200000000080 DR6: 00000000ffff0ff0 DR7: 0000000000000600
+Call Trace:
+ <TASK>
+ on_each_cpu_cond_mask+0x57/0xa0 kernel/smp.c:1043
+ on_each_cpu include/linux/smp.h:71 [inline]
+ smp_text_poke_sync_each_cpu arch/x86/kernel/alternative.c:2711 [inline]
+ smp_text_poke_batch_finish+0x340/0xad0 arch/x86/kernel/alternative.c:2921
+ arch_jump_label_transform_apply+0x1c/0x30 arch/x86/kernel/jump_label.c:146
+ jump_label_update+0x339/0x410 kernel/jump_label.c:919
+ static_key_enable_cpuslocked+0x1b7/0x270 kernel/jump_label.c:210
+ static_key_enable+0x1a/0x20 kernel/jump_label.c:223
+ toggle_allocation_gate mm/kfence/core.c:879 [inline]
+ toggle_allocation_gate+0xfa/0x2a0 mm/kfence/core.c:871
+ process_one_work kernel/workqueue.c:3257 [inline]
+ process_scheduled_works+0x549/0x1910 kernel/workqueue.c:3340
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3421
+ kthread+0x43c/0x860 kernel/kthread.c:463
+ ret_from_fork+0x5d3/0x6f0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x11/0x20 arch/x86/entry/entry_64.S:246
+ </TASK>
+
+<<<<<<<<<<<<<<< tail report >>>>>>>>>>>>>>>
+
+SYZFAIL: failed to recv rpc
+fd=3 want=4 recv=0 n=0 (errno 9: Bad file descriptor)
+
+<<<<<<<<<<<<<<< tail report >>>>>>>>>>>>>>>
+

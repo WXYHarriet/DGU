@@ -1,0 +1,102 @@
+EXT4-fs (loop2): Block reservation details
+EXT4-fs (loop2): i_reserved_data_blocks=1
+loop5: detected capacity change from 0 to 512
+EXT4-fs: Ignoring removed bh option
+EXT4-fs: Mount option(s) incompatible with ext3
+watchdog: BUG: soft lockup - CPU#0 stuck for 23s! [syz.6.187:4693]
+Modules linked in:
+irq event stamp: 8508421
+hardirqs last  enabled at (8508420): [<ffffffff84a97fc4>] irqentry_exit+0x184/0x6d0 kernel/entry/common.c:219
+hardirqs last disabled at (8508421): [<ffffffff84a96c9f>] sysvec_apic_timer_interrupt+0xf/0x80 arch/x86/kernel/apic/apic.c:1056
+softirqs last  enabled at (8358292): [<ffffffff813b9880>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (8358292): [<ffffffff813b9880>] handle_softirqs+0x490/0x700 kernel/softirq.c:650
+softirqs last disabled at (8358295): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (8358295): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (8358295): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (8358295): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+CPU: 0 UID: 0 PID: 4693 Comm: syz.6.187 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:kernel_text_address+0x5/0xc0 kernel/extable.c:95
+Code: e8 90 1f 71 00 8b 44 24 04 eb cd 66 2e 0f 1f 84 00 00 00 00 00 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 0f 1f 40 d6 55 <48> 89 fd 48 83 ec 08 e8 3f ff ff ff 85 c0 74 0f b8 01 00 00 00 48
+RSP: 0018:ffff88811ae08a28 EFLAGS: 00000246
+RAX: dffffc0000000000 RBX: ffffffff81b46098 RCX: 0000000000000003
+RDX: 1ffff110235c1157 RSI: 0000000000000000 RDI: ffffffff81b46098
+RBP: ffff88811ae08ab8 R08: 0000000000000001 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: ffff88811ae08b28
+R13: 0000000000000000 R14: ffff888114551bc0 R15: ffff88810ac4be00
+FS:  00007f0e18edf6c0(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007fd6af2c5f40 CR3: 0000000104402000 CR4: 0000000000350ef0
+Call Trace:
+ <IRQ>
+ __kernel_text_address+0xd/0x40 kernel/extable.c:79
+ unwind_get_return_address arch/x86/kernel/unwind_orc.c:385 [inline]
+ unwind_get_return_address+0x62/0xb0 arch/x86/kernel/unwind_orc.c:380
+ arch_stack_walk+0x9c/0xf0 arch/x86/kernel/stacktrace.c:26
+ stack_trace_save+0x8e/0xc0 kernel/stacktrace.c:122
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:57
+ kasan_save_track+0x14/0x30 mm/kasan/common.c:78
+ kasan_save_free_info+0x3a/0x60 mm/kasan/generic.c:584
+ poison_slab_object mm/kasan/common.c:253 [inline]
+ __kasan_slab_free+0x43/0x70 mm/kasan/common.c:285
+ kasan_slab_free include/linux/kasan.h:235 [inline]
+ slab_free_hook mm/slub.c:2540 [inline]
+ __rcu_free_sheaf_prepare+0x5d/0x2a0 mm/slub.c:2763
+ rcu_free_sheaf+0x1b/0xc0 mm/slub.c:6230
+ rcu_do_batch kernel/rcu/tree.c:2605 [inline]
+ rcu_core+0xa6d/0x2240 kernel/rcu/tree.c:2857
+ handle_softirqs+0x19b/0x700 kernel/softirq.c:622
+ __do_softirq kernel/softirq.c:656 [inline]
+ invoke_softirq kernel/softirq.c:496 [inline]
+ __irq_exit_rcu kernel/softirq.c:723 [inline]
+ irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1056 [inline]
+ sysvec_apic_timer_interrupt+0x70/0x80 arch/x86/kernel/apic/apic.c:1056
+ </IRQ>
+ <TASK>
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+RIP: 0010:page_slab mm/slab.h:144 [inline]
+RIP: 0010:virt_to_slab mm/slab.h:178 [inline]
+RIP: 0010:qlink_to_cache mm/kasan/quarantine.c:131 [inline]
+RIP: 0010:qlist_free_all+0x96/0x130 mm/kasan/quarantine.c:176
+Code: 0f 82 a7 00 00 00 48 c7 c2 00 00 00 80 48 2b 15 30 37 d0 03 48 01 ca 48 c1 ea 0c 48 c1 e2 06 48 03 15 0e 37 d0 03 48 8b 4a 08 <48> 8d 71 ff 83 e1 01 b9 00 00 00 00 48 0f 45 d6 80 7a 33 f5 48 0f
+RSP: 0018:ffff888109befb30 EFLAGS: 00000286
+RAX: ffff888107c3b580 RBX: ffff888107c3b580 RCX: ffff8881000428c0
+RDX: ffffea00041f0ec0 RSI: 0000000000000000 RDI: ffff8881001d5900
+RBP: 0000000000000000 R08: ffff88810c2c0000 R09: ffffffff81b45afb
+R10: ffffea000430b000 R11: ffffffff8642c801 R12: 0000000000000000
+R13: ffff888109befb68 R14: ffff88810c2c2200 R15: ffff88810c2c2200
+ kasan_quarantine_reduce+0x168/0x1c0 mm/kasan/quarantine.c:286
+ __kasan_slab_alloc+0x49/0x70 mm/kasan/common.c:350
+ kasan_slab_alloc include/linux/kasan.h:253 [inline]
+ slab_post_alloc_hook mm/slub.c:4953 [inline]
+ slab_alloc_node mm/slub.c:5263 [inline]
+ kmem_cache_alloc_noprof+0x1f1/0x730 mm/slub.c:5270
+ alloc_empty_file+0x58/0x1e0 fs/file_table.c:237
+ alloc_file fs/file_table.c:354 [inline]
+ alloc_file_pseudo+0x12b/0x230 fs/file_table.c:383
+ __anon_inode_getfile+0xe1/0x280 fs/anon_inodes.c:166
+ __do_sys_perf_event_open+0x16e6/0x29a0 kernel/events/core.c:13769
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x430 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0e1a8bfba9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f0e18edf058 EFLAGS: 00000246 ORIG_RAX: 000000000000012a
+RAX: ffffffffffffffda RBX: 00007f0e1ab45fa0 RCX: 00007f0e1a8bfba9
+RDX: ff7fffffffffffff RSI: 0000000000000000 RDI: 0000200000000080
+RBP: 00007f0e1a96b44c R08: 0000000000000000 R09: 0000000000000000
+R10: ffffffffffffffff R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f0e1ab45fa0 R15: 00007ffda7390258
+ </TASK>
+EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 1 with error 28
+EXT4-fs (loop2): This should not happen!! Data will be lost
+
+EXT4-fs (loop2): Total free blocks count 0
+EXT4-fs (loop2): Free/Dirty block details
+EXT4-fs (loop2): free_blocks=2415919104
+EXT4-fs (loop2): dirty_blocks=16
+EXT4-fs (loop2): Block reservation details
+EXT4-fs (loop2): i_reserved_data_blocks=1
+EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+pimreg (unregistering): left allmulticast mode

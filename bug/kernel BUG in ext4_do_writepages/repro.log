@@ -1,0 +1,2397 @@
+Warning: Permanently added '[localhost]:29435' (ED25519) to the list of known hosts.
+syzkaller login: [   26.108379] audit: type=1400 audit(1771251271.013:7): avc:  denied  { execmem } for  pid=253 comm="syz-executor406" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=process permissive=1
+executing program
+executing program
+executing program
+executing program
+executing program
+executing program
+executing program
+executing program
+[   26.146773] loop3: detected capacity change from 0 to 2048
+[   26.149763] loop7: detected capacity change from 0 to 2048
+[   26.153573] loop5: detected capacity change from 0 to 2048
+[   26.156328] loop1: detected capacity change from 0 to 2048
+[   26.159888] loop2: detected capacity change from 0 to 2048
+[   26.161537] loop6: detected capacity change from 0 to 2048
+[   26.164304] loop0: detected capacity change from 0 to 2048
+[   26.176218] EXT4-fs (loop3): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.176971] EXT4-fs (loop7): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.177082] EXT4-fs (loop4): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.177479] EXT4-fs (loop6): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.177771] EXT4-fs (loop5): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.183207] EXT4-fs (loop1): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.183859] EXT4-fs (loop0): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.191864] audit: type=1400 audit(1771251271.091:8): avc:  denied  { open } for  pid=273 comm="syz-executor406" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+[   26.202100] EXT4-fs (loop2): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.207316] audit: type=1400 audit(1771251271.104:9): avc:  denied  { kernel } for  pid=263 comm="syz-executor406" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=perf_event permissive=1
+[   26.233461] hrtimer: interrupt took 19220 ns
+[   26.317770] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.318046] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.320554] EXT4-fs error (device loop0): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.321248] EXT4-fs (loop0): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 102 with error 117
+[   26.328395] EXT4-fs (loop0): This should not happen!! Data will be lost
+[   26.328395] 
+[   26.333493] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 1 with error 28
+[   26.336244] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   26.336244] 
+[   26.337469] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.337972] EXT4-fs (loop4): Total free blocks count 0
+[   26.338542] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.342424] EXT4-fs error (device loop5): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.342613] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.342716] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 16 with error 117
+[   26.342743] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   26.342743] 
+[   26.342947] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 22 with error 117
+[   26.342973] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   26.342973] 
+[   26.344382] EXT4-fs (loop4): Free/Dirty block details
+[   26.347472] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.348604] syz-executor406 (312) used greatest stack depth: 23448 bytes left
+[   26.349675] EXT4-fs (loop4): free_blocks=0
+[   26.356743] EXT4-fs (loop5): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 10 with error 117
+[   26.357248] EXT4-fs (loop4): dirty_blocks=16
+[   26.358196] EXT4-fs (loop5): This should not happen!! Data will be lost
+[   26.358196] 
+[   26.360741] EXT4-fs (loop4): Block reservation details
+[   26.368970] EXT4-fs (loop4): i_reserved_data_blocks=1
+[   26.370537] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 12 with error 117
+[   26.371526] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 8 with error 117
+[   26.372992] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   26.372992] 
+[   26.374937] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   26.374937] 
+[   26.384278] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 22 with max blocks 2 with error 28
+[   26.387083] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   26.387083] 
+[   26.388656] EXT4-fs (loop3): Total free blocks count 0
+[   26.389903] EXT4-fs (loop3): Free/Dirty block details
+[   26.391211] EXT4-fs (loop3): free_blocks=0
+[   26.392306] EXT4-fs (loop3): dirty_blocks=16
+[   26.393476] EXT4-fs (loop3): Block reservation details
+[   26.395336] EXT4-fs (loop0): Delayed block allocation failed for inode 18 at logical offset 102 with max blocks 2 with error 28
+[   26.398232] EXT4-fs (loop0): This should not happen!! Data will be lost
+[   26.398232] 
+[   26.400269] EXT4-fs (loop0): Total free blocks count 0
+[   26.401735] EXT4-fs (loop0): Free/Dirty block details
+[   26.402888] EXT4-fs (loop0): free_blocks=0
+[   26.404006] EXT4-fs (loop0): dirty_blocks=16
+[   26.405387] EXT4-fs (loop0): Block reservation details
+[   26.408838] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 12 with max blocks 2 with error 28
+[   26.411236] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   26.411236] 
+[   26.413128] EXT4-fs (loop7): Total free blocks count 0
+[   26.414424] EXT4-fs (loop7): Free/Dirty block details
+[   26.415392] EXT4-fs (loop7): free_blocks=0
+[   26.416210] EXT4-fs (loop7): dirty_blocks=16
+[   26.417126] EXT4-fs (loop7): Block reservation details
+[   26.423730] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 8 with max blocks 2 with error 28
+[   26.426185] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   26.426185] 
+[   26.426848] EXT4-fs (loop1): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   26.428127] EXT4-fs (loop2): Total free blocks count 0
+[   26.431297] EXT4-fs (loop2): Free/Dirty block details
+[   26.432458] EXT4-fs (loop2): free_blocks=0
+[   26.433410] EXT4-fs (loop2): dirty_blocks=16
+[   26.434556] EXT4-fs (loop2): Block reservation details
+[   26.440717] EXT4-fs (loop6): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+executing program
+[   26.459366] loop1: detected capacity change from 0 to 2048
+[   26.460143] EXT4-fs (loop4): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+executing program
+executing program
+executing program
+[   26.476890] loop6: detected capacity change from 0 to 2048
+executing program
+[   26.479393] EXT4-fs (loop5): Delayed block allocation failed for inode 18 at logical offset 10 with max blocks 2 with error 28
+[   26.482383] EXT4-fs (loop5): This should not happen!! Data will be lost
+[   26.482383] 
+executing program
+[   26.484039] EXT4-fs (loop5): Total free blocks count 0
+[   26.485388] EXT4-fs (loop5): Free/Dirty block details
+[   26.486677] EXT4-fs (loop5): free_blocks=0
+[   26.487106] loop3: detected capacity change from 0 to 2048
+[   26.487270] EXT4-fs (loop1): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.487737] EXT4-fs (loop5): dirty_blocks=16
+executing program
+[   26.492161] EXT4-fs (loop5): Block reservation details
+[   26.497737] EXT4-fs (loop6): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.506615] EXT4-fs (loop7): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.514799] EXT4-fs (loop3): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.515818] EXT4-fs (loop2): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.517071] EXT4-fs (loop0): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.523868] EXT4-fs (loop4): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+executing program
+[   26.567776] EXT4-fs (loop5): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.627936] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.630736] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.642719] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.643047] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.648540] EXT4-fs error (device loop0): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.651619] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 2 with error 117
+[   26.654019] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   26.654019] 
+[   26.655909] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 14 with error 117
+[   26.658329] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   26.658329] 
+[   26.663593] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.668087] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.678029] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 62 with error 117
+[   26.680183] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   26.680183] 
+[   26.682059] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 34 with error 117
+[   26.685010] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   26.685010] 
+[   26.692899] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 28 with error 117
+[   26.695211] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   26.695211] 
+[   26.697104] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 2 with max blocks 2 with error 28
+[   26.699621] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   26.699621] 
+[   26.701570] EXT4-fs (loop1): Total free blocks count 0
+[   26.702848] EXT4-fs (loop1): Free/Dirty block details
+[   26.704127] EXT4-fs (loop1): free_blocks=0
+[   26.705112] EXT4-fs (loop1): dirty_blocks=16
+[   26.706255] EXT4-fs (loop1): Block reservation details
+[   26.710597] EXT4-fs error (device loop5): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.721282] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 32 with error 117
+[   26.723982] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   26.723982] 
+[   26.724292] EXT4-fs (loop5): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 16 with error 117
+[   26.728100] EXT4-fs (loop5): This should not happen!! Data will be lost
+[   26.728100] 
+[   26.744245] EXT4-fs (loop6): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   26.759953] EXT4-fs (loop0): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   26.763217] EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+executing program
+[   26.768598] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 34 with max blocks 2 with error 28
+[   26.771429] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   26.771429] 
+[   26.773427] EXT4-fs (loop7): Total free blocks count 0
+[   26.774729] EXT4-fs (loop7): Free/Dirty block details
+[   26.776001] EXT4-fs (loop7): free_blocks=0
+[   26.777046] EXT4-fs (loop7): dirty_blocks=16
+[   26.778180] EXT4-fs (loop7): Block reservation details
+[   26.787020] EXT4-fs (loop5): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   26.791391] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 62 with max blocks 2 with error 28
+[   26.793696] EXT4-fs (loop1): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.794048] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   26.794048] 
+[   26.798043] EXT4-fs (loop4): Total free blocks count 0
+[   26.799301] EXT4-fs (loop4): Free/Dirty block details
+[   26.800531] EXT4-fs (loop4): free_blocks=0
+executing program
+[   26.801560] EXT4-fs (loop4): dirty_blocks=16
+[   26.802714] EXT4-fs (loop4): Block reservation details
+executing program
+executing program
+executing program
+[   26.827206] EXT4-fs (loop6): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.829101] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 28 with max blocks 2 with error 28
+[   26.831625] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   26.831625] 
+[   26.833379] EXT4-fs (loop3): Total free blocks count 0
+[   26.834611] EXT4-fs (loop3): Free/Dirty block details
+[   26.835787] EXT4-fs (loop3): free_blocks=0
+[   26.836776] EXT4-fs (loop3): dirty_blocks=16
+[   26.837814] EXT4-fs (loop3): Block reservation details
+executing program
+[   26.850127] EXT4-fs (loop0): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+executing program
+[   26.858881] EXT4-fs (loop7): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.875142] EXT4-fs (loop2): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.883336] EXT4-fs (loop5): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.902624] EXT4-fs (loop4): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+executing program
+[   26.971652] EXT4-fs (loop3): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   26.976005] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.981690] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.986280] EXT4-fs error (device loop0): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   26.989789] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 96 with error 117
+[   26.992370] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   26.992370] 
+[   27.002123] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 36 with error 117
+[   27.004476] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   27.004476] 
+[   27.007895] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.009740] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.027824] ------------[ cut here ]------------
+[   27.027935] EXT4-fs error (device loop5): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.029145] kernel BUG at fs/ext4/inode.c:2809!
+[   27.033215] Oops: invalid opcode: 0000 [#1] SMP KASAN NOPTI
+[   27.034656] CPU: 1 UID: 0 PID: 57 Comm: kworker/u16:3 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+[   27.035494] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 64 with error 117
+[   27.036971] Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[   27.036989] Workqueue: writeback wb_workfn
+[   27.040746] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   27.040746] 
+[   27.043496]  (flush-7:0)
+[   27.043510] RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40
+[   27.048763] Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+[   27.052965] RSP: 0018:ffff8881017bf310 EFLAGS: 00010246
+[   27.054287] RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81f07130
+[   27.055830] RDX: 0000000000000001 RSI: ffff888101335340 RDI: 0000000000000002
+[   27.057649] RBP: ffff8881017bf4d0 R08: 0000000000000000 R09: ffffed1022cd0d26
+[   27.059283] R10: ffffed1022cd0d25 R11: ffff88811668692f R12: ffff888116686928
+[   27.060795] R13: 0000000000000001 R14: ffff8881017bf510 R15: ffff888116686b70
+[   27.062503] FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+[   27.064282] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[   27.065692] CR2: 00007f9c2fe5eec0 CR3: 0000000109da4000 CR4: 0000000000350ef0
+[   27.067356] Call Trace:
+[   27.067990]  <TASK>
+[   27.068536]  ? look_up_lock_class.isra.0+0x6b/0x140
+[   27.069588]  ? register_lock_class+0x45/0x780
+[   27.070621]  ? __lock_acquire+0x55a/0x1eb0
+[   27.071593]  ? __pfx_ext4_do_writepages+0x10/0x10
+[   27.072640]  ? lock_is_held_type+0x9e/0x120
+[   27.073669]  ? rcu_read_lock_any_held+0xd3/0x100
+[   27.074823]  ? __pfx_rcu_read_lock_any_held+0x10/0x10
+[   27.076040]  ? ext4_writepages+0x369/0x7a0
+[   27.077067]  ext4_writepages+0x369/0x7a0
+[   27.077972]  ? __pfx_ext4_writepages+0x10/0x10
+[   27.078973]  ? __pfx_ext4_writepages+0x10/0x10
+[   27.080142]  do_writepages+0x244/0x5c0
+[   27.080935]  __writeback_single_inode+0x109/0x12a0
+[   27.082031]  ? wbc_attach_and_unlock_inode+0x4cb/0x900
+[   27.083220]  writeback_sb_inodes+0x6f9/0x1b00
+[   27.084186]  ? __pfx_writeback_sb_inodes+0x10/0x10
+[   27.085153]  ? write_comp_data+0x29/0x80
+[   27.086102]  ? queue_io+0x40f/0x550
+[   27.086963]  wb_writeback+0x1a5/0x9e0
+[   27.087850]  ? __pfx_wb_writeback+0x10/0x10
+[   27.088769]  ? mark_held_locks+0x49/0x80
+[   27.089724]  ? lockdep_hardirqs_on_prepare+0xdb/0x190
+[   27.090976]  wb_workfn+0x12d/0xcb0
+[   27.091735]  ? __pfx_wb_workfn+0x10/0x10
+[   27.092714]  ? lock_acquire+0x15d/0x2b0
+[   27.093713]  ? process_scheduled_works+0x4ce/0x1910
+[   27.094774]  process_scheduled_works+0x54f/0x1910
+[   27.095854]  ? __pfx_process_scheduled_works+0x10/0x10
+[   27.097096]  ? move_linked_works+0x189/0x2d0
+[   27.098116]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   27.099210]  ? assign_work+0x195/0x240
+[   27.100119]  ? lock_is_held_type+0x9e/0x120
+[   27.101165]  worker_thread+0x5a9/0xd10
+[   27.102019]  ? __pfx_worker_thread+0x10/0x10
+[   27.103044]  kthread+0x43f/0x860
+[   27.103813]  ? __pfx_kthread+0x10/0x10
+[   27.104758]  ? ret_from_fork+0x79/0x7b0
+[   27.105604]  ? lock_release+0xc8/0x270
+[   27.106523]  ? __pfx_kthread+0x10/0x10
+[   27.107520]  ret_from_fork+0x66d/0x7b0
+[   27.108330]  ? __pfx_ret_from_fork+0x10/0x10
+[   27.109387]  ? write_comp_data+0x29/0x80
+[   27.110384]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   27.111549]  ? __switch_to+0x859/0x1210
+[   27.112404]  ? __pfx_kthread+0x10/0x10
+[   27.113344]  ret_from_fork_asm+0x1a/0x30
+[   27.114411]  </TASK>
+[   27.114922] Modules linked in:
+[   27.115657] ---[ end trace 0000000000000000 ]---
+[   27.116849] RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40
+[   27.118141] Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+[   27.122490] RSP: 0018:ffff8881017bf310 EFLAGS: 00010246
+[   27.123777] RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81f07130
+[   27.125513] RDX: 0000000000000001 RSI: ffff888101335340 RDI: 0000000000000002
+[   27.127294] RBP: ffff8881017bf4d0 R08: 0000000000000000 R09: ffffed1022cd0d26
+[   27.128893] R10: ffffed1022cd0d25 R11: ffff88811668692f R12: ffff888116686928
+[   27.130650] R13: 0000000000000001 R14: ffff8881017bf510 R15: ffff888116686b70
+[   27.132322] FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+[   27.134386] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[   27.135803] CR2: 00007f9c2fe5eec0 CR3: 0000000109da4000 CR4: 0000000000350ef0
+[   27.137674] ------------[ cut here ]------------
+[   27.138708] WARNING: kernel/exit.c:902 at do_exit+0x1e3a/0x2d90, CPU#1: kworker/u16:3/57
+[   27.140587] Modules linked in:
+[   27.141403] CPU: 1 UID: 0 PID: 57 Comm: kworker/u16:3 Tainted: G      D             6.19.0-rc8 #2 PREEMPT(voluntary) 
+[   27.143628] Tainted: [D]=DIE
+[   27.144389] Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[   27.146728] Workqueue: writeback wb_workfn (flush-7:0)
+[   27.147945] RIP: 0010:do_exit+0x1e3a/0x2d90
+[   27.149035] Code: 2f 04 00 00 c7 43 18 00 00 00 00 e9 88 e4 ff ff e8 7b fd 39 00 bf 02 24 00 00 e8 c1 f9 0b 00 e9 3e ff ff ff e8 67 fd 39 00 90 <0f> 0b 90 e9 83 e2 ff ff e8 59 fd 39 00 48 89 ee bf 05 06 00 00 e8
+[   27.153520] RSP: 0018:ffff8881017bfe30 EFLAGS: 00010246
+[   27.154875] RAX: 00000000f0f05800 RBX: 0000000000000200 RCX: ffffffff813b1e67
+[   27.156768] RDX: 1ffff11020266ca5 RSI: ffff888101335340 RDI: 0000000000000002
+[   27.158917] RBP: 000000000000000b R08: fffffbfff0f05800 R09: fffffbfff0f058e1
+[   27.160789] R10: fffffbfff0f058e0 R11: 0000000000000003 R12: ffff888101335340
+[   27.162580] R13: 0000000000002710 R14: ffff8881013369e8 R15: ffff888101335340
+[   27.164477] FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+[   27.166514] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[   27.168048] CR2: 00007f9c2fe5eec0 CR3: 0000000109da4000 CR4: 0000000000350ef0
+[   27.169858] Call Trace:
+[   27.170472]  <TASK>
+[   27.171076]  ? __pfx_kthread+0x10/0x10
+[   27.172131]  ? ret_from_fork+0x79/0x7b0
+[   27.173127]  ? lock_release+0xc8/0x270
+[   27.174051]  ? __pfx_kthread+0x10/0x10
+[   27.175075]  ? __pfx_do_exit+0x10/0x10
+[   27.176060]  ? ret_from_fork+0x66d/0x7b0
+[   27.176967]  ? __pfx_ret_from_fork+0x10/0x10
+[   27.177969]  ? write_comp_data+0x29/0x80
+[   27.178870]  make_task_dead+0x174/0x3d0
+[   27.179848]  rewind_stack_and_make_dead+0x16/0x20
+[   27.180984] RIP: 0000:0x0
+[   27.181557] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.181662] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.184645] Code: Unable to access opcode bytes at 0xffffffffffffffd6.
+[   27.184658] RSP: 0000:0000000000000000 EFLAGS: 00000000 ORIG_RAX: 0000000000000000
+[   27.187984] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 128 with error 117
+[   27.189507] RAX: 0000000000000000 RBX: 0000000000000000 RCX: 0000000000000000
+[   27.190960] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   27.190960] 
+[   27.193386] RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+[   27.197688] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 14 with error 117
+[   27.198745] RBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000000
+[   27.201413] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   27.201413] 
+[   27.203221] R10: 0000000000000000 R11: 0000000000000000 R12: 0000000000000000
+[   27.203237] R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+[   27.208877]  </TASK>
+[   27.209530] irq event stamp: 5391
+[   27.210465] hardirqs last  enabled at (5391): [<ffffffff8129aeb1>] do_error_trap+0x171/0x240
+[   27.212742] hardirqs last disabled at (5390): [<ffffffff84a92121>] exc_invalid_op+0x51/0x80
+[   27.214919] softirqs last  enabled at (5382): [<ffffffff813b9880>] handle_softirqs+0x490/0x700
+[   27.217034] softirqs last disabled at (5373): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110
+[   27.219060] ---[ end trace 0000000000000000 ]---
+[   27.224075] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 36 with max blocks 2 with error 28
+[   27.227088] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   27.227088] 
+[   27.228358] EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   27.229282] EXT4-fs (loop6): Total free blocks count 0
+[   27.232826] EXT4-fs (loop6): Free/Dirty block details
+[   27.233968] EXT4-fs (loop3): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   27.234475] EXT4-fs (loop6): free_blocks=0
+[   27.237572] EXT4-fs (loop6): dirty_blocks=16
+[   27.238670] EXT4-fs (loop6): Block reservation details
+[   27.242612] EXT4-fs (loop1): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   27.250874] EXT4-fs (loop5): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   27.255802] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 14 with max blocks 2 with error 28
+[   27.258509] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   27.258509] 
+executing program
+[   27.259582] EXT4-fs (loop7): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   27.260431] EXT4-fs (loop4): Total free blocks count 0
+[   27.263890] EXT4-fs (loop4): Free/Dirty block details
+[   27.265183] EXT4-fs (loop4): free_blocks=0
+[   27.266186] EXT4-fs (loop4): dirty_blocks=16
+[   27.267323] EXT4-fs (loop4): Block reservation details
+[   27.268454] EXT4-fs (loop3): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+executing program
+executing program
+executing program
+executing program
+executing program
+[   27.286081] EXT4-fs (loop6): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   27.303021] EXT4-fs (loop2): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   27.306018] EXT4-fs (loop5): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+executing program
+[   27.311571] EXT4-fs (loop7): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   27.316883] EXT4-fs (loop1): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   27.347697] EXT4-fs (loop4): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[   27.394765] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.407835] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.417973] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 156 with error 117
+[   27.420272] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   27.420272] 
+[   27.425861] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.426088] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 96 with error 117
+[   27.431028] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   27.431028] 
+[   27.441988] EXT4-fs error (device loop5): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.445488] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 46 with error 117
+[   27.448214] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   27.448214] 
+[   27.457134] EXT4-fs (loop5): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 120 with error 117
+[   27.457628] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.459570] EXT4-fs (loop5): This should not happen!! Data will be lost
+[   27.459570] 
+[   27.467599] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.478120] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 46 with max blocks 2 with error 28
+[   27.478522] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 42 with error 117
+[   27.480578] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   27.480578] 
+[   27.482637] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   27.482637] 
+[   27.484270] EXT4-fs (loop2): Total free blocks count 0
+[   27.486833] EXT4-fs (loop2): Free/Dirty block details
+[   27.488085] EXT4-fs (loop2): free_blocks=0
+[   27.489000] EXT4-fs (loop2): dirty_blocks=16
+[   27.489962] EXT4-fs (loop2): Block reservation details
+[   27.491631] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 34 with error 28
+[   27.494165] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   27.494165] 
+[   27.495790] EXT4-fs (loop7): Total free blocks count 0
+[   27.496843] EXT4-fs (loop7): Free/Dirty block details
+[   27.497864] EXT4-fs (loop7): free_blocks=0
+[   27.498837] EXT4-fs (loop7): dirty_blocks=48
+[   27.500017] EXT4-fs (loop7): Block reservation details
+[   27.501472] EXT4-fs (loop7): i_reserved_data_blocks=3
+[   27.501922] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.505818] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 156 with max blocks 2 with error 28
+[   27.508116] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   27.508116] 
+[   27.509792] EXT4-fs (loop3): Total free blocks count 0
+[   27.510911] EXT4-fs (loop3): Free/Dirty block details
+[   27.512264] EXT4-fs (loop3): free_blocks=0
+[   27.513335] EXT4-fs (loop3): dirty_blocks=16
+[   27.513694] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 78 with error 117
+[   27.514451] EXT4-fs (loop3): Block reservation details
+[   27.516910] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   27.516910] 
+[   27.519798] EXT4-fs (loop6): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+[   27.526750] EXT4-fs (loop5): Delayed block allocation failed for inode 18 at logical offset 120 with max blocks 2 with error 28
+[   27.528973] EXT4-fs (loop5): This should not happen!! Data will be lost
+[   27.528973] 
+[   27.530511] EXT4-fs (loop5): Total free blocks count 0
+[   27.531517] EXT4-fs (loop5): Free/Dirty block details
+[   27.532850] EXT4-fs (loop5): free_blocks=0
+[   27.533860] EXT4-fs (loop5): dirty_blocks=16
+[   27.534926] EXT4-fs (loop5): Block reservation details
+executing program
+executing program
+[   27.545582] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 78 with max blocks 2 with error 28
+[   27.548940] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   27.548940] 
+[   27.550970] EXT4-fs (loop4): Total free blocks count 0
+[   27.552178] EXT4-fs (loop4): Free/Dirty block details
+[   27.553184] EXT4-fs (loop4): free_blocks=0
+[   27.554048] EXT4-fs (loop4): dirty_blocks=16
+[   27.554571] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 42 with max blocks 2 with error 28
+[   27.554934] EXT4-fs (loop4): Block reservation details
+[   27.557128] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   27.557128] 
+[   27.560089] EXT4-fs (loop1): Total free blocks count 0
+[   27.561428] EXT4-fs (loop1): Free/Dirty block details
+[   27.562759] EXT4-fs (loop1): free_blocks=0
+[   27.563779] EXT4-fs (loop1): dirty_blocks=16
+[   27.564882] EXT4-fs (loop1): Block reservation details
+[   27.573697] EXT4-fs (loop6): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+executing program
+[   27.584822] EXT4-fs (loop2): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+executing program
+executing program
+executing program
+[   27.603689] EXT4-fs (loop5): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+executing program
+[   27.716333] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.718755] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.727714] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 92 with error 117
+[   27.729947] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   27.729947] 
+[   27.732844] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.739669] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 114 with error 117
+[   27.741937] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   27.741937] 
+[   27.745890] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 192 with error 117
+[   27.745965] EXT4-fs error (device loop5): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.748377] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   27.748377] 
+[   27.748786] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.748967] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 96 with error 117
+[   27.748990] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   27.748990] 
+[   27.751183] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.761944] EXT4-fs (loop5): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 8 with error 117
+[   27.762663] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 96 with error 117
+[   27.764149] EXT4-fs (loop5): This should not happen!! Data will be lost
+[   27.764149] 
+[   27.767866] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   27.767866] 
+[   27.768263] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 92 with max blocks 2 with error 28
+[   27.771592] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   27.771592] 
+[   27.773303] EXT4-fs (loop2): Total free blocks count 0
+[   27.774506] EXT4-fs (loop2): Free/Dirty block details
+[   27.775631] EXT4-fs (loop2): free_blocks=0
+[   27.776536] EXT4-fs (loop2): dirty_blocks=16
+[   27.777356] EXT4-fs (loop2): Block reservation details
+[   27.780036] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.795617] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 4 with error 117
+[   27.798617] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   27.798617] 
+executing program
+[   27.813921] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 114 with max blocks 2 with error 28
+[   27.816576] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   27.816576] 
+[   27.818611] EXT4-fs (loop4): Total free blocks count 0
+[   27.819845] EXT4-fs (loop4): Free/Dirty block details
+[   27.821111] EXT4-fs (loop4): free_blocks=0
+[   27.822146] EXT4-fs (loop4): dirty_blocks=16
+[   27.823206] EXT4-fs (loop4): Block reservation details
+[   27.824563] EXT4-fs (loop4): i_reserved_data_blocks=1
+[   27.831414] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 4 with max blocks 2 with error 28
+[   27.834056] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   27.834056] 
+[   27.836004] EXT4-fs (loop7): Total free blocks count 0
+[   27.837284] EXT4-fs (loop7): Free/Dirty block details
+[   27.838539] EXT4-fs (loop7): free_blocks=0
+[   27.839577] EXT4-fs (loop7): dirty_blocks=16
+[   27.840679] EXT4-fs (loop7): Block reservation details
+[   27.841917] EXT4-fs (loop7): i_reserved_data_blocks=1
+executing program
+executing program
+executing program
+executing program
+[   27.865172] EXT4-fs (loop5): Delayed block allocation failed for inode 18 at logical offset 8 with max blocks 2 with error 28
+[   27.867414] EXT4-fs (loop5): This should not happen!! Data will be lost
+[   27.867414] 
+[   27.869073] EXT4-fs (loop5): Total free blocks count 0
+[   27.870090] EXT4-fs (loop5): Free/Dirty block details
+[   27.871087] EXT4-fs (loop5): free_blocks=0
+[   27.871932] EXT4-fs (loop5): dirty_blocks=16
+[   27.872808] EXT4-fs (loop5): Block reservation details
+executing program
+executing program
+[   27.965421] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.974681] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 214 with error 117
+[   27.977126] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   27.977126] 
+[   27.982001] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.982493] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   27.991604] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 38 with error 117
+[   27.993989] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   27.993989] 
+[   27.997582] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 164 with error 117
+[   27.999962] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   27.999962] 
+[   28.004191] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.006911] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.009264] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 74 with error 117
+[   28.011855] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   28.011855] 
+[   28.019090] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 12 with error 117
+[   28.021625] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   28.021625] 
+[   28.025807] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 214 with max blocks 2 with error 28
+[   28.028311] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   28.028311] 
+[   28.030287] EXT4-fs (loop3): Total free blocks count 0
+[   28.031630] EXT4-fs (loop3): Free/Dirty block details
+[   28.032946] EXT4-fs (loop3): free_blocks=0
+[   28.034069] EXT4-fs (loop3): dirty_blocks=16
+[   28.035593] EXT4-fs (loop3): Block reservation details
+[   28.036880] EXT4-fs (loop3): i_reserved_data_blocks=1
+[   28.040800] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 164 with max blocks 2 with error 28
+[   28.043729] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   28.043729] 
+[   28.045815] EXT4-fs (loop1): Total free blocks count 0
+[   28.047134] EXT4-fs (loop1): Free/Dirty block details
+[   28.048366] EXT4-fs (loop1): free_blocks=0
+[   28.049455] EXT4-fs (loop1): dirty_blocks=16
+[   28.050515] EXT4-fs (loop1): Block reservation details
+[   28.051816] EXT4-fs (loop1): i_reserved_data_blocks=1
+[   28.056420] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.072813] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 32 with error 117
+[   28.075635] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   28.075635] 
+executing program
+[   28.123614] EXT4-fs error (device loop5): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.124028] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 74 with max blocks 2 with error 28
+[   28.128983] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   28.128983] 
+executing program
+[   28.130616] EXT4-fs (loop4): Total free blocks count 0
+[   28.131877] EXT4-fs (loop4): Free/Dirty block details
+[   28.132958] EXT4-fs (loop4): free_blocks=0
+[   28.133955] EXT4-fs (loop4): dirty_blocks=16
+[   28.134881] EXT4-fs (loop4): Block reservation details
+[   28.136187] EXT4-fs (loop4): i_reserved_data_blocks=1
+[   28.138507] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 12 with max blocks 2 with error 28
+[   28.141259] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   28.141259] 
+[   28.143215] EXT4-fs (loop2): Total free blocks count 0
+[   28.144559] EXT4-fs (loop2): Free/Dirty block details
+[   28.145815] EXT4-fs (loop2): free_blocks=0
+[   28.147019] EXT4-fs (loop2): dirty_blocks=16
+[   28.148240] EXT4-fs (loop2): Block reservation details
+[   28.149706] EXT4-fs (loop2): i_reserved_data_blocks=1
+[   28.151984] ------------[ cut here ]------------
+[   28.153346] kernel BUG at fs/ext4/inode.c:2809!
+[   28.154417] Oops: invalid opcode: 0000 [#2] SMP KASAN NOPTI
+executing program
+[   28.155770] CPU: 0 UID: 0 PID: 287 Comm: kworker/u16:4 Tainted: G      D W           6.19.0-rc8 #2 PREEMPT(voluntary) 
+[   28.158156] Tainted: [D]=DIE, [W]=WARN
+[   28.158994] Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[   28.161057] Workqueue: writeback wb_workfn (flush-7:5)
+[   28.162096] RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40
+[   28.163149] Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+[   28.166705] RSP: 0018:ffff888110f7f310 EFLAGS: 00010246
+[   28.167756] RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81f07130
+[   28.169178] RDX: 0000000000000001 RSI: ffff8881033f9bc0 RDI: 0000000000000002
+[   28.170662] RBP: ffff888110f7f4d0 R08: 0000000000000000 R09: ffffed10232d3600
+[   28.172127] R10: ffffed10232d35ff R11: ffff88811969afff R12: ffff88811969aff8
+[   28.173710] R13: 0000000000000001 R14: ffff888110f7f510 R15: ffff88811969b240
+[   28.175126] FS:  0000000000000000(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+[   28.176720] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[   28.178062] CR2: 00007f49b0dd7a90 CR3: 0000000100db1000 CR4: 0000000000350ef0
+[   28.179653] Call Trace:
+[   28.180177]  <TASK>
+[   28.180635]  ? stack_trace_save+0x8e/0xc0
+[   28.181487]  ? stack_depot_save_flags+0x2b/0xa00
+[   28.182475]  ? ext4_fc_track_inode+0x148/0x6d0
+[   28.183395]  ? lock_acquire+0x18b/0x2b0
+[   28.184199]  ? lock_release+0x1c7/0x270
+[   28.184979]  ? lock_acquire+0x18b/0x2b0
+[   28.185751]  ? __pfx_ext4_do_writepages+0x10/0x10
+[   28.186711]  ? lock_release+0x1c7/0x270
+[   28.187515]  ? lock_acquire+0x18b/0x2b0
+[   28.188298]  ? lock_acquire+0x18b/0x2b0
+[   28.189077]  ? lock_release+0x1c7/0x270
+[   28.189846]  ? ext4_writepages+0x369/0x7a0
+[   28.190695]  ext4_writepages+0x369/0x7a0
+[   28.191664]  ? __pfx_ext4_writepages+0x10/0x10
+[   28.192828]  ? lock_release+0x1c7/0x270
+[   28.193797]  ? write_comp_data+0x29/0x80
+[   28.194819]  ? __pfx_ext4_writepages+0x10/0x10
+[   28.195958]  do_writepages+0x244/0x5c0
+[   28.196926]  __writeback_single_inode+0x109/0x12a0
+[   28.198168]  ? wbc_attach_and_unlock_inode+0x4cb/0x900
+[   28.199472]  writeback_sb_inodes+0x6f9/0x1b00
+[   28.200598]  ? __pfx_writeback_sb_inodes+0x10/0x10
+[   28.201807]  ? write_comp_data+0x29/0x80
+[   28.202817]  ? queue_io+0x40f/0x550
+[   28.203743]  wb_writeback+0x1a5/0x9e0
+[   28.204689]  ? set_worker_desc+0xa0/0x1b0
+[   28.205726]  ? __pfx_wb_writeback+0x10/0x10
+[   28.206801]  ? __pfx_do_raw_spin_lock+0x10/0x10
+[   28.207976]  ? _raw_spin_unlock_irq+0x23/0x40
+[   28.209076]  wb_workfn+0x12d/0xcb0
+[   28.209953]  ? write_comp_data+0x29/0x80
+[   28.210847]  ? __pfx_wb_workfn+0x10/0x10
+[   28.211848]  ? __perf_event_task_sched_in+0x333/0xa50
+[   28.213114]  ? __pfx_perf_trace_preemptirq_template+0x10/0x10
+[   28.214568]  ? lock_acquire+0x18b/0x2b0
+[   28.215561]  process_scheduled_works+0x54f/0x1910
+[   28.216761]  ? __pfx_process_scheduled_works+0x10/0x10
+[   28.218044]  ? move_linked_works+0x189/0x2d0
+[   28.219154]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   28.220353]  ? assign_work+0x195/0x240
+[   28.221240]  worker_thread+0x5a9/0xd10
+[   28.222040]  ? __pfx_worker_thread+0x10/0x10
+[   28.222921]  kthread+0x43f/0x860
+[   28.223586]  ? __pfx_kthread+0x10/0x10
+[   28.224479]  ? ret_from_fork+0x79/0x7b0
+[   28.225277]  ? lock_release+0xc8/0x270
+[   28.226109]  ? __pfx_kthread+0x10/0x10
+[   28.226992]  ret_from_fork+0x66d/0x7b0
+[   28.227830]  ? __pfx_ret_from_fork+0x10/0x10
+[   28.228763]  ? write_comp_data+0x29/0x80
+[   28.229653]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[   28.230663]  ? __switch_to+0x859/0x1210
+[   28.231493]  ? __pfx_kthread+0x10/0x10
+[   28.232280]  ret_from_fork_asm+0x1a/0x30
+[   28.233105]  </TASK>
+[   28.233575] Modules linked in:
+[   28.234479] ---[ end trace 0000000000000000 ]---
+[   28.235431] RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40
+[   28.237464] Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+[   28.241381] RSP: 0018:ffff8881017bf310 EFLAGS: 00010246
+[   28.242533] RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81f07130
+[   28.244058] RDX: 0000000000000001 RSI: ffff888101335340 RDI: 0000000000000002
+executing program
+[   28.245555] RBP: ffff8881017bf4d0 R08: 0000000000000000 R09: ffffed1022cd0d26
+[   28.247350] R10: ffffed1022cd0d25 R11: ffff88811668692f R12: ffff888116686928
+[   28.249054] R13: 0000000000000001 R14: ffff8881017bf510 R15: ffff888116686b70
+[   28.250968] FS:  0000000000000000(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+[   28.253103] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[   28.254302] CR2: 00007f49b0dd7a90 CR3: 0000000100db1000 CR4: 0000000000350ef0
+[   28.255724] ------------[ cut here ]------------
+[   28.256638] WARNING: kernel/exit.c:902 at do_exit+0x1e3a/0x2d90, CPU#0: kworker/u16:4/287
+[   28.259953] Modules linked in:
+[   28.260591] CPU: 0 UID: 0 PID: 287 Comm: kworker/u16:4 Tainted: G      D W           6.19.0-rc8 #2 PREEMPT(voluntary) 
+[   28.262639] Tainted: [D]=DIE, [W]=WARN
+[   28.263379] Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[   28.265260] Workqueue: writeback wb_workfn (flush-7:5)
+[   28.266267] RIP: 0010:do_exit+0x1e3a/0x2d90
+[   28.267165] Code: 2f 04 00 00 c7 43 18 00 00 00 00 e9 88 e4 ff ff e8 7b fd 39 00 bf 02 24 00 00 e8 c1 f9 0b 00 e9 3e ff ff ff e8 67 fd 39 00 90 <0f> 0b 90 e9 83 e2 ff ff e8 59 fd 39 00 48 89 ee bf 05 06 00 00 e8
+[   28.271570] RSP: 0018:ffff888110f7fe30 EFLAGS: 00010246
+[   28.272916] RAX: 00000000f0f05800 RBX: 0000000000000200 RCX: ffffffff813b1e67
+[   28.274300] RDX: 1ffff1102067f5b5 RSI: ffff8881033f9bc0 RDI: 0000000000000002
+[   28.275713] RBP: 000000000000000b R08: fffffbfff0f05800 R09: fffffbfff0f058e1
+[   28.277475] R10: fffffbfff0f058e0 R11: 0000000000000003 R12: ffff8881033f9bc0
+[   28.279161] R13: 0000000000002710 R14: ffff8881033fb268 R15: ffff8881033f9bc0
+[   28.280928] FS:  0000000000000000(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+[   28.282863] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[   28.284333] CR2: 00007f49b0dd7a90 CR3: 0000000100db1000 CR4: 0000000000350ef0
+[   28.285990] Call Trace:
+[   28.286644]  <TASK>
+[   28.287250]  ? __pfx_kthread+0x10/0x10
+[   28.288215]  ? ret_from_fork+0x79/0x7b0
+[   28.289240]  ? lock_release+0xc8/0x270
+[   28.290177]  ? __pfx_kthread+0x10/0x10
+[   28.291201]  ? __pfx_do_exit+0x10/0x10
+[   28.292191]  ? ret_from_fork+0x66d/0x7b0
+[   28.293279]  ? __pfx_ret_from_fork+0x10/0x10
+executing program
+[   28.294347]  ? write_comp_data+0x29/0x80
+[   28.295875]  make_task_dead+0x174/0x3d0
+[   28.296907]  rewind_stack_and_make_dead+0x16/0x20
+[   28.298099] RIP: 0000:0x0
+[   28.298879] Code: Unable to access opcode bytes at 0xffffffffffffffd6.
+[   28.300519] RSP: 0000:0000000000000000 EFLAGS: 00000000 ORIG_RAX: 0000000000000000
+[   28.302445] RAX: 0000000000000000 RBX: 0000000000000000 RCX: 0000000000000000
+[   28.304103] RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+[   28.305855] RBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000000
+[   28.307547] R10: 0000000000000000 R11: 0000000000000000 R12: 0000000000000000
+[   28.309370] R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+[   28.311050]  </TASK>
+[   28.311671] irq event stamp: 23206
+[   28.312535] hardirqs last  enabled at (23205): [<ffffffff814206cc>] mod_delayed_work_on+0x13c/0x180
+[   28.314689] hardirqs last disabled at (23206): [<ffffffff84aa3b2c>] __schedule+0x194c/0x3f90
+[   28.316716] softirqs last  enabled at (23112): [<ffffffff813b9880>] handle_softirqs+0x490/0x700
+[   28.318840] softirqs last disabled at (23105): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110
+[   28.320857] ---[ end trace 0000000000000000 ]---
+[   28.354021] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.362278] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.370535] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 360 with error 117
+[   28.372778] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   28.372778] 
+[   28.376154] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 128 with error 117
+[   28.378375] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   28.378375] 
+[   28.400541] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 360 with max blocks 2 with error 28
+[   28.403055] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   28.403055] 
+[   28.404700] EXT4-fs (loop6): Total free blocks count 0
+[   28.405817] EXT4-fs (loop6): Free/Dirty block details
+[   28.406917] EXT4-fs (loop6): free_blocks=0
+[   28.407803] EXT4-fs (loop6): dirty_blocks=16
+[   28.408768] EXT4-fs (loop6): Block reservation details
+[   28.409992] EXT4-fs (loop6): i_reserved_data_blocks=1
+[   28.457541] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.461759] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 28 with error 117
+[   28.464071] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   28.464071] 
+[   28.499770] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.502786] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.503798] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 128 with max blocks 2 with error 28
+[   28.505783] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 294 with error 117
+[   28.507783] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   28.507783] 
+[   28.510038] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   28.510038] 
+[   28.511735] EXT4-fs (loop3): Total free blocks count 0
+[   28.513697] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 30 with error 117
+[   28.514445] EXT4-fs (loop3): Free/Dirty block details
+[   28.516618] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   28.516618] 
+[   28.517622] EXT4-fs (loop3): free_blocks=0
+[   28.520022] EXT4-fs (loop3): dirty_blocks=16
+[   28.520899] EXT4-fs (loop3): Block reservation details
+[   28.522012] EXT4-fs (loop3): i_reserved_data_blocks=1
+[   28.523341] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 28 with max blocks 2 with error 28
+[   28.525934] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   28.525934] 
+[   28.527841] EXT4-fs (loop7): Total free blocks count 0
+[   28.529119] EXT4-fs (loop7): Free/Dirty block details
+[   28.530325] EXT4-fs (loop7): free_blocks=0
+[   28.531422] EXT4-fs (loop7): dirty_blocks=16
+[   28.532495] EXT4-fs (loop7): Block reservation details
+[   28.533911] EXT4-fs (loop7): i_reserved_data_blocks=1
+executing program
+executing program
+[   28.556833] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 294 with max blocks 2 with error 28
+[   28.559542] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   28.559542] 
+[   28.561532] EXT4-fs (loop1): Total free blocks count 0
+executing program
+[   28.562937] EXT4-fs (loop1): Free/Dirty block details
+[   28.564225] EXT4-fs (loop1): free_blocks=0
+[   28.565280] EXT4-fs (loop1): dirty_blocks=16
+[   28.566148] EXT4-fs (loop1): Block reservation details
+[   28.567167] EXT4-fs (loop1): i_reserved_data_blocks=1
+executing program
+executing program
+executing program
+[   28.702179] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.710912] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.717748] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 64 with error 117
+[   28.720258] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   28.720258] 
+[   28.724481] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.724855] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.730732] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 66 with error 117
+[   28.733428] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   28.733428] 
+[   28.738290] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 118 with error 117
+[   28.740628] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   28.740628] 
+[   28.749950] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.752924] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 126 with error 117
+[   28.755247] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   28.755247] 
+[   28.764845] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 56 with error 117
+[   28.767031] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   28.767031] 
+[   28.785702] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 126 with max blocks 2 with error 28
+[   28.787912] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   28.787912] 
+[   28.789466] EXT4-fs (loop6): Total free blocks count 0
+[   28.790491] EXT4-fs (loop6): Free/Dirty block details
+[   28.791503] EXT4-fs (loop6): free_blocks=0
+[   28.792304] EXT4-fs (loop6): dirty_blocks=16
+[   28.793148] EXT4-fs (loop6): Block reservation details
+[   28.794165] EXT4-fs (loop6): i_reserved_data_blocks=1
+[   28.800427] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 118 with max blocks 2 with error 28
+[   28.802536] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   28.802536] 
+[   28.804039] EXT4-fs (loop2): Total free blocks count 0
+[   28.805024] EXT4-fs (loop2): Free/Dirty block details
+[   28.805997] EXT4-fs (loop2): free_blocks=0
+[   28.806786] EXT4-fs (loop2): dirty_blocks=16
+[   28.807665] EXT4-fs (loop2): Block reservation details
+[   28.808646] EXT4-fs (loop2): i_reserved_data_blocks=1
+[   28.814728] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 56 with max blocks 2 with error 28
+[   28.816919] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   28.816919] 
+[   28.818485] EXT4-fs (loop1): Total free blocks count 0
+[   28.819522] EXT4-fs (loop1): Free/Dirty block details
+[   28.820538] EXT4-fs (loop1): free_blocks=0
+[   28.821350] EXT4-fs (loop1): dirty_blocks=16
+[   28.822226] EXT4-fs (loop1): Block reservation details
+[   28.823237] EXT4-fs (loop1): i_reserved_data_blocks=1
+[   28.828547] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   28.832040] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 42 with error 28
+[   28.834382] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   28.834382] 
+[   28.835992] EXT4-fs (loop4): Total free blocks count 0
+[   28.836989] EXT4-fs (loop4): Free/Dirty block details
+[   28.837945] EXT4-fs (loop4): free_blocks=0
+[   28.838723] EXT4-fs (loop4): dirty_blocks=48
+[   28.839548] EXT4-fs (loop4): Block reservation details
+[   28.840528] EXT4-fs (loop4): i_reserved_data_blocks=3
+executing program
+executing program
+executing program
+executing program
+[   28.896049] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 42 with max blocks 2 with error 28
+[   28.898291] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   28.898291] 
+executing program
+[   28.977082] ext4: Unknown parameter 'subj_user'
+executing program
+[   29.025034] ext4: Unknown parameter 'subj_user'
+[   29.030920] ext4: Unknown parameter 'subj_user'
+[   29.071672] ext4: Unknown parameter 'subj_user'
+[   29.091147] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.094195] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 34 with error 28
+[   29.096457] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   29.096457] 
+[   29.098212] EXT4-fs (loop4): Total free blocks count 0
+[   29.099376] EXT4-fs (loop4): Free/Dirty block details
+[   29.100480] EXT4-fs (loop4): free_blocks=0
+[   29.101325] EXT4-fs (loop4): dirty_blocks=48
+[   29.102285] EXT4-fs (loop4): Block reservation details
+[   29.103359] EXT4-fs (loop4): i_reserved_data_blocks=3
+[   29.120354] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 34 with max blocks 2 with error 28
+[   29.122661] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   29.122661] 
+executing program
+[   29.162728] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.168032] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 96 with error 28
+[   29.170335] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   29.170335] 
+[   29.171956] EXT4-fs (loop1): Total free blocks count 0
+[   29.173047] EXT4-fs (loop1): Free/Dirty block details
+[   29.174096] EXT4-fs (loop1): free_blocks=0
+[   29.174994] EXT4-fs (loop1): dirty_blocks=96
+[   29.175935] EXT4-fs (loop1): Block reservation details
+[   29.176966] EXT4-fs (loop1): i_reserved_data_blocks=6
+[   29.186998] syz-executor406 (891) used greatest stack depth: 22912 bytes left
+executing program
+executing program
+executing program
+executing program
+executing program
+[   29.329028] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.367231] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 144 with error 28
+[   29.369746] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   29.369746] 
+[   29.371491] EXT4-fs (loop4): Total free blocks count 0
+[   29.372574] EXT4-fs (loop4): Free/Dirty block details
+[   29.373653] EXT4-fs (loop4): free_blocks=0
+[   29.374537] EXT4-fs (loop4): dirty_blocks=144
+[   29.375481] EXT4-fs (loop4): Block reservation details
+[   29.376553] EXT4-fs (loop4): i_reserved_data_blocks=9
+[   29.378899] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.387095] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 288 with error 28
+[   29.389467] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   29.389467] 
+[   29.391088] EXT4-fs (loop3): Total free blocks count 0
+[   29.392134] EXT4-fs (loop3): Free/Dirty block details
+[   29.393196] EXT4-fs (loop3): free_blocks=0
+[   29.394071] EXT4-fs (loop3): dirty_blocks=304
+[   29.394996] EXT4-fs (loop3): Block reservation details
+[   29.396023] EXT4-fs (loop3): i_reserved_data_blocks=19
+[   29.435535] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.443162] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 64 with error 117
+[   29.445356] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   29.445356] 
+[   29.449960] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 288 with max blocks 2 with error 28
+[   29.452300] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   29.452300] 
+executing program
+[   29.454217] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.459716] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.463652] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.466710] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 32 with error 117
+[   29.469566] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   29.469566] 
+[   29.474124] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 14 with error 117
+[   29.476935] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   29.476935] 
+[   29.483287] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 160 with error 117
+[   29.486144] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   29.486144] 
+executing program
+executing program
+executing program
+[   29.514963] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 14 with max blocks 2 with error 28
+[   29.517249] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   29.517249] 
+executing program
+[   29.518919] EXT4-fs (loop1): Total free blocks count 0
+[   29.520156] EXT4-fs (loop1): Free/Dirty block details
+[   29.521246] EXT4-fs (loop1): free_blocks=0
+[   29.522132] EXT4-fs (loop1): dirty_blocks=16
+[   29.523006] EXT4-fs (loop1): Block reservation details
+[   29.524018] EXT4-fs (loop1): i_reserved_data_blocks=1
+executing program
+[   29.629702] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.643901] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.648772] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.649316] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 246 with error 28
+[   29.653570] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   29.653570] 
+[   29.654686] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 226 with error 28
+[   29.655495] EXT4-fs (loop6): Total free blocks count 0
+[   29.657788] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   29.657788] 
+[   29.658807] EXT4-fs (loop6): Free/Dirty block details
+[   29.660361] EXT4-fs (loop2): Total free blocks count 0
+[   29.661373] EXT4-fs (loop6): free_blocks=0
+[   29.662454] EXT4-fs (loop2): Free/Dirty block details
+[   29.664773] EXT4-fs (loop2): free_blocks=0
+[   29.664804] EXT4-fs (loop6): dirty_blocks=256
+[   29.665609] EXT4-fs (loop2): dirty_blocks=240
+[   29.666462] EXT4-fs (loop6): Block reservation details
+[   29.667558] EXT4-fs (loop2): Block reservation details
+[   29.668540] EXT4-fs (loop6): i_reserved_data_blocks=16
+[   29.669550] EXT4-fs (loop2): i_reserved_data_blocks=15
+[   29.687548] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 96 with error 28
+[   29.689837] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   29.689837] 
+[   29.691607] EXT4-fs (loop4): Total free blocks count 0
+[   29.692761] EXT4-fs (loop4): Free/Dirty block details
+[   29.693869] EXT4-fs (loop4): free_blocks=0
+[   29.694782] EXT4-fs (loop4): dirty_blocks=96
+[   29.695761] EXT4-fs (loop4): Block reservation details
+[   29.696852] EXT4-fs (loop4): i_reserved_data_blocks=6
+[   29.714098] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 246 with max blocks 2 with error 28
+[   29.716517] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   29.716517] 
+[   29.727664] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.741571] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 18 with error 28
+[   29.743746] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   29.743746] 
+[   29.745650] EXT4-fs (loop3): Total free blocks count 0
+[   29.746698] EXT4-fs (loop3): Free/Dirty block details
+[   29.747301] ext4: Unknown parameter 'subj_user'
+[   29.747776] EXT4-fs (loop3): free_blocks=0
+[   29.749538] EXT4-fs (loop3): dirty_blocks=32
+[   29.750347] EXT4-fs (loop3): Block reservation details
+[   29.751430] EXT4-fs (loop3): i_reserved_data_blocks=2
+[   29.753027] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 226 with max blocks 2 with error 28
+[   29.755501] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   29.755501] 
+[   29.761768] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   29.766664] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 80 with error 28
+[   29.769021] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   29.769021] 
+[   29.770606] EXT4-fs (loop7): Total free blocks count 0
+[   29.771644] EXT4-fs (loop7): Free/Dirty block details
+[   29.772660] EXT4-fs (loop7): free_blocks=0
+[   29.773517] EXT4-fs (loop7): dirty_blocks=80
+[   29.774389] EXT4-fs (loop7): Block reservation details
+[   29.775430] EXT4-fs (loop7): i_reserved_data_blocks=5
+executing program
+executing program
+executing program
+executing program
+executing program
+[   29.940077] ext4: Unknown parameter 'subj_user'
+[   29.951174] ext4: Unknown parameter 'subj_user'
+[   29.962651] ext4: Unknown parameter 'subj_user'
+[   30.007075] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   30.015722] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 74 with error 28
+[   30.018111] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   30.018111] 
+[   30.019638] EXT4-fs (loop3): Total free blocks count 0
+[   30.020645] EXT4-fs (loop3): Free/Dirty block details
+[   30.021638] EXT4-fs (loop3): free_blocks=0
+[   30.022455] EXT4-fs (loop3): dirty_blocks=80
+[   30.023310] EXT4-fs (loop3): Block reservation details
+[   30.024313] EXT4-fs (loop3): i_reserved_data_blocks=5
+[   30.032088] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+executing program
+[   30.083231] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 74 with max blocks 2 with error 28
+[   30.085792] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   30.085792] 
+executing program
+executing program
+executing program
+executing program
+executing program
+[   30.193547] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   30.231359] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 60 with error 28
+[   30.233653] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   30.233653] 
+[   30.235673] EXT4-fs (loop1): Total free blocks count 0
+[   30.236875] EXT4-fs (loop1): Free/Dirty block details
+[   30.238090] EXT4-fs (loop1): free_blocks=0
+[   30.239105] EXT4-fs (loop1): dirty_blocks=64
+[   30.240107] EXT4-fs (loop1): Block reservation details
+[   30.241269] EXT4-fs (loop1): i_reserved_data_blocks=4
+[   30.275952] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   30.289992] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 96 with error 28
+[   30.292277] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   30.292277] 
+[   30.293928] EXT4-fs (loop3): Total free blocks count 0
+[   30.295009] EXT4-fs (loop3): Free/Dirty block details
+[   30.296003] EXT4-fs (loop3): free_blocks=0
+[   30.296808] EXT4-fs (loop3): dirty_blocks=96
+[   30.297703] EXT4-fs (loop3): Block reservation details
+[   30.298729] EXT4-fs (loop3): i_reserved_data_blocks=6
+[   30.317536] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   30.320663] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   30.324038] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 132 with error 28
+[   30.326205] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   30.326205] 
+[   30.328032] EXT4-fs (loop6): Total free blocks count 0
+[   30.329011] EXT4-fs (loop6): Free/Dirty block details
+[   30.329963] EXT4-fs (loop6): free_blocks=0
+[   30.330738] EXT4-fs (loop6): dirty_blocks=144
+[   30.331579] EXT4-fs (loop6): Block reservation details
+[   30.332549] EXT4-fs (loop6): i_reserved_data_blocks=9
+[   30.338642] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   30.342206] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 60 with max blocks 2 with error 28
+[   30.344889] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   30.344889] 
+[   30.350784] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 64 with error 28
+[   30.353540] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   30.353540] 
+[   30.355547] EXT4-fs (loop2): Total free blocks count 0
+[   30.356806] EXT4-fs (loop2): Free/Dirty block details
+[   30.358123] EXT4-fs (loop2): free_blocks=0
+[   30.359094] EXT4-fs (loop2): dirty_blocks=64
+[   30.360253] EXT4-fs (loop2): Block reservation details
+[   30.361265] EXT4-fs (loop2): i_reserved_data_blocks=4
+[   30.375649] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   30.384831] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 102 with error 28
+[   30.387518] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   30.387518] 
+[   30.389324] EXT4-fs (loop4): Total free blocks count 0
+[   30.390747] EXT4-fs (loop4): Free/Dirty block details
+[   30.391709] EXT4-fs (loop4): free_blocks=0
+[   30.392496] EXT4-fs (loop4): dirty_blocks=112
+[   30.393516] EXT4-fs (loop4): Block reservation details
+[   30.394749] EXT4-fs (loop4): i_reserved_data_blocks=7
+executing program
+executing program
+executing program
+[   30.448887] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 102 with max blocks 2 with error 28
+[   30.451085] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   30.451085] 
+executing program
+executing program
+executing program
+[   30.571150] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   30.591984] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 338 with error 28
+[   30.594170] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   30.594170] 
+[   30.595720] EXT4-fs (loop1): Total free blocks count 0
+[   30.596734] EXT4-fs (loop1): Free/Dirty block details
+[   30.597744] EXT4-fs (loop1): free_blocks=0
+[   30.598544] EXT4-fs (loop1): dirty_blocks=352
+[   30.599394] EXT4-fs (loop1): Block reservation details
+[   30.600366] EXT4-fs (loop1): i_reserved_data_blocks=22
+[   30.604389] ext4: Unknown parameter 'subj_user'
+[   30.631928] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   30.642873] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   30.647172] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 40 with error 117
+[   30.649418] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   30.649418] 
+[   30.649512] ext4: Unknown parameter 'subj_user'
+[   30.651829] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 32 with error 117
+[   30.654307] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   30.654307] 
+[   30.657372] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 338 with max blocks 2 with error 28
+[   30.659602] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   30.659602] 
+[   30.663648] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   30.673944] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 64 with error 117
+[   30.676739] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   30.676739] 
+executing program
+executing program
+executing program
+executing program
+[   30.850321] ext4: Unknown parameter 'subj_user'
+[   30.879404] ext4: Unknown parameter 'subj_user'
+[   30.883354] ext4: Unknown parameter 'subj_user'
+executing program
+executing program
+[   30.948810] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   30.954926] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 64 with error 28
+[   30.957030] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   30.957030] 
+[   30.958795] EXT4-fs (loop6): Total free blocks count 0
+[   30.960188] EXT4-fs (loop6): Free/Dirty block details
+[   30.961186] EXT4-fs (loop6): free_blocks=0
+[   30.962159] EXT4-fs (loop6): dirty_blocks=64
+[   30.963276] EXT4-fs (loop6): Block reservation details
+[   30.964448] EXT4-fs (loop6): i_reserved_data_blocks=4
+executing program
+[   31.057709] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+executing program
+[   31.071679] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 108 with error 28
+[   31.073861] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   31.073861] 
+[   31.075428] EXT4-fs (loop2): Total free blocks count 0
+[   31.076417] EXT4-fs (loop2): Free/Dirty block details
+[   31.077457] EXT4-fs (loop2): free_blocks=0
+[   31.078270] EXT4-fs (loop2): dirty_blocks=112
+[   31.079148] EXT4-fs (loop2): Block reservation details
+[   31.080131] EXT4-fs (loop2): i_reserved_data_blocks=7
+executing program
+executing program
+[   31.125917] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   31.146312] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 22 with error 28
+[   31.148805] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   31.148805] 
+[   31.150927] EXT4-fs (loop7): Total free blocks count 0
+[   31.152327] EXT4-fs (loop7): Free/Dirty block details
+[   31.153722] EXT4-fs (loop7): free_blocks=0
+[   31.155166] EXT4-fs (loop7): dirty_blocks=32
+[   31.156476] EXT4-fs (loop7): Block reservation details
+[   31.157958] EXT4-fs (loop7): i_reserved_data_blocks=2
+[   31.163755] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 108 with max blocks 2 with error 28
+[   31.167135] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   31.167135] 
+[   31.219000] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   31.222856] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 252 with error 28
+[   31.225268] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   31.225268] 
+[   31.227454] EXT4-fs (loop1): Total free blocks count 0
+[   31.227858] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   31.228680] EXT4-fs (loop1): Free/Dirty block details
+[   31.232214] EXT4-fs (loop1): free_blocks=0
+[   31.233063] EXT4-fs (loop1): dirty_blocks=256
+[   31.233943] EXT4-fs (loop1): Block reservation details
+[   31.234979] EXT4-fs (loop1): i_reserved_data_blocks=16
+[   31.255036] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   31.261508] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 106 with error 28
+[   31.263603] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   31.263603] 
+[   31.265166] EXT4-fs (loop6): Total free blocks count 0
+[   31.265812] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 248 with error 28
+[   31.266184] EXT4-fs (loop6): Free/Dirty block details
+[   31.268655] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   31.268655] 
+[   31.269640] EXT4-fs (loop6): free_blocks=0
+[   31.271419] EXT4-fs (loop4): Total free blocks count 0
+[   31.272252] EXT4-fs (loop6): dirty_blocks=112
+[   31.273283] EXT4-fs (loop4): Free/Dirty block details
+[   31.274174] EXT4-fs (loop6): Block reservation details
+[   31.275183] EXT4-fs (loop4): free_blocks=0
+[   31.276209] EXT4-fs (loop6): i_reserved_data_blocks=7
+[   31.277031] EXT4-fs (loop4): dirty_blocks=256
+[   31.278996] EXT4-fs (loop4): Block reservation details
+[   31.280124] EXT4-fs (loop4): i_reserved_data_blocks=16
+[   31.291968] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 252 with max blocks 2 with error 28
+[   31.294976] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   31.294976] 
+[   31.307057] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 22 with max blocks 2 with error 28
+[   31.308681] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 106 with max blocks 2 with error 28
+[   31.309876] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   31.309876] 
+[   31.312556] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   31.312556] 
+executing program
+[   31.335979] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 248 with max blocks 2 with error 28
+executing program
+[   31.338244] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   31.338244] 
+[   31.354496] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+executing program
+[   31.369575] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 96 with error 28
+[   31.371835] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   31.371835] 
+[   31.373012] set_capacity_and_notify: 91 callbacks suppressed
+[   31.373028] loop1: detected capacity change from 0 to 2048
+[   31.373535] EXT4-fs (loop3): Total free blocks count 0
+[   31.377153] EXT4-fs (loop3): Free/Dirty block details
+[   31.378337] EXT4-fs (loop3): free_blocks=0
+[   31.379330] EXT4-fs (loop3): dirty_blocks=96
+[   31.380222] EXT4-fs (loop3): Block reservation details
+[   31.381263] EXT4-fs (loop3): i_reserved_data_blocks=6
+executing program
+executing program
+[   31.408029] loop4: detected capacity change from 0 to 2048
+[   31.409995] loop7: detected capacity change from 0 to 2048
+[   31.469223] loop6: detected capacity change from 0 to 2048
+[   31.479769] ext4: Unknown parameter 'subj_user'
+[   31.501772] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   31.505593] loop2: detected capacity change from 0 to 2048
+[   31.516528] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 38 with error 28
+[   31.518673] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   31.518673] 
+[   31.520297] EXT4-fs (loop1): Total free blocks count 0
+[   31.521334] EXT4-fs (loop1): Free/Dirty block details
+[   31.522304] EXT4-fs (loop1): free_blocks=0
+[   31.523103] EXT4-fs (loop1): dirty_blocks=48
+[   31.523933] EXT4-fs (loop1): Block reservation details
+[   31.524905] EXT4-fs (loop1): i_reserved_data_blocks=3
+[   31.527131] ext4: Unknown parameter 'subj_user'
+executing program
+[   31.539242] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   31.550702] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 32 with error 28
+[   31.553368] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   31.553368] 
+[   31.555249] EXT4-fs (loop7): Total free blocks count 0
+[   31.556590] EXT4-fs (loop7): Free/Dirty block details
+[   31.557736] EXT4-fs (loop7): free_blocks=0
+[   31.558680] EXT4-fs (loop7): dirty_blocks=32
+[   31.559871] EXT4-fs (loop7): Block reservation details
+[   31.561083] EXT4-fs (loop7): i_reserved_data_blocks=2
+[   31.561094] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   31.583370] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 38 with max blocks 2 with error 28
+[   31.586091] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   31.586091] 
+[   31.588461] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 32 with error 28
+[   31.591264] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   31.591264] 
+[   31.593210] EXT4-fs (loop4): Total free blocks count 0
+[   31.594619] EXT4-fs (loop4): Free/Dirty block details
+[   31.595845] EXT4-fs (loop4): free_blocks=0
+[   31.596934] EXT4-fs (loop4): dirty_blocks=32
+[   31.598254] EXT4-fs (loop4): Block reservation details
+[   31.599807] EXT4-fs (loop4): i_reserved_data_blocks=2
+executing program
+[   31.662111] loop7: detected capacity change from 0 to 2048
+executing program
+[   31.674275] loop1: detected capacity change from 0 to 2048
+[   31.682788] loop3: detected capacity change from 0 to 2048
+[   31.684718] ext4: Unknown parameter 'subj_user'
+executing program
+executing program
+[   31.724367] loop6: detected capacity change from 0 to 2048
+[   31.811731] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+executing program
+[   31.824695] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm ext4lazyinit: bg 0: block 234: padding at end of block bitmap is not set
+[   31.837558] loop2: detected capacity change from 0 to 2048
+[   31.838546] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 118 with error 28
+[   31.838930] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 6 with error 28
+[   31.841472] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   31.841472] 
+[   31.841489] EXT4-fs (loop1): Total free blocks count 0
+[   31.843775] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   31.843775] 
+[   31.845802] EXT4-fs (loop1): Free/Dirty block details
+[   31.847222] EXT4-fs (loop7): Total free blocks count 0
+[   31.849113] EXT4-fs (loop1): free_blocks=0
+[   31.850414] EXT4-fs (loop7): Free/Dirty block details
+[   31.851614] EXT4-fs (loop1): dirty_blocks=128
+[   31.852725] EXT4-fs (loop7): free_blocks=0
+[   31.854015] EXT4-fs (loop1): Block reservation details
+[   31.855229] EXT4-fs (loop7): dirty_blocks=16
+[   31.855246] EXT4-fs (loop7): Block reservation details
+[   31.856281] EXT4-fs (loop1): i_reserved_data_blocks=8
+[   31.857577] EXT4-fs (loop7): i_reserved_data_blocks=1
+[   31.889917] ext4: Unknown parameter 'subj_user'
+executing program
+[   31.916826] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   31.920325] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 102 with error 28
+[   31.922464] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   31.922464] 
+[   31.923984] EXT4-fs (loop6): Total free blocks count 0
+[   31.924953] EXT4-fs (loop6): Free/Dirty block details
+[   31.925908] EXT4-fs (loop6): free_blocks=0
+[   31.926718] EXT4-fs (loop6): dirty_blocks=112
+[   31.927614] EXT4-fs (loop6): Block reservation details
+[   31.928615] EXT4-fs (loop6): i_reserved_data_blocks=7
+[   31.944211] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 6 with max blocks 2 with error 28
+executing program
+[   31.946379] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   31.946379] 
+[   32.002906] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   32.006262] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 226 with error 28
+[   32.008635] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   32.008635] 
+[   32.010289] EXT4-fs (loop2): Total free blocks count 0
+[   32.011533] EXT4-fs (loop2): Free/Dirty block details
+[   32.012773] EXT4-fs (loop2): free_blocks=0
+[   32.013645] EXT4-fs (loop2): dirty_blocks=240
+[   32.014571] EXT4-fs (loop2): Block reservation details
+[   32.015648] EXT4-fs (loop2): i_reserved_data_blocks=15
+executing program
+[   32.034928] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 102 with max blocks 2 with error 28
+[   32.037237] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   32.037237] 
+[   32.078516] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   32.095674] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 156 with error 28
+[   32.097963] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   32.097963] 
+[   32.098112] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   32.099559] EXT4-fs (loop1): Total free blocks count 0
+[   32.103096] EXT4-fs (loop1): Free/Dirty block details
+[   32.104169] EXT4-fs (loop1): free_blocks=0
+[   32.105057] EXT4-fs (loop1): dirty_blocks=176
+[   32.105994] EXT4-fs (loop1): Block reservation details
+[   32.107004] EXT4-fs (loop1): i_reserved_data_blocks=11
+[   32.108595] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 54 with error 28
+[   32.108933] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 226 with max blocks 2 with error 28
+[   32.110948] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   32.110948] 
+[   32.112993] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   32.112993] 
+[   32.114464] EXT4-fs (loop3): Total free blocks count 0
+[   32.116972] EXT4-fs (loop3): Free/Dirty block details
+[   32.117935] EXT4-fs (loop3): free_blocks=0
+[   32.118719] EXT4-fs (loop3): dirty_blocks=64
+[   32.119554] EXT4-fs (loop3): Block reservation details
+[   32.120529] EXT4-fs (loop3): i_reserved_data_blocks=4
+executing program
+executing program
+executing program
+[   32.158787] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 156 with max blocks 8 with error 28
+[   32.161206] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   32.161206] 
+[   32.188744] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 54 with max blocks 2 with error 28
+[   32.191005] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   32.191005] 
+executing program
+[   32.244326] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   32.260130] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   32.267523] ext4: Unknown parameter 'subj_user'
+[   32.273903] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 70 with error 28
+[   32.276655] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   32.276655] 
+[   32.278388] EXT4-fs (loop7): Total free blocks count 0
+[   32.279553] EXT4-fs (loop7): Free/Dirty block details
+[   32.280714] EXT4-fs (loop7): free_blocks=0
+[   32.281706] EXT4-fs (loop7): dirty_blocks=80
+[   32.282690] EXT4-fs (loop7): Block reservation details
+[   32.283854] EXT4-fs (loop7): i_reserved_data_blocks=5
+[   32.290582] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   32.307300] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 268 with error 28
+[   32.307915] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 76 with error 28
+[   32.310125] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   32.310125] 
+[   32.312017] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   32.312017] 
+[   32.312031] EXT4-fs (loop6): Total free blocks count 0
+[   32.312042] EXT4-fs (loop6): Free/Dirty block details
+[   32.312053] EXT4-fs (loop6): free_blocks=0
+[   32.312063] EXT4-fs (loop6): dirty_blocks=80
+[   32.312074] EXT4-fs (loop6): Block reservation details
+[   32.312084] EXT4-fs (loop6): i_reserved_data_blocks=5
+[   32.321970] EXT4-fs (loop4): Total free blocks count 0
+[   32.323276] EXT4-fs (loop4): Free/Dirty block details
+[   32.324468] EXT4-fs (loop4): free_blocks=0
+[   32.325580] EXT4-fs (loop4): dirty_blocks=272
+[   32.326480] EXT4-fs (loop4): Block reservation details
+[   32.327612] EXT4-fs (loop4): i_reserved_data_blocks=17
+[   32.347207] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 268 with max blocks 2 with error 28
+[   32.350044] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   32.350044] 
+[   32.356693] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 70 with max blocks 2 with error 28
+[   32.359023] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   32.359023] 
+[   32.379201] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 76 with max blocks 2 with error 28
+[   32.381383] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   32.381383] 
+executing program
+executing program
+[   32.404328] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   32.409708] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 182 with error 28
+[   32.412595] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   32.412595] 
+[   32.414726] EXT4-fs (loop1): Total free blocks count 0
+[   32.416152] EXT4-fs (loop1): Free/Dirty block details
+[   32.417472] EXT4-fs (loop1): free_blocks=0
+[   32.418429] EXT4-fs (loop1): dirty_blocks=192
+[   32.419614] EXT4-fs (loop1): Block reservation details
+[   32.420925] EXT4-fs (loop1): i_reserved_data_blocks=12
+executing program
+[   32.450771] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 182 with max blocks 2 with error 28
+[   32.453313] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   32.453313] 
+executing program
+executing program
+executing program
+[   32.533080] ext4: Unknown parameter 'subj_user'
+[   32.564456] ext4: Unknown parameter 'subj_user'
+[   32.610930] ext4: Unknown parameter 'subj_user'
+[   32.628736] ext4: Unknown parameter 'subj_user'
+[   32.641883] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   32.656958] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 38 with error 28
+[   32.659799] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   32.659799] 
+[   32.661705] EXT4-fs (loop7): Total free blocks count 0
+[   32.662947] EXT4-fs (loop7): Free/Dirty block details
+[   32.664201] EXT4-fs (loop7): free_blocks=0
+[   32.665094] EXT4-fs (loop7): dirty_blocks=48
+[   32.666155] EXT4-fs (loop7): Block reservation details
+[   32.667467] EXT4-fs (loop7): i_reserved_data_blocks=3
+[   32.715620] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   32.729675] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 38 with max blocks 2 with error 28
+[   32.731847] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   32.731847] 
+[   32.737280] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 2 with error 28
+[   32.739521] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   32.739521] 
+[   32.741184] EXT4-fs (loop2): Total free blocks count 0
+[   32.742258] EXT4-fs (loop2): Free/Dirty block details
+[   32.743301] EXT4-fs (loop2): free_blocks=0
+[   32.744160] EXT4-fs (loop2): dirty_blocks=16
+[   32.745095] EXT4-fs (loop2): Block reservation details
+[   32.746102] EXT4-fs (loop2): i_reserved_data_blocks=1
+executing program
+executing program
+[   32.790081] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 2 with max blocks 2 with error 28
+[   32.792304] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   32.792304] 
+executing program
+executing program
+executing program
+executing program
+[   32.940041] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   32.944710] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   32.952997] ext4: Unknown parameter 'subj_user'
+[   32.955794] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 160 with error 28
+[   32.958077] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   32.958077] 
+[   32.959879] EXT4-fs (loop4): Total free blocks count 0
+[   32.960989] EXT4-fs (loop4): Free/Dirty block details
+[   32.962044] EXT4-fs (loop4): free_blocks=0
+[   32.962917] EXT4-fs (loop4): dirty_blocks=160
+[   32.963847] EXT4-fs (loop4): Block reservation details
+[   32.964901] EXT4-fs (loop4): i_reserved_data_blocks=10
+[   32.970028] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 132 with error 28
+[   32.972675] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   32.972675] 
+[   32.974309] EXT4-fs (loop7): Total free blocks count 0
+[   32.975407] EXT4-fs (loop7): Free/Dirty block details
+[   32.976412] EXT4-fs (loop7): free_blocks=0
+[   32.977250] EXT4-fs (loop7): dirty_blocks=144
+[   32.978135] EXT4-fs (loop7): Block reservation details
+[   32.979138] EXT4-fs (loop7): i_reserved_data_blocks=9
+[   32.984734] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   32.986465] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   33.008370] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 84 with error 117
+[   33.011400] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   33.011400] 
+[   33.011591] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 124 with error 28
+[   33.015498] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   33.015498] 
+[   33.017468] EXT4-fs (loop6): Total free blocks count 0
+[   33.018611] EXT4-fs (loop6): Free/Dirty block details
+[   33.019963] EXT4-fs (loop6): free_blocks=0
+[   33.021094] EXT4-fs (loop6): dirty_blocks=128
+[   33.022138] EXT4-fs (loop6): Block reservation details
+[   33.023655] EXT4-fs (loop6): i_reserved_data_blocks=8
+[   33.056789] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 132 with max blocks 2 with error 28
+[   33.059676] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   33.059676] 
+[   33.098475] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+executing program
+[   33.104967] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 124 with max blocks 2 with error 28
+[   33.107994] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   33.107994] 
+[   33.111508] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 66 with error 28
+[   33.114084] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   33.114084] 
+[   33.116213] EXT4-fs (loop1): Total free blocks count 0
+[   33.117662] EXT4-fs (loop1): Free/Dirty block details
+[   33.119088] EXT4-fs (loop1): free_blocks=0
+[   33.120188] EXT4-fs (loop1): dirty_blocks=80
+[   33.121413] EXT4-fs (loop1): Block reservation details
+[   33.122835] EXT4-fs (loop1): i_reserved_data_blocks=5
+[   33.133783] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 84 with max blocks 2 with error 28
+[   33.136818] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   33.136818] 
+[   33.138840] EXT4-fs (loop3): Total free blocks count 0
+[   33.140174] EXT4-fs (loop3): Free/Dirty block details
+[   33.141542] EXT4-fs (loop3): free_blocks=0
+[   33.142721] EXT4-fs (loop3): dirty_blocks=16
+[   33.143863] EXT4-fs (loop3): Block reservation details
+[   33.145339] EXT4-fs (loop3): i_reserved_data_blocks=1
+[   33.155404] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 66 with max blocks 4 with error 28
+[   33.158253] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   33.158253] 
+executing program
+executing program
+executing program
+executing program
+executing program
+[   33.262248] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   33.279599] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 108 with error 28
+[   33.281903] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   33.281903] 
+[   33.283557] EXT4-fs (loop4): Total free blocks count 0
+[   33.284932] EXT4-fs (loop4): Free/Dirty block details
+[   33.286499] EXT4-fs (loop4): free_blocks=0
+[   33.287851] EXT4-fs (loop4): dirty_blocks=112
+[   33.288976] EXT4-fs (loop4): Block reservation details
+[   33.290148] EXT4-fs (loop4): i_reserved_data_blocks=7
+[   33.290596] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   33.293312] ext4: Unknown parameter 'subj_user'
+[   33.309910] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 224 with error 28
+[   33.312179] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   33.312179] 
+[   33.313860] EXT4-fs (loop6): Total free blocks count 0
+[   33.314970] EXT4-fs (loop6): Free/Dirty block details
+[   33.316129] EXT4-fs (loop6): free_blocks=0
+[   33.317023] EXT4-fs (loop6): dirty_blocks=240
+[   33.317944] EXT4-fs (loop6): Block reservation details
+[   33.319217] EXT4-fs (loop6): i_reserved_data_blocks=15
+[   33.340639] ext4: Unknown parameter 'subj_user'
+[   33.357581] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 108 with max blocks 2 with error 28
+[   33.359902] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   33.359902] 
+[   33.392534] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 224 with max blocks 2 with error 28
+executing program
+[   33.395024] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   33.395024] 
+[   33.406322] ext4: Unknown parameter 'subj_user'
+[   33.432940] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   33.439012] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 152 with error 28
+[   33.441217] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   33.441217] 
+[   33.442713] EXT4-fs (loop2): Total free blocks count 0
+[   33.443723] EXT4-fs (loop2): Free/Dirty block details
+[   33.444742] EXT4-fs (loop2): free_blocks=0
+[   33.445603] EXT4-fs (loop2): dirty_blocks=160
+[   33.446491] EXT4-fs (loop2): Block reservation details
+[   33.447489] EXT4-fs (loop2): i_reserved_data_blocks=10
+[   33.469182] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 152 with max blocks 2 with error 28
+[   33.471612] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   33.471612] 
+executing program
+executing program
+executing program
+executing program
+[   33.572920] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   33.586369] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 96 with error 28
+[   33.589219] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   33.589219] 
+[   33.591107] EXT4-fs (loop4): Total free blocks count 0
+[   33.592448] EXT4-fs (loop4): Free/Dirty block details
+[   33.593618] EXT4-fs (loop4): free_blocks=0
+[   33.594603] EXT4-fs (loop4): dirty_blocks=96
+[   33.595628] EXT4-fs (loop4): Block reservation details
+[   33.596822] EXT4-fs (loop4): i_reserved_data_blocks=6
+[   33.630934] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   33.634662] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 194 with error 28
+[   33.636866] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   33.636866] 
+[   33.638420] EXT4-fs (loop6): Total free blocks count 0
+[   33.639424] EXT4-fs (loop6): Free/Dirty block details
+[   33.640381] EXT4-fs (loop6): free_blocks=0
+[   33.641172] EXT4-fs (loop6): dirty_blocks=208
+[   33.642011] EXT4-fs (loop6): Block reservation details
+[   33.642972] EXT4-fs (loop6): i_reserved_data_blocks=13
+executing program
+[   33.690743] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   33.704203] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 64 with error 28
+[   33.706478] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   33.706478] 
+[   33.708108] EXT4-fs (loop2): Total free blocks count 0
+[   33.709325] EXT4-fs (loop2): Free/Dirty block details
+[   33.710606] EXT4-fs (loop2): free_blocks=0
+[   33.711641] EXT4-fs (loop2): dirty_blocks=64
+[   33.712891] EXT4-fs (loop2): Block reservation details
+[   33.714037] EXT4-fs (loop2): i_reserved_data_blocks=4
+[   33.727361] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+executing program
+[   33.746822] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   33.751540] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 194 with max blocks 2 with error 28
+[   33.752543] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 278 with error 28
+[   33.753618] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   33.753618] 
+[   33.755718] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   33.755718] 
+[   33.758806] EXT4-fs (loop1): Total free blocks count 0
+[   33.759853] EXT4-fs (loop1): Free/Dirty block details
+[   33.760835] EXT4-fs (loop1): free_blocks=0
+[   33.761649] EXT4-fs (loop1): dirty_blocks=288
+[   33.762612] EXT4-fs (loop1): Block reservation details
+[   33.763651] EXT4-fs (loop1): i_reserved_data_blocks=18
+[   33.773015] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 64 with error 28
+[   33.775734] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   33.775734] 
+[   33.777651] EXT4-fs (loop7): Total free blocks count 0
+[   33.778898] EXT4-fs (loop7): Free/Dirty block details
+[   33.780276] EXT4-fs (loop7): free_blocks=0
+[   33.781298] EXT4-fs (loop7): dirty_blocks=64
+[   33.782502] EXT4-fs (loop7): Block reservation details
+[   33.783878] EXT4-fs (loop7): i_reserved_data_blocks=4
+[   33.788742] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 278 with max blocks 2 with error 28
+[   33.791304] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   33.791304] 
+executing program
+executing program
+executing program
+[   33.848018] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   33.851973] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 124 with error 28
+[   33.854405] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   33.854405] 
+[   33.856263] EXT4-fs (loop3): Total free blocks count 0
+[   33.857287] EXT4-fs (loop3): Free/Dirty block details
+[   33.858299] EXT4-fs (loop3): free_blocks=0
+[   33.859136] EXT4-fs (loop3): dirty_blocks=128
+[   33.860032] EXT4-fs (loop3): Block reservation details
+[   33.861107] EXT4-fs (loop3): i_reserved_data_blocks=8
+[   33.873626] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 124 with max blocks 2 with error 28
+[   33.876043] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   33.876043] 
+executing program
+executing program
+[   33.922949] ext4: Unknown parameter 'subj_user'
+[   33.928021] ext4: Unknown parameter 'subj_user'
+[   34.004243] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   34.015709] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 74 with error 28
+[   34.018112] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   34.018112] 
+[   34.019910] EXT4-fs (loop2): Total free blocks count 0
+[   34.021077] EXT4-fs (loop2): Free/Dirty block details
+[   34.022147] EXT4-fs (loop2): free_blocks=0
+[   34.022966] EXT4-fs (loop2): dirty_blocks=80
+[   34.023866] EXT4-fs (loop2): Block reservation details
+[   34.024895] EXT4-fs (loop2): i_reserved_data_blocks=5
+[   34.036118] ext4: Unknown parameter 'subj_user'
+[   34.070014] ext4: Unknown parameter 'subj_user'
+[   34.078689] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   34.112560] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 32 with error 28
+[   34.115294] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   34.115294] 
+[   34.117201] EXT4-fs (loop1): Total free blocks count 0
+[   34.118340] EXT4-fs (loop1): Free/Dirty block details
+[   34.119592] EXT4-fs (loop1): free_blocks=0
+[   34.120617] EXT4-fs (loop1): dirty_blocks=32
+[   34.121516] EXT4-fs (loop1): Block reservation details
+[   34.122746] EXT4-fs (loop1): i_reserved_data_blocks=2
+executing program
+[   34.157992] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 74 with max blocks 2 with error 28
+[   34.160489] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   34.160489] 
+executing program
+executing program
+executing program
+executing program
+[   34.296038] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   34.306761] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 256 with error 28
+[   34.309405] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   34.309405] 
+[   34.311144] EXT4-fs (loop6): Total free blocks count 0
+[   34.312206] EXT4-fs (loop6): Free/Dirty block details
+[   34.313392] EXT4-fs (loop6): free_blocks=0
+executing program
+[   34.314695] EXT4-fs (loop6): dirty_blocks=256
+[   34.315704] EXT4-fs (loop6): Block reservation details
+[   34.316951] EXT4-fs (loop6): i_reserved_data_blocks=16
+[   34.330861] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   34.360588] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 70 with error 28
+[   34.362862] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   34.362862] 
+[   34.364468] EXT4-fs (loop4): Total free blocks count 0
+[   34.365549] EXT4-fs (loop4): Free/Dirty block details
+[   34.366645] EXT4-fs (loop4): free_blocks=0
+[   34.367586] EXT4-fs (loop4): dirty_blocks=80
+[   34.368580] EXT4-fs (loop4): Block reservation details
+[   34.369730] EXT4-fs (loop4): i_reserved_data_blocks=5
+[   34.388401] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   34.393546] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm ext4lazyinit: bg 0: block 234: padding at end of block bitmap is not set
+executing program
+[   34.448274] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 32 with error 28
+[   34.450614] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   34.450614] 
+[   34.452331] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   34.452730] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 276 with error 28
+[   34.455263] EXT4-fs (loop7): Total free blocks count 0
+[   34.457306] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   34.457306] 
+[   34.457323] EXT4-fs (loop1): Total free blocks count 0
+[   34.457337] EXT4-fs (loop1): Free/Dirty block details
+[   34.457350] EXT4-fs (loop1): free_blocks=0
+[   34.457362] EXT4-fs (loop1): dirty_blocks=288
+[   34.457375] EXT4-fs (loop1): Block reservation details
+[   34.457388] EXT4-fs (loop1): i_reserved_data_blocks=18
+[   34.466274] EXT4-fs (loop7): Free/Dirty block details
+[   34.467474] EXT4-fs (loop7): free_blocks=0
+[   34.468494] EXT4-fs (loop7): dirty_blocks=32
+[   34.469675] EXT4-fs (loop7): Block reservation details
+[   34.471144] EXT4-fs (loop7): i_reserved_data_blocks=2
+executing program
+[   34.501654] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   34.504797] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 28 with error 28
+[   34.507499] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   34.507499] 
+[   34.509476] EXT4-fs (loop3): Total free blocks count 0
+[   34.510630] EXT4-fs (loop3): Free/Dirty block details
+[   34.511623] EXT4-fs (loop3): free_blocks=0
+[   34.512411] EXT4-fs (loop3): dirty_blocks=32
+[   34.513302] EXT4-fs (loop3): Block reservation details
+[   34.514414] EXT4-fs (loop3): i_reserved_data_blocks=2
+[   34.521244] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 70 with max blocks 2 with error 28
+[   34.523503] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   34.523503] 
+[   34.528999] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 276 with max blocks 4 with error 28
+[   34.531677] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   34.531677] 
+executing program
+executing program
+[   34.574671] ext4: Unknown parameter 'subj_user'
+[   34.586947] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 28 with max blocks 2 with error 28
+[   34.589935] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   34.589935] 
+executing program
+[   34.623522] ext4: Unknown parameter 'subj_user'
+executing program
+[   34.700417] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   34.710024] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 118 with error 28
+[   34.711884] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   34.712227] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   34.712227] 
+[   34.717067] EXT4-fs (loop7): Total free blocks count 0
+[   34.718268] EXT4-fs (loop7): Free/Dirty block details
+[   34.719655] EXT4-fs (loop7): free_blocks=0
+[   34.720585] EXT4-fs (loop7): dirty_blocks=128
+[   34.721746] EXT4-fs (loop7): Block reservation details
+[   34.722959] EXT4-fs (loop7): i_reserved_data_blocks=8
+[   34.724963] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 260 with error 28
+[   34.727600] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   34.727600] 
+[   34.729400] EXT4-fs (loop1): Total free blocks count 0
+[   34.730791] EXT4-fs (loop1): Free/Dirty block details
+[   34.731844] EXT4-fs (loop1): free_blocks=0
+[   34.732910] EXT4-fs (loop1): dirty_blocks=272
+[   34.733855] EXT4-fs (loop1): Block reservation details
+[   34.735216] EXT4-fs (loop1): i_reserved_data_blocks=17
+[   34.770787] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 260 with max blocks 2 with error 28
+[   34.773396] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   34.773396] 
+[   34.778872] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 118 with max blocks 2 with error 28
+[   34.781696] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   34.781696] 
+[   34.786801] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   34.801617] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 32 with error 117
+[   34.804098] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   34.804098] 
+[   34.806574] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   34.830103] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 14 with error 117
+[   34.832422] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   34.832422] 
+executing program
+[   34.853922] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 14 with max blocks 2 with error 28
+[   34.856719] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   34.856719] 
+[   34.858715] EXT4-fs (loop3): Total free blocks count 0
+[   34.860153] EXT4-fs (loop3): Free/Dirty block details
+[   34.861286] EXT4-fs (loop3): free_blocks=0
+[   34.862321] EXT4-fs (loop3): dirty_blocks=16
+[   34.863357] EXT4-fs (loop3): Block reservation details
+[   34.864758] EXT4-fs (loop3): i_reserved_data_blocks=1
+executing program
+executing program
+executing program
+[   34.885578] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 32 with max blocks 4 with error 28
+[   34.888314] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   34.888314] 
+executing program
+[   34.890357] EXT4-fs (loop4): Total free blocks count 0
+[   34.892057] EXT4-fs (loop4): Free/Dirty block details
+[   34.893136] EXT4-fs (loop4): free_blocks=0
+[   34.894031] EXT4-fs (loop4): dirty_blocks=16
+[   34.894984] EXT4-fs (loop4): Block reservation details
+[   34.896112] EXT4-fs (loop4): i_reserved_data_blocks=1
+executing program
+[   35.003852] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.024745] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.030472] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 206 with error 28
+[   35.032823] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   35.032823] 
+[   35.033173] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.034369] EXT4-fs (loop1): Total free blocks count 0
+[   35.034385] EXT4-fs (loop1): Free/Dirty block details
+[   35.034396] EXT4-fs (loop1): free_blocks=0
+[   35.034407] EXT4-fs (loop1): dirty_blocks=208
+[   35.034418] EXT4-fs (loop1): Block reservation details
+[   35.034427] EXT4-fs (loop1): i_reserved_data_blocks=13
+[   35.035008] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.047700] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 74 with error 28
+[   35.050375] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   35.050375] 
+[   35.052371] EXT4-fs (loop3): Total free blocks count 0
+[   35.053644] EXT4-fs (loop3): Free/Dirty block details
+[   35.054613] EXT4-fs (loop3): free_blocks=0
+[   35.055404] EXT4-fs (loop3): dirty_blocks=80
+[   35.055402] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.056252] EXT4-fs (loop3): Block reservation details
+[   35.059736] EXT4-fs (loop3): i_reserved_data_blocks=5
+[   35.061000] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 32 with error 28
+[   35.063083] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   35.063083] 
+[   35.064597] EXT4-fs (loop2): Total free blocks count 0
+[   35.065577] EXT4-fs (loop2): Free/Dirty block details
+[   35.066573] EXT4-fs (loop2): free_blocks=0
+[   35.067464] EXT4-fs (loop2): dirty_blocks=32
+[   35.068348] EXT4-fs (loop2): Block reservation details
+[   35.069357] EXT4-fs (loop2): i_reserved_data_blocks=2
+[   35.081420] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 64 with error 28
+[   35.083676] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   35.083676] 
+[   35.085273] EXT4-fs (loop7): Total free blocks count 0
+[   35.086370] EXT4-fs (loop7): Free/Dirty block details
+[   35.087365] EXT4-fs (loop7): free_blocks=0
+[   35.088161] EXT4-fs (loop7): dirty_blocks=64
+[   35.088986] EXT4-fs (loop7): Block reservation details
+[   35.089990] EXT4-fs (loop7): i_reserved_data_blocks=4
+[   35.106601] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 92 with error 28
+[   35.108721] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   35.108721] 
+[   35.110389] EXT4-fs (loop6): Total free blocks count 0
+[   35.111485] EXT4-fs (loop6): Free/Dirty block details
+[   35.112467] EXT4-fs (loop6): free_blocks=0
+[   35.113502] EXT4-fs (loop6): dirty_blocks=112
+[   35.114632] EXT4-fs (loop6): Block reservation details
+[   35.115881] EXT4-fs (loop6): i_reserved_data_blocks=7
+[   35.117988] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 74 with max blocks 2 with error 28
+[   35.120941] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   35.120941] 
+[   35.144021] ext4: Unknown parameter 'subj_user'
+[   35.145154] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 206 with max blocks 2 with error 28
+[   35.145179] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   35.145179] 
+executing program
+executing program
+executing program
+[   35.188362] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 92 with max blocks 6 with error 28
+[   35.190655] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   35.190655] 
+executing program
+[   35.224696] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm ext4lazyinit: bg 0: block 234: padding at end of block bitmap is not set
+executing program
+[   35.328266] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.336525] ext4: Unknown parameter 'subj_user'
+[   35.336853] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 204 with error 28
+[   35.339783] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   35.339783] 
+[   35.341350] EXT4-fs (loop2): Total free blocks count 0
+[   35.342446] EXT4-fs (loop2): Free/Dirty block details
+[   35.343519] EXT4-fs (loop2): free_blocks=0
+[   35.344493] EXT4-fs (loop2): dirty_blocks=208
+[   35.345517] EXT4-fs (loop2): Block reservation details
+[   35.346627] EXT4-fs (loop2): i_reserved_data_blocks=13
+[   35.354979] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.375623] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 170 with error 28
+[   35.378415] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   35.378415] 
+[   35.380285] EXT4-fs (loop1): Total free blocks count 0
+[   35.381580] EXT4-fs (loop1): Free/Dirty block details
+[   35.382829] EXT4-fs (loop1): free_blocks=0
+executing program
+[   35.383846] EXT4-fs (loop1): dirty_blocks=176
+[   35.385190] EXT4-fs (loop1): Block reservation details
+[   35.386427] EXT4-fs (loop1): i_reserved_data_blocks=11
+[   35.394227] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 204 with max blocks 4 with error 28
+[   35.396412] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   35.396412] 
+[   35.403619] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.411493] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 170 with max blocks 2 with error 28
+[   35.414299] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   35.414299] 
+[   35.416333] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 58 with error 117
+[   35.418664] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   35.418664] 
+executing program
+executing program
+executing program
+[   35.445647] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 58 with max blocks 2 with error 28
+[   35.448233] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   35.448233] 
+[   35.450233] EXT4-fs (loop6): Total free blocks count 0
+[   35.451570] EXT4-fs (loop6): Free/Dirty block details
+[   35.452823] EXT4-fs (loop6): free_blocks=0
+[   35.453885] EXT4-fs (loop6): dirty_blocks=16
+[   35.454961] EXT4-fs (loop6): Block reservation details
+[   35.456259] EXT4-fs (loop6): i_reserved_data_blocks=1
+executing program
+[   35.541871] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.547621] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 236 with error 117
+[   35.549927] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   35.549927] 
+[   35.578280] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.583218] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.583358] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.589596] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 128 with error 117
+[   35.591820] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   35.591820] 
+[   35.594526] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 54 with error 117
+[   35.596792] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   35.596792] 
+[   35.599182] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 236 with max blocks 2 with error 28
+[   35.601693] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 34 with error 117
+[   35.601996] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   35.601996] 
+[   35.604140] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   35.604140] 
+[   35.608230] EXT4-fs (loop4): Total free blocks count 0
+[   35.609653] EXT4-fs (loop4): Free/Dirty block details
+[   35.610964] EXT4-fs (loop4): free_blocks=0
+[   35.612128] EXT4-fs (loop4): dirty_blocks=16
+[   35.613065] EXT4-fs (loop4): Block reservation details
+[   35.614368] EXT4-fs (loop4): i_reserved_data_blocks=1
+executing program
+[   35.627584] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 128 with max blocks 2 with error 28
+[   35.630332] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   35.630332] 
+[   35.632299] EXT4-fs (loop7): Total free blocks count 0
+[   35.632813] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.633640] EXT4-fs (loop7): Free/Dirty block details
+[   35.637138] EXT4-fs (loop7): free_blocks=0
+[   35.638197] EXT4-fs (loop7): dirty_blocks=16
+[   35.639209] EXT4-fs (loop7): Block reservation details
+[   35.640479] EXT4-fs (loop7): i_reserved_data_blocks=1
+[   35.643085] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 54 with max blocks 2 with error 28
+[   35.645694] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 96 with error 28
+[   35.645720] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   35.645720] 
+[   35.648197] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   35.648197] 
+[   35.650082] EXT4-fs (loop6): Total free blocks count 0
+[   35.650098] EXT4-fs (loop6): Free/Dirty block details
+[   35.651684] EXT4-fs (loop2): Total free blocks count 0
+[   35.652729] EXT4-fs (loop6): free_blocks=0
+[   35.653713] EXT4-fs (loop2): Free/Dirty block details
+[   35.654730] EXT4-fs (loop6): dirty_blocks=96
+[   35.655683] EXT4-fs (loop2): free_blocks=0
+[   35.656902] EXT4-fs (loop6): Block reservation details
+[   35.657945] EXT4-fs (loop2): dirty_blocks=16
+[   35.658941] EXT4-fs (loop6): i_reserved_data_blocks=6
+[   35.660227] EXT4-fs (loop2): Block reservation details
+[   35.663693] EXT4-fs (loop2): i_reserved_data_blocks=1
+[   35.665699] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 34 with max blocks 2 with error 28
+[   35.668502] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   35.668502] 
+[   35.670606] EXT4-fs (loop1): Total free blocks count 0
+[   35.672011] EXT4-fs (loop1): Free/Dirty block details
+[   35.673338] EXT4-fs (loop1): free_blocks=0
+[   35.674478] EXT4-fs (loop1): dirty_blocks=16
+[   35.675711] EXT4-fs (loop1): Block reservation details
+[   35.677086] EXT4-fs (loop1): i_reserved_data_blocks=1
+executing program
+executing program
+executing program
+executing program
+executing program
+[   35.827073] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.838650] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.843797] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 6 with error 28
+[   35.846264] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   35.846264] 
+[   35.848097] EXT4-fs (loop3): Total free blocks count 0
+[   35.849272] EXT4-fs (loop3): Free/Dirty block details
+[   35.849909] ext4: Unknown parameter 'subj_user'
+[   35.850348] EXT4-fs (loop3): free_blocks=0
+[   35.852332] EXT4-fs (loop3): dirty_blocks=16
+[   35.853308] EXT4-fs (loop3): Block reservation details
+[   35.854383] EXT4-fs (loop3): i_reserved_data_blocks=1
+[   35.865550] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 142 with error 28
+[   35.867727] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   35.867727] 
+[   35.869308] EXT4-fs (loop2): Total free blocks count 0
+[   35.870340] EXT4-fs (loop2): Free/Dirty block details
+[   35.871360] EXT4-fs (loop2): free_blocks=0
+[   35.872214] EXT4-fs (loop2): dirty_blocks=144
+[   35.873120] EXT4-fs (loop2): Block reservation details
+[   35.874084] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.876691] EXT4-fs (loop2): i_reserved_data_blocks=9
+[   35.876801] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 38 with error 28
+[   35.880140] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   35.880140] 
+[   35.881871] EXT4-fs (loop7): Total free blocks count 0
+[   35.883019] EXT4-fs (loop7): Free/Dirty block details
+[   35.884039] EXT4-fs (loop7): free_blocks=0
+[   35.884865] EXT4-fs (loop7): dirty_blocks=48
+[   35.885726] EXT4-fs (loop7): Block reservation details
+[   35.886778] EXT4-fs (loop7): i_reserved_data_blocks=3
+[   35.889247] ext4: Unknown parameter 'subj_user'
+[   35.938960] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 142 with max blocks 2 with error 28
+[   35.941393] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   35.941393] 
+[   35.944074] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 6 with max blocks 2 with error 28
+[   35.946469] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   35.946469] 
+[   35.955621] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 38 with max blocks 2 with error 28
+[   35.962605] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   35.962605] 
+[   35.977896] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   35.986055] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 22 with error 28
+[   35.991457] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   35.991457] 
+[   35.996432] EXT4-fs (loop6): Total free blocks count 0
+[   36.000578] EXT4-fs (loop6): Free/Dirty block details
+[   36.007156] EXT4-fs (loop6): free_blocks=0
+[   36.010257] EXT4-fs (loop6): dirty_blocks=32
+[   36.013947] EXT4-fs (loop6): Block reservation details
+[   36.015928] EXT4-fs (loop6): i_reserved_data_blocks=2
+executing program
+executing program
+[   36.073886] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 22 with max blocks 2 with error 28
+executing program
+[   36.076359] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   36.076359] 
+executing program
+executing program
+executing program
+[   36.206816] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.216076] ext4: Unknown parameter 'subj_user'
+[   36.228704] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 182 with error 28
+[   36.231142] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   36.231142] 
+[   36.232833] EXT4-fs (loop3): Total free blocks count 0
+[   36.233904] EXT4-fs (loop3): Free/Dirty block details
+[   36.234914] EXT4-fs (loop3): free_blocks=0
+[   36.235757] EXT4-fs (loop3): dirty_blocks=192
+[   36.236650] EXT4-fs (loop3): Block reservation details
+[   36.237678] EXT4-fs (loop3): i_reserved_data_blocks=12
+[   36.240749] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.257383] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.259717] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 32 with error 28
+[   36.262315] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   36.262315] 
+[   36.264046] EXT4-fs (loop2): Total free blocks count 0
+[   36.265124] EXT4-fs (loop2): Free/Dirty block details
+[   36.265460] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 64 with error 28
+[   36.266134] EXT4-fs (loop2): free_blocks=0
+[   36.268323] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   36.268323] 
+[   36.269180] EXT4-fs (loop2): dirty_blocks=48
+[   36.270805] EXT4-fs (loop6): Total free blocks count 0
+[   36.271595] EXT4-fs (loop2): Block reservation details
+[   36.272574] EXT4-fs (loop6): Free/Dirty block details
+[   36.273532] EXT4-fs (loop2): i_reserved_data_blocks=3
+[   36.274528] EXT4-fs (loop6): free_blocks=0
+[   36.276256] EXT4-fs (loop6): dirty_blocks=64
+[   36.277174] EXT4-fs (loop6): Block reservation details
+[   36.278246] EXT4-fs (loop6): i_reserved_data_blocks=4
+[   36.293656] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 182 with max blocks 2 with error 28
+[   36.295884] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   36.295884] 
+[   36.296475] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.305991] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 96 with error 117
+[   36.308922] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   36.308922] 
+[   36.321342] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 32 with max blocks 8 with error 28
+[   36.323559] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   36.323559] 
+[   36.335931] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.344350] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 32 with error 117
+[   36.347220] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   36.347220] 
+executing program
+executing program
+executing program
+executing program
+executing program
+[   36.468361] set_capacity_and_notify: 78 callbacks suppressed
+[   36.468381] loop4: detected capacity change from 0 to 2048
+[   36.492663] loop1: detected capacity change from 0 to 2048
+executing program
+[   36.508222] loop2: detected capacity change from 0 to 2048
+[   36.511865] loop7: detected capacity change from 0 to 2048
+[   36.516122] ext4: Unknown parameter 'subj_user'
+[   36.520084] ext4: Unknown parameter 'subj_user'
+[   36.543889] loop3: detected capacity change from 0 to 2048
+[   36.545612] ext4: Unknown parameter 'subj_user'
+[   36.550136] loop6: detected capacity change from 0 to 2048
+[   36.564620] ext4: Unknown parameter 'subj_user'
+[   36.619685] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.626910] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 174 with error 28
+[   36.629281] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   36.629281] 
+[   36.630861] EXT4-fs (loop4): Total free blocks count 0
+[   36.631867] EXT4-fs (loop4): Free/Dirty block details
+[   36.632849] EXT4-fs (loop4): free_blocks=0
+[   36.633667] EXT4-fs (loop4): dirty_blocks=176
+[   36.634562] EXT4-fs (loop4): Block reservation details
+[   36.635693] EXT4-fs (loop4): i_reserved_data_blocks=11
+[   36.674135] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.683614] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 50 with error 28
+[   36.686260] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   36.686260] 
+[   36.688192] EXT4-fs (loop7): Total free blocks count 0
+[   36.689287] EXT4-fs (loop7): Free/Dirty block details
+[   36.690623] EXT4-fs (loop7): free_blocks=0
+[   36.691500] EXT4-fs (loop7): dirty_blocks=64
+[   36.692508] EXT4-fs (loop7): Block reservation details
+[   36.693877] EXT4-fs (loop7): i_reserved_data_blocks=4
+[   36.698010] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 174 with max blocks 2 with error 28
+[   36.700770] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   36.700770] 
+[   36.731781] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 50 with max blocks 2 with error 28
+[   36.733955] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   36.733955] 
+executing program
+[   36.740925] loop1: detected capacity change from 0 to 2048
+executing program
+[   36.751809] loop3: detected capacity change from 0 to 2048
+executing program
+[   36.760126] loop2: detected capacity change from 0 to 2048
+executing program
+executing program
+[   36.777502] loop4: detected capacity change from 0 to 2048
+executing program
+[   36.860837] EXT4-fs error (device loop1): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.868741] EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.878513] EXT4-fs (loop1): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 96 with error 28
+[   36.879126] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 22 with error 28
+[   36.880999] EXT4-fs (loop1): This should not happen!! Data will be lost
+[   36.880999] 
+[   36.881015] EXT4-fs (loop1): Total free blocks count 0
+[   36.881027] EXT4-fs (loop1): Free/Dirty block details
+[   36.881038] EXT4-fs (loop1): free_blocks=0
+[   36.881049] EXT4-fs (loop1): dirty_blocks=96
+[   36.881061] EXT4-fs (loop1): Block reservation details
+[   36.881071] EXT4-fs (loop1): i_reserved_data_blocks=6
+[   36.881139] EXT4-fs error (device loop2): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.883409] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   36.883409] 
+[   36.895481] EXT4-fs (loop3): Total free blocks count 0
+[   36.896602] EXT4-fs (loop3): Free/Dirty block details
+[   36.897703] EXT4-fs (loop3): free_blocks=0
+[   36.898595] EXT4-fs (loop3): dirty_blocks=32
+[   36.899547] EXT4-fs (loop3): Block reservation details
+[   36.900598] EXT4-fs (loop3): i_reserved_data_blocks=2
+[   36.903549] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 274 with error 28
+[   36.905952] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   36.905952] 
+[   36.907757] EXT4-fs (loop2): Total free blocks count 0
+[   36.908952] EXT4-fs (loop2): Free/Dirty block details
+[   36.910180] EXT4-fs (loop2): free_blocks=0
+[   36.911221] EXT4-fs (loop2): dirty_blocks=288
+[   36.912238] EXT4-fs (loop2): Block reservation details
+[   36.913417] EXT4-fs (loop2): i_reserved_data_blocks=18
+[   36.924775] EXT4-fs error (device loop4): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.934720] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 188 with error 117
+[   36.936986] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   36.936986] 
+executing program
+[   36.960716] EXT4-fs (loop3): Delayed block allocation failed for inode 18 at logical offset 22 with max blocks 2 with error 28
+[   36.963465] EXT4-fs (loop3): This should not happen!! Data will be lost
+[   36.963465] 
+[   36.965530] EXT4-fs error (device loop6): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.969917] EXT4-fs (loop2): Delayed block allocation failed for inode 18 at logical offset 274 with max blocks 2 with error 28
+[   36.972889] EXT4-fs (loop2): This should not happen!! Data will be lost
+[   36.972889] 
+[   36.982631] EXT4-fs error (device loop7): ext4_validate_block_bitmap:440: comm syz-executor406: bg 0: block 234: padding at end of block bitmap is not set
+[   36.983819] EXT4-fs (loop6): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 192 with error 28
+[   36.988520] EXT4-fs (loop6): This should not happen!! Data will be lost
+[   36.988520] 
+[   36.990567] EXT4-fs (loop6): Total free blocks count 0
+[   36.991650] EXT4-fs (loop6): Free/Dirty block details
+[   36.992667] EXT4-fs (loop6): free_blocks=0
+[   36.993673] EXT4-fs (loop6): dirty_blocks=192
+[   36.994885] EXT4-fs (loop6): Block reservation details
+[   36.996211] EXT4-fs (loop6): i_reserved_data_blocks=12
+[   36.996251] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 0 with max blocks 44 with error 117
+[   36.999699] EXT4-fs (loop7): This should not happen!! Data will be lost
+[   36.999699] 
+[   37.008946] EXT4-fs (loop4): Delayed block allocation failed for inode 18 at logical offset 188 with max blocks 2 with error 28
+[   37.011628] EXT4-fs (loop4): This should not happen!! Data will be lost
+[   37.011628] 
+[   37.013680] EXT4-fs (loop4): Total free blocks count 0
+[   37.014990] EXT4-fs (loop4): Free/Dirty block details
+[   37.016073] EXT4-fs (loop4): free_blocks=0
+[   37.017038] EXT4-fs (loop4): dirty_blocks=16
+[   37.018127] EXT4-fs (loop4): Block reservation details
+[   37.019358] EXT4-fs (loop4): i_reserved_data_blocks=1
+executing program
+[   37.041603] EXT4-fs (loop7): Delayed block allocation failed for inode 18 at logical offset 44 with max blocks 2 with error 28
+
+VM DIAGNOSIS:
+22:14:32  Registers:
+info registers vcpu 0
+
+CPU#0
+RAX=0000000000000000 RBX=ffff88811aebcf00 RCX=ffffffff8169fba7 RDX=0000000000000001
+RSI=ffff88810a4fd340 RDI=0000000000000002 RBP=0000000000000001 RSP=ffff88810c56f660
+R8 =0000000000000000 R9 =0000000000000000 R10=fffffbfff0c8590a R11=ffffffff8642c857
+R12=0000000000000003 R13=ffffed10235d79e1 R14=ffff88811aebcf08 R15=0000000000000001
+RIP=ffffffff8169fb83 RFL=00000246 [---Z-P-] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 0000000000000000 00000000 00000000
+GS =0000 ffff88819363f000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe0000003000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe0000001000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=0000555586d83758 CR3=0000000005a8a000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 1f2b04a20cc8258b e0c7f9f34ea9990b
+YMM01=0000000000000000 0000000000000000 bc4d6dc020690767 53964022f3849c3b
+YMM02=0000000000000000 0000000000000000 27e745c1373c96c4 b8714db3dc4dd622
+YMM03=0000000000000000 0000000000000000 29c14974e4588750 cc5d8fca4e6c2d05
+YMM04=0000000000000000 0000000000000000 0000000000000000 000000000000000e
+YMM05=0000000000000000 0000000000000000 0000000000000000 008001000000000e
+YMM06=0000000000000000 0000000000000000 0000000000000000 0000000000800100
+YMM07=0000000000000000 0000000000000000 008001000000000e 0000000e00000000
+YMM08=0000000000000000 0000000000000000 90000000c2000000 a800000038000000
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 b58178e296701f64 8f57cdd47862912e
+YMM11=0000000000000000 0000000000000000 057fb20506fea2f8 36f45f2b84b29af7
+YMM12=0000000000000000 0000000000000000 0d0c0f0e09080b0a 0504070601000302
+YMM13=0000000000000000 0000000000000000 0c0f0e0d080b0a09 0407060500030201
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000002480
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000040
+info registers vcpu 1
+
+CPU#1
+RAX=0000000000000000 RBX=1ffff110202f7dc3 RCX=ffffffff81558415 RDX=0000000000000001
+RSI=ffff888101335340 RDI=0000000000000002 RBP=0000000000000001 RSP=ffff8881017bee10
+R8 =0000000000000000 R9 =0000000000000000 R10=fffffbfff0b66914 R11=ffffffff85b348a3
+R12=000000000000001e R13=0000000000000000 R14=ffff88810c190000 R15=ffff8881017beed0
+RIP=ffffffff81558405 RFL=00000046 [---Z-P-] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 0000000000000000 00000000 00000000
+GS =0000 ffff8881936bf000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe000004a000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe0000048000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=00007f9c2fe5eec0 CR3=0000000109da4000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 3d3d3d3d3d3d3d3d 3d3d3d3d3d3d3d3d
+YMM01=0000000000000000 0000000000000000 0000000000000000 323d595449524f49
+YMM02=0000000000000000 0000000000000000 ffffffffffffffff ffffffffffffffff
+YMM03=0000000000000000 0000000000000000 2f6c616e72756f6a 2f676f6c2f6e7572
+YMM04=0000000000000000 0000000000000000 5db2b4930f07ef8d 00000000001340b8
+YMM05=0000000000000000 0000000000000000 d3fdd5f48436fbd7 00000000000aeac0
+YMM06=0000000000000000 0000000000000000 259e9b48a54f0c63 00000000000ae978
+YMM07=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM08=0000000000000000 0000000000000000 44495f474f4c5359 530069253d595449
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+info registers vcpu 2
+
+CPU#2
+RAX=0000000000000000 RBX=1ffff110218d1e32 RCX=ffffffff81558415 RDX=0000000000000001
+RSI=ffff88810c190000 RDI=0000000000000002 RBP=0000000000000001 RSP=ffff88810c68f188
+R8 =0000000000000000 R9 =0000000000000000 R10=fffffbfff0b66914 R11=ffffffff85b348a3
+R12=000000000000003c R13=0000000000000200 R14=ffff888101335340 R15=ffff88810c68f248
+RIP=ffffffff81558405 RFL=00000046 [---Z-P-] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 00007f49b0d8e6c0 00000000 00000000
+GS =0000 ffff88819373f000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe0000091000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe000008f000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=00007f49b0d8db30 CR3=0000000110bf8000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM01=0000000000000000 0000000000000000 ff00000000000000 0000000000000000
+YMM02=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM03=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM04=0000000000000000 0000000000000000 5db2b4930f07ef8d 00000000001340b8
+YMM05=0000000000000000 0000000000000000 d3fdd5f48436fbd7 00000000000aeac0
+YMM06=0000000000000000 0000000000000000 259e9b48a54f0c63 00000000000ae978
+YMM07=0000000000000000 0000000000000000 a1fcdcf819d7e1e5 00000000000ae728
+YMM08=0000000000000000 0000000000000000 44495f474f4c5359 530069253d595449
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+info registers vcpu 3
+
+CPU#3
+RAX=0000000000000000 RBX=ffff88810c69b780 RCX=ffffffff84a8139d RDX=0000000000000000
+RSI=ffff88810c69b780 RDI=0000000000000002 RBP=ffffffff81926a2e RSP=ffff88810c20f408
+R8 =0000000000000000 R9 =0000000000000000 R10=fffff940008bd828 R11=ffffea00045ec147
+R12=0000000000112cca R13=000000000000001a R14=0000000000112cca R15=000000000000001c
+RIP=ffffffff817539a0 RFL=00000293 [--S-A-C] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 00007f49b0dd06c0 00000000 00000000
+GS =0000 ffff8881937bf000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe00000d8000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe00000d6000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=0000200000000780 CR3=000000010c86e000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 2525252525252525 2525252525252525
+YMM01=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM02=0000000000000000 0000000000000000 0000000000ff0000 00000000000000ff
+YMM03=0000000000000000 0000000000000000 0000000000ff0000 00000000000000ff
+YMM04=0000000000000000 0000000000000000 00007f49b0e9ad40 00007f49b0eaebc0
+YMM05=0000000000000000 0000000000000000 0000000000000001 0000000000000001
+YMM06=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM07=0000000000000000 0000000000000000 2f2f2f2f2f2f2f2f 2f2f2f2f2f2f2f2f
+YMM08=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000

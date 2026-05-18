@@ -1,0 +1,1346 @@
+Extracting prog: 1h31m43.133189124s
+Minimizing prog: 37m35.333997636s
+Simplifying prog options: 0s
+Extracting C: 47.489489405s
+Simplifying C: 7m35.02227838s
+
+
+extracting reproducer from 89 programs
+testing a last program of every proc
+single: executing 39 programs separately with timeout 6m0s
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-socket$inet6_tcp-exit-socket$inet6_tcp-bind$inet6-setsockopt$sock_int-setsockopt$sock_int-bind$inet6-listen-listen-sendmsg$nl_generic
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x0)
+r1 = socket$inet6_tcp(0xa, 0x1, 0x0)
+exit(0x0)
+r2 = socket$inet6_tcp(0xa, 0x1, 0x0)
+bind$inet6(r2, &(0x7f0000000040)={0xa, 0x4e22, 0x0, @ipv4={'\x00', '\xff\xff', @empty}}, 0x1c)
+setsockopt$sock_int(r2, 0x1, 0xf, &(0x7f00000002c0)=0x7, 0x4)
+setsockopt$sock_int(r1, 0x1, 0xf, &(0x7f0000000000)=0x5, 0x4)
+bind$inet6(r1, &(0x7f0000000080)={0xa, 0x14e22, 0x0, @empty}, 0x1c)
+listen(r2, 0x0)
+listen(r1, 0x0)
+sendmsg$nl_generic(r0, &(0x7f0000000180)={0x0, 0x0, &(0x7f0000000100)={&(0x7f0000000200)={0x20, 0x20, 0x1, 0x0, 0x0, {0x2}, [@nested={0xc, 0x0, 0x0, 0x1, [@typed={0x8, 0x0, 0x0, 0x0, @pid}]}]}, 0x20}}, 0x0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$nl_generic-syz_genetlink_get_family_id$nl80211-sendmsg$NL80211_CMD_GET_WOWLAN-openat$selinux_enforce-ioctl$SG_GET_SG_TABLESIZE-ioctl$SG_IO-syz_open_dev$sg-ioctl$SCSI_IOCTL_STOP_UNIT-sendmsg$NL80211_CMD_NEW_INTERFACE-syz_clone-sendmsg$NL80211_CMD_NEW_KEY-socket$nl_generic-syz_genetlink_get_family_id$nl80211-ioctl$sock_SIOCGIFINDEX_80211-ioctl$sock_SIOCGIFINDEX_80211-sendmsg$NL80211_CMD_SET_MESH_CONFIG-mkdirat-syz_genetlink_get_family_id$ipvs-sendmsg$IPVS_CMD_GET_INFO-mmap$IORING_OFF_SQES-ioctl$sock_inet_SIOCGIFNETMASK-socket$nl_netfilter-sendmsg$IPSET_CMD_SWAP-syz_open_procfs-writev-sendmsg$IPSET_CMD_SAVE-sendmsg$IPVS_CMD_SET_INFO-syz_genetlink_get_family_id$ethtool-ioctl$sock_ipv6_tunnel_SIOCGET6RD-sendmsg$ETHTOOL_MSG_LINKINFO_GET
+detailed listing:
+executing program 0:
+r0 = socket$nl_generic(0x10, 0x3, 0x10)
+r1 = syz_genetlink_get_family_id$nl80211(&(0x7f0000000040), 0xffffffffffffffff)
+sendmsg$NL80211_CMD_GET_WOWLAN(r0, &(0x7f0000000100)={&(0x7f0000000000)={0x10, 0x0, 0x0, 0x8}, 0xc, &(0x7f00000000c0)={&(0x7f0000000080)={0x14, r1, 0x100, 0x70bd2c, 0x25dfdbff, {{}, {@void, @void, @void}}, ["", "", "", "", "", ""]}, 0x14}}, 0x40000) (async)
+r2 = openat$selinux_enforce(0xffffffffffffff9c, &(0x7f0000000140), 0x4100, 0x0)
+ioctl$SG_GET_SG_TABLESIZE(r2, 0x227f, &(0x7f0000000180)) (async)
+ioctl$SG_IO(r2, 0x2285, &(0x7f0000000480)={0x0, 0xfffffffffffffffb, 0xf0, 0x80, @buffer={0x0, 0x56, &(0x7f00000001c0)=""/86}, &(0x7f0000000240)="abc28b2c3c62ca9cd42ad983597e507217cc562029b5efa038c2eba641b5690266ca5ff6ac054f6b0d305ed408f0b7bc631acd6e4ad702ceee21e196cac75fbc9d4d52ad699854f47523d74eb8fe12b7b2efc8db749e016610c61819c133d74009eb1b42dd15a029aa217593b87b7c92e32d3e1b7ead217d78b2b5018f76315e1b4cae9d94c9ac9886f30eca837be4082eb59c833fe79d3f5cb53b8112c23f009e84fde1a6aafc0debb750ef04af91e7bdbeb7f7f0c8f746481fe0a1176bb8f799a3650d4f56a1e0c777ed6a0c095462f94ac1bca0a9c382dbf292a08e5ee2e0b39c194102a9ccca66af234a620d5257", &(0x7f0000000340)=""/216, 0xf, 0x0, 0xffffffffffffffff, &(0x7f0000000440)})
+r3 = syz_open_dev$sg(&(0x7f0000000500), 0x7, 0x111000)
+ioctl$SCSI_IOCTL_STOP_UNIT(r3, 0x6) (async, rerun: 32)
+sendmsg$NL80211_CMD_NEW_INTERFACE(r2, &(0x7f0000000600)={&(0x7f0000000540)={0x10, 0x0, 0x0, 0x20}, 0xc, &(0x7f00000005c0)={&(0x7f0000000580)={0x28, r1, 0x200, 0x70bd25, 0x25dfdbff, {{}, {@void, @void, @void}}, [@NL80211_ATTR_IFNAME={0x14, 0x4, 'bridge0\x00'}]}, 0x28}, 0x1, 0x0, 0x0, 0x20000084}, 0x4000004) (rerun: 32)
+r4 = syz_clone(0x31210080, &(0x7f0000000640)="99e2152c6370e436e7bcdc6af108dcc267e1357614f7f7c030950fb9f436bd6bc733e25164d87011bcf13fd4f1c094dda4f1a1251388600ba669d22ca39f5e", 0x3f, &(0x7f0000000680), &(0x7f00000006c0), &(0x7f0000000700)="672d42febb39c55d49d4d797a723ee2f582bf81c7318de35ff7cf55255e11587e19cce4a1ab9dfb32f3ba6b865dd642ed822e4e84b39b74d7223ed80f5070c2c6494f3e9adeddd3e11bee213e8ff87014aeea7d72af180d78a156255e288d1fffe7d7473a98e9d749211ed0a5a24d66ee148c688acbdbec4ccb2c4e4b029cc33bac584f864afb990a446ec2d36682399f0d1b9efd37fe980e0c3889c4bd5f5661062243a29049cd8802637a973002db73634e0") (async, rerun: 64)
+sendmsg$NL80211_CMD_NEW_KEY(r0, &(0x7f00000008c0)={&(0x7f00000007c0)={0x10, 0x0, 0x0, 0x20000}, 0xc, &(0x7f0000000880)={&(0x7f0000000800)={0x4c, r1, 0x10, 0x70bd27, 0x25dfdbfe, {{}, {@void, @void}}, [@NL80211_ATTR_KEY_CIPHER={0x8, 0x9, 0xfac01}, @NL80211_ATTR_KEY={0x30, 0x50, 0x0, 0x1, [@NL80211_KEY_MODE={0x5}, @NL80211_KEY_DEFAULT_TYPES={0x10, 0x8, 0x0, 0x1, [@NL80211_KEY_DEFAULT_TYPE_MULTICAST={0x4}, @NL80211_KEY_DEFAULT_TYPE_MULTICAST={0x4}, @NL80211_KEY_DEFAULT_TYPE_UNICAST={0x4}]}, @NL80211_KEY_DATA_WEP104={0x11, 0x1, "2dd427cc50bca0d5d98ab29813"}]}]}, 0x4c}, 0x1, 0x0, 0x0, 0xc0}, 0x882) (rerun: 64)
+r5 = socket$nl_generic(0x10, 0x3, 0x10) (async)
+r6 = syz_genetlink_get_family_id$nl80211(&(0x7f0000000940), r2) (async, rerun: 32)
+ioctl$sock_SIOCGIFINDEX_80211(r2, 0x8933, &(0x7f0000000980)={'wlan1\x00', <r7=>0x0}) (async, rerun: 32)
+ioctl$sock_SIOCGIFINDEX_80211(r2, 0x8933, &(0x7f00000009c0)={'wlan1\x00', <r8=>0x0})
+sendmsg$NL80211_CMD_SET_MESH_CONFIG(r5, &(0x7f0000000b00)={&(0x7f0000000900)={0x10, 0x0, 0x0, 0x8}, 0xc, &(0x7f0000000ac0)={&(0x7f0000000a00)={0xa8, r6, 0x1, 0x70bd26, 0x25dfdbfb, {{}, {@val={0x8, 0x3, r7}, @val={0xc, 0x99, {0x3, 0x59}}}}, [@NL80211_ATTR_MESH_CONFIG={0x2c, 0x23, 0x0, 0x1, [@NL80211_MESHCONF_CONNECTED_TO_AS={0x5}, @NL80211_MESHCONF_GATE_ANNOUNCEMENTS={0x5}, @NL80211_MESHCONF_RSSI_THRESHOLD={0x8, 0x14, 0xffffffffffffff31}, @NL80211_MESHCONF_HOLDING_TIMEOUT={0x6, 0x3, 0xc4}, @NL80211_MESHCONF_RETRY_TIMEOUT={0x6, 0x1, 0x75}]}, @NL80211_ATTR_MESH_CONFIG={0x3c, 0x23, 0x0, 0x1, [@NL80211_MESHCONF_POWER_MODE={0x8, 0x1a, 0x1}, @NL80211_MESHCONF_PLINK_TIMEOUT={0x8, 0x1c, 0x7}, @NL80211_MESHCONF_FORWARDING={0x5}, @NL80211_MESHCONF_GATE_ANNOUNCEMENTS={0x5, 0x11, 0x1}, @NL80211_MESHCONF_HWMP_NET_DIAM_TRVS_TIME={0x6, 0xd, 0x7}, @NL80211_MESHCONF_HWMP_ROOTMODE={0x5, 0xe, 0x2}, @NL80211_MESHCONF_AUTO_OPEN_PLINKS={0x5, 0x7, 0x2}]}, @NL80211_ATTR_WIPHY={0x8, 0x1, 0x42}, @NL80211_ATTR_WIPHY={0x8, 0x1, 0x7b}, @NL80211_ATTR_IFINDEX={0x8, 0x3, r8}]}, 0xa8}}, 0x4081)
+mkdirat(r2, &(0x7f0000000b40)='./file0\x00', 0x20)
+r9 = syz_genetlink_get_family_id$ipvs(&(0x7f0000000bc0), r5)
+sendmsg$IPVS_CMD_GET_INFO(r5, &(0x7f0000000c80)={&(0x7f0000000b80)={0x10, 0x0, 0x0, 0x2000}, 0xc, &(0x7f0000000c40)={&(0x7f0000000c00)={0x1c, r9, 0x200, 0x70bd29, 0x25dfdbfd, {}, [@IPVS_CMD_ATTR_TIMEOUT_TCP={0x8, 0x4, 0x28}]}, 0x1c}, 0x1, 0x0, 0x0, 0x40040}, 0x4) (async)
+mmap$IORING_OFF_SQES(&(0x7f0000ffa000/0x3000)=nil, 0x3000, 0x800004, 0x10, r2, 0x10000000)
+ioctl$sock_inet_SIOCGIFNETMASK(r2, 0x891b, &(0x7f0000000cc0)={'tunl0\x00', {0x2, 0x0, @dev}})
+r10 = socket$nl_netfilter(0x10, 0x3, 0xc)
+sendmsg$IPSET_CMD_SWAP(r10, &(0x7f0000000dc0)={&(0x7f0000000d00)={0x10, 0x0, 0x0, 0x8000}, 0xc, &(0x7f0000000d80)={&(0x7f0000000d40)={0x2c, 0x6, 0x6, 0x3, 0x0, 0x0, {0x5}, [@IPSET_ATTR_SETNAME2={0x9, 0x3, 'syz1\x00'}, @IPSET_ATTR_SETNAME={0x9, 0x2, 'syz1\x00'}]}, 0x2c}, 0x1, 0x0, 0x0, 0x8c4}, 0x90)
+syz_open_procfs(r4, &(0x7f0000000e00)='net/rt6_stats\x00') (async)
+writev(r0, &(0x7f0000000e80)=[{&(0x7f0000000e40)}], 0x1) (async)
+sendmsg$IPSET_CMD_SAVE(r2, &(0x7f0000000f80)={&(0x7f0000000ec0)={0x10, 0x0, 0x0, 0x40000}, 0xc, &(0x7f0000000f40)={&(0x7f0000000f00)={0x14, 0x8, 0x6, 0x201, 0x0, 0x0, {0x0, 0x0, 0x2}}, 0x14}, 0x1, 0x0, 0x0, 0x24004094}, 0x40080) (async)
+sendmsg$IPVS_CMD_SET_INFO(0xffffffffffffffff, &(0x7f0000001080)={&(0x7f0000000fc0)={0x10, 0x0, 0x0, 0x400}, 0xc, &(0x7f0000001040)={&(0x7f0000001000)={0x1c, r9, 0x1, 0x70bd2d, 0x25dfdbfb, {}, [@IPVS_CMD_ATTR_TIMEOUT_TCP={0x8, 0x4, 0x2}]}, 0x1c}, 0x1, 0x0, 0x0, 0xc880}, 0x80) (async, rerun: 32)
+r11 = syz_genetlink_get_family_id$ethtool(&(0x7f0000001100), 0xffffffffffffffff) (async, rerun: 32)
+ioctl$sock_ipv6_tunnel_SIOCGET6RD(r2, 0x89f8, &(0x7f0000001180)={'sit0\x00', &(0x7f0000001140)={'gretap0\x00', <r12=>0x0, 0x700, 0x88, 0x1, 0x5, {{0x6, 0x4, 0x0, 0x4, 0x18, 0x65, 0x0, 0x66, 0x2f, 0x0, @multicast2, @initdev={0xac, 0x1e, 0x0, 0x0}, {[@noop]}}}}})
+sendmsg$ETHTOOL_MSG_LINKINFO_GET(r2, &(0x7f0000001380)={&(0x7f00000010c0)={0x10, 0x0, 0x0, 0x200000}, 0xc, &(0x7f0000001340)={&(0x7f0000001200)={0x12c, r11, 0x8, 0x70bd2b, 0x25dfdbff, {}, [@HEADER={0x48, 0x1, 0x0, 0x1, [@ETHTOOL_A_HEADER_DEV_NAME={0x14, 0x2, 'ip6gre0\x00'}, @ETHTOOL_A_HEADER_DEV_INDEX={0x8}, @ETHTOOL_A_HEADER_DEV_NAME={0x14, 0x2, 'veth0_macvtap\x00'}, @ETHTOOL_A_HEADER_DEV_NAME={0x14, 0x2, 'tunl0\x00'}]}, @HEADER={0x3c, 0x1, 0x0, 0x1, [@ETHTOOL_A_HEADER_DEV_NAME={0x14, 0x2, 'gretap0\x00'}, @ETHTOOL_A_HEADER_FLAGS={0x8, 0x3, 0x3}, @ETHTOOL_A_HEADER_FLAGS={0x8, 0x3, 0x3}, @ETHTOOL_A_HEADER_DEV_NAME={0x14, 0x2, 'sit0\x00'}]}, @HEADER={0x14, 0x1, 0x0, 0x1, [@ETHTOOL_A_HEADER_DEV_INDEX={0x8, 0x1, r12}, @ETHTOOL_A_HEADER_FLAGS={0x8, 0x3, 0x2}]}, @HEADER={0x80, 0x1, 0x0, 0x1, [@ETHTOOL_A_HEADER_DEV_NAME={0x14, 0x2, 'macvtap0\x00'}, @ETHTOOL_A_HEADER_FLAGS={0x8, 0x3, 0x2}, @ETHTOOL_A_HEADER_DEV_NAME={0x14, 0x2, 'syzkaller0\x00'}, @ETHTOOL_A_HEADER_DEV_INDEX={0x8}, @ETHTOOL_A_HEADER_FLAGS={0x8, 0x3, 0x3}, @ETHTOOL_A_HEADER_DEV_NAME={0x14, 0x2, 'virt_wifi0\x00'}, @ETHTOOL_A_HEADER_DEV_NAME={0x14, 0x2, 'vlan1\x00'}, @ETHTOOL_A_HEADER_DEV_NAME={0x14, 0x2, 'veth0_to_bridge\x00'}]}]}, 0x12c}, 0x1, 0x0, 0x0, 0x40d0}, 0x4000000)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): prctl$PR_SET_SECCOMP-syz_mount_image$vfat-openat$incfs-seccomp$SECCOMP_SET_MODE_FILTER_LISTENER-seccomp$SECCOMP_SET_MODE_FILTER_LISTENER-getuid-getpid-kcmp-fsopen-fsconfig$FSCONFIG_SET_BINARY-fsconfig$FSCONFIG_SET_BINARY-read$watch_queue-syz_mount_image$msdos-execveat
+detailed listing:
+executing program 0:
+prctl$PR_SET_SECCOMP(0x16, 0x2, &(0x7f00000001c0)={0x1, &(0x7f0000000000)=[{0x200000000006, 0x0, 0x0, 0x7ffc0001}]}) (async, rerun: 64)
+syz_mount_image$vfat(&(0x7f00000000c0), &(0x7f0000000080)='./bus\x00', 0x0, &(0x7f0000000040)=ANY=[], 0x8, 0x2cd, &(0x7f00000004c0)="$eJzs3L9PE2EYwPGHUkpbAu1gNJoYnuiiywWqs7ExkBibSJAafyQmB1y16dmSXoOpMaKTq/GPcCCMbCTKP8DipouLG4uJgwzGml7vgEKhBiiH9vtJyD137/vcvS8c5HkvXNfvvX1ayDlGzqxIKKrSIyKyIZKUkPh6vG3IjSOy3Su5PPDj8/k79x/cSmcyY5Oq4+mpKylVHRr+8OxFzOu20i9ryUfr31Pf1k6vnV3/PfUk72je0WKpoqZOl75WzGnb0tm8UzBUJ2zLdCzNFx2r3GgvNdpzdmlurqpmcXYwPle2HEfNYlULVlUrJa2Uq2o+NvNFNQxDB+OCdrKLk5Nm+oDJM0c8GHRIuZw2e0UktqsluxjIgAAAQKB21v+hekl/dPX/0oXVysDd5SGv/l+JtKr/r35pnKup/o+KSMfr/90VUXc5VP2Pk2E4sutQT9Nevf6Pe7+/rtcPl0bcgPofAAAAAAAAAAAAAAAAAAAAAIB/wUatlqjVagl/63/1i0hURPz9oMeJzuDn3922XtwLD4nYb+az89nG1uuwKiK2WDIiCfnl3g+eeuy/eaR1SfloL3j5C/PZXrclnZO8mz8qCUnuzK/Vxm9mxka1oTm/T+Lb81OSkFOt81Mt8yNy6eK2fEMS8mlGSmLLrHtfb+W/HFW9cTuzIz/m9gMAAAAA4H9g6KaW63fD2Ku9kb+5vm75fKCxvh5puT4Py7lwsHMHAAAAAKBbONXnBdO2rfI+QUza9zl4EO7Qmf0Z/m2W/78MnZvpPoF/8aamqHcwgPG0DUJykKzh+mz0sFf3Hxvt1Ucmgvq2nHn3/ufRnfDacrTNTDsW9B3fXyAAAAAAx2Wr6PePXA92QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdKHj+DixoOcIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnBR/AgAA//9vPQ3+") (rerun: 64)
+openat$incfs(0xffffffffffffff9c, &(0x7f0000000140)='.log\x00', 0x200c3, 0x80) (async, rerun: 32)
+seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0x0, &(0x7f00000001c0)={0x1, &(0x7f0000000080)=[{0x6, 0x0, 0x0, 0x7fff0000}]}) (async, rerun: 32)
+seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0x3f, &(0x7f00000001c0)={0x1, &(0x7f0000000080)=[{0x6, 0x0, 0x0, 0x7fff4000}]}) (async, rerun: 32)
+r0 = getuid() (rerun: 32)
+r1 = getpid()
+kcmp(r1, r1, 0x1, 0xffffffffffffffff, 0xffffffffffffffff)
+r2 = fsopen(&(0x7f0000000000)='hugetlbfs\x00', 0x0)
+fsconfig$FSCONFIG_SET_BINARY(r2, 0x2, &(0x7f0000000040)='huMetlbfs\x00', &(0x7f00000002c0)="57f5a43dc8c9e5f0139671a6b6c137b53048b2e579b22303a85866024b9e008bf5a66754a7c00703324e0cf66e6e8fdbcd881a69ba5e634d058bb36d084fb38fc4737580fde06b912ea752b80d785626c1d3c0b0c4c1a6bf67d5b50bd915d7b5c5955d5e2be441ace9703b8f7d9a2b51328898c434c9b3d32b148931c3c73c41c1dbe6b4b514fd376d6450152330ec7b3115daf2a0a87c6deae8b2ef7b08984c7e21d8d68bb469fa5607eb51f3e8ed55493629b8b278f26d3f4e1b0c098d883b6055a1ff3765b1b48f6e284fd2b57c432e546f7ae80b6153544e724ad789a0fe644993574ca05fc2336b7d159bc85b17d37cf277d53e3a9bbfa8eb7b6ecb85afdf05657ad5f571f8ef501341ab3730dde2fd45d7528e124f54e2c65f589d5471a880e9162bc07d09197b6fd7363f5fb5b6952a5b1b0c9163d6655621", 0x13c) (async)
+fsconfig$FSCONFIG_SET_BINARY(r2, 0x2, &(0x7f00000000c0)='-+-**^+&$\'(', &(0x7f0000000200)="9829a28588b7cdb6ed9003a8dde7b273eda7d189f2d01a4e4647a262d16422d060b0a533931977d8c002f718a25bf0b57c9386e60083b0fc034efd97fcc6a296f94339d9661c234d23a085e421271ba0e6fbf4959a561a7a867dc2df3efa9d933aab754334e2f5ad253eb126052537", 0x6f)
+read$watch_queue(r2, 0x0, 0x0) (async)
+syz_mount_image$msdos(&(0x7f0000000140), &(0x7f0000000040)='./file0\x00', 0x0, &(0x7f0000000100)=ANY=[@ANYRES64=r0, @ANYRESDEC, @ANYRESHEX=r0], 0x1, 0x522, &(0x7f0000000a80)="$eJzs1b1u01AYBuCvaSiBqTNiOBILU1XYmAhCqVRhCQmUASYiNSwxQooXJ1MvgQvgwhi4CJSpW1BlF2jFWP+oeZ4ln/LaPuc9g/3p8ZfF2dfi849v32M03ovBOB4MLvbiMAZx5TwAgLvkYruNX9tK13sBANrh+w8Au+f9h49vXmXZ5F1Ko4jNeTktp9VvlZ+cZpPjdOngn7s2ZTnd/5M/S5Xr+b14WOfP/5sfxNMnVX6ZvX6b3cjvx1nj7QEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYLcdpTSMiJRSOvz776Ysp/tVfpSu3Mir6eQ0mxzXF1zPh/Fo2FoNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4BYUq/Vilufz5R0bIn5Gy4uO6iNtuem4XrYvJ9/k8LKJJ7+IiL4U7NHQ4UsJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADoVLFaL2Z5Pl8WXe8EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOiLYrVezPJ8vmxw6LojAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0I3fAQAA///PCC46")
+execveat(0xffffffffffffff9c, &(0x7f0000000280)='./file1\x00', 0x0, 0x0, 0x0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$inet6_icmp_raw-flistxattr-socket$inet_tcp-setsockopt$inet_tcp_int-socket-setsockopt$netlink_NETLINK_TX_RING-write-recvmsg-connect$inet-shutdown-setsockopt$inet_tcp_int-rseq-socket$inet6_udplite-rseq-socket-socket$inet6-sendto$inet6-recvfrom$inet6-socket$inet-getsockopt$inet_pktinfo-io_uring_setup-io_uring_enter-sendto$inet6-sendmsg$DEVLINK_CMD_SB_PORT_POOL_SET-recvmmsg-rt_sigaction-socket$inet_udp-fcntl$setstatus-setsockopt$sock_int-syz_mount_image$ext4
+detailed listing:
+executing program 0:
+r0 = socket$inet6_icmp_raw(0xa, 0x3, 0x3a)
+flistxattr(r0, &(0x7f0000000340)=""/209, 0xd1) (async, rerun: 32)
+r1 = socket$inet_tcp(0x2, 0x1, 0x0) (rerun: 32)
+setsockopt$inet_tcp_int(r1, 0x6, 0x10000000013, &(0x7f0000d06000)=0x1, 0x4) (async)
+r2 = socket(0x10, 0x2, 0x0)
+setsockopt$netlink_NETLINK_TX_RING(r2, 0x10e, 0xc, &(0x7f0000000080)={0x6}, 0x10) (async, rerun: 32)
+write(r2, &(0x7f0000000280)="1c0000001a009b8a14e5000000000000000000000002000200000000", 0x1c) (async, rerun: 32)
+recvmsg(r2, &(0x7f00000022c0)={0x0, 0x0, 0x0}, 0x0) (async, rerun: 64)
+connect$inet(r1, &(0x7f0000000040)={0x2, 0x0, @dev}, 0x10) (async, rerun: 64)
+shutdown(r1, 0x1) (async)
+setsockopt$inet_tcp_int(r1, 0x6, 0x4000000000014, &(0x7f0000000000)=0x80000000002, 0xe3) (async)
+rseq(&(0x7f0000000040)={0x0, 0x0, 0x0, 0x4}, 0x20, 0x0, 0x0) (async)
+socket$inet6_udplite(0xa, 0x2, 0x88) (async, rerun: 32)
+rseq(&(0x7f0000000040)={0x0, 0x0, 0x0, 0x2}, 0xfffffffffffffdad, 0x1, 0x0) (async, rerun: 32)
+r3 = socket(0x2, 0x2, 0x1) (async, rerun: 64)
+r4 = socket$inet6(0x10, 0x3, 0x0) (rerun: 64)
+sendto$inet6(r4, &(0x7f00000001c0)="1c0000001200050f0c1000000049b23eb7200a00080001f509000000", 0x1c, 0x0, 0x0, 0x0) (async)
+recvfrom$inet6(r4, &(0x7f0000000000)=""/114, 0xfffffffffffffd1b, 0x0, 0x0, 0x0) (async)
+r5 = socket$inet(0x2, 0x3, 0x8d)
+getsockopt$inet_pktinfo(r5, 0x0, 0x8, 0x0, 0x0) (async)
+r6 = io_uring_setup(0x2ac7, &(0x7f0000000000))
+io_uring_enter(r6, 0x0, 0xcb, 0xb, &(0x7f0000000100), 0x18) (async, rerun: 32)
+sendto$inet6(0xffffffffffffffff, 0x0, 0x0, 0x20000004, &(0x7f0000b63fe4)={0xa, 0x2}, 0x1c) (async, rerun: 32)
+sendmsg$DEVLINK_CMD_SB_PORT_POOL_SET(r3, &(0x7f0000001280)={&(0x7f0000000000)={0x2, 0x0, 0xe0}, 0x10, &(0x7f0000001240)={&(0x7f00000008c0)=ANY=[@ANYBLOB="5ef9bc043e08000000", @ANYRES16=0x0, @ANYBLOB="0000000000000000000014000000080001007063690011000200303030303a30303a31302e3000000000080003000000000008000b000000000006001100000000000800150000000000000001006e657464657673696d000000000002006e657464657673696d300000080003000000000008000b0000000000060011000000000008001500000000000e0001006e657464657673696d0000000f0002006e657464657673696d300000080003000000000008000b000000000006001100000000000800150000000000080001007063690011000200303030303a30303a31302e3000000000080003000000000008000b000000000006001100000000001100150000000000"], 0x108}}, 0x0) (async, rerun: 64)
+recvmmsg(r1, &(0x7f00000001c0), 0x460, 0xea225aec34b1dd0e, 0x0) (rerun: 64)
+rt_sigaction(0x13, &(0x7f0000000000)={0x0, 0x2, 0x0, {[0x4]}}, 0x0, 0x8, &(0x7f0000000080))
+r7 = socket$inet_udp(0x2, 0x2, 0x0)
+fcntl$setstatus(r7, 0x4, 0x42c00)
+setsockopt$sock_int(r7, 0x1, 0x7, &(0x7f0000000000), 0x4) (async)
+syz_mount_image$ext4(&(0x7f00000000c0)='ext4\x00', &(0x7f0000000000)='./file0\x00', 0x804810, &(0x7f0000000100)={[{@delalloc}]}, 0x4, 0x759, &(0x7f0000000140)="$eJzs3M1rXOUaAPDnnGaafuTeyYUL9+pChBZaKD1Jmk27aty4KxQKbmtITkLISSZkJrUTC7auhdpsFARR1y7dCqX+Ae6koOBeEK1xIW5GzuSjNGam0ybpSPr7wZnzvOfjfd4nc3gzB+ZMAC+t18uXJGIoIq5GRHVzexoRR9vRsYjbG8etP7o1VS5JtFrXfknK02K9Vd3uK9lcn4z2KfH/iHhQiTj3/t/z1pur85NFkS9vtkcaC0sj9ebq+bmFydl8Nl8cG780enF8/OLo+FNr+F+PtZ5+69Lxe9++ubb23VeNu68NnE9iol13bNbWYzfPZONvUomJx5ta5cviQSQDAICnKD/nH4mIgfan1GocaUcAAADAYdIabAEAAACHXhL9HgEAAABwsLa+B7D1bO9BPQfbyc9vRMTwbvkH2s8QRxyLSkScWE+eeDIh2TgN9uT2nYi4P7Hz+vuivMJu77Hv0R3t5InW0T32zn64X84/E7vNP+n2/BO7zD8DW7+dsEed57/H+Y90mP+u9pjj609fqXTMfyfi1YHd8ifb+ZMO+d/uMf/dtQ/uddrX+jzizK7/f5IncnX5fYiJmbki6Zb/wZ9nH3ar/0Sn/En3+pd6rP/d9d/mO80lZf6zp7q//7vlL6+JDzfHkUbEvc112V7bkePUwvffdKt/OqL1PO//Zz3W/+OXgzd7PBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADa0ogYiiTNtuM0zbKIkxHx3ziRFrV649xMbWVxutwXMRyVdGauyEcjorrRTsr2WDt+3L6woz0eEf/54fhG0rkiz6ZqxXS/iwcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGDbyYgYiiTNIiKNiN+raZplEQM9nDv4AsYHAAAA7JPhfg8AAAAAOHDu/wEAAODwe977/2SfxwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcalevXCmX1vqjW1Nle/pGc2W+duP8dF6fzxZWprKp2vJSNlurzRZ5NlVbeFp/Ra22NHYpVm6ONPJ6Y6TeXL2+UFtZbFyfW5icza/nlRdSFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9qqL0kaRYRaTtO0yyL+FdEDEclmZkr8tGI+HdEPKxWBsv2WL8HDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwL6rN1fnJ4siXxYIBC8seC8i/gHD6BL0e2YCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAf6s3V+cmiyJfr/R4JAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/ZX+lEREuZypnh7aufdo8ke1vY6Idz659tHNyUZjeazc/uv29sbHm9sv9GP8AAAA8FK4/CwHb92nb93HAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9KreXJ2fLIp8eW/B5WiutpIOx/S7RgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4Pn8FQAA//+Q0sg2")
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): timer_create-timer_settime-syz_mount_image$ext4-socketpair$unix-sched_setattr-openat$dir-open-sendfile-fcntl$notify-open$dir-mknodat$loop-creat
+detailed listing:
+executing program 0:
+timer_create(0x0, &(0x7f0000000680)={0x0, 0x21}, &(0x7f0000000100))
+timer_settime(0x0, 0x0, &(0x7f000006b000)={{0x0, 0x8}, {0x0, 0x9}}, 0x0)
+syz_mount_image$ext4(&(0x7f00000004c0)='ext4\x00', &(0x7f0000000500)='./file0\x00', 0x0, &(0x7f0000000280), 0x1, 0x4a6, &(0x7f0000000580)="$eJzs3cFPG9kZAPBvBgiEkEDaHNqqbdI0bVpFscFJUJRTemlVRZGqRj31kFBwEMLGCJs00BzI/1CpkXpq/4QeKvVQKae97233tpfsYaXsbrSrsNIevJqxIYRgYDcES/j3k55m3jzj7z2sec98gF8APetcRKxFxLGIuBcRo+3rSbvEzVbJHvfyxaPp9RePppNoNu98luTt2bXY8jWZE+3nHIqIP/4u4i/Jm3HrK6vzU5VKealdLzaqi8X6yurluerUbHm2vFAqTU5Mjl+/cq10YGM9W/3P89/O3frT///3k2fvr/36b1m3RtptW8dxkFpDH9iMk+mPiFvvIlgX9LXHc6zbHeE7SSPiexFxPr//R6MvfzUBgKOs2RyN5ujWOgBw1KV5DixJC+1cwEikaaHQyuGdieG0Uqs3Lt2vLS/MtHJlYzGQ3p+rlMfbucKxGEiy+kR+/qpe2la/EhGnI+Lvg8fzemG6Vpnp5hsfAOhhJ7at/18OttZ/AOCIG+p2BwCAQ2f9B4DeY/0HgN5j/QeA3mP9B4DeY/0HgN5j/QeAnvKH27ez0lxvf/71zIOV5fnag8sz5fp8obo8XZiuLS0WZmu12fwze6p7PV+lVlucuBrLD4uNcr1RrK+s3q3Wlhcad/PP9b5bHjiUUQEAuzl99umHSUSs3Tiel9iyl4O1Go62tNsdALqmr9sdALrGbl/Qu/yMD+ywRe9rOv6J0JOD7wtwOC7+UP4fepX8P/Qu+X/oXfL/0LuazcSe/wDQY+T4Ab//BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgG9vJC9JWmjvBT4SaVooRJyMiLEYSO7PVcrjEXEqIj4YHBjM6hPd7jQA8JbST5L2/l8XRy+MbG89lnw1mB8j4q//vPOPh1ONxtJEdv3zzeuNJ+3rpW70HwDYy8Y6vbGOb3j54tH0RjnM/jz/TWtz0Szueru0WvqjPz8OxUBEDH+RtOst2fuVvgOIv/Y4In6w0/iTPDcy1t75dHv8LPbJQ42fvhY/zdtax+x78f0D6Av0mqfZ/HNzp/svjXP5cef7fyifod7exvy3/sb8l27Of30d5r9z+41x9b3fd2x7HPGj/p3iJ5vxkw7xL+wz/kc//un5Tm3Nf0VcjJ3jb41VbFQXi/WV1ctz1anZ8mx5oVSanJgcv37lWqmY56iLG5nqN31649Kp3cY/3CH+0B7j/8U+x//vr+/9+We7xP/Vz3d+/c/sEj9bE3+5z/hTw//tuH13Fn+mw/j3ev0v7TP+s49XZ/b5UADgENRXVuenKpXykhMnTpxsnnR7ZgLetVc3fbd7AgAAAAAAAAAAAAAAdHIY/07U7TECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwdH0TAAD//yyP2UE=")
+socketpair$unix(0x1, 0x2, 0x0, 0x0)
+sched_setattr(0x0, &(0x7f0000000100)={0x38, 0x5}, 0x0)
+openat$dir(0xffffffffffffff9c, 0x0, 0x2000, 0x0)
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, &(0x7f0000000240), 0x7f06)
+fcntl$notify(0xffffffffffffffff, 0x402, 0x80000024)
+r1 = open$dir(&(0x7f0000000040)='.\x00', 0x0, 0x0)
+mknodat$loop(r1, &(0x7f0000000240)='./file0\x00', 0x1002, 0x1)
+creat(&(0x7f00000009c0)='./file0\x00', 0x0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): mkdirat$cgroup_root-socket$nl_netfilter-openat$binfmt_format-socketpair$unix-setsockopt$SO_ATTACH_FILTER-sendmsg$unix-madvise-socket$inet6_tcp-setsockopt$inet6_IPV6_FLOWLABEL_MGR-syz_mount_image$ext4-chdir-openat$cgroup_ro-socket$netlink-sendmsg$netlink-preadv-openat$cgroup_root-getxattr-setsockopt$netlink_NETLINK_RX_RING-ioctl$FS_IOC_SET_ENCRYPTION_POLICY
+detailed listing:
+executing program 0:
+mkdirat$cgroup_root(0xffffffffffffff9c, &(0x7f0000000080)='./cgroup.cpu/syz0\x00', 0x1ff) (async)
+r0 = socket$nl_netfilter(0x10, 0x3, 0xc) (async)
+r1 = openat$binfmt_format(0xffffffffffffff9c, &(0x7f0000000000)='/proc/sys/fs/binfmt_misc/syz1\x00', 0x2, 0x0)
+socketpair$unix(0x1, 0x5, 0x0, &(0x7f00000000c0)={0xffffffffffffffff, <r2=>0xffffffffffffffff})
+setsockopt$SO_ATTACH_FILTER(r2, 0x1, 0x4c, &(0x7f0000000080)={0x1, &(0x7f0000000040)=[{}]}, 0x10) (async)
+sendmsg$unix(r2, &(0x7f0000002540)={0x0, 0x0, 0x0}, 0x0) (async)
+madvise(&(0x7f0000ffb000/0x3000)=nil, 0x3000, 0x8)
+r3 = socket$inet6_tcp(0xa, 0x1, 0x0)
+setsockopt$inet6_IPV6_FLOWLABEL_MGR(r3, 0x29, 0x20, &(0x7f00000000c0)={@dev, 0x0, 0x1, 0x0, 0x4}, 0x20) (async)
+r4 = syz_mount_image$ext4(&(0x7f0000000040)='ext4\x00', &(0x7f0000000000)='./bus\x00', 0xe, &(0x7f0000000140)={[{@noload}, {@resuid={'resuid', 0x3d, 0xee01}}, {@debug_want_extra_isize={'debug_want_extra_isize', 0x3d, 0x2e}}, {@lazytime}, {@i_version}, {@quota}]}, 0x3, 0x43f, &(0x7f0000001540)="$eJzs3MtvG8UfAPDvrpP0/Ut+pTz6AAIFEfFImrRAD1xAIHEACQkO5RiStAp1G9QEiVYRBITKEVXijjgi8RdwggsCTkhc4Y4qVSiXFk5Ga+8mtmu7TerEBX8+0rYzu+PMfL079sxONgH0rdHsnyRib0T8FhHDtWxjgdHafzdWl2f+Wl2eSaJSefPPpFru+uryTFG0eN2ePDOWRqSfJnG4Rb2LFy+dnS6X5y7k+Ymlc+9NLF689Mz8uekzc2fmzk+dPHni+OTzz00925U4s7iuH/pw4cjBV9++8vrMqSvv/PRNUsTfFEeXjHY6+Hil0uXqemtfXToZ6GFD2JBSRGSna7Da/4ejFOsnbzhe+aSnjQO2VCXX5vBKBfgPS6LXLQB6o/iiz+a/xbZ9o4/eu/ZibQKUxX0j32pHBiLNyww2zW+7aTQiTq38/WW2xdbchwAAaPBdNv55utX4L4376sr9L19DGYmI/0fE/oi4JyIORMS9EdWy90fEAxusv3mR5ObxT3p1U4Hdpmz890K+ttU4/itGfzFSynP7qvEPJqfny3PH8vdkLAZ3ZPnJDnV8//Kvn7c7Vj/+y7as/mIsmLfj6sCOxtfMTi9N10ald+7axxGHBlrFn6ytBCQRcTAiDm2yjvknvz7S7tit4++gC+tMla8inqid/5Voir+QdF6fnNgZ5bljE8VVcbOff7n8Rrv67yj+LsjO/+6W1/9a/CNJ/Xrt4sbruPz7Z23nNJu9/oeSt6rpoXzfB9NLSxcmI4aS12qNrt8/tf7aIl+Uz+IfO9q6/++P9XficERkF/GDEfFQRDyct/2RiHg0Io52iP/Hlx57d/Pxb60s/tkNnf/1xFA072mdKJ394duGSkc2En92/k9UU2P5ntrnX2e3067NXc0AAADw75NGxN5I0vG1dJqOj9d+h/9A7E7LC4tLT51eeP/8bO0ZgZEYTIs7XcN190Mn82l9kZ9qyh/P7xt/UdpVzY/PLJRnex089Lk9bfp/5o9Sr1sHbDnPa0H/0v+hf+n/0L/0f+hfLfr/rl60A9h+rb7/P+pBO4Dt19T/LftBHzH/h/6l/0P/0v+hLy3uils/JH+XJyot/zqBRENiZ0R09QdGelfEJbFFiV5/MgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHTHPwEAAP//Y3XpVQ==") (async)
+chdir(&(0x7f0000000240)='./file0\x00')
+openat$cgroup_ro(0xffffffffffffff9c, &(0x7f00000002c0)='io.stat\x00', 0x275a, 0x0) (async)
+r5 = socket$netlink(0x10, 0x3, 0x0)
+sendmsg$netlink(r5, &(0x7f0000005400)={0x0, 0x0, &(0x7f0000000200)=[{&(0x7f0000000240)=ANY=[@ANYBLOB="a80000002000230100000000000000006756013a4f4e2d69620886b33f8bfa6b1e9b9a83f69dfa3fc8f5f3a65f8cc4a81f17e137ce91c4ed4c101d5384a6299f359d038897a4a9d713f4884c6ec33776951cf0bf4a6c8fe5e345c644a7bda55cd34298f132934027f61ac807ef5c9551f018a4e74ab5d33644bc8ca1592fc0dbb95673fc74d9106e7d4e4691dc6f517859402fbcc6e67618be9fe300"/168], 0xa8}], 0x1}, 0x0) (async)
+preadv(r1, &(0x7f0000000440)=[{&(0x7f0000000200)=""/131, 0x14}], 0x1, 0x5, 0x8) (async)
+openat$cgroup_root(0xffffffffffffff9c, &(0x7f00000000c0)='./cgroup.cpu/syz1\x00', 0x200002, 0x0) (async)
+getxattr(0x0, 0x0, 0x0, 0x0) (async)
+setsockopt$netlink_NETLINK_RX_RING(r0, 0x10e, 0x6, &(0x7f0000000040)={0x6, 0x42, 0x6, 0x234e}, 0x10)
+ioctl$FS_IOC_SET_ENCRYPTION_POLICY(r4, 0x800c6613, &(0x7f0000000100)=@v1={0x0, @aes256, 0x0, @desc4})
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): sync-openat$cgroup_ro-write$binfmt_script-splice-syz_open_procfs-memfd_create-write-mmap-dup3-ioctl$AUTOFS_DEV_IOCTL_ASKUMOUNT
+detailed listing:
+executing program 0:
+sync()
+r0 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000040)='blkio.bfq.io_serviced\x00', 0x275a, 0x0)
+write$binfmt_script(r0, &(0x7f0000000100), 0x208e24b)
+splice(r0, &(0x7f0000000140)=0x6, r0, &(0x7f0000000180)=0x7, 0x2, 0xe)
+r1 = syz_open_procfs(0x0, &(0x7f0000000080)='fd\x00')
+r2 = memfd_create(&(0x7f0000000780)='\x04', 0x0)
+write(r2, &(0x7f00000000c0)="6963e64243ea486da3a74e3deec6fc5bb9650b5de56946c568f95d22467190ba406d59a5958d6f156c9c8a2ac4677b00000000000000000000200000f8bf54da33", 0x41)
+mmap(&(0x7f0000000000/0x2000)=nil, 0x2000, 0x1, 0x11, r2, 0x0)
+dup3(r1, r2, 0x0)
+ioctl$AUTOFS_DEV_IOCTL_ASKUMOUNT(r1, 0xc018937d, &(0x7f0000000000)={{0x1, 0x1, 0x18, r0, {0x10001}}, './file0\x00'})
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$inet6_udp-syz_genetlink_get_family_id$ethtool-socket$packet-sendmsg$ETHTOOL_MSG_FEATURES_GET-perf_event_open-ioctl$sock_ipv4_tunnel_SIOCCHGTUNNEL-setreuid-ioctl$ifreq_SIOCGIFINDEX_batadv_mesh-sync-socket$inet
+detailed listing:
+executing program 0:
+socket$inet6_udp(0xa, 0x2, 0x0)
+syz_genetlink_get_family_id$ethtool(&(0x7f0000000040), 0xffffffffffffffff)
+socket$packet(0x11, 0x2, 0x300)
+sendmsg$ETHTOOL_MSG_FEATURES_GET(0xffffffffffffffff, &(0x7f0000000900)={0x0, 0x0, &(0x7f00000008c0)={0x0, 0x20}}, 0x0)
+perf_event_open(&(0x7f000001d000)={0x1, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x18a, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_bp={0x0}}, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0)
+ioctl$sock_ipv4_tunnel_SIOCCHGTUNNEL(0xffffffffffffffff, 0x89f3, 0x0)
+setreuid(0x0, 0x0)
+ioctl$ifreq_SIOCGIFINDEX_batadv_mesh(0xffffffffffffffff, 0x8933, &(0x7f0000000040))
+sync()
+socket$inet(0x2, 0x2, 0xd5da)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): open-lsm_get_self_attr-timer_create-openat$cgroup_ro-socket$nl_generic-write$binfmt_aout-mmap-timer_settime-syz_open_dev$char_usb-preadv-readlink-seccomp$SECCOMP_SET_MODE_FILTER_LISTENER-seccomp$SECCOMP_SET_MODE_FILTER_LISTENER
+detailed listing:
+executing program 0:
+open(&(0x7f0000000280)='.\x00', 0x0, 0x0)
+lsm_get_self_attr(0x66, 0x0, 0xfffffffffffffffd, 0x1)
+timer_create(0x2, 0x0, &(0x7f0000000100)=<r0=>0x0)
+r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='memory.events\x00', 0x275a, 0x0)
+r2 = socket$nl_generic(0x10, 0x3, 0x10)
+write$binfmt_aout(r1, &(0x7f0000000480)=ANY=[@ANYRES8=0x0, @ANYRES64=r0, @ANYRES16, @ANYRES64=r2, @ANYBLOB="3bec"], 0xc1)
+mmap(&(0x7f0000000000/0x3000)=nil, 0x3000, 0x2000005, 0x12, r1, 0x0)
+timer_settime(0x0, 0x0, &(0x7f0000000000)={{0x77359400}}, 0x0)
+r3 = syz_open_dev$char_usb(0xc, 0xb4, 0x0)
+preadv(r3, &(0x7f0000000700)=[{&(0x7f0000000080)=""/90}, {&(0x7f0000000100)=""/216}, {&(0x7f0000000200)=""/43}, {&(0x7f00000002c0)=""/174}, {&(0x7f0000001fc0)=""/4096}, {&(0x7f0000000240)=""/15}, {&(0x7f0000000380)=""/218}, {&(0x7f0000000480)=""/187}, {&(0x7f0000000540)=""/39}, {&(0x7f0000000580)=""/168}, {&(0x7f0000002fc0)=""/4096}], 0x1, 0xdd6, 0x47a3)
+readlink(0x0, &(0x7f0000000fc0)=""/4096, 0x1000)
+seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0xa, &(0x7f0000000040)={0x1, &(0x7f0000000000)=[{0x6, 0x0, 0x0, 0x7fff7ffe}]})
+seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0x8, &(0x7f0000000040)={0x1, &(0x7f0000000000)=[{0x6}]})
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): open-lsm_get_self_attr-timer_create-openat$cgroup_ro-socket$nl_generic-write$binfmt_aout-mmap-timer_settime-syz_open_dev$char_usb-preadv-readlink-seccomp$SECCOMP_SET_MODE_FILTER_LISTENER-seccomp$SECCOMP_SET_MODE_FILTER_LISTENER
+detailed listing:
+executing program 0:
+open(&(0x7f0000000280)='.\x00', 0x0, 0x0)
+lsm_get_self_attr(0x66, 0x0, 0xfffffffffffffffd, 0x1)
+timer_create(0x2, 0x0, &(0x7f0000000100)=<r0=>0x0)
+r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='memory.events\x00', 0x275a, 0x0)
+r2 = socket$nl_generic(0x10, 0x3, 0x10)
+write$binfmt_aout(r1, &(0x7f0000000480)=ANY=[@ANYRES8=0x0, @ANYRES64=r0, @ANYRES16, @ANYRES64=r2, @ANYBLOB="3bec"], 0xc1)
+mmap(&(0x7f0000000000/0x3000)=nil, 0x3000, 0x2000005, 0x12, r1, 0x0)
+timer_settime(0x0, 0x0, &(0x7f0000000000)={{0x77359400}}, 0x0)
+r3 = syz_open_dev$char_usb(0xc, 0xb4, 0x0)
+preadv(r3, &(0x7f0000000700)=[{&(0x7f0000000080)=""/90}, {&(0x7f0000000100)=""/216}, {&(0x7f0000000200)=""/43}, {&(0x7f00000002c0)=""/174}, {&(0x7f0000001fc0)=""/4096}, {&(0x7f0000000240)=""/15}, {&(0x7f0000000380)=""/218}, {&(0x7f0000000480)=""/187}, {&(0x7f0000000540)=""/39}, {&(0x7f0000000580)=""/168}, {&(0x7f0000002fc0)=""/4096}], 0x1, 0xdd6, 0x47a3)
+readlink(0x0, &(0x7f0000000fc0)=""/4096, 0x1000)
+seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0xa, &(0x7f0000000040)={0x1, &(0x7f0000000000)=[{0x6, 0x0, 0x0, 0x7fff7ffe}]})
+seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0x8, &(0x7f0000000040)={0x1, &(0x7f0000000000)=[{0x6}]})
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-syz_proc_sys_generated_213-socket$nl_xfrm-socket$nl_generic-syz_open_dev$MSR-ioctl$BTRFS_IOC_SCRUB_PROGRESS-read$msr-sendmsg$nl_xfrm-ioctl$sock_SIOCINQ-syz_proc_sys_generated_213
+detailed listing:
+executing program 0:
+r0 = syz_mount_image$ext4(&(0x7f00000000c0)='ext4\x00', &(0x7f0000000080)='./file0\x00', 0x11, &(0x7f0000000000)={[{@norecovery}, {@journal_dev={'journal_dev', 0x3d, 0x1}}, {@nouid32}, {@acl}, {@nodiscard}, {@nouid32}]}, 0x6, 0x620, &(0x7f0000000700)="$eJzs3c9rXNUeAPDvnfxO3ntJw+M960IDoi1okyZtpYhgi+CqlPpjIbhxbNJSM/1BE9HESlOoG0HcuBBcubAu/B+0ILjyH3DhxpVUikg3StGRO7kzTpO5ySRmZtrM5wPTOeeeO3PObfLNOXPmnJkAutZE+k8hYm9EXEoixuvKeiMrnFg9786vV06ntyTK5Zd/SeLK1WSl/rmS7H4ke/Afo5F8GxHjPevrXVhani+WSnOXs/zU4vlLUwtLywfOnS+enTs7d2Hm6ZmjRw4fOTp9sO5RZ17Y6vXtqUufuP7m26MfnHzt80/vJtNf/HAyiWO1RqfXtdXn3sxETEQ5U388/X89utOVdUhP7ffkb8naA2s938IGsSXVn19fRPw/RqOn7qc5Gu+/2NHGAS1VTqLWRwHdJhH/0KWq44Dqa/vmXgf3t3hUArTD7eMRT9Tivy8iqvHfuzo3GIOVuYHhO8k98zxJRBzcgfrTOr775uT19BYtmocDGlu5NpBNga/t/5NKbI7FYCU3fKdwT/wXsmncsWz+8KWNqxnNK5hYk8/qH9ju9QDNW7kWEQ81Gv9vHv+vZ/fp8Te2WX9O/AMAAAAAAADbcPN4RDzV6P2/Qm39T3+D9T8jEXFsB+rf/P2/wq0dqAZo4PbxiGcbrv8tVE8Z68ly/66sB+hLzpwrzR2MiP9ExP7oG0jz0/VP+mXdoyPiwIfjn+TVX7/+L72l9VfXAmbtuNW7ZjXQbHGxuAOXDl3v9rWIh3vz1/+k/X/SoP9P4/tSk3WMP37jVF7Z5vEPtEr5s4h9Dfv/pHZOsvHnc0xVxgNT1VHBeo+8+9FXefWLf+ictP8f3jj+B5L6z+tZ2Nrz90fEoaXecl75dsf//ckrPVG3E/Gd4uLi5emI/uTE+uMzW2szPEgGmz/1vYioxEM1XtL43//YxvN/tfF/XRwORcRKk5X+78+RH/PK9P/QOWn8z27Q/88vLy3c2/9vPTFzY+zrvPpPNdX/H6706fuzI+b/YGPNBmin2wkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD6JCRPwrksJkLV0oTE5GjETEf2O4ULq4sPjkmYtvXZhNyyrf/1+oftPv6Go+qX7//1hdfmZN/lBE7ImIj3uGKvnJ0xdLs52+eAAAAAAAAAAAAAAAAAAAALhPjKzerdv/n/qpp6NNA9qhN7sX79B9ejvdAKBjxD90L/EP3Ss//n+7W65oa3OANmq2/y9fbXFDgLbb5vjf2wWwC3j9D92qr7nTBlvdDqAT9P8AAAAAALCr7Hn05vdJRKw8M1S5pfqzstobg0Odah3QSoW8goH2tgNoP2t4oXtZ+gPdq8nFv8AultRSvzfc7J+/+j9pTYMAAAAAAAAAAAAAgHX27W1i/z+wK+Xu/wd2vQ32/zfa2OPjAmAXsf8fupeP+QKqg/28b/q3/x8AAAAAAAAAAAAA7gODy/PFUmnu8sJS04mrWzn5nyd+jryi59rZjJ1KrBTvi2Y8CIm+iFhTVB5d/bWdL5Zejfa2pxox7airv4115SQ69PcIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABY568AAAD//5GcKXI=")
+syz_proc_sys_generated_213(0x179, 0x0, 0x400000000a2b, 0x1)
+r1 = socket$nl_xfrm(0x10, 0x3, 0x6)
+socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_open_dev$MSR(&(0x7f0000000040), 0x0, 0x0)
+ioctl$BTRFS_IOC_SCRUB_PROGRESS(r0, 0xc400941d, &(0x7f0000001600)={<r3=>0x0, 0xb, 0x4})
+read$msr(r2, &(0x7f0000000600)=""/4096, 0x1000)
+sendmsg$nl_xfrm(r1, &(0x7f0000000200)={0x0, 0x0, &(0x7f00000001c0)={&(0x7f0000000380)=ANY=[@ANYBLOB="b800000019000100000000000000000000000000000000000000000000000000ac1414bb00000000000000000000000000000000000000000200000000000000", @ANYRES16=r3, @ANYRES16=r1, @ANYBLOB="000000000000000000000000001000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000006f9e0000000000"], 0xb8}, 0x1, 0x0, 0x0, 0x400c090}, 0x0)
+ioctl$sock_SIOCINQ(r1, 0x541b, &(0x7f0000000100))
+syz_proc_sys_generated_213(0x8f, 0x0, 0x5ec, 0x0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-syz_proc_sys_generated_213-socket$nl_xfrm-socket$nl_generic-syz_open_dev$MSR-ioctl$BTRFS_IOC_SCRUB_PROGRESS-read$msr-sendmsg$nl_xfrm-ioctl$sock_SIOCINQ-syz_proc_sys_generated_213
+detailed listing:
+executing program 0:
+r0 = syz_mount_image$ext4(&(0x7f00000000c0)='ext4\x00', &(0x7f0000000080)='./file0\x00', 0x11, &(0x7f0000000000)={[{@norecovery}, {@journal_dev={'journal_dev', 0x3d, 0x1}}, {@nouid32}, {@acl}, {@nodiscard}, {@nouid32}]}, 0x6, 0x620, &(0x7f0000000700)="$eJzs3c9rXNUeAPDvnfxO3ntJw+M960IDoi1okyZtpYhgi+CqlPpjIbhxbNJSM/1BE9HESlOoG0HcuBBcubAu/B+0ILjyH3DhxpVUikg3StGRO7kzTpO5ySRmZtrM5wPTOeeeO3PObfLNOXPmnJkAutZE+k8hYm9EXEoixuvKeiMrnFg9786vV06ntyTK5Zd/SeLK1WSl/rmS7H4ke/Afo5F8GxHjPevrXVhani+WSnOXs/zU4vlLUwtLywfOnS+enTs7d2Hm6ZmjRw4fOTp9sO5RZ17Y6vXtqUufuP7m26MfnHzt80/vJtNf/HAyiWO1RqfXtdXn3sxETEQ5U388/X89utOVdUhP7ffkb8naA2s938IGsSXVn19fRPw/RqOn7qc5Gu+/2NHGAS1VTqLWRwHdJhH/0KWq44Dqa/vmXgf3t3hUArTD7eMRT9Tivy8iqvHfuzo3GIOVuYHhO8k98zxJRBzcgfrTOr775uT19BYtmocDGlu5NpBNga/t/5NKbI7FYCU3fKdwT/wXsmncsWz+8KWNqxnNK5hYk8/qH9ju9QDNW7kWEQ81Gv9vHv+vZ/fp8Te2WX9O/AMAAAAAAADbcPN4RDzV6P2/Qm39T3+D9T8jEXFsB+rf/P2/wq0dqAZo4PbxiGcbrv8tVE8Z68ly/66sB+hLzpwrzR2MiP9ExP7oG0jz0/VP+mXdoyPiwIfjn+TVX7/+L72l9VfXAmbtuNW7ZjXQbHGxuAOXDl3v9rWIh3vz1/+k/X/SoP9P4/tSk3WMP37jVF7Z5vEPtEr5s4h9Dfv/pHZOsvHnc0xVxgNT1VHBeo+8+9FXefWLf+ictP8f3jj+B5L6z+tZ2Nrz90fEoaXecl75dsf//ckrPVG3E/Gd4uLi5emI/uTE+uMzW2szPEgGmz/1vYioxEM1XtL43//YxvN/tfF/XRwORcRKk5X+78+RH/PK9P/QOWn8z27Q/88vLy3c2/9vPTFzY+zrvPpPNdX/H6706fuzI+b/YGPNBmin2wkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD6JCRPwrksJkLV0oTE5GjETEf2O4ULq4sPjkmYtvXZhNyyrf/1+oftPv6Go+qX7//1hdfmZN/lBE7ImIj3uGKvnJ0xdLs52+eAAAAAAAAAAAAAAAAAAAALhPjKzerdv/n/qpp6NNA9qhN7sX79B9ejvdAKBjxD90L/EP3Ss//n+7W65oa3OANmq2/y9fbXFDgLbb5vjf2wWwC3j9D92qr7nTBlvdDqAT9P8AAAAAALCr7Hn05vdJRKw8M1S5pfqzstobg0Odah3QSoW8goH2tgNoP2t4oXtZ+gPdq8nFv8AultRSvzfc7J+/+j9pTYMAAAAAAAAAAAAAgHX27W1i/z+wK+Xu/wd2vQ32/zfa2OPjAmAXsf8fupeP+QKqg/28b/q3/x8AAAAAAAAAAAAA7gODy/PFUmnu8sJS04mrWzn5nyd+jryi59rZjJ1KrBTvi2Y8CIm+iFhTVB5d/bWdL5Zejfa2pxox7airv4115SQ69PcIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABY568AAAD//5GcKXI=")
+syz_proc_sys_generated_213(0x179, 0x0, 0x400000000a2b, 0x1)
+r1 = socket$nl_xfrm(0x10, 0x3, 0x6)
+socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_open_dev$MSR(&(0x7f0000000040), 0x0, 0x0)
+ioctl$BTRFS_IOC_SCRUB_PROGRESS(r0, 0xc400941d, &(0x7f0000001600)={<r3=>0x0, 0xb, 0x4})
+read$msr(r2, &(0x7f0000000600)=""/4096, 0x1000)
+sendmsg$nl_xfrm(r1, &(0x7f0000000200)={0x0, 0x0, &(0x7f00000001c0)={&(0x7f0000000380)=ANY=[@ANYBLOB="b800000019000100000000000000000000000000000000000000000000000000ac1414bb00000000000000000000000000000000000000000200000000000000", @ANYRES16=r3, @ANYRES16=r1, @ANYBLOB="000000000000000000000000001000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000006f9e0000000000"], 0xb8}, 0x1, 0x0, 0x0, 0x400c090}, 0x0)
+ioctl$sock_SIOCINQ(r1, 0x541b, &(0x7f0000000100))
+syz_proc_sys_generated_213(0x8f, 0x0, 0x5ec, 0x0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$inet-setsockopt$inet_mreqn-setsockopt$inet_msfilter-syz_clone-setpgid-writev-quotactl$Q_SYNC-syz_open_procfs-read$char_usb-clock_adjtime-openat$sysfs-socket$nl_audit-syz_open_dev$evdev-ioctl$EVIOCGRAB-mprotect
+detailed listing:
+executing program 0:
+r0 = socket$inet(0x2, 0x2, 0x0)
+setsockopt$inet_mreqn(r0, 0x0, 0x23, &(0x7f0000000740)={@multicast2, @loopback}, 0x40)
+setsockopt$inet_msfilter(r0, 0x0, 0x29, &(0x7f0000000000)={@multicast2, @loopback, 0x1, 0x2, [@dev={0xac, 0x14, 0x14, 0x21}, @private=0xa010101]}, 0x18)
+r1 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+setpgid(0x0, r1)
+writev(0xffffffffffffffff, 0x0, 0x0) (async)
+quotactl$Q_SYNC(0xffffffff80000102, 0x0, 0x0, 0x0)
+r2 = syz_open_procfs(0x0, &(0x7f0000000000)='syscall\x00')
+read$char_usb(r2, &(0x7f0000000040)=""/241, 0xf1) (async)
+clock_adjtime(0x0, &(0x7f0000000180)={0xffffffffffffffff, 0x0, 0xe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x80000001, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x2000000000000000}) (async, rerun: 32)
+openat$sysfs(0xffffffffffffff9c, &(0x7f0000000100)='/sys/power/pm_trace_dev_match', 0x1634c0, 0x62) (rerun: 32)
+socket$nl_audit(0x10, 0x3, 0x9) (async)
+r3 = syz_open_dev$evdev(&(0x7f0000000140), 0x0, 0x10000)
+ioctl$EVIOCGRAB(r3, 0x40044590, &(0x7f0000000280))
+mprotect(&(0x7f0000ffb000/0x3000)=nil, 0x3000, 0x1000018)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): mkdirat$cgroup_root-socket$nl_netfilter-openat$binfmt_format-socketpair$unix-setsockopt$SO_ATTACH_FILTER-sendmsg$unix-madvise-socket$inet6_tcp-setsockopt$inet6_IPV6_FLOWLABEL_MGR-syz_mount_image$ext4-chdir-openat$cgroup_ro-socket$netlink-sendmsg$netlink-preadv-openat$cgroup_root-getxattr-setsockopt$netlink_NETLINK_RX_RING-ioctl$FS_IOC_SET_ENCRYPTION_POLICY
+detailed listing:
+executing program 0:
+mkdirat$cgroup_root(0xffffffffffffff9c, &(0x7f0000000080)='./cgroup.cpu/syz0\x00', 0x1ff) (async)
+r0 = socket$nl_netfilter(0x10, 0x3, 0xc) (async)
+r1 = openat$binfmt_format(0xffffffffffffff9c, &(0x7f0000000000)='/proc/sys/fs/binfmt_misc/syz1\x00', 0x2, 0x0)
+socketpair$unix(0x1, 0x5, 0x0, &(0x7f00000000c0)={0xffffffffffffffff, <r2=>0xffffffffffffffff})
+setsockopt$SO_ATTACH_FILTER(r2, 0x1, 0x4c, &(0x7f0000000080)={0x1, &(0x7f0000000040)=[{}]}, 0x10) (async)
+sendmsg$unix(r2, &(0x7f0000002540)={0x0, 0x0, 0x0}, 0x0) (async)
+madvise(&(0x7f0000ffb000/0x3000)=nil, 0x3000, 0x8)
+r3 = socket$inet6_tcp(0xa, 0x1, 0x0)
+setsockopt$inet6_IPV6_FLOWLABEL_MGR(r3, 0x29, 0x20, &(0x7f00000000c0)={@dev, 0x0, 0x1, 0x0, 0x4}, 0x20) (async)
+r4 = syz_mount_image$ext4(&(0x7f0000000040)='ext4\x00', &(0x7f0000000000)='./bus\x00', 0xe, &(0x7f0000000140)={[{@noload}, {@resuid={'resuid', 0x3d, 0xee01}}, {@debug_want_extra_isize={'debug_want_extra_isize', 0x3d, 0x2e}}, {@lazytime}, {@i_version}, {@quota}]}, 0x3, 0x43f, &(0x7f0000001540)="$eJzs3MtvG8UfAPDvrpP0/Ut+pTz6AAIFEfFImrRAD1xAIHEACQkO5RiStAp1G9QEiVYRBITKEVXijjgi8RdwggsCTkhc4Y4qVSiXFk5Ga+8mtmu7TerEBX8+0rYzu+PMfL079sxONgH0rdHsnyRib0T8FhHDtWxjgdHafzdWl2f+Wl2eSaJSefPPpFru+uryTFG0eN2ePDOWRqSfJnG4Rb2LFy+dnS6X5y7k+Ymlc+9NLF689Mz8uekzc2fmzk+dPHni+OTzz00925U4s7iuH/pw4cjBV9++8vrMqSvv/PRNUsTfFEeXjHY6+Hil0uXqemtfXToZ6GFD2JBSRGSna7Da/4ejFOsnbzhe+aSnjQO2VCXX5vBKBfgPS6LXLQB6o/iiz+a/xbZ9o4/eu/ZibQKUxX0j32pHBiLNyww2zW+7aTQiTq38/WW2xdbchwAAaPBdNv55utX4L4376sr9L19DGYmI/0fE/oi4JyIORMS9EdWy90fEAxusv3mR5ObxT3p1U4Hdpmz890K+ttU4/itGfzFSynP7qvEPJqfny3PH8vdkLAZ3ZPnJDnV8//Kvn7c7Vj/+y7as/mIsmLfj6sCOxtfMTi9N10ald+7axxGHBlrFn6ytBCQRcTAiDm2yjvknvz7S7tit4++gC+tMla8inqid/5Voir+QdF6fnNgZ5bljE8VVcbOff7n8Rrv67yj+LsjO/+6W1/9a/CNJ/Xrt4sbruPz7Z23nNJu9/oeSt6rpoXzfB9NLSxcmI4aS12qNrt8/tf7aIl+Uz+IfO9q6/++P9XficERkF/GDEfFQRDyct/2RiHg0Io52iP/Hlx57d/Pxb60s/tkNnf/1xFA072mdKJ394duGSkc2En92/k9UU2P5ntrnX2e3067NXc0AAADw75NGxN5I0vG1dJqOj9d+h/9A7E7LC4tLT51eeP/8bO0ZgZEYTIs7XcN190Mn82l9kZ9qyh/P7xt/UdpVzY/PLJRnex089Lk9bfp/5o9Sr1sHbDnPa0H/0v+hf+n/0L/0f+hfLfr/rl60A9h+rb7/P+pBO4Dt19T/LftBHzH/h/6l/0P/0v+hLy3uils/JH+XJyot/zqBRENiZ0R09QdGelfEJbFFiV5/MgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHTHPwEAAP//Y3XpVQ==") (async)
+chdir(&(0x7f0000000240)='./file0\x00')
+openat$cgroup_ro(0xffffffffffffff9c, &(0x7f00000002c0)='io.stat\x00', 0x275a, 0x0) (async)
+r5 = socket$netlink(0x10, 0x3, 0x0)
+sendmsg$netlink(r5, &(0x7f0000005400)={0x0, 0x0, &(0x7f0000000200)=[{&(0x7f0000000240)=ANY=[@ANYBLOB="a80000002000230100000000000000006756013a4f4e2d69620886b33f8bfa6b1e9b9a83f69dfa3fc8f5f3a65f8cc4a81f17e137ce91c4ed4c101d5384a6299f359d038897a4a9d713f4884c6ec33776951cf0bf4a6c8fe5e345c644a7bda55cd34298f132934027f61ac807ef5c9551f018a4e74ab5d33644bc8ca1592fc0dbb95673fc74d9106e7d4e4691dc6f517859402fbcc6e67618be9fe300"/168], 0xa8}], 0x1}, 0x0) (async)
+preadv(r1, &(0x7f0000000440)=[{&(0x7f0000000200)=""/131, 0x14}], 0x1, 0x5, 0x8) (async)
+openat$cgroup_root(0xffffffffffffff9c, &(0x7f00000000c0)='./cgroup.cpu/syz1\x00', 0x200002, 0x0) (async)
+getxattr(0x0, 0x0, 0x0, 0x0) (async)
+setsockopt$netlink_NETLINK_RX_RING(r0, 0x10e, 0x6, &(0x7f0000000040)={0x6, 0x42, 0x6, 0x234e}, 0x10)
+ioctl$FS_IOC_SET_ENCRYPTION_POLICY(r4, 0x800c6613, &(0x7f0000000100)=@v1={0x0, @aes256, 0x0, @desc4})
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): set_mempolicy_home_node-remap_file_pages-openat$sndtimer-ioctl$SNDRV_TIMER_IOCTL_SELECT-ioctl$SNDRV_TIMER_IOCTL_PARAMS-socket-setsockopt$netlink_NETLINK_TX_RING-sendmsg$TCPDIAG_GETSOCK-syz_mount_image$ext4-ioctl$SNDRV_TIMER_IOCTL_GPARAMS-open-open-sendmsg$IPCTNL_MSG_TIMEOUT_NEW-openat$cdrom-ioctl$CDROMVOLREAD-openat$cgroup_ro-mmap-ftruncate-sync
+detailed listing:
+executing program 0:
+set_mempolicy_home_node(&(0x7f0000ffb000/0x3000)=nil, 0x3000, 0xffffffdffffffffe, 0x0)
+remap_file_pages(&(0x7f0000ffc000/0x4000)=nil, 0x4000, 0x0, 0x0, 0x0)
+r0 = openat$sndtimer(0xffffffffffffff9c, &(0x7f00000002c0), 0x22000)
+ioctl$SNDRV_TIMER_IOCTL_SELECT(r0, 0x40345410, &(0x7f0000000100)={{0x1}})
+ioctl$SNDRV_TIMER_IOCTL_PARAMS(r0, 0x40505412, &(0x7f0000000440)={0x2, 0x0, 0x0, 0x0, 0x1})
+r1 = socket(0x10, 0x3, 0x0)
+setsockopt$netlink_NETLINK_TX_RING(r1, 0x10e, 0xc, &(0x7f0000000040)={0x802}, 0x10)
+sendmsg$TCPDIAG_GETSOCK(r1, &(0x7f0000000180)={0x0, 0x0, &(0x7f0000000140)={&(0x7f0000000940)=ANY=[@ANYBLOB="4c0000081200090900000000000000000000000000000098f6000000000000000000000000000000000000000000000004000000000000005ce3b8636cadf7e006798d28296dd50d4ce355fdf6585f0fe3696aa6d8de7cd7b9e1336f5850af077502ab1375263d143218facdecf600000000000000edda1a3ea0732774bdaf4b5b240734963fda0dffae1f02198e788c07", @ANYRES32=0x0, @ANYBLOB='\x00'/16], 0x4c}}, 0x0)
+syz_mount_image$ext4(&(0x7f0000000040)='ext4\x00', &(0x7f0000000000)='./bus\x00', 0xe, &(0x7f0000000140)={[{@noload}, {@resuid={'resuid', 0x3d, 0xee01}}, {@debug_want_extra_isize={'debug_want_extra_isize', 0x3d, 0x2e}}, {@lazytime}, {@i_version}, {@quota}]}, 0x3, 0x431, &(0x7f0000000500)="$eJzs289PHFUcAPDvzAKV/hCs9UdpVbQaiT+g0Ko9eNFo4kETEz3UIwJtsNtiCia2IYrG1KNp4t14NPEv8KQXo55MvOrdNGkMl1ZPa2Z3BpZllwJdWO1+Psm07828zXvfffN235vHBtC1hrN/koj9EfF7RAzUsmsLDNf+u7m8OPX38uJUEpXKW38l1XI3lheniqLF6/blmZE0Iv0siSNN6p2/dPncZLk8czHPjy2cf39s/tLlZ2fPT56dOTtzYeLUqZMnxl94fuK5tsSZxXVj6KO5o4dfe+fqG1Onr77787dJEX9DHG0yvNHFJyqVNlfXWQfq0klPBxvClpQiIuuu3ur4H4hSrHbeQLz6aUcbB+yoSq7F5aUKcAdLotMtADqj+KLP1r/FsXuzj867/lJtAZTFfTM/ald6Is3L9Dasb9tpOCJOL/3zVXbEzjyHAABY4/ts/vNMs/lfGvfXlbs730MZjIh7IuJgRNwbEYci4r6IatkHIuLBLdbfuEmyfv6TXttWYJuUzf9ezPe21s7/itlfDJby3IFq/L3JmdnyzPH8PRmJ3j1ZfnyDOn545bcvWl2rn/9lR1Z/MRfM23GtZ8/a10xPLkzeTsz1rn8SMdTTLP5kZScgiYjDETG0zTpmn/rmaKtrt45/A23YZ6p8HfFkrf+XoiH+QrLx/uTYXVGeOT5W3BXr/fLrlTdb1X9b8bdB1v97m97/K/EPJvX7tfNbr+PKH5+3XNNs9/7vS96upvvycx9OLixcHI/oS16vNbr+/MTqa4t8UT6Lf+RY8/F/MFbfiSMRkd3ED0XEwxHxSN72RyPisYg4tkH8P738+Hvbj39nZfFPb6n/VxN90XimeaJ07sfv1lQ6uJX4s/4/WU2N5Gc28/m3mXZt724GAACA/580IvZHko6upNN0dLT2N/yHYm9anptfePrM3AcXpmu/ERiM3rR40jVQ9zx0PF/WF/mJhvyJ/Lnxl6X+an50aq483engocvtazH+M3+WOt06YMf5vRZ0L+MfupfxD93L+Ifu1WT893eiHcDua/b9/3EH2gHsvobxb9sPuoj1P3Qv4x+6l/EPXWm+P279I3kJiXWJSP8TzZDYoUSnP5kAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADa498AAAD//wgz6sQ=")
+ioctl$SNDRV_TIMER_IOCTL_GPARAMS(r0, 0x40485404, &(0x7f00000001c0)={{0xffffffffffffffff, 0x37e26fe137753bd8, 0x7ff, 0x2, 0x7f}, 0x101, 0xfff})
+open(&(0x7f0000000000)='./bus\x00', 0xe0142, 0x0)
+r2 = open(&(0x7f0000000080)='./bus\x00', 0x185102, 0x0)
+sendmsg$IPCTNL_MSG_TIMEOUT_NEW(r1, &(0x7f0000000380)={&(0x7f0000000240)={0x10, 0x0, 0x0, 0x4000000}, 0xc, &(0x7f0000000280)={&(0x7f0000000300)={0x48, 0x0, 0x8, 0x401, 0x0, 0x0, {0x7}, [@CTA_TIMEOUT_NAME={0x9, 0x1, 'syz0\x00'}, @CTA_TIMEOUT_L3PROTO={0x6, 0x2, 0x1, 0x0, 0x7}, @CTA_TIMEOUT_NAME={0x9, 0x1, 'syz1\x00'}, @CTA_TIMEOUT_DATA={0xc, 0x4, 0x0, 0x1, @icmp=[@CTA_TIMEOUT_ICMP_TIMEOUT={0x8, 0x1, 0x1, 0x0, 0x5}]}, @CTA_TIMEOUT_L3PROTO={0x6, 0x2, 0x1, 0x0, 0x8914}]}, 0x48}, 0x1, 0x0, 0x0, 0x10}, 0x24000098)
+r3 = openat$cdrom(0xffffffffffffff9c, &(0x7f0000001900), 0x8000, 0x0)
+ioctl$CDROMVOLREAD(r3, 0x5313, &(0x7f0000000000))
+r4 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f00000000c0)='cpuacct.usage_percpu\x00', 0x275a, 0x0)
+mmap(&(0x7f0000000000/0x3000)=nil, 0x3000, 0x0, 0x12, r4, 0x0)
+ftruncate(r2, 0x0)
+sync()
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+sendfile(r0, r0, 0x0, 0x7f06) (async)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0) (async)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0) (async)
+socket(0xa, 0x3, 0x5b) (async)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4) (async)
+openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0) (async)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040)) (async)
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201) (async)
+syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0) (async)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2) (async)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1) (async)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4}) (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+single: successfully extracted reproducer
+found reproducer with 28 syscalls
+minimizing guilty program
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+sendfile(r0, r0, 0x0, 0x7f06) (async)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0) (async)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0) (async)
+socket(0xa, 0x3, 0x5b) (async)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4) (async)
+openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0) (async)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040)) (async)
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201) (async)
+syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0) (async)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2) (async)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1) (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+sendfile(r0, r0, 0x0, 0x7f06) (async)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0) (async)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0) (async)
+socket(0xa, 0x3, 0x5b) (async)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4) (async)
+openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0) (async)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040)) (async)
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201) (async)
+syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0) (async)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2) (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+sendfile(r0, r0, 0x0, 0x7f06) (async)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0) (async)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0) (async)
+socket(0xa, 0x3, 0x5b) (async)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4) (async)
+openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0) (async)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040)) (async)
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201) (async)
+syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0) (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+sendfile(r0, r0, 0x0, 0x7f06) (async)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0) (async)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0) (async)
+socket(0xa, 0x3, 0x5b) (async)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4) (async)
+openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0) (async)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040)) (async)
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201) (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+sendfile(r0, r0, 0x0, 0x7f06) (async)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0) (async)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0) (async)
+socket(0xa, 0x3, 0x5b) (async)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4) (async)
+openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0) (async)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040)) (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+sendfile(r0, r0, 0x0, 0x7f06) (async)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0) (async)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0) (async)
+socket(0xa, 0x3, 0x5b) (async)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4) (async)
+openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0) (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+sendfile(r0, r0, 0x0, 0x7f06) (async)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0) (async)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0) (async)
+socket(0xa, 0x3, 0x5b) (async)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4) (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+sendfile(r0, r0, 0x0, 0x7f06) (async)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0) (async)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0) (async)
+socket(0xa, 0x3, 0x5b) (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+sendfile(r0, r0, 0x0, 0x7f06) (async)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0) (async)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0) (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open-sendfile-openat$vga_arbiter
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+sendfile(r0, r0, 0x0, 0x7f06) (async)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0) (async)
+
+program crashed: general protection fault in input_unregister_device
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open-sendfile
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+sendfile(r0, r0, 0x0, 0x7f06) (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4-open
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0) (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN-syz_mount_image$ext4
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=") (async)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138-ioctl$BTRFS_IOC_QGROUP_ASSIGN
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r2 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r2, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r3 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r3, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r4 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r4, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+ioctl$BTRFS_IOC_QGROUP_ASSIGN(r1, 0x40189429, &(0x7f00000000c0)={0x0, 0x6, 0x60e4})
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r1 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r1, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r2 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r2, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r3 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r3, 0x40044590, &(0x7f0000000000)=0x2)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-ioctl$EVIOCGRAB
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r1 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r1, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r2 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r2, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+r3 = syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+ioctl$EVIOCGRAB(r3, 0x40044590, &(0x7f0000000000)=0x2)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_open_dev$evdev-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r1 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r1, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r2 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r2, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+syz_open_dev$evdev(&(0x7f0000001140), 0x3, 0x0)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-ioctl$RFKILL_IOCTL_NOINPUT-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r1 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r1, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r2 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r2, 0x80503d01, &(0x7f0000000040))
+ioctl$RFKILL_IOCTL_NOINPUT(r0, 0x5201)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-ioctl$PTP_CLOCK_GETCAPS-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r1 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r1, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+r2 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+ioctl$PTP_CLOCK_GETCAPS(r2, 0x80503d01, &(0x7f0000000040))
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program crashed: general protection fault in input_unregister_device
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-openat$ptp0-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r1 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r1, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-setsockopt$sock_int-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+r1 = socket(0xa, 0x3, 0x5b)
+setsockopt$sock_int(r1, 0x1, 0x2c, &(0x7f0000000080), 0x4)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-socket-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+socket(0xa, 0x3, 0x5b)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-openat$vga_arbiter-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000080), 0x20000, 0x0)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-sendfile-syz_proc_sys_generated_138-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+r0 = open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+sendfile(r0, r0, 0x0, 0x7f06)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-open-syz_proc_sys_generated_138-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+open(&(0x7f0000000040)='./file2\x00', 0x181042, 0x0)
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-syz_proc_sys_generated_138-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000), 0x1, 0x419, &(0x7f0000000500)="$eJzs3E1vFVUcB+DfTFsIL1o0vlaUCioVtKWo1YUb9iYuZOeqoYUQCxhaEyEsNMG4kYWJcWniBzCRnYkbdm5Z8AFYGgwxLLTRxNTM7R16aXsLhdZrmOdJ5t5z5pybc2ZO/nPvPXMyARpruHopkp1JriUZXMzeWWF48e3PWxeOzd+6cKzIwsIHvxetetW+umr9uR3VS5mMlEl5schzq7Q7e+78R5MzM9Nn2/mxuVMfj82eO//6yVOTJ6ZPTJ8en5g4dGji7Ym33tmwYx2a/PG73y69//W3X3w4tmeo3Fv1d2e7rPM4Nspwhu88lx1e2ejGeuzJjnTR38OOsC59SarhGmjF/2D6sjR4g/nlek87B2yqhcrWrsWfLQAPsSK97gHQG/UXffX/t97+q98e9N7NI4t/AOu5nfnb49+fsl1nYNn/+400nOTC9fnBassmzcMAAAAANNmVI0leW23+r8xTHfWq9NNJnknybJKhpLWuZ3eS55O8kGRPvZ5oHZbXXzn/U964rwPjntw8krybZH7F/F89+5ddfe3cI1UmA8XxkzPTh5I8mmQkA1ur/PgabUz+8MdP3cqq8b/2c99gvVXtV+9LNcob/cvuT09Nzk0+yDGz5ObnyVD/auNf3F4JVCR5Mcne+2zj4qXdl7uV3X382UwL3yf7V43/pZWLxdrrM8da14Ox+qqw0tWF4flu7Rv/3qrif/va47+r6FyvO7v+Ni4P/PVPt7L7vf5vKY62Orilve/Tybm5s+PJluK9lfsPr7/PD6v6fNTnqxr/kX2rf/8/3v5MdUL3JXkpycvttcv7W9/9yatJDiQ5uEabXx746kq3MvHfW9X4T60r/tef+Hvb0avd2u+8/1ttVfv1veBFVfy/2erMSHuP3393d68D1Ot+AgAAAAAAALAxytYz8Ipy9Ha6LEdHF5/h90S2lzNnZucOHj/zyempxWfl7cpAWa/0GuxYDzreSi/lDy/Lv5HksSTf9G1r5UePnZmZ6vXBQ8Pt6BL/lV/7et07YNN5Xis0l/iH5hL/0FziH5pL/ENziX9oLvEPzSX+obnEPzSX+IdGepDn+klISDysiV5fmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+H/4NAAD//7yw3AY=")
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_proc_sys_generated_138-syz_proc_sys_generated_138
+detailed listing:
+executing program 0:
+syz_proc_sys_generated_138(0x14f017, 0x1, 0x1, 0x1, 0x0)
+syz_proc_sys_generated_138(0x7dcf5, 0x0, 0x0, 0x1, 0x1)
+
+program crashed: BUG: soft lockup in proc_sys_call_handler
+extracting C reproducer
+testing compiled C program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_proc_sys_generated_138-syz_proc_sys_generated_138
+program crashed: BUG: soft lockup in proc_sys_call_handler
+simplifying C reproducer
+testing compiled C program (duration=6m0s, {Threaded:false Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_proc_sys_generated_138-syz_proc_sys_generated_138
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing compiled C program (duration=6m0s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_proc_sys_generated_138-syz_proc_sys_generated_138
+program crashed: no output from test machine
+a never seen crash title: no output from test machine, ignore
+testing compiled C program (duration=6m0s, {Threaded:false Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:false UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_proc_sys_generated_138-syz_proc_sys_generated_138
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing compiled C program (duration=6m0s, {Threaded:false Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:false UseTmpDir:false HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_proc_sys_generated_138-syz_proc_sys_generated_138
+program crashed: BUG: soft lockup in proc_sys_call_handler
+testing compiled C program (duration=6m0s, {Threaded:false Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:false UseTmpDir:false HandleSegv:false Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_proc_sys_generated_138-syz_proc_sys_generated_138
+program crashed: general protection fault in input_unregister_device
+testing compiled C program (duration=6m0s, {Threaded:false Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:false Swap:false UseTmpDir:false HandleSegv:false Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_proc_sys_generated_138-syz_proc_sys_generated_138
+program crashed: general protection fault in input_unregister_device
+reproducing took 2h17m40.978997326s
+repro crashed as (corrupted=false):
+audit: type=1400 audit(1763755626.826:7): avc:  denied  { execmem } for  pid=254 comm="syz-executor247" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=process permissive=1
+input: Macintosh mouse button emulation as /devices/virtual/input/input4
+Oops: general protection fault, probably for non-canonical address 0xdffffc00000000f0: 0000 [#1] SMP KASAN NOPTI
+KASAN: null-ptr-deref in range [0x0000000000000780-0x0000000000000787]
+CPU: 0 UID: 0 PID: 266 Comm: syz-executor247 Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:input_unregister_device+0x26/0x100 drivers/input/input.c:2407
+Code: 90 90 90 90 f3 0f 1e fa 55 48 89 fd 53 e8 82 40 ec fd 48 8d bd 80 07 00 00 48 b8 00 00 00 00 00 fc ff df 48 89 fa 48 c1 ea 03 <0f> b6 04 02 84 c0 74 06 0f 8e ac 00 00 00 0f b6 9d 80 07 00 00 31
+RSP: 0018:ffff88810102fc20 EFLAGS: 00010216
+RAX: dffffc0000000000 RBX: ffffffff882f30e0 RCX: ffffffff84a352a7
+RDX: 00000000000000f0 RSI: ffff888102a08000 RDI: 0000000000000780
+RBP: 0000000000000000 R08: 0000000000000000 R09: ffffed1020205f67
+R10: ffffed1020205f66 R11: ffff88810102fb37 R12: 0000000000000000
+R13: 0000000000000001 R14: 0000000000000001 R15: ffff88810102fdf8
+FS:  000055558a1b5380(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f15a5720710 CR3: 0000000102d1b000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ mac_hid_destroy_emumouse drivers/macintosh/mac_hid.c:68 [inline]
+ mac_hid_stop_emulation+0x1d/0x30 drivers/macintosh/mac_hid.c:183
+ mac_hid_toggle_emumouse+0x1c8/0x640 drivers/macintosh/mac_hid.c:203
+ proc_sys_call_handler+0x377/0x550 fs/proc/proc_sysctl.c:600
+ new_sync_write fs/read_write.c:593 [inline]
+ vfs_write fs/read_write.c:686 [inline]
+ vfs_write+0xb9b/0x1190 fs/read_write.c:666
+ ksys_write+0x121/0x240 fs/read_write.c:738
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f15a56c9f04
+Code: 89 02 b8 ff ff ff ff eb ba e8 a8 13 00 00 0f 1f 84 00 00 00 00 00 f3 0f 1e fa 80 3d bd aa 09 00 00 74 13 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 54 c3 0f 1f 00 55 48 89 e5 48 83 ec 20 48 89
+RSP: 002b:00007ffeea923548 EFLAGS: 00000202 ORIG_RAX: 0000000000000001
+RAX: ffffffffffffffda RBX: 0000000000000001 RCX: 00007f15a56c9f04
+RDX: 0000000000000001 RSI: 00007ffeea923550 RDI: 0000000000000003
+RBP: 0000000000000003 R08: 0000000000000064 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000000
+R13: 00007ffeea923550 R14: 00007f15a575fcd0 R15: 0000000000000001
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:input_unregister_device+0x26/0x100 drivers/input/input.c:2407
+Code: 90 90 90 90 f3 0f 1e fa 55 48 89 fd 53 e8 82 40 ec fd 48 8d bd 80 07 00 00 48 b8 00 00 00 00 00 fc ff df 48 89 fa 48 c1 ea 03 <0f> b6 04 02 84 c0 74 06 0f 8e ac 00 00 00 0f b6 9d 80 07 00 00 31
+RSP: 0018:ffff88810102fc20 EFLAGS: 00010216
+RAX: dffffc0000000000 RBX: ffffffff882f30e0 RCX: ffffffff84a352a7
+RDX: 00000000000000f0 RSI: ffff888102a08000 RDI: 0000000000000780
+RBP: 0000000000000000 R08: 0000000000000000 R09: ffffed1020205f67
+R10: ffffed1020205f66 R11: ffff88810102fb37 R12: 0000000000000000
+R13: 0000000000000001 R14: 0000000000000001 R15: ffff88810102fdf8
+FS:  000055558a1b5380(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f15a5720710 CR3: 0000000102d1b000 CR4: 0000000000350ef0
+==================================================================
+BUG: KASAN: slab-use-after-free in owner_on_cpu include/linux/sched.h:2282 [inline]
+BUG: KASAN: slab-use-after-free in mutex_can_spin_on_owner kernel/locking/mutex.c:397 [inline]
+BUG: KASAN: slab-use-after-free in mutex_optimistic_spin kernel/locking/mutex.c:440 [inline]
+BUG: KASAN: slab-use-after-free in __mutex_lock_common kernel/locking/mutex.c:602 [inline]
+BUG: KASAN: slab-use-after-free in __mutex_lock+0x1e25/0x25b0 kernel/locking/mutex.c:760
+Read of size 4 at addr ffff888102a08034 by task syz-executor247/275
+
+CPU: 1 UID: 0 PID: 275 Comm: syz-executor247 Tainted: G      D             6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Tainted: [D]=DIE
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0xca/0x120 lib/dump_stack.c:120
+ print_address_description mm/kasan/report.c:378 [inline]
+ print_report+0xcf/0x610 mm/kasan/report.c:482
+ kasan_report+0x96/0xd0 mm/kasan/report.c:595
+ owner_on_cpu include/linux/sched.h:2282 [inline]
+ mutex_can_spin_on_owner kernel/locking/mutex.c:397 [inline]
+ mutex_optimistic_spin kernel/locking/mutex.c:440 [inline]
+ __mutex_lock_common kernel/locking/mutex.c:602 [inline]
+ __mutex_lock+0x1e25/0x25b0 kernel/locking/mutex.c:760
+ mac_hid_toggle_emumouse+0x8a/0x640 drivers/macintosh/mac_hid.c:193
+ proc_sys_call_handler+0x377/0x550 fs/proc/proc_sysctl.c:600
+ new_sync_write fs/read_write.c:593 [inline]
+ vfs_write fs/read_write.c:686 [inline]
+ vfs_write+0xb9b/0x1190 fs/read_write.c:666
+ ksys_write+0x121/0x240 fs/read_write.c:738
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f15a56c9f04
+Code: 89 02 b8 ff ff ff ff eb ba e8 a8 13 00 00 0f 1f 84 00 00 00 00 00 f3 0f 1e fa 80 3d bd aa 09 00 00 74 13 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 54 c3 0f 1f 00 55 48 89 e5 48 83 ec 20 48 89
+RSP: 002b:00007ffeea923548 EFLAGS: 00000202 ORIG_RAX: 0000000000000001
+RAX: ffffffffffffffda RBX: 0000000000000001 RCX: 00007f15a56c9f04
+RDX: 0000000000000001 RSI: 00007ffeea923550 RDI: 0000000000000003
+RBP: 0000000000000003 R08: 0000000000000064 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000001
+R13: 00007ffeea923550 R14: 00007f15a575fcd0 R15: 0000000000000001
+ </TASK>
+
+Allocated by task 264:
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:56
+ kasan_save_track+0x14/0x30 mm/kasan/common.c:77
+ unpoison_slab_object mm/kasan/common.c:342 [inline]
+ __kasan_slab_alloc+0x59/0x70 mm/kasan/common.c:368
+ kasan_slab_alloc include/linux/kasan.h:252 [inline]
+ slab_post_alloc_hook mm/slub.c:4962 [inline]
+ slab_alloc_node mm/slub.c:5272 [inline]
+ kmem_cache_alloc_node_noprof+0x1f0/0x6f0 mm/slub.c:5324
+ alloc_task_struct_node kernel/fork.c:184 [inline]
+ dup_task_struct kernel/fork.c:873 [inline]
+ copy_process+0x472/0x7460 kernel/fork.c:2012
+ kernel_clone+0xea/0xe30 kernel/fork.c:2609
+ __do_sys_clone+0xce/0x120 kernel/fork.c:2750
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+
+Freed by task 58:
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:56
+ kasan_save_track+0x14/0x30 mm/kasan/common.c:77
+ __kasan_save_free_info+0x3a/0x60 mm/kasan/generic.c:587
+ kasan_save_free_info mm/kasan/kasan.h:406 [inline]
+ poison_slab_object mm/kasan/common.c:252 [inline]
+ __kasan_slab_free+0x43/0x70 mm/kasan/common.c:284
+ kasan_slab_free include/linux/kasan.h:234 [inline]
+ slab_free_hook mm/slub.c:2530 [inline]
+ slab_free mm/slub.c:6619 [inline]
+ kmem_cache_free+0x31d/0x630 mm/slub.c:6729
+ rcu_do_batch kernel/rcu/tree.c:2605 [inline]
+ rcu_core+0x9fc/0x2280 kernel/rcu/tree.c:2861
+ handle_softirqs+0x19b/0x740 kernel/softirq.c:622
+ __do_softirq kernel/softirq.c:656 [inline]
+ invoke_softirq kernel/softirq.c:496 [inline]
+ __irq_exit_rcu kernel/softirq.c:723 [inline]
+ irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1052 [inline]
+ sysvec_apic_timer_interrupt+0x70/0x80 arch/x86/kernel/apic/apic.c:1052
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+
+Last potentially related work creation:
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:56
+ kasan_record_aux_stack+0x89/0xa0 mm/kasan/generic.c:559
+ __call_rcu_common.constprop.0+0x70/0xae0 kernel/rcu/tree.c:3123
+ put_task_struct include/linux/sched/task.h:159 [inline]
+ delayed_put_task_struct+0x1bb/0x260 kernel/exit.c:231
+ rcu_do_batch kernel/rcu/tree.c:2605 [inline]
+ rcu_core+0x9fc/0x2280 kernel/rcu/tree.c:2861
+ handle_softirqs+0x19b/0x740 kernel/softirq.c:622
+ __do_softirq kernel/softirq.c:656 [inline]
+ invoke_softirq kernel/softirq.c:496 [inline]
+ __irq_exit_rcu kernel/softirq.c:723 [inline]
+ irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1052 [inline]
+ sysvec_apic_timer_interrupt+0x70/0x80 arch/x86/kernel/apic/apic.c:1052
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+
+Second to last potentially related work creation:
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:56
+ kasan_record_aux_stack+0x89/0xa0 mm/kasan/generic.c:559
+ __call_rcu_common.constprop.0+0x70/0xae0 kernel/rcu/tree.c:3123
+ put_task_struct_rcu_user+0x75/0xc0 kernel/exit.c:237
+ release_task+0x1057/0x1ae0 kernel/exit.c:308
+ wait_task_zombie kernel/exit.c:1269 [inline]
+ wait_consider_task+0x2d31/0x3a20 kernel/exit.c:1496
+ do_wait_thread kernel/exit.c:1559 [inline]
+ __do_wait+0x21e/0x8f0 kernel/exit.c:1677
+ do_wait+0x1e9/0x560 kernel/exit.c:1711
+ kernel_wait4+0x14e/0x260 kernel/exit.c:1870
+ __do_sys_wait4+0x149/0x160 kernel/exit.c:1898
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+
+The buggy address belongs to the object at ffff888102a08000
+ which belongs to the cache task_struct of size 6784
+The buggy address is located 52 bytes inside of
+ freed 6784-byte region [ffff888102a08000, ffff888102a09a80)
+
+The buggy address belongs to the physical page:
+page: refcount:0 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x102a08
+head: order:3 mapcount:0 entire_mapcount:0 nr_pages_mapped:0 pincount:0
+memcg:ffff8881077825c1
+flags: 0x200000000000040(head|node=0|zone=2)
+page_type: f5(slab)
+raw: 0200000000000040 ffff8881001d2000 dead000000000122 0000000000000000
+raw: 0000000000000000 0000000080040004 00000000f5000000 ffff8881077825c1
+head: 0200000000000040 ffff8881001d2000 dead000000000122 0000000000000000
+head: 0000000000000000 0000000080040004 00000000f5000000 ffff8881077825c1
+head: 0200000000000003 ffffea00040a8201 00000000ffffffff 00000000ffffffff
+head: 0000000000000000 0000000000000000 00000000ffffffff 0000000000000008
+page dumped because: kasan: bad access detected
+
+Memory state around the buggy address:
+ ffff888102a07f00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ ffff888102a07f80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+>ffff888102a08000: fa fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+                                     ^
+ ffff888102a08080: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+ ffff888102a08100: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+==================================================================
+----------------
+Code disassembly (best guess):
+   0:	90                   	nop
+   1:	90                   	nop
+   2:	90                   	nop
+   3:	90                   	nop
+   4:	f3 0f 1e fa          	endbr64
+   8:	55                   	push   %rbp
+   9:	48 89 fd             	mov    %rdi,%rbp
+   c:	53                   	push   %rbx
+   d:	e8 82 40 ec fd       	call   0xfdec4094
+  12:	48 8d bd 80 07 00 00 	lea    0x780(%rbp),%rdi
+  19:	48 b8 00 00 00 00 00 	movabs $0xdffffc0000000000,%rax
+  20:	fc ff df
+  23:	48 89 fa             	mov    %rdi,%rdx
+  26:	48 c1 ea 03          	shr    $0x3,%rdx
+* 2a:	0f b6 04 02          	movzbl (%rdx,%rax,1),%eax <-- trapping instruction
+  2e:	84 c0                	test   %al,%al
+  30:	74 06                	je     0x38
+  32:	0f 8e ac 00 00 00    	jle    0xe4
+  38:	0f b6 9d 80 07 00 00 	movzbl 0x780(%rbp),%ebx
+  3f:	31                   	.byte 0x31
+
+final repro crashed as (corrupted=false):
+audit: type=1400 audit(1763755626.826:7): avc:  denied  { execmem } for  pid=254 comm="syz-executor247" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=process permissive=1
+input: Macintosh mouse button emulation as /devices/virtual/input/input4
+Oops: general protection fault, probably for non-canonical address 0xdffffc00000000f0: 0000 [#1] SMP KASAN NOPTI
+KASAN: null-ptr-deref in range [0x0000000000000780-0x0000000000000787]
+CPU: 0 UID: 0 PID: 266 Comm: syz-executor247 Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:input_unregister_device+0x26/0x100 drivers/input/input.c:2407
+Code: 90 90 90 90 f3 0f 1e fa 55 48 89 fd 53 e8 82 40 ec fd 48 8d bd 80 07 00 00 48 b8 00 00 00 00 00 fc ff df 48 89 fa 48 c1 ea 03 <0f> b6 04 02 84 c0 74 06 0f 8e ac 00 00 00 0f b6 9d 80 07 00 00 31
+RSP: 0018:ffff88810102fc20 EFLAGS: 00010216
+RAX: dffffc0000000000 RBX: ffffffff882f30e0 RCX: ffffffff84a352a7
+RDX: 00000000000000f0 RSI: ffff888102a08000 RDI: 0000000000000780
+RBP: 0000000000000000 R08: 0000000000000000 R09: ffffed1020205f67
+R10: ffffed1020205f66 R11: ffff88810102fb37 R12: 0000000000000000
+R13: 0000000000000001 R14: 0000000000000001 R15: ffff88810102fdf8
+FS:  000055558a1b5380(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f15a5720710 CR3: 0000000102d1b000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ mac_hid_destroy_emumouse drivers/macintosh/mac_hid.c:68 [inline]
+ mac_hid_stop_emulation+0x1d/0x30 drivers/macintosh/mac_hid.c:183
+ mac_hid_toggle_emumouse+0x1c8/0x640 drivers/macintosh/mac_hid.c:203
+ proc_sys_call_handler+0x377/0x550 fs/proc/proc_sysctl.c:600
+ new_sync_write fs/read_write.c:593 [inline]
+ vfs_write fs/read_write.c:686 [inline]
+ vfs_write+0xb9b/0x1190 fs/read_write.c:666
+ ksys_write+0x121/0x240 fs/read_write.c:738
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f15a56c9f04
+Code: 89 02 b8 ff ff ff ff eb ba e8 a8 13 00 00 0f 1f 84 00 00 00 00 00 f3 0f 1e fa 80 3d bd aa 09 00 00 74 13 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 54 c3 0f 1f 00 55 48 89 e5 48 83 ec 20 48 89
+RSP: 002b:00007ffeea923548 EFLAGS: 00000202 ORIG_RAX: 0000000000000001
+RAX: ffffffffffffffda RBX: 0000000000000001 RCX: 00007f15a56c9f04
+RDX: 0000000000000001 RSI: 00007ffeea923550 RDI: 0000000000000003
+RBP: 0000000000000003 R08: 0000000000000064 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000000
+R13: 00007ffeea923550 R14: 00007f15a575fcd0 R15: 0000000000000001
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:input_unregister_device+0x26/0x100 drivers/input/input.c:2407
+Code: 90 90 90 90 f3 0f 1e fa 55 48 89 fd 53 e8 82 40 ec fd 48 8d bd 80 07 00 00 48 b8 00 00 00 00 00 fc ff df 48 89 fa 48 c1 ea 03 <0f> b6 04 02 84 c0 74 06 0f 8e ac 00 00 00 0f b6 9d 80 07 00 00 31
+RSP: 0018:ffff88810102fc20 EFLAGS: 00010216
+RAX: dffffc0000000000 RBX: ffffffff882f30e0 RCX: ffffffff84a352a7
+RDX: 00000000000000f0 RSI: ffff888102a08000 RDI: 0000000000000780
+RBP: 0000000000000000 R08: 0000000000000000 R09: ffffed1020205f67
+R10: ffffed1020205f66 R11: ffff88810102fb37 R12: 0000000000000000
+R13: 0000000000000001 R14: 0000000000000001 R15: ffff88810102fdf8
+FS:  000055558a1b5380(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f15a5720710 CR3: 0000000102d1b000 CR4: 0000000000350ef0
+==================================================================
+BUG: KASAN: slab-use-after-free in owner_on_cpu include/linux/sched.h:2282 [inline]
+BUG: KASAN: slab-use-after-free in mutex_can_spin_on_owner kernel/locking/mutex.c:397 [inline]
+BUG: KASAN: slab-use-after-free in mutex_optimistic_spin kernel/locking/mutex.c:440 [inline]
+BUG: KASAN: slab-use-after-free in __mutex_lock_common kernel/locking/mutex.c:602 [inline]
+BUG: KASAN: slab-use-after-free in __mutex_lock+0x1e25/0x25b0 kernel/locking/mutex.c:760
+Read of size 4 at addr ffff888102a08034 by task syz-executor247/275
+
+CPU: 1 UID: 0 PID: 275 Comm: syz-executor247 Tainted: G      D             6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Tainted: [D]=DIE
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0xca/0x120 lib/dump_stack.c:120
+ print_address_description mm/kasan/report.c:378 [inline]
+ print_report+0xcf/0x610 mm/kasan/report.c:482
+ kasan_report+0x96/0xd0 mm/kasan/report.c:595
+ owner_on_cpu include/linux/sched.h:2282 [inline]
+ mutex_can_spin_on_owner kernel/locking/mutex.c:397 [inline]
+ mutex_optimistic_spin kernel/locking/mutex.c:440 [inline]
+ __mutex_lock_common kernel/locking/mutex.c:602 [inline]
+ __mutex_lock+0x1e25/0x25b0 kernel/locking/mutex.c:760
+ mac_hid_toggle_emumouse+0x8a/0x640 drivers/macintosh/mac_hid.c:193
+ proc_sys_call_handler+0x377/0x550 fs/proc/proc_sysctl.c:600
+ new_sync_write fs/read_write.c:593 [inline]
+ vfs_write fs/read_write.c:686 [inline]
+ vfs_write+0xb9b/0x1190 fs/read_write.c:666
+ ksys_write+0x121/0x240 fs/read_write.c:738
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f15a56c9f04
+Code: 89 02 b8 ff ff ff ff eb ba e8 a8 13 00 00 0f 1f 84 00 00 00 00 00 f3 0f 1e fa 80 3d bd aa 09 00 00 74 13 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 54 c3 0f 1f 00 55 48 89 e5 48 83 ec 20 48 89
+RSP: 002b:00007ffeea923548 EFLAGS: 00000202 ORIG_RAX: 0000000000000001
+RAX: ffffffffffffffda RBX: 0000000000000001 RCX: 00007f15a56c9f04
+RDX: 0000000000000001 RSI: 00007ffeea923550 RDI: 0000000000000003
+RBP: 0000000000000003 R08: 0000000000000064 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000000000001
+R13: 00007ffeea923550 R14: 00007f15a575fcd0 R15: 0000000000000001
+ </TASK>
+
+Allocated by task 264:
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:56
+ kasan_save_track+0x14/0x30 mm/kasan/common.c:77
+ unpoison_slab_object mm/kasan/common.c:342 [inline]
+ __kasan_slab_alloc+0x59/0x70 mm/kasan/common.c:368
+ kasan_slab_alloc include/linux/kasan.h:252 [inline]
+ slab_post_alloc_hook mm/slub.c:4962 [inline]
+ slab_alloc_node mm/slub.c:5272 [inline]
+ kmem_cache_alloc_node_noprof+0x1f0/0x6f0 mm/slub.c:5324
+ alloc_task_struct_node kernel/fork.c:184 [inline]
+ dup_task_struct kernel/fork.c:873 [inline]
+ copy_process+0x472/0x7460 kernel/fork.c:2012
+ kernel_clone+0xea/0xe30 kernel/fork.c:2609
+ __do_sys_clone+0xce/0x120 kernel/fork.c:2750
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+
+Freed by task 58:
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:56
+ kasan_save_track+0x14/0x30 mm/kasan/common.c:77
+ __kasan_save_free_info+0x3a/0x60 mm/kasan/generic.c:587
+ kasan_save_free_info mm/kasan/kasan.h:406 [inline]
+ poison_slab_object mm/kasan/common.c:252 [inline]
+ __kasan_slab_free+0x43/0x70 mm/kasan/common.c:284
+ kasan_slab_free include/linux/kasan.h:234 [inline]
+ slab_free_hook mm/slub.c:2530 [inline]
+ slab_free mm/slub.c:6619 [inline]
+ kmem_cache_free+0x31d/0x630 mm/slub.c:6729
+ rcu_do_batch kernel/rcu/tree.c:2605 [inline]
+ rcu_core+0x9fc/0x2280 kernel/rcu/tree.c:2861
+ handle_softirqs+0x19b/0x740 kernel/softirq.c:622
+ __do_softirq kernel/softirq.c:656 [inline]
+ invoke_softirq kernel/softirq.c:496 [inline]
+ __irq_exit_rcu kernel/softirq.c:723 [inline]
+ irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1052 [inline]
+ sysvec_apic_timer_interrupt+0x70/0x80 arch/x86/kernel/apic/apic.c:1052
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+
+Last potentially related work creation:
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:56
+ kasan_record_aux_stack+0x89/0xa0 mm/kasan/generic.c:559
+ __call_rcu_common.constprop.0+0x70/0xae0 kernel/rcu/tree.c:3123
+ put_task_struct include/linux/sched/task.h:159 [inline]
+ delayed_put_task_struct+0x1bb/0x260 kernel/exit.c:231
+ rcu_do_batch kernel/rcu/tree.c:2605 [inline]
+ rcu_core+0x9fc/0x2280 kernel/rcu/tree.c:2861
+ handle_softirqs+0x19b/0x740 kernel/softirq.c:622
+ __do_softirq kernel/softirq.c:656 [inline]
+ invoke_softirq kernel/softirq.c:496 [inline]
+ __irq_exit_rcu kernel/softirq.c:723 [inline]
+ irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1052 [inline]
+ sysvec_apic_timer_interrupt+0x70/0x80 arch/x86/kernel/apic/apic.c:1052
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+
+Second to last potentially related work creation:
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:56
+ kasan_record_aux_stack+0x89/0xa0 mm/kasan/generic.c:559
+ __call_rcu_common.constprop.0+0x70/0xae0 kernel/rcu/tree.c:3123
+ put_task_struct_rcu_user+0x75/0xc0 kernel/exit.c:237
+ release_task+0x1057/0x1ae0 kernel/exit.c:308
+ wait_task_zombie kernel/exit.c:1269 [inline]
+ wait_consider_task+0x2d31/0x3a20 kernel/exit.c:1496
+ do_wait_thread kernel/exit.c:1559 [inline]
+ __do_wait+0x21e/0x8f0 kernel/exit.c:1677
+ do_wait+0x1e9/0x560 kernel/exit.c:1711
+ kernel_wait4+0x14e/0x260 kernel/exit.c:1870
+ __do_sys_wait4+0x149/0x160 kernel/exit.c:1898
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+
+The buggy address belongs to the object at ffff888102a08000
+ which belongs to the cache task_struct of size 6784
+The buggy address is located 52 bytes inside of
+ freed 6784-byte region [ffff888102a08000, ffff888102a09a80)
+
+The buggy address belongs to the physical page:
+page: refcount:0 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x102a08
+head: order:3 mapcount:0 entire_mapcount:0 nr_pages_mapped:0 pincount:0
+memcg:ffff8881077825c1
+flags: 0x200000000000040(head|node=0|zone=2)
+page_type: f5(slab)
+raw: 0200000000000040 ffff8881001d2000 dead000000000122 0000000000000000
+raw: 0000000000000000 0000000080040004 00000000f5000000 ffff8881077825c1
+head: 0200000000000040 ffff8881001d2000 dead000000000122 0000000000000000
+head: 0000000000000000 0000000080040004 00000000f5000000 ffff8881077825c1
+head: 0200000000000003 ffffea00040a8201 00000000ffffffff 00000000ffffffff
+head: 0000000000000000 0000000000000000 00000000ffffffff 0000000000000008
+page dumped because: kasan: bad access detected
+
+Memory state around the buggy address:
+ ffff888102a07f00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ ffff888102a07f80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+>ffff888102a08000: fa fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+                                     ^
+ ffff888102a08080: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+ ffff888102a08100: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+==================================================================
+----------------
+Code disassembly (best guess):
+   0:	90                   	nop
+   1:	90                   	nop
+   2:	90                   	nop
+   3:	90                   	nop
+   4:	f3 0f 1e fa          	endbr64
+   8:	55                   	push   %rbp
+   9:	48 89 fd             	mov    %rdi,%rbp
+   c:	53                   	push   %rbx
+   d:	e8 82 40 ec fd       	call   0xfdec4094
+  12:	48 8d bd 80 07 00 00 	lea    0x780(%rbp),%rdi
+  19:	48 b8 00 00 00 00 00 	movabs $0xdffffc0000000000,%rax
+  20:	fc ff df
+  23:	48 89 fa             	mov    %rdi,%rdx
+  26:	48 c1 ea 03          	shr    $0x3,%rdx
+* 2a:	0f b6 04 02          	movzbl (%rdx,%rax,1),%eax <-- trapping instruction
+  2e:	84 c0                	test   %al,%al
+  30:	74 06                	je     0x38
+  32:	0f 8e ac 00 00 00    	jle    0xe4
+  38:	0f b6 9d 80 07 00 00 	movzbl 0x780(%rbp),%ebx
+  3f:	31                   	.byte 0x31
+

@@ -1,0 +1,50 @@
+ext4: Unknown parameter 'noacl'
+hugetlbfs: syz.6.206 (5263): Using mlock ulimits for SHM_HUGETLB is obsolete
+EXT4-fs (loop6): couldn't mount RDWR because of unsupported optional features (bc0000)
+------------[ cut here ]------------
+kernel BUG at fs/ext4/inode.c:2809!
+Oops: invalid opcode: 0000 [#1] SMP KASAN NOPTI
+CPU: 1 UID: 0 PID: 276 Comm: kworker/u16:8 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Workqueue: writeback wb_workfn (flush-7:3)
+RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40 fs/ext4/inode.c:2809
+Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+RSP: 0018:ffff888107df7310 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81f07130
+RDX: 0000000000000001 RSI: ffff888110a7b780 RDI: 0000000000000002
+RBP: ffff888107df74d0 R08: 0000000000000000 R09: ffffed1022379731
+EXT4-fs (loop6): #blocks per group too big: 24576
+R10: ffffed1022379730 R11: ffff888111bcb987 R12: ffff888111bcb980
+R13: 0000000000000001 R14: ffff888107df7510 R15: ffff888111bcbbc8
+FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00005647292c0c70 CR3: 0000000102d69000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ ext4_writepages+0x369/0x7a0 fs/ext4/inode.c:3026
+ do_writepages+0x244/0x5c0 mm/page-writeback.c:2598
+ __writeback_single_inode+0x109/0x12a0 fs/fs-writeback.c:1737
+ writeback_sb_inodes+0x6f9/0x1b00 fs/fs-writeback.c:2030
+ wb_writeback+0x1a5/0x9e0 fs/fs-writeback.c:2216
+ wb_do_writeback fs/fs-writeback.c:2363 [inline]
+ wb_workfn+0x12d/0xcb0 fs/fs-writeback.c:2403
+ process_one_work kernel/workqueue.c:3257 [inline]
+ process_scheduled_works+0x54f/0x1910 kernel/workqueue.c:3340
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3421
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40 fs/ext4/inode.c:2809
+Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+RSP: 0018:ffff888107df7310 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81f07130
+RDX: 0000000000000001 RSI: ffff888110a7b780 RDI: 0000000000000002
+RBP: ffff888107df74d0 R08: 0000000000000000 R09: ffffed1022379731
+R10: ffffed1022379730 R11: ffff888111bcb987 R12: ffff888111bcb980
+R13: 0000000000000001 R14: ffff888107df7510 R15: ffff888111bcbbc8
+FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00005647292c0c70 CR3: 0000000102d69000 CR4: 0000000000350ef0

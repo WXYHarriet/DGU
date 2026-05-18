@@ -1,0 +1,198 @@
+loop7: detected capacity change from 0 to 512
+EXT4-fs (loop7): Invalid log block size: 12
+9pnet_fd: p9_fd_create_tcp (8254): problem connecting socket to 127.0.0.1
+loop7: detected capacity change from 0 to 8192
+watchdog: BUG: soft lockup - CPU#0 stuck for 26s! [syz.9.395:7875]
+Modules linked in:
+irq event stamp: 5575853
+hardirqs last  enabled at (5575852): [<ffffffff84a97fc4>] irqentry_exit+0x184/0x6d0 kernel/entry/common.c:219
+hardirqs last disabled at (5575853): [<ffffffff84a96c9f>] sysvec_apic_timer_interrupt+0xf/0x80 arch/x86/kernel/apic/apic.c:1056
+softirqs last  enabled at (5570926): [<ffffffff813b9880>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (5570926): [<ffffffff813b9880>] handle_softirqs+0x490/0x700 kernel/softirq.c:650
+softirqs last disabled at (5570929): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (5570929): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (5570929): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (5570929): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+CPU: 0 UID: 0 PID: 7875 Comm: syz.9.395 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__sanitizer_cov_trace_pc+0x45/0x50 kernel/kcov.c:235
+Code: e8 40 ff ff ff 84 c0 74 20 48 8b 93 e0 14 00 00 8b 8b dc 14 00 00 48 8b 02 48 83 c0 01 48 39 c1 76 07 48 89 02 48 89 2c c2 5b <5d> e9 35 22 37 03 0f 1f 44 00 00 90 90 90 90 90 90 90 90 90 90 90
+RSP: 0018:ffff88811ae08530 EFLAGS: 00000246
+RAX: 0000000000000000 RBX: 0000000000000000 RCX: ffffffff818ae8a1
+RDX: 0000000000000000 RSI: ffff888104e39bc0 RDI: 0000000000000002
+RBP: ffffffff818af462 R08: 0000000000000000 R09: ffffe8ffffc00158
+R10: ffff88811ae08800 R11: ffffe8ffffc2565c R12: dffffc0000000000
+R13: 0000000000000000 R14: ffff88811ae085c0 R15: ffffe8ffffc25638
+FS:  00007f0e911d76c0(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f45a6a50000 CR3: 00000001042a0000 CR4: 0000000000350ff0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 00000000000d0602
+Call Trace:
+ <IRQ>
+ perf_tp_event+0x3e2/0xcd0 kernel/events/core.c:11098
+ perf_trace_run_bpf_submit+0xef/0x180 kernel/events/core.c:11014
+ do_perf_trace_lock include/trace/events/lock.h:50 [inline]
+ perf_trace_lock+0x32d/0x5e0 include/trace/events/lock.h:50
+ __do_trace_lock_release include/trace/events/lock.h:69 [inline]
+ trace_lock_release include/trace/events/lock.h:69 [inline]
+ lock_release+0x1ab/0x270 kernel/locking/lockdep.c:5879
+ rcu_lock_release include/linux/rcupdate.h:341 [inline]
+ rcu_read_unlock include/linux/rcupdate.h:897 [inline]
+ class_rcu_destructor include/linux/rcupdate.h:1195 [inline]
+ unwind_next_frame+0x598/0x2070 arch/x86/kernel/unwind_orc.c:495
+ arch_stack_walk+0x86/0xf0 arch/x86/kernel/stacktrace.c:25
+ stack_trace_save+0x8e/0xc0 kernel/stacktrace.c:122
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:57
+ kasan_save_track+0x14/0x30 mm/kasan/common.c:78
+ kasan_save_free_info+0x3a/0x60 mm/kasan/generic.c:584
+ poison_slab_object mm/kasan/common.c:253 [inline]
+ __kasan_slab_free+0x43/0x70 mm/kasan/common.c:285
+ kasan_slab_free include/linux/kasan.h:235 [inline]
+ slab_free_hook mm/slub.c:2540 [inline]
+ slab_free_after_rcu_debug+0xbd/0x250 mm/slub.c:6733
+ rcu_do_batch kernel/rcu/tree.c:2605 [inline]
+ rcu_core+0xa6d/0x2240 kernel/rcu/tree.c:2857
+ handle_softirqs+0x19b/0x700 kernel/softirq.c:622
+ __do_softirq kernel/softirq.c:656 [inline]
+ invoke_softirq kernel/softirq.c:496 [inline]
+ __irq_exit_rcu kernel/softirq.c:723 [inline]
+ irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1056 [inline]
+ sysvec_apic_timer_interrupt+0x70/0x80 arch/x86/kernel/apic/apic.c:1056
+ </IRQ>
+ <TASK>
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+RIP: 0010:percpu_counter_sum include/linux/percpu_counter.h:105 [inline]
+RIP: 0010:check_mm kernel/fork.c:629 [inline]
+RIP: 0010:__mmdrop+0x150/0x3f0 kernel/fork.c:730
+Code: b5 28 07 00 00 31 db 48 89 04 24 4c 89 e8 4d 89 f4 83 e0 07 83 c0 03 88 44 24 0b e8 2a 44 3c 00 4c 89 e7 e8 a2 60 2e 01 31 ff <49> 89 c7 48 89 c6 e8 55 46 3c 00 4d 85 ff 0f 85 f9 00 00 00 e8 07
+RSP: 0018:ffff8881045cfa28 EFLAGS: 00000246
+RAX: 0000000000000000 RBX: 0000000000000000 RCX: 0000000000000007
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: ffff88810f7b1780 R08: 0000000000000001 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: ffff88810f7b1ea8
+R13: ffff888104e39bc0 R14: ffff88810f7b1ea8 R15: 0000000000000402
+ mmdrop include/linux/sched/mm.h:55 [inline]
+ mmdrop_sched include/linux/sched/mm.h:83 [inline]
+ mmdrop_lazy_tlb_sched include/linux/sched/mm.h:110 [inline]
+ finish_task_switch+0x3fd/0x5b0 kernel/sched/core.c:5143
+ context_switch kernel/sched/core.c:5263 [inline]
+ __schedule+0x11b4/0x3f90 kernel/sched/core.c:6867
+ preempt_schedule_common+0x2f/0x60 kernel/sched/core.c:7051
+ __cond_resched+0x22/0x30 kernel/sched/core.c:7378
+ might_resched include/linux/kernel.h:61 [inline]
+ __mutex_lock_common kernel/locking/mutex.c:591 [inline]
+ __mutex_lock+0xdf/0x24d0 kernel/locking/mutex.c:776
+ __do_sys_perf_event_open+0x18bc/0x29a0 kernel/events/core.c:13839
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x430 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f0e92bafba9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f0e911d7058 EFLAGS: 00000246 ORIG_RAX: 000000000000012a
+RAX: ffffffffffffffda RBX: 00007f0e92e35fa0 RCX: 00007f0e92bafba9
+RDX: ffffffffffffffff RSI: 0000000000000000 RDI: 0000200000000100
+RBP: 00007f0e92c5b44c R08: 0000000000000000 R09: 0000000000000000
+R10: 000000000000000b R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f0e92e35fa0 R15: 00007ffd5de67358
+ </TASK>
+Sending NMI from CPU 0 to CPUs 1-3:
+NMI backtrace for cpu 1
+CPU: 1 UID: 0 PID: 77 Comm: kworker/1:3 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Workqueue: events e1000_watchdog
+RIP: 0010:e1000_update_stats+0x310/0x1e70 drivers/net/ethernet/intel/e1000/e1000_main.c:3623
+Code: df 48 89 f9 48 c1 e9 03 80 3c 01 00 0f 85 f3 1a 00 00 45 89 ed 48 8b 83 50 05 00 00 4c 01 ab 50 07 00 00 44 8b a8 7c 40 00 00 <48> 8d 83 58 07 00 00 48 89 c1 48 89 44 24 10 48 b8 00 00 00 00 00
+RSP: 0018:ffff888104d6f9f0 EFLAGS: 00000002
+RAX: ffffc90000140000 RBX: ffff888104a10c80 RCX: 1ffff1102094227a
+RDX: 1ffff110209421d6 RSI: 0000000000000004 RDI: ffff888104a113d0
+RBP: 1ffff110209adf4d R08: ffffed10209adf2c R09: ffffed10209adf2d
+R10: ffffed10209adf2c R11: 0000000000000003 R12: ffff888104a10e98
+R13: 0000000000000000 R14: ffff888104a10000 R15: ffff888104a10c80
+FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007fb87d4cf6f4 CR3: 0000000100f57000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ e1000_watchdog+0x363/0x1520 drivers/net/ethernet/intel/e1000/e1000_main.c:2500
+ process_one_work kernel/workqueue.c:3257 [inline]
+ process_scheduled_works+0x54f/0x1910 kernel/workqueue.c:3340
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3421
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+NMI backtrace for cpu 3
+CPU: 3 UID: 0 PID: 47 Comm: kworker/3:1 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Workqueue: events_freezable_pwr_efficient disk_events_workfn
+RIP: 0010:ioread8+0x48/0xa0 lib/iomap.c:81
+Code: ff ff 03 00 77 60 e8 47 31 17 ff 4c 89 e6 bf 00 00 01 00 e8 7a 33 17 ff 49 81 fc 00 00 01 00 76 1c e8 2c 31 17 ff 44 89 e2 ec <44> 0f b6 e0 e8 1f 31 17 ff 44 89 e0 41 5c e9 95 53 4e 02 e8 10 31
+RSP: 0018:ffff888100bbf248 EFLAGS: 00000046
+RAX: 000000001f32d950 RBX: ffff8881038c0000 RCX: ffffffff825e0846
+RDX: 0000000000010177 RSI: ffff888100a75340 RDI: 0000000000000002
+RBP: 00000000000003e7 R08: 000000311f32d900 R09: 0000000000000003
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: 0000000000010177
+R13: ffff8881038c0008 R14: ffffffff860ebc00 R15: dffffc0000000000
+FS:  0000000000000000(0000) GS:ffff8881937bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffedf2c73b8 CR3: 000000010edb2000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ ata_sff_check_status+0x31/0x40 drivers/ata/libata-sff.c:65
+ ata_sff_busy_wait include/linux/libata.h:2138 [inline]
+ ata_wait_idle include/linux/libata.h:2157 [inline]
+ ata_dev_select.constprop.0+0xb6/0x220 drivers/ata/libata-sff.c:290
+ ata_sff_qc_issue+0x114/0x1280 drivers/ata/libata-sff.c:1294
+ ata_bmdma_qc_issue+0x60f/0xe10 drivers/ata/libata-sff.c:2647
+ ata_qc_issue+0x672/0xdd0 drivers/ata/libata-core.c:5113
+ ata_scsi_translate drivers/ata/libata-scsi.c:1755 [inline]
+ __ata_scsi_queuecmd+0xa45/0x1450 drivers/ata/libata-scsi.c:4355
+ ata_scsi_queuecmd+0xad/0x170 drivers/ata/libata-scsi.c:4400
+ scsi_dispatch_cmd drivers/scsi/scsi_lib.c:1646 [inline]
+ scsi_queue_rq+0x1b05/0x30c0 drivers/scsi/scsi_lib.c:1903
+ blk_mq_dispatch_rq_list+0x3ae/0x1a50 block/blk-mq.c:2138
+ __blk_mq_sched_dispatch_requests+0x285/0x1510 block/blk-mq-sched.c:299
+ blk_mq_sched_dispatch_requests+0xd7/0x1b0 block/blk-mq-sched.c:329
+ blk_mq_run_hw_queue+0x89b/0xcb0 block/blk-mq.c:2376
+ blk_execute_rq+0x41a/0xce0 block/blk-mq.c:1513
+ scsi_execute_cmd+0x3ed/0xdc0 drivers/scsi/scsi_lib.c:331
+ sr_get_events drivers/scsi/sr.c:177 [inline]
+ sr_check_events+0x1bc/0xb40 drivers/scsi/sr.c:218
+ cdrom_update_events drivers/cdrom/cdrom.c:1464 [inline]
+ cdrom_check_events+0x68/0x110 drivers/cdrom/cdrom.c:1474
+ sr_block_check_events+0xc3/0x100 drivers/scsi/sr.c:573
+ disk_check_events+0xc5/0x380 block/disk-events.c:193
+ process_one_work kernel/workqueue.c:3257 [inline]
+ process_scheduled_works+0x54f/0x1910 kernel/workqueue.c:3340
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3421
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+NMI backtrace for cpu 2
+CPU: 2 UID: 0 PID: 0 Comm: swapper/2 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:pv_native_safe_halt+0x1e/0x30 arch/x86/kernel/paravirt.c:82
+Code: 90 90 90 90 90 90 90 90 90 90 90 90 f3 0f 1e fa 0f 1f 44 00 00 eb 0c 0f 1f 44 00 00 0f 00 2d f9 2d 1c 00 0f 1f 44 00 00 fb f4 <e9> 6d ea 02 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 00 90 90 90 90
+RSP: 0018:ffff8881003efe60 EFLAGS: 00000202
+RAX: 0000000000054d15 RBX: 0000000000000002 RCX: ffffffff84a98827
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff814cfe5a
+RBP: dffffc0000000000 R08: 0000000000000001 R09: ffffed10235e63db
+R10: ffffed10235e63da R11: ffff88811af31ed3 R12: ffffffff8642c850
+R13: 1ffff1102007dfd2 R14: 0000000000000000 R15: 0000000000000000
+FS:  0000000000000000(0000) GS:ffff88819373f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007fae6ad15000 CR3: 000000010fc1b000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ arch_safe_halt arch/x86/include/asm/paravirt.h:107 [inline]
+ default_idle+0xe/0x20 arch/x86/kernel/process.c:767
+ default_idle_call+0x6c/0xb0 kernel/sched/idle.c:122
+ cpuidle_idle_call kernel/sched/idle.c:191 [inline]
+ do_idle+0x2fa/0x3c0 kernel/sched/idle.c:332
+ cpu_startup_entry+0x4f/0x60 kernel/sched/idle.c:430
+ start_secondary+0x1bd/0x210 arch/x86/kernel/smpboot.c:312
+ common_startup_64+0x13e/0x148
+ </TASK>

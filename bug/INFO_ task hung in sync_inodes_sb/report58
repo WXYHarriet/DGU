@@ -1,0 +1,229 @@
+EXT4-fs error (device loop3): __ext4_ext_dirty:206: inode #18: comm kworker/u16:9: mark_inode_dirty error
+EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Out of memory
+EXT4-fs error (device loop3): __ext4_ext_dirty:206: inode #18: comm kworker/u16:9: mark_inode_dirty error
+INFO: task syz.3.835:11142 blocked for more than 143 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+      Blocked by coredump.
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.3.835       state:D stack:27496 pid:11142 tgid:11142 ppid:5036   task_flags:0x40044c flags:0x00080003
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ wb_wait_for_completion+0x183/0x280 fs/fs-writeback.c:216
+ sync_inodes_sb+0x1b2/0xb00 fs/fs-writeback.c:2873
+ sync_filesystem fs/sync.c:64 [inline]
+ sync_filesystem+0x17a/0x2a0 fs/sync.c:30
+ generic_shutdown_super+0x78/0x4a0 fs/super.c:621
+ kill_block_super+0x3b/0x90 fs/super.c:1722
+ ext4_kill_sb+0x6c/0xb0 fs/ext4/super.c:7403
+ deactivate_locked_super+0xbb/0x130 fs/super.c:473
+ deactivate_super fs/super.c:506 [inline]
+ deactivate_super+0xb1/0xd0 fs/super.c:502
+ cleanup_mnt+0x378/0x510 fs/namespace.c:1327
+ task_work_run+0x172/0x280 kernel/task_work.c:227
+ exit_task_work include/linux/task_work.h:40 [inline]
+ do_exit+0x8c1/0x2da0 kernel/exit.c:966
+ do_group_exit+0xd3/0x2a0 kernel/exit.c:1107
+ get_signal+0x2389/0x2500 kernel/signal.c:3034
+ arch_do_signal_or_restart+0x80/0x870 arch/x86/kernel/signal.c:337
+ exit_to_user_mode_loop+0x95/0x120 kernel/entry/common.c:40
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2eb/0x380 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fdd5e062465
+RSP: 002b:00007fdd5c64efa0 EFLAGS: 00000293 ORIG_RAX: 00000000000000e6
+RAX: fffffffffffffdfc RBX: 00007fdd5e2b5fa0 RCX: 00007fdd5e062465
+RDX: 00007fdd5c64efe0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007fdd5e0db44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000293 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007fdd5e2b5fa0 R15: 00007ffeabc27508
+ </TASK>
+INFO: task syz.6.1022:12546 blocked for more than 143 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.6.1022      state:D stack:25944 pid:12546 tgid:12540 ppid:7639   task_flags:0x400140 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ rwsem_down_read_slowpath+0x601/0x1020 kernel/locking/rwsem.c:1086
+ __down_read_common kernel/locking/rwsem.c:1261 [inline]
+ __down_read kernel/locking/rwsem.c:1274 [inline]
+ down_read+0xec/0x3f0 kernel/locking/rwsem.c:1539
+ __super_lock fs/super.c:59 [inline]
+ super_lock+0x179/0x3e0 fs/super.c:121
+ __iterate_supers+0x2b8/0x390 fs/super.c:922
+ quota_sync_all+0xc8/0xd0 fs/quota/quota.c:69
+ __do_sys_quotactl fs/quota/quota.c:938 [inline]
+ __se_sys_quotactl fs/quota/quota.c:917 [inline]
+ __x64_sys_quotactl+0x253/0x3b0 fs/quota/quota.c:917
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f43b2a8fba9
+RSP: 002b:00007f43b10af058 EFLAGS: 00000246 ORIG_RAX: 00000000000000b3
+RAX: ffffffffffffffda RBX: 00007f43b2d15fa0 RCX: 00007f43b2a8fba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff80000100
+RBP: 00007f43b2b3b44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f43b2d15fa0 R15: 00007ffc51c4ed28
+ </TASK>
+INFO: task syz.6.1022:12546 <reader> blocked on an rw-semaphore likely owned by task syz.3.835:11142 <writer>
+INFO: task syz.8.1077:12896 blocked for more than 143 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.8.1077      state:D stack:26968 pid:12896 tgid:12894 ppid:4017   task_flags:0x400740 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_timeout+0x244/0x280 kernel/time/sleep_timeout.c:75
+ do_wait_for_common kernel/sched/completion.c:100 [inline]
+ __wait_for_common kernel/sched/completion.c:121 [inline]
+ wait_for_common kernel/sched/completion.c:132 [inline]
+ wait_for_completion_state+0x2d3/0x460 kernel/sched/completion.c:269
+ coredump_wait fs/coredump.c:534 [inline]
+ vfs_coredump+0x8b6/0x4eb0 fs/coredump.c:1131
+ get_signal+0x19ec/0x2500 kernel/signal.c:3019
+ arch_do_signal_or_restart+0x80/0x870 arch/x86/kernel/signal.c:337
+ exit_to_user_mode_loop+0x95/0x120 kernel/entry/common.c:40
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2eb/0x380 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f8181a1fba9
+RSP: 002b:00007f818003f0e8 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 00007f8181ca5fa8 RCX: 00007f8181a1fba9
+RDX: 00000000000f4240 RSI: 0000000000000081 RDI: 00007f8181ca5fac
+RBP: 00007f8181ca5fa0 R08: 00007f8181848010 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007f8181ca5fac
+R13: 0000000000000000 R14: 00007ffe89e95d50 R15: 00007ffe89e95e38
+ </TASK>
+INFO: task syz.8.1077:12929 blocked for more than 143 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.8.1077      state:D stack:29624 pid:12929 tgid:12894 ppid:4017   task_flags:0x400040 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ rwsem_down_read_slowpath+0x601/0x1020 kernel/locking/rwsem.c:1086
+ __down_read_common kernel/locking/rwsem.c:1261 [inline]
+ __down_read kernel/locking/rwsem.c:1274 [inline]
+ down_read+0xec/0x3f0 kernel/locking/rwsem.c:1539
+ __super_lock fs/super.c:59 [inline]
+ super_lock+0x179/0x3e0 fs/super.c:121
+ __iterate_supers+0x2b8/0x390 fs/super.c:922
+ ksys_sync+0x89/0x150 fs/sync.c:102
+ __do_sys_sync+0xe/0x20 fs/sync.c:113
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f8181a1fba9
+RSP: 002b:00007f818001e058 EFLAGS: 00000246 ORIG_RAX: 00000000000000a2
+RAX: ffffffffffffffda RBX: 00007f8181ca6080 RCX: 00007f8181a1fba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007f8181ca6080 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000001 R14: 00007f8181ca6080 R15: 00007ffe89e95e38
+ </TASK>
+INFO: task syz.8.1077:12929 <reader> blocked on an rw-semaphore likely owned by task syz.3.835:11142 <writer>
+
+Showing all locks held in the system:
+1 lock held by khungtaskd/40:
+ #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: rcu_read_lock include/linux/rcupdate.h:867 [inline]
+ #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: debug_show_all_locks+0x36/0x1c0 kernel/locking/lockdep.c:6775
+4 locks held by kworker/u16:2/52:
+ #0: ffff888100aae148 ((wq_completion)writeback){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3238 [inline]
+ #0: ffff888100aae148 ((wq_completion)writeback){+.+.}-{0:0}, at: process_scheduled_works+0x1096/0x19c0 kernel/workqueue.c:3346
+ #1: ffff88810117fd38 ((work_completion)(&(&wb->dwork)->work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3239 [inline]
+ #1: ffff88810117fd38 ((work_completion)(&(&wb->dwork)->work)){+.+.}-{0:0}, at: process_scheduled_works+0x4d1/0x19c0 kernel/workqueue.c:3346
+ #2: ffff8881058d80e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_trylock_shared+0x21/0x100 fs/super.c:562
+ #3: ffff8881058dab90 (&sbi->s_writepages_rwsem){++++}-{0:0}, at: do_writepages+0x244/0x5c0 mm/page-writeback.c:2604
+2 locks held by in:imklog/172:
+ #0: ffff88810a8e5b38 (&f->f_pos_lock){+.+.}-{4:4}, at: fdget_pos+0x2a4/0x370 fs/file.c:1232
+ #1: ffff8881048255e0 (&mm->mmap_lock){++++}-{4:4}, at: rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ #1: ffff8881048255e0 (&mm->mmap_lock){++++}-{4:4}, at: rcu_read_lock include/linux/rcupdate.h:867 [inline]
+ #1: ffff8881048255e0 (&mm->mmap_lock){++++}-{4:4}, at: class_rcu_constructor include/linux/rcupdate.h:1195 [inline]
+ #1: ffff8881048255e0 (&mm->mmap_lock){++++}-{4:4}, at: unwind_next_frame+0x13f/0x2070 arch/x86/kernel/unwind_orc.c:479
+4 locks held by kworker/u16:9/299:
+2 locks held by syz.3.835/11142:
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:57 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock_excl fs/super.c:72 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: deactivate_super fs/super.c:505 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: deactivate_super+0xa9/0xd0 fs/super.c:502
+ #1: ffff888103d98820 (&bdi->wb_switch_rwsem){++++}-{4:4}, at: bdi_down_write_wb_switch_rwsem fs/fs-writeback.c:387 [inline]
+ #1: ffff888103d98820 (&bdi->wb_switch_rwsem){++++}-{4:4}, at: sync_inodes_sb+0x198/0xb00 fs/fs-writeback.c:2871
+1 lock held by syz.6.1022/12546:
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.8.1077/12929:
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.0.1326/15656:
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.9.1535/17681:
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.5.1868/20089:
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.3.1964/21041:
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:57 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x239/0x3e0 fs/super.c:121
+1 lock held by syz.1.2024/22103:
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.0.2048/22664:
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.9.2332/24938:
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.8.2405/26381:
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.2.2427/27339:
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff88810c7940e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+
+=============================================
+
+EXT4-fs error: 21676 callbacks suppressed
+EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Out of memory
+EXT4-fs error (device loop3): __ext4_ext_dirty:206: inode #18: comm kworker/u16:9: mark_inode_dirty error
+EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Out of memory
+EXT4-fs error (device loop3): __ext4_ext_dirty:206: inode #18: comm kworker/u16:9: mark_inode_dirty error
+EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Out of memory
+EXT4-fs error (device loop3): __ext4_ext_dirty:206: inode #18: comm kworker/u16:9: mark_inode_dirty error
+EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Out of memory
+EXT4-fs error (device loop3): __ext4_ext_dirty:206: inode #18: comm kworker/u16:9: mark_inode_dirty error
+EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Out of memory
+EXT4-fs error (device loop3): __ext4_ext_dirty:206: inode #18: comm kworker/u16:9: mark_inode_dirty error
+EXT4-fs error: 21313 callbacks suppressed
+EXT4-fs error (device loop3): __ext4_ext_dirty:206: inode #18: comm kworker/u16:9: mark_inode_dirty error
+EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Out of memory
+EXT4-fs error (device loop3): __ext4_ext_dirty:206: inode #18: comm kworker/u16:9: mark_inode_dirty error
+EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Out of memory
+EXT4-fs error (device loop3): __ext4_ext_dirty:206: inode #18: comm kworker/u16:9: mark_inode_dirty error
+EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Out of memory
+EXT4-fs error (device loop3): __ext4_ext_dirty:206: inode #18: comm kworker/u16:9: mark_inode_dirty error
+EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Out of memory
+EXT4-fs error (device loop3): __ext4_ext_dirty:206: inode #18: comm kworker/u16:9: mark_inode_dirty error
+EXT4-fs error (device loop3) in ext4_reserve_inode_write:6313: Out of memory

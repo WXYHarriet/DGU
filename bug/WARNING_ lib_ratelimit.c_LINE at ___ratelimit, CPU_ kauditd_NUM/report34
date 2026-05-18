@@ -1,0 +1,70 @@
+loop2: detected capacity change from 0 to 2048
+loop1: detected capacity change from 0 to 512
+------------[ cut here ]------------
+Negative interval (-1000) or burst (10): Uninitialized ratelimit_state structure?
+WARNING: lib/ratelimit.c:43 at ___ratelimit+0x340/0x910 lib/ratelimit.c:43, CPU#0: kauditd/39
+Modules linked in:
+CPU: 0 UID: 0 PID: 39 Comm: kauditd Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:___ratelimit+0x345/0x910 lib/ratelimit.c:43
+Code: 00 00 00 e8 8d f0 cf fc 31 ff 89 de e8 94 f2 cf fc 85 db 0f 84 a2 00 00 00 e8 77 f0 cf fc 48 8d 3d e0 14 a3 01 44 89 f2 89 de <67> 48 0f b9 3a e8 61 f0 cf fc 31 ff 89 de e8 68 f2 cf fc 85 db 0f
+loop1: detected capacity change from 0 to 2048
+RSP: 0018:ffff888100a1fc30 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: fffffffffffffc18 RCX: ffffffff84a548fc
+RDX: 000000000000000a RSI: 00000000fffffc18 RDI: ffffffff86485df0
+RBP: ffffffff85b34740 R08: 0000000000000000 R09: 0000000000000001
+loop0: detected capacity change from 0 to 512
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: ffffffff85b34784
+R13: ffffffff84cc0060 R14: 000000000000000a R15: 0000000000000001
+FS:  0000000000000000(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000200000000000 CR3: 000000010aa55000 CR4: 0000000000350ef0
+EXT4-fs (loop2): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+Call Trace:
+ <TASK>
+ kauditd_printk_skb+0x9b/0x120 kernel/audit.c:582
+ kauditd_hold_skb+0x1a/0x130 kernel/audit.c:618
+ kauditd_send_queue+0x233/0x290 kernel/audit.c:803
+ kauditd_thread+0x6b1/0xad0 kernel/audit.c:927
+EXT4-fs (loop1): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+irq event stamp: 1755
+hardirqs last  enabled at (1765): [<ffffffff8154eb28>] __up_console_sem+0x78/0x80 kernel/printk/printk.c:345
+hardirqs last disabled at (1774): [<ffffffff8154eb0d>] __up_console_sem+0x5d/0x80 kernel/printk/printk.c:343
+softirqs last  enabled at (1584): [<ffffffff813b9880>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (1584): [<ffffffff813b9880>] handle_softirqs+0x490/0x700 kernel/softirq.c:650
+softirqs last disabled at (1577): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (1577): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (1577): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (1577): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+audit: type=1400 audit(1770651356.879:10): avc:  denied  { node_bind } for  pid=3903 comm="syz.5.19" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=icmp_socket permissive=1
+audit: type=1326 audit(1770651356.879:11): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=3899 comm="syz.4.5" exe="/syz-executor" sig=31 arch=c000003e syscall=202 compat=0 ip=0x7f480691fba9 code=0x0
+EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+EXT4-fs (loop1): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+----------------
+Code disassembly (best guess):
+   0:	00 00                	add    %al,(%rax)
+   2:	00 e8                	add    %ch,%al
+   4:	8d                   	lea    (bad),%esi
+   5:	f0 cf                	lock iret
+   7:	fc                   	cld
+   8:	31 ff                	xor    %edi,%edi
+   a:	89 de                	mov    %ebx,%esi
+   c:	e8 94 f2 cf fc       	call   0xfccff2a5
+  11:	85 db                	test   %ebx,%ebx
+  13:	0f 84 a2 00 00 00    	je     0xbb
+  19:	e8 77 f0 cf fc       	call   0xfccff095
+  1e:	48 8d 3d e0 14 a3 01 	lea    0x1a314e0(%rip),%rdi        # 0x1a31505
+  25:	44 89 f2             	mov    %r14d,%edx
+  28:	89 de                	mov    %ebx,%esi
+* 2a:	67 48 0f b9 3a       	ud1    (%edx),%rdi <-- trapping instruction
+  2f:	e8 61 f0 cf fc       	call   0xfccff095
+  34:	31 ff                	xor    %edi,%edi
+  36:	89 de                	mov    %ebx,%esi
+  38:	e8 68 f2 cf fc       	call   0xfccff2a5
+  3d:	85 db                	test   %ebx,%ebx
+  3f:	0f                   	.byte 0xf

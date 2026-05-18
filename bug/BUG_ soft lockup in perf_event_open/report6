@@ -1,0 +1,251 @@
+sr 1:0:0:0: [sr0] tag#0 Add. Sense: Medium not present
+sr 1:0:0:0: [sr0] tag#0 CDB: Read(10) 28 00 00 07 ff c0 00 00 02 00
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+syz.5.381 (7166) used greatest stack depth: 21760 bytes left
+watchdog: BUG: soft lockup - CPU#0 stuck for 26s! [syz.6.409:7328]
+Modules linked in:
+irq event stamp: 5411533
+hardirqs last  enabled at (5411532): [<ffffffff84a97fc4>] irqentry_exit+0x184/0x6d0 kernel/entry/common.c:219
+hardirqs last disabled at (5411533): [<ffffffff84a96c9f>] sysvec_apic_timer_interrupt+0xf/0x80 arch/x86/kernel/apic/apic.c:1056
+softirqs last  enabled at (5405886): [<ffffffff813b9880>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (5405886): [<ffffffff813b9880>] handle_softirqs+0x490/0x700 kernel/softirq.c:650
+softirqs last disabled at (5405889): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (5405889): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (5405889): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (5405889): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+CPU: 0 UID: 0 PID: 7328 Comm: syz.6.409 Tainted: P                    6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [P]=PROPRIETARY_MODULE
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:lock_acquire+0x5b/0x2b0 kernel/locking/lockdep.c:5872
+Code: 30 31 c0 eb 4b 65 8b 05 a7 87 2b 06 89 c0 48 0f a3 05 b9 3f f0 04 0f 82 39 01 00 00 8b 0d 51 4c f0 04 85 c9 0f 85 83 00 00 00 <48> 8b 44 24 30 65 48 33 05 50 87 2b 06 0f 85 39 02 00 00 48 83 c4
+RSP: 0018:ffff88811ae08df0 EFLAGS: 00000206
+RAX: 0000000000000001 RBX: 0000000000000000 RCX: 000000008f394a6f
+RDX: 00000000604f917c RSI: ffff88810be5c200 RDI: ffff88810be5c1d8
+RBP: ffffffff85c22680 R08: 0000000000000001 R09: 0000000000000001
+R10: 0000000000000028 R11: 0000000000000000 R12: 0000000000000002
+R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000200
+FS:  00007f61ecc966c0(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f2802dceb58 CR3: 00000001108d6000 CR4: 0000000000350ef0
+Call Trace:
+ <IRQ>
+ rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ rcu_do_batch kernel/rcu/tree.c:2599 [inline]
+ rcu_core+0x998/0x2240 kernel/rcu/tree.c:2857
+ handle_softirqs+0x19b/0x700 kernel/softirq.c:622
+ __do_softirq kernel/softirq.c:656 [inline]
+ invoke_softirq kernel/softirq.c:496 [inline]
+ __irq_exit_rcu kernel/softirq.c:723 [inline]
+ irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1056 [inline]
+ sysvec_apic_timer_interrupt+0x70/0x80 arch/x86/kernel/apic/apic.c:1056
+ </IRQ>
+ <TASK>
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+RIP: 0010:__sanitizer_cov_trace_pc+0x31/0x50 kernel/kcov.c:222
+Code: 00 00 00 53 48 8b 6c 24 10 65 48 8b 1d 80 d6 08 06 48 89 de e8 40 ff ff ff 84 c0 74 20 48 8b 93 e0 14 00 00 8b 8b dc 14 00 00 <48> 8b 02 48 83 c0 01 48 39 c1 76 07 48 89 02 48 89 2c c2 5b 5d e9
+RSP: 0018:ffff8881144cfb90 EFLAGS: 00000202
+RAX: 0000000084c98701 RBX: ffff88810be5b780 RCX: 0000000000080000
+RDX: ffffc90018184000 RSI: ffff88810be5b780 RDI: 0000000000000002
+RBP: ffffffff817f8e68 R08: ffffffff84c98701 R09: 0000000000000000
+R10: ffffed1022899f98 R11: ffff8881144cfcc7 R12: ffff8881144cfc40
+R13: ffff8881144cfc50 R14: ffff8881144cfc90 R15: ffffffff85b28420
+ perf_trace_buf_alloc+0x18/0x170 kernel/trace/trace_event_perf.c:405
+ do_perf_trace_lock_acquire include/trace/events/lock.h:24 [inline]
+ perf_trace_lock_acquire+0x163/0x670 include/trace/events/lock.h:24
+ __do_trace_lock_acquire include/trace/events/lock.h:24 [inline]
+ trace_lock_acquire include/trace/events/lock.h:24 [inline]
+ lock_acquire+0xc5/0x2b0 kernel/locking/lockdep.c:5831
+ rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ rcu_read_lock_sched include/linux/rcupdate.h:958 [inline]
+ fd_install+0xb4/0x4d0 fs/file.c:688
+ __do_sys_perf_event_open+0x1978/0x29a0 kernel/events/core.c:13849
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x430 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f61ee68fba9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f61ecc96058 EFLAGS: 00000246 ORIG_RAX: 000000000000012a
+RAX: ffffffffffffffda RBX: 00007f61ee916080 RCX: 00007f61ee68fba9
+RDX: ffffffffffffffff RSI: 0000000000000000 RDI: 000020000001d000
+RBP: 00007f61ee73b44c R08: 0000000000000000 R09: 0000000000000000
+R10: ffffffffffffffff R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f61ee916080 R15: 00007ffcb62523c8
+ </TASK>
+Sending NMI from CPU 0 to CPUs 1-3:
+NMI backtrace for cpu 1
+CPU: 1 UID: 0 PID: 10881 Comm: kworker/u16:10 Tainted: P                    6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [P]=PROPRIETARY_MODULE
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:task_avdcache_reset security/selinux/hooks.c:3133 [inline]
+RIP: 0010:task_avdcache_search security/selinux/hooks.c:3159 [inline]
+RIP: 0010:selinux_inode_permission+0xba0/0x1020 security/selinux/hooks.c:3243
+Code: 89 fa 48 c1 ea 03 0f b6 14 02 48 89 f8 83 e0 07 83 c0 03 38 d0 7c 09 84 d2 74 05 e8 0a f7 84 ff 48 b8 00 00 00 00 00 fc ff df <48> 89 da 8b 6d 04 48 c1 ea 03 0f b6 14 02 48 89 d8 83 e0 07 83 c0
+RSP: 0018:ffff8880648df860 EFLAGS: 00000246
+RAX: dffffc0000000000 RBX: ffff8880636abf00 RCX: 0000000000000000
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffff88806471e044
+RBP: ffff88806471e040 R08: 0000000000000004 R09: 0000000000000004
+R10: ffff8880636abf0c R11: ffff8880636abf4b R12: ffff888064678b00
+R13: ffff888101384518 R14: ffff8880636abf04 R15: 0000000000000001
+FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007fc2273696f4 CR3: 000000004825b000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ security_inode_permission+0x8f/0xe0 security/security.c:1816
+ lookup_inode_permission_may_exec fs/namei.c:641 [inline]
+ may_lookup fs/namei.c:1908 [inline]
+ link_path_walk+0x240/0x1960 fs/namei.c:2545
+ path_openat+0x22c/0x2bf0 fs/namei.c:4792
+ do_filp_open+0x1f9/0x2f0 fs/namei.c:4823
+ do_open_execat+0x113/0x3e0 fs/exec.c:783
+ alloc_bprm+0x2b/0x6e0 fs/exec.c:1409
+ kernel_execve+0xb0/0x3d0 fs/exec.c:1884
+ call_usermodehelper_exec_async+0x25f/0x4e0 kernel/umh.c:109
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+NMI backtrace for cpu 3
+CPU: 3 UID: 0 PID: 0 Comm: swapper/3 Tainted: P                    6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [P]=PROPRIETARY_MODULE
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:pv_native_safe_halt+0x1e/0x30 arch/x86/kernel/paravirt.c:82
+Code: 90 90 90 90 90 90 90 90 90 90 90 90 f3 0f 1e fa 0f 1f 44 00 00 eb 0c 0f 1f 44 00 00 0f 00 2d f9 2d 1c 00 0f 1f 44 00 00 fb f4 <e9> 6d ea 02 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 00 90 90 90 90
+RSP: 0018:ffff8881003ffe60 EFLAGS: 00000206
+RAX: 0000000000045247 RBX: 0000000000000003 RCX: ffffffff84a98827
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff814cfe5a
+RBP: dffffc0000000000 R08: 0000000000000001 R09: ffffed10235f63db
+R10: ffffed10235f63da R11: ffff88811afb1ed3 R12: ffffffff8642c850
+R13: 1ffff1102007ffd2 R14: 0000000000000000 R15: 0000000000000000
+FS:  0000000000000000(0000) GS:ffff8881937bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f6fdaecf6f4 CR3: 000000004825b000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ arch_safe_halt arch/x86/include/asm/paravirt.h:107 [inline]
+ default_idle+0xe/0x20 arch/x86/kernel/process.c:767
+ default_idle_call+0x6c/0xb0 kernel/sched/idle.c:122
+ cpuidle_idle_call kernel/sched/idle.c:191 [inline]
+ do_idle+0x2fa/0x3c0 kernel/sched/idle.c:332
+ cpu_startup_entry+0x4f/0x60 kernel/sched/idle.c:430
+ start_secondary+0x1bd/0x210 arch/x86/kernel/smpboot.c:312
+ common_startup_64+0x13e/0x148
+ </TASK>
+NMI backtrace for cpu 2
+CPU: 2 UID: 0 PID: 0 Comm: swapper/2 Tainted: P                    6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [P]=PROPRIETARY_MODULE
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:pv_native_safe_halt+0x1e/0x30 arch/x86/kernel/paravirt.c:82
+Code: 90 90 90 90 90 90 90 90 90 90 90 90 f3 0f 1e fa 0f 1f 44 00 00 eb 0c 0f 1f 44 00 00 0f 00 2d f9 2d 1c 00 0f 1f 44 00 00 fb f4 <e9> 6d ea 02 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 00 90 90 90 90
+RSP: 0018:ffff8881003efe60 EFLAGS: 00000202
+RAX: 0000000000049bd9 RBX: 0000000000000002 RCX: ffffffff84a98827
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff814cfe5a
+RBP: dffffc0000000000 R08: 0000000000000001 R09: ffffed10235e63db
+R10: ffffed10235e63da R11: ffff88811af31ed3 R12: ffffffff8642c850
+R13: 1ffff1102007dfd2 R14: 0000000000000000 R15: 0000000000000000
+FS:  0000000000000000(0000) GS:ffff88819373f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007fce4966d6f4 CR3: 0000000005a8a000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ arch_safe_halt arch/x86/include/asm/paravirt.h:107 [inline]
+ default_idle+0xe/0x20 arch/x86/kernel/process.c:767
+ default_idle_call+0x6c/0xb0 kernel/sched/idle.c:122
+ cpuidle_idle_call kernel/sched/idle.c:191 [inline]
+ do_idle+0x2fa/0x3c0 kernel/sched/idle.c:332
+ cpu_startup_entry+0x4f/0x60 kernel/sched/idle.c:430
+ start_secondary+0x1bd/0x210 arch/x86/kernel/smpboot.c:312
+ common_startup_64+0x13e/0x148
+ </TASK>
+EXT4-fs unmount: 27 callbacks suppressed
+EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+sr 1:0:0:0: [sr0] tag#0 FAILED Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=29s
+sr 1:0:0:0: [sr0] tag#0 Sense Key : Not Ready [current] 
+sr 1:0:0:0: [sr0] tag#0 Add. Sense: Medium not present
+sr 1:0:0:0: [sr0] tag#0 CDB: Read(10) 28 00 00 02 00 00 00 00 02 00
+blk_print_req_error: 408 callbacks suppressed
+I/O error, dev sr0, sector 524288 op 0x0:(READ) flags 0x800000 phys_seg 8 prio class 2
+buffer_io_error: 406 callbacks suppressed
+Buffer I/O error on dev sr0, logical block 524288, async page read
+Buffer I/O error on dev sr0, logical block 524289, async page read
+Buffer I/O error on dev sr0, logical block 524290, async page read
+Buffer I/O error on dev sr0, logical block 524291, async page read
+Buffer I/O error on dev sr0, logical block 524292, async page read
+Buffer I/O error on dev sr0, logical block 524293, async page read
+Buffer I/O error on dev sr0, logical block 524294, async page read
+Buffer I/O error on dev sr0, logical block 524295, async page read
+sr 1:0:0:0: [sr0] tag#0 FAILED Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+sr 1:0:0:0: [sr0] tag#0 Sense Key : Not Ready [current] 
+sr 1:0:0:0: [sr0] tag#0 Add. Sense: Medium not present
+sr 1:0:0:0: [sr0] tag#0 CDB: Read(10) 28 00 00 07 ff c0 00 00 02 00
+I/O error, dev sr0, sector 2096896 op 0x0:(READ) flags 0x800000 phys_seg 8 prio class 2
+Buffer I/O error on dev sr0, logical block 2096896, async page read
+Buffer I/O error on dev sr0, logical block 2096897, async page read
+I/O error, dev loop4, sector 2096896 op 0x0:(READ) flags 0x880700 phys_seg 1 prio class 2
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+I/O error, dev sr0, sector 2096896 op 0x0:(READ) flags 0x800000 phys_seg 1 prio class 2
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+I/O error, dev sr0, sector 2096897 op 0x0:(READ) flags 0x800000 phys_seg 7 prio class 2
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+I/O error, dev loop4, sector 2096896 op 0x0:(READ) flags 0x800000 phys_seg 1 prio class 2
+I/O error, dev sr0, sector 2096896 op 0x0:(READ) flags 0x800000 phys_seg 1 prio class 2
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+I/O error, dev sr0, sector 2096897 op 0x0:(READ) flags 0x800000 phys_seg 1 prio class 2
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+I/O error, dev sr0, sector 2096898 op 0x0:(READ) flags 0x800000 phys_seg 1 prio class 2
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+I/O error, dev sr0, sector 2096899 op 0x0:(READ) flags 0x800000 phys_seg 1 prio class 2
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+sr 1:0:0:0: [sr0] tag#0 unaligned transfer
+pimreg (unregistering): left allmulticast mode
+pimreg (unregistering): left allmulticast mode

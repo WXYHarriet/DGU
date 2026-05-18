@@ -1,0 +1,67 @@
+SELinux: unrecognized netlink message: protocol=0 nlmsg_type=4 sclass=netlink_route_socket pid=8588 comm=syz.1.623
+------------[ cut here ]------------
+Negative interval (-1000) or burst (10): Uninitialized ratelimit_state structure?
+WARNING: lib/ratelimit.c:43 at ___ratelimit+0x340/0x910 lib/ratelimit.c:43, CPU#1: kauditd/39
+Modules linked in:
+CPU: 1 UID: 0 PID: 39 Comm: kauditd Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:___ratelimit+0x345/0x910 lib/ratelimit.c:43
+Code: 00 00 00 e8 8d f0 cf fc 31 ff 89 de e8 94 f2 cf fc 85 db 0f 84 a2 00 00 00 e8 77 f0 cf fc 48 8d 3d e0 14 a3 01 44 89 f2 89 de <67> 48 0f b9 3a e8 61 f0 cf fc 31 ff 89 de e8 68 f2 cf fc 85 db 0f
+RSP: 0018:ffff888100a1fc30 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: fffffffffffffc18 RCX: ffffffff84a548fc
+RDX: 000000000000000a RSI: 00000000fffffc18 RDI: ffffffff86485df0
+RBP: ffffffff85b34740 R08: 0000000000000000 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: ffffffff85b34784
+R13: ffffffff84cc0060 R14: 000000000000000a R15: 0000000000000001
+FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f8853c00000 CR3: 000000010b8d3000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ kauditd_printk_skb+0x9b/0x120 kernel/audit.c:582
+ kauditd_hold_skb+0x1a/0x130 kernel/audit.c:618
+ kauditd_send_queue+0x233/0x290 kernel/audit.c:803
+ kauditd_thread+0x6b1/0xad0 kernel/audit.c:927
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+irq event stamp: 9667
+hardirqs last  enabled at (9675): [<ffffffff8154eb28>] __up_console_sem+0x78/0x80 kernel/printk/printk.c:345
+hardirqs last disabled at (9684): [<ffffffff8154eb0d>] __up_console_sem+0x5d/0x80 kernel/printk/printk.c:343
+softirqs last  enabled at (9500): [<ffffffff813b9880>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (9500): [<ffffffff813b9880>] handle_softirqs+0x490/0x700 kernel/softirq.c:650
+softirqs last disabled at (9495): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (9495): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (9495): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (9495): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+audit: type=1326 audit(1771628051.554:215): auid=0 uid=0 gid=0 ses=3 subj=system_u:system_r:kernel_t:s0 pid=8593 comm="syz.2.625" exe="/syz-executor" sig=31 arch=c000003e syscall=202 compat=0 ip=0x7f059619fba9 code=0x0
+set_capacity_and_notify: 17 callbacks suppressed
+loop1: detected capacity change from 0 to 8192
+pimreg (unregistering): left allmulticast mode
+EXT4-fs unmount: 86 callbacks suppressed
+EXT4-fs (loop7): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+----------------
+Code disassembly (best guess):
+   0:	00 00                	add    %al,(%rax)
+   2:	00 e8                	add    %ch,%al
+   4:	8d                   	lea    (bad),%esi
+   5:	f0 cf                	lock iret
+   7:	fc                   	cld
+   8:	31 ff                	xor    %edi,%edi
+   a:	89 de                	mov    %ebx,%esi
+   c:	e8 94 f2 cf fc       	call   0xfccff2a5
+  11:	85 db                	test   %ebx,%ebx
+  13:	0f 84 a2 00 00 00    	je     0xbb
+  19:	e8 77 f0 cf fc       	call   0xfccff095
+  1e:	48 8d 3d e0 14 a3 01 	lea    0x1a314e0(%rip),%rdi        # 0x1a31505
+  25:	44 89 f2             	mov    %r14d,%edx
+  28:	89 de                	mov    %ebx,%esi
+* 2a:	67 48 0f b9 3a       	ud1    (%edx),%rdi <-- trapping instruction
+  2f:	e8 61 f0 cf fc       	call   0xfccff095
+  34:	31 ff                	xor    %edi,%edi
+  36:	89 de                	mov    %ebx,%esi
+  38:	e8 68 f2 cf fc       	call   0xfccff2a5
+  3d:	85 db                	test   %ebx,%ebx
+  3f:	0f                   	.byte 0xf

@@ -1,0 +1,633 @@
+Warning: Permanently added '[localhost]:21829' (ED25519) to the list of known hosts.
+syzkaller login: [  263.839798] audit: type=1400 audit(1764197555.815:7): avc:  denied  { execmem } for  pid=258 comm="syz-executor178" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=process permissive=1
+executing program
+[  263.931175] loop0: detected capacity change from 0 to 2048
+[  263.933616] EXT4-fs: Ignoring removed i_version option
+[  263.947080] EXT4-fs (loop0): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+[  263.974227] EXT4-fs error (device loop0) in ext4_reserve_inode_write:6313: Out of memory
+[  263.977712] EXT4-fs error (device loop0): ext4_dirty_inode:6517: inode #2: comm syz-executor178: mark_inode_dirty error
+[  263.983605] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  263.987914] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  263.991422] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  263.995061] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  263.999705] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  264.001714] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  264.003741] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  264.005874] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  264.007947] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  264.009991] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  268.984391] EXT4-fs warning: 129471 callbacks suppressed
+[  268.984409] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  268.986699] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  268.988331] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  268.990046] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  268.991674] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  268.993413] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  268.995125] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  268.996746] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  268.998538] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  269.000257] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  273.985400] EXT4-fs warning: 129606 callbacks suppressed
+[  273.985419] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  273.987711] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  273.989456] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  273.991098] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  273.992748] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  273.994465] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  273.996078] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  273.997702] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  273.999422] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  274.001040] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  278.986436] EXT4-fs warning: 129823 callbacks suppressed
+[  278.986455] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  278.988727] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  278.990342] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  278.992087] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  278.993774] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  278.995415] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  278.997126] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  278.998765] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  279.000393] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  279.002102] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  283.987454] EXT4-fs warning: 127715 callbacks suppressed
+[  283.987473] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  283.989844] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  283.991597] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  283.993971] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  283.996225] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  283.997901] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  283.999626] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  284.001330] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  284.003009] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  284.004826] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  288.988476] EXT4-fs warning: 128162 callbacks suppressed
+[  288.988495] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  288.990735] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  288.992474] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  288.994786] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  288.996624] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  288.998340] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  289.000126] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  289.001804] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  289.003479] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  289.005172] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  293.989381] EXT4-fs warning: 128974 callbacks suppressed
+[  293.989399] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  293.991766] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  293.993398] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  293.995532] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  293.997813] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  293.999622] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  294.001255] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  294.002979] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  294.004665] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  294.006290] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  298.990387] EXT4-fs warning: 129588 callbacks suppressed
+[  298.990406] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  298.992697] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  298.994462] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  298.996648] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  298.998741] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  299.000354] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  299.002085] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  299.003744] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  299.005348] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  299.007056] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  303.991457] EXT4-fs warning: 129386 callbacks suppressed
+[  303.991475] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  303.993790] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  303.995548] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  303.997810] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  303.999922] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  304.001568] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  304.003320] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  304.004990] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  304.006637] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  304.008338] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  308.992381] EXT4-fs warning: 130366 callbacks suppressed
+[  308.992400] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  308.995008] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  308.997273] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  308.999244] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  309.001431] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  309.003121] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  309.004828] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  309.006705] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  309.008435] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  309.010103] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  313.993395] EXT4-fs warning: 129543 callbacks suppressed
+[  313.993414] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  313.995774] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  313.997745] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  314.000062] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  314.001984] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  314.003808] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  314.005622] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  314.007242] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  314.009010] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  314.010813] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  318.994452] EXT4-fs warning: 128927 callbacks suppressed
+[  318.994471] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  318.996803] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  318.998767] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  319.000985] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  319.002673] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  319.004288] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  319.006000] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  319.007620] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  319.009223] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  319.010932] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  323.995469] EXT4-fs warning: 128903 callbacks suppressed
+[  323.995487] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  323.997898] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  323.999591] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  324.001797] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  324.004133] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  324.006005] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  324.007745] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  324.009498] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  324.011111] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  324.012837] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  328.996367] EXT4-fs warning: 128441 callbacks suppressed
+[  328.996385] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  328.998653] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  329.000277] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  329.002534] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  329.004603] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  329.006225] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  329.007919] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  329.009548] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  329.011370] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  329.013075] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  333.997474] EXT4-fs warning: 130547 callbacks suppressed
+[  333.997493] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  333.999847] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  334.001732] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  334.003885] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  334.005994] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  334.007694] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  334.009444] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  334.011063] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  334.012699] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  334.014447] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  338.998365] EXT4-fs warning: 130244 callbacks suppressed
+[  338.998384] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  339.000761] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  339.002826] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  339.004995] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  339.006905] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  339.008520] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  339.010223] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  339.011839] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  339.013431] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  339.015128] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  343.999424] EXT4-fs warning: 130868 callbacks suppressed
+[  343.999442] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  344.001781] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  344.003782] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  344.006043] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  344.007687] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  344.009304] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  344.010995] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  344.012615] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  344.014217] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  344.015919] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  349.000390] EXT4-fs warning: 130622 callbacks suppressed
+[  349.000408] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  349.002871] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  349.004735] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  349.007054] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  349.009112] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  349.010736] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  349.012482] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  349.014158] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  349.015863] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  349.017784] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  354.001427] EXT4-fs warning: 131183 callbacks suppressed
+[  354.001446] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  354.003723] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  354.005700] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  354.007899] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  354.009909] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  354.011526] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  354.013229] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  354.014883] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  354.016550] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  354.018264] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  359.002350] EXT4-fs warning: 131134 callbacks suppressed
+[  359.002368] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  359.004697] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  359.006708] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  359.008842] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  359.010713] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  359.012310] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  359.013923] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  359.015610] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  359.017210] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  359.018809] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  364.003387] EXT4-fs warning: 130752 callbacks suppressed
+[  364.003405] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  364.005859] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  364.007900] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  364.010428] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  364.012510] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  364.014211] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  364.016126] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  364.017772] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  364.019520] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  364.021356] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  369.004354] EXT4-fs warning: 130726 callbacks suppressed
+[  369.004372] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  369.006786] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  369.008836] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  369.010926] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  369.013460] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  369.015896] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  369.017532] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  369.019239] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  369.020840] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  369.022446] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  374.005428] EXT4-fs warning: 129882 callbacks suppressed
+[  374.005446] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  374.007805] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  374.009872] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  374.012216] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  374.014642] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  374.016280] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  374.018038] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  374.019663] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  374.021355] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  374.023073] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  379.006375] EXT4-fs warning: 130097 callbacks suppressed
+[  379.006393] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  379.008664] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  379.010652] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  379.012938] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  379.014799] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  379.016417] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  379.018126] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  379.019766] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  379.021376] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  379.023088] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  384.007423] EXT4-fs warning: 129776 callbacks suppressed
+[  384.007442] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  384.009762] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  384.011652] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  384.013853] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  384.016384] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  384.018219] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  384.020076] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  384.021787] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  384.023505] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  384.025287] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  389.008389] EXT4-fs warning: 130697 callbacks suppressed
+[  389.008406] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  389.010696] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  389.012799] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  389.015082] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  389.016937] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  389.018581] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  389.020297] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  389.022084] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  389.023714] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  389.025446] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  394.009426] EXT4-fs warning: 130640 callbacks suppressed
+[  394.009445] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  394.011703] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  394.013465] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  394.015827] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  394.018183] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  394.019798] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  394.021511] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  394.023127] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  394.024894] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  394.026608] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  399.010371] EXT4-fs warning: 130382 callbacks suppressed
+[  399.010389] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  399.012644] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  399.014511] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  399.016725] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  399.018937] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  399.020565] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  399.022303] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  399.024033] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  399.025646] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  399.027379] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  404.011379] EXT4-fs warning: 130175 callbacks suppressed
+[  404.011398] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  404.014209] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  404.016353] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  404.018710] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  404.020607] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  404.022224] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  404.023925] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  404.025554] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  404.027197] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  404.028935] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  409.012329] EXT4-fs warning: 129196 callbacks suppressed
+[  409.012347] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  409.014760] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  409.016854] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  409.019242] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  409.021545] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  409.023198] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  409.024833] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  409.026535] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  409.028157] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  409.029784] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  414.013371] EXT4-fs warning: 129513 callbacks suppressed
+[  414.013390] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  414.015781] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  414.017961] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  414.020188] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  414.022304] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  414.023954] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  414.025678] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  414.027500] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  414.029127] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  414.030833] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  419.014373] EXT4-fs warning: 130250 callbacks suppressed
+[  419.014393] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  419.016693] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  419.018653] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  419.020907] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  419.022533] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  419.024138] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  419.025874] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  419.027533] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  419.029149] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  419.030865] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  424.015413] EXT4-fs warning: 130697 callbacks suppressed
+[  424.015442] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  424.018351] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  424.020518] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  424.022828] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  424.024577] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  424.026188] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  424.027899] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  424.029626] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  424.031247] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  424.032953] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  427.500525] INFO: task syz-executor178:259 blocked for more than 143 seconds.
+[  427.502742]       Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+[  427.504379]       Blocked by coredump.
+[  427.505437] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[  427.508023] task:syz-executor178 state:D stack:27008 pid:259   tgid:259   ppid:258    task_flags:0x40014c flags:0x00080001
+[  427.512725] Call Trace:
+[  427.513883]  <TASK>
+[  427.514562]  __schedule+0x1110/0x4a50
+[  427.516173]  ? alloc_list_entry+0x14/0x150
+[  427.517386]  ? __lock_acquire+0x1047/0x1b40
+[  427.518610]  ? __pfx___schedule+0x10/0x10
+[  427.519780]  ? do_raw_spin_lock+0x123/0x290
+[  427.520977]  ? lock_acquire+0x15d/0x2d0
+[  427.522092]  ? find_held_lock+0x2b/0x80
+[  427.523222]  ? schedule+0x1da/0x260
+[  427.524262]  ? lock_release+0xc8/0x290
+[  427.525396]  schedule+0xd1/0x260
+[  427.526359]  wb_wait_for_completion+0x183/0x280
+[  427.527669]  ? __pfx_wb_wait_for_completion+0x10/0x10
+[  427.529058]  ? __pfx_autoremove_wake_function+0x10/0x10
+[  427.530509]  ? __pfx_down_write+0x10/0x10
+[  427.531668]  sync_inodes_sb+0x1b2/0xb00
+[  427.532799]  ? __pfx_sync_inodes_sb+0x10/0x10
+[  427.534064]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[  427.535443]  ? get_nr_dirty_inodes+0x12a/0x1b0
+[  427.536722]  sync_filesystem+0x17a/0x2a0
+[  427.537858]  generic_shutdown_super+0x78/0x4a0
+[  427.539137]  kill_block_super+0x3b/0x90
+[  427.540294]  ext4_kill_sb+0x6c/0xb0
+[  427.541350]  deactivate_locked_super+0xbb/0x130
+[  427.542658]  deactivate_super+0xb1/0xd0
+[  427.543764]  cleanup_mnt+0x378/0x510
+[  427.544836]  task_work_run+0x172/0x280
+[  427.545809]  ? __pfx_task_work_run+0x10/0x10
+[  427.546787]  do_exit+0x8c1/0x2da0
+[  427.547578]  ? __sanitizer_cov_trace_pc+0x20/0x50
+[  427.548618]  ? zap_other_threads+0x26a/0x310
+[  427.549592]  ? __pfx_do_exit+0x10/0x10
+[  427.550435]  ? do_group_exit+0x1c3/0x2a0
+[  427.551278]  ? lock_release+0xc8/0x290
+[  427.552122]  do_group_exit+0xd3/0x2a0
+[  427.552961]  __x64_sys_exit_group+0x3e/0x50
+[  427.553897]  x64_sys_call+0x18c5/0x18d0
+[  427.554773]  do_syscall_64+0xc3/0x380
+[  427.555602]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
+[  427.556685] RIP: 0033:0x7f9129b7b52d
+[  427.557483] RSP: 002b:00007fff7907bf58 EFLAGS: 00000206 ORIG_RAX: 00000000000000e7
+[  427.558799] RAX: ffffffffffffffda RBX: 0000000000000001 RCX: 00007f9129b7b52d
+[  427.559644] RDX: 00000000000000e7 RSI: ffffffffffffffc0 RDI: 0000000000000001
+[  427.560493] RBP: 00007fff7907bfb0 R08: 0000000000000000 R09: 0000000000000000
+[  427.561336] R10: 0000000000000100 R11: 0000000000000206 R12: 0000000000000000
+[  427.562142] R13: 0000000000000001 R14: 0000000000000001 R15: 00007f9129c12620
+[  427.563000]  </TASK>
+[  427.563289] 
+[  427.563289] Showing all locks held in the system:
+[  427.564025] 1 lock held by khungtaskd/40:
+[  427.564526]  #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: debug_show_all_locks+0x36/0x1c0
+[  427.565617] 5 locks held by kworker/u16:2/52:
+[  427.566129] 1 lock held by in:imklog/171:
+[  427.566634]  #0: ffff888103db15f8 (&f->f_pos_lock){+.+.}-{4:4}, at: fdget_pos+0x2a4/0x370
+[  427.567689] 2 locks held by syz-executor178/259:
+[  427.568268]  #0: ffff888102ab80e0 (&type->s_umount_key#46){++++}-{4:4}, at: deactivate_super+0xa9/0xd0
+[  427.569430]  #1: ffff888103f3e820 (&bdi->wb_switch_rwsem){+.+.}-{4:4}, at: sync_inodes_sb+0x198/0xb00
+[  427.570559] 
+[  427.570757] =============================================
+[  427.570757] 
+[  429.016326] EXT4-fs warning: 131252 callbacks suppressed
+[  429.016352] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  429.018667] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  429.020574] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  429.022773] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  429.024813] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  429.026962] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  429.028682] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  429.030431] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  429.032180] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  429.033996] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  434.017331] EXT4-fs warning: 131291 callbacks suppressed
+[  434.017360] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  434.019784] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  434.021800] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  434.023820] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  434.025845] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  434.027776] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  434.029505] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  434.031225] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  434.033131] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+[  434.035230] EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+
+VM DIAGNOSIS:
+06:55:19  Registers:
+info registers vcpu 0
+
+CPU#0
+RAX=000000000004cfc9 RBX=0000000000000000 RCX=ffffffff84a230c7 RDX=0000000000000000
+RSI=0000000000000000 RDI=ffffffff814c5f76 RBP=dffffc0000000000 RSP=ffffffff85a07e08
+R8 =0000000000000001 R9 =ffffed10235c630b R10=ffffed10235c630a R11=ffff88811ae31853
+R12=ffffffff8640de50 R13=1ffffffff0b40fc7 R14=0000000000000000 R15=0000000000000000
+RIP=ffffffff84a21dae RFL=00000206 [-----P-] CPL=0 II=0 A20=1 SMM=0 HLT=1
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 0000000000000000 00000000 00000000
+GS =0000 ffff888193696000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe0000003000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe0000001000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=00007f8ca05c7170 CR3=0000000104d30000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM01=0000000000000000 0000000000000000 0000000000000000 00000000000000ff
+YMM02=0000000000000000 0000000000000000 0000000000000000 00000000000000ff
+YMM03=0000000000000000 0000000000000000 656e72656b2f7379 732f636f72702f20
+YMM04=0000000000000000 0000000000000000 7469625f6b636f6c 62202c30203d2070
+YMM05=0000000000000000 0000000000000000 746962206b636f6c 6220726f66207265
+YMM06=0000000000000000 0000000000000000 3a3039343a746961 776f6e5f70616d74
+YMM07=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM08=0000000000000000 0000000000000000 202020202020205d 3234373230352e00
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+info registers vcpu 1
+
+CPU#1
+RAX=0000000000000000 RBX=1ffff11020170dd7 RCX=ffffffff81c5f321 RDX=0000000000000000
+RSI=ffffffff8686e6ca RDI=ffffffff864f90b8 RBP=ffffffff864f90b8 RSP=ffff888100b86e30
+R8 =0000000000000000 R9 =ffffffff8686e6ca R10=000000000003a558 R11=0000000000029fe9
+R12=ffffffff864f90b8 R13=ffffffff864f90b8 R14=ffffffff864f90b8 R15=dffffc0000000000
+RIP=ffffffff81352fde RFL=00000256 [---ZAP-] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 0000000000000000 00000000 00000000
+GS =0000 ffff888193716000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe000004a000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe0000048000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=00007f8ca05bddf0 CR3=0000000104d30000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM01=0000000000000000 0000000000000000 0000000000000000 00000000000000ff
+YMM02=0000000000000000 0000000000000000 0000000000000000 0000ffff00000000
+YMM03=0000000000000000 0000000000000000 6962206b636f6c62 20726f6620726566
+YMM04=0000000000000000 0000000000000000 7469625f6b636f6c 62202c30203d2070
+YMM05=0000000000000000 0000000000000000 746962206b636f6c 6220726f66207265
+YMM06=0000000000000000 0000000000000000 3a3039343a746961 776f6e5f70616d74
+YMM07=0000000000000000 0000000000000000 7865203a2930706f 6f6c206563697665
+YMM08=0000000000000000 0000000000000000 302e39313320205b 3e34000037373338
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+info registers vcpu 2
+
+CPU#2
+RAX=0000000000000000 RBX=ffff888105c33700 RCX=ffffffff81bec844 RDX=000000001d324cf0
+RSI=ffff888105c33700 RDI=0000000000000002 RBP=ffffffff81bec866 RSP=ffff88810d22f9c8
+R8 =0000000000000000 R9 =0000000000000001 R10=fffffbfff0c81bca R11=ffffffff8640de57
+R12=ffff88810a614e58 R13=1ffff11021a45f40 R14=000000001d230ab0 R15=ffff88810d22fa30
+RIP=ffffffff8173f7b4 RFL=00000246 [---Z-P-] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0000 0000000000000000 00000000 00000000
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 00007f8ca1540900 00000000 00000000
+GS =0000 ffff888193796000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe0000091000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe000008f000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=00007f8ca069e000 CR3=0000000107835000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 617254206c6c6143 3d4547415353454d
+YMM01=0000000000000000 0000000000000000 3a6563617254206c 6c61433d45474153
+YMM02=0000000000000000 0000000000000000 ffffffffffffffff ffffffffffffffff
+YMM03=0000000000000000 0000000000000000 2f6c616e72756f6a 2f676f6c2f6e7572
+YMM04=0000000000000000 0000000000000000 f2dd703a57f8eede 000000000015dd58
+YMM05=0000000000000000 0000000000000000 d3fdd5f48436fbd7 00000000000aead8
+YMM06=0000000000000000 0000000000000000 bac3bb9b730d061e 00000000000ae990
+YMM07=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM08=0000000000000000 0000000000000000 44495f474f4c5359 530069253d595449
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM11=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM12=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM13=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+info registers vcpu 3
+
+CPU#3
+RAX=0000000000000020 RBX=0000000000000000 RCX=0000000000000000 RDX=00000000000003f8
+RSI=ffff8881009a8000 RDI=ffffffff882dff60 RBP=ffffffff882dff20 RSP=ffff888100b0f7a8
+R8 =0000000000000000 R9 =ffffed10207d4047 R10=ffffed10207d4046 R11=ffff888103ea0237
+R12=0000000000000020 R13=0000000000000010 R14=0000000000000020 R15=0000000000000000
+RIP=ffffffff8292e7ad RFL=00000002 [-------] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0000 0000000000000000 00000000 00000000
+CS =0010 0000000000000000 ffffffff 00a09b00 DPL=0 CS64 [-RA]
+SS =0018 0000000000000000 ffffffff 00c09300 DPL=0 DS   [-WA]
+DS =0000 0000000000000000 00000000 00000000
+FS =0000 0000000000000000 00000000 00000000
+GS =0000 ffff888193816000 00000000 00000000
+LDT=0000 fffffe0000000000 00000000 00000000
+TR =0040 fffffe00000d8000 00004087 00008b00 DPL=0 TSS64-busy
+GDT=     fffffe00000d6000 0000007f
+IDT=     fffffe0000000000 00000fff
+CR0=80050033 CR2=00007f8ca0557760 CR3=0000000104d30000 CR4=00350ef0
+DR0=0000000000000000 DR1=0000000000000000 DR2=0000000000000000 DR3=0000000000000000 
+DR6=00000000ffff0ff0 DR7=0000000000000400
+EFER=0000000000000d01
+FCW=037f FSW=0000 [ST=0] FTW=00 MXCSR=00001f80
+FPR0=0000000000000000 0000 FPR1=0000000000000000 0000
+FPR2=0000000000000000 0000 FPR3=0000000000000000 0000
+FPR4=0000000000000000 0000 FPR5=0000000000000000 0000
+FPR6=0000000000000000 0000 FPR7=0000000000000000 0000
+YMM00=0000000000000000 0000000000000000 9512b69d8d58b5f1 065e47e3d428ebae
+YMM01=0000000000000000 0000000000000000 9f8004462b8d1842 9542b5f2ad55595f
+YMM02=0000000000000000 0000000000000000 c346f4ffcd4a7ca4 0be1db11ee6adbde
+YMM03=0000000000000000 0000000000000000 797f93c7fb981481 356f7e8ccbd0c081
+YMM04=0000000000000000 0000000000000000 0000000000000000 0000000000800100
+YMM05=0000000000000000 0000000000000000 0000000000000000 76cc5f6f00800100
+YMM06=0000000000000000 0000000000000000 0000000000000000 0000000076cc5f6f
+YMM07=0000000000000000 0000000000000000 76cc5f6f00800100 00800100000000de
+YMM08=0000000000000000 0000000000000000 3800000046000000 12000000a0000000
+YMM09=0000000000000000 0000000000000000 0000000000000000 0000000000000000
+YMM10=0000000000000000 0000000000000000 5e5bb50451e1f73b 6bf0779a45e605c4
+YMM11=0000000000000000 0000000000000000 df5ca3f097cf1f97 b2e428eec655d2cc
+YMM12=0000000000000000 0000000000000000 0d0c0f0e09080b0a 0504070601000302
+YMM13=0000000000000000 0000000000000000 0c0f0e0d080b0a09 0407060500030201
+YMM14=0000000000000000 0000000000000000 0000000000000000 0000000000000600
+YMM15=0000000000000000 0000000000000000 0000000000000000 0000000000000040

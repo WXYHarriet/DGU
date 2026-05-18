@@ -1,0 +1,72 @@
+EXT4-fs (loop6): mounting ext3 file system using the ext4 subsystem
+EXT4-fs (loop6): 1 truncate cleaned up
+------------[ cut here ]------------
+Negative interval (5000) or burst (-1): Uninitialized ratelimit_state structure?
+WARNING: lib/ratelimit.c:43 at ___ratelimit+0x340/0x910 lib/ratelimit.c:43, CPU#0: kauditd/39
+Modules linked in:
+CPU: 0 UID: 0 PID: 39 Comm: kauditd Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:___ratelimit+0x345/0x910 lib/ratelimit.c:43
+Code: 00 00 00 e8 8d f0 cf fc 31 ff 89 de e8 94 f2 cf fc 85 db 0f 84 a2 00 00 00 e8 77 f0 cf fc 48 8d 3d e0 14 a3 01 44 89 f2 89 de <67> 48 0f b9 3a e8 61 f0 cf fc 31 ff 89 de e8 68 f2 cf fc 85 db 0f
+RSP: 0018:ffff888100a1fc30 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: 0000000000001388 RCX: ffffffff84a547f4
+RDX: 00000000ffffffff RSI: 0000000000001388 RDI: ffffffff86485df0
+RBP: ffffffff85b34740 R08: 0000000000000000 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: ffffffff85b34784
+R13: ffffffff84cc0060 R14: 00000000ffffffff R15: 0000000000000001
+FS:  0000000000000000(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+EXT4-fs error (device loop6): __ext4_get_inode_loc:4829: comm syz.6.463: Invalid inode table block 5 in block_group 0
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f13ba0946f4 CR3: 0000000005a8a000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+EXT4-fs error (device loop6): __ext4_get_inode_loc:4829: comm syz.6.463: Invalid inode table block 5 in block_group 0
+ kauditd_printk_skb+0x9b/0x120 kernel/audit.c:582
+EXT4-fs error (device loop6) in ext4_reserve_inode_write:6298: Corrupt filesystem
+ kauditd_hold_skb+0x1a/0x130 kernel/audit.c:618
+EXT4-fs error (device loop6): ext4_dirty_inode:6502: inode #18: comm syz.6.463: mark_inode_dirty error
+EXT4-fs error (device loop6): ext4_ind_map_blocks:603: inode #18: comm syz.6.463: Can't allocate blocks for non-extent mapped inodes with bigalloc
+ kauditd_send_queue+0x233/0x290 kernel/audit.c:803
+ kauditd_thread+0x6b1/0xad0 kernel/audit.c:927
+EXT4-fs error (device loop6): __ext4_get_inode_loc:4829: comm syz.6.463: Invalid inode table block 5 in block_group 0
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+EXT4-fs error (device loop6) in ext4_reserve_inode_write:6298: Corrupt filesystem
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+irq event stamp: 4933
+EXT4-fs error (device loop6): ext4_truncate:4635: inode #18: comm syz.6.463: mark_inode_dirty error
+hardirqs last  enabled at (4941): [<ffffffff84a97fc4>] irqentry_exit+0x184/0x6d0 kernel/entry/common.c:219
+hardirqs last disabled at (4954): [<ffffffff8154eb0d>] __up_console_sem+0x5d/0x80 kernel/printk/printk.c:343
+softirqs last  enabled at (4694): [<ffffffff813b9880>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (4694): [<ffffffff813b9880>] handle_softirqs+0x490/0x700 kernel/softirq.c:650
+softirqs last disabled at (4671): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (4671): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (4671): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (4671): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+netlink: 277 bytes leftover after parsing attributes in process `syz.6.463'.
+EXT4-fs error (device loop6): __ext4_get_inode_loc:4829: comm kworker/u16:1: Invalid inode table block 5 in block_group 0
+----------------
+Code disassembly (best guess):
+   0:	00 00                	add    %al,(%rax)
+   2:	00 e8                	add    %ch,%al
+   4:	8d                   	lea    (bad),%esi
+   5:	f0 cf                	lock iret
+   7:	fc                   	cld
+   8:	31 ff                	xor    %edi,%edi
+   a:	89 de                	mov    %ebx,%esi
+   c:	e8 94 f2 cf fc       	call   0xfccff2a5
+  11:	85 db                	test   %ebx,%ebx
+  13:	0f 84 a2 00 00 00    	je     0xbb
+  19:	e8 77 f0 cf fc       	call   0xfccff095
+  1e:	48 8d 3d e0 14 a3 01 	lea    0x1a314e0(%rip),%rdi        # 0x1a31505
+  25:	44 89 f2             	mov    %r14d,%edx
+  28:	89 de                	mov    %ebx,%esi
+* 2a:	67 48 0f b9 3a       	ud1    (%edx),%rdi <-- trapping instruction
+  2f:	e8 61 f0 cf fc       	call   0xfccff095
+  34:	31 ff                	xor    %edi,%edi
+  36:	89 de                	mov    %ebx,%esi
+  38:	e8 68 f2 cf fc       	call   0xfccff2a5
+  3d:	85 db                	test   %ebx,%ebx
+  3f:	0f                   	.byte 0xf

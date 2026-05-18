@@ -1,0 +1,314 @@
+Extracting prog: 41.489920107s
+Minimizing prog: 6m46.771713917s
+Simplifying prog options: 0s
+Extracting C: 21.006607381s
+Simplifying C: 6m15.815978798s
+
+
+extracting reproducer from 325 programs
+first checking the prog from the crash report
+single: executing 1 programs separately with timeout 30s
+testing program (duration=30s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-timer_create-io_setup-ioctl$PERF_EVENT_IOC_PERIOD-io_pgetevents-write$binfmt_elf64-openat$cdrom-ioctl$CDROM_SEND_PACKET-timer_settime
+detailed listing:
+executing program 0:
+r0 = perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+timer_create(0x3, 0x0, &(0x7f0000000040))
+io_setup(0x5, &(0x7f0000000300)=<r1=>0x0)
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, &(0x7f0000000340)=0x9)
+io_pgetevents(r1, 0xffffffffffffffff, 0x0, 0x0, 0x0, 0x0)
+write$binfmt_elf64(0xffffffffffffffff, 0x0, 0x1dd)
+r2 = openat$cdrom(0xffffffffffffff9c, &(0x7f0000000080), 0x40003, 0x0)
+ioctl$CDROM_SEND_PACKET(r2, 0x5393, &(0x7f00000002c0)={"0c3fa6f73cda6f33da16e087", &(0x7f0000000180)="fdde3957f4a2749a8781903fa5e3584e9dbc65d377fa16286c3f40125da8420679726041bb18087efd90dd52f5c490db1f224ecb461a85ab02f44d2c5c544988898a3dedb675a66d8cea60b6dfa5e2e40c5e0911301c958df3aa6960587f6a0f6eb6126cd5984423e715c8a61587883de877d40e0aeb1b8c377aebf7baef7580f93a95c5b1c68577e7c5ddb5ceaf0afd16d2b2c60ea9e5c06b4b98a9f73a7d87e19af71e11690af5ed7144230fe41596f36f598c7858afdb78851f26984d8f15ebabf872d1b7f54a1655a1acb771c91aa5be96a22c4e8c5240c722ef70648dcbbddcd8d2b597b67afe14b5f9a60987efe563d2dbbea9c8efe67c0f40a68e", 0xfe, 0xfffff001, &(0x7f00000000c0)={0x5, 0x0, 0x3, 0x2, 0x0, 0x1, 0x0, "d7f3eb62", 0x7f, "2ffb9d58", 0x42, 0x0, 0x62, "23fbb2", "22a3165b7951ebcec2c4cd870470ffd7c725b37512cc9e69529e3e8c45a5db072fa41953f3b0bd0716159dd98357"}, 0x2, 0xe, 0x5, &(0x7f0000000280)})
+timer_settime(0x0, 0x0, &(0x7f0000000000)={{0x77359400}}, 0x0)
+
+program crashed: WARNING in __perf_event_account_interrupt
+single: successfully extracted reproducer
+found reproducer with 9 syscalls
+minimizing guilty program
+testing program (duration=41.604450024s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-timer_create-io_setup-ioctl$PERF_EVENT_IOC_PERIOD-io_pgetevents-write$binfmt_elf64-openat$cdrom-ioctl$CDROM_SEND_PACKET
+detailed listing:
+executing program 0:
+r0 = perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+timer_create(0x3, 0x0, &(0x7f0000000040))
+io_setup(0x5, &(0x7f0000000300)=<r1=>0x0)
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, &(0x7f0000000340)=0x9)
+io_pgetevents(r1, 0xffffffffffffffff, 0x0, 0x0, 0x0, 0x0)
+write$binfmt_elf64(0xffffffffffffffff, 0x0, 0x1dd)
+r2 = openat$cdrom(0xffffffffffffff9c, &(0x7f0000000080), 0x40003, 0x0)
+ioctl$CDROM_SEND_PACKET(r2, 0x5393, &(0x7f00000002c0)={"0c3fa6f73cda6f33da16e087", &(0x7f0000000180)="fdde3957f4a2749a8781903fa5e3584e9dbc65d377fa16286c3f40125da8420679726041bb18087efd90dd52f5c490db1f224ecb461a85ab02f44d2c5c544988898a3dedb675a66d8cea60b6dfa5e2e40c5e0911301c958df3aa6960587f6a0f6eb6126cd5984423e715c8a61587883de877d40e0aeb1b8c377aebf7baef7580f93a95c5b1c68577e7c5ddb5ceaf0afd16d2b2c60ea9e5c06b4b98a9f73a7d87e19af71e11690af5ed7144230fe41596f36f598c7858afdb78851f26984d8f15ebabf872d1b7f54a1655a1acb771c91aa5be96a22c4e8c5240c722ef70648dcbbddcd8d2b597b67afe14b5f9a60987efe563d2dbbea9c8efe67c0f40a68e", 0xfe, 0xfffff001, &(0x7f00000000c0)={0x5, 0x0, 0x3, 0x2, 0x0, 0x1, 0x0, "d7f3eb62", 0x7f, "2ffb9d58", 0x42, 0x0, 0x62, "23fbb2", "22a3165b7951ebcec2c4cd870470ffd7c725b37512cc9e69529e3e8c45a5db072fa41953f3b0bd0716159dd98357"}, 0x2, 0xe, 0x5, &(0x7f0000000280)})
+
+program crashed: WARNING in __perf_event_account_interrupt
+testing program (duration=41.604450024s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-timer_create-io_setup-ioctl$PERF_EVENT_IOC_PERIOD-io_pgetevents-write$binfmt_elf64-openat$cdrom
+detailed listing:
+executing program 0:
+r0 = perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+timer_create(0x3, 0x0, &(0x7f0000000040))
+io_setup(0x5, &(0x7f0000000300)=<r1=>0x0)
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, &(0x7f0000000340)=0x9)
+io_pgetevents(r1, 0xffffffffffffffff, 0x0, 0x0, 0x0, 0x0)
+write$binfmt_elf64(0xffffffffffffffff, 0x0, 0x1dd)
+openat$cdrom(0xffffffffffffff9c, &(0x7f0000000080), 0x40003, 0x0)
+
+program crashed: WARNING in __perf_event_account_interrupt
+testing program (duration=41.604450024s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-timer_create-io_setup-ioctl$PERF_EVENT_IOC_PERIOD-io_pgetevents-write$binfmt_elf64
+detailed listing:
+executing program 0:
+r0 = perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+timer_create(0x3, 0x0, &(0x7f0000000040))
+io_setup(0x5, &(0x7f0000000300)=<r1=>0x0)
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, &(0x7f0000000340)=0x9)
+io_pgetevents(r1, 0xffffffffffffffff, 0x0, 0x0, 0x0, 0x0)
+write$binfmt_elf64(0xffffffffffffffff, 0x0, 0x1dd)
+
+program crashed: WARNING in __perf_event_account_interrupt
+testing program (duration=41.604450024s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-timer_create-io_setup-ioctl$PERF_EVENT_IOC_PERIOD-io_pgetevents
+detailed listing:
+executing program 0:
+r0 = perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+timer_create(0x3, 0x0, &(0x7f0000000040))
+io_setup(0x5, &(0x7f0000000300)=<r1=>0x0)
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, &(0x7f0000000340)=0x9)
+io_pgetevents(r1, 0xffffffffffffffff, 0x0, 0x0, 0x0, 0x0)
+
+program crashed: WARNING in __perf_event_account_interrupt
+testing program (duration=41.604450024s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-timer_create-io_setup-ioctl$PERF_EVENT_IOC_PERIOD
+detailed listing:
+executing program 0:
+r0 = perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+timer_create(0x3, 0x0, &(0x7f0000000040))
+io_setup(0x5, &(0x7f0000000300))
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, &(0x7f0000000340)=0x9)
+
+program crashed: WARNING in __perf_event_account_interrupt
+testing program (duration=41.604450024s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-timer_create-io_setup
+detailed listing:
+executing program 0:
+perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+timer_create(0x3, 0x0, &(0x7f0000000040))
+io_setup(0x5, &(0x7f0000000300))
+
+program did not crash
+testing program (duration=41.604450024s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-timer_create-ioctl$PERF_EVENT_IOC_PERIOD
+detailed listing:
+executing program 0:
+r0 = perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+timer_create(0x3, 0x0, &(0x7f0000000040))
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, &(0x7f0000000340)=0x9)
+
+program crashed: WARNING in __perf_event_account_interrupt
+testing program (duration=41.604450024s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+detailed listing:
+executing program 0:
+r0 = perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, &(0x7f0000000340)=0x9)
+
+program crashed: WARNING in __perf_event_account_interrupt
+testing program (duration=41.604450024s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): ioctl$PERF_EVENT_IOC_PERIOD
+detailed listing:
+executing program 0:
+ioctl$PERF_EVENT_IOC_PERIOD(0xffffffffffffffff, 0x40082404, &(0x7f0000000340)=0x9)
+
+program did not crash
+testing program (duration=41.604450024s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+detailed listing:
+executing program 0:
+r0 = perf_event_open(0x0, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, &(0x7f0000000340)=0x9)
+
+program did not crash
+testing program (duration=41.604450024s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+detailed listing:
+executing program 0:
+r0 = perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, 0x0)
+
+program did not crash
+extracting C reproducer
+testing compiled C program (duration=41.604450024s, {Threaded:true Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program crashed: WARNING in __perf_event_account_interrupt
+simplifying C reproducer
+testing compiled C program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:4 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program crashed: WARNING in __perf_event_account_interrupt
+testing compiled C program (duration=41.604450024s, {Threaded:false Repeat:false RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:false Cgroups:false BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program did not crash
+testing compiled C program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program crashed: WARNING in __perf_event_account_interrupt
+testing compiled C program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:false UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program did not crash
+testing compiled C program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program crashed: WARNING in __perf_event_account_interrupt
+testing compiled C program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program crashed: WARNING in __perf_event_account_interrupt
+testing compiled C program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program crashed: WARNING in __perf_event_account_interrupt
+testing compiled C program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program crashed: WARNING in __perf_event_account_interrupt
+testing compiled C program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:false HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program crashed: WARNING in __perf_event_account_interrupt
+testing compiled C program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:false HandleSegv:false Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program did not crash
+testing compiled C program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:false Swap:true UseTmpDir:false HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program crashed: WARNING in __perf_event_account_interrupt
+testing compiled C program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:false Swap:false UseTmpDir:false HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+program did not crash
+testing program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:false Swap:true UseTmpDir:false HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+detailed listing:
+executing program 0:
+r0 = perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, &(0x7f0000000340)=0x9)
+
+program crashed: WARNING in __perf_event_account_interrupt
+validation run: crashed=true
+testing program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:false Swap:true UseTmpDir:false HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+detailed listing:
+executing program 0:
+r0 = perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, &(0x7f0000000340)=0x9)
+
+program crashed: WARNING in __perf_event_account_interrupt
+validation run: crashed=true
+testing program (duration=41.604450024s, {Threaded:false Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:false Swap:true UseTmpDir:false HandleSegv:true Trace:false CallComments:true LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): perf_event_open-ioctl$PERF_EVENT_IOC_PERIOD
+detailed listing:
+executing program 0:
+r0 = perf_event_open(&(0x7f0000000100)={0x2, 0x80, 0x80, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0xd1}, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb1a}, 0x0, 0x0, 0xffffffffffffffff, 0x0)
+ioctl$PERF_EVENT_IOC_PERIOD(r0, 0x40082404, &(0x7f0000000340)=0x9)
+
+program crashed: WARNING in __perf_event_account_interrupt
+validation run: crashed=true
+reproducing took 15m14.93297699s
+repro crashed as (corrupted=false):
+cgroup: Unknown subsys name 'rlimit'
+cgroup: Unknown subsys name 'memory'
+Adding 124996k swap on ./swap-file.  Priority:0 extents:1 across:124996k 
+------------[ cut here ]------------
+WARNING: kernel/events/core.c:2797 at perf_event_throttle_group kernel/events/core.c:2797 [inline], CPU#0: syz.3.42/1329
+WARNING: kernel/events/core.c:2797 at __perf_event_account_interrupt+0x485/0x530 kernel/events/core.c:10550, CPU#0: syz.3.42/1329
+Modules linked in:
+CPU: 0 UID: 0 PID: 1329 Comm: syz.3.42 Tainted: G        W           7.0.0-rc1+ #1 PREEMPT(lazy) 
+Tainted: [W]=WARN
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:perf_event_throttle_group kernel/events/core.c:2797 [inline]
+RIP: 0010:__perf_event_account_interrupt+0x485/0x530 kernel/events/core.c:10550
+Code: 8d b8 a8 00 00 00 e8 1a 02 d4 02 bf 01 00 00 00 41 89 c4 89 c6 e8 bb f4 f2 ff 41 83 ec 01 0f 84 ae fe ff ff e8 2c f3 f2 ff 90 <0f> 0b 90 e9 a0 fe ff ff e8 5e 93 2c 00 e9 ab fb ff ff 4c 89 e7 e8
+RSP: 0018:ffff88800f63f6b0 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81813b45
+RDX: ffff88800f73d340 RSI: ffff88800f73d340 RDI: 0000000000000002
+RBP: ffff8880077c3240 R08: 0000000000000000 R09: ffffffff81813b54
+R10: 0000000000000005 R11: 0000000000000000 R12: 00000000ffffffff
+R13: ffff8880077c3240 R14: 0000000000000009 R15: 0000000000000000
+FS:  00005555645e4500(0000) GS:ffff8880e58ee000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000001b30163fff CR3: 00000000175a0000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ __perf_event_overflow+0xb6/0xa00 kernel/events/core.c:10697
+ perf_swevent_overflow+0xac/0x150 kernel/events/core.c:10837
+ perf_swevent_event+0x14d/0x2e0 kernel/events/core.c:10875
+ perf_tp_event+0x3d8/0xcd0 kernel/events/core.c:11382
+ perf_trace_run_bpf_submit+0xef/0x180 kernel/events/core.c:11306
+ do_perf_trace_lock_acquire include/trace/events/lock.h:24 [inline]
+ perf_trace_lock_acquire+0x385/0x590 include/trace/events/lock.h:24
+ __do_trace_lock_acquire include/trace/events/lock.h:24 [inline]
+ trace_lock_acquire include/trace/events/lock.h:24 [inline]
+ lock_acquire+0xdf/0x2f0 kernel/locking/lockdep.c:5831
+ rcu_lock_acquire include/linux/rcupdate.h:312 [inline]
+ rcu_read_lock include/linux/rcupdate.h:850 [inline]
+ class_rcu_constructor include/linux/rcupdate.h:1193 [inline]
+ futex_hash+0xfe/0x300 kernel/futex/core.c:308
+ class_hb_constructor kernel/futex/futex.h:240 [inline]
+ futex_wake+0x14a/0x540 kernel/futex/waitwake.c:172
+ do_futex+0x26b/0x360 kernel/futex/syscalls.c:135
+ __do_sys_futex kernel/futex/syscalls.c:207 [inline]
+ __se_sys_futex kernel/futex/syscalls.c:188 [inline]
+ __x64_sys_futex+0x1c9/0x480 kernel/futex/syscalls.c:188
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0x115/0x650 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x4b/0x53
+RIP: 0033:0x7efda1f2ebe9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007fff100ac5a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 00007efda2165fa8 RCX: 00007efda1f2ebe9
+RDX: 00000000000f4240 RSI: 0000000000000081 RDI: 00007efda2165fac
+RBP: 0000000000000000 R08: 00007efda2ca5010 R09: 00000002100ac89f
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007efda2165fac
+R13: 00007efda2165fa0 R14: 0000000000000843 R15: 0000000000000003
+ </TASK>
+irq event stamp: 1507
+hardirqs last  enabled at (1517): [<ffffffff81540388>] __up_console_sem+0x78/0x80 kernel/printk/printk.c:347
+hardirqs last disabled at (1526): [<ffffffff8154036d>] __up_console_sem+0x5d/0x80 kernel/printk/printk.c:345
+softirqs last  enabled at (1114): [<ffffffff813a0f8f>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (1114): [<ffffffff813a0f8f>] handle_softirqs+0x59f/0x840 kernel/softirq.c:650
+softirqs last disabled at (1101): [<ffffffff813a19af>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (1101): [<ffffffff813a19af>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (1101): [<ffffffff813a19af>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (1101): [<ffffffff813a19af>] irq_exit_rcu+0xcf/0x100 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+
+final repro crashed as (corrupted=false):
+cgroup: Unknown subsys name 'rlimit'
+cgroup: Unknown subsys name 'memory'
+Adding 124996k swap on ./swap-file.  Priority:0 extents:1 across:124996k 
+------------[ cut here ]------------
+WARNING: kernel/events/core.c:2797 at perf_event_throttle_group kernel/events/core.c:2797 [inline], CPU#0: syz.3.42/1329
+WARNING: kernel/events/core.c:2797 at __perf_event_account_interrupt+0x485/0x530 kernel/events/core.c:10550, CPU#0: syz.3.42/1329
+Modules linked in:
+CPU: 0 UID: 0 PID: 1329 Comm: syz.3.42 Tainted: G        W           7.0.0-rc1+ #1 PREEMPT(lazy) 
+Tainted: [W]=WARN
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:perf_event_throttle_group kernel/events/core.c:2797 [inline]
+RIP: 0010:__perf_event_account_interrupt+0x485/0x530 kernel/events/core.c:10550
+Code: 8d b8 a8 00 00 00 e8 1a 02 d4 02 bf 01 00 00 00 41 89 c4 89 c6 e8 bb f4 f2 ff 41 83 ec 01 0f 84 ae fe ff ff e8 2c f3 f2 ff 90 <0f> 0b 90 e9 a0 fe ff ff e8 5e 93 2c 00 e9 ab fb ff ff 4c 89 e7 e8
+RSP: 0018:ffff88800f63f6b0 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81813b45
+RDX: ffff88800f73d340 RSI: ffff88800f73d340 RDI: 0000000000000002
+RBP: ffff8880077c3240 R08: 0000000000000000 R09: ffffffff81813b54
+R10: 0000000000000005 R11: 0000000000000000 R12: 00000000ffffffff
+R13: ffff8880077c3240 R14: 0000000000000009 R15: 0000000000000000
+FS:  00005555645e4500(0000) GS:ffff8880e58ee000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000001b30163fff CR3: 00000000175a0000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ __perf_event_overflow+0xb6/0xa00 kernel/events/core.c:10697
+ perf_swevent_overflow+0xac/0x150 kernel/events/core.c:10837
+ perf_swevent_event+0x14d/0x2e0 kernel/events/core.c:10875
+ perf_tp_event+0x3d8/0xcd0 kernel/events/core.c:11382
+ perf_trace_run_bpf_submit+0xef/0x180 kernel/events/core.c:11306
+ do_perf_trace_lock_acquire include/trace/events/lock.h:24 [inline]
+ perf_trace_lock_acquire+0x385/0x590 include/trace/events/lock.h:24
+ __do_trace_lock_acquire include/trace/events/lock.h:24 [inline]
+ trace_lock_acquire include/trace/events/lock.h:24 [inline]
+ lock_acquire+0xdf/0x2f0 kernel/locking/lockdep.c:5831
+ rcu_lock_acquire include/linux/rcupdate.h:312 [inline]
+ rcu_read_lock include/linux/rcupdate.h:850 [inline]
+ class_rcu_constructor include/linux/rcupdate.h:1193 [inline]
+ futex_hash+0xfe/0x300 kernel/futex/core.c:308
+ class_hb_constructor kernel/futex/futex.h:240 [inline]
+ futex_wake+0x14a/0x540 kernel/futex/waitwake.c:172
+ do_futex+0x26b/0x360 kernel/futex/syscalls.c:135
+ __do_sys_futex kernel/futex/syscalls.c:207 [inline]
+ __se_sys_futex kernel/futex/syscalls.c:188 [inline]
+ __x64_sys_futex+0x1c9/0x480 kernel/futex/syscalls.c:188
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0x115/0x650 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x4b/0x53
+RIP: 0033:0x7efda1f2ebe9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007fff100ac5a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: ffffffffffffffda RBX: 00007efda2165fa8 RCX: 00007efda1f2ebe9
+RDX: 00000000000f4240 RSI: 0000000000000081 RDI: 00007efda2165fac
+RBP: 0000000000000000 R08: 00007efda2ca5010 R09: 00000002100ac89f
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007efda2165fac
+R13: 00007efda2165fa0 R14: 0000000000000843 R15: 0000000000000003
+ </TASK>
+irq event stamp: 1507
+hardirqs last  enabled at (1517): [<ffffffff81540388>] __up_console_sem+0x78/0x80 kernel/printk/printk.c:347
+hardirqs last disabled at (1526): [<ffffffff8154036d>] __up_console_sem+0x5d/0x80 kernel/printk/printk.c:345
+softirqs last  enabled at (1114): [<ffffffff813a0f8f>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (1114): [<ffffffff813a0f8f>] handle_softirqs+0x59f/0x840 kernel/softirq.c:650
+softirqs last disabled at (1101): [<ffffffff813a19af>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (1101): [<ffffffff813a19af>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (1101): [<ffffffff813a19af>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (1101): [<ffffffff813a19af>] irq_exit_rcu+0xcf/0x100 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+

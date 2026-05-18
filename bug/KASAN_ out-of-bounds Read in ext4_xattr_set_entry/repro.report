@@ -1,0 +1,103 @@
+==================================================================
+EXT4-fs error (device loop3): htree_dirblock_to_tree:1077: inode #2: block 13: comm syz-executor171: bad entry in directory: directory entry overrun - offset=76, inode=0, rec_len=1024, size=1024 fake=0
+BUG: KASAN: out-of-bounds in ext4_xattr_set_entry+0xf23/0x1c30 fs/ext4/xattr.c:1761
+EXT4-fs error (device loop2): htree_dirblock_to_tree:1077: inode #2: block 13: comm syz-executor171: bad entry in directory: directory entry overrun - offset=76, inode=0, rec_len=1024, size=1024 fake=0
+Read of size 18446744073709551600 at addr ffff888101f657f4 by task syz-executor171/304
+EXT4-fs error (device loop2): ext4_lookup:1787: inode #2: comm syz-executor171: deleted inode referenced: 15
+EXT4-fs error (device loop3): ext4_lookup:1787: inode #2: comm syz-executor171: deleted inode referenced: 15
+EXT4-fs error (device loop3): ext4_lookup:1787: inode #2: comm syz-executor171: deleted inode referenced: 15
+
+CPU: 1 UID: 0 PID: 304 Comm: syz-executor171 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0xca/0x120 lib/dump_stack.c:120
+ print_address_description mm/kasan/report.c:378 [inline]
+ print_report+0xcf/0x610 mm/kasan/report.c:482
+ kasan_report+0x96/0xd0 mm/kasan/report.c:595
+ check_region_inline mm/kasan/generic.c:194 [inline]
+ kasan_check_range+0xf6/0x1b0 mm/kasan/generic.c:200
+ __asan_memmove+0x24/0x60 mm/kasan/shadow.c:94
+ ext4_xattr_set_entry+0xf23/0x1c30 fs/ext4/xattr.c:1761
+ ext4_xattr_ibody_set+0x3e1/0x5e0 fs/ext4/xattr.c:2273
+ ext4_destroy_inline_data_nolock+0x28f/0x5c0 fs/ext4/inline.c:472
+ ext4_convert_inline_data_to_extent+0x4cf/0xda0 fs/ext4/inline.c:623
+ ext4_try_to_write_inline_data+0xe9/0x100 fs/ext4/inline.c:781
+ ext4_write_begin+0xdf2/0x12c0 fs/ext4/inode.c:1307
+ ext4_da_write_begin+0x8b6/0xb30 fs/ext4/inode.c:3130
+ generic_perform_write+0x391/0x810 mm/filemap.c:4314
+ ext4_buffered_write_iter+0x11a/0x430 fs/ext4/file.c:299
+ ext4_file_write_iter+0x561/0x1910 fs/ext4/file.c:723
+ __kernel_write_iter+0x309/0xa90 fs/read_write.c:619
+ __kernel_write+0xca/0x110 fs/read_write.c:639
+ __dump_emit+0x192/0x280 fs/coredump.c:1220
+ dump_emit+0xa5/0xe0 fs/coredump.c:1258
+ elf_core_dump+0x22e5/0x3bf0 fs/binfmt_elf.c:2066
+ coredump_write fs/coredump.c:1049 [inline]
+ do_coredump fs/coredump.c:1126 [inline]
+ vfs_coredump+0xe97/0x3f60 fs/coredump.c:1200
+ get_signal+0x1998/0x24a0 kernel/signal.c:3019
+ arch_do_signal_or_restart+0x80/0x890 arch/x86/kernel/signal.c:337
+ __exit_to_user_mode_loop kernel/entry/common.c:41 [inline]
+ exit_to_user_mode_loop kernel/entry/common.c:75 [inline]
+ __exit_to_user_mode_prepare include/linux/irq-entry-common.h:226 [inline]
+ irqentry_exit_to_user_mode_prepare include/linux/irq-entry-common.h:270 [inline]
+ irqentry_exit_to_user_mode include/linux/irq-entry-common.h:339 [inline]
+ irqentry_exit+0x2b9/0x6d0 kernel/entry/common.c:196
+ exc_page_fault+0xde/0x180 arch/x86/mm/fault.c:1530
+ asm_exc_page_fault+0x26/0x30 arch/x86/include/asm/idtentry.h:618
+RIP: 0033:0x7f90629a6705
+Code: 00 00 00 66 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 48 3d 01 f0 ff ff 73 01 <c3> 48 c7 c1 c0 ff ff ff f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 84
+RSP: 002b:00002000000011a0 EFLAGS: 00010217
+RAX: 0000000000000000 RBX: 0000000000000000 RCX: 00007f90629a66fd
+RDX: 0000000000000000 RSI: 00002000000011a0 RDI: 0000000084000400
+RBP: 0000000000000003 R08: 0000000000000000 R09: 0000000000000003
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007ffdc9490740
+R13: 00007ffdc94905b0 R14: 00007ffdc9490590 R15: 0000000000000000
+ </TASK>
+
+EXT4-fs error (device loop2): ext4_lookup:1787: inode #2: comm syz-executor171: deleted inode referenced: 15
+The buggy address belongs to the physical page:
+page: refcount:3 mapcount:0 mapping:0000000044c9a492 index:0x2 pfn:0x101f65
+memcg:ffff888104de09c0
+syz-executor171 (303) used greatest stack depth: 22984 bytes left
+aops:def_blk_aops ino:700000 dentry name(?):""
+flags: 0x20000000000413c(referenced|uptodate|dirty|lru|active|private|node=0|zone=2)
+raw: 020000000000413c ffffea0004551b08 ffffea0004282f48 ffff8881004313b0
+raw: 0000000000000002 ffff88811170f570 00000003ffffffff ffff888104de09c0
+page dumped because: kasan: bad access detected
+
+Memory state around the buggy address:
+ ffff888101f65680: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ ffff888101f65700: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+>ffff888101f65780: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+                                                             ^
+ ffff888101f65800: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ ffff888101f65880: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+==================================================================
+EXT4-fs error (device loop0): htree_dirblock_to_tree:1077: inode #2: block 13: comm syz-executor171: bad entry in directory: directory entry overrun - offset=76, inode=0, rec_len=1024, size=1024 fake=0
+EXT4-fs error (device loop0): ext4_lookup:1787: inode #2: comm syz-executor171: deleted inode referenced: 15
+EXT4-fs (loop3): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+loop1: detected capacity change from 0 to 512
+EXT4-fs: Ignoring removed mblk_io_submit option
+EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+EXT4-fs error (device loop0): ext4_lookup:1787: inode #2: comm syz-executor171: deleted inode referenced: 15
+EXT4-fs error (device loop5): ext4_iget_extra_inode:5072: inode #15: comm syz-executor171: corrupted in-inode xattr: invalid ea_ino
+EXT4-fs error (device loop5): ext4_orphan_get:1394: comm syz-executor171: couldn't read orphan inode 15 (err -117)
+EXT4-fs error (device loop1): ext4_iget_extra_inode:5072: inode #15: comm syz-executor171: corrupted in-inode xattr: invalid ea_ino
+EXT4-fs error (device loop1): ext4_orphan_get:1394: comm syz-executor171: couldn't read orphan inode 15 (err -117)
+loop7: detected capacity change from 0 to 512
+loop6: detected capacity change from 0 to 512
+EXT4-fs (loop5): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+EXT4-fs: Ignoring removed mblk_io_submit option
+EXT4-fs: Ignoring removed mblk_io_submit option
+EXT4-fs error (device loop6): ext4_iget_extra_inode:5072: inode #15: comm syz-executor171: corrupted in-inode xattr: invalid ea_ino
+EXT4-fs error (device loop7): ext4_iget_extra_inode:5072: inode #15: comm syz-executor171: corrupted in-inode xattr: invalid ea_ino
+loop4: detected capacity change from 0 to 512
+EXT4-fs (loop0): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+EXT4-fs error (device loop7): ext4_orphan_get:1394: comm syz-executor171: couldn't read orphan inode 15 (err -117)
+EXT4-fs error (device loop6): ext4_orphan_get:1394: comm syz-executor171: couldn't read orphan inode 15 (err -117)
+EXT4-fs: Ignoring removed mblk_io_submit option
+EXT4-fs (loop7): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+EXT4-fs (loop6): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.

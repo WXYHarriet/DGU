@@ -1,0 +1,1171 @@
+Extracting prog: 2h28m5.973190637s
+Minimizing prog: 2h18m25.866421946s
+Simplifying prog options: 0s
+Extracting C: 2m57.434121549s
+Simplifying C: 21m18.855529934s
+
+
+extracting reproducer from 79 programs
+testing a last program of every proc
+single: executing 29 programs separately with timeout 6m0s
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): creat-getpgrp-perf_event_open-epoll_wait-socket$inet_tcp-ioctl$sock_SIOCGSKNS-ioctl$PERF_EVENT_IOC_DISABLE-write$P9_RREADLINK-migrate_pages
+detailed listing:
+executing program 0:
+r0 = creat(&(0x7f0000000080)='./file0\x00', 0x0)
+r1 = getpgrp(0x0)
+r2 = perf_event_open(&(0x7f0000000280)={0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x6, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, @perf_config_ext={0x2e, 0x800}, 0x0, 0x0, 0x0, 0x0, 0xffffffffffffffff, 0x0, 0x2}, r1, 0x0, 0xffffffffffffffff, 0x0)
+epoll_wait(r0, &(0x7f00000000c0)=[{}, {}, {}], 0x3, 0x2) (async)
+r3 = socket$inet_tcp(0x2, 0x1, 0x0)
+ioctl$sock_SIOCGSKNS(r3, 0x894c, 0x0)
+ioctl$PERF_EVENT_IOC_DISABLE(r2, 0x2401, 0x0)
+write$P9_RREADLINK(r0, &(0x7f00000001c0), 0xfdb9) (async)
+migrate_pages(0x0, 0x3, &(0x7f0000000000)=0x53, &(0x7f0000000040)=0x1)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): pipe-socket$inet_udp-close-socket$inet6-fspick-fsmount-sendto$inet6-recvfrom$inet6-writev-write$binfmt_misc-syz_open_dev$sg-ioctl$SG_GET_LOW_DMA-poll-splice-ioctl$TIOCSETD
+detailed listing:
+executing program 0:
+pipe(&(0x7f0000000680)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff})
+r2 = socket$inet_udp(0x2, 0x2, 0x0)
+close(r2)
+r3 = socket$inet6(0x10, 0x3, 0x0)
+r4 = fspick(r0, &(0x7f00000000c0)='./file0\x00', 0x1)
+fsmount(r4, 0x0, 0x8)
+sendto$inet6(r3, &(0x7f0000000140)="1ba0000016001d0d89fdc5cbdd045798707bed4dca141a780f0f8e", 0xff3b, 0x0, 0x0, 0x0)
+recvfrom$inet6(r3, &(0x7f0000000000)=""/45, 0x2d, 0x0, 0x0, 0x0)
+writev(0xffffffffffffffff, &(0x7f00000002c0)=[{&(0x7f0000000000)="48050000150019", 0x7}], 0x1)
+write$binfmt_misc(r1, &(0x7f0000000000), 0xfffffecc)
+r5 = syz_open_dev$sg(&(0x7f0000000080), 0x0, 0xc0002)
+ioctl$SG_GET_LOW_DMA(r5, 0x227a, &(0x7f0000000000))
+poll(&(0x7f0000000040)=[{r5, 0x4}, {r2, 0x9}, {r2, 0x4006}], 0x3, 0x6)
+splice(r0, 0x0, r2, 0x0, 0xd, 0x0)
+ioctl$TIOCSETD(r1, 0x5423, &(0x7f0000000100)=0x1a)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_open_dev$loop-openat$selinux_load-write$selinux_load-openat$rtc-io_uring_setup-dup3-read$eventfd-ioctl$RTC_IRQP_SET-clock_getres-setrlimit-getsockopt$sock_cred-lsm_set_self_attr-io_uring_setup-syz_io_uring_setup-getrandom-ioctl$BLKTRACESETUP
+detailed listing:
+executing program 0:
+r0 = syz_open_dev$loop(&(0x7f0000000000), 0x4, 0x0)
+r1 = openat$selinux_load(0xffffffffffffff9c, &(0x7f0000000300), 0x2, 0x0)
+write$selinux_load(r1, &(0x7f0000000180)={0xf97cff8c, 0x8}, 0x10)
+r2 = openat$rtc(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+r3 = io_uring_setup(0x257a, &(0x7f0000000140)={0x0, 0x157c, 0x80})
+r4 = dup3(r2, r3, 0x0)
+read$eventfd(r4, &(0x7f0000000040), 0x8)
+ioctl$RTC_IRQP_SET(r4, 0x4008700c, 0x1eae)
+clock_getres(0x3fd7ad4a86ef4363, 0x0)
+setrlimit(0x7, &(0x7f0000000680)={0x1, 0x7})
+getsockopt$sock_cred(0xffffffffffffffff, 0x1, 0x11, 0x0, 0x0)
+lsm_set_self_attr(0x67, 0x0, 0x0, 0x1f)
+r5 = io_uring_setup(0x71f1, &(0x7f0000000100)={0x0, 0xf3f1, 0x8000, 0x3, 0x120})
+syz_io_uring_setup(0x2c9f, &(0x7f0000000080)={0x0, 0x0, 0x80, 0x0, 0x0, 0x0, r5}, 0x0, 0x0)
+getrandom(&(0x7f0000000440)=""/245, 0x7591fcc76eda37b7, 0x0)
+ioctl$BLKTRACESETUP(r0, 0xc0481273, &(0x7f0000000040)={'\x00', 0x0, 0x4, 0x24a60311})
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): getitimer-socket$inet6_tcp-connect$inet6-ioctl$sock_SIOCGIFINDEX_80211-setsockopt$inet6_tcp_int
+detailed listing:
+executing program 0:
+getitimer(0x2, &(0x7f0000000000))
+r0 = socket$inet6_tcp(0xa, 0x1, 0x0)
+connect$inet6(0xffffffffffffffff, &(0x7f0000000040)={0xa, 0x0, 0x0, @ipv4={'\x00', '\xff\xff', @multicast1}}, 0x18)
+ioctl$sock_SIOCGIFINDEX_80211(0xffffffffffffffff, 0x8933, &(0x7f00000000c0)={'wlan1\x00'})
+setsockopt$inet6_tcp_int(r0, 0x6, 0x2000000000000020, &(0x7f0000000040)=0xa, 0x1959cc36)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$inet6_tcp-connect$inet6-sendto$inet6
+detailed listing:
+executing program 0:
+r0 = socket$inet6_tcp(0xa, 0x1, 0x0)
+connect$inet6(r0, &(0x7f00000000c0)={0xa, 0x0, 0x0, @empty, 0x1}, 0x1c)
+sendto$inet6(r0, &(0x7f0000000000)="b66ceee3d7c5f06d50989a9881cc8a259d81c87a413616ff12c285bfd4333acc6104b03efc1d", 0x26, 0x44084, &(0x7f0000000040)={0xa, 0x4e23, 0x9, @ipv4={'\x00', '\xff\xff', @multicast2}, 0x8}, 0x1c)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$inet6_tcp-connect$inet6-sendto$inet6
+detailed listing:
+executing program 0:
+r0 = socket$inet6_tcp(0xa, 0x1, 0x0)
+connect$inet6(r0, &(0x7f00000000c0)={0xa, 0x0, 0x0, @empty, 0x1}, 0x1c)
+sendto$inet6(r0, &(0x7f0000000000)="b66ceee3d7c5f06d50989a9881cc8a259d81c87a413616ff12c285bfd4333acc6104b03efc1d", 0x26, 0x44084, &(0x7f0000000040)={0xa, 0x4e23, 0x9, @ipv4={'\x00', '\xff\xff', @multicast2}, 0x8}, 0x1c)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_proc_sys_generated_245-seccomp$SECCOMP_SET_MODE_FILTER_LISTENER
+detailed listing:
+executing program 0:
+syz_proc_sys_generated_245(0x1af, 0x1, 0x8181, 0x2f0, 0x0)
+seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0x0, &(0x7f00000001c0)={0x0, 0x0})
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_proc_sys_generated_245-seccomp$SECCOMP_SET_MODE_FILTER_LISTENER
+detailed listing:
+executing program 0:
+syz_proc_sys_generated_245(0x1af, 0x1, 0x8181, 0x2f0, 0x0)
+seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0x0, &(0x7f00000001c0)={0x0, 0x0})
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_open_dev$loop-ioctl$BLKTRACESTOP-ioctl$sock_SIOCGIFVLAN_SET_VLAN_NAME_TYPE_CMD-setsockopt$IP_VS_SO_SET_ADD-mount
+detailed listing:
+executing program 0:
+r0 = syz_open_dev$loop(&(0x7f0000000000), 0x0, 0x0)
+ioctl$BLKTRACESTOP(r0, 0x1275, 0x0)
+ioctl$sock_SIOCGIFVLAN_SET_VLAN_NAME_TYPE_CMD(0xffffffffffffffff, 0x8982, &(0x7f0000000000))
+setsockopt$IP_VS_SO_SET_ADD(0xffffffffffffffff, 0x0, 0x482, &(0x7f0000000040)={0x0, @multicast2, 0x0, 0x80002, 'lblc\x00'}, 0x2c)
+mount(0x0, &(0x7f0000000240)='.\x00', &(0x7f000015bffc)='nfs\x00', 0x0, &(0x7f0000000000))
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_open_dev$loop-ioctl$BLKTRACESTOP-ioctl$sock_SIOCGIFVLAN_SET_VLAN_NAME_TYPE_CMD-setsockopt$IP_VS_SO_SET_ADD-mount
+detailed listing:
+executing program 0:
+r0 = syz_open_dev$loop(&(0x7f0000000000), 0x0, 0x0)
+ioctl$BLKTRACESTOP(r0, 0x1275, 0x0)
+ioctl$sock_SIOCGIFVLAN_SET_VLAN_NAME_TYPE_CMD(0xffffffffffffffff, 0x8982, &(0x7f0000000000))
+setsockopt$IP_VS_SO_SET_ADD(0xffffffffffffffff, 0x0, 0x482, &(0x7f0000000040)={0x0, @multicast2, 0x0, 0x80002, 'lblc\x00'}, 0x2c)
+mount(0x0, &(0x7f0000000240)='.\x00', &(0x7f000015bffc)='nfs\x00', 0x0, &(0x7f0000000000))
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$inet-sendmmsg$sock-socket$inet_tcp-setsockopt$inet_tcp_int-getsockopt$inet_tcp_int-epoll_create1-fcntl$dupfd-ioctl$sock_SIOCINQ-openat$sr-ioctl$SCSI_IOCTL_SYNC-syz_open_procfs-setsockopt$inet_MCAST_MSFILTER-setsockopt$inet_group_source_req-ioctl$F2FS_IOC_RESERVE_COMPRESS_BLOCKS-prctl$PR_SET_SECCOMP-socket$inet_tcp-syz_io_uring_setup-timer_create-timer_settime-seccomp$SECCOMP_SET_MODE_FILTER_LISTENER-uname-openat$sysfs-sendfile-chown-setsockopt$inet_mreqn-setsockopt$inet_msfilter-socket$netlink-openat$ptmx-ioctl$TCSETS-writev
+detailed listing:
+executing program 0:
+r0 = socket$inet(0x2, 0x2, 0x0) (async)
+sendmmsg$sock(0xffffffffffffffff, 0x0, 0x0, 0x0) (async)
+r1 = socket$inet_tcp(0x2, 0x1, 0x0)
+setsockopt$inet_tcp_int(r1, 0x6, 0x8, &(0x7f0000000040)=0x404, 0x4) (async)
+getsockopt$inet_tcp_int(r1, 0x6, 0x8, 0x0, &(0x7f0000000200)) (async)
+r2 = epoll_create1(0x0)
+r3 = fcntl$dupfd(r2, 0x0, r2)
+ioctl$sock_SIOCINQ(r3, 0x541b, 0x0) (async)
+r4 = openat$sr(0xffffffffffffff9c, &(0x7f0000000000), 0x10f982, 0x0)
+ioctl$SCSI_IOCTL_SYNC(r4, 0x4) (async)
+syz_open_procfs(0x0, 0x0)
+setsockopt$inet_MCAST_MSFILTER(0xffffffffffffffff, 0x0, 0x30, 0x0, 0x110)
+setsockopt$inet_group_source_req(0xffffffffffffffff, 0x0, 0x2b, 0x0, 0x0)
+ioctl$F2FS_IOC_RESERVE_COMPRESS_BLOCKS(0xffffffffffffffff, 0x8008f513, 0x0)
+prctl$PR_SET_SECCOMP(0x16, 0x2, &(0x7f0000000040)={0x1, &(0x7f0000000180)=[{0x200000000006, 0x0, 0x0, 0x7ffc0004}]}) (async)
+r5 = socket$inet_tcp(0x2, 0x1, 0x0)
+syz_io_uring_setup(0x3b9a, 0x0, 0x0, 0x0) (async)
+timer_create(0x7, 0x0, 0x0)
+timer_settime(0x0, 0x0, 0x0, 0x0) (async)
+seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0x0, &(0x7f0000000040)={0x2, &(0x7f0000000140)=[{0x6, 0x0, 0x0, 0x7fff7ffc}, {0x9, 0x1, 0x5, 0x8}]}) (async)
+uname(0x0) (async)
+r6 = openat$sysfs(0xffffffffffffff9c, &(0x7f00000002c0)='/sys/power/resume', 0x141a82, 0x0)
+sendfile(r6, r6, 0x0, 0x81)
+chown(0x0, 0x0, 0x0) (async)
+setsockopt$inet_mreqn(r0, 0x0, 0x23, &(0x7f0000000740)={@multicast2, @loopback}, 0x40) (async)
+setsockopt$inet_msfilter(r0, 0x0, 0x29, &(0x7f0000000000)=ANY=[@ANYBLOB="e00000027f0000010000000003000000000200"/28, @ANYRES8=r5], 0x1c)
+r7 = socket$netlink(0x10, 0x3, 0x0) (async)
+r8 = openat$ptmx(0xffffffffffffff9c, &(0x7f0000000180), 0x0, 0x0)
+ioctl$TCSETS(r8, 0x5402, &(0x7f0000000040)={0x1e00, 0x0, 0x1dff, 0x0, 0x0, "fa3a0a4249110bfdfe3b0e9583944b0ee64de5"})
+writev(r7, &(0x7f00000003c0)=[{&(0x7f0000000080)="390000001300034700bb65e1c3e4ffff80000000010000005600000025000000190004000400000007fd17e5ffff080004000000000000000049ab6bf5acd79b71e98626814d5b16326a145aa883a5b1a7daddf2e9de86", 0x57}], 0x1)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): setsockopt$inet6_IPV6_DSTOPTS-syz_mount_image$ext4-creat-open-ftruncate-socket$nl_xfrm-splice-socket$nl_xfrm-sendmsg$nl_xfrm-fallocate-setsockopt$inet6_IPV6_DSTOPTS-syz_mount_image$ext4-creat-open-ftruncate-socket$nl_xfrm-splice-socket$nl_xfrm-sendmsg$nl_xfrm-fallocate
+detailed listing:
+executing program 0:
+setsockopt$inet6_IPV6_DSTOPTS(0xffffffffffffffff, 0x29, 0x3b, &(0x7f00000004c0)={0x5e, 0x2a, '\x00', [@padn={0x1, 0x5, [0x0, 0x0, 0x0, 0x0, 0x0]}, @enc_lim={0x4, 0x1, 0xae}, @generic={0x2, 0x30, "514f765c1fcb2a6dbf0aed3d82aed1b57d05c9edafb5f3c91b3021557ba520662c2a6e75c674bd47091ee4ce81bd4e94"}, @calipso={0x7, 0x50, {0x2, 0x12, 0x80, 0xfff7, [0x5, 0x4, 0x4, 0x5, 0x5, 0x5, 0x7722, 0x100, 0x2]}}, @enc_lim={0x4, 0x1, 0x8}, @generic={0x9, 0xc4, "5d2b617f35d0453315275a619290966e9ecb2636190bdc9391b1e9357726ae89716badfb77b40315847341b2a12874e98c5198c8db7d16137504786b3ef25d75168ede018ebbc246c838f2bd6d1124d6b6ccbc1759cf4108de17f8acf5855eac7654c864b788a8b366590737210afaaa2f5ed07fbcab113dfcbe5eb60c9627c8f3f813bc83327351afdd08f7394777a46289e44fc079139e9344da50e6ff563efc9b4624119ca597e2688c7a5b8d59e52cf1aeba5bb3dd610e97b717a623327d852315f9"}]}, 0x160)
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000040)={[{@resgid={'resgid', 0x3d, 0xee01}}, {@block_validity}, {@debug_want_extra_isize={'debug_want_extra_isize', 0x3d, 0x80}}, {@errors_remount}, {@init_itable_val={'init_itable', 0x3d, 0xcc6f}}, {@usrquota}, {@errors_remount}]}, 0xff, 0x421, &(0x7f0000000900)="$eJzs28tvG8UfAPDvrpP29+uDhFIeLQUMBRHxSJq0QA9cQCBxAAkJDuUYkrQKdRvUBIlWEQSEyhFV4o44IvEXcIILAk5IXOGOKlUolxZORmvvJq5jhzycurCfj7TtjHecma9nx56dsQMorWr2TxKxLyJ+jYihZvbmAtXmfzeWF6f+XF6cSqJef+OPpFHu+vLiVFG0eN7ePDOSRqSfJG1/sGn+4qWzk7XazIU8P7Zw7t2x+YuXnp49N3lm5szM+YmTJ08cH3/u2YlnehJn1qbrhz+YO3LolbeuvDZ16srbP36dNWtffr41jl6pRrVT6A2P9bqyPtvfkk4G+tgQNqUSEVl3DTbG/1BUYrXzhuLlj/vaOGBH1ev1+u7up5fqwH9YEv1uAdAfxQd9dv9bHLdo6nFbuPZC8wYoi/tGfjTPDESalxlsu7/tpWpEnFr664vsiB1ahwAAaPVtNv95qtP8L417Wsrdke8NDUfEnRFxICLuioiDEXF3RKPsvRFx3ybrr7bl185/0qtbCmyDsvnf8/ne1s3zv2L2F8OVPLe/Ef9gcnq2NnMsf01GYnB3lh9fp47vXvrls27nWud/2ZHVX8wF83ZcHWhboJueXJjcTsytrn0UcXigU/zJyk5AEhGHIuLwFuuYfeKrI93O/XP86+jBPlP9y4jHm/2/FG3xF5L19yfH/he1mWNjxVWx1k8/X369W/3bir8Hsv7f0/H6X4l/OGndr53ffB2Xf/u06z3NVq//XcmbjfSu/LH3JxcWLoxH7EpeXfv4xOpzi3xRPot/5Gjn8X8gVl+J+yMiu4gfiIgHI+KhvO0PR8QjEXF0nfh/ePHRd7Ye/87K4p/eVP9vPlE5+/033erfWP+faKRG8kc28v630QZu57UDAACAf4u08R34JB1dSafp6Gjz+/IHY09am5tfePL03Hvnp5vflR+OwbRY6RpqWQ8dz9eGi/xEW/54vm78eeX/jfzo1Fxtut/BQ8nt7TL+M79X+t06YMf5vRaUl/EP5WX8Q3kZ/1Bexj+UV6fx/2Ef2gHcej7/obyMfygv4x/Ky/iHUtrO7/olypyI9LZohsQOJfr9zgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAbfwcAAP//AzTmYw==")
+r0 = creat(&(0x7f0000000040)='./bus\x00', 0x0)
+r1 = open(&(0x7f0000007f80)='./bus\x00', 0x145142, 0x0)
+ftruncate(r1, 0x2007ffb)
+r2 = socket$nl_xfrm(0x10, 0x3, 0x6)
+splice(r0, &(0x7f0000000000)=0x7fffffffffffffff, r2, &(0x7f0000000180)=0x1f9b0c98, 0xb, 0xa)
+r3 = socket$nl_xfrm(0x10, 0x3, 0x6)
+sendmsg$nl_xfrm(r3, &(0x7f0000000140)={0x0, 0x0, &(0x7f0000000100)={&(0x7f0000000240)=@newsa={0x104, 0x10, 0x557b6864ec138335, 0x4000, 0x0, {{@in=@multicast2, @in6=@private0, 0x0, 0x400, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xffffffffffffffff}, {@in6=@mcast2, 0x0, 0x2b}, @in=@private=0xa010101, {}, {}, {0x1}, 0x0, 0x0, 0x2, 0x3, 0x0, 0x30}, [@coaddr={0x14, 0xe, @in6=@mcast1}]}, 0x104}}, 0x0)
+fallocate(r0, 0x100000003, 0x0, 0x28120001)
+setsockopt$inet6_IPV6_DSTOPTS(0xffffffffffffffff, 0x29, 0x3b, &(0x7f00000004c0)={0x5e, 0x2a, '\x00', [@padn={0x1, 0x5, [0x0, 0x0, 0x0, 0x0, 0x0]}, @enc_lim={0x4, 0x1, 0xae}, @generic={0x2, 0x30, "514f765c1fcb2a6dbf0aed3d82aed1b57d05c9edafb5f3c91b3021557ba520662c2a6e75c674bd47091ee4ce81bd4e94"}, @calipso={0x7, 0x50, {0x2, 0x12, 0x80, 0xfff7, [0x5, 0x4, 0x4, 0x5, 0x5, 0x5, 0x7722, 0x100, 0x2]}}, @enc_lim={0x4, 0x1, 0x8}, @generic={0x9, 0xc4, "5d2b617f35d0453315275a619290966e9ecb2636190bdc9391b1e9357726ae89716badfb77b40315847341b2a12874e98c5198c8db7d16137504786b3ef25d75168ede018ebbc246c838f2bd6d1124d6b6ccbc1759cf4108de17f8acf5855eac7654c864b788a8b366590737210afaaa2f5ed07fbcab113dfcbe5eb60c9627c8f3f813bc83327351afdd08f7394777a46289e44fc079139e9344da50e6ff563efc9b4624119ca597e2688c7a5b8d59e52cf1aeba5bb3dd610e97b717a623327d852315f9"}]}, 0x160) (async)
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000040)={[{@resgid={'resgid', 0x3d, 0xee01}}, {@block_validity}, {@debug_want_extra_isize={'debug_want_extra_isize', 0x3d, 0x80}}, {@errors_remount}, {@init_itable_val={'init_itable', 0x3d, 0xcc6f}}, {@usrquota}, {@errors_remount}]}, 0xff, 0x421, &(0x7f0000000900)="$eJzs28tvG8UfAPDvrpP29+uDhFIeLQUMBRHxSJq0QA9cQCBxAAkJDuUYkrQKdRvUBIlWEQSEyhFV4o44IvEXcIILAk5IXOGOKlUolxZORmvvJq5jhzycurCfj7TtjHecma9nx56dsQMorWr2TxKxLyJ+jYihZvbmAtXmfzeWF6f+XF6cSqJef+OPpFHu+vLiVFG0eN7ePDOSRqSfJG1/sGn+4qWzk7XazIU8P7Zw7t2x+YuXnp49N3lm5szM+YmTJ08cH3/u2YlnehJn1qbrhz+YO3LolbeuvDZ16srbP36dNWtffr41jl6pRrVT6A2P9bqyPtvfkk4G+tgQNqUSEVl3DTbG/1BUYrXzhuLlj/vaOGBH1ev1+u7up5fqwH9YEv1uAdAfxQd9dv9bHLdo6nFbuPZC8wYoi/tGfjTPDESalxlsu7/tpWpEnFr664vsiB1ahwAAaPVtNv95qtP8L417Wsrdke8NDUfEnRFxICLuioiDEXF3RKPsvRFx3ybrr7bl185/0qtbCmyDsvnf8/ne1s3zv2L2F8OVPLe/Ef9gcnq2NnMsf01GYnB3lh9fp47vXvrls27nWud/2ZHVX8wF83ZcHWhboJueXJjcTsytrn0UcXigU/zJyk5AEhGHIuLwFuuYfeKrI93O/XP86+jBPlP9y4jHm/2/FG3xF5L19yfH/he1mWNjxVWx1k8/X369W/3bir8Hsv7f0/H6X4l/OGndr53ffB2Xf/u06z3NVq//XcmbjfSu/LH3JxcWLoxH7EpeXfv4xOpzi3xRPot/5Gjn8X8gVl+J+yMiu4gfiIgHI+KhvO0PR8QjEXF0nfh/ePHRd7Ye/87K4p/eVP9vPlE5+/033erfWP+faKRG8kc28v630QZu57UDAACAf4u08R34JB1dSafp6Gjz+/IHY09am5tfePL03Hvnp5vflR+OwbRY6RpqWQ8dz9eGi/xEW/54vm78eeX/jfzo1Fxtut/BQ8nt7TL+M79X+t06YMf5vRaUl/EP5WX8Q3kZ/1Bexj+UV6fx/2Ef2gHcej7/obyMfygv4x/Ky/iHUtrO7/olypyI9LZohsQOJfr9zgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAbfwcAAP//AzTmYw==") (async)
+creat(&(0x7f0000000040)='./bus\x00', 0x0) (async)
+open(&(0x7f0000007f80)='./bus\x00', 0x145142, 0x0) (async)
+ftruncate(r1, 0x2007ffb) (async)
+socket$nl_xfrm(0x10, 0x3, 0x6) (async)
+splice(r0, &(0x7f0000000000)=0x7fffffffffffffff, r2, &(0x7f0000000180)=0x1f9b0c98, 0xb, 0xa) (async)
+socket$nl_xfrm(0x10, 0x3, 0x6) (async)
+sendmsg$nl_xfrm(r3, &(0x7f0000000140)={0x0, 0x0, &(0x7f0000000100)={&(0x7f0000000240)=@newsa={0x104, 0x10, 0x557b6864ec138335, 0x4000, 0x0, {{@in=@multicast2, @in6=@private0, 0x0, 0x400, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xffffffffffffffff}, {@in6=@mcast2, 0x0, 0x2b}, @in=@private=0xa010101, {}, {}, {0x1}, 0x0, 0x0, 0x2, 0x3, 0x0, 0x30}, [@coaddr={0x14, 0xe, @in6=@mcast1}]}, 0x104}}, 0x0) (async)
+fallocate(r0, 0x100000003, 0x0, 0x28120001) (async)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): setsockopt$inet6_IPV6_DSTOPTS-syz_mount_image$ext4-creat-open-ftruncate-socket$nl_xfrm-splice-socket$nl_xfrm-sendmsg$nl_xfrm-fallocate-setsockopt$inet6_IPV6_DSTOPTS-syz_mount_image$ext4-creat-open-ftruncate-socket$nl_xfrm-splice-socket$nl_xfrm-sendmsg$nl_xfrm-fallocate
+detailed listing:
+executing program 0:
+setsockopt$inet6_IPV6_DSTOPTS(0xffffffffffffffff, 0x29, 0x3b, &(0x7f00000004c0)={0x5e, 0x2a, '\x00', [@padn={0x1, 0x5, [0x0, 0x0, 0x0, 0x0, 0x0]}, @enc_lim={0x4, 0x1, 0xae}, @generic={0x2, 0x30, "514f765c1fcb2a6dbf0aed3d82aed1b57d05c9edafb5f3c91b3021557ba520662c2a6e75c674bd47091ee4ce81bd4e94"}, @calipso={0x7, 0x50, {0x2, 0x12, 0x80, 0xfff7, [0x5, 0x4, 0x4, 0x5, 0x5, 0x5, 0x7722, 0x100, 0x2]}}, @enc_lim={0x4, 0x1, 0x8}, @generic={0x9, 0xc4, "5d2b617f35d0453315275a619290966e9ecb2636190bdc9391b1e9357726ae89716badfb77b40315847341b2a12874e98c5198c8db7d16137504786b3ef25d75168ede018ebbc246c838f2bd6d1124d6b6ccbc1759cf4108de17f8acf5855eac7654c864b788a8b366590737210afaaa2f5ed07fbcab113dfcbe5eb60c9627c8f3f813bc83327351afdd08f7394777a46289e44fc079139e9344da50e6ff563efc9b4624119ca597e2688c7a5b8d59e52cf1aeba5bb3dd610e97b717a623327d852315f9"}]}, 0x160)
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000040)={[{@resgid={'resgid', 0x3d, 0xee01}}, {@block_validity}, {@debug_want_extra_isize={'debug_want_extra_isize', 0x3d, 0x80}}, {@errors_remount}, {@init_itable_val={'init_itable', 0x3d, 0xcc6f}}, {@usrquota}, {@errors_remount}]}, 0xff, 0x421, &(0x7f0000000900)="$eJzs28tvG8UfAPDvrpP29+uDhFIeLQUMBRHxSJq0QA9cQCBxAAkJDuUYkrQKdRvUBIlWEQSEyhFV4o44IvEXcIILAk5IXOGOKlUolxZORmvvJq5jhzycurCfj7TtjHecma9nx56dsQMorWr2TxKxLyJ+jYihZvbmAtXmfzeWF6f+XF6cSqJef+OPpFHu+vLiVFG0eN7ePDOSRqSfJG1/sGn+4qWzk7XazIU8P7Zw7t2x+YuXnp49N3lm5szM+YmTJ08cH3/u2YlnehJn1qbrhz+YO3LolbeuvDZ16srbP36dNWtffr41jl6pRrVT6A2P9bqyPtvfkk4G+tgQNqUSEVl3DTbG/1BUYrXzhuLlj/vaOGBH1ev1+u7up5fqwH9YEv1uAdAfxQd9dv9bHLdo6nFbuPZC8wYoi/tGfjTPDESalxlsu7/tpWpEnFr664vsiB1ahwAAaPVtNv95qtP8L417Wsrdke8NDUfEnRFxICLuioiDEXF3RKPsvRFx3ybrr7bl185/0qtbCmyDsvnf8/ne1s3zv2L2F8OVPLe/Ef9gcnq2NnMsf01GYnB3lh9fp47vXvrls27nWud/2ZHVX8wF83ZcHWhboJueXJjcTsytrn0UcXigU/zJyk5AEhGHIuLwFuuYfeKrI93O/XP86+jBPlP9y4jHm/2/FG3xF5L19yfH/he1mWNjxVWx1k8/X369W/3bir8Hsv7f0/H6X4l/OGndr53ffB2Xf/u06z3NVq//XcmbjfSu/LH3JxcWLoxH7EpeXfv4xOpzi3xRPot/5Gjn8X8gVl+J+yMiu4gfiIgHI+KhvO0PR8QjEXF0nfh/ePHRd7Ye/87K4p/eVP9vPlE5+/033erfWP+faKRG8kc28v630QZu57UDAACAf4u08R34JB1dSafp6Gjz+/IHY09am5tfePL03Hvnp5vflR+OwbRY6RpqWQ8dz9eGi/xEW/54vm78eeX/jfzo1Fxtut/BQ8nt7TL+M79X+t06YMf5vRaUl/EP5WX8Q3kZ/1Bexj+UV6fx/2Ef2gHcej7/obyMfygv4x/Ky/iHUtrO7/olypyI9LZohsQOJfr9zgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAbfwcAAP//AzTmYw==")
+r0 = creat(&(0x7f0000000040)='./bus\x00', 0x0)
+r1 = open(&(0x7f0000007f80)='./bus\x00', 0x145142, 0x0)
+ftruncate(r1, 0x2007ffb)
+r2 = socket$nl_xfrm(0x10, 0x3, 0x6)
+splice(r0, &(0x7f0000000000)=0x7fffffffffffffff, r2, &(0x7f0000000180)=0x1f9b0c98, 0xb, 0xa)
+r3 = socket$nl_xfrm(0x10, 0x3, 0x6)
+sendmsg$nl_xfrm(r3, &(0x7f0000000140)={0x0, 0x0, &(0x7f0000000100)={&(0x7f0000000240)=@newsa={0x104, 0x10, 0x557b6864ec138335, 0x4000, 0x0, {{@in=@multicast2, @in6=@private0, 0x0, 0x400, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xffffffffffffffff}, {@in6=@mcast2, 0x0, 0x2b}, @in=@private=0xa010101, {}, {}, {0x1}, 0x0, 0x0, 0x2, 0x3, 0x0, 0x30}, [@coaddr={0x14, 0xe, @in6=@mcast1}]}, 0x104}}, 0x0)
+fallocate(r0, 0x100000003, 0x0, 0x28120001)
+setsockopt$inet6_IPV6_DSTOPTS(0xffffffffffffffff, 0x29, 0x3b, &(0x7f00000004c0)={0x5e, 0x2a, '\x00', [@padn={0x1, 0x5, [0x0, 0x0, 0x0, 0x0, 0x0]}, @enc_lim={0x4, 0x1, 0xae}, @generic={0x2, 0x30, "514f765c1fcb2a6dbf0aed3d82aed1b57d05c9edafb5f3c91b3021557ba520662c2a6e75c674bd47091ee4ce81bd4e94"}, @calipso={0x7, 0x50, {0x2, 0x12, 0x80, 0xfff7, [0x5, 0x4, 0x4, 0x5, 0x5, 0x5, 0x7722, 0x100, 0x2]}}, @enc_lim={0x4, 0x1, 0x8}, @generic={0x9, 0xc4, "5d2b617f35d0453315275a619290966e9ecb2636190bdc9391b1e9357726ae89716badfb77b40315847341b2a12874e98c5198c8db7d16137504786b3ef25d75168ede018ebbc246c838f2bd6d1124d6b6ccbc1759cf4108de17f8acf5855eac7654c864b788a8b366590737210afaaa2f5ed07fbcab113dfcbe5eb60c9627c8f3f813bc83327351afdd08f7394777a46289e44fc079139e9344da50e6ff563efc9b4624119ca597e2688c7a5b8d59e52cf1aeba5bb3dd610e97b717a623327d852315f9"}]}, 0x160) (async)
+syz_mount_image$ext4(&(0x7f0000000440)='ext4\x00', &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000040)={[{@resgid={'resgid', 0x3d, 0xee01}}, {@block_validity}, {@debug_want_extra_isize={'debug_want_extra_isize', 0x3d, 0x80}}, {@errors_remount}, {@init_itable_val={'init_itable', 0x3d, 0xcc6f}}, {@usrquota}, {@errors_remount}]}, 0xff, 0x421, &(0x7f0000000900)="$eJzs28tvG8UfAPDvrpP29+uDhFIeLQUMBRHxSJq0QA9cQCBxAAkJDuUYkrQKdRvUBIlWEQSEyhFV4o44IvEXcIILAk5IXOGOKlUolxZORmvvJq5jhzycurCfj7TtjHecma9nx56dsQMorWr2TxKxLyJ+jYihZvbmAtXmfzeWF6f+XF6cSqJef+OPpFHu+vLiVFG0eN7ePDOSRqSfJG1/sGn+4qWzk7XazIU8P7Zw7t2x+YuXnp49N3lm5szM+YmTJ08cH3/u2YlnehJn1qbrhz+YO3LolbeuvDZ16srbP36dNWtffr41jl6pRrVT6A2P9bqyPtvfkk4G+tgQNqUSEVl3DTbG/1BUYrXzhuLlj/vaOGBH1ev1+u7up5fqwH9YEv1uAdAfxQd9dv9bHLdo6nFbuPZC8wYoi/tGfjTPDESalxlsu7/tpWpEnFr664vsiB1ahwAAaPVtNv95qtP8L417Wsrdke8NDUfEnRFxICLuioiDEXF3RKPsvRFx3ybrr7bl185/0qtbCmyDsvnf8/ne1s3zv2L2F8OVPLe/Ef9gcnq2NnMsf01GYnB3lh9fp47vXvrls27nWud/2ZHVX8wF83ZcHWhboJueXJjcTsytrn0UcXigU/zJyk5AEhGHIuLwFuuYfeKrI93O/XP86+jBPlP9y4jHm/2/FG3xF5L19yfH/he1mWNjxVWx1k8/X369W/3bir8Hsv7f0/H6X4l/OGndr53ffB2Xf/u06z3NVq//XcmbjfSu/LH3JxcWLoxH7EpeXfv4xOpzi3xRPot/5Gjn8X8gVl+J+yMiu4gfiIgHI+KhvO0PR8QjEXF0nfh/ePHRd7Ye/87K4p/eVP9vPlE5+/033erfWP+faKRG8kc28v630QZu57UDAACAf4u08R34JB1dSafp6Gjz+/IHY09am5tfePL03Hvnp5vflR+OwbRY6RpqWQ8dz9eGi/xEW/54vm78eeX/jfzo1Fxtut/BQ8nt7TL+M79X+t06YMf5vRaUl/EP5WX8Q3kZ/1Bexj+UV6fx/2Ef2gHcej7/obyMfygv4x/Ky/iHUtrO7/olypyI9LZohsQOJfr9zgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAbfwcAAP//AzTmYw==") (async)
+creat(&(0x7f0000000040)='./bus\x00', 0x0) (async)
+open(&(0x7f0000007f80)='./bus\x00', 0x145142, 0x0) (async)
+ftruncate(r1, 0x2007ffb) (async)
+socket$nl_xfrm(0x10, 0x3, 0x6) (async)
+splice(r0, &(0x7f0000000000)=0x7fffffffffffffff, r2, &(0x7f0000000180)=0x1f9b0c98, 0xb, 0xa) (async)
+socket$nl_xfrm(0x10, 0x3, 0x6) (async)
+sendmsg$nl_xfrm(r3, &(0x7f0000000140)={0x0, 0x0, &(0x7f0000000100)={&(0x7f0000000240)=@newsa={0x104, 0x10, 0x557b6864ec138335, 0x4000, 0x0, {{@in=@multicast2, @in6=@private0, 0x0, 0x400, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xffffffffffffffff}, {@in6=@mcast2, 0x0, 0x2b}, @in=@private=0xa010101, {}, {}, {0x1}, 0x0, 0x0, 0x2, 0x3, 0x0, 0x30}, [@coaddr={0x14, 0xe, @in6=@mcast1}]}, 0x104}}, 0x0) (async)
+fallocate(r0, 0x100000003, 0x0, 0x28120001) (async)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket-socket$inet6_udp-setsockopt$inet6_udp_encap-openat$ttyS3-ioctl$TIOCVHANGUP-ioctl$int_in-select-syz_open_procfs-write$cgroup_pressure-setsockopt$netlink_NETLINK_TX_RING-write
+detailed listing:
+executing program 0:
+r0 = socket(0x10, 0x3, 0x0)
+r1 = socket$inet6_udp(0xa, 0x2, 0x0)
+setsockopt$inet6_udp_encap(r1, 0x11, 0x64, &(0x7f0000000080)=0x1, 0x4) (async)
+r2 = openat$ttyS3(0xffffffffffffff9c, &(0x7f0000000140), 0x100, 0x0)
+ioctl$TIOCVHANGUP(r2, 0x5437, 0x0) (async)
+ioctl$int_in(r2, 0x5452, &(0x7f0000000540)=0x7) (async)
+select(0x40, &(0x7f0000000080)={0x40, 0x2, 0x9a0, 0x2, 0xfffffffffffff278, 0xcf02, 0x3, 0xfffffffffffffffe}, &(0x7f0000000100)={0xd, 0x1a6, 0xb9bc, 0x80000000, 0x7, 0x9, 0x7f, 0x5}, &(0x7f0000000180)={0x101, 0x5, 0x9, 0x6, 0x4, 0x6, 0x0, 0x1}, &(0x7f00000001c0)) (async)
+r3 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='attr/sockcreate\x00')
+write$cgroup_pressure(r3, 0x0, 0x0)
+setsockopt$netlink_NETLINK_TX_RING(r0, 0x10e, 0xc, &(0x7f0000000040)={0x20a0}, 0x10)
+write(r0, &(0x7f00000000c0)="240000001e005f0214fffffffffffff8070000000400000000000000080009000d090000", 0x24)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket-socket$inet6_udp-setsockopt$inet6_udp_encap-openat$ttyS3-ioctl$TIOCVHANGUP-ioctl$int_in-select-syz_open_procfs-write$cgroup_pressure-setsockopt$netlink_NETLINK_TX_RING-write
+detailed listing:
+executing program 0:
+r0 = socket(0x10, 0x3, 0x0)
+r1 = socket$inet6_udp(0xa, 0x2, 0x0)
+setsockopt$inet6_udp_encap(r1, 0x11, 0x64, &(0x7f0000000080)=0x1, 0x4) (async)
+r2 = openat$ttyS3(0xffffffffffffff9c, &(0x7f0000000140), 0x100, 0x0)
+ioctl$TIOCVHANGUP(r2, 0x5437, 0x0) (async)
+ioctl$int_in(r2, 0x5452, &(0x7f0000000540)=0x7) (async)
+select(0x40, &(0x7f0000000080)={0x40, 0x2, 0x9a0, 0x2, 0xfffffffffffff278, 0xcf02, 0x3, 0xfffffffffffffffe}, &(0x7f0000000100)={0xd, 0x1a6, 0xb9bc, 0x80000000, 0x7, 0x9, 0x7f, 0x5}, &(0x7f0000000180)={0x101, 0x5, 0x9, 0x6, 0x4, 0x6, 0x0, 0x1}, &(0x7f00000001c0)) (async)
+r3 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='attr/sockcreate\x00')
+write$cgroup_pressure(r3, 0x0, 0x0)
+setsockopt$netlink_NETLINK_TX_RING(r0, 0x10e, 0xc, &(0x7f0000000040)={0x20a0}, 0x10)
+write(r0, &(0x7f00000000c0)="240000001e005f0214fffffffffffff8070000000400000000000000080009000d090000", 0x24)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-getuid-syz_mount_image$msdos-rename-sigaltstack-sendmsg$IPVS_CMD_DEL_SERVICE
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x9)
+r1 = getuid()
+syz_mount_image$msdos(&(0x7f0000000140), &(0x7f0000000040)='./file0\x00', 0x10, &(0x7f0000000100)=ANY=[@ANYRES64=r1, @ANYRES16, @ANYRESDEC=r1], 0x1, 0x53e, &(0x7f0000000800)="$eJzs1bFu01AUBuCTNJS0YuiMGK7EwlQVNiaCUCpVWEICZYCJSA1LjJDixcnUR+ABeBaeg4GHQJm6BUVOgVYIhsZ2Bd+35Ci/773n3MF+e+/99PRD8e7Lx0/RH3SiO4i97nknDqIbF84CAPiXnK9W8W1VabsXAKAZf/j+f77z9+XduvoCAOrz6vWb50+zbPgypX7E8qwclaPqt8qPT7LhUVrb/WXVsixHOz/yh6lyOb8V+5v80W/z3Xhwv8rX2bMX2ZX8dpzWPj0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPzfDlPqRURKKR38/HdZlqOdKj9MF67kVXV8kg2PNg9czntxt9fYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAWFPPFdJznk9k1ir0t7bPNIuJrNHxof32fnc29NjfpYHPiTbn5Oosndez8OCJaGWc/rrO8U3OH7b2TAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAdhXzxXSc55NZ0XYnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBNUcwX03GeT2Y1Fm3PCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALTjewAAAP//K/Yp1w==")
+rename(&(0x7f0000000200)='./file2\x00', &(0x7f0000000340)='./bus\x00')
+sigaltstack(0x0, 0x0)
+sendmsg$IPVS_CMD_DEL_SERVICE(r0, &(0x7f0000000180)={0x0, 0x0, &(0x7f0000000000)={&(0x7f00000001c0)={0xffffffffffffffa7, 0x0, 0x0, 0x0, 0x0, {}, [@IPVS_CMD_ATTR_TIMEOUT_TCP={0x8}, @IPVS_CMD_ATTR_DAEMON={0xc, 0x3, 0x0, 0x1, [@IPVS_DAEMON_ATTR_MCAST_GROUP={0x8, 0x5, @loopback}]}]}, 0x28}}, 0x0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$netlink-syz_open_procfs-syz_open_procfs
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x0)
+sendmsg$netlink(r0, &(0x7f0000006440)={0x0, 0x0, &(0x7f00000063c0)=[{&(0x7f0000000600)=ANY=[@ANYBLOB="34000000110001000000000000000000080000000000000008000000", @ANYRES32=0x0, @ANYBLOB="29001b0000000000001000000000000000000001"], 0x34}], 0x1}, 0x0)
+syz_open_procfs(0xffffffffffffffff, &(0x7f00000000c0)='smaps_rollup\x00')
+syz_open_procfs(0x0, &(0x7f00000000c0)='fd/3\x00')
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): newfstatat-syz_mount_image$ext4
+detailed listing:
+executing program 0:
+newfstatat(0xffffffffffffff9c, &(0x7f0000000040)='./file0\x00', &(0x7f0000000100)={0x0, 0x0, 0x0, 0x0, <r0=>0x0}, 0x6000)
+syz_mount_image$ext4(&(0x7f00000000c0)='ext3\x00', &(0x7f0000000000)='./file0\x00', 0x804810, &(0x7f0000000200)={[], [{@appraise_type}, {@fowner_lt={'fowner<', r0}}, {@uid_gt={'uid>', r0}}, {@euid_gt={'euid>', r0}}]}, 0x0, 0x77e, &(0x7f0000000280)="$eJzs3E9oHFUYAPBvJtmkf2ITQfDPQYQWWijdJM2lPTVevBUKBa81JJsQMsmG7KZ2Y8FUT4JQm4uCIOrZo1ehVDx7E0HBuyBa40F6WZnNJrXrJt0mabemvx/M7nvzZt73vt3hZQfyJoBn1mv5SxIxEBGXImKwuT+NiL5G6VDE6sZx63evT+ZbEvX65d+T/LRYrw9u9ZU0349G45R4KSLuFCJOv/ffuJXaytxElpWWmvXh6vzicKW2cmZ2fmKmNFNaGB07P3JubOzcyNhDc3ixw1xPvHn+8K3v31hb++Hr6s1Xe88kMd430GzL8+qwm3859NAjNj6TQoy37F949GBPqXuN16TbwwAAoCP57/yeiOht/EodjJ5GCQAAADhI6v11AAAA4MBLotsjAAAAAB6vzf8D2Fzbu7t1sLv32+sRMdQufm9jDXHEoShExJH15IGVCcnGabAnqzci4vZ46/X3ZX6Fre6x75GW+oNrpPv22Dv74XY+/4y3zD9pNFZGbc4/0Wb+6d18dsIebT//3Y/fE5G0m/8udRjjm89eLmwb/0bEK73t4idb8ZvXbU9r/Lc6jH9z7cNb27XVv4g42fbvT/JArB2eDzE+PZvt+PiBO/dO/bhT/ke2i5/cz7/d57/YYf7vrP85t91cksc/dXzn779d/J6I+Kg5jvxyvdV8z+trLTGOz//07U75T0XUH/b9t8v/8w7z/+Wr/msdHgoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANaUQMRJIWt8ppWixGHI2IF+JImpUr1dPT5eWFqbwtYigK6fRsVhqJiMGI1YhI8vpoo63R3qifbamPRcTzPx/eCDqblYqT5Wyq28kDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACw5WgkEZGkxYhII+KvwTQtFiN6Ozi3/wmMDwAAANgnQ90eAAAAAPDYuf8HAACAg2+39//JPo8DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAONAuXbyYb/X1u9cn8/rU1dryXPnqmalSZa44vzxZnCwvLRZnyuWZrFScLM83Turbvr+sXF4cPR/L14arpUp1uFJbuTJfXl6oXpmdn5gpXSkVnlhmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPIqBxpakxYhIG+U0LRYjnouIoSgk07NZaSQijkUUIqI/r492e9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADsu0ptZW4iy0pL/4/C+8cinmzQ7z6IeDpyVzhAhXcj4ikYxg6Fbs9MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0Q6W2MjeRZaWlSrdHAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQHelvyYRkW8nB08MtLb2JX8PNt4j4u1PL398baJaXRrN9/+xtb/6SXP/2W6MHwAAAJ4JFx7l4M379M37eAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgE5VaitzE1lWWtpb4ULUVurJNsd0O0cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGB3/gkAAP//35/FSQ==")
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$nl_xfrm-sendmsg$nl_xfrm
+detailed listing:
+executing program 0:
+r0 = socket$nl_xfrm(0x10, 0x3, 0x6)
+sendmsg$nl_xfrm(r0, &(0x7f00000005c0)={0x0, 0x0, &(0x7f0000000580)={&(0x7f0000000240)=@allocspi={0xf8, 0x16, 0x1, 0x0, 0x0, {{{@in=@remote, @in6=@mcast2}, {@in6=@remote, 0x0, 0x32}, @in=@private, {0x0, 0x0, 0x0, 0x0, 0x0, 0x400000000, 0x0, 0x100000000}}, 0x0, 0x10001}}, 0xf8}, 0x1, 0x0, 0x0, 0x4040}, 0x0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_open_procfs-socket$inet6-setsockopt$sock_int-bind$inet6-shmat-madvise-madvise-mlock2-socket$inet6-bind$inet6-creat-perf_event_open$cgroup-dup-lseek
+detailed listing:
+executing program 0:
+r0 = syz_open_procfs(0x0, &(0x7f0000000000)='net/route\x00') (async)
+r1 = socket$inet6(0xa, 0x2, 0x0)
+setsockopt$sock_int(r1, 0x1, 0xf, &(0x7f0000000240)=0x9, 0x4) (async)
+bind$inet6(r1, &(0x7f0000000040)={0xa, 0xe22, 0x0, @mcast1, 0x1}, 0x1c) (async)
+shmat(0x0, &(0x7f0000ffd000/0x3000)=nil, 0xab13cb96090f6a25) (async)
+madvise(&(0x7f0000ffd000/0x3000)=nil, 0x3000, 0x17)
+madvise(&(0x7f0000ffd000/0x2000)=nil, 0x2000, 0x15) (async)
+mlock2(&(0x7f0000ffd000/0x3000)=nil, 0x3000, 0x0) (async)
+r2 = socket$inet6(0xa, 0x2, 0x0)
+bind$inet6(r2, &(0x7f0000000040)={0xa, 0xe22}, 0x1c) (async)
+r3 = creat(&(0x7f0000000500)='./file0\x00', 0x0)
+perf_event_open$cgroup(&(0x7f0000000100)={0x8, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0xfffffffffffffffc, 0x24000, 0x4}, r3, 0x0, r0, 0x4)
+r4 = dup(r3)
+lseek(r4, 0x40000000002, 0x0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_io_uring_setup-syz_clone3-unshare-unshare-syz_proc_sys_generated_1141
+detailed listing:
+executing program 0:
+syz_io_uring_setup(0x1fea, &(0x7f0000000000), 0x0, 0x0)
+syz_clone3(&(0x7f0000002980)={0x0, 0x0, 0x0, 0x0, {}, 0x0, 0x0, 0x0, 0x0}, 0x58)
+unshare(0x42040080)
+unshare(0x40000000)
+syz_proc_sys_generated_1141(0x1, 0x63fb, 0x1, 0x4e37, 0x0, 0x1, 0x127, 0x1, 0x31e)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): mkdir-mount-pipe-socket$inet6_tcp-bind$inet6-setsockopt$inet6_int-sendto$inet6-setsockopt$inet6_IPV6_DSTOPTS-sendto$inet6-syz_clone-ptrace-ptrace$pokeuser-splice-syz_open_procfs-socket$inet6_tcp-setsockopt$inet6_int-mbind-mbind-bind$inet6-socket$inet_tcp-bind$inet-listen-listen-pread64-openat$sr-read$snapshot-chdir-symlink-write$binfmt_misc-readlink
+detailed listing:
+executing program 0:
+mkdir(&(0x7f0000000140)='./file0\x00', 0x0)
+mount(0x0, &(0x7f0000000000)='./file0\x00', &(0x7f0000000040)='ramfs\x00', 0x0, 0x0)
+pipe(&(0x7f00000002c0)={0xffffffffffffffff, <r0=>0xffffffffffffffff})
+r1 = socket$inet6_tcp(0xa, 0x1, 0x0)
+bind$inet6(r1, &(0x7f0000000040)={0xa, 0x8000002}, 0x1c)
+setsockopt$inet6_int(r1, 0x29, 0x3a, &(0x7f00000003c0)=0xe03, 0x4)
+sendto$inet6(r1, 0x0, 0x0, 0x2200c041, &(0x7f0000b63fe4)={0xa, 0x2, 0x0, @loopback}, 0x1c)
+setsockopt$inet6_IPV6_DSTOPTS(r1, 0x29, 0x3b, &(0x7f00000001c0)=ANY=[], 0x10)
+sendto$inet6(r1, &(0x7f0000000080)="44f9b108b1cdc885c9c533d21f474bec8bfef1df1e2da71e578dc6b91d09f7ab15378571d8e27546090000006e75436914ab717528ee4b7a9beaf908d11137c11903064e83b4951f4d433a5404970c85d92d7083fd38844cbb0c6c5eb508ddc2dc7a590aa7941b1e9eeb5a688138dea09b776cbfa784cbf550bf3074fb0d775da4df5a3f48bbdf452eeb6b923da9d0e25b80f76a873664b5753444fe05f33e5f91045540836c3cd6af10f0cd018f0c6f57f926ac959a5628c45088fbe0c87fbe6cbcda4662d2a12f6d00"/215, 0xd0d0c2ac, 0x1, 0x0, 0x0)
+r2 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+ptrace(0x10, r2)
+ptrace$pokeuser(0x6, r2, 0xd7, 0x0)
+splice(r1, 0x0, r0, 0x0, 0x406f408, 0x0)
+r3 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='net/tcp6\x00')
+r4 = socket$inet6_tcp(0xa, 0x1, 0x0)
+setsockopt$inet6_int(r4, 0x29, 0x1a, &(0x7f0000000040)=0x6, 0x4)
+mbind(&(0x7f0000ffd000/0x2000)=nil, 0x2000, 0x3, &(0x7f0000000080)=0x7, 0x6, 0x0)
+mbind(&(0x7f000088e000/0x2000)=nil, 0x2000, 0x0, 0x0, 0x0, 0x0)
+bind$inet6(r4, &(0x7f0000000140)={0xa, 0x4e22, 0x0, @mcast2, 0x101}, 0x1c)
+r5 = socket$inet_tcp(0x2, 0x1, 0x0)
+bind$inet(r5, &(0x7f0000000380)={0x2, 0x4e22}, 0x10)
+listen(r4, 0x96)
+listen(r4, 0x0)
+pread64(r3, &(0x7f0000000140)=""/162, 0xa2, 0x0)
+r6 = openat$sr(0xffffffffffffff9c, &(0x7f0000000000), 0x10f982, 0x0)
+read$snapshot(r6, &(0x7f0000000040)=""/6, 0x6)
+chdir(&(0x7f0000000280)='./file0\x00')
+symlink(&(0x7f0000000080)='./file0\x00', &(0x7f0000000100)='./file0\x00')
+write$binfmt_misc(r6, &(0x7f0000000180), 0x0)
+readlink(&(0x7f00000000c0)='./file0\x00', &(0x7f0000000180)=""/177, 0xb1)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): openat$ptp0-timer_create-timer_settime-mprotect-unshare-socket$netlink-connect$netlink-socket$netlink-getresgid-setgid
+detailed listing:
+executing program 0:
+openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x4000, 0x0)
+timer_create(0x0, &(0x7f0000000680)={0x0, 0x21, 0x0, @thr={0x0, 0x0}}, &(0x7f0000000080))
+timer_settime(0x0, 0x0, &(0x7f000006b000)={{0x0, 0x8}, {0x0, 0x9}}, 0x0)
+mprotect(&(0x7f0000ffd000/0x2000)=nil, 0x2000, 0x0)
+unshare(0x0)
+r0 = socket$netlink(0x10, 0x3, 0x2)
+connect$netlink(r0, &(0x7f0000000040)=@proc={0x10, 0x0, 0x0, 0x20}, 0xc)
+socket$netlink(0x10, 0x3, 0x8)
+getresgid(&(0x7f00000000c0)=<r1=>0x0, &(0x7f0000000100), &(0x7f0000000140))
+setgid(r1)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-add_key$keyring-request_key-sendmsg$netlink
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x0)
+r1 = add_key$keyring(&(0x7f0000000140), &(0x7f0000000180)={'syz', 0x2}, 0x0, 0x0, 0xfffffffffffffffa)
+request_key(&(0x7f0000000080)='.request_key_auth\x00', &(0x7f00000000c0)={'syz', 0x1}, &(0x7f0000000100)='\x00', r1)
+sendmsg$netlink(r0, &(0x7f0000000040)={0x0, 0x0, &(0x7f0000002ec0)=[{&(0x7f0000000000)={0x18, 0x68, 0x5ad, 0x0, 0x0, "", [@nested={0x5, 0x0, 0x0, 0x1, [@generic="d0"]}]}, 0x18}], 0x1}, 0x0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet-sendmmsg$inet-socket$inet6_tcp-syz_clone-ptrace-openat2-mount$9p_fd-ptrace$setregs-ptrace$getregset-bind$inet6-connect$inet6-unlink-setsockopt$SO_ATTACH_FILTER
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+r5 = socket$inet(0x2, 0x3, 0x1)
+sendmmsg$inet(r5, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+r6 = socket$inet6_tcp(0xa, 0x1, 0x0)
+r7 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+ptrace(0x10, r7)
+r8 = openat2(0xffffffffffffff9c, &(0x7f0000000400)='./file0\x00', &(0x7f0000000440)={0x40}, 0x18)
+mount$9p_fd(0x0, &(0x7f0000000040)='./file0\x00', &(0x7f0000000080), 0x0, &(0x7f00000000c0)={'trans=fd,', {'rfdno', 0x3d, r8}, 0x2c, {}, 0x39})
+ptrace$setregs(0xd, r7, 0x0, &(0x7f00000000c0)="45b46fbe7fdca862f4484ad916fa919c93ce789aa142d489c5c618a242a6a6562e8410232a1a30da2dcca2d0023792d730311c7f6f52fe2c476b50a2cf43dfbf1bd69c74423ec5d003355b58735f7d1e195da755909b013846d77d0ce825bda2a5ba9952e169374b01829b61e5df3494b127b514df0f65cab0aef36090977d88130c5944645a291fc7")
+ptrace$getregset(0x4204, r7, 0x1, &(0x7f0000002800)={&(0x7f00000004c0)=""/50, 0x32})
+bind$inet6(r6, &(0x7f0000d84000)={0xa, 0x0, 0x0, @loopback}, 0x1c)
+connect$inet6(r6, &(0x7f0000000040)={0xa, 0x0, 0x0, @ipv4={'\x00', '\xff\xff', @multicast1}}, 0x1c)
+unlink(&(0x7f0000000040)='./file0\x00')
+setsockopt$SO_ATTACH_FILTER(r0, 0x1, 0x1a, &(0x7f0000000000)={0x2, &(0x7f0000000040)=[{0x20, 0x0, 0x0, 0xfffff03c}, {0x6}]}, 0x10)
+
+program crashed: INFO: task hung in vfs_coredump
+single: successfully extracted reproducer
+found reproducer with 28 syscalls
+minimizing guilty program
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet-sendmmsg$inet-socket$inet6_tcp-syz_clone-ptrace-openat2-mount$9p_fd-ptrace$setregs-ptrace$getregset-bind$inet6-connect$inet6-unlink
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+r5 = socket$inet(0x2, 0x3, 0x1)
+sendmmsg$inet(r5, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+r6 = socket$inet6_tcp(0xa, 0x1, 0x0)
+r7 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+ptrace(0x10, r7)
+r8 = openat2(0xffffffffffffff9c, &(0x7f0000000400)='./file0\x00', &(0x7f0000000440)={0x40}, 0x18)
+mount$9p_fd(0x0, &(0x7f0000000040)='./file0\x00', &(0x7f0000000080), 0x0, &(0x7f00000000c0)={'trans=fd,', {'rfdno', 0x3d, r8}, 0x2c, {}, 0x39})
+ptrace$setregs(0xd, r7, 0x0, &(0x7f00000000c0)="45b46fbe7fdca862f4484ad916fa919c93ce789aa142d489c5c618a242a6a6562e8410232a1a30da2dcca2d0023792d730311c7f6f52fe2c476b50a2cf43dfbf1bd69c74423ec5d003355b58735f7d1e195da755909b013846d77d0ce825bda2a5ba9952e169374b01829b61e5df3494b127b514df0f65cab0aef36090977d88130c5944645a291fc7")
+ptrace$getregset(0x4204, r7, 0x1, &(0x7f0000002800)={&(0x7f00000004c0)=""/50, 0x32})
+bind$inet6(r6, &(0x7f0000d84000)={0xa, 0x0, 0x0, @loopback}, 0x1c)
+connect$inet6(r6, &(0x7f0000000040)={0xa, 0x0, 0x0, @ipv4={'\x00', '\xff\xff', @multicast1}}, 0x1c)
+unlink(&(0x7f0000000040)='./file0\x00')
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet-sendmmsg$inet-socket$inet6_tcp-syz_clone-ptrace-openat2-mount$9p_fd-ptrace$setregs-ptrace$getregset-bind$inet6-connect$inet6
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+r5 = socket$inet(0x2, 0x3, 0x1)
+sendmmsg$inet(r5, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+r6 = socket$inet6_tcp(0xa, 0x1, 0x0)
+r7 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+ptrace(0x10, r7)
+r8 = openat2(0xffffffffffffff9c, &(0x7f0000000400)='./file0\x00', &(0x7f0000000440)={0x40}, 0x18)
+mount$9p_fd(0x0, &(0x7f0000000040)='./file0\x00', &(0x7f0000000080), 0x0, &(0x7f00000000c0)={'trans=fd,', {'rfdno', 0x3d, r8}, 0x2c, {}, 0x39})
+ptrace$setregs(0xd, r7, 0x0, &(0x7f00000000c0)="45b46fbe7fdca862f4484ad916fa919c93ce789aa142d489c5c618a242a6a6562e8410232a1a30da2dcca2d0023792d730311c7f6f52fe2c476b50a2cf43dfbf1bd69c74423ec5d003355b58735f7d1e195da755909b013846d77d0ce825bda2a5ba9952e169374b01829b61e5df3494b127b514df0f65cab0aef36090977d88130c5944645a291fc7")
+ptrace$getregset(0x4204, r7, 0x1, &(0x7f0000002800)={&(0x7f00000004c0)=""/50, 0x32})
+bind$inet6(r6, &(0x7f0000d84000)={0xa, 0x0, 0x0, @loopback}, 0x1c)
+connect$inet6(r6, &(0x7f0000000040)={0xa, 0x0, 0x0, @ipv4={'\x00', '\xff\xff', @multicast1}}, 0x1c)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet-sendmmsg$inet-socket$inet6_tcp-syz_clone-ptrace-openat2-mount$9p_fd-ptrace$setregs-ptrace$getregset-bind$inet6
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+r5 = socket$inet(0x2, 0x3, 0x1)
+sendmmsg$inet(r5, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+r6 = socket$inet6_tcp(0xa, 0x1, 0x0)
+r7 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+ptrace(0x10, r7)
+r8 = openat2(0xffffffffffffff9c, &(0x7f0000000400)='./file0\x00', &(0x7f0000000440)={0x40}, 0x18)
+mount$9p_fd(0x0, &(0x7f0000000040)='./file0\x00', &(0x7f0000000080), 0x0, &(0x7f00000000c0)={'trans=fd,', {'rfdno', 0x3d, r8}, 0x2c, {}, 0x39})
+ptrace$setregs(0xd, r7, 0x0, &(0x7f00000000c0)="45b46fbe7fdca862f4484ad916fa919c93ce789aa142d489c5c618a242a6a6562e8410232a1a30da2dcca2d0023792d730311c7f6f52fe2c476b50a2cf43dfbf1bd69c74423ec5d003355b58735f7d1e195da755909b013846d77d0ce825bda2a5ba9952e169374b01829b61e5df3494b127b514df0f65cab0aef36090977d88130c5944645a291fc7")
+ptrace$getregset(0x4204, r7, 0x1, &(0x7f0000002800)={&(0x7f00000004c0)=""/50, 0x32})
+bind$inet6(r6, &(0x7f0000d84000)={0xa, 0x0, 0x0, @loopback}, 0x1c)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet-sendmmsg$inet-socket$inet6_tcp-syz_clone-ptrace-openat2-mount$9p_fd-ptrace$setregs-ptrace$getregset
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+r5 = socket$inet(0x2, 0x3, 0x1)
+sendmmsg$inet(r5, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+socket$inet6_tcp(0xa, 0x1, 0x0)
+r6 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+ptrace(0x10, r6)
+r7 = openat2(0xffffffffffffff9c, &(0x7f0000000400)='./file0\x00', &(0x7f0000000440)={0x40}, 0x18)
+mount$9p_fd(0x0, &(0x7f0000000040)='./file0\x00', &(0x7f0000000080), 0x0, &(0x7f00000000c0)={'trans=fd,', {'rfdno', 0x3d, r7}, 0x2c, {}, 0x39})
+ptrace$setregs(0xd, r6, 0x0, &(0x7f00000000c0)="45b46fbe7fdca862f4484ad916fa919c93ce789aa142d489c5c618a242a6a6562e8410232a1a30da2dcca2d0023792d730311c7f6f52fe2c476b50a2cf43dfbf1bd69c74423ec5d003355b58735f7d1e195da755909b013846d77d0ce825bda2a5ba9952e169374b01829b61e5df3494b127b514df0f65cab0aef36090977d88130c5944645a291fc7")
+ptrace$getregset(0x4204, r6, 0x1, &(0x7f0000002800)={&(0x7f00000004c0)=""/50, 0x32})
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet-sendmmsg$inet-socket$inet6_tcp-syz_clone-ptrace-openat2-mount$9p_fd-ptrace$setregs
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+r5 = socket$inet(0x2, 0x3, 0x1)
+sendmmsg$inet(r5, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+socket$inet6_tcp(0xa, 0x1, 0x0)
+r6 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+ptrace(0x10, r6)
+r7 = openat2(0xffffffffffffff9c, &(0x7f0000000400)='./file0\x00', &(0x7f0000000440)={0x40}, 0x18)
+mount$9p_fd(0x0, &(0x7f0000000040)='./file0\x00', &(0x7f0000000080), 0x0, &(0x7f00000000c0)={'trans=fd,', {'rfdno', 0x3d, r7}, 0x2c, {}, 0x39})
+ptrace$setregs(0xd, r6, 0x0, &(0x7f00000000c0)="45b46fbe7fdca862f4484ad916fa919c93ce789aa142d489c5c618a242a6a6562e8410232a1a30da2dcca2d0023792d730311c7f6f52fe2c476b50a2cf43dfbf1bd69c74423ec5d003355b58735f7d1e195da755909b013846d77d0ce825bda2a5ba9952e169374b01829b61e5df3494b127b514df0f65cab0aef36090977d88130c5944645a291fc7")
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet-sendmmsg$inet-socket$inet6_tcp-syz_clone-ptrace-openat2-mount$9p_fd
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+r5 = socket$inet(0x2, 0x3, 0x1)
+sendmmsg$inet(r5, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+socket$inet6_tcp(0xa, 0x1, 0x0)
+r6 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+ptrace(0x10, r6)
+r7 = openat2(0xffffffffffffff9c, &(0x7f0000000400)='./file0\x00', &(0x7f0000000440)={0x40}, 0x18)
+mount$9p_fd(0x0, &(0x7f0000000040)='./file0\x00', &(0x7f0000000080), 0x0, &(0x7f00000000c0)={'trans=fd,', {'rfdno', 0x3d, r7}, 0x2c, {}, 0x39})
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet-sendmmsg$inet-socket$inet6_tcp-syz_clone-ptrace-openat2
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+r5 = socket$inet(0x2, 0x3, 0x1)
+sendmmsg$inet(r5, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+socket$inet6_tcp(0xa, 0x1, 0x0)
+r6 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+ptrace(0x10, r6)
+openat2(0xffffffffffffff9c, &(0x7f0000000400)='./file0\x00', &(0x7f0000000440)={0x40}, 0x18)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet-sendmmsg$inet-socket$inet6_tcp-syz_clone-ptrace
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+r5 = socket$inet(0x2, 0x3, 0x1)
+sendmmsg$inet(r5, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+socket$inet6_tcp(0xa, 0x1, 0x0)
+r6 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+ptrace(0x10, r6)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet-sendmmsg$inet-socket$inet6_tcp-syz_clone
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+r5 = socket$inet(0x2, 0x3, 0x1)
+sendmmsg$inet(r5, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+socket$inet6_tcp(0xa, 0x1, 0x0)
+syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet-sendmmsg$inet-socket$inet6_tcp
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+r5 = socket$inet(0x2, 0x3, 0x1)
+sendmmsg$inet(r5, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+socket$inet6_tcp(0xa, 0x1, 0x0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+r5 = socket$inet(0x2, 0x3, 0x1)
+sendmmsg$inet(r5, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-socket$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+socket$inet(0x2, 0x3, 0x1)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-fallocate-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+fallocate(0xffffffffffffffff, 0x0, 0x0, 0x1000f4)
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-open-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-accept-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+accept(r4, 0x0, 0x0)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-connect$unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+r4 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r4, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r4, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+connect$unix(r3, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+socket$unix(0x1, 0x1, 0x0)
+r3 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r3, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r3, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-listen-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+socket$unix(0x1, 0x1, 0x0)
+r3 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r3, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r3, 0x0)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-bind$unix-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+socket$unix(0x1, 0x1, 0x0)
+r3 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r3, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-socket$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+socket$unix(0x1, 0x1, 0x0)
+r3 = socket$unix(0x1, 0x1, 0x0)
+listen(r3, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+socket$unix(0x1, 0x1, 0x0)
+bind$unix(0xffffffffffffffff, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(0xffffffffffffffff, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-sendmsg$NBD_CMD_DISCONNECT-socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+sendmsg$NBD_CMD_DISCONNECT(r1, &(0x7f00000003c0)={&(0x7f0000000280)={0x10, 0x0, 0x0, 0x2}, 0xc, &(0x7f0000000380)={&(0x7f0000000340)={0x38, r2, 0x100, 0x70bd29, 0x25dfdbfc, {}, [@NBD_ATTR_BLOCK_SIZE_BYTES={0xc, 0x3, 0x6}, @NBD_ATTR_SERVER_FLAGS={0xc, 0x5, 0x8}, @NBD_ATTR_DEAD_CONN_TIMEOUT={0xc, 0x8, 0x74}]}, 0x38}, 0x1, 0x0, 0x0, 0x44}, 0x4)
+r3 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r3, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r3, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$nbd-socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+syz_genetlink_get_family_id$nbd(&(0x7f00000002c0), 0xffffffffffffffff)
+r1 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r1, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r1, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-syz_init_net_socket$nl_generic-socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r1 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r1, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r1, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-sendmsg$AUDIT_MAKE_EQUIV-socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+sendmsg$AUDIT_MAKE_EQUIV(r0, &(0x7f0000000140)={&(0x7f0000000080)={0x10, 0x0, 0x0, 0x400000}, 0xc, &(0x7f0000000100)={&(0x7f00000000c0)={0x28, 0x3f7, 0x300, 0x70bd2b, 0x25dfdbfb, {0x7, 0x7, './file0', './file0'}, ["", "", "", ""]}, 0x28}, 0x1, 0x0, 0x0, 0x20000800}, 0x8800)
+r1 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r1, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r1, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$netlink-socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+socket$netlink(0x10, 0x3, 0x2dbdf8803ab311f6)
+r0 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r0, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r0, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r0, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r0, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r0, 0x0, 0x0)
+listen(r0, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r0, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r0, 0x0)
+mount$9p_unix(0x0, &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r0, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r0, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', 0x0, &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r0, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r0, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', 0x0, 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r0, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r0, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, 0x0)
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, &(0x7f0000000000))
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program did not crash
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r0, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r0, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, 0x0)
+sendmmsg$inet(0xffffffffffffffff, &(0x7f0000004200)=[{{&(0x7f0000000000)={0x2, 0x0, @empty}, 0x10, &(0x7f0000002080)=[{&(0x7f0000000040)="838b", 0x2}], 0x1}}], 0x1, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+testing program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+detailed listing:
+executing program 0:
+r0 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r0, &(0x7f00000001c0)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x56)
+listen(r0, 0x0)
+mount$9p_unix(&(0x7f0000000100)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000240)='\xe9\x1fq\x89Y\x1e\x923aK\x00', &(0x7f0000000300), 0x0, &(0x7f0000000400))
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xebd8, 0xdd1, 0x0)
+sendmmsg$inet(0xffffffffffffffff, 0x0, 0x0, 0x448d0)
+
+program crashed: INFO: task hung in vfs_coredump
+extracting C reproducer
+testing compiled C program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+program crashed: INFO: task hung in vfs_coredump
+simplifying C reproducer
+testing compiled C program (duration=6m0s, {Threaded:false Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+program crashed: no output from test machine
+a never seen crash title: no output from test machine, ignore
+testing compiled C program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+program crashed: INFO: task hung in vfs_coredump
+testing compiled C program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:false UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+program crashed: INFO: task hung in vfs_coredump
+testing compiled C program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:false UseTmpDir:false HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+program crashed: INFO: task hung in vfs_coredump
+testing compiled C program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:false UseTmpDir:false HandleSegv:false Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+program crashed: INFO: task hung in vfs_coredump
+testing compiled C program (duration=6m0s, {Threaded:true Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:false Swap:false UseTmpDir:false HandleSegv:false Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): socket$unix-bind$unix-listen-mount$9p_unix-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON-sendmmsg$inet
+program crashed: INFO: task hung in vfs_coredump
+reproducing took 5h10m48.129318468s
+repro crashed as (corrupted=false):
+audit: type=1400 audit(1770528419.953:7): avc:  denied  { execmem } for  pid=257 comm="syz-executor182" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=process permissive=1
+INFO: task syz-executor182:260 blocked for more than 143 seconds.
+      Not tainted 6.19.0-rc8 #2
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz-executor182 state:D stack:28872 pid:260   tgid:258   ppid:257    task_flags:0x400640 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5260 [inline]
+ __schedule+0x11ac/0x3f90 kernel/sched/core.c:6867
+ __schedule_loop kernel/sched/core.c:6949 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:6964
+ schedule_timeout+0x244/0x280 kernel/time/sleep_timeout.c:75
+ do_wait_for_common kernel/sched/completion.c:100 [inline]
+ __wait_for_common kernel/sched/completion.c:121 [inline]
+ wait_for_common kernel/sched/completion.c:132 [inline]
+ wait_for_completion_state+0x2d3/0x460 kernel/sched/completion.c:269
+ coredump_wait fs/coredump.c:534 [inline]
+ vfs_coredump+0x8b5/0x3f60 fs/coredump.c:1196
+ get_signal+0x1998/0x24a0 kernel/signal.c:3019
+ arch_do_signal_or_restart+0x80/0x890 arch/x86/kernel/signal.c:337
+ __exit_to_user_mode_loop kernel/entry/common.c:41 [inline]
+ exit_to_user_mode_loop+0xaf/0x520 kernel/entry/common.c:75
+ __exit_to_user_mode_prepare include/linux/irq-entry-common.h:226 [inline]
+ syscall_exit_to_user_mode_prepare include/linux/irq-entry-common.h:256 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:159 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:194 [inline]
+ do_syscall_64+0x390/0x430 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f2f926656fd
+RSP: 002b:00007f2f9261c208 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: 00000000000000ca RBX: 00007f2f92719a70 RCX: 00007f2f926656fd
+RDX: 00000000000f4240 RSI: 0000000000000081 RDI: 00007f2f92719a7c
+RBP: 00007f2f926e7098 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007f2f92719a78
+R13: 00007f2f92719a7c R14: 33921e5989711fe9 R15: 00007f2f926e7028
+ </TASK>
+
+Showing all locks held in the system:
+1 lock held by khungtaskd/40:
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: rcu_read_lock include/linux/rcupdate.h:867 [inline]
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: debug_show_all_locks+0x36/0x1c0 kernel/locking/lockdep.c:6775
+1 lock held by in:imklog/171:
+ #0: ffff88810a1e8478 (&f->f_pos_lock){+.+.}-{4:4}, at: fdget_pos+0x2a4/0x370 fs/file.c:1255
+
+=============================================
+
+
+final repro crashed as (corrupted=false):
+audit: type=1400 audit(1770528419.953:7): avc:  denied  { execmem } for  pid=257 comm="syz-executor182" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=process permissive=1
+INFO: task syz-executor182:260 blocked for more than 143 seconds.
+      Not tainted 6.19.0-rc8 #2
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz-executor182 state:D stack:28872 pid:260   tgid:258   ppid:257    task_flags:0x400640 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5260 [inline]
+ __schedule+0x11ac/0x3f90 kernel/sched/core.c:6867
+ __schedule_loop kernel/sched/core.c:6949 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:6964
+ schedule_timeout+0x244/0x280 kernel/time/sleep_timeout.c:75
+ do_wait_for_common kernel/sched/completion.c:100 [inline]
+ __wait_for_common kernel/sched/completion.c:121 [inline]
+ wait_for_common kernel/sched/completion.c:132 [inline]
+ wait_for_completion_state+0x2d3/0x460 kernel/sched/completion.c:269
+ coredump_wait fs/coredump.c:534 [inline]
+ vfs_coredump+0x8b5/0x3f60 fs/coredump.c:1196
+ get_signal+0x1998/0x24a0 kernel/signal.c:3019
+ arch_do_signal_or_restart+0x80/0x890 arch/x86/kernel/signal.c:337
+ __exit_to_user_mode_loop kernel/entry/common.c:41 [inline]
+ exit_to_user_mode_loop+0xaf/0x520 kernel/entry/common.c:75
+ __exit_to_user_mode_prepare include/linux/irq-entry-common.h:226 [inline]
+ syscall_exit_to_user_mode_prepare include/linux/irq-entry-common.h:256 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:159 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:194 [inline]
+ do_syscall_64+0x390/0x430 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f2f926656fd
+RSP: 002b:00007f2f9261c208 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+RAX: 00000000000000ca RBX: 00007f2f92719a70 RCX: 00007f2f926656fd
+RDX: 00000000000f4240 RSI: 0000000000000081 RDI: 00007f2f92719a7c
+RBP: 00007f2f926e7098 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007f2f92719a78
+R13: 00007f2f92719a7c R14: 33921e5989711fe9 R15: 00007f2f926e7028
+ </TASK>
+
+Showing all locks held in the system:
+1 lock held by khungtaskd/40:
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: rcu_read_lock include/linux/rcupdate.h:867 [inline]
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: debug_show_all_locks+0x36/0x1c0 kernel/locking/lockdep.c:6775
+1 lock held by in:imklog/171:
+ #0: ffff88810a1e8478 (&f->f_pos_lock){+.+.}-{4:4}, at: fdget_pos+0x2a4/0x370 fs/file.c:1255
+
+=============================================
+
+

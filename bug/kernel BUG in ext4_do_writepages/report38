@@ -1,0 +1,97 @@
+EXT4-fs (loop4): free_blocks=2415919104
+EXT4-fs (loop4): dirty_blocks=16
+EXT4-fs (loop4): Block reservation details
+EXT4-fs (loop4): i_reserved_data_blocks=1
+------------[ cut here ]------------
+kernel BUG at fs/ext4/inode.c:2809!
+Oops: invalid opcode: 0000 [#1] SMP KASAN NOPTI
+CPU: 1 UID: 0 PID: 405 Comm: kworker/u16:10 Tainted: P                    6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [P]=PROPRIETARY_MODULE
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+EXT4-fs: Ignoring removed orlov option
+Workqueue: writeback wb_workfn (flush-7:4)
+ext4: Unknown parameter 'fowner'
+RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40 fs/ext4/inode.c:2809
+Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+RSP: 0018:ffff888008ac72a0 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81f07130
+RDX: 0000000000000001 RSI: ffff888109878000 RDI: 0000000000000002
+RBP: ffff888008ac7460 R08: 0000000000000000 R09: ffffed10223abac4
+R10: ffffed10223abac3 R11: ffff888111d5d61f R12: ffff888111d5d618
+R13: 0000000000000001 R14: ffff888008ac74a8 R15: ffff888111d5d860
+FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffeee2f98a8 CR3: 0000000103056000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ ext4_writepages+0x369/0x7a0 fs/ext4/inode.c:3026
+ do_writepages+0x244/0x5c0 mm/page-writeback.c:2598
+ __writeback_single_inode+0x109/0x12a0 fs/fs-writeback.c:1737
+ writeback_sb_inodes+0x6f9/0x1b00 fs/fs-writeback.c:2030
+ __writeback_inodes_wb+0xbe/0x270 fs/fs-writeback.c:2107
+ wb_writeback+0x64d/0x9e0 fs/fs-writeback.c:2218
+ wb_check_background_flush fs/fs-writeback.c:2288 [inline]
+ wb_do_writeback fs/fs-writeback.c:2376 [inline]
+ wb_workfn+0x789/0xcb0 fs/fs-writeback.c:2403
+ process_one_work kernel/workqueue.c:3257 [inline]
+ process_scheduled_works+0x54f/0x1910 kernel/workqueue.c:3340
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3421
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40 fs/ext4/inode.c:2809
+Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+RSP: 0018:ffff888008ac72a0 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81f07130
+RDX: 0000000000000001 RSI: ffff888109878000 RDI: 0000000000000002
+RBP: ffff888008ac7460 R08: 0000000000000000 R09: ffffed10223abac4
+R10: ffffed10223abac3 R11: ffff888111d5d61f R12: ffff888111d5d618
+R13: 0000000000000001 R14: ffff888008ac74a8 R15: ffff888111d5d860
+FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffeee2f98a8 CR3: 0000000103056000 CR4: 0000000000350ef0
+------------[ cut here ]------------
+WARNING: kernel/exit.c:902 at do_exit+0x1e3a/0x2d90 kernel/exit.c:902, CPU#1: kworker/u16:10/405
+Modules linked in:
+CPU: 1 UID: 0 PID: 405 Comm: kworker/u16:10 Tainted: P      D             6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [P]=PROPRIETARY_MODULE, [D]=DIE
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Workqueue: writeback wb_workfn (flush-7:4)
+RIP: 0010:do_exit+0x1e3a/0x2d90 kernel/exit.c:902
+Code: 2f 04 00 00 c7 43 18 00 00 00 00 e9 88 e4 ff ff e8 7b fd 39 00 bf 02 24 00 00 e8 c1 f9 0b 00 e9 3e ff ff ff e8 67 fd 39 00 90 <0f> 0b 90 e9 83 e2 ff ff e8 59 fd 39 00 48 89 ee bf 05 06 00 00 e8
+RSP: 0018:ffff888008ac7e30 EFLAGS: 00010246
+RAX: 00000000f0f05800 RBX: 0000000000000200 RCX: ffffffff813b1e67
+RDX: 1ffff1102130f23d RSI: ffff888109878000 RDI: 0000000000000002
+RBP: 000000000000000b R08: fffffbfff0f05800 R09: fffffbfff0f058e1
+R10: fffffbfff0f058e0 R11: 0000000000000003 R12: ffff888109878000
+R13: 0000000000012b14 R14: ffff8881098796a8 R15: ffff888109878000
+FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffeee2f98a8 CR3: 0000000103056000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ make_task_dead+0x174/0x3d0 kernel/exit.c:1074
+ rewind_stack_and_make_dead+0x16/0x20 arch/x86/entry/entry_64.S:1494
+RIP: 0000:0x0
+Code: Unable to access opcode bytes at 0xffffffffffffffd6.
+RSP: 0000:0000000000000000 EFLAGS: 00000000 ORIG_RAX: 0000000000000000
+RAX: 0000000000000000 RBX: 0000000000000000 RCX: 0000000000000000
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000000 R12: 0000000000000000
+R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+ </TASK>
+irq event stamp: 277431
+hardirqs last  enabled at (277431): [<ffffffff8129aeb1>] cond_local_irq_enable arch/x86/include/asm/traps.h:51 [inline]
+hardirqs last  enabled at (277431): [<ffffffff8129aeb1>] do_error_trap+0x171/0x240 arch/x86/kernel/traps.c:358
+hardirqs last disabled at (277430): [<ffffffff84a92121>] exc_invalid_op+0x51/0x80 arch/x86/kernel/traps.c:492
+softirqs last  enabled at (277426): [<ffffffff813b9880>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (277426): [<ffffffff813b9880>] handle_softirqs+0x490/0x700 kernel/softirq.c:650
+softirqs last disabled at (277417): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (277417): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (277417): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (277417): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---

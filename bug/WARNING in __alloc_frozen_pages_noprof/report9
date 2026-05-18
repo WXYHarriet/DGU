@@ -1,0 +1,99 @@
+loop3: detected capacity change from 0 to 2048
+loop7: detected capacity change from 0 to 512
+ext4 filesystem being mounted at /64/file1 supports timestamps until 2038-01-19 (0x7fffffff)
+------------[ cut here ]------------
+WARNING: CPU: 1 PID: 1 at mm/page_alloc.c:4665 __alloc_pages_slowpath.constprop.0+0x1971/0x2100 mm/page_alloc.c:4665
+Modules linked in:
+CPU: 1 UID: 0 PID: 1 Comm: systemd Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__alloc_pages_slowpath.constprop.0+0x1971/0x2100 mm/page_alloc.c:4665
+Code: 89 fa 48 c1 ea 03 0f b6 14 02 48 89 f8 83 e0 07 83 c0 03 38 d0 7c 08 84 d2 0f 85 97 06 00 00 f6 43 2d 08 0f 84 46 e7 ff ff 90 <0f> 0b 90 e9 3d e7 ff ff c7 44 24 44 01 00 00 00 e9 03 fb ff ff 44
+RSP: 0018:ffff88810026e6b8 EFLAGS: 00010202
+RAX: 0000000000000007 RBX: ffff888100260000 RCX: ffff88810026e8cc
+RDX: 0000000000000000 RSI: 1ffff1102004dced RDI: ffff88810026002c
+RBP: ffff88810026e8b0 R08: ffff88810026e8b0 R09: 0000000000000ce9
+R10: ffffed1027fff558 R11: ffff88813fffaac7 R12: 0000000000000000
+R13: 0000000000000000 R14: 0000000000148c48 R15: 0000000000148c48
+FS:  00007f033c055900(0000) GS:ffff888193716000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f70df0b5120 CR3: 0000000105886000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ __alloc_frozen_pages_noprof+0x577/0x680 mm/page_alloc.c:5196
+ alloc_pages_mpol+0xed/0x340 mm/mempolicy.c:2416
+ alloc_pages_noprof mm/mempolicy.c:2507 [inline]
+ folio_alloc_noprof+0x22/0x290 mm/mempolicy.c:2517
+ filemap_alloc_folio_noprof+0x314/0x440 mm/filemap.c:1020
+ __filemap_get_folio+0x38d/0x960 mm/filemap.c:2012
+ grow_dev_folio fs/buffer.c:1050 [inline]
+ grow_buffers fs/buffer.c:1116 [inline]
+ __getblk_slow fs/buffer.c:1134 [inline]
+ bdev_getblk+0x1fc/0x600 fs/buffer.c:1461
+ __getblk include/linux/buffer_head.h:380 [inline]
+ sb_getblk include/linux/buffer_head.h:386 [inline]
+ __ext4_get_inode_loc+0x56c/0x14b0 fs/ext4/inode.c:4837
+ ext4_get_inode_loc+0xbd/0x160 fs/ext4/inode.c:4965
+ ext4_reserve_inode_write+0x155/0x350 fs/ext4/inode.c:6302
+ __ext4_mark_inode_dirty+0x162/0x7f0 fs/ext4/inode.c:6480
+ ext4_dirty_inode+0xdd/0x130 fs/ext4/inode.c:6517
+ __mark_inode_dirty+0x1b5/0xcf0 fs/fs-writeback.c:2566
+ mark_inode_dirty_sync include/linux/fs.h:2619 [inline]
+ iput fs/inode.c:1947 [inline]
+ iput+0x68a/0x970 fs/inode.c:1926
+ dentry_unlink_inode+0x2cd/0x4c0 fs/dcache.c:466
+ __dentry_kill+0x186/0x5b0 fs/dcache.c:669
+ shrink_kill fs/dcache.c:1114 [inline]
+ shrink_dentry_list+0x13d/0x650 fs/dcache.c:1141
+ prune_dcache_sb+0xef/0x150 fs/dcache.c:1222
+ super_cache_scan+0x284/0x490 fs/super.c:222
+ do_shrink_slab+0x3f6/0x1070 mm/shrinker.c:437
+ shrink_slab_memcg mm/shrinker.c:550 [inline]
+ shrink_slab+0x92c/0x12c0 mm/shrinker.c:628
+ shrink_node_memcgs mm/vmscan.c:6056 [inline]
+ shrink_node+0xae3/0x24c0 mm/vmscan.c:6095
+ shrink_zones mm/vmscan.c:6339 [inline]
+ do_try_to_free_pages+0x2fb/0x15b0 mm/vmscan.c:6401
+ try_to_free_pages+0x293/0x600 mm/vmscan.c:6647
+ __perform_reclaim mm/page_alloc.c:4345 [inline]
+ __alloc_pages_direct_reclaim mm/page_alloc.c:4367 [inline]
+ __alloc_pages_slowpath.constprop.0+0x7f6/0x2100 mm/page_alloc.c:4816
+ __alloc_frozen_pages_noprof+0x577/0x680 mm/page_alloc.c:5196
+ alloc_pages_mpol+0xed/0x340 mm/mempolicy.c:2416
+ alloc_pages_noprof mm/mempolicy.c:2507 [inline]
+ folio_alloc_noprof+0x22/0x290 mm/mempolicy.c:2517
+ filemap_alloc_folio_noprof+0x314/0x440 mm/filemap.c:1020
+ __filemap_get_folio+0x38d/0x960 mm/filemap.c:2012
+ filemap_fault+0x190a/0x3650 mm/filemap.c:3499
+ __do_fault+0x10d/0x480 mm/memory.c:5280
+ do_read_fault mm/memory.c:5698 [inline]
+ do_fault mm/memory.c:5832 [inline]
+ do_pte_missing mm/memory.c:4361 [inline]
+ handle_pte_fault mm/memory.c:6177 [inline]
+ __handle_mm_fault+0x1655/0x3580 mm/memory.c:6318
+ handle_mm_fault+0x2d8/0x9d0 mm/memory.c:6487
+ do_user_addr_fault+0x6be/0x1840 arch/x86/mm/fault.c:1336
+ handle_page_fault arch/x86/mm/fault.c:1476 [inline]
+ exc_page_fault+0xb0/0x180 arch/x86/mm/fault.c:1532
+ asm_exc_page_fault+0x26/0x30 arch/x86/include/asm/idtentry.h:618
+RIP: 0033:0x7f033cb34a65
+Code: Unable to access opcode bytes at 0x7f033cb34a3b.
+RSP: 002b:00007ffc308ebfd0 EFLAGS: 00010202
+RAX: 0000000000000000 RBX: 0000000000000078 RCX: 0000000000000009
+RDX: 00007ffc308ec080 RSI: 00005584d5da7780 RDI: 00007f033cc222da
+RBP: 00005584d5da7780 R08: 0000000000000001 R09: 00005584e157e9c8
+R10: 0000000000000000 R11: 0000000000000000 R12: 00005584d5da7780
+R13: 00007ffc308ecd50 R14: 00007ffc308ec080 R15: 00005584e163c6b0
+ </TASK>
+irq event stamp: 1396411
+hardirqs last  enabled at (1396423): [<ffffffff81541a78>] __up_console_sem+0x78/0x80 kernel/printk/printk.c:345
+hardirqs last disabled at (1396434): [<ffffffff81541a5d>] __up_console_sem+0x5d/0x80 kernel/printk/printk.c:343
+softirqs last  enabled at (1396368): [<ffffffff813b4ab8>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (1396368): [<ffffffff813b4ab8>] handle_softirqs+0x4c8/0x740 kernel/softirq.c:650
+softirqs last disabled at (1396363): [<ffffffff813b6546>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (1396363): [<ffffffff813b6546>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (1396363): [<ffffffff813b6546>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (1396363): [<ffffffff813b6546>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+EXT4-fs error (device loop3): ext4_validate_block_bitmap:440: comm ext4lazyinit: bg 0: block 234: padding at end of block bitmap is not set
+syz.0.293 (6111) used greatest stack depth: 19304 bytes left
+syz.0.293 (6128) used greatest stack depth: 18336 bytes left

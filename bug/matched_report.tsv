@@ -1,0 +1,6 @@
+crash_name	matched_pattern	source_dir	dest_dir
+BUG_ soft lockup in perf_event_open	BUG: soft lockup in perf_event_open	/home/wxy/source/workdir/syz-combine/0206-crash-619rc8/crashes/BUG_ soft lockup in perf_event_open	/home/wxy/source/workdir/sysctl/bug/BUG_ soft lockup in perf_event_open
+kernel BUG in __ext4_journal_stop	kernel BUG in __ext4_journal_stop	/home/wxy/source/workdir/syz-combine/0206-crash-619rc8/crashes/kernel BUG in __ext4_journal_stop	/home/wxy/source/workdir/sysctl/bug/kernel BUG in __ext4_journal_stop
+kernel BUG in __ext4_journal_stop	kernel BUG in __ext4_journal_stop	/home/wxy/source/workdir/syz-combine/1114-crash/crashes/kernel BUG in __ext4_journal_stop	/home/wxy/source/workdir/sysctl/bug/kernel BUG in __ext4_journal_stop_1
+BUG_ soft lockup in perf_event_open	BUG: soft lockup in perf_event_open	/home/wxy/source/workdir/syz-combine/1202-crash/crashes/BUG_ soft lockup in perf_event_open	/home/wxy/source/workdir/sysctl/bug/BUG_ soft lockup in perf_event_open_1
+kernel BUG in __ext4_journal_stop	kernel BUG in __ext4_journal_stop	/home/wxy/source/workdir/syz-combine/1202-crash/crashes/kernel BUG in __ext4_journal_stop	/home/wxy/source/workdir/sysctl/bug/kernel BUG in __ext4_journal_stop_2

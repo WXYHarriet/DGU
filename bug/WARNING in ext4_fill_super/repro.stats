@@ -1,0 +1,311 @@
+Extracting prog: 35.805544138s
+Minimizing prog: 4m7.958251481s
+Simplifying prog options: 0s
+Extracting C: 24.387424887s
+Simplifying C: 2m8.881311029s
+
+
+extracting reproducer from 62 programs
+first checking the prog from the crash report
+single: executing 1 programs separately with timeout 30s
+testing program (duration=30s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-futex-syz_proc_sys_generated_329
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000200)='ext3\x00', &(0x7f0000000000)='./file0\x00', 0x21000a, &(0x7f0000000580), 0x1, 0x56d, &(0x7f0000000240)="$eJzs3V1oZFcdAPD/nclss92sSdWHWmhdtLJbdGeSxrbBh3YF8a2g1Pc1JLMh7CQTMkm7CcWm+OCLIIio4JNPvgg++ChIn32SQsG+i4oidqsPgh+33Dt3ksn0TpJtk0k2+f3g3Dnnfv3PSci599x7cyeAC+taRNyKiGpEPBMRk8X8SpFip5uy9d6///pClpJI01f+keTbZOWISPr3eSXbpNrNNx4pj9vZ2r4732o114tyY2NlrdHZ2r65vDK/1Fxqrs7Ozjw/98Lcc3PTh7Yhee/wdl6NiBe/9pcf/+AXX3/xt1967Y+3/3bjO1mlJ4rlRTv6rH3/8L0OcWsv+24+rcV43+KxiFj/yDs/W6oRaeQtPMDlkVUHAIBD1CPikxHxufz8fzKq+dlp7sBTOgAAAODhkb40Ef9NIlIAAADg3HopfwY2qdSL530nolKp17vP8H46Hq202p2NL95pb64udp+VnYpa5c5yqzldPCs8FbUkK8/k+b3yswPl2Yh4LCJ+NHk5L9cX2q3F0774AQAAABfElYHx/78mu+P/TPWj/wcsAAAAcNZMnXYFAAAAgBM3bPy/+1bvIS/xBgAAAB4eu+N/43wAAAA4j77x8stZSnvff7346tbm3farNxebnbv1lc2F+kJ7fa2+1G4v5e/sWzlsf612e+3Lsbp5r7HR7Gw0Olvbt1fam6sbt5f3fQU2AAAAMEKPffatd5OI2PnK5TxlLmWT6pANvCsAzo3Kg6z855OrBzB6ww7zwPk39qAbpLs5XQc87HZOuwLAaUv6CyUnBf0P7+y7ZvD7k6sTAABwvK5/pvz+fzYEqB245bUR1RA4KQ90/x84V9zEg4ur9P7/f/LpdMm5wdsnXiFgZGrOAODC67v/n5YtH/ryjiPf/0/TQ/cFAACcqIk8JZV6cS9wIiqV+rWIq/m/+teSO8ut5nREfCIi/jBZeyQrz+RbJvufGQYAAAAAAAAAAAAAAAAAAAAAAAAAhkrTJFIAAADgXIuo/DUpvv/r+uTTE4PXBy4l/57MPyPitZ+9Urk3v7GxPpPNf683/1ZE/CSf/+xpXMEAAAAABvXG6b1xPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcp/fvv77QS6OM+/evRsTUbvxkJ6KIPxbj+ed41CLi0X8mMda3XRIR1WOIv/NmRDze3/5aHjuLMJVXrVuLwfiViLh8IvF7P/9u/Esx/mSapqXxrxxDfLjI3sr6n1tlf3+VuJZ/lv/9jxXp4xro//bF7/V/1ci7wA/1f1ePGOOJd37VGBr/zYgnxsr7n178ZK/9u1UY2veV/FC+/a3t7WGrpz+PuF56/El218lyjY2VtUZna/vm8sr8UnOpuTo7O/P83Atzz81NN+4st5rFtDTGD5/8zf8HZv0v7crbH0PiT324/fvq9HSWqfU3ZjBMEeyde/c/1c3WBnaRx7/x+fLf/+MHxM+OfV8ojgPZ8uu9/E433++pX779VGnFiviLe+3/Xenvf/xSXh5s/41hOx3wzDe/+6cjrgoAjEBna/vufKvVXP84me9F/5z0jdKVf5qm6THEkjljmTeOuvL4MQb99dlo++gzxaAkTjbWcVzZAgAAzpq9k/7TrgkAAAAAAAAAAAAAAAAAAABcXJ2ttHrMLw9LIol9cwZj7pxOUwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADvRBAAAA///oKeAX") (async)
+futex(0x0, 0x0, 0x0, 0x0, &(0x7f0000000340), 0x0)
+syz_proc_sys_generated_329(0x2100, 0x4007, 0x0, 0x1462b8)
+
+program crashed: WARNING in ext4_fill_super
+single: successfully extracted reproducer
+found reproducer with 3 syscalls
+minimizing guilty program
+testing program (duration=50.000671551s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-futex
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000200)='ext3\x00', &(0x7f0000000000)='./file0\x00', 0x21000a, &(0x7f0000000580), 0x1, 0x56d, &(0x7f0000000240)="$eJzs3V1oZFcdAPD/nclss92sSdWHWmhdtLJbdGeSxrbBh3YF8a2g1Pc1JLMh7CQTMkm7CcWm+OCLIIio4JNPvgg++ChIn32SQsG+i4oidqsPgh+33Dt3ksn0TpJtk0k2+f3g3Dnnfv3PSci599x7cyeAC+taRNyKiGpEPBMRk8X8SpFip5uy9d6///pClpJI01f+keTbZOWISPr3eSXbpNrNNx4pj9vZ2r4732o114tyY2NlrdHZ2r65vDK/1Fxqrs7Ozjw/98Lcc3PTh7Yhee/wdl6NiBe/9pcf/+AXX3/xt1967Y+3/3bjO1mlJ4rlRTv6rH3/8L0OcWsv+24+rcV43+KxiFj/yDs/W6oRaeQtPMDlkVUHAIBD1CPikxHxufz8fzKq+dlp7sBTOgAAAODhkb40Ef9NIlIAAADg3HopfwY2qdSL530nolKp17vP8H46Hq202p2NL95pb64udp+VnYpa5c5yqzldPCs8FbUkK8/k+b3yswPl2Yh4LCJ+NHk5L9cX2q3F0774AQAAABfElYHx/78mu+P/TPWj/wcsAAAAcNZMnXYFAAAAgBM3bPy/+1bvIS/xBgAAAB4eu+N/43wAAAA4j77x8stZSnvff7346tbm3farNxebnbv1lc2F+kJ7fa2+1G4v5e/sWzlsf612e+3Lsbp5r7HR7Gw0Olvbt1fam6sbt5f3fQU2AAAAMEKPffatd5OI2PnK5TxlLmWT6pANvCsAzo3Kg6z855OrBzB6ww7zwPk39qAbpLs5XQc87HZOuwLAaUv6CyUnBf0P7+y7ZvD7k6sTAABwvK5/pvz+fzYEqB245bUR1RA4KQ90/x84V9zEg4ur9P7/f/LpdMm5wdsnXiFgZGrOAODC67v/n5YtH/ryjiPf/0/TQ/cFAACcqIk8JZV6cS9wIiqV+rWIq/m/+teSO8ut5nREfCIi/jBZeyQrz+RbJvufGQYAAAAAAAAAAAAAAAAAAAAAAAAAhkrTJFIAAADgXIuo/DUpvv/r+uTTE4PXBy4l/57MPyPitZ+9Urk3v7GxPpPNf683/1ZE/CSf/+xpXMEAAAAABvXG6b1xPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcp/fvv77QS6OM+/evRsTUbvxkJ6KIPxbj+ed41CLi0X8mMda3XRIR1WOIv/NmRDze3/5aHjuLMJVXrVuLwfiViLh8IvF7P/9u/Esx/mSapqXxrxxDfLjI3sr6n1tlf3+VuJZ/lv/9jxXp4xro//bF7/V/1ci7wA/1f1ePGOOJd37VGBr/zYgnxsr7n178ZK/9u1UY2veV/FC+/a3t7WGrpz+PuF56/El218lyjY2VtUZna/vm8sr8UnOpuTo7O/P83Atzz81NN+4st5rFtDTGD5/8zf8HZv0v7crbH0PiT324/fvq9HSWqfU3ZjBMEeyde/c/1c3WBnaRx7/x+fLf/+MHxM+OfV8ojgPZ8uu9/E433++pX779VGnFiviLe+3/Xenvf/xSXh5s/41hOx3wzDe/+6cjrgoAjEBna/vufKvVXP84me9F/5z0jdKVf5qm6THEkjljmTeOuvL4MQb99dlo++gzxaAkTjbWcVzZAgAAzpq9k/7TrgkAAAAAAAAAAAAAAAAAAABcXJ2ttHrMLw9LIol9cwZj7pxOUwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADvRBAAAA///oKeAX") (async)
+futex(0x0, 0x0, 0x0, 0x0, &(0x7f0000000340), 0x0)
+
+program crashed: WARNING in ext4_fill_super
+testing program (duration=50.000671551s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000200)='ext3\x00', &(0x7f0000000000)='./file0\x00', 0x21000a, &(0x7f0000000580), 0x1, 0x56d, &(0x7f0000000240)="$eJzs3V1oZFcdAPD/nclss92sSdWHWmhdtLJbdGeSxrbBh3YF8a2g1Pc1JLMh7CQTMkm7CcWm+OCLIIio4JNPvgg++ChIn32SQsG+i4oidqsPgh+33Dt3ksn0TpJtk0k2+f3g3Dnnfv3PSci599x7cyeAC+taRNyKiGpEPBMRk8X8SpFip5uy9d6///pClpJI01f+keTbZOWISPr3eSXbpNrNNx4pj9vZ2r4732o114tyY2NlrdHZ2r65vDK/1Fxqrs7Ozjw/98Lcc3PTh7Yhee/wdl6NiBe/9pcf/+AXX3/xt1967Y+3/3bjO1mlJ4rlRTv6rH3/8L0OcWsv+24+rcV43+KxiFj/yDs/W6oRaeQtPMDlkVUHAIBD1CPikxHxufz8fzKq+dlp7sBTOgAAAODhkb40Ef9NIlIAAADg3HopfwY2qdSL530nolKp17vP8H46Hq202p2NL95pb64udp+VnYpa5c5yqzldPCs8FbUkK8/k+b3yswPl2Yh4LCJ+NHk5L9cX2q3F0774AQAAABfElYHx/78mu+P/TPWj/wcsAAAAcNZMnXYFAAAAgBM3bPy/+1bvIS/xBgAAAB4eu+N/43wAAAA4j77x8stZSnvff7346tbm3farNxebnbv1lc2F+kJ7fa2+1G4v5e/sWzlsf612e+3Lsbp5r7HR7Gw0Olvbt1fam6sbt5f3fQU2AAAAMEKPffatd5OI2PnK5TxlLmWT6pANvCsAzo3Kg6z855OrBzB6ww7zwPk39qAbpLs5XQc87HZOuwLAaUv6CyUnBf0P7+y7ZvD7k6sTAABwvK5/pvz+fzYEqB245bUR1RA4KQ90/x84V9zEg4ur9P7/f/LpdMm5wdsnXiFgZGrOAODC67v/n5YtH/ryjiPf/0/TQ/cFAACcqIk8JZV6cS9wIiqV+rWIq/m/+teSO8ut5nREfCIi/jBZeyQrz+RbJvufGQYAAAAAAAAAAAAAAAAAAAAAAAAAhkrTJFIAAADgXIuo/DUpvv/r+uTTE4PXBy4l/57MPyPitZ+9Urk3v7GxPpPNf683/1ZE/CSf/+xpXMEAAAAABvXG6b1xPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcp/fvv77QS6OM+/evRsTUbvxkJ6KIPxbj+ed41CLi0X8mMda3XRIR1WOIv/NmRDze3/5aHjuLMJVXrVuLwfiViLh8IvF7P/9u/Esx/mSapqXxrxxDfLjI3sr6n1tlf3+VuJZ/lv/9jxXp4xro//bF7/V/1ci7wA/1f1ePGOOJd37VGBr/zYgnxsr7n178ZK/9u1UY2veV/FC+/a3t7WGrpz+PuF56/El218lyjY2VtUZna/vm8sr8UnOpuTo7O/P83Atzz81NN+4st5rFtDTGD5/8zf8HZv0v7crbH0PiT324/fvq9HSWqfU3ZjBMEeyde/c/1c3WBnaRx7/x+fLf/+MHxM+OfV8ojgPZ8uu9/E433++pX779VGnFiviLe+3/Xenvf/xSXh5s/41hOx3wzDe/+6cjrgoAjEBna/vufKvVXP84me9F/5z0jdKVf5qm6THEkjljmTeOuvL4MQb99dlo++gzxaAkTjbWcVzZAgAAzpq9k/7TrgkAAAAAAAAAAAAAAAAAAABcXJ2ttHrMLw9LIol9cwZj7pxOUwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADvRBAAAA///oKeAX") (async)
+
+program did not crash
+testing program (duration=50.000671551s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): futex
+detailed listing:
+executing program 0:
+futex(0x0, 0x0, 0x0, 0x0, &(0x7f0000000340), 0x0)
+
+program did not crash
+testing program (duration=50.000671551s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-futex
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000200)='ext3\x00', &(0x7f0000000000)='./file0\x00', 0x21000a, &(0x7f0000000580), 0x1, 0x56d, &(0x7f0000000240)="$eJzs3V1oZFcdAPD/nclss92sSdWHWmhdtLJbdGeSxrbBh3YF8a2g1Pc1JLMh7CQTMkm7CcWm+OCLIIio4JNPvgg++ChIn32SQsG+i4oidqsPgh+33Dt3ksn0TpJtk0k2+f3g3Dnnfv3PSci599x7cyeAC+taRNyKiGpEPBMRk8X8SpFip5uy9d6///pClpJI01f+keTbZOWISPr3eSXbpNrNNx4pj9vZ2r4732o114tyY2NlrdHZ2r65vDK/1Fxqrs7Ozjw/98Lcc3PTh7Yhee/wdl6NiBe/9pcf/+AXX3/xt1967Y+3/3bjO1mlJ4rlRTv6rH3/8L0OcWsv+24+rcV43+KxiFj/yDs/W6oRaeQtPMDlkVUHAIBD1CPikxHxufz8fzKq+dlp7sBTOgAAAODhkb40Ef9NIlIAAADg3HopfwY2qdSL530nolKp17vP8H46Hq202p2NL95pb64udp+VnYpa5c5yqzldPCs8FbUkK8/k+b3yswPl2Yh4LCJ+NHk5L9cX2q3F0774AQAAABfElYHx/78mu+P/TPWj/wcsAAAAcNZMnXYFAAAAgBM3bPy/+1bvIS/xBgAAAB4eu+N/43wAAAA4j77x8stZSnvff7346tbm3farNxebnbv1lc2F+kJ7fa2+1G4v5e/sWzlsf612e+3Lsbp5r7HR7Gw0Olvbt1fam6sbt5f3fQU2AAAAMEKPffatd5OI2PnK5TxlLmWT6pANvCsAzo3Kg6z855OrBzB6ww7zwPk39qAbpLs5XQc87HZOuwLAaUv6CyUnBf0P7+y7ZvD7k6sTAABwvK5/pvz+fzYEqB245bUR1RA4KQ90/x84V9zEg4ur9P7/f/LpdMm5wdsnXiFgZGrOAODC67v/n5YtH/ryjiPf/0/TQ/cFAACcqIk8JZV6cS9wIiqV+rWIq/m/+teSO8ut5nREfCIi/jBZeyQrz+RbJvufGQYAAAAAAAAAAAAAAAAAAAAAAAAAhkrTJFIAAADgXIuo/DUpvv/r+uTTE4PXBy4l/57MPyPitZ+9Urk3v7GxPpPNf683/1ZE/CSf/+xpXMEAAAAABvXG6b1xPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcp/fvv77QS6OM+/evRsTUbvxkJ6KIPxbj+ed41CLi0X8mMda3XRIR1WOIv/NmRDze3/5aHjuLMJVXrVuLwfiViLh8IvF7P/9u/Esx/mSapqXxrxxDfLjI3sr6n1tlf3+VuJZ/lv/9jxXp4xro//bF7/V/1ci7wA/1f1ePGOOJd37VGBr/zYgnxsr7n178ZK/9u1UY2veV/FC+/a3t7WGrpz+PuF56/El218lyjY2VtUZna/vm8sr8UnOpuTo7O/P83Atzz81NN+4st5rFtDTGD5/8zf8HZv0v7crbH0PiT324/fvq9HSWqfU3ZjBMEeyde/c/1c3WBnaRx7/x+fLf/+MHxM+OfV8ojgPZ8uu9/E433++pX779VGnFiviLe+3/Xenvf/xSXh5s/41hOx3wzDe/+6cjrgoAjEBna/vufKvVXP84me9F/5z0jdKVf5qm6THEkjljmTeOuvL4MQb99dlo++gzxaAkTjbWcVzZAgAAzpq9k/7TrgkAAAAAAAAAAAAAAAAAAABcXJ2ttHrMLw9LIol9cwZj7pxOUwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADvRBAAAA///oKeAX")
+futex(0x0, 0x0, 0x0, 0x0, &(0x7f0000000340), 0x0)
+
+program did not crash
+testing program (duration=50.000671551s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-futex
+detailed listing:
+executing program 0:
+syz_mount_image$ext4(&(0x7f0000000200)='ext3\x00', &(0x7f0000000000)='./file0\x00', 0x21000a, &(0x7f0000000580), 0x1, 0x56d, &(0x7f0000000240)="$eJzs3V1oZFcdAPD/nclss92sSdWHWmhdtLJbdGeSxrbBh3YF8a2g1Pc1JLMh7CQTMkm7CcWm+OCLIIio4JNPvgg++ChIn32SQsG+i4oidqsPgh+33Dt3ksn0TpJtk0k2+f3g3Dnnfv3PSci599x7cyeAC+taRNyKiGpEPBMRk8X8SpFip5uy9d6///pClpJI01f+keTbZOWISPr3eSXbpNrNNx4pj9vZ2r4732o114tyY2NlrdHZ2r65vDK/1Fxqrs7Ozjw/98Lcc3PTh7Yhee/wdl6NiBe/9pcf/+AXX3/xt1967Y+3/3bjO1mlJ4rlRTv6rH3/8L0OcWsv+24+rcV43+KxiFj/yDs/W6oRaeQtPMDlkVUHAIBD1CPikxHxufz8fzKq+dlp7sBTOgAAAODhkb40Ef9NIlIAAADg3HopfwY2qdSL530nolKp17vP8H46Hq202p2NL95pb64udp+VnYpa5c5yqzldPCs8FbUkK8/k+b3yswPl2Yh4LCJ+NHk5L9cX2q3F0774AQAAABfElYHx/78mu+P/TPWj/wcsAAAAcNZMnXYFAAAAgBM3bPy/+1bvIS/xBgAAAB4eu+N/43wAAAA4j77x8stZSnvff7346tbm3farNxebnbv1lc2F+kJ7fa2+1G4v5e/sWzlsf612e+3Lsbp5r7HR7Gw0Olvbt1fam6sbt5f3fQU2AAAAMEKPffatd5OI2PnK5TxlLmWT6pANvCsAzo3Kg6z855OrBzB6ww7zwPk39qAbpLs5XQc87HZOuwLAaUv6CyUnBf0P7+y7ZvD7k6sTAABwvK5/pvz+fzYEqB245bUR1RA4KQ90/x84V9zEg4ur9P7/f/LpdMm5wdsnXiFgZGrOAODC67v/n5YtH/ryjiPf/0/TQ/cFAACcqIk8JZV6cS9wIiqV+rWIq/m/+teSO8ut5nREfCIi/jBZeyQrz+RbJvufGQYAAAAAAAAAAAAAAAAAAAAAAAAAhkrTJFIAAADgXIuo/DUpvv/r+uTTE4PXBy4l/57MPyPitZ+9Urk3v7GxPpPNf683/1ZE/CSf/+xpXMEAAAAABvXG6b1xPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcp/fvv77QS6OM+/evRsTUbvxkJ6KIPxbj+ed41CLi0X8mMda3XRIR1WOIv/NmRDze3/5aHjuLMJVXrVuLwfiViLh8IvF7P/9u/Esx/mSapqXxrxxDfLjI3sr6n1tlf3+VuJZ/lv/9jxXp4xro//bF7/V/1ci7wA/1f1ePGOOJd37VGBr/zYgnxsr7n178ZK/9u1UY2veV/FC+/a3t7WGrpz+PuF56/El218lyjY2VtUZna/vm8sr8UnOpuTo7O/P83Atzz81NN+4st5rFtDTGD5/8zf8HZv0v7crbH0PiT324/fvq9HSWqfU3ZjBMEeyde/c/1c3WBnaRx7/x+fLf/+MHxM+OfV8ojgPZ8uu9/E433++pX779VGnFiviLe+3/Xenvf/xSXh5s/41hOx3wzDe/+6cjrgoAjEBna/vufKvVXP84me9F/5z0jdKVf5qm6THEkjljmTeOuvL4MQb99dlo++gzxaAkTjbWcVzZAgAAzpq9k/7TrgkAAAAAAAAAAAAAAAAAAABcXJ2ttHrMLw9LIol9cwZj7pxOUwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADvRBAAAA///oKeAX") (async)
+futex(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+
+program did not crash
+extracting C reproducer
+testing compiled C program (duration=50.000671551s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-futex
+program crashed: WARNING in ext4_fill_super
+simplifying C reproducer
+testing compiled C program (duration=50.000671551s, {Threaded:false Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-futex
+program did not crash
+testing compiled C program (duration=50.000671551s, {Threaded:true Repeat:false RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:false NetDevices:true NetReset:false Cgroups:false BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-futex
+program crashed: WARNING in ext4_fill_super
+testing compiled C program (duration=50.000671551s, {Threaded:true Repeat:false RepeatTimes:0 Procs:1 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:false UseTmpDir:true HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-futex
+program crashed: WARNING in ext4_fill_super
+testing compiled C program (duration=50.000671551s, {Threaded:true Repeat:false RepeatTimes:0 Procs:1 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:false UseTmpDir:false HandleSegv:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-futex
+program crashed: WARNING in ext4_fill_super
+testing compiled C program (duration=50.000671551s, {Threaded:true Repeat:false RepeatTimes:0 Procs:1 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:true Swap:false UseTmpDir:false HandleSegv:false Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-futex
+program crashed: WARNING in ext4_fill_super
+testing compiled C program (duration=50.000671551s, {Threaded:true Repeat:false RepeatTimes:0 Procs:1 Slowdown:1 Sandbox: SandboxArg:0 Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false NicVF:false USB:false VhciInjection:false Wifi:false IEEE802154:false Sysctl:false Swap:false UseTmpDir:false HandleSegv:false Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_mount_image$ext4-futex
+program crashed: WARNING in ext4_fill_super
+reproducing took 7m17.032605219s
+repro crashed as (corrupted=false):
+audit: type=1400 audit(1763837859.520:7): avc:  denied  { execmem } for  pid=255 comm="syz-executor286" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=process permissive=1
+loop0: detected capacity change from 0 to 521
+------------[ cut here ]------------
+strnlen: detected buffer overflow: 65 byte read of buffer size 64
+WARNING: CPU: 0 PID: 256 at lib/string_helpers.c:1035 __fortify_report+0x97/0xb0 lib/string_helpers.c:1035
+Modules linked in:
+CPU: 0 UID: 0 PID: 256 Comm: syz-executor286 Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__fortify_report+0x97/0xb0 lib/string_helpers.c:1035
+Code: 84 49 c7 c5 c0 ce e2 84 4c 0f 45 e9 e8 d2 34 1e ff 49 89 e8 4c 89 e2 4c 89 f6 4c 89 e9 48 c7 c7 40 cf e2 84 e8 fa c5 e3 fe 90 <0f> 0b 90 90 5b 5d 41 5c 41 5d 41 5e e9 48 4e 4f 02 e8 d3 0e 5c ff
+RSP: 0018:ffff888102b179f0 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff88810a171b80 RDI: 0000000000000002
+RBP: 0000000000000040 R08: fffffbfff0b5df00 R09: ffffed1020562efa
+R10: ffffed1020562ef9 R11: ffff888102b177cf R12: 0000000000000041
+R13: ffffffff84e2cec0 R14: ffffffff84e2d880 R15: ffff8881151ce400
+FS:  00007ffb83c386c0(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffb7b838000 CR3: 000000010fd39000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ __fortify_panic+0x23/0x30 lib/string_helpers.c:1042
+ strnlen include/linux/fortify-string.h:235 [inline]
+ sized_strscpy include/linux/fortify-string.h:309 [inline]
+ parse_apply_sb_mount_options fs/ext4/super.c:2486 [inline]
+ __ext4_fill_super fs/ext4/super.c:5306 [inline]
+ ext4_fill_super+0x34bc/0xa890 fs/ext4/super.c:5736
+ get_tree_bdev_flags+0x38a/0x620 fs/super.c:1691
+ vfs_get_tree+0x93/0x340 fs/super.c:1751
+ fc_mount+0x18/0x110 fs/namespace.c:1208
+ do_new_mount_fc fs/namespace.c:3651 [inline]
+ do_new_mount fs/namespace.c:3727 [inline]
+ path_mount+0x771/0x1e00 fs/namespace.c:4037
+ do_mount+0xc5/0x120 fs/namespace.c:4050
+ __do_sys_mount fs/namespace.c:4238 [inline]
+ __se_sys_mount fs/namespace.c:4215 [inline]
+ __x64_sys_mount+0x193/0x230 fs/namespace.c:4215
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7ffb83c63b0e
+Code: c7 05 f2 fe 0a 00 00 00 00 00 eb 98 e8 ab 05 00 00 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 49 89 ca b8 a5 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007ffb83c38058 EFLAGS: 00000206 ORIG_RAX: 00000000000000a5
+RAX: ffffffffffffffda RBX: 0000000080808000 RCX: 00007ffb83c63b0e
+RDX: 0000200000000200 RSI: 0000200000000000 RDI: 00007ffb83c38080
+RBP: 00007ffb83c38678 R08: 00007ffb83c380c0 R09: 0000000000000567
+R10: 000000000021000a R11: 0000000000000206 R12: 00007ffb83c38080
+R13: 000000000021000a R14: 00007ffb83c380c0 R15: 0000200000000200
+ </TASK>
+irq event stamp: 1783
+hardirqs last  enabled at (1791): [<ffffffff81541a78>] __up_console_sem+0x78/0x80 kernel/printk/printk.c:345
+hardirqs last disabled at (1800): [<ffffffff81541a5d>] __up_console_sem+0x5d/0x80 kernel/printk/printk.c:343
+softirqs last  enabled at (1232): [<ffffffff813b4ab8>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (1232): [<ffffffff813b4ab8>] handle_softirqs+0x4c8/0x740 kernel/softirq.c:650
+softirqs last disabled at (1177): [<ffffffff813b6546>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (1177): [<ffffffff813b6546>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (1177): [<ffffffff813b6546>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (1177): [<ffffffff813b6546>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+------------[ cut here ]------------
+kernel BUG at lib/string_helpers.c:1043!
+Oops: invalid opcode: 0000 [#1] SMP KASAN NOPTI
+CPU: 0 UID: 0 PID: 256 Comm: syz-executor286 Tainted: G        W           6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Tainted: [W]=WARN
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__fortify_panic+0x24/0x30 lib/string_helpers.c:1043
+Code: 90 90 90 90 90 90 f3 0f 1e fa 41 54 49 89 d4 55 48 89 f5 53 89 fb e8 7b 34 1e ff 0f b6 fb 4c 89 e2 48 89 ee e8 1d ff ff ff 90 <0f> 0b 90 66 0f 1f 84 00 00 00 00 00 90 90 90 90 90 90 90 90 90 90
+RSP: 0018:ffff888102b17a20 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000002 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff88810a171b80 RDI: 0000000000000002
+RBP: 0000000000000040 R08: fffffbfff0b5df00 R09: ffffed1020562efa
+R10: ffffed1020562ef9 R11: ffff888102b177cf R12: 0000000000000041
+R13: ffff888111046000 R14: ffff8881151ce44c R15: ffff8881151ce400
+FS:  00007ffb83c386c0(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffb7b838000 CR3: 000000010fd39000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ strnlen include/linux/fortify-string.h:235 [inline]
+ sized_strscpy include/linux/fortify-string.h:309 [inline]
+ parse_apply_sb_mount_options fs/ext4/super.c:2486 [inline]
+ __ext4_fill_super fs/ext4/super.c:5306 [inline]
+ ext4_fill_super+0x34bc/0xa890 fs/ext4/super.c:5736
+ get_tree_bdev_flags+0x38a/0x620 fs/super.c:1691
+ vfs_get_tree+0x93/0x340 fs/super.c:1751
+ fc_mount+0x18/0x110 fs/namespace.c:1208
+ do_new_mount_fc fs/namespace.c:3651 [inline]
+ do_new_mount fs/namespace.c:3727 [inline]
+ path_mount+0x771/0x1e00 fs/namespace.c:4037
+ do_mount+0xc5/0x120 fs/namespace.c:4050
+ __do_sys_mount fs/namespace.c:4238 [inline]
+ __se_sys_mount fs/namespace.c:4215 [inline]
+ __x64_sys_mount+0x193/0x230 fs/namespace.c:4215
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7ffb83c63b0e
+Code: c7 05 f2 fe 0a 00 00 00 00 00 eb 98 e8 ab 05 00 00 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 49 89 ca b8 a5 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007ffb83c38058 EFLAGS: 00000206 ORIG_RAX: 00000000000000a5
+RAX: ffffffffffffffda RBX: 0000000080808000 RCX: 00007ffb83c63b0e
+RDX: 0000200000000200 RSI: 0000200000000000 RDI: 00007ffb83c38080
+RBP: 00007ffb83c38678 R08: 00007ffb83c380c0 R09: 0000000000000567
+R10: 000000000021000a R11: 0000000000000206 R12: 00007ffb83c38080
+R13: 000000000021000a R14: 00007ffb83c380c0 R15: 0000200000000200
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:__fortify_panic+0x24/0x30 lib/string_helpers.c:1043
+Code: 90 90 90 90 90 90 f3 0f 1e fa 41 54 49 89 d4 55 48 89 f5 53 89 fb e8 7b 34 1e ff 0f b6 fb 4c 89 e2 48 89 ee e8 1d ff ff ff 90 <0f> 0b 90 66 0f 1f 84 00 00 00 00 00 90 90 90 90 90 90 90 90 90 90
+RSP: 0018:ffff888102b17a20 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000002 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff88810a171b80 RDI: 0000000000000002
+RBP: 0000000000000040 R08: fffffbfff0b5df00 R09: ffffed1020562efa
+R10: ffffed1020562ef9 R11: ffff888102b177cf R12: 0000000000000041
+R13: ffff888111046000 R14: ffff8881151ce44c R15: ffff8881151ce400
+FS:  00007ffb83c386c0(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffb7b838000 CR3: 000000010fd39000 CR4: 0000000000350ef0
+
+final repro crashed as (corrupted=false):
+audit: type=1400 audit(1763837859.520:7): avc:  denied  { execmem } for  pid=255 comm="syz-executor286" scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=process permissive=1
+loop0: detected capacity change from 0 to 521
+------------[ cut here ]------------
+strnlen: detected buffer overflow: 65 byte read of buffer size 64
+WARNING: CPU: 0 PID: 256 at lib/string_helpers.c:1035 __fortify_report+0x97/0xb0 lib/string_helpers.c:1035
+Modules linked in:
+CPU: 0 UID: 0 PID: 256 Comm: syz-executor286 Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__fortify_report+0x97/0xb0 lib/string_helpers.c:1035
+Code: 84 49 c7 c5 c0 ce e2 84 4c 0f 45 e9 e8 d2 34 1e ff 49 89 e8 4c 89 e2 4c 89 f6 4c 89 e9 48 c7 c7 40 cf e2 84 e8 fa c5 e3 fe 90 <0f> 0b 90 90 5b 5d 41 5c 41 5d 41 5e e9 48 4e 4f 02 e8 d3 0e 5c ff
+RSP: 0018:ffff888102b179f0 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff88810a171b80 RDI: 0000000000000002
+RBP: 0000000000000040 R08: fffffbfff0b5df00 R09: ffffed1020562efa
+R10: ffffed1020562ef9 R11: ffff888102b177cf R12: 0000000000000041
+R13: ffffffff84e2cec0 R14: ffffffff84e2d880 R15: ffff8881151ce400
+FS:  00007ffb83c386c0(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffb7b838000 CR3: 000000010fd39000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ __fortify_panic+0x23/0x30 lib/string_helpers.c:1042
+ strnlen include/linux/fortify-string.h:235 [inline]
+ sized_strscpy include/linux/fortify-string.h:309 [inline]
+ parse_apply_sb_mount_options fs/ext4/super.c:2486 [inline]
+ __ext4_fill_super fs/ext4/super.c:5306 [inline]
+ ext4_fill_super+0x34bc/0xa890 fs/ext4/super.c:5736
+ get_tree_bdev_flags+0x38a/0x620 fs/super.c:1691
+ vfs_get_tree+0x93/0x340 fs/super.c:1751
+ fc_mount+0x18/0x110 fs/namespace.c:1208
+ do_new_mount_fc fs/namespace.c:3651 [inline]
+ do_new_mount fs/namespace.c:3727 [inline]
+ path_mount+0x771/0x1e00 fs/namespace.c:4037
+ do_mount+0xc5/0x120 fs/namespace.c:4050
+ __do_sys_mount fs/namespace.c:4238 [inline]
+ __se_sys_mount fs/namespace.c:4215 [inline]
+ __x64_sys_mount+0x193/0x230 fs/namespace.c:4215
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7ffb83c63b0e
+Code: c7 05 f2 fe 0a 00 00 00 00 00 eb 98 e8 ab 05 00 00 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 49 89 ca b8 a5 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007ffb83c38058 EFLAGS: 00000206 ORIG_RAX: 00000000000000a5
+RAX: ffffffffffffffda RBX: 0000000080808000 RCX: 00007ffb83c63b0e
+RDX: 0000200000000200 RSI: 0000200000000000 RDI: 00007ffb83c38080
+RBP: 00007ffb83c38678 R08: 00007ffb83c380c0 R09: 0000000000000567
+R10: 000000000021000a R11: 0000000000000206 R12: 00007ffb83c38080
+R13: 000000000021000a R14: 00007ffb83c380c0 R15: 0000200000000200
+ </TASK>
+irq event stamp: 1783
+hardirqs last  enabled at (1791): [<ffffffff81541a78>] __up_console_sem+0x78/0x80 kernel/printk/printk.c:345
+hardirqs last disabled at (1800): [<ffffffff81541a5d>] __up_console_sem+0x5d/0x80 kernel/printk/printk.c:343
+softirqs last  enabled at (1232): [<ffffffff813b4ab8>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (1232): [<ffffffff813b4ab8>] handle_softirqs+0x4c8/0x740 kernel/softirq.c:650
+softirqs last disabled at (1177): [<ffffffff813b6546>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (1177): [<ffffffff813b6546>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (1177): [<ffffffff813b6546>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (1177): [<ffffffff813b6546>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+------------[ cut here ]------------
+kernel BUG at lib/string_helpers.c:1043!
+Oops: invalid opcode: 0000 [#1] SMP KASAN NOPTI
+CPU: 0 UID: 0 PID: 256 Comm: syz-executor286 Tainted: G        W           6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Tainted: [W]=WARN
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__fortify_panic+0x24/0x30 lib/string_helpers.c:1043
+Code: 90 90 90 90 90 90 f3 0f 1e fa 41 54 49 89 d4 55 48 89 f5 53 89 fb e8 7b 34 1e ff 0f b6 fb 4c 89 e2 48 89 ee e8 1d ff ff ff 90 <0f> 0b 90 66 0f 1f 84 00 00 00 00 00 90 90 90 90 90 90 90 90 90 90
+RSP: 0018:ffff888102b17a20 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000002 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff88810a171b80 RDI: 0000000000000002
+RBP: 0000000000000040 R08: fffffbfff0b5df00 R09: ffffed1020562efa
+R10: ffffed1020562ef9 R11: ffff888102b177cf R12: 0000000000000041
+R13: ffff888111046000 R14: ffff8881151ce44c R15: ffff8881151ce400
+FS:  00007ffb83c386c0(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffb7b838000 CR3: 000000010fd39000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ strnlen include/linux/fortify-string.h:235 [inline]
+ sized_strscpy include/linux/fortify-string.h:309 [inline]
+ parse_apply_sb_mount_options fs/ext4/super.c:2486 [inline]
+ __ext4_fill_super fs/ext4/super.c:5306 [inline]
+ ext4_fill_super+0x34bc/0xa890 fs/ext4/super.c:5736
+ get_tree_bdev_flags+0x38a/0x620 fs/super.c:1691
+ vfs_get_tree+0x93/0x340 fs/super.c:1751
+ fc_mount+0x18/0x110 fs/namespace.c:1208
+ do_new_mount_fc fs/namespace.c:3651 [inline]
+ do_new_mount fs/namespace.c:3727 [inline]
+ path_mount+0x771/0x1e00 fs/namespace.c:4037
+ do_mount+0xc5/0x120 fs/namespace.c:4050
+ __do_sys_mount fs/namespace.c:4238 [inline]
+ __se_sys_mount fs/namespace.c:4215 [inline]
+ __x64_sys_mount+0x193/0x230 fs/namespace.c:4215
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7ffb83c63b0e
+Code: c7 05 f2 fe 0a 00 00 00 00 00 eb 98 e8 ab 05 00 00 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 49 89 ca b8 a5 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007ffb83c38058 EFLAGS: 00000206 ORIG_RAX: 00000000000000a5
+RAX: ffffffffffffffda RBX: 0000000080808000 RCX: 00007ffb83c63b0e
+RDX: 0000200000000200 RSI: 0000200000000000 RDI: 00007ffb83c38080
+RBP: 00007ffb83c38678 R08: 00007ffb83c380c0 R09: 0000000000000567
+R10: 000000000021000a R11: 0000000000000206 R12: 00007ffb83c38080
+R13: 000000000021000a R14: 00007ffb83c380c0 R15: 0000200000000200
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:__fortify_panic+0x24/0x30 lib/string_helpers.c:1043
+Code: 90 90 90 90 90 90 f3 0f 1e fa 41 54 49 89 d4 55 48 89 f5 53 89 fb e8 7b 34 1e ff 0f b6 fb 4c 89 e2 48 89 ee e8 1d ff ff ff 90 <0f> 0b 90 66 0f 1f 84 00 00 00 00 00 90 90 90 90 90 90 90 90 90 90
+RSP: 0018:ffff888102b17a20 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000002 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff88810a171b80 RDI: 0000000000000002
+RBP: 0000000000000040 R08: fffffbfff0b5df00 R09: ffffed1020562efa
+R10: ffffed1020562ef9 R11: ffff888102b177cf R12: 0000000000000041
+R13: ffff888111046000 R14: ffff8881151ce44c R15: ffff8881151ce400
+FS:  00007ffb83c386c0(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ffb7b838000 CR3: 000000010fd39000 CR4: 0000000000350ef0
+

@@ -1,0 +1,184 @@
+head: 0000000000200003 ffffea000159c201 0000000100000000 00000000ffffffff
+head: 00000000000010e5 0000000000000000 0000000000000000 0000000000000008
+page dumped because: VM_WARN_ON_ONCE_FOLIO(1)
+------------[ cut here ]------------
+WARNING: include/linux/huge_mm.h:635 at min_order_for_split include/linux/huge_mm.h:635 [inline], CPU#0: syz.7.17871/58640
+WARNING: include/linux/huge_mm.h:635 at min_order_for_split include/linux/huge_mm.h:633 [inline], CPU#0: syz.7.17871/58640
+WARNING: include/linux/huge_mm.h:635 at memory_failure+0x22e8/0x2950 mm/memory-failure.c:2434, CPU#0: syz.7.17871/58640
+CPU: 0 UID: 0 PID: 58640 Comm: syz.7.17871 Not tainted 6.19.0-rc7 #1 VOLUNTARY 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:min_order_for_split include/linux/huge_mm.h:635 [inline]
+RIP: 0010:min_order_for_split include/linux/huge_mm.h:633 [inline]
+RIP: 0010:memory_failure+0x22e8/0x2950 mm/memory-failure.c:2434
+Code: ff 84 db 0f 85 f1 f5 ff ff e9 36 fe ff ff e8 3f 55 ce ff 48 c7 c6 e0 f7 ee 85 4c 89 f7 e8 90 b6 ed ff c6 05 13 35 04 06 01 90 <0f> 0b 90 e9 aa ee ff ff e8 eb 15 fe ff e9 65 e1 ff ff e8 a1 15 fe
+RSP: 0018:ffff888010087a00 EFLAGS: 00010202
+RAX: 0000000000008550 RBX: 0000000000000000 RCX: ffffc900033b0000
+RDX: 0000000000080000 RSI: ffff888022502280 RDI: 0000000000000002
+RBP: ffffea000159c240 R08: fffffbfff0ddc501 R09: ffffffff819105e0
+R10: 0000000000000001 R11: ffff8880100877e7 R12: 0000000000056709
+R13: ffffea000159c200 R14: ffffea000159c200 R15: ffffea000159c248
+FS:  00007f43a28df6c0(0000) GS:0000000000000000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f21f3081a00 CR3: 000000000b9bb000 CR4: 0000000000350ef0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000600
+Call Trace:
+ <TASK>
+ madvise_inject_error mm/madvise.c:1489 [inline]
+ madvise_do_behavior.part.0+0x137/0x3c0 mm/madvise.c:1927
+ madvise_do_behavior+0x41d/0x5d0 mm/madvise.c:979
+ do_madvise+0x134/0x1b0 mm/madvise.c:2030
+ __do_sys_madvise mm/madvise.c:2039 [inline]
+ __se_sys_madvise mm/madvise.c:2037 [inline]
+ __x64_sys_madvise+0xa8/0x110 mm/madvise.c:2037
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xa9/0x320 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x4b/0x53
+RIP: 0033:0x7f43a3e7ebe9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f43a28df038 EFLAGS: 00000246 ORIG_RAX: 000000000000001c
+RAX: ffffffffffffffda RBX: 00007f43a40b5fa0 RCX: 00007f43a3e7ebe9
+RDX: 0000000000000064 RSI: 0000000000600000 RDI: 0000200000000000
+RBP: 00007f43a3f01e19 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 00007f43a40b6038 R14: 00007f43a40b5fa0 R15: 00007ffdcdfaee28
+ </TASK>
+---[ end trace 0000000000000000 ]---
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000000
+MCE: Killing syz.7.17871:58641 due to hardware memory corruption fault at 200000000000
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000400
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000408
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000410
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000300
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000380
+page: refcount:3 mapcount:1 mapping:0000000000000000 index:0xffff88805670e601 pfn:0x56709
+head: order:3 mapcount:1 entire_mapcount:0 nr_pages_mapped:1 pincount:0
+flags: 0x45(locked|referenced|head|zone=0)
+raw: 0000000000200003 ffffea000159c201 0000000100000000 00000000ffffffff
+raw: 00000000000010e5 0000000000000000 0000000000000000 0000000000000008
+head: 0000000000000045 0000000000000000 dead000000000122 0000000000000000
+head: ffff88805670e600 0000000000000000 00000003ffffffff 0000000000000000
+head: 0000000000200003 ffffea000159c201 0000000100000000 00000000ffffffff
+head: 00000000000010e5 0000000000000000 0000000000000000 0000000000000008
+page dumped because: VM_WARN_ON_ONCE_PAGE(1)
+------------[ cut here ]------------
+WARNING: include/linux/huge_mm.h:624 at split_huge_page_to_order include/linux/huge_mm.h:624 [inline], CPU#0: syz.7.17871/58640
+WARNING: include/linux/huge_mm.h:624 at try_to_split_thp_page.constprop.0+0x25f/0x2c0 mm/memory-failure.c:1671, CPU#0: syz.7.17871/58640
+CPU: 0 UID: 0 PID: 58640 Comm: syz.7.17871 Tainted: G        W           6.19.0-rc7 #1 VOLUNTARY 
+Tainted: [W]=WARN
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:split_huge_page_to_order include/linux/huge_mm.h:624 [inline]
+RIP: 0010:try_to_split_thp_page.constprop.0+0x25f/0x2c0 mm/memory-failure.c:1671
+Code: ff 4c 89 e7 e8 f2 8e e4 ff e9 59 fe ff ff e8 c8 92 ce ff 48 c7 c6 20 f2 ee 85 48 89 ef e8 19 f4 ed ff c6 05 9d 72 04 06 01 90 <0f> 0b 90 e9 55 fe ff ff e8 a4 92 ce ff 49 8d 6c 24 ff e9 b5 fe ff
+RSP: 0018:ffff8880100879d0 EFLAGS: 00010212
+RAX: 000000000003850c RBX: 0000000000000000 RCX: ffffc900033b0000
+RDX: 0000000000080000 RSI: ffff888022502280 RDI: 0000000000000002
+RBP: ffffea000159c240 R08: fffffbfff0ddc501 R09: ffffffff8190c857
+R10: 0000000000000001 R11: ffff8880100877b7 R12: 0000000000000000
+R13: ffffea000159c248 R14: 0000000000000000 R15: ffffea000159c248
+FS:  00007f43a28df6c0(0000) GS:0000000000000000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000200000000380 CR3: 000000000b9bb000 CR4: 0000000000350ef0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000600
+Call Trace:
+ <TASK>
+ memory_failure+0x11a9/0x2950 mm/memory-failure.c:2451
+ madvise_inject_error mm/madvise.c:1489 [inline]
+ madvise_do_behavior.part.0+0x137/0x3c0 mm/madvise.c:1927
+ madvise_do_behavior+0x41d/0x5d0 mm/madvise.c:979
+ do_madvise+0x134/0x1b0 mm/madvise.c:2030
+ __do_sys_madvise mm/madvise.c:2039 [inline]
+ __se_sys_madvise mm/madvise.c:2037 [inline]
+ __x64_sys_madvise+0xa8/0x110 mm/madvise.c:2037
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xa9/0x320 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x4b/0x53
+RIP: 0033:0x7f43a3e7ebe9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f43a28df038 EFLAGS: 00000246 ORIG_RAX: 000000000000001c
+RAX: ffffffffffffffda RBX: 00007f43a40b5fa0 RCX: 00007f43a3e7ebe9
+RDX: 0000000000000064 RSI: 0000000000600000 RDI: 0000200000000000
+RBP: 00007f43a3f01e19 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 00007f43a40b6038 R14: 00007f43a40b5fa0 R15: 00007ffdcdfaee28
+ </TASK>
+---[ end trace 0000000000000000 ]---
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000384
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000386
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000388
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 20000000038c
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000390
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000391
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000392
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000308
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000418
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000420
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000428
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000430
+Memory failure: 0x56709: recovery action for unsplit thp: Failed
+
+<<<<<<<<<<<<<<< tail report >>>>>>>>>>>>>>>
+
+SYZFAIL: failed to recv rpc
+fd=3 want=4 recv=0 n=0 (errno 9: Bad file descriptor)
+
+<<<<<<<<<<<<<<< tail report >>>>>>>>>>>>>>>
+
+head: ffff88805670e600 0000000000000000 00000003ffffffff 0000000000000000
+head: 0000000000200003 ffffea000159c201 0000000100000000 00000000ffffffff
+head: 00000000000010e5 0000000000000000 0000000000000000 0000000000000008
+page dumped because: VM_WARN_ON_ONCE_PAGE(1)
+------------[ cut here ]------------
+WARNING: include/linux/huge_mm.h:624 at try_to_split_thp_page.constprop.0+0x25f/0x2c0, CPU#0: syz.7.17871/58640
+CPU: 0 UID: 0 PID: 58640 Comm: syz.7.17871 Tainted: G        W           6.19.0-rc7 #1 VOLUNTARY 
+Tainted: [W]=WARN
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:try_to_split_thp_page.constprop.0+0x25f/0x2c0
+Code: ff 4c 89 e7 e8 f2 8e e4 ff e9 59 fe ff ff e8 c8 92 ce ff 48 c7 c6 20 f2 ee 85 48 89 ef e8 19 f4 ed ff c6 05 9d 72 04 06 01 90 <0f> 0b 90 e9 55 fe ff ff e8 a4 92 ce ff 49 8d 6c 24 ff e9 b5 fe ff
+RSP: 0018:ffff8880100879d0 EFLAGS: 00010212
+RAX: 000000000003850c RBX: 0000000000000000 RCX: ffffc900033b0000
+RDX: 0000000000080000 RSI: ffff888022502280 RDI: 0000000000000002
+RBP: ffffea000159c240 R08: fffffbfff0ddc501 R09: ffffffff8190c857
+R10: 0000000000000001 R11: ffff8880100877b7 R12: 0000000000000000
+R13: ffffea000159c248 R14: 0000000000000000 R15: ffffea000159c248
+FS:  00007f43a28df6c0(0000) GS:0000000000000000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000200000000380 CR3: 000000000b9bb000 CR4: 0000000000350ef0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000600
+Call Trace:
+ <TASK>
+ memory_failure+0x11a9/0x2950
+ madvise_do_behavior.part.0+0x137/0x3c0
+ madvise_do_behavior+0x41d/0x5d0
+ do_madvise+0x134/0x1b0
+ __x64_sys_madvise+0xa8/0x110
+ do_syscall_64+0xa9/0x320
+ entry_SYSCALL_64_after_hwframe+0x4b/0x53
+RIP: 0033:0x7f43a3e7ebe9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f43a28df038 EFLAGS: 00000246 ORIG_RAX: 000000000000001c
+RAX: ffffffffffffffda RBX: 00007f43a40b5fa0 RCX: 00007f43a3e7ebe9
+RDX: 0000000000000064 RSI: 0000000000600000 RDI: 0000200000000000
+RBP: 00007f43a3f01e19 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 00007f43a40b6038 R14: 00007f43a40b5fa0 R15: 00007ffdcdfaee28
+ </TASK>
+---[ end trace 0000000000000000 ]---
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000384
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000386
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000388
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 20000000038c
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000390
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000391
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000392
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000308
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000418
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000420
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000428
+MCE: Killing syz.7.17871:58639 due to hardware memory corruption fault at 200000000430
+Memory failure: 0x56709: recovery action for unsplit thp: Failed
+
+<<<<<<<<<<<<<<< tail report >>>>>>>>>>>>>>>
+

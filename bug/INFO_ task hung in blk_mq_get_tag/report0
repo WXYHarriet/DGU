@@ -1,0 +1,261 @@
+EXT4-fs error (device loop3): ext4_orphan_get:1417: comm syz.3.1125: bad orphan inode 268369920
+EXT4-fs (loop3): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: writeback.
+ext4 filesystem being mounted at /18/file0 supports timestamps until 2038-01-19 (0x7fffffff)
+INFO: task kworker/1:1:51 blocked for more than 17 seconds.
+      Not tainted 6.19.0-rc8 #2
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:kworker/1:1     state:D stack:27536 pid:51    tgid:51    ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue: events_freezable_pwr_efficient disk_events_workfn
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5260 [inline]
+ __schedule+0x11ac/0x3f90 kernel/sched/core.c:6867
+ __schedule_loop kernel/sched/core.c:6949 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:6964
+ io_schedule+0x1a/0x70 kernel/sched/core.c:7791
+ blk_mq_get_tag+0x58c/0xa80 block/blk-mq-tag.c:191
+ __blk_mq_alloc_requests+0xa9b/0x1820 block/blk-mq.c:564
+ blk_mq_alloc_request+0x66d/0x8c0 block/blk-mq.c:673
+ scsi_alloc_request drivers/scsi/scsi_lib.c:1251 [inline]
+ scsi_execute_cmd+0x1d7/0xdc0 drivers/scsi/scsi_lib.c:311
+ sr_get_events drivers/scsi/sr.c:177 [inline]
+ sr_check_events+0x1bc/0xb40 drivers/scsi/sr.c:218
+ cdrom_update_events drivers/cdrom/cdrom.c:1464 [inline]
+ cdrom_check_events+0x68/0x110 drivers/cdrom/cdrom.c:1474
+ sr_block_check_events+0xc3/0x100 drivers/scsi/sr.c:573
+ disk_check_events+0xc5/0x380 block/disk-events.c:193
+ process_one_work kernel/workqueue.c:3257 [inline]
+ process_scheduled_works+0x54f/0x1910 kernel/workqueue.c:3340
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3421
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+INFO: task kworker/u16:8:286 blocked for more than 17 seconds.
+      Not tainted 6.19.0-rc8 #2
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:kworker/u16:8   state:D stack:23992 pid:286   tgid:286   ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue: netns cleanup_net
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5260 [inline]
+ __schedule+0x11ac/0x3f90 kernel/sched/core.c:6867
+ __schedule_loop kernel/sched/core.c:6949 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:6964
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7021
+ __mutex_lock_common kernel/locking/mutex.c:692 [inline]
+ __mutex_lock+0x1164/0x24d0 kernel/locking/mutex.c:776
+ rcu_barrier+0x49/0x650 kernel/rcu/tree.c:3816
+ netdev_run_todo+0x270/0xf40 net/core/dev.c:11677
+ ops_exit_rtnl_list net/core/net_namespace.c:189 [inline]
+ ops_undo_list+0x8e4/0xa50 net/core/net_namespace.c:248
+ cleanup_net+0x3cc/0x770 net/core/net_namespace.c:696
+ process_one_work kernel/workqueue.c:3257 [inline]
+ process_scheduled_works+0x54f/0x1910 kernel/workqueue.c:3340
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3421
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+INFO: task kworker/u16:8:286 is blocked on a mutex likely owned by task kworker/1:2:168.
+task:kworker/1:2     state:R  running task     stack:29560 pid:168   tgid:168   ppid:2      task_flags:0x4208060 flags:0x00080000
+Workqueue: events fqdir_free_fn
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5260 [inline]
+ __schedule+0x11ac/0x3f90 kernel/sched/core.c:6867
+ __schedule_loop kernel/sched/core.c:6949 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:6964
+ schedule_timeout+0x244/0x280 kernel/time/sleep_timeout.c:75
+ do_wait_for_common kernel/sched/completion.c:100 [inline]
+ __wait_for_common kernel/sched/completion.c:121 [inline]
+ wait_for_common kernel/sched/completion.c:132 [inline]
+ wait_for_completion+0x169/0x320 kernel/sched/completion.c:153
+ rcu_barrier kernel/rcu/tree.c:3884 [inline]
+ rcu_barrier+0x304/0x650 kernel/rcu/tree.c:3805
+ fqdir_free_fn+0x32/0x130 net/ipv4/inet_fragment.c:166
+ process_one_work kernel/workqueue.c:3257 [inline]
+ process_scheduled_works+0x54f/0x1910 kernel/workqueue.c:3340
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3421
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+INFO: task syz.7.1101:10849 blocked for more than 17 seconds.
+      Not tainted 6.19.0-rc8 #2
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.7.1101      state:D stack:25744 pid:10849 tgid:10834 ppid:8923   task_flags:0x400140 flags:0x00080006
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5260 [inline]
+ __schedule+0x11ac/0x3f90 kernel/sched/core.c:6867
+ __schedule_loop kernel/sched/core.c:6949 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:6964
+ io_schedule+0x1a/0x70 kernel/sched/core.c:7791
+ blk_mq_get_tag+0x58c/0xa80 block/blk-mq-tag.c:191
+ __blk_mq_alloc_requests+0xa9b/0x1820 block/blk-mq.c:564
+ blk_mq_get_new_requests block/blk-mq.c:3061 [inline]
+ blk_mq_submit_bio+0x17de/0x2070 block/blk-mq.c:3204
+ __submit_bio+0x1ab/0xff0 block/blk-core.c:637
+ __submit_bio_noacct_mq block/blk-core.c:724 [inline]
+ submit_bio_noacct_nocheck block/blk-core.c:755 [inline]
+ submit_bio_noacct_nocheck+0x4ed/0xb60 block/blk-core.c:730
+ submit_bio_noacct+0x7a1/0x1110 block/blk-core.c:879
+ __blkdev_direct_IO block/fops.c:262 [inline]
+ blkdev_direct_IO+0x1343/0x2050 block/fops.c:437
+ blkdev_direct_write block/fops.c:723 [inline]
+ blkdev_write_iter+0x90c/0xcf0 block/fops.c:791
+ do_iter_readv_writev+0x5bc/0x920 fs/read_write.c:827
+ vfs_writev+0x30c/0xd50 fs/read_write.c:1057
+ do_pwritev+0x1a6/0x270 fs/read_write.c:1153
+ __do_sys_pwritev2 fs/read_write.c:1211 [inline]
+ __se_sys_pwritev2 fs/read_write.c:1202 [inline]
+ __x64_sys_pwritev2+0xef/0x160 fs/read_write.c:1202
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x430 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fa02ee1fba9
+RSP: 002b:00007fa02d426058 EFLAGS: 00000246 ORIG_RAX: 0000000000000148
+RAX: ffffffffffffffda RBX: 00007fa02f0a6080 RCX: 00007fa02ee1fba9
+RDX: 0000000000000001 RSI: 0000200000000240 RDI: 000000000000000b
+RBP: 00007fa02eecb44c R08: 0000000000000000 R09: 0000000000000003
+R10: 0000000000002000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007fa02f0a6080 R15: 00007ffd71f0f418
+ </TASK>
+
+Showing all locks held in the system:
+1 lock held by rcu_tasks_trace/38:
+ #0: ffffffff85c21c50 (rcu_tasks_trace.tasks_gp_mutex){+.+.}-{4:4}, at: rcu_tasks_one_gp+0x6e5/0xdc0 kernel/rcu/tasks.h:614
+1 lock held by khungtaskd/40:
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: rcu_read_lock include/linux/rcupdate.h:867 [inline]
+ #0: ffffffff85c227a0 (rcu_read_lock){....}-{1:3}, at: debug_show_all_locks+0x36/0x1c0 kernel/locking/lockdep.c:6775
+2 locks held by kworker/1:1/51:
+ #0: ffff888100063548 ((wq_completion)events_freezable_pwr_efficient){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff888100063548 ((wq_completion)events_freezable_pwr_efficient){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff8881010a7cc0 ((work_completion)(&(&ev->dwork)->work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff8881010a7cc0 ((work_completion)(&(&ev->dwork)->work)){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+2 locks held by kworker/u16:2/52:
+ #0: ffff888101e27948 ((wq_completion)iou_exit){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff888101e27948 ((wq_completion)iou_exit){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff8881010afcc0 ((work_completion)(&ctx->exit_work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff8881010afcc0 ((work_completion)(&ctx->exit_work)){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+2 locks held by kworker/3:1H/55:
+ #0: ffff888100959d48 ((wq_completion)kblockd){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff888100959d48 ((wq_completion)kblockd){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff8881014efcc0 ((work_completion)(&q->timeout_work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff8881014efcc0 ((work_completion)(&q->timeout_work)){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+2 locks held by kworker/2:2/114:
+ #0: ffff888100ff1948 ((wq_completion)inode_switch_wbs){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff888100ff1948 ((wq_completion)inode_switch_wbs){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff88810a0afcc0 ((work_completion)(&wb->switch_work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff88810a0afcc0 ((work_completion)(&wb->switch_work)){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+1 lock held by in:imklog/171:
+3 locks held by kworker/1:2/168:
+4 locks held by kworker/u16:8/286:
+ #0: ffff88810019d148 ((wq_completion)netns){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff88810019d148 ((wq_completion)netns){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff888110237cc0 (net_cleanup_work){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff888110237cc0 (net_cleanup_work){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+ #2: ffffffff86256c10 (pernet_ops_rwsem){++++}-{4:4}, at: cleanup_net+0xad/0x770 net/core/net_namespace.c:670
+ #3: ffffffff85c2fc00 (rcu_state.barrier_mutex){+.+.}-{4:4}, at: rcu_barrier+0x49/0x650 kernel/rcu/tree.c:3816
+1 lock held by syz.1.116/4313:
+ #0: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_destroy+0x27/0x1c0 kernel/trace/trace_event_perf.c:239
+1 lock held by syz.6.136/4377:
+ #0: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_destroy+0x27/0x1c0 kernel/trace/trace_event_perf.c:239
+1 lock held by syz.6.366/5249:
+ #0: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_destroy+0x27/0x1c0 kernel/trace/trace_event_perf.c:239
+1 lock held by syz-executor/5258:
+ #0: ffffffff85c2fd38 (rcu_state.exp_mutex){+.+.}-{4:4}, at: exp_funnel_lock+0x8c3/0xa20 kernel/rcu/tree_exp.h:311
+2 locks held by kworker/u16:20/8644:
+ #0: ffff888100079148 ((wq_completion)events_unbound#2){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3232 [inline]
+ #0: ffff888100079148 ((wq_completion)events_unbound#2){+.+.}-{0:0}, at: process_scheduled_works+0x107e/0x1910 kernel/workqueue.c:3340
+ #1: ffff88800cbffcc0 ((work_completion)(&sub_info->work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3233 [inline]
+ #1: ffff88800cbffcc0 ((work_completion)(&sub_info->work)){+.+.}-{0:0}, at: process_scheduled_works+0x4ce/0x1910 kernel/workqueue.c:3340
+4 locks held by syz.6.1078/10699:
+2 locks held by syz-executor/10752:
+ #0: ffff88810c4440e0 (&type->s_umount_key#66){++++}-{4:4}, at: __super_lock fs/super.c:57 [inline]
+ #0: ffff88810c4440e0 (&type->s_umount_key#66){++++}-{4:4}, at: __super_lock_excl fs/super.c:72 [inline]
+ #0: ffff88810c4440e0 (&type->s_umount_key#66){++++}-{4:4}, at: deactivate_super fs/super.c:506 [inline]
+ #0: ffff88810c4440e0 (&type->s_umount_key#66){++++}-{4:4}, at: deactivate_super+0xa9/0xd0 fs/super.c:503
+ #1: ffffffff85cc05c8 (lock#6){+.+.}-{4:4}, at: __lru_add_drain_all mm/swap.c:840 [inline]
+ #1: ffffffff85cc05c8 (lock#6){+.+.}-{4:4}, at: lru_add_drain_all+0x68/0x5f0 mm/swap.c:893
+1 lock held by syz.8.1120/11086:
+ #0: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_destroy+0x27/0x1c0 kernel/trace/trace_event_perf.c:239
+1 lock held by syz.9.1124/11577:
+ #0: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_destroy+0x27/0x1c0 kernel/trace/trace_event_perf.c:239
+2 locks held by syz.1.1126/11751:
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x31e/0x29a0 kernel/events/core.c:13554
+ #1: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_uprobe_destroy+0x27/0x200 kernel/trace/trace_event_perf.c:343
+3 locks held by syz.4.1065/11766:
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #0: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x31e/0x29a0 kernel/events/core.c:13554
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:185 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:277 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:599 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_init_event kernel/events/core.c:12758 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc kernel/events/core.c:13072 [inline]
+ #1: ffffffff882f2018 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc+0xf3e/0x4870 kernel/events/core.c:12937
+ #2: ffffffff85c90748 (event_mutex){+.+.}-{4:4}, at: perf_trace_init+0x4d/0x2f0 kernel/trace/trace_event_perf.c:221
+1 lock held by syz-executor/11775:
+1 lock held by syz-executor/11776:
+ #0: ffffffff85c2fd38 (rcu_state.exp_mutex){+.+.}-{4:4}, at: exp_funnel_lock+0x3f8/0xa20 kernel/rcu/tree_exp.h:343
+1 lock held by syz.3.1125/11910:
+ #0: ffff8881151907c8 (&sb->s_type->i_mutex_key#13){+.+.}-{4:4}, at: inode_lock include/linux/fs.h:1027 [inline]
+ #0: ffff8881151907c8 (&sb->s_type->i_mutex_key#13){+.+.}-{4:4}, at: __sock_release+0x86/0x270 net/socket.c:661
+1 lock held by syz-executor/12181:
+1 lock held by syz-executor/13654:
+1 lock held by syz-executor/13662:
+ #0: ffff88811afb7758 (&rq->__lock){-.-.}-{2:2}, at: raw_spin_rq_lock_nested+0x10/0x20 kernel/sched/core.c:639
+1 lock held by modprobe/13738:
+
+=============================================
+
+EXT4-fs (loop3): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+EXT4-fs (loop4): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+sr 1:0:0:0: [sr0] tag#0 FAILED Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=28s
+sr 1:0:0:0: [sr0] tag#0 Sense Key : Illegal Request [current] 
+sr 1:0:0:0: [sr0] tag#0 Add. Sense: Invalid command operation code
+sr 1:0:0:0: [sr0] tag#0 CDB: Write(10) 2a 00 00 00 00 04 00 00 40 00
+blk_print_req_error: 59 callbacks suppressed
+critical target error, dev sr0, sector 16 op 0x1:(WRITE) flags 0xc800 phys_seg 32 prio class 2
+sr 1:0:0:0: [sr0] tag#0 FAILED Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+sr 1:0:0:0: [sr0] tag#0 Sense Key : Illegal Request [current] 
+sr 1:0:0:0: [sr0] tag#0 Add. Sense: Invalid command operation code
+sr 1:0:0:0: [sr0] tag#0 CDB: Write(10) 2a 00 00 00 00 44 00 00 40 00
+critical target error, dev sr0, sector 272 op 0x1:(WRITE) flags 0xc800 phys_seg 32 prio class 2
+sr 1:0:0:0: [sr0] tag#0 FAILED Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+sr 1:0:0:0: [sr0] tag#0 Sense Key : Illegal Request [current] 
+sr 1:0:0:0: [sr0] tag#0 Add. Sense: Invalid command operation code
+sr 1:0:0:0: [sr0] tag#0 CDB: Write(10) 2a 00 00 00 00 84 00 00 40 00
+critical target error, dev sr0, sector 528 op 0x1:(WRITE) flags 0xc800 phys_seg 32 prio class 2
+sr 1:0:0:0: [sr0] tag#0 FAILED Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+sr 1:0:0:0: [sr0] tag#0 Sense Key : Illegal Request [current] 
+sr 1:0:0:0: [sr0] tag#0 Add. Sense: Invalid command operation code
+sr 1:0:0:0: [sr0] tag#0 CDB: Write(10) 2a 00 00 00 00 c4 00 00 40 00
+critical target error, dev sr0, sector 784 op 0x1:(WRITE) flags 0xc800 phys_seg 32 prio class 2
+sr 1:0:0:0: [sr0] tag#0 FAILED Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+sr 1:0:0:0: [sr0] tag#0 Sense Key : Illegal Request [current] 
+sr 1:0:0:0: [sr0] tag#0 Add. Sense: Invalid command operation code
+sr 1:0:0:0: [sr0] tag#0 CDB: Write(10) 2a 00 00 00 01 04 00 00 40 00
+critical target error, dev sr0, sector 1040 op 0x1:(WRITE) flags 0xc800 phys_seg 32 prio class 2
+sr 1:0:0:0: [sr0] tag#0 FAILED Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+sr 1:0:0:0: [sr0] tag#0 Sense Key : Illegal Request [current] 
+sr 1:0:0:0: [sr0] tag#0 Add. Sense: Invalid command operation code
+sr 1:0:0:0: [sr0] tag#0 CDB: Write(10) 2a 00 00 00 01 44 00 00 40 00
+critical target error, dev sr0, sector 1296 op 0x1:(WRITE) flags 0xc800 phys_seg 32 prio class 2
+sr 1:0:0:0: [sr0] tag#0 FAILED Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+sr 1:0:0:0: [sr0] tag#0 Sense Key : Illegal Request [current] 
+sr 1:0:0:0: [sr0] tag#0 Add. Sense: Invalid command operation code
+sr 1:0:0:0: [sr0] tag#0 CDB: Write(10) 2a 00 00 00 01 84 00 00 40 00
+critical target error, dev sr0, sector 1552 op 0x1:(WRITE) flags 0xc800 phys_seg 32 prio class 2
+sr 1:0:0:0: [sr0] tag#0 FAILED Result: hostbyte=DID_OK driverbyte=DRIVER_OK cmd_age=0s
+sr 1:0:0:0: [sr0] tag#0 Sense Key : Illegal Request [current] 
+sr 1:0:0:0: [sr0] tag#0 Add. Sense: Invalid command operation code
+sr 1:0:0:0: [sr0] tag#0 CDB: Write(10) 2a 00 00 00 01 c4 00 00 40 00
+critical target error, dev sr0, sector 1808 op 0x1:(WRITE) flags 0x8800 phys_seg 32 prio class 2

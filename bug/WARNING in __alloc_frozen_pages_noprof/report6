@@ -1,0 +1,53 @@
+EXT4-fs error (device loop1): __ext4_new_inode:1072: comm syz.1.396: reserved inode found cleared - inode=1
+EXT4-fs (loop1): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+EXT4-fs (loop3): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+------------[ cut here ]------------
+WARNING: CPU: 3 PID: 7912 at mm/page_alloc.c:5159 __alloc_frozen_pages_noprof+0x514/0x680 mm/page_alloc.c:5159
+Modules linked in:
+CPU: 3 UID: 0 PID: 7912 Comm: syz.1.407 Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__alloc_frozen_pages_noprof+0x514/0x680 mm/page_alloc.c:5159
+Code: 22 62 ed ff e9 3f fd ff ff 83 fe 0a 0f 86 c1 fb ff ff 45 31 f6 80 3d e1 1f 95 04 00 0f 85 1a fe ff ff c6 05 d4 1f 95 04 01 90 <0f> 0b 90 e9 0a fe ff ff 45 31 f6 e9 02 fe ff ff a9 00 00 08 00 75
+RSP: 0018:ffff88800fbafa08 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: 1ffff11001f75f45 RCX: 0000000000000000
+RDX: 0000000000000000 RSI: 000000000000000d RDI: 0000000000000000
+RBP: 0000000000040cc0 R08: 0000000055438b01 R09: ffff88811a094040
+R10: ffff88800fbafbe8 R11: 0000000000000000 R12: 000000000000000d
+R13: 0000000000000000 R14: 0000000000000000 R15: 000000000000000d
+FS:  00007f53051ff6c0(0000) GS:ffff888193816000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00002000000002c0 CR3: 000000010f9d7000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ ___kmalloc_large_node+0x51/0x140 mm/slub.c:5577
+ __kmalloc_large_node_noprof+0x16/0xe0 mm/slub.c:5606
+ __do_kmalloc_node mm/slub.c:5622 [inline]
+ __kmalloc_node_noprof+0x528/0x750 mm/slub.c:5640
+ kmalloc_node_noprof include/linux/slab.h:987 [inline]
+ alloc_callchain_buffers kernel/events/callchain.c:92 [inline]
+ get_callchain_buffers+0x218/0x460 kernel/events/callchain.c:136
+ perf_event_alloc kernel/events/core.c:13053 [inline]
+ perf_event_alloc+0x2a59/0x4800 kernel/events/core.c:12843
+ __do_sys_perf_event_open+0x6ad/0x29a0 kernel/events/core.c:13496
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f5306bdfba9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f53051ff058 EFLAGS: 00000246 ORIG_RAX: 000000000000012a
+RAX: ffffffffffffffda RBX: 00007f5306e65fa0 RCX: 00007f5306bdfba9
+RDX: efffffffffffffff RSI: 0000000000000000 RDI: 00002000000002c0
+RBP: 00007f5306c8b44c R08: 0000000000000000 R09: 0000000000000000
+R10: ffffffffffffffff R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f5306e65fa0 R15: 00007fff09579c28
+ </TASK>
+irq event stamp: 729
+hardirqs last  enabled at (739): [<ffffffff81541a78>] __up_console_sem+0x78/0x80 kernel/printk/printk.c:345
+hardirqs last disabled at (748): [<ffffffff81541a5d>] __up_console_sem+0x5d/0x80 kernel/printk/printk.c:343
+softirqs last  enabled at (324): [<ffffffff813b4ab8>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (324): [<ffffffff813b4ab8>] handle_softirqs+0x4c8/0x740 kernel/softirq.c:650
+softirqs last disabled at (317): [<ffffffff813b6546>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (317): [<ffffffff813b6546>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (317): [<ffffffff813b6546>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (317): [<ffffffff813b6546>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---

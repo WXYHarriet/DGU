@@ -1,0 +1,123 @@
+EXT4-fs (loop6): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+loop6: detected capacity change from 0 to 520
+------------[ cut here ]------------
+strnlen: detected buffer overflow: 65 byte read of buffer size 64
+WARNING: CPU: 0 PID: 5129 at lib/string_helpers.c:1035 __fortify_report+0x97/0xb0 lib/string_helpers.c:1035
+Modules linked in:
+CPU: 0 UID: 0 PID: 5129 Comm: syz.6.225 Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__fortify_report+0x97/0xb0 lib/string_helpers.c:1035
+Code: 84 49 c7 c5 c0 ce e2 84 4c 0f 45 e9 e8 d2 34 1e ff 49 89 e8 4c 89 e2 4c 89 f6 4c 89 e9 48 c7 c7 40 cf e2 84 e8 fa c5 e3 fe 90 <0f> 0b 90 90 5b 5d 41 5c 41 5d 41 5e e9 48 4e 4f 02 e8 d3 0e 5c ff
+RSP: 0018:ffff888114f6f9f0 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff88810c7f9b80 RDI: 0000000000000002
+RBP: 0000000000000040 R08: fffffbfff0b5df00 R09: ffffed10229edefa
+R10: ffffed10229edef9 R11: ffff888114f6f7cf R12: 0000000000000041
+R13: ffffffff84e2cec0 R14: ffffffff84e2d880 R15: ffff888105676400
+FS:  00007f9648de66c0(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f964a7c2680 CR3: 00000001071dd000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ __fortify_panic+0x23/0x30 lib/string_helpers.c:1042
+ strnlen include/linux/fortify-string.h:235 [inline]
+ sized_strscpy include/linux/fortify-string.h:309 [inline]
+ parse_apply_sb_mount_options fs/ext4/super.c:2486 [inline]
+ __ext4_fill_super fs/ext4/super.c:5306 [inline]
+ ext4_fill_super+0x34bc/0xa890 fs/ext4/super.c:5736
+ get_tree_bdev_flags+0x38a/0x620 fs/super.c:1691
+ vfs_get_tree+0x93/0x340 fs/super.c:1751
+ fc_mount+0x18/0x110 fs/namespace.c:1208
+ do_new_mount_fc fs/namespace.c:3651 [inline]
+ do_new_mount fs/namespace.c:3727 [inline]
+ path_mount+0x771/0x1e00 fs/namespace.c:4037
+ do_mount+0xc5/0x120 fs/namespace.c:4050
+ __do_sys_mount fs/namespace.c:4238 [inline]
+ __se_sys_mount fs/namespace.c:4215 [inline]
+ __x64_sys_mount+0x193/0x230 fs/namespace.c:4215
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f964a7e134a
+Code: d8 64 89 02 48 c7 c0 ff ff ff ff eb a6 e8 de 1a 00 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 49 89 ca b8 a5 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f9648de5e88 EFLAGS: 00000246 ORIG_RAX: 00000000000000a5
+RAX: ffffffffffffffda RBX: 00007f9648de5f10 RCX: 00007f964a7e134a
+RDX: 0000200000000180 RSI: 0000200000000000 RDI: 00007f9648de5ed0
+RBP: 0000200000000180 R08: 00007f9648de5f10 R09: 0000000000800700
+R10: 0000000000800700 R11: 0000000000000246 R12: 0000200000000000
+R13: 00007f9648de5ed0 R14: 0000000000000449 R15: 0000200000000100
+ </TASK>
+irq event stamp: 2119
+hardirqs last  enabled at (2127): [<ffffffff81541a78>] __up_console_sem+0x78/0x80 kernel/printk/printk.c:345
+hardirqs last disabled at (2136): [<ffffffff81541a5d>] __up_console_sem+0x5d/0x80 kernel/printk/printk.c:343
+softirqs last  enabled at (2078): [<ffffffff813b4ab8>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (2078): [<ffffffff813b4ab8>] handle_softirqs+0x4c8/0x740 kernel/softirq.c:650
+softirqs last disabled at (2065): [<ffffffff813b6546>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (2065): [<ffffffff813b6546>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (2065): [<ffffffff813b6546>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (2065): [<ffffffff813b6546>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+------------[ cut here ]------------
+kernel BUG at lib/string_helpers.c:1043!
+Oops: invalid opcode: 0000 [#1] SMP KASAN NOPTI
+CPU: 0 UID: 0 PID: 5129 Comm: syz.6.225 Tainted: G        W           6.18.0-rc2-00120-g6fab32bb6508 #1 PREEMPT(voluntary) 
+Tainted: [W]=WARN
+Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:__fortify_panic+0x24/0x30 lib/string_helpers.c:1043
+Code: 90 90 90 90 90 90 f3 0f 1e fa 41 54 49 89 d4 55 48 89 f5 53 89 fb e8 7b 34 1e ff 0f b6 fb 4c 89 e2 48 89 ee e8 1d ff ff ff 90 <0f> 0b 90 66 0f 1f 84 00 00 00 00 00 90 90 90 90 90 90 90 90 90 90
+RSP: 0018:ffff888114f6fa20 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000002 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff88810c7f9b80 RDI: 0000000000000002
+RBP: 0000000000000040 R08: fffffbfff0b5df00 R09: ffffed10229edefa
+R10: ffffed10229edef9 R11: ffff888114f6f7cf R12: 0000000000000041
+R13: ffff88810281e000 R14: ffff88810567644c R15: ffff888105676400
+FS:  00007f9648de66c0(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f964a7c2680 CR3: 00000001071dd000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ strnlen include/linux/fortify-string.h:235 [inline]
+ sized_strscpy include/linux/fortify-string.h:309 [inline]
+ parse_apply_sb_mount_options fs/ext4/super.c:2486 [inline]
+ __ext4_fill_super fs/ext4/super.c:5306 [inline]
+ ext4_fill_super+0x34bc/0xa890 fs/ext4/super.c:5736
+ get_tree_bdev_flags+0x38a/0x620 fs/super.c:1691
+ vfs_get_tree+0x93/0x340 fs/super.c:1751
+ fc_mount+0x18/0x110 fs/namespace.c:1208
+ do_new_mount_fc fs/namespace.c:3651 [inline]
+ do_new_mount fs/namespace.c:3727 [inline]
+ path_mount+0x771/0x1e00 fs/namespace.c:4037
+ do_mount+0xc5/0x120 fs/namespace.c:4050
+ __do_sys_mount fs/namespace.c:4238 [inline]
+ __se_sys_mount fs/namespace.c:4215 [inline]
+ __x64_sys_mount+0x193/0x230 fs/namespace.c:4215
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f964a7e134a
+Code: d8 64 89 02 48 c7 c0 ff ff ff ff eb a6 e8 de 1a 00 00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 49 89 ca b8 a5 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f9648de5e88 EFLAGS: 00000246 ORIG_RAX: 00000000000000a5
+RAX: ffffffffffffffda RBX: 00007f9648de5f10 RCX: 00007f964a7e134a
+RDX: 0000200000000180 RSI: 0000200000000000 RDI: 00007f9648de5ed0
+RBP: 0000200000000180 R08: 00007f9648de5f10 R09: 0000000000800700
+R10: 0000000000800700 R11: 0000000000000246 R12: 0000200000000000
+R13: 00007f9648de5ed0 R14: 0000000000000449 R15: 0000200000000100
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:__fortify_panic+0x24/0x30 lib/string_helpers.c:1043
+Code: 90 90 90 90 90 90 f3 0f 1e fa 41 54 49 89 d4 55 48 89 f5 53 89 fb e8 7b 34 1e ff 0f b6 fb 4c 89 e2 48 89 ee e8 1d ff ff ff 90 <0f> 0b 90 66 0f 1f 84 00 00 00 00 00 90 90 90 90 90 90 90 90 90 90
+RSP: 0018:ffff888114f6fa20 EFLAGS: 00010286
+RAX: 0000000000000000 RBX: 0000000000000002 RCX: ffffffff81398ad0
+RDX: 0000000000000001 RSI: ffff88810c7f9b80 RDI: 0000000000000002
+RBP: 0000000000000040 R08: fffffbfff0b5df00 R09: ffffed10229edefa
+R10: ffffed10229edef9 R11: ffff888114f6f7cf R12: 0000000000000041
+R13: ffff88810281e000 R14: ffff88810567644c R15: ffff888105676400
+FS:  00007f9648de66c0(0000) GS:ffff888193696000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f964a7c2680 CR3: 00000001071dd000 CR4: 0000000000350ef0
+loop7: detected capacity change from 0 to 2048
+netlink: 25 bytes leftover after parsing attributes in process `syz.7.227'.
+netlink: 25 bytes leftover after parsing attributes in process `syz.7.227'.
+EXT4-fs (loop0): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+EXT4-fs (loop1): unmounting filesystem 00000000-0000-0000-0000-000000000000.

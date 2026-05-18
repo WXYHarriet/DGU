@@ -1,0 +1,238 @@
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+INFO: task syz.0.179:4703 blocked for more than 143 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+      Blocked by coredump.
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.0.179       state:D stack:26680 pid:4703  tgid:4703  ppid:251    task_flags:0x40044c flags:0x00080003
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ wb_wait_for_completion+0x183/0x280 fs/fs-writeback.c:216
+ sync_inodes_sb+0x1b2/0xb00 fs/fs-writeback.c:2873
+ sync_filesystem fs/sync.c:64 [inline]
+ sync_filesystem+0x17a/0x2a0 fs/sync.c:30
+ generic_shutdown_super+0x78/0x4a0 fs/super.c:621
+ kill_block_super+0x3b/0x90 fs/super.c:1722
+ ext4_kill_sb+0x6c/0xb0 fs/ext4/super.c:7403
+ deactivate_locked_super+0xbb/0x130 fs/super.c:473
+ deactivate_super fs/super.c:506 [inline]
+ deactivate_super+0xb1/0xd0 fs/super.c:502
+ cleanup_mnt+0x378/0x510 fs/namespace.c:1327
+ task_work_run+0x172/0x280 kernel/task_work.c:227
+ exit_task_work include/linux/task_work.h:40 [inline]
+ do_exit+0x8c1/0x2da0 kernel/exit.c:966
+ do_group_exit+0xd3/0x2a0 kernel/exit.c:1107
+ get_signal+0x2389/0x2500 kernel/signal.c:3034
+ arch_do_signal_or_restart+0x80/0x870 arch/x86/kernel/signal.c:337
+ exit_to_user_mode_loop+0x95/0x120 kernel/entry/common.c:40
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2eb/0x380 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f3226fa2465
+RSP: 002b:00007f3225596fa0 EFLAGS: 00000293 ORIG_RAX: 00000000000000e6
+RAX: fffffffffffffdfc RBX: 00007f32271f5fa0 RCX: 00007f3226fa2465
+RDX: 00007f3225596fe0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007f322701b44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000293 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f32271f5fa0 R15: 00007fff12a5a6e8
+ </TASK>
+
+Showing all locks held in the system:
+1 lock held by kthreadd/2:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: copy_process+0x2dd0/0x7460 kernel/fork.c:2280
+1 lock held by rcu_tasks_kthre/37:
+ #0: ffffffff85c1dd90 (rcu_tasks.tasks_gp_mutex){+.+.}-{4:4}, at: rcu_tasks_one_gp+0x6e5/0xdc0 kernel/rcu/tasks.h:614
+1 lock held by khungtaskd/40:
+ #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: rcu_read_lock include/linux/rcupdate.h:867 [inline]
+ #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: debug_show_all_locks+0x36/0x1c0 kernel/locking/lockdep.c:6775
+5 locks held by kworker/2:1/51:
+ #0: ffff888100062148 ((wq_completion)events){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3238 [inline]
+ #0: ffff888100062148 ((wq_completion)events){+.+.}-{0:0}, at: process_scheduled_works+0x1096/0x19c0 kernel/workqueue.c:3346
+ #1: ffff8881010dfd38 ((perf_sched_work).work){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3239 [inline]
+ #1: ffff8881010dfd38 ((perf_sched_work).work){+.+.}-{0:0}, at: process_scheduled_works+0x4d1/0x19c0 kernel/workqueue.c:3346
+ #2: ffffffff85ca5fa8 (perf_sched_mutex){+.+.}-{4:4}, at: perf_sched_delayed+0x18/0x70 kernel/events/core.c:5498
+ #3: ffffffff85af1d30 (cpu_hotplug_lock){++++}-{0:0}, at: static_key_disable+0x12/0x20 kernel/jump_label.c:247
+ #4: ffffffff85cacbe8 (jump_label_mutex){+.+.}-{4:4}, at: jump_label_lock kernel/jump_label.c:27 [inline]
+ #4: ffffffff85cacbe8 (jump_label_mutex){+.+.}-{4:4}, at: static_key_disable_cpuslocked+0x110/0x1c0 kernel/jump_label.c:238
+5 locks held by kworker/u16:2/52:
+1 lock held by systemd-udevd/120:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/121:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/122:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/123:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/124:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/125:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/126:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/127:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/128:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/129:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/130:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/131:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/132:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/133:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/134:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/135:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/136:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/137:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/138:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/139:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/140:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/142:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/143:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+1 lock held by systemd-udevd/144:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+5 locks held by kworker/3:2/145:
+ #0: ffff888100062148 ((wq_completion)events){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3238 [inline]
+ #0: ffff888100062148 ((wq_completion)events){+.+.}-{0:0}, at: process_scheduled_works+0x1096/0x19c0 kernel/workqueue.c:3346
+ #1: ffff88810385fd38 ((optimizing_work).work){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3239 [inline]
+ #1: ffff88810385fd38 ((optimizing_work).work){+.+.}-{0:0}, at: process_scheduled_works+0x4d1/0x19c0 kernel/workqueue.c:3346
+ #2: ffffffff85c75948 (kprobe_mutex){+.+.}-{4:4}, at: class_mutex_constructor include/linux/mutex.h:228 [inline]
+ #2: ffffffff85c75948 (kprobe_mutex){+.+.}-{4:4}, at: kprobe_optimizer+0x25/0x9e0 kernel/kprobes.c:609
+ #3: ffffffff85af1d30 (cpu_hotplug_lock){++++}-{0:0}, at: class_cpus_read_lock_constructor include/linux/cpuhplock.h:47 [inline]
+ #3: ffffffff85af1d30 (cpu_hotplug_lock){++++}-{0:0}, at: kprobe_optimizer+0x2a/0x9e0 kernel/kprobes.c:611
+ #4: ffffffff85b05888 (text_mutex){+.+.}-{4:4}, at: class_mutex_constructor include/linux/mutex.h:228 [inline]
+ #4: ffffffff85b05888 (text_mutex){+.+.}-{4:4}, at: kprobe_optimizer+0x38/0x9e0 kernel/kprobes.c:612
+1 lock held by in:imklog/171:
+ #0: ffff88810b6297b8 (&f->f_pos_lock){+.+.}-{4:4}, at: fdget_pos+0x2a4/0x370 fs/file.c:1232
+1 lock held by syz-executor/243:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: do_exit+0x34f/0x2da0 kernel/exit.c:913
+5 locks held by kworker/u16:11/1586:
+ #0: ffff888101f3e948 ((wq_completion)iou_exit){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3238 [inline]
+ #0: ffff888101f3e948 ((wq_completion)iou_exit){+.+.}-{0:0}, at: process_scheduled_works+0x1096/0x19c0 kernel/workqueue.c:3346
+ #1: ffff88810f717d38 ((work_completion)(&ctx->exit_work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3239 [inline]
+ #1: ffff88810f717d38 ((work_completion)(&ctx->exit_work)){+.+.}-{0:0}, at: process_scheduled_works+0x4d1/0x19c0 kernel/workqueue.c:3346
+ #2: ffffffff85af1d30 (cpu_hotplug_lock){++++}-{0:0}, at: __static_key_slow_dec kernel/jump_label.c:320 [inline]
+ #2: ffffffff85af1d30 (cpu_hotplug_lock){++++}-{0:0}, at: static_key_slow_dec+0x53/0xa0 kernel/jump_label.c:336
+ #3: ffffffff85cacbe8 (jump_label_mutex){+.+.}-{4:4}, at: class_mutex_constructor include/linux/mutex.h:228 [inline]
+ #3: ffffffff85cacbe8 (jump_label_mutex){+.+.}-{4:4}, at: __static_key_slow_dec_cpuslocked kernel/jump_label.c:300 [inline]
+ #3: ffffffff85cacbe8 (jump_label_mutex){+.+.}-{4:4}, at: __static_key_slow_dec_cpuslocked+0x40/0x140 kernel/jump_label.c:292
+ #4: ffffffff85b05888 (text_mutex){+.+.}-{4:4}, at: arch_jump_label_transform_queue+0x70/0x110 arch/x86/kernel/jump_label.c:136
+2 locks held by syz.0.179/4703:
+ #0: ffff888022dde0e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:57 [inline]
+ #0: ffff888022dde0e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock_excl fs/super.c:72 [inline]
+ #0: ffff888022dde0e0 (&type->s_umount_key#46){++++}-{4:4}, at: deactivate_super fs/super.c:505 [inline]
+ #0: ffff888022dde0e0 (&type->s_umount_key#46){++++}-{4:4}, at: deactivate_super+0xa9/0xd0 fs/super.c:502
+ #1: ffff888103f2c820 (&bdi->wb_switch_rwsem){++++}-{4:4}, at: bdi_down_write_wb_switch_rwsem fs/fs-writeback.c:387 [inline]
+ #1: ffff888103f2c820 (&bdi->wb_switch_rwsem){++++}-{4:4}, at: sync_inodes_sb+0x198/0xb00 fs/fs-writeback.c:2871
+5 locks held by syz-executor/5655:
+ #0: ffff888107f0a3f8 (sb_writers#10){.+.+}-{0:0}, at: ksys_write+0x121/0x240 fs/read_write.c:738
+ #1: ffff8881104dd888 (&of->mutex#2){+.+.}-{4:4}, at: kernfs_fop_write_iter+0x296/0x570 fs/kernfs/file.c:343
+ #2: ffffffff85c5f308 (cgroup_mutex){+.+.}-{4:4}, at: cgroup_lock include/linux/cgroup.h:393 [inline]
+ #2: ffffffff85c5f308 (cgroup_mutex){+.+.}-{4:4}, at: cgroup_kn_lock_live+0x116/0x540 kernel/cgroup/cgroup.c:1735
+ #3: ffffffff85af1d30 (cpu_hotplug_lock){++++}-{0:0}, at: cgroup_attach_lock+0x15/0xb0 kernel/cgroup/cgroup.c:2542
+ #4: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: cgroup_attach_lock+0x97/0xb0 kernel/cgroup/cgroup.c:2548
+3 locks held by kworker/u16:20/5827:
+ #0: ffff888100079148 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3238 [inline]
+ #0: ffff888100079148 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_scheduled_works+0x1096/0x19c0 kernel/workqueue.c:3346
+ #1: ffff888009c3fd38 ((work_completion)(&sub_info->work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3239 [inline]
+ #1: ffff888009c3fd38 ((work_completion)(&sub_info->work)){+.+.}-{0:0}, at: process_scheduled_works+0x4d1/0x19c0 kernel/workqueue.c:3346
+ #2: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: copy_process+0x2dd0/0x7460 kernel/fork.c:2280
+3 locks held by syz.8.340/5928:
+ #0: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:161 [inline]
+ #0: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:253 [inline]
+ #0: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:508 [inline]
+ #0: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x32c/0x29a0 kernel/events/core.c:13460
+ #1: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:161 [inline]
+ #1: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:253 [inline]
+ #1: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:508 [inline]
+ #1: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: perf_init_event kernel/events/core.c:12664 [inline]
+ #1: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc kernel/events/core.c:12978 [inline]
+ #1: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: perf_event_alloc+0xefc/0x4800 kernel/events/core.c:12843
+ #2: ffffffff85c75948 (kprobe_mutex){+.+.}-{4:4}, at: class_mutex_constructor include/linux/mutex.h:228 [inline]
+ #2: ffffffff85c75948 (kprobe_mutex){+.+.}-{4:4}, at: unregister_kprobes+0x4d/0x1d0 kernel/kprobes.c:1833
+1 lock held by syz.1.342/5955:
+ #0: ffff888022dde0e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888022dde0e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.1.342/5965:
+ #0: ffff888022dde0e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888022dde0e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.1.342/5973:
+ #0: ffff888022dde0e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888022dde0e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.1.342/5983:
+ #0: ffff888022dde0e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888022dde0e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+2 locks held by syz.5.343/5981:
+ #0: ffffffff85af1d30 (cpu_hotplug_lock){++++}-{0:0}, at: static_key_slow_inc+0x13/0x30 kernel/jump_label.c:190
+ #1: ffffffff85cacbe8 (jump_label_mutex){+.+.}-{4:4}, at: class_mutex_constructor include/linux/mutex.h:228 [inline]
+ #1: ffffffff85cacbe8 (jump_label_mutex){+.+.}-{4:4}, at: static_key_slow_inc_cpuslocked kernel/jump_label.c:165 [inline]
+ #1: ffffffff85cacbe8 (jump_label_mutex){+.+.}-{4:4}, at: static_key_slow_inc_cpuslocked+0x53/0x160 kernel/jump_label.c:151
+2 locks held by syz.9.351/6218:
+ #0: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: srcu_lock_acquire include/linux/srcu.h:161 [inline]
+ #0: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: srcu_read_lock include/linux/srcu.h:253 [inline]
+ #0: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: class_srcu_constructor include/linux/srcu.h:508 [inline]
+ #0: ffffffff88299a90 (&pmus_srcu){.+.+}-{0:0}, at: __do_sys_perf_event_open+0x32c/0x29a0 kernel/events/core.c:13460
+ #1: ffffffff85ca5fa8 (perf_sched_mutex){+.+.}-{4:4}, at: account_event kernel/events/core.c:12817 [inline]
+ #1: ffffffff85ca5fa8 (perf_sched_mutex){+.+.}-{4:4}, at: perf_event_alloc kernel/events/core.c:13065 [inline]
+ #1: ffffffff85ca5fa8 (perf_sched_mutex){+.+.}-{4:4}, at: perf_event_alloc+0x3d14/0x4800 kernel/events/core.c:12843
+2 locks held by syz.3.352/6241:
+ #0: ffffffff85c5f010 (cgroup_threadgroup_rwsem){++++}-{0:0}, at: copy_process+0x2dd0/0x7460 kernel/fork.c:2280
+ #1: ffffffff85c67be8 (freezer_mutex){+.+.}-{4:4}, at: freezer_fork kernel/cgroup/legacy_freezer.c:221 [inline]
+ #1: ffffffff85c67be8 (freezer_mutex){+.+.}-{4:4}, at: freezer_fork+0xc1/0x500 kernel/cgroup/legacy_freezer.c:207
+7 locks held by syz.3.352/6242:
+ #0: ffff888111076d38 (&f->f_pos_lock){+.+.}-{4:4}, at: fdget_pos+0x2a4/0x370 fs/file.c:1232
+ #1: ffff88810fb823f8 (sb_writers#13){.+.+}-{0:0}, at: ksys_write+0x121/0x240 fs/read_write.c:738
+ #2: ffff88810c5b1c88 (&of->mutex#2){+.+.}-{4:4}, at: kernfs_fop_write_iter+0x296/0x570 fs/kernfs/file.c:343
+ #3: ffff88810c6f3b48 (kn->active#66){.+.+}-{0:0}, at: kernfs_get_active_of fs/kernfs/file.c:80 [inline]
+ #3: ffff88810c6f3b48 (kn->active#66){.+.+}-{0:0}, at: kernfs_fop_write_iter+0x303/0x570 fs/kernfs/file.c:344
+ #4: ffffffff85af1d30 (cpu_hotplug_lock){++++}-{0:0}, at: freezer_change_state kernel/cgroup/legacy_freezer.c:385 [inline]
+ #4: ffffffff85af1d30 (cpu_hotplug_lock){++++}-{0:0}, at: freezer_write+0xac/0xc50 kernel/cgroup/legacy_freezer.c:433
+ #5: ffffffff85c67be8 (freezer_mutex){+.+.}-{4:4}, at: freezer_change_state kernel/cgroup/legacy_freezer.c:391 [inline]
+ #5: ffffffff85c67be8 (freezer_mutex){+.+.}-{4:4}, at: freezer_write+0xba/0xc50 kernel/cgroup/legacy_freezer.c:433
+ #6: ffffffff85cacbe8 (jump_label_mutex){+.+.}-{4:4}, at: class_mutex_constructor include/linux/mutex.h:228 [inline]
+ #6: ffffffff85cacbe8 (jump_label_mutex){+.+.}-{4:4}, at: static_key_slow_inc_cpuslocked kernel/jump_label.c:165 [inline]
+ #6: ffffffff85cacbe8 (jump_label_mutex){+.+.}-{4:4}, at: static_key_slow_inc_cpuslocked+0x53/0x160 kernel/jump_label.c:151
+
+=============================================
+
+EXT4-fs warning: 117355 callbacks suppressed
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning: 118094 callbacks suppressed
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop0): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377

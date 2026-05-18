@@ -1,0 +1,69 @@
+EXT4-fs (loop5): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+EXT4-fs error (device loop5): ext4_mb_generate_buddy:1303: group 0, block bitmap and bg descriptor inconsistent: 25 vs 150994969 free clusters
+------------[ cut here ]------------
+kernel BUG at fs/ext4/inode.c:2809!
+Oops: invalid opcode: 0000 [#1] SMP KASAN NOPTI
+CPU: 0 UID: 0 PID: 4222 Comm: syz.5.88 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40 fs/ext4/inode.c:2809
+Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+RSP: 0018:ffff8881029470e0 EFLAGS: 00010216
+RAX: 0000000000007a5a RBX: 0000000000000001 RCX: 0000000000080000
+RDX: ffffc900028a1000 RSI: ffff88810478b780 RDI: 0000000000000002
+RBP: ffff8881029472a0 R08: 0000000000000001 R09: ffffed100314613c
+R10: ffffed100314613b R11: ffff888018a309df R12: ffff888018a309d8
+R13: 0000000000000001 R14: ffff8881029472e0 R15: ffff888018a30c20
+FS:  00007fb0322076c0(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 000000110c2f2427 CR3: 000000010c6ab000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ ext4_writepages+0x369/0x7a0 fs/ext4/inode.c:3026
+ do_writepages+0x244/0x5c0 mm/page-writeback.c:2598
+lo: entered promiscuous mode
+ filemap_writeback+0x227/0x2d0 mm/filemap.c:387
+lo: entered allmulticast mode
+ filemap_fdatawrite_range mm/filemap.c:412 [inline]
+ file_write_and_wait_range+0xcf/0x140 mm/filemap.c:786
+ generic_buffers_fsync_noflush+0x6e/0x3c0 fs/buffer.c:609
+ ext4_fsync_nojournal fs/ext4/fsync.c:88 [inline]
+ ext4_sync_file+0x7b3/0xde0 fs/ext4/fsync.c:147
+ vfs_fsync_range+0x13d/0x230 fs/sync.c:188
+ generic_write_sync include/linux/fs.h:2618 [inline]
+ ext4_buffered_write_iter+0x318/0x430 fs/ext4/file.c:305
+ ext4_file_write_iter+0x561/0x1910 fs/ext4/file.c:723
+ iter_file_splice_write+0xa38/0x1180 fs/splice.c:738
+ do_splice_from fs/splice.c:938 [inline]
+ direct_splice_actor+0x192/0x7b0 fs/splice.c:1161
+ splice_direct_to_actor+0x370/0xa20 fs/splice.c:1105
+ do_splice_direct_actor+0x180/0x250 fs/splice.c:1204
+ do_splice_direct+0x41/0x60 fs/splice.c:1230
+ do_sendfile+0xa8d/0xda0 fs/read_write.c:1370
+ __do_sys_sendfile64 fs/read_write.c:1431 [inline]
+ __se_sys_sendfile64 fs/read_write.c:1417 [inline]
+ __x64_sys_sendfile64+0x1d3/0x210 fs/read_write.c:1417
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x430 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fb033bdfba9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007fb032207058 EFLAGS: 00000246 ORIG_RAX: 0000000000000028
+RAX: ffffffffffffffda RBX: 00007fb033e65fa0 RCX: 00007fb033bdfba9
+RDX: 0000000000000000 RSI: 0000000000000008 RDI: 0000000000000007
+RBP: 00007fb033c8b44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000080000041 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007fb033e65fa0 R15: 00007fff34ef50b8
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40 fs/ext4/inode.c:2809
+Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+RSP: 0018:ffff8881029470e0 EFLAGS: 00010216
+RAX: 0000000000007a5a RBX: 0000000000000001 RCX: 0000000000080000
+RDX: ffffc900028a1000 RSI: ffff88810478b780 RDI: 0000000000000002
+RBP: ffff8881029472a0 R08: 0000000000000001 R09: ffffed100314613c
+R10: ffffed100314613b R11: ffff888018a309df R12: ffff888018a309d8
+R13: 0000000000000001 R14: ffff8881029472e0 R15: ffff888018a30c20
+FS:  00007fb0322076c0(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 000000110c2f2427 CR3: 000000010c6ab000 CR4: 0000000000350ef0

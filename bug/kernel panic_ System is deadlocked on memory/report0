@@ -1,0 +1,43 @@
+EXT4-fs error (device loop0): ext4_lookup:1785: inode #14: comm syz-executor: invalid fast symlink length 39
+EXT4-fs error (device loop0): ext4_lookup:1785: inode #14: comm syz-executor: invalid fast symlink length 39
+Kernel panic - not syncing: System is deadlocked on memory
+CPU: 1 UID: 0 PID: 212 Comm: sshd Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0x3d/0x120 lib/dump_stack.c:120
+ vpanic+0x633/0x6e0 kernel/panic.c:490
+ panic+0xc2/0xd0 kernel/panic.c:627
+ out_of_memory+0x15b7/0x1630 mm/oom_kill.c:1182
+ __alloc_pages_may_oom mm/page_alloc.c:4122 [inline]
+ __alloc_pages_slowpath.constprop.0+0x1a4b/0x20b0 mm/page_alloc.c:4927
+ __alloc_frozen_pages_noprof+0x599/0x6b0 mm/page_alloc.c:5253
+ alloc_pages_mpol+0xed/0x340 mm/mempolicy.c:2486
+ alloc_pages_noprof mm/mempolicy.c:2577 [inline]
+ folio_alloc_noprof+0x22/0x290 mm/mempolicy.c:2587
+ filemap_alloc_folio_noprof+0x3b4/0x450 mm/filemap.c:1013
+ __filemap_get_folio_mpol+0x397/0x970 mm/filemap.c:2006
+ __filemap_get_folio include/linux/pagemap.h:774 [inline]
+ filemap_fault+0x18e5/0x3550 mm/filemap.c:3559
+ __do_fault+0x10d/0x480 mm/memory.c:5323
+ do_read_fault mm/memory.c:5758 [inline]
+ do_fault mm/memory.c:5892 [inline]
+ do_pte_missing mm/memory.c:4404 [inline]
+ handle_pte_fault mm/memory.c:6276 [inline]
+ __handle_mm_fault+0x15c5/0x33d0 mm/memory.c:6414
+ handle_mm_fault+0x2d8/0x9d0 mm/memory.c:6583
+ do_user_addr_fault+0x6be/0x1840 arch/x86/mm/fault.c:1334
+ handle_page_fault arch/x86/mm/fault.c:1474 [inline]
+ exc_page_fault+0xb0/0x180 arch/x86/mm/fault.c:1527
+ asm_exc_page_fault+0x26/0x30 arch/x86/include/asm/idtentry.h:618
+RIP: 0033:0x7fbd731c6088
+Code: Unable to access opcode bytes at 0x7fbd731c605e.
+RSP: 002b:00007ffd41063c40 EFLAGS: 00010202
+RAX: 0000000000000010 RBX: 00007fbd73329b59 RCX: 000000006362696c
+RDX: 00007fbd73329b59 RSI: 000000006362696c RDI: 00007fbd73329b59
+RBP: 00007ffd41063d70 R08: 00007fbd73362c40 R09: 00007ffd41063c40
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 00007fbd73327fd8 R14: 00007ffd41063c40 R15: 00007fbd7330e493
+ </TASK>
+Kernel Offset: disabled

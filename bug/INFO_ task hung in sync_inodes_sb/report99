@@ -1,0 +1,273 @@
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+INFO: task syz.2.2191:21028 blocked for more than 143 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+      Blocked by coredump.
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.2.2191      state:D stack:26680 pid:21028 tgid:21028 ppid:10213  task_flags:0x40044c flags:0x00080003
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ wb_wait_for_completion+0x183/0x280 fs/fs-writeback.c:216
+ sync_inodes_sb+0x1b2/0xb00 fs/fs-writeback.c:2873
+ sync_filesystem fs/sync.c:64 [inline]
+ sync_filesystem+0x17a/0x2a0 fs/sync.c:30
+ generic_shutdown_super+0x78/0x4a0 fs/super.c:621
+ kill_block_super+0x3b/0x90 fs/super.c:1722
+ ext4_kill_sb+0x6c/0xb0 fs/ext4/super.c:7403
+ deactivate_locked_super+0xbb/0x130 fs/super.c:473
+ deactivate_super fs/super.c:506 [inline]
+ deactivate_super+0xb1/0xd0 fs/super.c:502
+ cleanup_mnt+0x378/0x510 fs/namespace.c:1327
+ task_work_run+0x172/0x280 kernel/task_work.c:227
+ exit_task_work include/linux/task_work.h:40 [inline]
+ do_exit+0x8c1/0x2da0 kernel/exit.c:966
+ do_group_exit+0xd3/0x2a0 kernel/exit.c:1107
+ get_signal+0x2389/0x2500 kernel/signal.c:3034
+ arch_do_signal_or_restart+0x80/0x870 arch/x86/kernel/signal.c:337
+ exit_to_user_mode_loop+0x95/0x120 kernel/entry/common.c:40
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2eb/0x380 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x2aff02af2465
+RSP: 002b:00002aff050adfa0 EFLAGS: 00000293 ORIG_RAX: 00000000000000e6
+RAX: fffffffffffffdfc RBX: 00002aff02d45fa0 RCX: 00002aff02af2465
+RDX: 00002aff050adfe0 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00002aff02b6b44c R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000293 R12: 0000000000000000
+R13: 0000000000000000 R14: 00002aff02d45fa0 R15: 00007ffd8d640a98
+ </TASK>
+INFO: task syz.8.2525:23874 blocked for more than 143 seconds.
+      Not tainted 6.18.0-rc2-00120-g6fab32bb6508 #1
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.8.2525      state:D stack:29624 pid:23874 tgid:23872 ppid:18008  task_flags:0x400040 flags:0x00080002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5325 [inline]
+ __schedule+0x1110/0x4a50 kernel/sched/core.c:6929
+ __schedule_loop kernel/sched/core.c:7011 [inline]
+ schedule+0xd1/0x260 kernel/sched/core.c:7026
+ schedule_preempt_disabled+0x10/0x20 kernel/sched/core.c:7083
+ rwsem_down_read_slowpath+0x601/0x1020 kernel/locking/rwsem.c:1086
+ __down_read_common kernel/locking/rwsem.c:1261 [inline]
+ __down_read kernel/locking/rwsem.c:1274 [inline]
+ down_read+0xec/0x3f0 kernel/locking/rwsem.c:1539
+ __super_lock fs/super.c:59 [inline]
+ super_lock+0x179/0x3e0 fs/super.c:121
+ __iterate_supers+0x2b8/0x390 fs/super.c:922
+ ksys_sync+0x89/0x150 fs/sync.c:102
+ __do_sys_sync+0xe/0x20 fs/sync.c:113
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x380 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x2ab65b19fba9
+RSP: 002b:00002ab65d78e058 EFLAGS: 00000246 ORIG_RAX: 00000000000000a2
+RAX: ffffffffffffffda RBX: 00002ab65b425fa0 RCX: 00002ab65b19fba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00002ab65b425fa0 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00002ab65b425fa0 R15: 00007fff421504b8
+ </TASK>
+INFO: task syz.8.2525:23874 <reader> blocked on an rw-semaphore likely owned by task syz.2.2191:21028 <writer>
+
+Showing all locks held in the system:
+1 lock held by systemd/1:
+ #0: ffff888105f19ac8 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+4 locks held by kworker/u16:0/12:
+ #0: ffff888100aae148 ((wq_completion)writeback){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3238 [inline]
+ #0: ffff888100aae148 ((wq_completion)writeback){+.+.}-{0:0}, at: process_scheduled_works+0x1096/0x19c0 kernel/workqueue.c:3346
+ #1: ffff888100327d38 ((work_completion)(&(&wb->dwork)->work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3239 [inline]
+ #1: ffff888100327d38 ((work_completion)(&(&wb->dwork)->work)){+.+.}-{0:0}, at: process_scheduled_works+0x4d1/0x19c0 kernel/workqueue.c:3346
+ #2: ffff888105d140e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_trylock_shared+0x21/0x100 fs/super.c:562
+ #3: ffff888105d16b90 (&sbi->s_writepages_rwsem){++++}-{0:0}, at: do_writepages+0x244/0x5c0 mm/page-writeback.c:2604
+1 lock held by khungtaskd/40:
+ #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: rcu_read_lock include/linux/rcupdate.h:867 [inline]
+ #0: ffffffff85c1e560 (rcu_read_lock){....}-{1:3}, at: debug_show_all_locks+0x36/0x1c0 kernel/locking/lockdep.c:6775
+1 lock held by kswapd0/59:
+ #0: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: balance_pgdat+0x8ab/0xfa0 mm/vmscan.c:7137
+3 locks held by systemd-journal/103:
+ #0: ffff88811793d848 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+ #1: ffff888105d144f0 (sb_pagefaults){.+.+}-{0:0}, at: do_page_mkwrite+0x17a/0x370 mm/memory.c:3488
+ #2: ffff888105d80950 (jbd2_handle){++++}-{0:0}, at: start_this_handle+0xe18/0x12c0 fs/jbd2/transaction.c:444
+1 lock held by systemd-udevd/119:
+ #0: ffff888103c77848 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+1 lock held by cron/149:
+ #0: ffff88810f3f8588 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+1 lock held by in:imklog/173:
+ #0: ffff8881033dbd48 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+4 locks held by rs:main Q:Reg/174:
+ #0: ffff88810bcdfeb8 (&f->f_pos_lock){+.+.}-{4:4}, at: fdget_pos+0x2a4/0x370 fs/file.c:1232
+ #1: ffff888105d143f8 (sb_writers#3){.+.+}-{0:0}, at: ksys_write+0x121/0x240 fs/read_write.c:738
+ #2: ffff8881114a03e0 (&sb->s_type->i_mutex_key#7){++++}-{4:4}, at: inode_lock include/linux/fs.h:980 [inline]
+ #2: ffff8881114a03e0 (&sb->s_type->i_mutex_key#7){++++}-{4:4}, at: ext4_buffered_write_iter+0xab/0x430 fs/ext4/file.c:294
+ #3: ffff888105d80950 (jbd2_handle){++++}-{0:0}, at: start_this_handle+0xe18/0x12c0 fs/jbd2/transaction.c:444
+2 locks held by kworker/u16:6/275:
+ #0: ffff888100079148 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3238 [inline]
+ #0: ffff888100079148 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_scheduled_works+0x1096/0x19c0 kernel/workqueue.c:3346
+ #1: ffff88810ff0fd38 ((work_completion)(&sub_info->work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3239 [inline]
+ #1: ffff88810ff0fd38 ((work_completion)(&sub_info->work)){+.+.}-{0:0}, at: process_scheduled_works+0x4d1/0x19c0 kernel/workqueue.c:3346
+1 lock held by systemd-udevd/2999:
+ #0: ffff88810d5566c8 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+1 lock held by systemd-udevd/3862:
+ #0: ffff88810ec11708 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+1 lock held by systemd-udevd/4433:
+ #0: ffff888104230e48 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+2 locks held by syz-executor/4520:
+ #0: ffff88810bde9358 (&tsk->futex_exit_mutex){+.+.}-{4:4}, at: futex_cleanup_begin+0x1f/0x70 kernel/futex/core.c:1459
+ #1: ffff888019aa16e0 (&mm->mmap_lock){++++}-{4:4}, at: mmap_read_trylock include/linux/mmap_lock.h:387 [inline]
+ #1: ffff888019aa16e0 (&mm->mmap_lock){++++}-{4:4}, at: get_mmap_lock_carefully mm/mmap_lock.c:368 [inline]
+ #1: ffff888019aa16e0 (&mm->mmap_lock){++++}-{4:4}, at: lock_mm_and_find_vma+0x35/0x1550 mm/mmap_lock.c:428
+1 lock held by systemd-udevd/4795:
+ #0: ffff88810a386bc8 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+2 locks held by systemd-udevd/4807:
+ #0: ffff88810ca88c68 (&ep->mtx){+.+.}-{4:4}, at: ep_send_events+0x104/0xaf0 fs/eventpoll.c:1781
+ #1: ffff888109da2be0 (&mm->mmap_lock){++++}-{4:4}, at: mmap_read_trylock include/linux/mmap_lock.h:387 [inline]
+ #1: ffff888109da2be0 (&mm->mmap_lock){++++}-{4:4}, at: get_mmap_lock_carefully mm/mmap_lock.c:368 [inline]
+ #1: ffff888109da2be0 (&mm->mmap_lock){++++}-{4:4}, at: lock_mm_and_find_vma+0x35/0x1550 mm/mmap_lock.c:428
+1 lock held by systemd-udevd/4937:
+ #0: ffff88810d717d48 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+1 lock held by systemd-udevd/4961:
+ #0: ffff888100a05988 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+1 lock held by systemd-udevd/5039:
+ #0: ffff88810c05ce48 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+2 locks held by systemd-udevd/5170:
+ #0: ffff88810bf58468 (&ep->mtx){+.+.}-{4:4}, at: ep_send_events+0x104/0xaf0 fs/eventpoll.c:1781
+ #1: ffff88810f2ab660 (&mm->mmap_lock){++++}-{4:4}, at: mmap_read_trylock include/linux/mmap_lock.h:387 [inline]
+ #1: ffff88810f2ab660 (&mm->mmap_lock){++++}-{4:4}, at: get_mmap_lock_carefully mm/mmap_lock.c:368 [inline]
+ #1: ffff88810f2ab660 (&mm->mmap_lock){++++}-{4:4}, at: lock_mm_and_find_vma+0x35/0x1550 mm/mmap_lock.c:428
+2 locks held by systemd-udevd/5184:
+ #0: ffff88810c3b5868 (&ep->mtx){+.+.}-{4:4}, at: ep_send_events+0x104/0xaf0 fs/eventpoll.c:1781
+ #1: ffff88810f2af560 (&mm->mmap_lock){++++}-{4:4}, at: mmap_read_trylock include/linux/mmap_lock.h:387 [inline]
+ #1: ffff88810f2af560 (&mm->mmap_lock){++++}-{4:4}, at: get_mmap_lock_carefully mm/mmap_lock.c:368 [inline]
+ #1: ffff88810f2af560 (&mm->mmap_lock){++++}-{4:4}, at: lock_mm_and_find_vma+0x35/0x1550 mm/mmap_lock.c:428
+1 lock held by systemd-udevd/16674:
+ #0: ffff88810a98dd48 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+6 locks held by kworker/u16:21/16808:
+2 locks held by syz.2.2191/21028:
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:57 [inline]
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock_excl fs/super.c:72 [inline]
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: deactivate_super fs/super.c:505 [inline]
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: deactivate_super+0xa9/0xd0 fs/super.c:502
+ #1: ffff888103e1e820 (&bdi->wb_switch_rwsem){++++}-{4:4}, at: bdi_down_write_wb_switch_rwsem fs/fs-writeback.c:387 [inline]
+ #1: ffff888103e1e820 (&bdi->wb_switch_rwsem){++++}-{4:4}, at: sync_inodes_sb+0x198/0xb00 fs/fs-writeback.c:2871
+1 lock held by syz.8.2525/23874:
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.5.2733/25164:
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.9.2737/25181:
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+2 locks held by syz-executor/25259:
+1 lock held by syz.3.2810/26258:
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+1 lock held by syz.2.2908/27258:
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff8880169a40e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+3 locks held by syz.4.2911/27264:
+ #0: ffff88800eda43f8 (sb_writers#8){.+.+}-{0:0}, at: get_signal+0x19ec/0x2500 kernel/signal.c:3019
+ #1: ffff888009544878 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: inode_lock include/linux/fs.h:980 [inline]
+ #1: ffff888009544878 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: shmem_file_write_iter+0x88/0x140 mm/shmem.c:3454
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __perform_reclaim mm/page_alloc.c:4342 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_direct_reclaim mm/page_alloc.c:4367 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_slowpath.constprop.0+0x750/0x2100 mm/page_alloc.c:4816
+3 locks held by syz.4.2911/27265:
+ #0: ffff88800eda43f8 (sb_writers#8){.+.+}-{0:0}, at: get_signal+0x19ec/0x2500 kernel/signal.c:3019
+ #1: ffff88801a3df4e0 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: inode_lock include/linux/fs.h:980 [inline]
+ #1: ffff88801a3df4e0 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: shmem_file_write_iter+0x88/0x140 mm/shmem.c:3454
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __perform_reclaim mm/page_alloc.c:4342 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_direct_reclaim mm/page_alloc.c:4367 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_slowpath.constprop.0+0x750/0x2100 mm/page_alloc.c:4816
+3 locks held by syz.4.2911/27274:
+ #0: ffff88800eda43f8 (sb_writers#8){.+.+}-{0:0}, at: get_signal+0x19ec/0x2500 kernel/signal.c:3019
+ #1: ffff8881080f5b80 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: inode_lock include/linux/fs.h:980 [inline]
+ #1: ffff8881080f5b80 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: shmem_file_write_iter+0x88/0x140 mm/shmem.c:3454
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __perform_reclaim mm/page_alloc.c:4342 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_direct_reclaim mm/page_alloc.c:4367 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_slowpath.constprop.0+0x750/0x2100 mm/page_alloc.c:4816
+3 locks held by syz.4.2911/27275:
+ #0: ffff88800eda43f8 (sb_writers#8){.+.+}-{0:0}, at: get_signal+0x19ec/0x2500 kernel/signal.c:3019
+ #1: ffff8881080f3570 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: inode_lock include/linux/fs.h:980 [inline]
+ #1: ffff8881080f3570 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: shmem_file_write_iter+0x88/0x140 mm/shmem.c:3454
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __perform_reclaim mm/page_alloc.c:4342 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_direct_reclaim mm/page_alloc.c:4367 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_slowpath.constprop.0+0x750/0x2100 mm/page_alloc.c:4816
+3 locks held by syz.4.2911/27280:
+ #0: ffff88800eda43f8 (sb_writers#8){.+.+}-{0:0}, at: get_signal+0x19ec/0x2500 kernel/signal.c:3019
+ #1: ffff8881080f6830 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: inode_lock include/linux/fs.h:980 [inline]
+ #1: ffff8881080f6830 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: shmem_file_write_iter+0x88/0x140 mm/shmem.c:3454
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __perform_reclaim mm/page_alloc.c:4342 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_direct_reclaim mm/page_alloc.c:4367 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_slowpath.constprop.0+0x750/0x2100 mm/page_alloc.c:4816
+3 locks held by syz.4.2911/27281:
+ #0: ffff88800eda43f8 (sb_writers#8){.+.+}-{0:0}, at: get_signal+0x19ec/0x2500 kernel/signal.c:3019
+ #1: ffff8881080f7b38 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: inode_lock include/linux/fs.h:980 [inline]
+ #1: ffff8881080f7b38 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: shmem_file_write_iter+0x88/0x140 mm/shmem.c:3454
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __perform_reclaim mm/page_alloc.c:4342 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_direct_reclaim mm/page_alloc.c:4367 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_slowpath.constprop.0+0x750/0x2100 mm/page_alloc.c:4816
+3 locks held by syz.4.2911/27284:
+ #0: ffff88800eda43f8 (sb_writers#8){.+.+}-{0:0}, at: get_signal+0x19ec/0x2500 kernel/signal.c:3019
+ #1: ffff888103714878 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: inode_lock include/linux/fs.h:980 [inline]
+ #1: ffff888103714878 (&sb->s_type->i_mutex_key#12){+.+.}-{4:4}, at: shmem_file_write_iter+0x88/0x140 mm/shmem.c:3454
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __perform_reclaim mm/page_alloc.c:4342 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_direct_reclaim mm/page_alloc.c:4367 [inline]
+ #2: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_slowpath.constprop.0+0x750/0x2100 mm/page_alloc.c:4816
+2 locks held by syz.4.2911/27289:
+ #0: ffff88800eda43f8 (sb_writers#8){.+.+}-{0:0}, at: get_signal+0x19ec/0x2500 kernel/signal.c:3019
+ #1: ffff888019b855e0 (&mm->mmap_lock){++++}-{4:4}, at: mmap_read_lock_killable include/linux/mmap_lock.h:377 [inline]
+ #1: ffff888019b855e0 (&mm->mmap_lock){++++}-{4:4}, at: dump_user_range+0x149/0xaf0 fs/coredump.c:1354
+2 locks held by syz.4.2911/27295:
+ #0: ffff88800eda43f8 (sb_writers#8){.+.+}-{0:0}, at: get_signal+0x19ec/0x2500 kernel/signal.c:3019
+ #1: ffff88810cf27560 (&mm->mmap_lock){++++}-{4:4}, at: mmap_read_lock_killable include/linux/mmap_lock.h:377 [inline]
+ #1: ffff88810cf27560 (&mm->mmap_lock){++++}-{4:4}, at: dump_user_range+0x149/0xaf0 fs/coredump.c:1354
+2 locks held by syz.4.2937/27488:
+ #0: ffff888105d140e0 (&type->s_umount_key#46){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff888105d140e0 (&type->s_umount_key#46){++++}-{4:4}, at: super_lock+0x179/0x3e0 fs/super.c:121
+ #1: ffff888103fe8820 (&bdi->wb_switch_rwsem){++++}-{4:4}, at: bdi_down_write_wb_switch_rwsem fs/fs-writeback.c:387 [inline]
+ #1: ffff888103fe8820 (&bdi->wb_switch_rwsem){++++}-{4:4}, at: sync_inodes_sb+0x198/0xb00 fs/fs-writeback.c:2871
+2 locks held by modprobe/27492:
+ #0: ffff88804a38c1c8 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+ #1: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __perform_reclaim mm/page_alloc.c:4342 [inline]
+ #1: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_direct_reclaim mm/page_alloc.c:4367 [inline]
+ #1: ffffffff85cf5180 (fs_reclaim){+.+.}-{0:0}, at: __alloc_pages_slowpath.constprop.0+0x750/0x2100 mm/page_alloc.c:4816
+1 lock held by syz.0.2938/27493:
+ #0: ffff8881027f6a88 (vm_lock){++++}-{0:0}, at: do_user_addr_fault+0x546/0x1840 arch/x86/mm/fault.c:1327
+3 locks held by syz-executor/27495:
+ #0: ffff888105d143f8 (sb_writers#3){.+.+}-{0:0}, at: filename_create+0xf2/0x480 fs/namei.c:4219
+ #1: ffff88801c57bcb0 (&type->i_mutex_dir_key#3/1){+.+.}-{4:4}, at: inode_lock_nested include/linux/fs.h:1025 [inline]
+ #1: ffff88801c57bcb0 (&type->i_mutex_dir_key#3/1){+.+.}-{4:4}, at: filename_create+0x19b/0x480 fs/namei.c:4226
+ #2: ffff888105d80950 (jbd2_handle){++++}-{0:0}, at: start_this_handle+0xe18/0x12c0 fs/jbd2/transaction.c:444
+
+=============================================
+
+EXT4-fs warning: 128201 callbacks suppressed
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning: 127499 callbacks suppressed
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377
+EXT4-fs warning (device loop2): ext4_read_block_bitmap_nowait:490: Cannot get buffer for block bitmap - block_group = 0, block_bitmap = 4285898377

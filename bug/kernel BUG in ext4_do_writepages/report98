@@ -1,0 +1,300 @@
+EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+EXT4-fs (loop7): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+Invalid ELF header type: 0 != 1
+------------[ cut here ]------------
+kernel BUG at fs/ext4/inode.c:2809!
+NMI backtrace for cpu 1
+CPU: 1 UID: 0 PID: 261 Comm: kworker/u16:5 Tainted: P                    6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [P]=PROPRIETARY_MODULE
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Workqueue: writeback wb_workfn (flush-7:0)
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0xca/0x120 lib/dump_stack.c:120
+ nmi_cpu_backtrace+0x1e7/0x260 lib/nmi_backtrace.c:113
+ nmi_trigger_cpumask_backtrace+0x22b/0x270 lib/nmi_backtrace.c:62
+ trigger_all_cpu_backtrace include/linux/nmi.h:161 [inline]
+ oops_enter+0x6a/0x70 kernel/panic.c:847
+ oops_begin+0xc/0x80 arch/x86/kernel/dumpstack.c:354
+ die+0x19/0x60 arch/x86/kernel/dumpstack.c:455
+ do_trap_no_signal arch/x86/kernel/traps.c:298 [inline]
+ do_trap+0x20d/0x270 arch/x86/kernel/traps.c:339
+ do_error_trap+0xf9/0x240 arch/x86/kernel/traps.c:359
+ handle_invalid_op+0x34/0x40 arch/x86/kernel/traps.c:396
+ exc_invalid_op+0x5d/0x80 arch/x86/kernel/traps.c:494
+ asm_exc_invalid_op+0x1a/0x20 arch/x86/include/asm/idtentry.h:616
+RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40 fs/ext4/inode.c:2809
+Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+RSP: 0018:ffff888110877310 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81f07130
+RDX: 0000000000000001 RSI: ffff8881109a8000 RDI: 0000000000000002
+RBP: ffff8881108774d0 R08: 0000000000000000 R09: ffffed10218fdd26
+R10: ffffed10218fdd25 R11: ffff88810c7ee92f R12: ffff88810c7ee928
+R13: 0000000000000001 R14: ffff888110877510 R15: ffff88810c7eeb70
+ ext4_writepages+0x369/0x7a0 fs/ext4/inode.c:3026
+ do_writepages+0x244/0x5c0 mm/page-writeback.c:2598
+ __writeback_single_inode+0x109/0x12a0 fs/fs-writeback.c:1737
+ writeback_sb_inodes+0x6f9/0x1b00 fs/fs-writeback.c:2030
+ wb_writeback+0x1a5/0x9e0 fs/fs-writeback.c:2216
+ wb_do_writeback fs/fs-writeback.c:2363 [inline]
+ wb_workfn+0x12d/0xcb0 fs/fs-writeback.c:2403
+ process_one_work kernel/workqueue.c:3257 [inline]
+ process_scheduled_works+0x54f/0x1910 kernel/workqueue.c:3340
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3421
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+set_capacity_and_notify: 3 callbacks suppressed
+loop7: detected capacity change from 0 to 512
+Sending NMI from CPU 1 to CPUs 0,2-3:
+NMI backtrace for cpu 0
+CPU: 0 UID: 0 PID: 22530 Comm: syz.3.2164 Tainted: P                    6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [P]=PROPRIETARY_MODULE
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:write_comp_data+0x76/0x80 kernel/kcov.c:272
+Code: 14 fd 28 00 00 00 48 39 d6 72 1b 48 83 c1 01 48 89 08 4c 89 6c 10 e0 4c 89 64 10 e8 48 89 6c 10 f0 48 89 5c f8 20 5b 5d 41 5c <41> 5d 41 5e e9 a1 21 37 03 90 90 90 90 90 90 90 90 90 90 90 90 90
+RSP: 0018:ffff888109497678 EFLAGS: 00000246
+RAX: 0000000000000000 RBX: dffffc0000000000 RCX: ffffffff81ae250a
+RDX: 0000000000000098 RSI: ffff888114440000 RDI: 0000000000000003
+RBP: ffffea0000cf7fc0 R08: 0000000000000000 R09: fffff9400019eff9
+R10: fffff9400019eff8 R11: ffffea0000cf7fc7 R12: 0000000000000098
+R13: 0000000000000004 R14: ffff888114440000 R15: 00000000000001fd
+FS:  0000000000000000(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 000055556fe3d4a8 CR3: 00000001152ad000 CR4: 0000000000350ef0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000600
+Call Trace:
+ <TASK>
+ free_pages_and_swap_cache+0xca/0x410 mm/swap_state.c:344
+ __tlb_batch_free_encoded_pages mm/mmu_gather.c:137 [inline]
+ tlb_batch_pages_flush mm/mmu_gather.c:150 [inline]
+ tlb_flush_mmu_free mm/mmu_gather.c:398 [inline]
+ tlb_flush_mmu+0x15d/0x780 mm/mmu_gather.c:405
+ tlb_finish_mmu+0xe2/0x460 mm/mmu_gather.c:530
+ exit_mmap+0x3b2/0xaa0 mm/mmap.c:1290
+ __mmput kernel/fork.c:1173 [inline]
+ mmput+0xd9/0x340 kernel/fork.c:1196
+ exit_mm kernel/exit.c:581 [inline]
+ do_exit+0x82e/0x2d90 kernel/exit.c:959
+ do_group_exit+0xd3/0x2a0 kernel/exit.c:1112
+ get_signal+0x2335/0x24a0 kernel/signal.c:3034
+ arch_do_signal_or_restart+0x80/0x890 arch/x86/kernel/signal.c:337
+ __exit_to_user_mode_loop kernel/entry/common.c:41 [inline]
+ exit_to_user_mode_loop+0xaf/0x520 kernel/entry/common.c:75
+ __exit_to_user_mode_prepare include/linux/irq-entry-common.h:226 [inline]
+ syscall_exit_to_user_mode_prepare include/linux/irq-entry-common.h:256 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:159 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:194 [inline]
+ do_syscall_64+0x390/0x430 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f802ba6fba9
+Code: Unable to access opcode bytes at 0x7f802ba6fb7f.
+RSP: 002b:00007f802a097058 EFLAGS: 00000246 ORIG_RAX: 000000000000012a
+RAX: 0000000000000003 RBX: 00007f802bcf5fa0 RCX: 00007f802ba6fba9
+RDX: ffffffffffffffff RSI: 0000000000000000 RDI: 0000200000000000
+RBP: 00007f802bb1b44c R08: 0000000000000000 R09: 0000000000000000
+R10: ffffffffffffffff R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000001 R14: 00007f802bcf5fa0 R15: 00007ffe611d1168
+ </TASK>
+NMI backtrace for cpu 3
+CPU: 3 UID: 0 PID: 171 Comm: in:imklog Tainted: P                    6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [P]=PROPRIETARY_MODULE
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:get_current arch/x86/include/asm/current.h:25 [inline]
+RIP: 0010:__sanitizer_cov_trace_pc+0x10/0x50 kernel/kcov.c:216
+Code: 22 37 03 0f 1f 80 00 00 00 00 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 f3 0f 1e fa 55 bf 02 00 00 00 53 48 8b 6c 24 10 <65> 48 8b 1d 80 d6 08 06 48 89 de e8 40 ff ff ff 84 c0 74 20 48 8b
+RSP: 0018:ffff88810b877840 EFLAGS: 00000246
+RAX: 0000000000000000 RBX: ffff88810b87790a RCX: 0000000000000001
+RDX: 0000000000000002 RSI: ffff888104d93780 RDI: 0000000000000002
+RBP: ffffffff8154c51c R08: fffffbfff0991a00 R09: ffffed102170ef22
+R10: ffffed102170ef21 R11: ffff88810b877908 R12: 0000000000000012
+R13: ffff88810b8778fb R14: 0000000000000001 R15: ffff88810b877a70
+FS:  00007f4b28b46700(0000) GS:ffff8881937bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007fa5acd65fb8 CR3: 0000000102c09000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ info_print_prefix+0x4c/0x210 kernel/printk/printk.c:1392
+ record_print_text+0x127/0x400 kernel/printk/printk.c:1432
+ syslog_print+0x417/0x5c0 kernel/printk/printk.c:1643
+ do_syslog.part.0+0x21c/0x5e0 kernel/printk/printk.c:1761
+ do_syslog+0xcd/0x110 kernel/printk/printk.c:1746
+ kmsg_read+0x8e/0xc0 fs/proc/kmsg.c:37
+ pde_read fs/proc/inode.c:308 [inline]
+ proc_reg_read+0x11e/0x2a0 fs/proc/inode.c:318
+ vfs_read fs/read_write.c:570 [inline]
+ vfs_read+0x1fc/0xca0 fs/read_write.c:552
+ ksys_read+0x121/0x240 fs/read_write.c:715
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x430 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f4b2959608c
+Code: ec 28 48 89 54 24 18 48 89 74 24 10 89 7c 24 08 e8 89 fc ff ff 48 8b 54 24 18 48 8b 74 24 10 41 89 c0 8b 7c 24 08 31 c0 0f 05 <48> 3d 00 f0 ff ff 77 34 44 89 c7 48 89 44 24 08 e8 bf fc ff ff 48
+RSP: 002b:00007f4b28b254d0 EFLAGS: 00000246 ORIG_RAX: 0000000000000000
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007f4b2959608c
+RDX: 0000000000001fa0 RSI: 00007f4b28b25d00 RDI: 0000000000000005
+RBP: 000055d7b1a61500 R08: 0000000000000000 R09: 0000000000000000
+R10: a3d70a3d70a3d70b R11: 0000000000000246 R12: 00007f4b28b25d00
+R13: 0000000000001fa0 R14: 00007f4b28b25d00 R15: 00007f4b28b25d36
+ </TASK>
+NMI backtrace for cpu 2
+CPU: 2 UID: 0 PID: 22527 Comm: syz.7.2162 Tainted: P                    6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [P]=PROPRIETARY_MODULE
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:arch_static_branch arch/x86/include/asm/jump_label.h:37 [inline]
+RIP: 0010:native_write_msr arch/x86/include/asm/msr.h:139 [inline]
+RIP: 0010:wrmsrq arch/x86/include/asm/msr.h:199 [inline]
+RIP: 0010:lapic_next_deadline+0x25/0x50 arch/x86/kernel/apic/apic.c:431
+Code: 90 90 90 90 90 f3 0f 1e fa 66 0f 1f 44 00 00 0f 31 48 c1 e2 20 b9 e0 06 00 00 48 09 c2 48 8d 04 fa 48 89 c2 48 c1 ea 20 0f 30 <66> 90 31 c0 e9 a2 b4 79 03 48 89 c6 31 d2 bf e0 06 00 00 e8 13 5c
+RSP: 0018:ffff88811af08ee0 EFLAGS: 00000016
+RAX: 0000006f5d603231 RBX: 0000000000000000 RCX: 00000000000006e0
+RDX: 000000000000006f RSI: ffff88811af23d00 RDI: 0000000000000585
+RBP: ffff88811af23d00 R08: 0000000000000000 R09: ffffffff84cac3e0
+R10: ffffed10235e50e0 R11: ffff88811af28703 R12: 0000000000000585
+R13: 0000000000000000 R14: 0000000000000000 R15: ffff88811af28700
+FS:  00007ff72ad7f6c0(0000) GS:ffff88819373f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007ff72299e000 CR3: 000000010b01f000 CR4: 0000000000350ef0
+Call Trace:
+ <IRQ>
+ clockevents_program_event+0x24d/0x360 kernel/time/clockevents.c:334
+ tick_program_event+0xb1/0x150 kernel/time/tick-oneshot.c:48
+ hrtimer_interrupt+0x3ba/0x830 kernel/time/hrtimer.c:1916
+ local_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1045 [inline]
+ __sysvec_apic_timer_interrupt+0xbb/0x300 arch/x86/kernel/apic/apic.c:1062
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1056 [inline]
+ sysvec_apic_timer_interrupt+0x6b/0x80 arch/x86/kernel/apic/apic.c:1056
+ </IRQ>
+ <TASK>
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+RIP: 0010:bytes_is_nonzero mm/kasan/generic.c:98 [inline]
+RIP: 0010:memory_is_nonzero mm/kasan/generic.c:115 [inline]
+RIP: 0010:memory_is_poisoned_n mm/kasan/generic.c:140 [inline]
+RIP: 0010:memory_is_poisoned mm/kasan/generic.c:172 [inline]
+RIP: 0010:check_region_inline mm/kasan/generic.c:191 [inline]
+RIP: 0010:kasan_check_range+0x15e/0x1b0 mm/kasan/generic.c:200
+Code: c1 e9 4d ff ff ff 5b b8 01 00 00 00 5d 41 5c e9 b8 13 f8 02 4d 85 c9 74 ed 49 01 d9 eb 09 48 83 c0 01 4c 39 c8 74 df 80 38 00 <74> f2 e9 6c ff ff ff b8 01 00 00 00 e9 91 13 f8 02 49 89 e9 4d 29
+RSP: 0018:ffff888110e870a0 EFLAGS: 00000246
+RAX: fffffbfff10542b4 RBX: fffffbfff10542b4 RCX: ffffffff81564b0a
+RDX: 0000000000000001 RSI: 000000000000002a RDI: ffffffff882a15a0
+RBP: fffffbfff10542ba R08: 0000000000000001 R09: fffffbfff10542ba
+R10: fffffbfff10542b9 R11: ffffffff882a15c9 R12: 000000000000002a
+R13: ffffffff882a15a0 R14: dffffc0000000000 R15: ffffffff85b349e0
+ __asan_memcpy+0x3d/0x60 mm/kasan/shadow.c:106
+ copy_data kernel/printk/printk_ringbuffer.c:1908 [inline]
+ prb_read kernel/printk/printk_ringbuffer.c:1993 [inline]
+ _prb_read_valid+0x40a/0x7a0 kernel/printk/printk_ringbuffer.c:2170
+ prb_read_valid+0x78/0xa0 kernel/printk/printk_ringbuffer.c:2242
+ printk_get_next_message+0x10b/0x570 kernel/printk/printk.c:2999
+ console_emit_next_record kernel/printk/printk.c:3083 [inline]
+ console_flush_one_record+0x66a/0xdf0 kernel/printk/printk.c:3215
+ console_flush_all kernel/printk/printk.c:3289 [inline]
+ __console_flush_and_unlock kernel/printk/printk.c:3319 [inline]
+ console_unlock+0x224/0x530 kernel/printk/printk.c:3359
+ vprintk_emit+0x424/0x990 kernel/printk/printk.c:2426
+ _printk+0xbe/0xf0 kernel/printk/printk.c:2451
+ set_capacity_and_notify+0x246/0x280 block/genhd.c:93
+ loop_set_size.isra.0+0x2f/0xc0 drivers/block/loop.c:220
+ loop_configure+0x9d0/0x1390 drivers/block/loop.c:1080
+ lo_ioctl+0x5c1/0x1a70 drivers/block/loop.c:1555
+ blkdev_ioctl+0x365/0x6d0 block/ioctl.c:792
+ vfs_ioctl fs/ioctl.c:51 [inline]
+ __do_sys_ioctl fs/ioctl.c:597 [inline]
+ __se_sys_ioctl fs/ioctl.c:583 [inline]
+ __x64_sys_ioctl+0x199/0x220 fs/ioctl.c:583
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x430 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7ff72c75f7ab
+Code: 00 48 89 44 24 18 31 c0 48 8d 44 24 60 c7 04 24 10 00 00 00 48 89 44 24 08 48 8d 44 24 20 48 89 44 24 10 b8 10 00 00 00 0f 05 <89> c2 3d 00 f0 ff ff 77 1c 48 8b 44 24 18 64 48 2b 04 25 28 00 00
+RSP: 002b:00007ff72ad7ede0 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+RAX: ffffffffffffffda RBX: 0000000000000007 RCX: 00007ff72c75f7ab
+RDX: 0000000000000006 RSI: 0000000000004c00 RDI: 0000000000000007
+RBP: 0000000000000000 R08: 0000000000000000 R09: 000000000000041b
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000006
+R13: 00007ff72ad7ef10 R14: 00007ff72ad7eed0 R15: 00007ff72295f000
+ </TASK>
+Oops: invalid opcode: 0000 [#1] SMP KASAN NOPTI
+CPU: 1 UID: 0 PID: 261 Comm: kworker/u16:5 Tainted: P                    6.19.0-rc8 #2 PREEMPT(voluntary) 
+Tainted: [P]=PROPRIETARY_MODULE
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Workqueue: writeback wb_workfn (flush-7:0)
+RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40 fs/ext4/inode.c:2809
+Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+RSP: 0018:ffff888110877310 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81f07130
+RDX: 0000000000000001 RSI: ffff8881109a8000 RDI: 0000000000000002
+RBP: ffff8881108774d0 R08: 0000000000000000 R09: ffffed10218fdd26
+R10: ffffed10218fdd25 R11: ffff88810c7ee92f R12: ffff88810c7ee928
+R13: 0000000000000001 R14: ffff888110877510 R15: ffff88810c7eeb70
+FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 000055556fba94a8 CR3: 000000010e97b000 CR4: 0000000000350ef0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000600
+Call Trace:
+ <TASK>
+ ext4_writepages+0x369/0x7a0 fs/ext4/inode.c:3026
+ do_writepages+0x244/0x5c0 mm/page-writeback.c:2598
+ __writeback_single_inode+0x109/0x12a0 fs/fs-writeback.c:1737
+ writeback_sb_inodes+0x6f9/0x1b00 fs/fs-writeback.c:2030
+ wb_writeback+0x1a5/0x9e0 fs/fs-writeback.c:2216
+ wb_do_writeback fs/fs-writeback.c:2363 [inline]
+ wb_workfn+0x12d/0xcb0 fs/fs-writeback.c:2403
+ process_one_work kernel/workqueue.c:3257 [inline]
+ process_scheduled_works+0x54f/0x1910 kernel/workqueue.c:3340
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3421
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:ext4_do_writepages+0x2ce5/0x3b40 fs/ext4/inode.c:2809
+Code: 84 ff 45 85 e4 0f 84 08 f6 ff ff 44 8b a5 08 ff ff ff c6 85 9f fe ff ff 01 89 9d 08 ff ff ff e9 50 e5 ff ff e8 dc a1 84 ff 90 <0f> 0b e8 d4 a1 84 ff 48 8b 8d d8 fe ff ff 48 89 c8 48 c1 e8 03 42
+RSP: 0018:ffff888110877310 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: 0000000000000001 RCX: ffffffff81f07130
+RDX: 0000000000000001 RSI: ffff8881109a8000 RDI: 0000000000000002
+RBP: ffff8881108774d0 R08: 0000000000000000 R09: ffffed10218fdd26
+R10: ffffed10218fdd25 R11: ffff88810c7ee92f R12: ffff88810c7ee928
+R13: 0000000000000001 R14: ffff888110877510 R15: ffff88810c7eeb70
+FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 000055556fba94a8 CR3: 000000010e97b000 CR4: 0000000000350ef0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000600
+----------------
+Code disassembly (best guess):
+   0:	14 fd                	adc    $0xfd,%al
+   2:	28 00                	sub    %al,(%rax)
+   4:	00 00                	add    %al,(%rax)
+   6:	48 39 d6             	cmp    %rdx,%rsi
+   9:	72 1b                	jb     0x26
+   b:	48 83 c1 01          	add    $0x1,%rcx
+   f:	48 89 08             	mov    %rcx,(%rax)
+  12:	4c 89 6c 10 e0       	mov    %r13,-0x20(%rax,%rdx,1)
+  17:	4c 89 64 10 e8       	mov    %r12,-0x18(%rax,%rdx,1)
+  1c:	48 89 6c 10 f0       	mov    %rbp,-0x10(%rax,%rdx,1)
+  21:	48 89 5c f8 20       	mov    %rbx,0x20(%rax,%rdi,8)
+  26:	5b                   	pop    %rbx
+  27:	5d                   	pop    %rbp
+  28:	41 5c                	pop    %r12
+* 2a:	41 5d                	pop    %r13 <-- trapping instruction
+  2c:	41 5e                	pop    %r14
+  2e:	e9 a1 21 37 03       	jmp    0x33721d4
+  33:	90                   	nop
+  34:	90                   	nop
+  35:	90                   	nop
+  36:	90                   	nop
+  37:	90                   	nop
+  38:	90                   	nop
+  39:	90                   	nop
+  3a:	90                   	nop
+  3b:	90                   	nop
+  3c:	90                   	nop
+  3d:	90                   	nop
+  3e:	90                   	nop
+  3f:	90                   	nop

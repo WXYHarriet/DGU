@@ -1,0 +1,120 @@
+IPv4: Oversized IP packet from 127.0.0.1
+program syz.3.3051 is using a deprecated SCSI ioctl, please convert it to SG_IO
+------------[ cut here ]------------
+Negative interval (-1000) or burst (10): Uninitialized ratelimit_state structure?
+WARNING: lib/ratelimit.c:43 at ___ratelimit+0x340/0x910 lib/ratelimit.c:43, CPU#1: kauditd/39
+Modules linked in:
+CPU: 1 UID: 0 PID: 39 Comm: kauditd Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:___ratelimit+0x345/0x910 lib/ratelimit.c:43
+Code: 00 00 00 e8 8d f0 cf fc 31 ff 89 de e8 94 f2 cf fc 85 db 0f 84 a2 00 00 00 e8 77 f0 cf fc 48 8d 3d e0 14 a3 01 44 89 f2 89 de <67> 48 0f b9 3a e8 61 f0 cf fc 31 ff 89 de e8 68 f2 cf fc 85 db 0f
+RSP: 0018:ffff888100a1fc30 EFLAGS: 00010246
+RAX: 0000000000000000 RBX: fffffffffffffc18 RCX: ffffffff84a548fc
+RDX: 000000000000000a RSI: 00000000fffffc18 RDI: ffffffff86485df0
+RBP: ffffffff85b34740 R08: 0000000000000000 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: ffffffff85b34784
+R13: ffffffff84cc0060 R14: 000000000000000a R15: 0000000000000001
+FS:  0000000000000000(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007fbfdce50218 CR3: 0000000101105000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ kauditd_printk_skb+0x9b/0x120 kernel/audit.c:582
+ kauditd_hold_skb+0x1a/0x130 kernel/audit.c:618
+ kauditd_send_queue+0x233/0x290 kernel/audit.c:803
+ kauditd_thread+0x6b1/0xad0 kernel/audit.c:927
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+irq event stamp: 4696833
+hardirqs last  enabled at (4696843): [<ffffffff8154eb28>] __up_console_sem+0x78/0x80 kernel/printk/printk.c:345
+hardirqs last disabled at (4696854): [<ffffffff8154eb0d>] __up_console_sem+0x5d/0x80 kernel/printk/printk.c:343
+softirqs last  enabled at (4696332): [<ffffffff83c49fc9>] local_bh_disable include/linux/bottom_half.h:20 [inline]
+softirqs last  enabled at (4696332): [<ffffffff83c49fc9>] __alloc_skb+0x369/0x430 net/core/skbuff.c:672
+softirqs last disabled at (4696873): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (4696873): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (4696873): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (4696873): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+---[ end trace 0000000000000000 ]---
+audit: type=1400 audit(1770600821.263:43041): avc:  denied  { ingress } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=37102 daddr=127.0.0.1 dest=40489 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.264:43042): avc:  denied  { recvfrom } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=37102 daddr=127.0.0.1 dest=40489 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.265:43043): avc:  denied  { recv } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=37102 daddr=127.0.0.1 dest=40489 netif=lo scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.268:43044): avc:  denied  { ingress } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=40489 daddr=127.0.0.1 dest=37102 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.269:43045): avc:  denied  { recvfrom } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=40489 daddr=127.0.0.1 dest=37102 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.270:43046): avc:  denied  { recv } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=40489 daddr=127.0.0.1 dest=37102 netif=lo scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.277:43047): avc:  denied  { ingress } for  pid=31862 comm="syz.2.3045" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.278:43048): avc:  denied  { recvfrom } for  pid=31862 comm="syz.2.3045" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.279:43049): avc:  denied  { recv } for  pid=31862 comm="syz.2.3045" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.317:43050): avc:  denied  { ingress } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=37102 daddr=127.0.0.1 dest=40489 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.318:43051): avc:  denied  { recvfrom } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=37102 daddr=127.0.0.1 dest=40489 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.318:43052): avc:  denied  { recv } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=37102 daddr=127.0.0.1 dest=40489 netif=lo scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.321:43053): avc:  denied  { ingress } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=40489 daddr=127.0.0.1 dest=37102 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.322:43054): avc:  denied  { recvfrom } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=40489 daddr=127.0.0.1 dest=37102 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.323:43055): avc:  denied  { recv } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=40489 daddr=127.0.0.1 dest=37102 netif=lo scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.341:43056): avc:  denied  { ingress } for  pid=234 comm="sshd" saddr=127.0.0.1 src=40489 daddr=127.0.0.1 dest=37102 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.342:43057): avc:  denied  { recvfrom } for  pid=234 comm="sshd" saddr=127.0.0.1 src=40489 daddr=127.0.0.1 dest=37102 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.343:43058): avc:  denied  { recv } for  pid=234 comm="sshd" saddr=127.0.0.1 src=40489 daddr=127.0.0.1 dest=37102 netif=lo scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.372:43059): avc:  denied  { ingress } for  pid=32005 comm="modprobe" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.373:43060): avc:  denied  { recvfrom } for  pid=32005 comm="modprobe" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.374:43061): avc:  denied  { recv } for  pid=32005 comm="modprobe" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.374:43062): avc:  denied  { ingress } for  pid=32005 comm="modprobe" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.375:43063): avc:  denied  { recvfrom } for  pid=32005 comm="modprobe" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.376:43064): avc:  denied  { recv } for  pid=32005 comm="modprobe" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.378:43065): avc:  denied  { ingress } for  pid=29070 comm="syz-executor" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.379:43066): avc:  denied  { recvfrom } for  pid=29070 comm="syz-executor" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.380:43067): avc:  denied  { recv } for  pid=29070 comm="syz-executor" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.383:43068): avc:  denied  { ingress } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=37102 daddr=127.0.0.1 dest=40489 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.384:43069): avc:  denied  { recvfrom } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=37102 daddr=127.0.0.1 dest=40489 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.385:43070): avc:  denied  { recv } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=37102 daddr=127.0.0.1 dest=40489 netif=lo scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.387:43071): avc:  denied  { ingress } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=40489 daddr=127.0.0.1 dest=37102 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.388:43072): avc:  denied  { recvfrom } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=40489 daddr=127.0.0.1 dest=37102 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.390:43073): avc:  denied  { recv } for  pid=240 comm="syz-executor" saddr=127.0.0.1 src=40489 daddr=127.0.0.1 dest=37102 netif=lo scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.397:43074): avc:  denied  { ingress } for  pid=31862 comm="syz.2.3045" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.398:43075): avc:  denied  { recvfrom } for  pid=31862 comm="syz.2.3045" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.399:43076): avc:  denied  { recv } for  pid=31862 comm="syz.2.3045" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.400:43077): avc:  denied  { ingress } for  pid=31862 comm="syz.2.3045" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.402:43078): avc:  denied  { recvfrom } for  pid=31862 comm="syz.2.3045" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.402:43079): avc:  denied  { recv } for  pid=31862 comm="syz.2.3045" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.649:43080): avc:  denied  { ingress } for  pid=241 comm="systemd-udevd" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.650:43081): avc:  denied  { recvfrom } for  pid=241 comm="systemd-udevd" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.650:43082): avc:  denied  { recv } for  pid=241 comm="systemd-udevd" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.651:43083): avc:  denied  { ingress } for  pid=241 comm="systemd-udevd" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.652:43084): avc:  denied  { recvfrom } for  pid=241 comm="systemd-udevd" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.653:43085): avc:  denied  { recv } for  pid=241 comm="systemd-udevd" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.654:43086): avc:  denied  { ingress } for  pid=241 comm="systemd-udevd" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.655:43087): avc:  denied  { recvfrom } for  pid=241 comm="systemd-udevd" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.656:43088): avc:  denied  { recv } for  pid=241 comm="systemd-udevd" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.673:43089): avc:  denied  { ingress } for  pid=26368 comm="syz.2.2415" saddr=127.0.0.1 src=20000 daddr=127.0.0.1 dest=20000 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.674:43090): avc:  denied  { recvfrom } for  pid=26368 comm="syz.2.2415" saddr=127.0.0.1 src=20000 daddr=127.0.0.1 dest=20000 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.675:43091): avc:  denied  { recv } for  pid=26368 comm="syz.2.2415" saddr=127.0.0.1 src=20000 daddr=127.0.0.1 dest=20000 netif=lo scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+audit: type=1400 audit(1770600821.676:43092): avc:  denied  { ingress } for  pid=26368 comm="syz.2.2415" saddr=127.0.0.1 src=20000 daddr=127.0.0.1 dest=20000 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.677:43093): avc:  denied  { recvfrom } for  pid=26368 comm="syz.2.2415" saddr=127.0.0.1 src=20000 daddr=127.0.0.1 dest=20000 netif=lo scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.678:43094): avc:  denied  { recv } for  pid=26368 comm="syz.2.2415" saddr=127.0.0.1 src=20000 daddr=127.0.0.1 dest=20000 netif=lo scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+pimreg (unregistering): left allmulticast mode
+audit: type=1400 audit(1770600821.943:43095): avc:  denied  { ingress } for  pid=14 comm="ksoftirqd/0" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:netif_t:s0 tclass=netif permissive=1
+audit: type=1400 audit(1770600821.944:43096): avc:  denied  { recvfrom } for  pid=14 comm="ksoftirqd/0" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:object_r:lirc_device_t:s0 tcontext=system_u:object_r:node_t:s0 tclass=node permissive=1
+audit: type=1400 audit(1770600821.945:43097): avc:  denied  { recv } for  pid=14 comm="ksoftirqd/0" saddr=10.0.2.2 src=34678 daddr=10.0.2.15 dest=22 netif=eth0 scontext=system_u:system_r:kernel_t:s0 tcontext=system_u:object_r:lirc_device_t:s0 tclass=peer permissive=1
+----------------
+Code disassembly (best guess):
+   0:	00 00                	add    %al,(%rax)
+   2:	00 e8                	add    %ch,%al
+   4:	8d                   	lea    (bad),%esi
+   5:	f0 cf                	lock iret
+   7:	fc                   	cld
+   8:	31 ff                	xor    %edi,%edi
+   a:	89 de                	mov    %ebx,%esi
+   c:	e8 94 f2 cf fc       	call   0xfccff2a5
+  11:	85 db                	test   %ebx,%ebx
+  13:	0f 84 a2 00 00 00    	je     0xbb
+  19:	e8 77 f0 cf fc       	call   0xfccff095
+  1e:	48 8d 3d e0 14 a3 01 	lea    0x1a314e0(%rip),%rdi        # 0x1a31505
+  25:	44 89 f2             	mov    %r14d,%edx
+  28:	89 de                	mov    %ebx,%esi
+* 2a:	67 48 0f b9 3a       	ud1    (%edx),%rdi <-- trapping instruction
+  2f:	e8 61 f0 cf fc       	call   0xfccff095
+  34:	31 ff                	xor    %edi,%edi
+  36:	89 de                	mov    %ebx,%esi
+  38:	e8 68 f2 cf fc       	call   0xfccff2a5
+  3d:	85 db                	test   %ebx,%ebx
+  3f:	0f                   	.byte 0xf

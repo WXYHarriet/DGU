@@ -1,0 +1,65 @@
+EXT4-fs (loop3): mounting ext3 file system using the ext4 subsystem
+EXT4-fs (loop3): 1 truncate cleaned up
+EXT4-fs (loop3): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: disabled.
+------------[ cut here ]------------
+WARNING: mm/slub.c:2189 at alloc_slab_obj_exts+0x132/0x180 mm/slub.c:2189, CPU#0: syz.8.489/2034
+CPU: 0 UID: 0 PID: 2034 Comm: syz.8.489 Not tainted 7.0.0-rc2-00057-g0031c06807cf #1 PREEMPT_{RT,(lazy)} 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:alloc_slab_obj_exts+0x132/0x180 mm/slub.c:2189
+Code: f6 c2 02 74 3e 48 c7 c6 f8 ee 07 83 48 89 ef e8 84 87 f9 ff 90 0f 0b 85 db 74 38 e8 98 eb ff ff 31 c0 5b 5d 41 5c 41 5d c3 90 <0f> 0b 90 eb 83 31 d2 be 00 01 00 02 e8 4d 12 00 00 48 89 c7 e9 fc
+RSP: 0018:ffffc900011f38c0 EFLAGS: 00010246
+RAX: ffffea000429ce00 RBX: 0000000000000c00 RCX: ffff88810004123f
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffff88810a738600
+RBP: ffffea000429ce00 R08: ffffc900011f3838 R09: 0000000000000000
+R10: ffff88810a738600 R11: 000000000000002f R12: ffff888100041240
+R13: 0000000000000000 R14: ffffea000429ce00 R15: ffff888130e14980
+FS:  00007f48addfe6c0(0000) GS:0000000000000000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000200000001000 CR3: 0000000114f62000 CR4: 0000000000350ef0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000600
+Call Trace:
+ <TASK>
+ __memcg_slab_post_alloc_hook+0x130/0x460 mm/memcontrol.c:3234
+ memcg_slab_post_alloc_hook mm/slub.c:2464 [inline]
+ slab_post_alloc_hook.constprop.0+0x9c/0xf0 mm/slub.c:4526
+ slab_alloc_node.constprop.0+0xaa/0x160 mm/slub.c:4844
+ __do_kmalloc_node mm/slub.c:5237 [inline]
+ __kmalloc_noprof+0x82/0x200 mm/slub.c:5250
+ kmalloc_noprof include/linux/slab.h:954 [inline]
+ __d_alloc+0x235/0x2f0 fs/dcache.c:1757
+ d_alloc_parallel+0x67/0xd10 fs/dcache.c:2604
+ lookup_open+0x1ca/0x660 fs/namei.c:4398
+ open_last_lookups fs/namei.c:4583 [inline]
+ path_openat+0xc84/0x1420 fs/namei.c:4827
+ do_file_open+0x108/0x1a0 fs/namei.c:4859
+ do_sys_openat2+0x404/0x630 fs/open.c:1366
+ do_sys_open+0x7c/0xe0 fs/open.c:1372
+ __do_sys_openat fs/open.c:1388 [inline]
+ __se_sys_openat fs/open.c:1383 [inline]
+ __x64_sys_openat+0x24/0x30 fs/open.c:1383
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0x11d/0x5a0 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x4b/0x53
+RIP: 0033:0x7f48af3bd550
+Code: 48 89 44 24 20 75 93 44 89 54 24 0c e8 49 94 02 00 44 8b 54 24 0c 89 da 48 89 ee 41 89 c0 bf 9c ff ff ff b8 01 01 00 00 0f 05 <48> 3d 00 f0 ff ff 77 38 44 89 c7 89 44 24 0c e8 9c 94 02 00 8b 44
+RSP: 002b:00007f48addfdf10 EFLAGS: 00000293 ORIG_RAX: 0000000000000101
+RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007f48af3bd550
+RDX: 0000000000000002 RSI: 00007f48addfdfa0 RDI: 00000000ffffff9c
+RBP: 00007f48addfdfa0 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000293 R12: 0000000000000000
+R13: 00007f48af5f6128 R14: 00007f48af5f6090 R15: 00007ffcc4bd5968
+ </TASK>
+irq event stamp: 461
+hardirqs last  enabled at (463): [<ffffffff81349fb1>] vprintk_store+0x521/0x720 kernel/printk/printk.c:2385
+hardirqs last disabled at (464): [<ffffffff81349fc1>] vprintk_store+0x531/0x720 kernel/printk/printk.c:2287
+softirqs last  enabled at (0): [<ffffffff812ae83a>] copy_process+0xd9a/0x2d40 kernel/fork.c:2169
+softirqs last disabled at (0): [<0000000000000000>] 0x0
+---[ end trace 0000000000000000 ]---
+loop0: detected capacity change from 0 to 8192
+ loop0: p1 < > p4 < >
+EXT4-fs (loop3): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+faux_driver regulatory: Direct firmware load for regulatory.db failed with error -2
+
+<<<<<<<<<<<<<<< tail report >>>>>>>>>>>>>>>
+

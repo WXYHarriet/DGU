@@ -1,0 +1,238 @@
+netlink: 2 bytes leftover after parsing attributes in process `syz.8.220'.
+loop7: detected capacity change from 0 to 256
+oom_reaper: reaped process 6235 (syz.7.230), now anon-rss:184kB, file-rss:24836kB, shmem-rss:0kB
+watchdog: BUG: soft lockup - CPU#0 stuck for 23s! [syz.3.199:4699]
+Modules linked in:
+irq event stamp: 6739943
+hardirqs last  enabled at (6739942): [<ffffffff84a97fc4>] irqentry_exit+0x184/0x6d0 kernel/entry/common.c:219
+hardirqs last disabled at (6739943): [<ffffffff84a96c9f>] sysvec_apic_timer_interrupt+0xf/0x80 arch/x86/kernel/apic/apic.c:1056
+softirqs last  enabled at (6716706): [<ffffffff813b9880>] softirq_handle_end kernel/softirq.c:468 [inline]
+softirqs last  enabled at (6716706): [<ffffffff813b9880>] handle_softirqs+0x490/0x700 kernel/softirq.c:650
+softirqs last disabled at (6716709): [<ffffffff813bb2e6>] __do_softirq kernel/softirq.c:656 [inline]
+softirqs last disabled at (6716709): [<ffffffff813bb2e6>] invoke_softirq kernel/softirq.c:496 [inline]
+softirqs last disabled at (6716709): [<ffffffff813bb2e6>] __irq_exit_rcu kernel/softirq.c:723 [inline]
+softirqs last disabled at (6716709): [<ffffffff813bb2e6>] irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+CPU: 0 UID: 0 PID: 4699 Comm: syz.3.199 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:unwind_next_frame+0x61d/0x2070 arch/x86/kernel/unwind_orc.c:520
+Code: 00 fc ff df 48 8d 41 05 48 89 c6 48 c1 ee 03 0f b6 14 16 48 89 c6 83 e6 07 40 38 f2 7f 08 84 d2 0f 85 11 13 00 00 0f b6 51 05 <83> e2 07 0f 84 b0 06 00 00 80 fa 01 0f 84 1e ff ff ff 4c 8d 41 04
+RSP: 0018:ffff88811ae08968 EFLAGS: 00000246
+RAX: ffffffff86880fad RBX: 1ffff110235c1135 RCX: ffffffff86880fa8
+RDX: 0000000000000002 RSI: 0000000000000005 RDI: ffffffff86513034
+RBP: 0000000000000002 R08: 0000000000000000 R09: ffffffff86880fa8
+R10: 000000000003aca3 R11: 0000000000023418 R12: ffff88811ae08ab8
+R13: ffff88811ae08aa8 R14: ffff88811ae08a60 R15: ffff88811ae08aa1
+FS:  00007f66db9cf6c0(0000) GS:ffff88819363f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f3a1f5a26f4 CR3: 00000001050ff000 CR4: 0000000000350ff0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000600
+Call Trace:
+ <IRQ>
+ arch_stack_walk+0x86/0xf0 arch/x86/kernel/stacktrace.c:25
+ stack_trace_save+0x8e/0xc0 kernel/stacktrace.c:122
+ kasan_save_stack+0x24/0x50 mm/kasan/common.c:57
+ kasan_save_track+0x14/0x30 mm/kasan/common.c:78
+ kasan_save_free_info+0x3a/0x60 mm/kasan/generic.c:584
+ poison_slab_object mm/kasan/common.c:253 [inline]
+ __kasan_slab_free+0x43/0x70 mm/kasan/common.c:285
+ kasan_slab_free include/linux/kasan.h:235 [inline]
+ slab_free_hook mm/slub.c:2540 [inline]
+ __rcu_free_sheaf_prepare+0x5d/0x2a0 mm/slub.c:2763
+ rcu_free_sheaf+0x1b/0xc0 mm/slub.c:6230
+ rcu_do_batch kernel/rcu/tree.c:2605 [inline]
+ rcu_core+0xa6d/0x2240 kernel/rcu/tree.c:2857
+ handle_softirqs+0x19b/0x700 kernel/softirq.c:622
+ __do_softirq kernel/softirq.c:656 [inline]
+ invoke_softirq kernel/softirq.c:496 [inline]
+ __irq_exit_rcu kernel/softirq.c:723 [inline]
+ irq_exit_rcu+0xd6/0x110 kernel/softirq.c:739
+ instr_sysvec_apic_timer_interrupt arch/x86/kernel/apic/apic.c:1056 [inline]
+ sysvec_apic_timer_interrupt+0x70/0x80 arch/x86/kernel/apic/apic.c:1056
+ </IRQ>
+ <TASK>
+ asm_sysvec_apic_timer_interrupt+0x1a/0x20 arch/x86/include/asm/idtentry.h:697
+RIP: 0010:__raw_spin_unlock_irqrestore include/linux/spinlock_api_smp.h:152 [inline]
+RIP: 0010:_raw_spin_unlock_irqrestore+0x34/0x50 kernel/locking/spinlock.c:194
+Code: c7 18 53 48 89 f3 48 8b 74 24 10 e8 96 50 a6 fc 48 89 ef e8 de 9f a6 fc 80 e7 02 74 06 e8 a4 65 d1 fc fb 65 ff 0d 8c db d1 02 <74> 07 5b 5d e9 53 27 00 00 0f 1f 44 00 00 5b 5d e9 47 27 00 00 0f
+RSP: 0018:ffff888114d4fd60 EFLAGS: 00000246
+RAX: 000000000064e023 RBX: 0000000000000212 RCX: 0000000000000006
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff84ac349c
+RBP: ffff88810f11c400 R08: 0000000000000001 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: 0000000000000008
+R13: 1ffff110229a9fbb R14: 0000000000000000 R15: ffff88810a478c90
+ __do_sys_perf_event_open+0x17db/0x29a0 kernel/events/core.c:13830
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xc3/0x430 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f66dd3afba9
+Code: Unable to access opcode bytes at 0x7f66dd3afb7f.
+RSP: 002b:00007f66db9cf058 EFLAGS: 00000246 ORIG_RAX: 000000000000012a
+RAX: ffffffffffffffda RBX: 00007f66dd635fa0 RCX: 00007f66dd3afba9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 00002000000000c0
+RBP: 00007f66dd45b44c R08: 0000000000000000 R09: 0000000000000000
+R10: ffffffffffffffff R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f66dd635fa0 R15: 00007ffc6c7250a8
+ </TASK>
+Sending NMI from CPU 0 to CPUs 1-3:
+NMI backtrace for cpu 2
+CPU: 2 UID: 0 PID: 59 Comm: kswapd0 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:csd_lock_wait kernel/smp.c:351 [inline]
+RIP: 0010:smp_call_function_many_cond+0x6b3/0x15f0 kernel/smp.c:877
+Code: 85 e4 74 4f 48 b8 00 00 00 00 00 fc ff df 4d 89 f5 4d 89 f4 49 c1 ed 03 41 83 e4 07 49 01 c5 41 83 c4 03 e8 ff 3d 0b 00 f3 90 <41> 0f b6 45 00 41 38 c4 7c 08 84 c0 0f 85 2d 0d 00 00 8b 43 08 31
+RSP: 0018:ffff888101ea7040 EFLAGS: 00000246
+RAX: 000000008136f800 RBX: ffff88811ae3ef00 RCX: ffffffff8169fba7
+RDX: 0000000000000001 RSI: ffff8881008ab780 RDI: 0000000000000002
+RBP: 0000000000000000 R08: ffffffff8136f800 R09: ffffed10235e47d9
+R10: ffffed10235e47d8 R11: ffff88811af23ec7 R12: 0000000000000003
+R13: ffffed10235c7de1 R14: ffff88811ae3ef08 R15: 0000000000000001
+FS:  0000000000000000(0000) GS:ffff88819373f000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 000055d1adfc7ce0 CR3: 0000000110e14000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ on_each_cpu_cond_mask+0x57/0xa0 kernel/smp.c:1043
+ kvm_flush_tlb_multi+0x1e4/0x300 arch/x86/kernel/kvm.c:692
+ __flush_tlb_multi arch/x86/include/asm/paravirt.h:91 [inline]
+ flush_tlb_multi arch/x86/mm/tlb.c:1382 [inline]
+ arch_tlbbatch_flush+0x106/0x2a0 arch/x86/mm/tlb.c:1746
+ try_to_unmap_flush+0x6a/0xf0 mm/rmap.c:625
+ shrink_folio_list+0x3200/0x4760 mm/vmscan.c:1602
+ shrink_inactive_list+0x4e1/0xe50 mm/vmscan.c:2016
+ shrink_list mm/vmscan.c:2253 [inline]
+ shrink_lruvec+0xa8f/0x17a0 mm/vmscan.c:5818
+ shrink_node_memcgs mm/vmscan.c:6020 [inline]
+ shrink_node+0x984/0x2300 mm/vmscan.c:6061
+ kswapd_shrink_node mm/vmscan.c:6901 [inline]
+ balance_pgdat+0x7c2/0xfd0 mm/vmscan.c:7084
+ kswapd+0x490/0xa90 mm/vmscan.c:7354
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+NMI backtrace for cpu 1
+CPU: 1 UID: 0 PID: 6324 Comm: modprobe Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+RIP: 0010:csd_lock_wait kernel/smp.c:351 [inline]
+RIP: 0010:smp_call_function_many_cond+0x6b3/0x15f0 kernel/smp.c:877
+Code: 85 e4 74 4f 48 b8 00 00 00 00 00 fc ff df 4d 89 f5 4d 89 f4 49 c1 ed 03 41 83 e4 07 49 01 c5 41 83 c4 03 e8 ff 3d 0b 00 f3 90 <41> 0f b6 45 00 41 38 c4 7c 08 84 c0 0f 85 2d 0d 00 00 8b 43 08 31
+RSP: 0018:ffff88810d506940 EFLAGS: 00000246
+RAX: 0000000000000000 RBX: ffff88811ae3eee0 RCX: ffffffff8169fba7
+RDX: 0000000000000001 RSI: ffff88811128d340 RDI: 0000000000000002
+RBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000001
+R10: fffffbfff0c8590a R11: ffffffff8642c857 R12: 0000000000000003
+R13: ffffed10235c7ddd R14: ffff88811ae3eee8 R15: 0000000000000001
+FS:  00007f6deb98e540(0000) GS:ffff8881936bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000555d0a03d760 CR3: 0000000100abe000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ on_each_cpu_cond_mask+0x57/0xa0 kernel/smp.c:1043
+ kvm_flush_tlb_multi+0x1e4/0x300 arch/x86/kernel/kvm.c:692
+ __flush_tlb_multi arch/x86/include/asm/paravirt.h:91 [inline]
+ flush_tlb_multi arch/x86/mm/tlb.c:1382 [inline]
+ arch_tlbbatch_flush+0x106/0x2a0 arch/x86/mm/tlb.c:1746
+ try_to_unmap_flush+0x6a/0xf0 mm/rmap.c:625
+ shrink_folio_list+0x3200/0x4760 mm/vmscan.c:1602
+ shrink_inactive_list+0x4e1/0xe50 mm/vmscan.c:2016
+ shrink_list mm/vmscan.c:2253 [inline]
+ shrink_lruvec+0xa8f/0x17a0 mm/vmscan.c:5818
+ shrink_node_memcgs mm/vmscan.c:6020 [inline]
+ shrink_node+0x984/0x2300 mm/vmscan.c:6061
+ shrink_zones mm/vmscan.c:6300 [inline]
+ do_try_to_free_pages+0x2fb/0x15b0 mm/vmscan.c:6362
+ try_to_free_pages+0x293/0x5b0 mm/vmscan.c:6608
+ __perform_reclaim mm/page_alloc.c:4407 [inline]
+ __alloc_pages_direct_reclaim mm/page_alloc.c:4429 [inline]
+ __alloc_pages_slowpath.constprop.0+0x7f6/0x20b0 mm/page_alloc.c:4873
+ __alloc_frozen_pages_noprof+0x599/0x6b0 mm/page_alloc.c:5253
+ alloc_pages_mpol+0xed/0x340 mm/mempolicy.c:2486
+ alloc_pages_noprof mm/mempolicy.c:2577 [inline]
+ folio_alloc_noprof+0x22/0x290 mm/mempolicy.c:2587
+ filemap_alloc_folio_noprof+0x3b4/0x450 mm/filemap.c:1013
+ ractl_alloc_folio.isra.0.constprop.0+0x1a/0xa0 mm/readahead.c:189
+ page_cache_ra_unbounded+0x2aa/0x820 mm/readahead.c:275
+ do_page_cache_ra+0xf9/0x130 mm/readahead.c:332
+ page_cache_ra_order+0x2b4/0x370 mm/readahead.c:535
+ do_sync_mmap_readahead mm/filemap.c:3400 [inline]
+ filemap_fault+0x1885/0x3550 mm/filemap.c:3549
+ __do_fault+0x10d/0x480 mm/memory.c:5323
+ do_read_fault mm/memory.c:5758 [inline]
+ do_fault mm/memory.c:5892 [inline]
+ do_pte_missing mm/memory.c:4404 [inline]
+ handle_pte_fault mm/memory.c:6276 [inline]
+ __handle_mm_fault+0x15c5/0x33d0 mm/memory.c:6414
+ handle_mm_fault+0x2d8/0x9d0 mm/memory.c:6583
+ do_user_addr_fault+0x6be/0x1840 arch/x86/mm/fault.c:1334
+ handle_page_fault arch/x86/mm/fault.c:1474 [inline]
+ exc_page_fault+0xb0/0x180 arch/x86/mm/fault.c:1527
+ asm_exc_page_fault+0x26/0x30 arch/x86/include/asm/idtentry.h:618
+RIP: 0033:0x7f6debebf0b4
+Code: 43 68 48 8b 40 08 48 89 44 24 10 48 8b 83 00 03 00 00 48 85 c0 0f 84 d3 00 00 00 48 8b 7c 24 28 8b 4c 24 30 23 8b f8 02 00 00 <48> 8b 04 c8 8b 8b fc 02 00 00 48 89 fe 48 d3 ee 48 89 f1 48 89 c6
+RSP: 002b:00007ffef51e00d0 EFLAGS: 00010202
+RAX: 00007f6deb9b7338 RBX: 00007f6debea7a20 RCX: 000000000000007f
+RDX: 00000000000003f3 RSI: 00000000000018c2 RDI: 000000000f395fd0
+RBP: 0000000000000003 R08: 00007ffef51e0210 R09: 00007f6debee1440
+R10: 00007f6debda3410 R11: 0000000000000007 R12: 0000000000000007
+R13: 00007f6debea8a90 R14: 0000000000000001 R15: 0000000000000000
+ </TASK>
+NMI backtrace for cpu 3
+CPU: 3 UID: 0 PID: 262 Comm: kworker/u16:5 Not tainted 6.19.0-rc8 #2 PREEMPT(voluntary) 
+Hardware name: QEMU Ubuntu 24.10 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+Workqueue: events_unbound call_usermodehelper_exec_work
+RIP: 0010:csd_lock_wait kernel/smp.c:351 [inline]
+RIP: 0010:smp_call_function_many_cond+0x6b3/0x15f0 kernel/smp.c:877
+Code: 85 e4 74 4f 48 b8 00 00 00 00 00 fc ff df 4d 89 f5 4d 89 f4 49 c1 ed 03 41 83 e4 07 49 01 c5 41 83 c4 03 e8 ff 3d 0b 00 f3 90 <41> 0f b6 45 00 41 38 c4 7c 08 84 c0 0f 85 2d 0d 00 00 8b 43 08 31
+RSP: 0018:ffff88810fdf6900 EFLAGS: 00000246
+RAX: 0000000000000000 RBX: ffff88811ae3ef20 RCX: ffffffff8169fba7
+RDX: 0000000000000001 RSI: ffff888103049bc0 RDI: 0000000000000002
+RBP: 0000000000000000 R08: 0000000000000000 R09: ffffed10235f47d9
+R10: ffffed10235f47d8 R11: ffff88811afa3ec7 R12: 0000000000000003
+R13: ffffed10235c7de5 R14: ffff88811ae3ef28 R15: 0000000000000001
+FS:  0000000000000000(0000) GS:ffff8881937bf000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f303f01c9c0 CR3: 00000001096be000 CR4: 0000000000350ef0
+Call Trace:
+ <TASK>
+ on_each_cpu_cond_mask+0x57/0xa0 kernel/smp.c:1043
+ kvm_flush_tlb_multi+0x1e4/0x300 arch/x86/kernel/kvm.c:692
+ __flush_tlb_multi arch/x86/include/asm/paravirt.h:91 [inline]
+ flush_tlb_multi arch/x86/mm/tlb.c:1382 [inline]
+ arch_tlbbatch_flush+0x106/0x2a0 arch/x86/mm/tlb.c:1746
+ try_to_unmap_flush+0x6a/0xf0 mm/rmap.c:625
+ migrate_pages_batch+0xcc8/0x2ca0 mm/migrate.c:1968
+ migrate_pages_sync+0x109/0x8e0 mm/migrate.c:2007
+ migrate_pages+0x1805/0x20d0 mm/migrate.c:2116
+ compact_zone+0x1bb0/0x3f90 mm/compaction.c:2647
+ compact_zone_order+0x185/0x250 mm/compaction.c:2782
+ try_to_compact_pages+0x51f/0xb70 mm/compaction.c:2843
+ __alloc_pages_direct_compact+0x111/0x4d0 mm/page_alloc.c:4163
+ __alloc_pages_slowpath.constprop.0+0x8b8/0x20b0 mm/page_alloc.c:4879
+ __alloc_frozen_pages_noprof+0x599/0x6b0 mm/page_alloc.c:5253
+ __alloc_pages_noprof+0xc/0x1b0 mm/page_alloc.c:5274
+ __alloc_pages_node_noprof include/linux/gfp.h:285 [inline]
+ alloc_pages_node_noprof include/linux/gfp.h:312 [inline]
+ alloc_thread_stack_node kernel/fork.c:407 [inline]
+ dup_task_struct kernel/fork.c:923 [inline]
+ copy_process+0x51b/0x72b0 kernel/fork.c:2052
+ kernel_clone+0xea/0xe00 kernel/fork.c:2651
+ user_mode_thread+0xc8/0x110 kernel/fork.c:2727
+ call_usermodehelper_exec_sync kernel/umh.c:132 [inline]
+ call_usermodehelper_exec_work+0x6d/0x180 kernel/umh.c:163
+ process_one_work kernel/workqueue.c:3257 [inline]
+ process_scheduled_works+0x54f/0x1910 kernel/workqueue.c:3340
+ worker_thread+0x5a9/0xd10 kernel/workqueue.c:3421
+ kthread+0x43f/0x860 kernel/kthread.c:463
+ ret_from_fork+0x66d/0x7b0 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+ </TASK>
+EXT4-fs (loop0): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+EXT4-fs (loop3): unmounting filesystem 00000000-0000-0000-0000-000000000000.
+loop2: detected capacity change from 0 to 2048
+EXT4-fs (loop2): mounted filesystem 00000000-0000-0000-0000-000000000000 r/w without journal. Quota mode: none.
+ext4 filesystem being mounted at /16/bus supports timestamps until 2038-01-19 (0x7fffffff)
+validate_nla: 26 callbacks suppressed
+netlink: 'syz.1.231': attribute type 2 has an invalid length.
+EXT4-fs (loop2): unmounting filesystem 00000000-0000-0000-0000-000000000000.
