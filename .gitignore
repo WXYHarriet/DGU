@@ -1,0 +1,6 @@
+# Ignore everything in this directory
+*
+
+# But keep .gitignore itself and the one desired file
+!.gitignore
+!cleaned-configuration.txt
