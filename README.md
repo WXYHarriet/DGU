@@ -26,9 +26,7 @@ DGU addresses this problem by organizing related configuration items into semant
 
 ```text
 .
-├── syzkaller/              # Syzkaller-based fuzzing framework
 ├── sys/                    # Syzlang descriptions and generated syscall definitions
 ├── executor/               # Executor-side support for pseudo-syscalls
-├── scripts/                # Helper scripts for extraction, generation, or experiment control
 ├── bugs/                   # Bug list and case studies
 └── README.md
