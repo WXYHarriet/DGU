@@ -1,2 +1,0 @@
-r0 = syz_init_net_socket$nfc_llcp(0x27, 0x3, 0x1)
-bind$nfc_llcp(r0, &(0x7f0000000100)={0x2, 0x0, 0x0, 0x0, 0x0, 0x0, "9ea1701b8c85b5f3220631a2561925babd418fdc40fc4c93ab457c06eeef4e7fce0e8d65d31d159abdbdd9727ca17788a868def7659e0200e27b4a50a627fc"}, 0x60)

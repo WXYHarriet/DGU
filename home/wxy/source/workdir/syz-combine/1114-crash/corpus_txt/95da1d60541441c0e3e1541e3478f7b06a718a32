@@ -1,4 +1,0 @@
-ioprio_set$uid(0x3, 0x0, 0x0)
-r0 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000040)='memory.events\x00', 0x275a, 0x0)
-r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000140)='memory.events\x00', 0x7a05, 0x1700)
-sendfile(r1, r0, 0x0, 0xf03afffe)

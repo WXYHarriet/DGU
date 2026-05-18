@@ -1,1 +1,0 @@
-lsm_set_self_attr(0x67, &(0x7f0000000000)=ANY=[@ANYBLOB="6500080000b824be002a4dfeb8c1a3300c000020"], 0x20, 0x0)

@@ -1,1 +1,0 @@
-syz_mount_image$fuse(&(0x7f0000001440), &(0x7f0000001480)='./file0\x00', 0x0, &(0x7f0000003840)=ANY=[@ANYBLOB='fd=', @ANYRESHEX, @ANYRESDEC], 0x0, 0x0, 0x0)

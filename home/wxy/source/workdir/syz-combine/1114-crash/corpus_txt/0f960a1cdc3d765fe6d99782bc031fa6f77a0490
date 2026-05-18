@@ -1,3 +1,0 @@
-mkdir(&(0x7f0000000080)='./file0\x00', 0xfffffffffffffefc)
-mount(0x0, &(0x7f0000000280)='./file0\x00', &(0x7f0000000040)='proc\x00', 0x0, 0x0)
-rmdir(&(0x7f0000000000)='./file0/bus\x00')

@@ -1,2 +1,0 @@
-r0 = epoll_create(0x4dc)
-epoll_ctl$EPOLL_CTL_ADD(r0, 0x1, 0xffffffffffffffff, &(0x7f0000000000))

@@ -1,7 +1,0 @@
-syz_mount_image$tmpfs(&(0x7f0000000040), &(0x7f00000000c0)='./file0\x00', 0x2040028, 0x0, 0x1, 0x0, &(0x7f0000000040))
-r0 = syz_open_procfs(0x0, &(0x7f0000000000)='smaps\x00')
-read$watch_queue(r0, &(0x7f0000000180)=""/4096, 0x1000)
-mount(&(0x7f0000000300), &(0x7f0000000140)='./file0\x00', &(0x7f0000000100)='sysfs\x00', 0x0, 0x0)
-r1 = syz_open_dev$tty1(0xc, 0x4, 0x3)
-r2 = syz_open_procfs(0x0, &(0x7f0000000080)='mountinfo\x00')
-sendfile(r1, r2, 0x0, 0x800000080004105)

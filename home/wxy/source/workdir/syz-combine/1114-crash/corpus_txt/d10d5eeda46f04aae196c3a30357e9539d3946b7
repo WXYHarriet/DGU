@@ -1,2 +1,0 @@
-r0 = syz_open_dev$swradio(&(0x7f00000007c0), 0x1, 0x2)
-ioctl$VIDIOC_G_TUNER(r0, 0xc054561d, &(0x7f0000000000)={0x1, "08c5f6cec481ed830bfabe0bbf40b2092942b495bf41de3f916f94c06977743c"})

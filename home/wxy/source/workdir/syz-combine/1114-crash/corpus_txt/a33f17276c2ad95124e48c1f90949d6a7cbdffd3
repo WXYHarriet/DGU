@@ -1,5 +1,0 @@
-r0 = syz_open_dev$sg(&(0x7f00000000c0), 0x1, 0x0)
-r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000000)='blkio.throttle.io_serviced_recursive\x00', 0x275a, 0x0)
-write$binfmt_script(r1, &(0x7f0000000400), 0x6db6e571)
-mmap(&(0x7f0000000000/0x400000)=nil, 0x400000, 0x1, 0x10012, r1, 0x0)
-ioctl$SG_BLKTRACESETUP(r0, 0xc0481273, &(0x7f0000000100)={'\x00', 0x0, 0x6, 0x80000001})

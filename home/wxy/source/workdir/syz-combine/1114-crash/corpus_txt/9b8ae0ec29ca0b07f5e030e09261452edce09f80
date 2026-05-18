@@ -1,3 +1,0 @@
-r0 = socket$kcm(0x10, 0x2, 0x0)
-write$cgroup_subtree(r0, &(0x7f0000001580)=ANY=[@ANYBLOB="364000004a00913a745c7388641f9c0e0a"], 0xfe33)
-recvmsg$kcm(r0, &(0x7f00000002c0)={0x0, 0x0, 0x0}, 0x0)

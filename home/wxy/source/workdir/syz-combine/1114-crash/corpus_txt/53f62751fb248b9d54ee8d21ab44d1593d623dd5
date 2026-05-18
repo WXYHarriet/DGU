@@ -1,4 +1,0 @@
-pipe2$9p(&(0x7f0000000280)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff}, 0x0)
-write$P9_RUNLINKAT(r1, &(0x7f00000002c0)={0xfffffffffffffda8}, 0x7)
-write$P9_RRENAMEAT(r1, &(0x7f0000000100)={0x7}, 0xffffffd9)
-vmsplice(r0, &(0x7f0000000240)=[{&(0x7f00000000c0)="6584f5986f83ac", 0x7}], 0x1, 0x0)

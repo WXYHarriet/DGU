@@ -1,7 +1,0 @@
-r0 = openat$ptmx(0xffffffffffffff9c, &(0x7f0000bbfff6), 0x0, 0x0)
-ioctl$TCSETS(r0, 0x40045431, &(0x7f00003b9fdc))
-r1 = syz_open_pts(r0, 0x0)
-poll(&(0x7f00003be000)=[{r1}], 0x1, 0x5d)
-dup2(r0, r1)
-setuid(0xee00)
-ioctl$TIOCSETD(r1, 0x5423, &(0x7f00001f9000)=0x2)

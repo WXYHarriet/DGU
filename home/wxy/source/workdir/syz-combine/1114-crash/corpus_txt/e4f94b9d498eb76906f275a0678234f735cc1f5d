@@ -1,2 +1,0 @@
-r0 = epoll_create1(0x80000)
-ioctl$sock_inet6_udp_SIOCINQ(r0, 0x40088a01, 0x0)

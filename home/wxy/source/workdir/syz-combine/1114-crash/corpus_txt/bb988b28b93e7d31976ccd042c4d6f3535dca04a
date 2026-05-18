@@ -1,3 +1,0 @@
-syz_genetlink_get_family_id$nl80211(0x0, 0xffffffffffffffff)
-sendmsg$NL80211_CMD_EXTERNAL_AUTH(0xffffffffffffffff, 0x0, 0x0)
-io_uring_setup(0x17fa, &(0x7f0000000100)={0x0, 0x405113, 0x1a})

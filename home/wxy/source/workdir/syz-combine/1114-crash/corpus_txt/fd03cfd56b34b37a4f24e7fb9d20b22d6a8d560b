@@ -1,2 +1,0 @@
-r0 = syz_open_procfs$namespace(0xffffffffffffffff, &(0x7f0000000040)='ns/cgroup\x00')
-open_by_handle_at(r0, &(0x7f0000000080)=@GFS2_SMALL_FH_SIZE={0x10, 0x4, {0x2, 0x5, 0x0, 0x5}}, 0x101000)

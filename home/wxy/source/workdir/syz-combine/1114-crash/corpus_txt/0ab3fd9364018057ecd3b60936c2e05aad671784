@@ -1,4 +1,0 @@
-ioctl$PAGEMAP_SCAN(0xffffffffffffffff, 0xc0606610, 0x0)
-sendmsg$NL80211_CMD_PEER_MEASUREMENT_START(0xffffffffffffffff, &(0x7f00000001c0)={0x0, 0x0, 0x0}, 0x20000810)
-r0 = syz_open_dev$loop(&(0x7f0000000040), 0x0, 0x0)
-ioctl$LOOP_SET_CAPACITY(r0, 0x4c07)

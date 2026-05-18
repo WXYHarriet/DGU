@@ -1,1 +1,0 @@
-syz_open_dev$dri(&(0x7f00000007c0), 0x2, 0x200)

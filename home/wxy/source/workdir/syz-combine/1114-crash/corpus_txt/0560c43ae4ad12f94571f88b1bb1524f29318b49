@@ -1,2 +1,0 @@
-r0 = add_key$fscrypt_v1(&(0x7f0000000000), &(0x7f0000000040), &(0x7f0000000080)={0x0, "2e40da513e92e7c4b4d963c1aa0dba77f1a59f1e9a71bba39dafae1eeaed1555e647ce32b2f6c22cba9691c4245fbe9b5aa8cd23da555a0f6228373e5975f1f8"}, 0x48, 0xfffffffffffffffe)
-keyctl$get_keyring_id(0x0, r0, 0x0)

@@ -1,1 +1,0 @@
-prctl$PR_SET_IO_FLUSHER(0x39, 0x1000000)

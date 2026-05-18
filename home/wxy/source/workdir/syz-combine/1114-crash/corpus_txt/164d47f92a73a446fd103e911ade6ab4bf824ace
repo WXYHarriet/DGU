@@ -1,2 +1,0 @@
-mlockall(0x3)
-mlockall(0x3)

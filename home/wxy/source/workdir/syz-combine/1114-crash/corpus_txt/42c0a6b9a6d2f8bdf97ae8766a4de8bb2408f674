@@ -1,1 +1,0 @@
-openat$procfs(0xffffffffffffff9c, &(0x7f0000000600)='/proc/sysvipc/shm\x00', 0x0, 0x0)

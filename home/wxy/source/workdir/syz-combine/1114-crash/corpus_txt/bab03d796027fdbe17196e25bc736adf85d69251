@@ -1,3 +1,0 @@
-r0 = socket(0x10, 0x3, 0x0)
-setsockopt$netlink_NETLINK_TX_RING(r0, 0x10e, 0xc, &(0x7f0000000000)={0xfffffffb}, 0x10)
-write(r0, &(0x7f0000000480)="240000001a005f0214f9f407000909000a000000000700000000000008000ff8fffff000", 0x24)

@@ -1,3 +1,0 @@
-syz_mount_image$fuse(0x0, &(0x7f0000000000)='./file0\x00', 0x0, 0x0, 0x0, 0x0, 0x0)
-mount$afs(&(0x7f00000001c0)=ANY=[@ANYBLOB='#syz0:'], &(0x7f0000000240)='./file0\x00', &(0x7f0000000280), 0x0, 0x0)
-mount$afs(&(0x7f0000000200)=@cell={0x23, 'syz0:', 'syz0', '.readonly'}, &(0x7f0000000500)='./file0\x00', &(0x7f0000000540), 0x0, &(0x7f0000000580)={[{@dyn}]})

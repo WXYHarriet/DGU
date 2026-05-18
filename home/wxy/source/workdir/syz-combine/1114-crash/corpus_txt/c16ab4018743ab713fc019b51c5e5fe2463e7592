@@ -1,2 +1,0 @@
-r0 = syz_open_dev$video(&(0x7f0000000040), 0x9, 0x0)
-ioctl$VIDIOC_S_TUNER(r0, 0x4054561e, &(0x7f0000000100)={0x0, "7999cd6bc1281245c561072e41faf88f81bcee5546815e14f21fff35cb9f38f6"})

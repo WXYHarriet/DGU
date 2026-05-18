@@ -1,1 +1,0 @@
-bpf$PROG_BIND_MAP(0x21, &(0x7f00000000c0), 0xb1)

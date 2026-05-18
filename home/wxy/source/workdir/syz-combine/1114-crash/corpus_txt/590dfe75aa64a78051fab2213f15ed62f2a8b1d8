@@ -1,2 +1,0 @@
-r0 = socket$rds(0x15, 0x5, 0x0)
-ioctl$sock_SIOCETHTOOL(r0, 0x8946, &(0x7f0000003480)={'erspan0\x00', &(0x7f0000003440)=@ethtool_ts_info})

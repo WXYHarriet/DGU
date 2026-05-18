@@ -1,7 +1,0 @@
-bpf$BPF_PROG_WITH_BTFID_LOAD(0x5, 0x0, 0x0)
-r0 = openat$nmem0(0xffffffffffffff9c, &(0x7f0000000300), 0x200080, 0x0)
-r1 = openat$cdrom(0xffffffffffffff9c, &(0x7f0000000000), 0x81, 0x0)
-ioctl$DVD_READ_STRUCT(r1, 0x5390, &(0x7f0000000880)=@bca={0x3, 0xbc, "3ebb14388324b5b099040d34790ad63ad8d1f96eb9980daa6fd2da2b15d03b74f860685393570379704efb1a1f8e6a5098ac0afe0a151f97b0f7f111073eac75dab6ddfec753d2554347958fd5f142442cf482919341fd7992908b7227e7f4087cb0926f6a4ea323953862c4ed617f460ce47f732dea2f2f676c4ba4e26919e3ddaf27d4666e76a59984b240a308860b7cecdbc990ec0d99875435ee30d168d55adaa2824c5a5d39e1cd9c74d0f54f4caa9123b9d0e963036cdf23e5"})
-syz_genetlink_get_family_id$mptcp(&(0x7f0000000580), r0)
-openat$nmem0(0xffffffffffffff9c, &(0x7f0000000300), 0x200080, 0x0)
-ioctl$BTRFS_IOC_GET_SUBVOL_ROOTREF(0xffffffffffffffff, 0xd000943d, 0x0)

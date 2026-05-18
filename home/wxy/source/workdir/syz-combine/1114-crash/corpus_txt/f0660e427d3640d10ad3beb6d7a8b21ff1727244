@@ -1,2 +1,0 @@
-openat2(0xffffffffffffff9c, &(0x7f0000000040)='./file0\x00', &(0x7f0000000080)={0x40}, 0x18)
-mount$cgroup(0x0, &(0x7f0000000000)='./file0\x00', &(0x7f00000000c0), 0x0, &(0x7f0000000280)={[{@noprefix}, {}, {@name={'name', 0x3d, '9p\x00'}}]})

@@ -1,2 +1,0 @@
-r0 = syz_open_dev$video4linux(&(0x7f0000000000), 0x5, 0x0)
-ioctl$VIDIOC_G_MODULATOR(r0, 0xc0445636, &(0x7f0000000040)={0x0, "ed546a0a4a85a9a1069e3b7919d1e6fd4b177c18ddf22e9fa91f402d970da1f9"})

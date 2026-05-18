@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000100)='loginuid\x00')
-writev(r0, &(0x7f0000001bc0)=[{&(0x7f0000000300)="7ba10f", 0x3}], 0x1)

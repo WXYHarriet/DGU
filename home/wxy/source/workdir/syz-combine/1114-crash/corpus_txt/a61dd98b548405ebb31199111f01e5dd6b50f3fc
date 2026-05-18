@@ -1,4 +1,0 @@
-r0 = socket$inet6_sctp(0xa, 0x1, 0x84)
-setsockopt(r0, 0x84, 0x81, &(0x7f00000002c0)="1a00000002000000", 0x8)
-setsockopt$inet_sctp6_SCTP_AUTH_KEY(r0, 0x84, 0x17, &(0x7f0000000000)=ANY=[@ANYRES32=0x0, @ANYBLOB="00c655e3"], 0xfe8e)
-close(r0)

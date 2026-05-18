@@ -1,3 +1,0 @@
-close_range(0xffffffffffffffff, 0xffffffffffffffff, 0x2)
-r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='net/tcp6\x00')
-pread64(r0, 0x0, 0x0, 0x0)

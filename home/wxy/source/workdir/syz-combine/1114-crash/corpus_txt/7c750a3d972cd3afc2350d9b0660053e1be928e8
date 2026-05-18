@@ -1,3 +1,0 @@
-r0 = socket$inet6(0xa, 0x2, 0x0)
-setsockopt$inet6_IPV6_HOPOPTS(r0, 0x29, 0x36, &(0x7f0000000000)=ANY=[@ANYBLOB="00140000000000000710000000030208010006"], 0xb0)
-setsockopt$inet6_IPV6_HOPOPTS(r0, 0x29, 0x36, 0x0, 0x0)

@@ -1,5 +1,0 @@
-mkdir(&(0x7f00000001c0)='./file0\x00', 0x0)
-mount(0x0, &(0x7f000001c000)='./file0\x00', &(0x7f0000018ffa)='ramfs\x00', 0x0, 0x0)
-symlink(&(0x7f0000000000)='./file0\x00', &(0x7f0000000100)='./file0/bus\x00')
-creat(&(0x7f0000000080)='./file0/bus\x00', 0x0)
-acct(&(0x7f0000000180)='./file0/bus\x00')

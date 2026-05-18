@@ -1,3 +1,0 @@
-r0 = openat$dsp1(0xffffffffffffff9c, &(0x7f00000002c0), 0x0, 0x0)
-read$dsp(r0, &(0x7f00000000c0)=""/182, 0xb6)
-ioctl$SNDCTL_DSP_GETTRIGGER(r0, 0x5001, 0x0)

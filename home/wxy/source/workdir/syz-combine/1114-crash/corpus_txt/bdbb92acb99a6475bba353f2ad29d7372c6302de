@@ -1,4 +1,0 @@
-r0 = inotify_init1(0x0)
-inotify_add_watch(r0, &(0x7f0000000040)='.\x00', 0x20000806)
-r1 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='fdinfo/3\x00')
-read$watch_queue(r1, &(0x7f0000000040)=""/251, 0xfb)

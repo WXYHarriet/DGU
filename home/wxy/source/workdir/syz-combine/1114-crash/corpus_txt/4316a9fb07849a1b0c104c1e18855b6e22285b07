@@ -1,7 +1,0 @@
-connect$unix(0xffffffffffffffff, 0x0, 0x0)
-recvmmsg(0xffffffffffffffff, 0x0, 0x0, 0x2, 0x0)
-mkdirat(0xffffffffffffff9c, &(0x7f00000000c0)='./bus\x00', 0x0)
-mkdirat(0xffffffffffffff9c, &(0x7f0000000300)='./bus/file0\x00', 0x0)
-setuid(0x0)
-setxattr(&(0x7f0000000340)='./bus/file0\x00', &(0x7f0000000400)=@known='security.apparmor\x00', &(0x7f00000003c0)='overlay\x00', 0xe407, 0x0)
-rmdir(&(0x7f0000000240)='./bus/file0\x00')

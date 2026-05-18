@@ -1,2 +1,0 @@
-r0 = open(&(0x7f00000002c0)='./file0\x00', 0x4008040, 0x0)
-fcntl$setownex(r0, 0xf, 0x0)

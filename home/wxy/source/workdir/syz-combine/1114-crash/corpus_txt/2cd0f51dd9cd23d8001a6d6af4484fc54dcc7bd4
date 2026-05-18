@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x26, &(0x7f0000000000)={@link_local, @random="43f1651c84fb", @val={@void}, {@arp={0x8100, @generic={0x0, 0x0, 0x6, 0x0, 0x0, @empty, "", @broadcast}}}}, 0x0)

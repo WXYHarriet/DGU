@@ -1,2 +1,0 @@
-iopl(0x3)
-syz_socket_connect_nvme_tcp()

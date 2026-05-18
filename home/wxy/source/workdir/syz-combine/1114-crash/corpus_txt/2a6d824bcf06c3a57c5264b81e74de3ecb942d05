@@ -1,4 +1,0 @@
-r0 = openat$tun(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
-ioctl$TUNSETIFF(r0, 0x400454ca, &(0x7f0000000200)={'rose0\x00', 0x112})
-ioctl$TUNSETQUEUE(r0, 0x400454d9, &(0x7f0000000180)={'vlan0\x00', 0x400})
-ioctl$TUNSETQUEUE(r0, 0x400454d9, &(0x7f0000000080)={'batadv_slave_0\x00', 0x200})

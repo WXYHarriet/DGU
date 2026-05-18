@@ -1,5 +1,0 @@
-r0 = creat(&(0x7f0000000280)='./file0\x00', 0xecf86c37d53049cc)
-close(r0)
-execve(&(0x7f0000000000)='./file0\x00', 0x0, 0x0)
-mount$fuse(0x20000000, &(0x7f00000020c0)='./file0\x00', 0x0, 0x20424, 0x0)
-mount(&(0x7f0000000440)=@filename='./file0\x00', &(0x7f0000000480)='./file0\x00', 0x0, 0x20, 0x0)

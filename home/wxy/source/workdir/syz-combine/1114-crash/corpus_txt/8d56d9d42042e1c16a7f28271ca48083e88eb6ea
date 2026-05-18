@@ -1,4 +1,0 @@
-mkdirat$cgroup_root(0xffffffffffffff9c, &(0x7f0000000040)='./cgroup.net/syz0\x00', 0x1ff)
-r0 = openat$cgroup_root(0xffffffffffffff9c, &(0x7f0000000040), 0x200002, 0x0)
-r1 = openat$cgroup_devices(r0, &(0x7f0000000000)='devices.deny\x00', 0x2, 0x0)
-open_by_handle_at(r1, &(0x7f0000000100)=ANY=[@ANYBLOB="08000000fe"], 0x8000)

@@ -1,3 +1,0 @@
-r0 = openat$tcp_congestion(0xffffffffffffff9c, &(0x7f0000000080), 0x1, 0x0)
-r1 = openat$procfs(0xffffffffffffff9c, &(0x7f00000000c0)='/proc/vmstat\x00', 0x0, 0x0)
-sendfile(r0, r1, &(0x7f0000000040), 0x2)

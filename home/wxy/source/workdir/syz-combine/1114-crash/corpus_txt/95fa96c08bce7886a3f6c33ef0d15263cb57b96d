@@ -1,5 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000080)='fd\x00')
-r1 = memfd_create(&(0x7f0000000780)='\x04', 0x0)
-r2 = dup3(r0, r1, 0x0)
-fchdir(r2)
-mkdirat(0xffffffffffffff9c, &(0x7f0000000040)='./file1\x00', 0x0)

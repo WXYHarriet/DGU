@@ -1,3 +1,0 @@
-r0 = socket$caif_stream(0x25, 0x1, 0x0)
-setsockopt$SO_BINDTODEVICE_wg(r0, 0x1, 0x19, &(0x7f0000001640)='wg0\x00', 0x4)
-connect$caif(r0, &(0x7f0000000040)=@rfm={0x25, 0x0, "d4b5928d2725a470b14a9172df0a0c6c"}, 0x18)

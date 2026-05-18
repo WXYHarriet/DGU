@@ -1,5 +1,0 @@
-r0 = openat$sw_sync(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
-ioctl$SW_SYNC_IOC_CREATE_FENCE(r0, 0xc0285700, &(0x7f0000000040)={0x0, "17aeda40d6e75272ea11c665647cf063dd6aec347ea038e1bc3b77fb00b1ec4a", <r1=>0xffffffffffffffff})
-ioctl$SW_SYNC_IOC_CREATE_FENCE(r0, 0xc0285700, &(0x7f0000000080)={0x20000000, "ded8d3a792b10260a9105b00000000000000f5ff00", <r2=>0xffffffffffffffff})
-ioctl$SYNC_IOC_MERGE(r1, 0xc0303e03, &(0x7f00000000c0)={"289c8e86137314f186b7a06ba39384f2d54fec1847b4b573335766924ca31b8c", r2})
-close(r2)

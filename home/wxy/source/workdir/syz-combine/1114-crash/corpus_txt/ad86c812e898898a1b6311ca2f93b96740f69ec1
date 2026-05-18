@@ -1,2 +1,0 @@
-r0 = openat$ipvs(0xffffffffffffff9c, &(0x7f0000000000)='/proc/sys/net/ipv4/vs/schedule_icmp\x00', 0x2, 0x0)
-write$damon_init_regions(r0, &(0x7f0000000080)={{' ', 0xffffffffffffffff}}, 0x3f)

@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x1f, &(0x7f0000000140)={@random="f15a03fdb2f7", @random="7b04c07e7a61", @void, {@llc_tr={0x11, {@snap={0xaa, 0x0, "a7", "c803b3", 0x0, "1688f81fee48af2971"}}}}}, 0x0)

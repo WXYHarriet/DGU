@@ -1,3 +1,0 @@
-r0 = userfaultfd(0x80801)
-ioctl$UFFDIO_API(r0, 0xc018aa3f, &(0x7f00000000c0))
-ioctl$UFFDIO_UNREGISTER(r0, 0x8010aa02, &(0x7f0000010640)={&(0x7f0000ffe000/0x1000)=nil, 0x1002})

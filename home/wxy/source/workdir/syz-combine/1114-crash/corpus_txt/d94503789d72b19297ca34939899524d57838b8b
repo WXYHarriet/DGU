@@ -1,5 +1,0 @@
-pipe(&(0x7f0000000140)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff})
-read(r0, &(0x7f0000000100)=""/52, 0xfffffdc2)
-fcntl$setpipe(r0, 0x407, 0x0)
-write$binfmt_elf64(r1, &(0x7f0000000000)=ANY=[], 0x1000000f4)
-fcntl$setpipe(r1, 0x407, 0xeee)

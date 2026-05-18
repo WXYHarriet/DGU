@@ -1,3 +1,0 @@
-socketpair$nbd(0x1, 0x1, 0x0, &(0x7f00000002c0))
-r0 = syz_open_procfs(0x0, &(0x7f00000000c0)='net/unix\x00')
-read$msr(r0, &(0x7f0000000000)=""/102, 0x66)

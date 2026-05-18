@@ -1,2 +1,0 @@
-r0 = openat$nvme_fabrics(0xffffffffffffff9c, &(0x7f0000000140), 0x42, 0x0)
-write$RDMA_USER_CM_CMD_RESOLVE_IP(r0, 0x0, 0x0)

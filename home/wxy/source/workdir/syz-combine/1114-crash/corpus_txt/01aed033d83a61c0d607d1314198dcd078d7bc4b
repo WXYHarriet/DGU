@@ -1,8 +1,0 @@
-r0 = getpid()
-r1 = syz_pidfd_open(r0, 0x0)
-r2 = openat$binfmt_format(0xffffffffffffff9c, &(0x7f0000000000)='/proc/sys/fs/binfmt_misc/syz0\x00', 0x2, 0x0)
-dup2(r1, r2)
-fsetxattr$trusted_overlay_redirect(r2, &(0x7f0000000000), 0x0, 0x0, 0x2)
-r3 = getpid()
-r4 = syz_pidfd_open(r3, 0x0)
-fgetxattr(r4, &(0x7f0000000200)=@known='trusted.syz\x00', 0x0, 0x0)

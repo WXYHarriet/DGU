@@ -1,3 +1,0 @@
-syz_mount_image$romfs(&(0x7f0000000140), &(0x7f0000000180)='./file0\x00', 0x4000, &(0x7f0000000240)=ANY=[@ANYRES64=0x0], 0x1, 0x15d, &(0x7f0000000300)="$eJzs2r1K81AYB/DnpYUXOjo6FSpR0OZT66qjuHkHoc1JgyemJIK0k5s4CQrHwZtQvAIvIaObLqLeRCTmUNvEj0yJwv+39E+ffJw8B870dMPAN1jUJVobne89LYSB3+5Zm31mMJsyO0TUTkOcJJcqFTxM63FC6icX1GvpNfvtrLhi95R53DHrXhIAAAAAAAAAAAAAAAAAAAAAAJSktGRoDYV/wjzuGDPVaDzZtzl3wih/X6O6JdZKacsZLmKCX6X9sebqqy9EylaaPLEdpnV9/v4LGZaHgj/m+6sd+iMtGk+6nm+7juscmKbV09d1fcPU3p+l5Z+oXMs1UZzc6sVxMmVm3uy+zLyZ3P/moifOjvJv+9h/hC8CUdmLAzdrarH0r0lU5l03RFQsPdffBISKQoN+xTJs/uO58iccT88/Gvy3Onfp+af2Az6Qf1bRzho/HwC+8RYAAP//PYU0fA==")
-r0 = openat$dir(0xffffffffffffff9c, &(0x7f0000000040)='.\x00', 0x0, 0x0)
-getdents(r0, &(0x7f0000000080)=""/158, 0x9e)

@@ -1,8 +1,0 @@
-r0 = open(&(0x7f0000000300)='./file0\x00', 0x10b042, 0x0)
-write$cgroup_devices(r0, &(0x7f0000000040)=ANY=[], 0xffffff8d)
-r1 = open(&(0x7f0000000300)='./file0\x00', 0x0, 0x0)
-ioctl$FS_IOC_SETFLAGS(r1, 0x40086602, &(0x7f0000000000))
-ioctl$sock_ipv4_tunnel_SIOCCHGTUNNEL(0xffffffffffffffff, 0x89f3, 0x0)
-write$binfmt_elf64(r0, 0x0, 0x0)
-r2 = open(&(0x7f0000000140)='./file0\x00', 0x10f042, 0x0)
-write$cgroup_devices(r2, 0x0, 0x8)

@@ -1,3 +1,0 @@
-ioctl$sock_ipv4_tunnel_SIOCADDTUNNEL(0xffffffffffffffff, 0x89f1, &(0x7f0000000000)={'sit0\x00', 0x0})
-r0 = creat(&(0x7f0000000500)='./file0\x00', 0x0)
-perf_event_open$cgroup(&(0x7f0000000100)={0x8, 0x80}, r0, 0x0, 0xffffffffffffffff, 0x4)

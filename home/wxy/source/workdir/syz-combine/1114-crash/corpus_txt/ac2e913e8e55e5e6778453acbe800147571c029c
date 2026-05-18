@@ -1,5 +1,0 @@
-r0 = shmget$private(0x0, 0x400000, 0x0, &(0x7f000000e000/0x400000)=nil)
-shmat(r0, &(0x7f0000000000/0x13000)=nil, 0x6000)
-shmctl$SHM_LOCK(r0, 0xb)
-shmctl$SHM_STAT(r0, 0xd, &(0x7f0000000040)=""/214)
-shmctl$SHM_UNLOCK(r0, 0xc)

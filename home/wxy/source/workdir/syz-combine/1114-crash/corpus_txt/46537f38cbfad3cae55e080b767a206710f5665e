@@ -1,2 +1,0 @@
-r0 = syz_open_dev$vivid(&(0x7f0000000000), 0x3, 0x2)
-ioctl$VIDIOC_S_INPUT(r0, 0xc0045627, &(0x7f0000000040))

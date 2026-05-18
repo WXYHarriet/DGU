@@ -1,2 +1,0 @@
-r0 = socket$igmp(0x2, 0x3, 0x2)
-getsockname(r0, &(0x7f0000000000)=@xdp, &(0x7f0000000180)=0xfffffffffffffe0b)

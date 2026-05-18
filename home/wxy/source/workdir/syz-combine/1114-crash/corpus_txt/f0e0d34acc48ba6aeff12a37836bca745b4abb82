@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x56, &(0x7f0000000080)={@link_local, @remote, @void, {@ipv6={0x86dd, @icmpv6={0x0, 0x6, "30a6db", 0x20, 0x3c, 0x0, @local, @mcast2, {[@hopopts={0x0, 0x1, '\x00', [@ra, @pad1, @enc_lim]}], @ndisc_rs}}}}}, 0x0)

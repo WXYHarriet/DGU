@@ -1,2 +1,0 @@
-r0 = openat$damon_kdamond_pid(0xffffffffffffff9c, &(0x7f0000000100), 0x0, 0x0)
-read$usbmon(r0, &(0x7f0000000140)=""/19, 0x13)

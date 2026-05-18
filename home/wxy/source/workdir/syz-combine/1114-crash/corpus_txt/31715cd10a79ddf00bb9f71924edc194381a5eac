@@ -1,2 +1,0 @@
-r0 = syz_io_uring_setup(0x10ad, &(0x7f00000005c0), &(0x7f0000000640), &(0x7f0000000680))
-io_uring_register$IORING_REGISTER_PBUF_RING(r0, 0x16, &(0x7f0000000cc0)={&(0x7f0000002000)={[{0x0}]}, 0x1}, 0x1)

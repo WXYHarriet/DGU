@@ -1,3 +1,0 @@
-close_range(0xffffffffffffffff, 0xffffffffffffffff, 0x2)
-r0 = creat(&(0x7f0000000000)='./bus\x00', 0x0)
-fsync(r0)

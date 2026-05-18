@@ -1,4 +1,0 @@
-r0 = openat$tun(0xffffffffffffff9c, &(0x7f00000000c0), 0x0, 0x0)
-ioctl$TUNSETIFF(r0, 0x400454ca, &(0x7f0000000080)={'\x00', 0x52d35ce30131f272})
-ioctl$TUNSETOFFLOAD(r0, 0x400454c9, 0x13)
-ioctl$TUNGETVNETLE(r0, 0x800454e0, 0x0)

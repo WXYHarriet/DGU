@@ -1,2 +1,0 @@
-r0 = socket$inet6_icmp_raw(0xa, 0x3, 0x3a)
-ioctl$sock_inet6_SIOCDIFADDR(r0, 0x8936, &(0x7f0000000180)={@private0})

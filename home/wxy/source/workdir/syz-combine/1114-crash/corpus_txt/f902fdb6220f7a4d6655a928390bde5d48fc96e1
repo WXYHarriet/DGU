@@ -1,2 +1,0 @@
-r0 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000003340), 0x0, 0x0)
-ioctl$PTP_PIN_GETFUNC(r0, 0xc0603d06, 0x0)

@@ -1,2 +1,0 @@
-mknodat(0xffffffffffffff9c, &(0x7f0000000040)='./file0\x00', 0x0, 0x0)
-mount$tmpfs(0x0, &(0x7f00000000c0)='./file0\x00', &(0x7f0000000100), 0x0, &(0x7f0000000140)={[{@mpol={'mpol', 0x3d, {'default', '=static'}}}]})

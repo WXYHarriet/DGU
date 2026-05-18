@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000280)='smaps\x00')
-mq_timedreceive(r0, 0x0, 0x0, 0x100000001, 0x0)

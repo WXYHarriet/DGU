@@ -1,3 +1,0 @@
-r0 = openat$procfs(0xffffffffffffff9c, &(0x7f00000000c0)='/proc/partitions\x00', 0x0, 0x0)
-r1 = openat$sysctl(0xffffffffffffff9c, &(0x7f0000000000)='/proc/sys/net/ipv4/tcp_timestamps\x00', 0x1, 0x0)
-sendfile(r1, r0, &(0x7f0000002080)=0x58, 0x1eee061f)

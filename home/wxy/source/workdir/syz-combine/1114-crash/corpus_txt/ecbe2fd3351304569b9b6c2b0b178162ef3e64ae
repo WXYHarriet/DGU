@@ -1,5 +1,0 @@
-ioctl$MEDIA_IOC_G_TOPOLOGY(0xffffffffffffffff, 0xc0487c04, 0x0)
-socket$isdn(0x22, 0x3, 0x1)
-syz_genetlink_get_family_id$nbd(0x0, 0xffffffffffffffff)
-r0 = openat$qat_adf_ctl(0xffffffffffffff9c, &(0x7f0000001140), 0x0, 0x0)
-ioctl$IOCTL_STOP_ACCEL_DEV(r0, 0x40096101, &(0x7f0000001180))

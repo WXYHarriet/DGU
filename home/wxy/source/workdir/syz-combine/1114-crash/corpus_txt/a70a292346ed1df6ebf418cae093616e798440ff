@@ -1,1 +1,0 @@
-modify_ldt$read_default(0x2, 0xfffffffffffffffc, 0x0)

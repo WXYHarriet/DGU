@@ -1,2 +1,0 @@
-r0 = socket$inet6_sctp(0xa, 0x5, 0x84)
-ioctl$FAT_IOCTL_SET_ATTRIBUTES(r0, 0x8936, 0x0)

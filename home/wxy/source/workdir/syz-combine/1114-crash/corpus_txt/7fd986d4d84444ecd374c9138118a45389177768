@@ -1,2 +1,0 @@
-r0 = syz_open_procfs$namespace(0x0, &(0x7f0000000300)='ns/ipc\x00')
-ioctl$NS_GET_NSTYPE(r0, 0xb703, 0x0)

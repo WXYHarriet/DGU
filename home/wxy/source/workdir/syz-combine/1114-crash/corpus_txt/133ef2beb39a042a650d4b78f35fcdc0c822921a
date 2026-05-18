@@ -1,3 +1,0 @@
-r0 = openat$vmci(0xffffffffffffff9c, &(0x7f0000001180), 0x2, 0x0)
-r1 = dup(r0)
-fsetxattr$trusted_overlay_origin(r1, &(0x7f0000001e40), &(0x7f0000001e80), 0x6e4f, 0x3)

@@ -1,2 +1,0 @@
-r0 = syz_open_dev$vim2m(&(0x7f0000000140), 0x0, 0x2)
-ioctl$vim2m_VIDIOC_ENUM_FMT(r0, 0xc0405602, &(0x7f0000000180)={0x1, 0x2, 0x0, "3d7ff7e299a6dd5fa90ac3e64ade0a4e9b2498260de9174825828d29ecb4006d"})

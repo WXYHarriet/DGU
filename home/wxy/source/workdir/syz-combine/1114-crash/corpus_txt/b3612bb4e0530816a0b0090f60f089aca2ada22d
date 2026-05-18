@@ -1,2 +1,0 @@
-r0 = openat$selinux_create(0xffffffffffffff9c, &(0x7f0000000000), 0x2, 0x0)
-pwrite64(r0, &(0x7f0000000040)="3f8d5ae0372ef6b7bd4ca376a430cb543af8b3b5f09137cbf9a3f3100a4269d385450c33cbbca903b591c8ec8bc94ecf31f69544d6d9358072fb7b6107422b", 0x3f, 0x7)

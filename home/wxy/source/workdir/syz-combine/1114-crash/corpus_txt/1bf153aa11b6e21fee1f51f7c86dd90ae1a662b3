@@ -1,2 +1,0 @@
-r0 = syz_open_dev$ndb(&(0x7f0000000280), 0x0, 0x0)
-ioctl$NBD_SET_TIMEOUT(r0, 0x1269, 0x300000000000000)

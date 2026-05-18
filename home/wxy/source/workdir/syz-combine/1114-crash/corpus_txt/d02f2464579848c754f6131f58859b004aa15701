@@ -1,2 +1,0 @@
-r0 = openat$hpet(0xffffffffffffff9c, &(0x7f0000000080), 0x0, 0x0)
-ioctl$RTC_EPOCH_READ(r0, 0x8008700d, 0x0)

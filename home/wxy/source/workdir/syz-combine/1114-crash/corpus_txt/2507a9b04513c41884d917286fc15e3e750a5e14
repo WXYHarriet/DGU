@@ -1,5 +1,0 @@
-r0 = socket$inet6_udplite(0xa, 0x2, 0x88)
-close(r0)
-pipe(&(0x7f00000000c0)={0xffffffffffffffff, <r1=>0xffffffffffffffff})
-write(r1, &(0x7f0000000000)="fc0000001d000724ab09254ec100070007ab08001b000000f0ffff002100057e0000000000000e000039000000039815fad151ba0101099cecb94b46fe0000000a00020025", 0xffffff0c)
-close(r0)

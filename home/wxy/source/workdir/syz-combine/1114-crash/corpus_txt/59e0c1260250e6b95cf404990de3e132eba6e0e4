@@ -1,3 +1,0 @@
-r0 = openat$dir(0xffffffffffffff9c, &(0x7f0000000600)='.\x00', 0x0, 0x0)
-mknodat$loop(r0, &(0x7f0000000000)='./file0\x00', 0x0, 0x0)
-mount$cgroup(0x0, &(0x7f00000001c0)='./file0\x00', &(0x7f0000000200), 0x0, &(0x7f0000000080)={[{@name={'name', 0x3d, 'security.evm\x00'}}]})

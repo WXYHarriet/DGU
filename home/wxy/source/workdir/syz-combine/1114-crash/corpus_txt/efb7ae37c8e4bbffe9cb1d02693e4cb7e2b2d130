@@ -1,5 +1,0 @@
-r0 = socket$inet6_tcp(0xa, 0x1, 0x0)
-setsockopt$inet6_tcp_TCP_MD5SIG(r0, 0x6, 0xe, &(0x7f0000000000)={@in6={{0xa, 0x0, 0x0, @loopback}}, 0x0, 0x0, 0xf, 0x0, "048cd375808392b7be242e20aa12106ef4af9b9efaddd031c9a86678cf2849c846928cd07032c9b601868214b276b5e264d8cdc9a42fb59c1c21b0c3b05bfed8e1aa606b40b870c03306467dacc3c06c"}, 0xd8)
-setsockopt$inet6_tcp_int(r0, 0x6, 0x2000000000000022, &(0x7f0000000200)=0x1, 0x4)
-setsockopt$inet6_tcp_int(r0, 0x6, 0x2, &(0x7f0000000100)=0xb4c, 0x4)
-sendto$inet6(r0, &(0x7f0000000240)="c4", 0x1, 0x20000845, &(0x7f0000b63fe4), 0x1c)

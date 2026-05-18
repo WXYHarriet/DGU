@@ -1,2 +1,0 @@
-r0 = openat$selinux_validatetrans(0xffffffffffffff9c, &(0x7f0000001180), 0x1, 0x0)
-write$selinux_validatetrans(r0, &(0x7f00000011c0)={'system_u:object_r:klogd_var_run_t:s0', 0x20, 'system_u:object_r:devicekit_var_lib_t:s0', 0x20, 0x0, 0x20, 'system_u:system_r:kernel_t:s0\x00'}, 0x81)

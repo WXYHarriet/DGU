@@ -1,4 +1,0 @@
-r0 = socket(0x2, 0x1, 0x0)
-setsockopt$inet6_tcp_TCP_MD5SIG(r0, 0x6, 0xe, &(0x7f0000000280)={@in={{0x2, 0x0, @loopback}}, 0x0, 0x0, 0x42, 0x0, "fc958afb394779f66996e43a118a5d6099527e70613d7d721295dbb70806cdc8676a133bd2e6c123851691e975fd49d1dd7ee3233941c0e38fffa349faab33fc8273c18316830b0538d80a840bc3f5bf"}, 0xd8)
-sendto$inet(r0, 0x0, 0x0, 0x200040c1, &(0x7f0000000000)={0x2, 0x0, @private}, 0x10)
-ioctl$sock_inet6_tcp_SIOCOUTQNSD(r0, 0x894b, &(0x7f0000000100))

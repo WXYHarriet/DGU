@@ -1,2 +1,0 @@
-r0 = userfaultfd(0x80801)
-ioctl$UFFDIO_API(r0, 0xc018aa3f, &(0x7f0000000080)={0xaa, 0x3})

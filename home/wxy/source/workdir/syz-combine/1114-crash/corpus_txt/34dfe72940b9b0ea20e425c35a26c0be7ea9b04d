@@ -1,2 +1,0 @@
-r0 = syz_usbip_server_init(0x2)
-write$usbip_server(r0, &(0x7f0000002300)=ANY=[@ANYBLOB='\x00\x00'], 0x1fe0)

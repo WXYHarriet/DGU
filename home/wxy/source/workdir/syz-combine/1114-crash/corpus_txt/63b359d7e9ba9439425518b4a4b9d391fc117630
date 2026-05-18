@@ -1,3 +1,0 @@
-r0 = syz_open_dev$sg(&(0x7f00000060c0), 0x0, 0x8002)
-r1 = fcntl$dupfd(r0, 0x0, r0)
-ioctl$SCSI_IOCTL_GET_PCI(r1, 0x5319, 0x0)

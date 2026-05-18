@@ -1,2 +1,0 @@
-r0 = socket$l2tp(0x2, 0x2, 0x73)
-ioctl$BTRFS_IOC_GET_SUBVOL_INFO(r0, 0x541b, 0x0)

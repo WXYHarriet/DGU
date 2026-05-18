@@ -1,2 +1,0 @@
-r0 = add_key(&(0x7f0000000100)='keyring\x00', &(0x7f0000000000)={'syz', 0x0}, 0x0, 0x0, 0xfffffffffffffffe)
-add_key(&(0x7f0000000040)='dns_resolver\x00', 0x0, &(0x7f0000000140)='\x00\x00', 0x2, r0)

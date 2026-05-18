@@ -1,1 +1,0 @@
-syz_emit_ethernet(0xe, &(0x7f00000000c0)={@broadcast, @dev, @void, {@generic={0x8863}}}, 0x0)

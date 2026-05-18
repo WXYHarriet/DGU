@@ -1,3 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000140)='pagemap\x00')
-read$char_usb(r0, &(0x7f0000000240)=""/140, 0xfffffea6)
-syz_io_uring_setup(0x6004, &(0x7f0000000000), &(0x7f0000000080), &(0x7f00000000c0))

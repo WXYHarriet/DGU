@@ -1,2 +1,0 @@
-r0 = getpid()
-sched_setaffinity(r0, 0x8, &(0x7f0000000140)=0xfffffffffffff801)

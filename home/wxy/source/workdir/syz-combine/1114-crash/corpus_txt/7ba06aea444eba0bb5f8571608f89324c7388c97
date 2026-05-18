@@ -1,2 +1,0 @@
-r0 = openat$selinux_attr(0xffffffffffffff9c, &(0x7f0000000000)='/proc/thread-self/attr/keycreate\x00', 0x2, 0x0)
-write$selinux_attr(r0, &(0x7f0000000080)='system_u:object_r:inetd_child_exec_t:s0\x00', 0x28)

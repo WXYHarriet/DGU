@@ -1,6 +1,0 @@
-r0 = socket$inet6(0xa, 0x1, 0x0)
-connect$inet6(r0, &(0x7f0000000000)={0xa, 0x0, 0x0, @ipv4={'\x00', '\xff\xff', @loopback}}, 0x1c)
-connect$inet6(r0, &(0x7f00000000c0)={0xa, 0x0, 0x0, @loopback}, 0x1c)
-r1 = syz_open_procfs(0xffffffffffffffff, &(0x7f00000000c0)='net/tcp6\x00')
-read$snapshot(r1, &(0x7f0000000200)=""/121, 0x9f)
-read$snapshot(r1, &(0x7f0000000100)=""/245, 0xf5)

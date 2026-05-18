@@ -1,2 +1,0 @@
-r0 = syz_open_dev$sg(&(0x7f0000000140), 0x0, 0x88001)
-fcntl$setownex(r0, 0xf, &(0x7f0000000080)={0xb822178cf855ab25})

@@ -1,4 +1,0 @@
-r0 = syz_open_dev$loop(&(0x7f00000001c0), 0x75f, 0x103382)
-r1 = memfd_create(0x0, 0x0)
-ioctl$LOOP_CHANGE_FD(r0, 0x4c00, r1)
-ioctl$LOOP_SET_STATUS(r0, 0x4c02, &(0x7f0000000080)={0x0, {}, 0x0, {}, 0x7, 0x12, 0x1d, 0x4, "a836a9e9c992912997ec7f69f3e7b97c41172903e0968d7fa9c526b45ee3160f263261a0ed5e64b6fdd808febc640c227867ddcb7fae73b4a53813ea71051ce0", "02ed35ebcf86cfa3d508d3783caab8daea5a84bb0421321d4b69fe4ebfba849b", [0x3, 0x200]})

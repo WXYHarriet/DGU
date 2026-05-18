@@ -1,2 +1,0 @@
-socketpair$unix(0x1, 0x1, 0x0, &(0x7f0000000000)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff})
-dup2(r1, r0)

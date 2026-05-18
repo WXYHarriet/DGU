@@ -1,7 +1,0 @@
-syz_usb_connect(0x0, 0x2d, &(0x7f0000000040)=ANY=[@ANYBLOB="1201000050cb5320450c10108e492940a84409021b00090000000009040002010035040009058dff861527e0ce18e3373cc336f55c893fb40dbae6b77ec935cb1271fc21a3b74c9fcd478baace9d39e09ed5b0814d5d7904423982c7ac9c90cc1744df9065db5bc17cec1df4ce7075c90e"], 0x0)
-syz_open_dev$char_usb(0xc, 0xb4, 0x0)
-r0 = syz_open_dev$char_usb(0xc, 0xb4, 0x0)
-write$char_usb(r0, &(0x7f0000000000)='S', 0x1)
-syz_usb_disconnect(0xffffffffffffffff)
-syz_usb_disconnect(0xffffffffffffffff)
-syz_open_dev$char_usb(0xc, 0xb4, 0x0)

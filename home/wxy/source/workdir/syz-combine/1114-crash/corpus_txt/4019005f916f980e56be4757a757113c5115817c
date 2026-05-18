@@ -1,1 +1,0 @@
-landlock_create_ruleset(&(0x7f0000000040), 0x1, 0x0)

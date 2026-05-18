@@ -1,6 +1,0 @@
-r0 = socket$inet6(0xa, 0x2, 0x0)
-connect$inet6(r0, &(0x7f0000000080)={0xa, 0x0, 0x0, @ipv4={'\x00', '\xff\xff', @loopback}}, 0x1c)
-connect$inet6(r0, &(0x7f0000000240)={0xa, 0x0, 0x0, @dev, 0x9}, 0x1c)
-r1 = socket$inet6(0x10, 0x3, 0x0)
-sendmsg(r1, &(0x7f00000000c0)={0x0, 0x0, &(0x7f0000000000)=[{&(0x7f0000000140)="5500000020007fafb72d13b2a4a2719302000000030b43026c26236925000400fe7f0000bd2dca8a9848a3c728f1c46b7b31afdc1338d509000000000100005ae583de0dd7d8319f98af84fda542e718f94b929ade", 0x55}], 0x1}, 0x0)
-setsockopt$inet6_IPV6_ADDRFORM(r0, 0x29, 0x1, &(0x7f0000000280), 0x4)

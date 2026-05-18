@@ -1,3 +1,0 @@
-r0 = socket$phonet_pipe(0x23, 0x5, 0x2)
-connect$phonet_pipe(r0, &(0x7f0000000040), 0x10)
-ioctl$SIOCPNENABLEPIPE(r0, 0x89ed, 0x0)

@@ -1,2 +1,0 @@
-r0 = openat$damon_init_regions(0xffffffffffffff9c, &(0x7f0000005140), 0x1a1802, 0x0)
-write$damon_init_regions(r0, &(0x7f0000000000)={{}, {}, {' ', 0x1ff}}, 0x3f)

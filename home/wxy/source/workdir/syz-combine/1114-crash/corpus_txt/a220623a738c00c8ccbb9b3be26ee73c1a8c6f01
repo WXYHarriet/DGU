@@ -1,4 +1,0 @@
-r0 = inotify_init1(0x0)
-inotify_add_watch(r0, &(0x7f0000000000)='.\x00', 0x80000002)
-r1 = syz_open_procfs(0x0, &(0x7f0000000000)='fdinfo/3\x00')
-read$eventfd(r1, &(0x7f00000001c0), 0x8)

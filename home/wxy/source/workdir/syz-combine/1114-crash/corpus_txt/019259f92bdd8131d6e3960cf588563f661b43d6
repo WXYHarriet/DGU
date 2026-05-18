@@ -1,2 +1,0 @@
-r0 = syz_open_dev$radio(&(0x7f0000000000), 0x1, 0x2)
-ioctl$VIDIOC_S_FREQUENCY(r0, 0x402c5639, &(0x7f0000000040)={0x3ff, 0x1})

@@ -1,3 +1,0 @@
-r0 = open(&(0x7f0000000140)='./file0\x00', 0x10f042, 0x0)
-r1 = syz_open_procfs(0x0, &(0x7f0000000040)='maps\x00')
-dup3(r0, r1, 0x80000)

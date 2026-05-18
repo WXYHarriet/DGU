@@ -1,2 +1,0 @@
-r0 = getpid()
-kcmp(r0, r0, 0x1, 0xffffffffffffffff, 0xffffffffffffffff)

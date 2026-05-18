@@ -1,5 +1,0 @@
-r0 = openat$kvm(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
-r1 = ioctl$KVM_CREATE_VM(r0, 0xae01, 0x0)
-write$binfmt_script(0xffffffffffffffff, &(0x7f00000000c0)={'#! ', './file0', [{0x20, ',{]'}, {0x20, '/dev/kvm\x00'}, {0x20, '\x00'}, {0x20, '}\'&@'}, {0x20, '/dev/kvm\x00'}, {}, {0x20, '\x00'}, {0x20, '\x12*$\\:'}], 0xa, "119e8a04cec907a85377f0c37476aea18225efefcdbc6f03eab730cc0e2271ec8d00eed9c38621dbc884e7bd8fa9ade66990d842fa8214ef4384653c5f2e6d9209a7db7d948d4ea2179b295bcc2b692110a8a00878a2fdfa696411eaed1201cf409f8b39378260f43404184576cbac4fb1757d1d7fc16fe6a7dce578dbe308430c36134b7168f5"}, 0xba)
-r2 = ioctl$KVM_CREATE_VCPU(r1, 0xae41, 0x0)
-ioctl$KVM_SET_VCPU_EVENTS(r2, 0x4140aecd, &(0x7f0000000080))

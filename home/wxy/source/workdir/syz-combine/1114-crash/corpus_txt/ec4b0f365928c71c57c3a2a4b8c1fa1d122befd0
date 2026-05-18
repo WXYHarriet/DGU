@@ -1,1 +1,0 @@
-shmctl$IPC_RMID(0x0, 0x1000000)

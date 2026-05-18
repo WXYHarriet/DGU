@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000001280)='net/igmp6\x00')
-preadv2(r0, &(0x7f0000000080)=[{&(0x7f00000000c0)=""/4097, 0x1001}], 0x1, 0x2000000, 0x0, 0x0)

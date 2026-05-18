@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x23, &(0x7f0000000080)={@local, @random="bf8ba29ca8d5", @val={@void}, {@llc_tr={0x11, {@llc={0xaa, 0x0, "bc", "f71ecd36a0cb947f5d3223164bf9"}}}}}, 0x0)

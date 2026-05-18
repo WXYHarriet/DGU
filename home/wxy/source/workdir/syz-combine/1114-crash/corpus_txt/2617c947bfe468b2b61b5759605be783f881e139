@@ -1,4 +1,0 @@
-r0 = inotify_init1(0x0)
-open(&(0x7f0000000000)='./bus\x00', 0x60142, 0x0)
-inotify_add_watch(r0, &(0x7f0000000140)='./bus\x00', 0x82a)
-rename(&(0x7f00000001c0)='./bus\x00', &(0x7f0000000280)='./file2\x00')

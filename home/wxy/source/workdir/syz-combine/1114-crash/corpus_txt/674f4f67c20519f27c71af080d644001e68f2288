@@ -1,3 +1,0 @@
-r0 = openat$tun(0xffffffffffffff9c, &(0x7f0000000500), 0x0, 0x0)
-ioctl$TUNSETIFF(r0, 0x400454ca, &(0x7f0000000540)={'pim6reg1\x00', 0x2})
-ioctl$TUNGETFILTER(r0, 0x801054db, &(0x7f0000000a40)=""/4096)

@@ -1,3 +1,0 @@
-socketpair(0x1e, 0x5, 0x0, &(0x7f0000000140)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff})
-syz_genetlink_get_family_id$batadv(&(0x7f0000000100), r0)
-recvfrom$netrom(r1, &(0x7f0000000180)=""/196, 0xc4, 0x60000043, 0x0, 0x0)

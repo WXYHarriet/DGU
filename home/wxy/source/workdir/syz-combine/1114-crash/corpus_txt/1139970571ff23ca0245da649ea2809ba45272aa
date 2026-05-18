@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x2a, &(0x7f0000000040)={@broadcast, @remote, @void, {@arp={0x806, @ether_ipv4={0x1, 0x800, 0x2, 0x4, 0x0, @local, @local, @local, @multicast1}}}}, 0x0)

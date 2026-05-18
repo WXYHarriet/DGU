@@ -1,3 +1,0 @@
-r0 = socket$nl_xfrm(0x10, 0x3, 0x6)
-ioctl$BTRFS_IOC_TREE_SEARCH_V2(r0, 0xc0709411, 0x0)
-sendmsg$nl_xfrm(r0, &(0x7f00000001c0)={0x0, 0x0, &(0x7f0000000140)={&(0x7f0000000380)=ANY=[@ANYBLOB="740200001c0003"], 0x274}}, 0x0)

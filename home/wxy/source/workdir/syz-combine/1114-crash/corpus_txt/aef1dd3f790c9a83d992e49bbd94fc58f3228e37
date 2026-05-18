@@ -1,3 +1,0 @@
-r0 = syz_open_dev$tty20(0xc, 0x4, 0x1)
-ioctl$PIO_UNIMAPCLR(r0, 0x4b68, 0x0)
-syz_genetlink_get_family_id$tipc2(0x0, 0xffffffffffffffff)

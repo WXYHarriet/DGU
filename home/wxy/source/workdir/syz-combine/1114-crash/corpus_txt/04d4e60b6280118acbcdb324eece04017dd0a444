@@ -1,3 +1,0 @@
-r0 = eventfd(0x0)
-syz_open_dev$ndb(&(0x7f0000000040), 0x0, 0x0)
-close_range(r0, 0xffffffffffffffff, 0x0)

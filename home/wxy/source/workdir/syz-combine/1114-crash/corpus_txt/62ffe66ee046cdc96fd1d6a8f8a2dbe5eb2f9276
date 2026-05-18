@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000240)='attr/current\x00')
-write$cgroup_netprio_ifpriomap(r0, 0x0, 0x12)

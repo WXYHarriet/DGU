@@ -1,2 +1,0 @@
-r0 = syz_open_dev$tty1(0xc, 0x4, 0x2)
-fcntl$F_SET_RW_HINT(r0, 0x40c, &(0x7f0000000040)=0x5173931ae7c256af)

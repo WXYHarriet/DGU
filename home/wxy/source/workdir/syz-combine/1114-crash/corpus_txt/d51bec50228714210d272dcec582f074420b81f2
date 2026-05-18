@@ -1,1 +1,0 @@
-syz_open_dev$vivid(0xfffffffffffffffe, 0x2, 0x2)

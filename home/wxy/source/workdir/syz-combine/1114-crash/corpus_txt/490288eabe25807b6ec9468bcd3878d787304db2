@@ -1,2 +1,0 @@
-syz_io_uring_setup(0x5143, &(0x7f0000000100), &(0x7f0000000080)=<r0=>0x0, &(0x7f0000000180))
-syz_memcpy_off$IO_URING_METADATA_GENERIC(r0, 0xb463bca47b83c4d6, &(0x7f00000000c0), 0x0, 0x4)

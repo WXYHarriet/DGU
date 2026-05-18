@@ -1,4 +1,0 @@
-r0 = io_uring_setup(0x30d1, &(0x7f00000002c0))
-r1 = signalfd(0xffffffffffffffff, &(0x7f0000000180)={[0xfffffffffffffffc]}, 0x8)
-read(r1, &(0x7f0000000040)=""/227, 0xe3)
-close_range(r0, 0xffffffffffffffff, 0x0)

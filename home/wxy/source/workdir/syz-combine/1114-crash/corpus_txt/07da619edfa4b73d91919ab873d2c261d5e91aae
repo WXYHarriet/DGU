@@ -1,1 +1,0 @@
-syz_open_dev$evdev(&(0x7f0000001740), 0x0, 0x0)

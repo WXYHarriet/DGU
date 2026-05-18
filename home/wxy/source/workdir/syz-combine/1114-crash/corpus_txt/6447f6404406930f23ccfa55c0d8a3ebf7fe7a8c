@@ -1,3 +1,0 @@
-r0 = openat$sndseq(0xffffffffffffff9c, &(0x7f00000018c0), 0xe0c81)
-r1 = epoll_create1(0x0)
-epoll_ctl$EPOLL_CTL_ADD(r1, 0x1, r0, &(0x7f0000000300)={0x20000000})

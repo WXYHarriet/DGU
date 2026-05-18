@@ -1,5 +1,0 @@
-syz_mount_image$fuse(0x0, &(0x7f0000000100)='./file0\x00', 0x0, 0x0, 0x0, 0x0, 0x0)
-r0 = openat$dir(0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00', 0x0, 0x0)
-mknodat$null(r0, &(0x7f0000000080)='./file0\x00', 0x0, 0x103)
-r1 = openat$dir(0xffffffffffffff9c, &(0x7f0000000300)='./file0\x00', 0x0, 0x0)
-linkat(r0, &(0x7f00000002c0)='./file0\x00', r1, &(0x7f0000000340)='./file0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\x00', 0x1000)

@@ -1,2 +1,0 @@
-r0 = socket$inet_sctp(0x2, 0x5, 0x84)
-ioctl$sock_SIOCGIFVLAN_ADD_VLAN_CMD(r0, 0x8982, &(0x7f0000000300)={0x0, 'ipvlan0\x00'})

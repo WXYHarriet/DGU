@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x66, &(0x7f00000000c0)={@local, @empty, @val, {@ipv6}}, 0x0)

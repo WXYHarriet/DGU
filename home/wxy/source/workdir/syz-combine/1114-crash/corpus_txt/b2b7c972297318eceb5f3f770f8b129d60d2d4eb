@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f00000002c0)='attr/prev\x00')
-read$ptp(r0, 0x0, 0x0)

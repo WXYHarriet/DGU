@@ -1,2 +1,0 @@
-r0 = syz_open_dev$tty1(0xc, 0x4, 0x1)
-writev(r0, &(0x7f0000001340)=[{&(0x7f00000011c0)="3cd5d2b9120e28ea4dc55a15efce9b5d", 0x10}], 0x1)

@@ -1,3 +1,0 @@
-r0 = socket$inet6(0xa, 0x1, 0x0)
-ioctl$sock_SIOCGIFINDEX(r0, 0x8933, &(0x7f0000000040)={'sit0\x00', <r1=>0x0})
-ioctl$sock_inet6_SIOCSIFDSTADDR(r0, 0x8918, &(0x7f0000000080)={@loopback={0x0, 0xff00}, 0x7c, r1}) (async)

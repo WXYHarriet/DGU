@@ -1,7 +1,0 @@
-syz_mount_image$fuse(0x0, &(0x7f0000000100)='./file0\x00', 0x0, 0x0, 0x0, 0x0, 0x0)
-r0 = openat$dir(0xffffffffffffff9c, &(0x7f00000001c0)='./file0\x00', 0x0, 0x0)
-r1 = inotify_init1(0x0)
-r2 = inotify_add_watch(r1, &(0x7f0000000040)='.\x00', 0x22)
-open(&(0x7f0000021000)='./file0\x00', 0x0, 0x0)
-inotify_rm_watch(r1, r2)
-close_range(r0, 0xffffffffffffffff, 0x0)

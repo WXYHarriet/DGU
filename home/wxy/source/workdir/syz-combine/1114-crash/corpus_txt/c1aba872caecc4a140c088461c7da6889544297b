@@ -1,4 +1,0 @@
-ioctl$AUTOFS_DEV_IOCTL_ISMOUNTPOINT(0xffffffffffffffff, 0xc018937e, &(0x7f00000000c0)={{0x1, 0x1, 0x18}, './file0\x00'})
-r0 = socket$inet6_tcp(0xa, 0x1, 0x0)
-setsockopt$inet6_tcp_TCP_MD5SIG(r0, 0x6, 0xe, &(0x7f0000000100)={@in6={{0xa, 0x0, 0x0, @empty}}, 0x0, 0x0, 0x17, 0x0, "d86ac46a073843d9f8060941f3d77262614c3cd1ba8b023fc00414f10c2b7974289520ce79fef70f5a2483620aef97999c7e0f07caa2360fa1374ae1dea4978f54b437d900"}, 0xd8)
-setsockopt$inet6_tcp_int(r0, 0x6, 0x2000000000000020, &(0x7f0000000040)=0xa, 0x1959cc36)

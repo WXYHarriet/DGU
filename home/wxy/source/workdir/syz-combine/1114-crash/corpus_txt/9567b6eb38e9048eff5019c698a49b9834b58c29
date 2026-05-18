@@ -1,2 +1,0 @@
-r0 = openat$cachefiles(0xffffffffffffff9c, &(0x7f0000000000), 0x8002, 0x0)
-write$snapshot(r0, &(0x7f0000000040)="acef2a519e35cca656c7fdb2d6d265c9934ec0500cb1b2a1e39a7c83967762cdb5d5c10ca52fc904e228ff4b258ef8b80a", 0x31)

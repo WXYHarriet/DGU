@@ -1,2 +1,0 @@
-r0 = openat$null(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
-name_to_handle_at(r0, &(0x7f0000000040)='\x00', &(0x7f0000000080)=@GFS2_SMALL_FH_SIZE={0x10}, &(0x7f00000000c0), 0x1000)

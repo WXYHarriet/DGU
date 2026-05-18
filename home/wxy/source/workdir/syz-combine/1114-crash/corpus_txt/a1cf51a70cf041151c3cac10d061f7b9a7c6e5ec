@@ -1,7 +1,0 @@
-mkdir(&(0x7f0000000140)='./file0\x00', 0xa)
-mount(0x0, &(0x7f0000000980)='./file0\x00', &(0x7f0000000000)='proc\x00', 0x0, 0x0)
-chdir(&(0x7f0000000040)='./file0\x00')
-syz_open_procfs(0x0, &(0x7f00000000c0)='net/ipv6_route\x00')
-mprotect(&(0x7f0000000000/0x4000)=nil, 0x4000, 0x1)
-openat$cgroup_root(0xffffffffffffff9c, &(0x7f00000000c0)='./cgroup/syz0\x00', 0x200002, 0x0)
-mkdirat(0xffffffffffffff9c, &(0x7f00000000c0)='./bus\x00', 0x0)

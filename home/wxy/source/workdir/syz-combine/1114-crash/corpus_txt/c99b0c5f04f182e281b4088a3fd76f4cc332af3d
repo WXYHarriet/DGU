@@ -1,1 +1,0 @@
-sendfile(0xffffffffffffffff, 0xffffffffffffffff, &(0x7f0000000040), 0x400)

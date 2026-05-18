@@ -1,2 +1,0 @@
-mkdir(&(0x7f0000000400)='./file0\x00', 0x0)
-lremovexattr(&(0x7f0000000040)='./file0\x00', &(0x7f0000000000)=ANY=[@ANYBLOB='sec'])

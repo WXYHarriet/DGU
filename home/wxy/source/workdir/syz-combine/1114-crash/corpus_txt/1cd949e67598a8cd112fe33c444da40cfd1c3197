@@ -1,5 +1,0 @@
-r0 = socket$inet6_sctp(0xa, 0x1, 0x84)
-r1 = dup2(r0, r0)
-r2 = socket$inet_sctp(0x2, 0x5, 0x84)
-getsockopt$inet_sctp_SCTP_MAX_BURST(r2, 0x84, 0xc, &(0x7f0000000140)=@assoc_value={<r3=>0x0}, &(0x7f0000000500)=0x8)
-getsockopt$inet_sctp6_SCTP_RECONFIG_SUPPORTED(r1, 0x84, 0x7d, &(0x7f0000000340)={r3}, &(0x7f0000000380)=0x8)

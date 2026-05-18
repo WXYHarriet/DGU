@@ -1,3 +1,0 @@
-ioctl$sock_SIOCGIFVLAN_SET_VLAN_NAME_TYPE_CMD(0xffffffffffffffff, 0x8982, &(0x7f0000000000))
-setsockopt$IP_VS_SO_SET_ADD(0xffffffffffffffff, 0x0, 0x482, &(0x7f0000000040)={0x0, @multicast2, 0x0, 0x80002, 'lblc\x00'}, 0x2c)
-mount(0x0, &(0x7f0000000240)='.\x00', &(0x7f000015bffc)='nfs\x00', 0x0, &(0x7f0000000000))

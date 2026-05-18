@@ -1,5 +1,0 @@
-r0 = socket$packet(0x11, 0x3, 0x300)
-ioctl$sock_SIOCGIFINDEX(r0, 0x8933, &(0x7f0000000000)={'sit0\x00', <r1=>0x0})
-r2 = socket$nl_generic(0x10, 0x3, 0x10)
-r3 = syz_genetlink_get_family_id$ethtool(&(0x7f0000000080), 0xffffffffffffffff)
-sendmsg$ETHTOOL_MSG_PRIVFLAGS_GET(r2, &(0x7f0000000480)={0x0, 0x0, &(0x7f0000000440)={&(0x7f0000000800)=ANY=[@ANYBLOB=' \x00\x00\x00', @ANYRES16=r3, @ANYBLOB="010000000000000000e31c0000080c00018008000100", @ANYRES32=r1], 0x20}}, 0x0)

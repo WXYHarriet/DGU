@@ -1,3 +1,0 @@
-r0 = add_key$keyring(&(0x7f0000000440), &(0x7f0000000480)={'syz', 0x2}, 0x0, 0x0, 0xfffffffffffffffc)
-r1 = add_key(&(0x7f0000000340)='dns_resolver\x00', &(0x7f0000000540)={'syz', 0x1}, &(0x7f0000000580)="fb9c", 0xfffff, r0)
-keyctl$clear(0x7, r1)

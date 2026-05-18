@@ -1,3 +1,0 @@
-r0 = syz_io_uring_setup(0x3243, &(0x7f0000000080), &(0x7f0000000100), &(0x7f00000002c0))
-io_uring_register$IORING_REGISTER_BUFFERS(r0, 0x0, &(0x7f0000000000)=[{&(0x7f0000000140)=""/20, 0x14}], 0x1)
-io_uring_register$IORING_UNREGISTER_BUFFERS(r0, 0x1, 0x0, 0x0)

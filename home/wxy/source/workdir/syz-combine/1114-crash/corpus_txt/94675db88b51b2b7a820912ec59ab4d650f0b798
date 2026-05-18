@@ -1,3 +1,0 @@
-r0 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000040)='blkio.throttle.io_serviced_recursive\x00', 0x275a, 0x0)
-write$binfmt_script(r0, &(0x7f0000000140), 0x1670e68)
-brk(0x55555edee003)

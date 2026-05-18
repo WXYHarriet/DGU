@@ -1,2 +1,0 @@
-r0 = syz_usbip_server_init(0x4)
-write$usbip_server(r0, &(0x7f0000000a80)=@ret_unlink, 0x30)

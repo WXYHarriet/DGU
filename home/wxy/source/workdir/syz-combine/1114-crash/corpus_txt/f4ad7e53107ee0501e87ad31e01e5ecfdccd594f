@@ -1,2 +1,0 @@
-r0 = syz_open_dev$evdev(&(0x7f0000000100), 0x821, 0x101200)
-ioctl$EVIOCGPHYS(r0, 0x80404507, &(0x7f00000001c0)=""/192)

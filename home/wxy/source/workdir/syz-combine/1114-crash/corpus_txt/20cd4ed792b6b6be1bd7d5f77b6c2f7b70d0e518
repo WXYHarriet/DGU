@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x3e, &(0x7f00000000c0)={@multicast, @link_local, @void, {@ipv6={0x86dd, @icmpv6={0x0, 0x6, "75e700", 0x8, 0x3a, 0x0, @local, @local, {[], @echo_request}}}}}, 0x0)

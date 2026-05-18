@@ -1,2 +1,0 @@
-setrlimit(0x7, &(0x7f0000005800))
-eventfd(0x0)

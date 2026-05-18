@@ -1,2 +1,0 @@
-r0 = socket$kcm(0x2, 0x3, 0x2)
-ioctl$SIOCSIFHWADDR(r0, 0x8b05, &(0x7f0000000040)={'virt_wifi0\x00', @random="ffffff8d0200"})

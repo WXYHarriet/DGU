@@ -1,4 +1,0 @@
-mkdirat(0xffffffffffffff9c, &(0x7f0000000240)='./file0\x00', 0x0)
-r0 = fanotify_init(0x0, 0x0)
-fanotify_mark(r0, 0x221, 0x1030, 0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00')
-fanotify_mark(r0, 0x209, 0x1021, 0xffffffffffffff9c, &(0x7f0000000680)='./file0\x00')

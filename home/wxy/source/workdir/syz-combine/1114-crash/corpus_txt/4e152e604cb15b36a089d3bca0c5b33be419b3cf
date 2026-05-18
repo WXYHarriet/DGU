@@ -1,2 +1,0 @@
-r0 = syz_open_dev$loop(&(0x7f0000000000), 0x1, 0x1c1400)
-ioctl$BLKZEROOUT(r0, 0x127f, 0x0)

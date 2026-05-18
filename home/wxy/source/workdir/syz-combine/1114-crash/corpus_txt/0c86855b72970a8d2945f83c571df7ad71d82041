@@ -1,4 +1,0 @@
-mknodat(0xffffffffffffff9c, &(0x7f00000000c0)='./file2\x00', 0x0, 0x0)
-r0 = landlock_create_ruleset(&(0x7f0000000240)={0x1fff}, 0x8, 0x0)
-landlock_restrict_self(r0, 0x0)
-openat$dir(0xffffffffffffff9c, &(0x7f0000000300)='./file2\x00', 0x101103, 0x0)

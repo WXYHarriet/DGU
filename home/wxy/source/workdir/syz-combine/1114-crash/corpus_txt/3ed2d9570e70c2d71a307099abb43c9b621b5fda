@@ -1,3 +1,0 @@
-close_range(0xffffffffffffffff, 0xffffffffffffffff, 0x2)
-r0 = syz_open_procfs$pagemap(0x0, &(0x7f0000000000))
-fchown(r0, 0x0, 0x0)

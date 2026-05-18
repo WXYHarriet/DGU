@@ -1,3 +1,0 @@
-ioctl$FS_IOC_GET_ENCRYPTION_POLICY(0xffffffffffffffff, 0x400c6615, &(0x7f0000000040)={0x0, @aes128, 0x0, @desc2})
-r0 = syz_open_dev$loop(&(0x7f0000000080), 0x0, 0x103282)
-ioctl$BLKDISCARD(r0, 0x1277, &(0x7f0000000100))

@@ -1,4 +1,0 @@
-r0 = open(&(0x7f00009e1000)='./file0\x00', 0x102440, 0x0)
-fcntl$setlease(r0, 0x400, 0x0)
-r1 = syz_open_procfs(0x0, &(0x7f0000002940)='fdinfo/3\x00')
-read$char_usb(r1, &(0x7f0000000040)=""/241, 0xf1)

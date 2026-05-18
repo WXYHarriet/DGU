@@ -1,5 +1,0 @@
-pipe2(&(0x7f0000000000)={<r0=>0xffffffffffffffff}, 0x0)
-syz_clone(0x84080, &(0x7f00000003c0)="584206e49f1e66a3000000000000000035a06b10e4", 0x15, &(0x7f0000000140), &(0x7f0000000180), &(0x7f00000001c0)="b08d353f8eaeb8c82fbfea00a285539ed3cfbbdd95bfe8ceee34a7b309248b952a70ccf6f5c494aa8ad545239945f08032a6b0f815278280e53c3af8cb9d156dc76aa4645ca919e9b0b376c71895fab8b5423516")
-syslog(0x2, &(0x7f00000000c0)=""/72, 0x48)
-write$damon_init_regions(0xffffffffffffffff, &(0x7f00000002c0)={{}, {' ', 0x3}, {' ', 0x2354}}, 0x3f)
-ioctl$VHOST_VDPA_GET_STATUS(r0, 0x8001af71, 0x0)

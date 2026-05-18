@@ -1,6 +1,0 @@
-r0 = openat$tun(0xffffffffffffff9c, &(0x7f00000000c0), 0x0, 0x0)
-r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='memory.numa_stat\x00', 0x275a, 0x0)
-write(r1, &(0x7f0000000200)="993e483cb18ec31a9cd7989ac541efcb16a2d3496435241fbe282f28409284d475c127168c51a3e760b2e3976c1ec752c77fbe3f33611402211c81e4ca19dcf6841831819e9933323483aec8ac78a21c01", 0x51)
-mmap(&(0x7f0000000000/0xb36000)=nil, 0xb36000, 0x800001, 0x28011, r1, 0x0)
-ioctl$TUNSETIFF(r0, 0x400454ca, &(0x7f0000000040)={'veth1_macvtap\x00'})
-pread64(r0, 0x0, 0x0, 0x0)

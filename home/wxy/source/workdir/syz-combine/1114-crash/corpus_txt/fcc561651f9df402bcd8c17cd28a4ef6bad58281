@@ -1,2 +1,0 @@
-r0 = epoll_create(0x2)
-epoll_wait(r0, &(0x7f0000000080)=[{}], 0x1, 0x9)

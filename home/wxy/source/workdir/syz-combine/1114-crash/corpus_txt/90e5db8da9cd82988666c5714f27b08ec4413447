@@ -1,5 +1,0 @@
-r0 = socket$inet6_icmp_raw(0xa, 0x3, 0x3a)
-socketpair$unix(0x1, 0x1, 0x0, &(0x7f0000000080)={0xffffffffffffffff, <r1=>0xffffffffffffffff})
-ioctl$sock_SIOCGIFINDEX(r1, 0x8933, &(0x7f0000000000)={'lo\x00', <r2=>0x0})
-setsockopt$inet6_IPV6_XFRM_POLICY(r0, 0x29, 0x23, &(0x7f00000007c0)={{{@in, @in=@multicast2, 0x0, 0x0, 0x0, 0x0, 0xa, 0x0, 0x0, 0x0, r2}}, {{@in6=@rand_addr=' \x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02', 0x0, 0x32}, 0x0, @in6=@private0}}, 0xe8)
-syz_emit_ethernet(0x3e, &(0x7f00000000c0)=ANY=[@ANYBLOB="0180c2000000aaaaaaaaaabb86dd6002ea0200083a00fc020000000000000000000000000000ff020000000000000000000000000001"], 0x0)

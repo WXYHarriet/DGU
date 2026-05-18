@@ -1,3 +1,0 @@
-signalfd(0xffffffffffffffff, &(0x7f00007aeff8), 0x8)
-r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='fdinfo/3\x00')
-read$watch_queue(r0, &(0x7f0000000040)=""/251, 0xfb)

@@ -1,4 +1,0 @@
-r0 = getpid()
-r1 = getpid()
-syz_pidfd_open(r1, 0x0)
-syz_pidfd_open(r0, 0x0)

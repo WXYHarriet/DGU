@@ -1,2 +1,0 @@
-r0 = syz_open_dev$tty1(0xc, 0x4, 0x2)
-fremovexattr(r0, &(0x7f0000001540)=@known='system.posix_acl_default\x00')

@@ -1,2 +1,0 @@
-r0 = socket$netlink(0x10, 0x3, 0x0)
-fsetxattr$system_posix_acl(r0, &(0x7f0000000080)='system.posix_acl_default\x00', 0x0, 0x0, 0x1)

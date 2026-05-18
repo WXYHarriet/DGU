@@ -1,2 +1,0 @@
-r0 = syz_open_dev$dmmidi(&(0x7f0000000000), 0x2, 0x2)
-write$midi(r0, &(0x7f0000000080)='x', 0x1)

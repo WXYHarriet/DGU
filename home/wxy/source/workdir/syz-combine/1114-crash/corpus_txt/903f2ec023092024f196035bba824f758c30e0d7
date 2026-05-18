@@ -1,2 +1,0 @@
-r0 = signalfd(0xffffffffffffffff, &(0x7f0000000040)={[0xe6a3]}, 0x8)
-fremovexattr(r0, &(0x7f0000000000)=@known='system.posix_acl_access\x00')

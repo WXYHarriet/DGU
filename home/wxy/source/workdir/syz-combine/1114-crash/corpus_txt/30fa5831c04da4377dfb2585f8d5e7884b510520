@@ -1,3 +1,0 @@
-r0 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
-r1 = syz_genetlink_get_family_id$nfc(&(0x7f0000000b40), r0)
-sendmsg$NFC_CMD_DEV_UP(r0, &(0x7f0000000c40)={0x0, 0x0, &(0x7f0000000c00)={&(0x7f0000000bc0)=ANY=[@ANYBLOB='$\x00\x00\x00', @ANYRES16=r1, @ANYBLOB="0100000000000000000002000000080001"], 0x24}}, 0x0)

@@ -1,2 +1,0 @@
-keyctl$set_reqkey_keyring(0xe, 0x1)
-request_key(&(0x7f0000000040)='asymmetric\x00', &(0x7f0000001ffb)={'syz', 0x1}, &(0x7f0000001fee)='R\x10rust\xe3c*sgrVex:De', 0x0)

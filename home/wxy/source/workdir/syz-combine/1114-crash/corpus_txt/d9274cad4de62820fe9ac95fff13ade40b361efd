@@ -1,2 +1,0 @@
-r0 = fsopen(&(0x7f0000000000)='cgroup2\x00', 0x0)
-fsconfig$FSCONFIG_SET_BINARY(r0, 0x2, 0x0, 0x0, 0x0)

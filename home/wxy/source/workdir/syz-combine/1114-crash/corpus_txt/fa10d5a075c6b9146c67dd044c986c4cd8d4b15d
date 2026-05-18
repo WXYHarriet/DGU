@@ -1,2 +1,0 @@
-r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000000000)='/sys/power/pm_test', 0x0, 0x0)
-finit_module(r0, 0x0, 0x0)

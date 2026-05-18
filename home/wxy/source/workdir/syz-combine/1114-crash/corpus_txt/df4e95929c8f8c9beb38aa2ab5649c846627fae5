@@ -1,1 +1,0 @@
-syz_mount_image$fuse(&(0x7f0000000ec0), &(0x7f0000000f00)='./file0\x00', 0x0, &(0x7f0000000f40)={{}, 0x2c, {}, 0x2c, {}, 0x2c, {}, 0x2c, {[{}, {@blksize}, {@default_permissions}], [{@uid_gt}, {@fscontext={'fscontext', 0x3d, 'staff_u'}}, {@obj_user={'obj_user', 0x3d, '\xaa\xaa\xaa\xaa\xaa'}}]}}, 0x0, 0x0, 0x0)

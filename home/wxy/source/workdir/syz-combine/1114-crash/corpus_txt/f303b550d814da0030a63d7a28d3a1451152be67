@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000140)='net/rpc\x00')
-openat$cgroup_ro(r0, &(0x7f00000000c0)='blkio.bfq.dequeue\x00', 0x275a, 0x0)

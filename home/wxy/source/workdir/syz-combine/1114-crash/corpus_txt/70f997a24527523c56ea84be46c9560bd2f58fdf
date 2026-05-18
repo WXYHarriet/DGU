@@ -1,3 +1,0 @@
-socketpair$nbd(0x1, 0x1, 0x0, &(0x7f0000000500)={0xffffffffffffffff, <r0=>0xffffffffffffffff})
-fcntl$setownex(r0, 0xf, &(0x7f0000000540))
-fcntl$getownex(r0, 0x10, &(0x7f0000000780))

@@ -1,5 +1,0 @@
-sendmmsg$unix(0xffffffffffffffff, 0x0, 0x0, 0x0)
-sched_setscheduler(0x0, 0x0, 0x0)
-sendmsg$nl_route(0xffffffffffffffff, 0x0, 0x0)
-r0 = socket$netlink(0x10, 0x3, 0x0)
-sendmsg$nl_route(r0, &(0x7f0000000240)={0x0, 0x0, &(0x7f0000000040)={&(0x7f0000000940)=ANY=[@ANYBLOB="4000000010001fff000000000000000000000001", @ANYRES32=0x0, @ANYBLOB="81ffffff00000000180012800e0001007769726567756172640000000400028008000a00bc", @ANYRES32=0x0], 0x40}}, 0x0)

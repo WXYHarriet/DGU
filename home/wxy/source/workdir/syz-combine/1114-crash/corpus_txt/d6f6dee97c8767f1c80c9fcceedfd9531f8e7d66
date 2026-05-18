@@ -1,2 +1,0 @@
-r0 = syz_open_dev$vbi(&(0x7f0000000040), 0x2, 0x2)
-ioctl$VIDIOC_SUBDEV_ENUM_DV_TIMINGS(r0, 0x40085618, &(0x7f0000000280))

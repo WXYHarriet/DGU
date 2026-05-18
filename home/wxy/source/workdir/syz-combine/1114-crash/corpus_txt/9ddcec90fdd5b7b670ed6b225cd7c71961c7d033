@@ -1,2 +1,0 @@
-r0 = creat(&(0x7f0000000100)='./bus\x00', 0x1fb978507dcbbb56)
-ioctl$FIDEDUPERANGE(r0, 0xc0189436, &(0x7f00000003c0)={0x9a, 0x800000000000000})

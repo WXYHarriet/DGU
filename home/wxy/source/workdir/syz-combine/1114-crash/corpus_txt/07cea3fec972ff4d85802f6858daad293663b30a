@@ -1,2 +1,0 @@
-r0 = io_uring_setup(0x4f99, &(0x7f0000000300))
-io_uring_register$IORING_REGISTER_EVENTFD_ASYNC(r0, 0x6, 0x0, 0x1)

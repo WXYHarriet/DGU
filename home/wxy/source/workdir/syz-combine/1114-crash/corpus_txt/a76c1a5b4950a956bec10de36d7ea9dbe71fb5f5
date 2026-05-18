@@ -1,3 +1,0 @@
-r0 = openat$yama_ptrace_scope(0xffffffffffffff9c, &(0x7f00000006c0), 0x2, 0x0)
-r1 = openat$rtc(0xffffffffffffff9c, &(0x7f0000000000), 0x2002, 0x0)
-dup3(r0, r1, 0x0)

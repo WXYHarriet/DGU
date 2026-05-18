@@ -1,2 +1,0 @@
-r0 = socket$igmp(0x2, 0x3, 0x2)
-setsockopt$MRT_DEL_MFC_PROXY(r0, 0x0, 0xd3, &(0x7f0000000080)={@remote, @loopback, 0x0, "4968dba5b096eef99500c3d38197436e1fd63d8e2fac18c64b205aeb3ff46d18", 0x8, 0x8001, 0x9}, 0x3c)

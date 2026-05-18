@@ -1,3 +1,0 @@
-r0 = openat$ptp0(0xffffffffffffff9c, &(0x7f0000000000), 0x141001, 0x0)
-capset(&(0x7f0000000040)={0x20080522}, &(0x7f0000000080))
-ioctl$PTP_ENABLE_PPS(r0, 0x40043d04, 0x1)

@@ -1,5 +1,0 @@
-r0 = openat$tun(0xffffffffffffff9c, &(0x7f0000000140), 0x40841, 0x0)
-ioctl$TUNSETIFF(r0, 0x400454ca, &(0x7f00000000c0)={'syzkaller1\x00', 0x6bf1c2d5adba8c32})
-r1 = socket$kcm(0x2, 0xa, 0x2)
-ioctl$SIOCSIFHWADDR(r1, 0x8914, &(0x7f0000000180)={'syzkaller1\x00', @link_local})
-write$tun(r0, &(0x7f00000001c0)={@val={0xe603}, @void, @eth={@broadcast, @dev, @void, {@ipv4={0x800, @udp={{0x5, 0x4, 0x0, 0x0, 0x78, 0x0, 0x6000, 0x0, 0x4, 0x0, @empty}, {0x0, 0x0, 0x64, 0x0, @wg=@response={0x2, 0x0, 0x0, "2a81be3119c63d63263e20e99e2333636be2b8078af7965200", "86ba00", {"e1e17ca9720c50eaba20a1151787e551", "d3f3433970143c6f609f1a6d2b9e337a"}}}}}}}}, 0x8a)

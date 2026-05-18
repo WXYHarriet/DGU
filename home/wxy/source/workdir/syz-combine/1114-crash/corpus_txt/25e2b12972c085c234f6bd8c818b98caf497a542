@@ -1,2 +1,0 @@
-sendmsg$AUDIT_LIST_RULES(0xffffffffffffffff, 0x0, 0x40000)
-setpgid(0xffffffffffffffff, 0x0)

@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000240)='clear_refs\x00')
-write$P9_RREAD(r0, &(0x7f0000000000)={0x32, 0x75, 0x1, {0x27, "1f3cdb13502be8ec297dd04997760799d671a4c3da08dac77bdc75d9cb3200064cf6eb079b9bc1"}}, 0x32)

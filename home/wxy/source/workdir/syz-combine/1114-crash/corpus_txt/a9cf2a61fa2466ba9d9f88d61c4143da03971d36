@@ -1,2 +1,0 @@
-r0 = eventfd2(0xe27a, 0x801)
-read$eventfd(r0, &(0x7f0000000100), 0x8)

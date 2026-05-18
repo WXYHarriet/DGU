@@ -1,3 +1,0 @@
-r0 = syz_open_dev$evdev(&(0x7f0000000000), 0x0, 0x20002)
-ioctl$EVIOCGRAB(r0, 0x40044590, &(0x7f0000000040))
-write$evdev(r0, &(0x7f000004d000)=[{{0x0, 0x2710}}], 0x79)

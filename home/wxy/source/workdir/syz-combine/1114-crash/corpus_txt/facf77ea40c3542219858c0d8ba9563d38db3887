@@ -1,4 +1,0 @@
-r0 = creat(&(0x7f0000000400)='./bus\x00', 0x0)
-r1 = open(&(0x7f0000000200)='./bus\x00', 0x44000, 0x0)
-dup3(r1, r0, 0x0)
-finit_module(r1, 0x0, 0x0)

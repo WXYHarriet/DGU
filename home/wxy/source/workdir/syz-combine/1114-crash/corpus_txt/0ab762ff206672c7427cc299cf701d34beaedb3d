@@ -1,2 +1,0 @@
-r0 = socket$igmp(0x2, 0x3, 0x2)
-setsockopt$MRT_ADD_MFC_PROXY(r0, 0x0, 0xd2, &(0x7f0000000140)={@loopback, @multicast1, 0x0, "0686dae49a6789350d94bc06a1c00df2c68451884aa54d6f0e32ce6070e2e474"}, 0x3c)

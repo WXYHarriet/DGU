@@ -1,4 +1,0 @@
-r0 = add_key$fscrypt_v1(&(0x7f0000000000), &(0x7f0000000040)={'fscrypt:', @desc4}, &(0x7f0000000080)={0x0, "cd2fc002bd5e6d0694b46f99f1ce479f615f2b98a9d8369a35f5235c96b75eda69d4150d8ab2a0980b34e74b67236f43282553383cb28ad906a5797d478d9d90"}, 0x48, 0xffffffffffffffff)
-r1 = add_key$keyring(&(0x7f0000000100), &(0x7f0000000140)={'syz', 0x2}, 0x0, 0x0, 0xfffffffffffffffc)
-r2 = add_key$keyring(&(0x7f0000000180), &(0x7f00000001c0)={'syz', 0x1}, 0x0, 0x0, 0xfffffffffffffffc)
-keyctl$KEYCTL_MOVE(0x1e, r0, r1, r2, 0x0)

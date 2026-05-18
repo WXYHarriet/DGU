@@ -1,2 +1,0 @@
-r0 = syz_open_dev$floppy(&(0x7f0000000040), 0x1f, 0xe00f)
-ioctl$FLOPPY_FDMSGOFF(r0, 0x246)

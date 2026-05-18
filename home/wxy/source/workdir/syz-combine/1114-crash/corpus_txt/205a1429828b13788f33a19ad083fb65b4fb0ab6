@@ -1,2 +1,0 @@
-r0 = openat$damon_monitor_on(0xffffffffffffff9c, &(0x7f00000003c0), 0x1, 0x0)
-write$damon_monitor_on(r0, 0x0, 0x1000000)

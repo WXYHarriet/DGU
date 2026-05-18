@@ -1,7 +1,0 @@
-r0 = syz_usb_connect$printer(0x0, 0x36, &(0x7f0000000640)=ANY=[@ANYBLOB="0d01000009000008250592d20700006a3b0109022c1700fa0074980904e4ff11070103000905010200ffe000000905820236"], 0x0)
-syz_usb_control_io$printer(r0, 0x0, 0x0)
-syz_clone(0x40224400, 0x0, 0x0, 0x0, 0x0, 0x0)
-syz_open_dev$char_usb(0xc, 0xb4, 0x0)
-syz_usb_disconnect(r0)
-r1 = syz_usb_connect(0x0, 0x24, &(0x7f0000000000)=ANY=[], 0x0)
-syz_usb_control_io$hid(r1, 0x0, 0x0)

@@ -1,4 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f00000004c0)='cmdline\x00')
-flock(r0, 0x1)
-r1 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='fdinfo/3\x00')
-read$watch_queue(r1, &(0x7f0000000040)=""/251, 0xfb)

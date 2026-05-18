@@ -1,4 +1,0 @@
-r0 = landlock_create_ruleset(&(0x7f0000000140)={0x6450}, 0x13, 0x0)
-landlock_restrict_self(r0, 0x0)
-landlock_restrict_self(r0, 0x0)
-mkdir(&(0x7f0000000140)='./file2\x00', 0x0)

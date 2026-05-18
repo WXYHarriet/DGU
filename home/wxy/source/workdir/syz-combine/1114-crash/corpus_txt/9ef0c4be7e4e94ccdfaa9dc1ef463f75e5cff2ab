@@ -1,2 +1,0 @@
-r0 = syz_open_dev$video(&(0x7f0000000340), 0x0, 0x0)
-ioctl$VIDIOC_ENUMAUDOUT(r0, 0x400448c9, &(0x7f0000000380)={0x0, "a6510506dfb0f7d1efd2eb5953ed9f925d270075a7e62f97a53ef584c39875b7"})

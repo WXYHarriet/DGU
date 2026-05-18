@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000140)='net/tcp\x00')
-read$dsp(r0, &(0x7f0000000180)=""/50, 0x32)

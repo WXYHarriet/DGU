@@ -1,1 +1,0 @@
-syz_emit_vhci(&(0x7f0000000240)=@HCI_EVENT_PKT={0x4, @hci_ev_le_meta={{0x3e, 0x11}, @hci_ev_le_direct_adv_info={{}, {0x1}}}}, 0x14)

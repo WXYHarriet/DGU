@@ -1,2 +1,0 @@
-r0 = openat$dlm_plock(0xffffffffffffff9c, &(0x7f0000003e80), 0x6406344f11122976, 0x0)
-write$FUSE_DIRENT(r0, 0x0, 0x40)

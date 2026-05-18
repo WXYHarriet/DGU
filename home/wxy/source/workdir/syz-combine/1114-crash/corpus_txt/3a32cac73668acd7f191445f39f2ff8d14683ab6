@@ -1,2 +1,0 @@
-r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000000040)='/sys/kernel/kexec_loaded', 0x8a2a40, 0x1e0)
-read$ptp(r0, &(0x7f0000000080)=""/10, 0xa)

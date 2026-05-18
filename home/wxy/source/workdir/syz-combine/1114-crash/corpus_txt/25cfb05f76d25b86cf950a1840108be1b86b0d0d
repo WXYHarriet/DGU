@@ -1,3 +1,0 @@
-socketpair$unix(0x1, 0x2, 0x0, &(0x7f0000000000)={<r0=>0xffffffffffffffff})
-r1 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000000000)='/sys/class/devlink', 0x0, 0x0)
-mount$9p_fd(0x0, &(0x7f0000000040)='.\x00', &(0x7f0000000080), 0x0, &(0x7f00000000c0)=ANY=[@ANYBLOB='trans=fd,rfdno=', @ANYRESHEX=r1, @ANYBLOB=',wfdno=', @ANYRESHEX=r0, @ANYBLOB=',fscache,mmap,noextend', @ANYBLOB="2c736d61636bed77d45066736861743d2c646f6e745f6d6561737572ff2c66736d616769633d3078303030303030303030303030303030362c"])

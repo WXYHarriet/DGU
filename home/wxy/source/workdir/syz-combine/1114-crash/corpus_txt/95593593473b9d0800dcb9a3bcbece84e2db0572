@@ -1,2 +1,0 @@
-syz_genetlink_get_family_id$netlbl_cipso(0x0, 0xffffffffffffffff)
-syz_genetlink_get_family_id$ethtool(&(0x7f0000000580), 0xffffffffffffffff)

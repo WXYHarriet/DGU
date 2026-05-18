@@ -1,2 +1,0 @@
-r0 = socket$phonet_pipe(0x23, 0x5, 0x2)
-ioctl$SIOCPNGETOBJECT(r0, 0x89e0, &(0x7f00000001c0))

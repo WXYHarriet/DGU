@@ -1,5 +1,0 @@
-mkdirat$cgroup_root(0xffffffffffffff9c, &(0x7f0000000000)='./cgroup.cpu/syz0\x00', 0x1ff)
-r0 = openat$cgroup_root(0xffffffffffffff9c, &(0x7f0000000000), 0x200002, 0x0)
-r1 = dup2(r0, r0)
-r2 = openat$cgroup_int(r1, &(0x7f0000000180)='hugetlb.2MB.max_usage_in_bytes\x00', 0x2, 0x0)
-sendfile(r2, r2, 0x0, 0x80000003)

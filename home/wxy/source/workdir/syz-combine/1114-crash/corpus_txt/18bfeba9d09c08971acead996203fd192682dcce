@@ -1,2 +1,0 @@
-r0 = syz_open_dev$ndb(&(0x7f0000000180), 0x0, 0x0)
-ioctl$BTRFS_IOC_INO_LOOKUP_USER(r0, 0xd000943e, 0x0)

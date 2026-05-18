@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000100)='net/softnet_stat\x00')
-preadv(r0, &(0x7f00000001c0)=[{&(0x7f0000000000)=""/247, 0xf7}], 0x1, 0x5, 0x0)

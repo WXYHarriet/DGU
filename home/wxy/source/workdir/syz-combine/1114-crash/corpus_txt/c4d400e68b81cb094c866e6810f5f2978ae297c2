@@ -1,2 +1,0 @@
-r0 = openat$selinux_load(0xffffffffffffff9c, &(0x7f0000000080), 0x2, 0x0)
-writev(r0, &(0x7f0000000b00)=[{&(0x7f00000007c0)="a9a92d1db06a28ef", 0x8}], 0x1)

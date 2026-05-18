@@ -1,2 +1,0 @@
-r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000001280)='/sys/class/msr', 0x0, 0x140)
-mkdirat$cgroup(r0, &(0x7f0000000040)='syz1\x00', 0x1ff)

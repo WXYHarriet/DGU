@@ -1,2 +1,0 @@
-r0 = openat$sequencer2(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
-ioctl$SNDCTL_SYNTH_INFO(r0, 0xc08c5102, &(0x7f0000000040)={"b16540319b225cb5865c9b8c655d6172d6fd8bcd730d78822ae58dcd60ca", 0x9})

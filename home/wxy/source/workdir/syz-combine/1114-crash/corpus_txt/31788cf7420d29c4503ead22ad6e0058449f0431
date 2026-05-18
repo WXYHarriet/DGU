@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000040)='net/fib_trie\x00')
-preadv(r0, &(0x7f0000000580)=[{&(0x7f0000002200)=""/4077, 0xfed}], 0x1, 0x80, 0x0)

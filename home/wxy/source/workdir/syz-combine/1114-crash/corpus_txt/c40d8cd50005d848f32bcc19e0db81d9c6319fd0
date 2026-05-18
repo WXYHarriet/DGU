@@ -1,3 +1,0 @@
-r0 = add_key$user(&(0x7f0000003200), &(0x7f0000003240)={'syz', 0x2}, &(0x7f0000003280)="777c750f", 0x4, 0xfffffffffffffffd)
-keyctl$invalidate(0x15, r0)
-keyctl$invalidate(0x15, r0)

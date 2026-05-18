@@ -1,2 +1,0 @@
-r0 = syz_open_dev$hidraw(&(0x7f0000000000), 0x0, 0x121a81)
-write$hidraw(r0, &(0x7f0000000040)="d0", 0x1)

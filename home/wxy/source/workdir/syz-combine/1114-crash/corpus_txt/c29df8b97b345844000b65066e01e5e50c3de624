@@ -1,2 +1,0 @@
-r0 = syz_open_procfs$namespace(0xffffffffffffffff, &(0x7f0000000040)='ns/cgroup\x00')
-open_by_handle_at(r0, &(0x7f0000000000)=ANY=[@ANYBLOB="280000004e000000070000000000000001"], 0x101000)

@@ -1,3 +1,0 @@
-ioctl$AUTOFS_DEV_IOCTL_REQUESTER(0xffffffffffffffff, 0xc018937b, &(0x7f0000000000)={{0x1, 0x1, 0x18, 0xffffffffffffffff, {0xffffffffffffffff, 0xffffffffffffffff}}, './file0\x00'})
-pkey_mprotect(&(0x7f0000000000/0x3000)=nil, 0x3000, 0x0, 0xffffffffffffffff)
-syz_genetlink_get_family_id$batadv(&(0x7f0000000280), 0xffffffffffffffff)

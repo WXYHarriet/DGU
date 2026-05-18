@@ -1,4 +1,0 @@
-r0 = syz_io_uring_setup(0x5c1b, &(0x7f0000000e80), &(0x7f0000000f00), &(0x7f0000000f40))
-io_uring_register$IORING_REGISTER_BUFFERS(r0, 0x0, &(0x7f0000001240)=[{&(0x7f0000000000)=""/78, 0x4e}], 0x1)
-r1 = openat$sysctl(0xffffffffffffff9c, &(0x7f0000001340)='/proc/self/clear_refs\x00', 0x1, 0x0)
-write$sysctl(r1, &(0x7f0000001380)='4\x00', 0x2)

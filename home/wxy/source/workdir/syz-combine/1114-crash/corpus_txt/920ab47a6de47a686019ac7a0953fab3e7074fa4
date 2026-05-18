@@ -1,2 +1,0 @@
-r0 = socket$nl_audit(0x10, 0x3, 0x9)
-ioctl$sock_SIOCETHTOOL(r0, 0x8946, &(0x7f0000000040)={'sit0\x00', &(0x7f0000000080)=@ethtool_rxnfc={0x2a, 0x0, 0x0, {0x0, @usr_ip6_spec={@empty, @dev}, {0x0, @random="afeac0e86340"}, @usr_ip4_spec={@local, @empty}, {0x0, @link_local}}}})

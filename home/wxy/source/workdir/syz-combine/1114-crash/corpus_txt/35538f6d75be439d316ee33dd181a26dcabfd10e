@@ -1,2 +1,0 @@
-r0 = syz_open_dev$usbfs(&(0x7f00000001c0), 0xb, 0x2)
-ioctl$USBDEVFS_RELEASEINTERFACE(r0, 0xc00c5512, 0x0)

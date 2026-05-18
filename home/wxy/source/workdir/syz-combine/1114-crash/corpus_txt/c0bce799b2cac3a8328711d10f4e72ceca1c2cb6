@@ -1,6 +1,0 @@
-r0 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='memory.events.local\x00', 0x275a, 0x0)
-write$binfmt_script(r0, &(0x7f0000003a80), 0x208e24b)
-pipe(&(0x7f0000000000)={<r1=>0xffffffffffffffff, <r2=>0xffffffffffffffff})
-sendfile(r2, r0, 0x0, 0x8)
-read(r1, &(0x7f00000000c0)=""/14, 0xe)
-write$binfmt_elf64(0xffffffffffffffff, 0x0, 0x3f0)

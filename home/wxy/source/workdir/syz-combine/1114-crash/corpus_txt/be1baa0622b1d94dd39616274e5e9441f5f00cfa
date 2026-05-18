@@ -1,4 +1,0 @@
-r0 = socket$inet6_sctp(0xa, 0x801, 0x84)
-connect$inet6(r0, &(0x7f0000000440)={0xa, 0x0, 0x0, @rand_addr=' \x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02'}, 0x1c)
-shutdown(r0, 0x1)
-setsockopt$inet_sctp6_SCTP_PEER_ADDR_THLDS(r0, 0x84, 0x84, &(0x7f0000000240)={0x0, @in={{0x2, 0x0, @empty}}}, 0x90)

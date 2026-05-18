@@ -1,6 +1,0 @@
-r0 = open(&(0x7f0000000200)='./file0\x00', 0x185b42, 0x0)
-r1 = open(&(0x7f0000000000)='./file0\x00', 0x121a42, 0x0)
-write$vga_arbiter(r1, &(0x7f0000000140)=ANY=[], 0xfffffded)
-r2 = open(&(0x7f0000000040)='./file0\x00', 0x42, 0x0)
-write$vga_arbiter(r2, 0x0, 0xfffffded)
-write$tcp_mem(r0, 0x0, 0x0)

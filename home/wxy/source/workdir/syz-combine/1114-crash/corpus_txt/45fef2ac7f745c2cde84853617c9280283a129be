@@ -1,3 +1,0 @@
-setrlimit(0x1, &(0x7f0000000100)={0xffffffffffffffff, 0xffffffffffffffff})
-r0 = open(&(0x7f00000002c0)='./bus\x00', 0x1c1042, 0x0)
-pwrite64(r0, &(0x7f0000000180)="13", 0x1, 0x4010040bffd)

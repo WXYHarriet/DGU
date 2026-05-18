@@ -1,3 +1,0 @@
-r0 = epoll_create(0x401)
-r1 = eventfd2(0x80000001, 0x0)
-epoll_ctl$EPOLL_CTL_ADD(r0, 0x1, r1, &(0x7f0000000040)={0xa0000008})

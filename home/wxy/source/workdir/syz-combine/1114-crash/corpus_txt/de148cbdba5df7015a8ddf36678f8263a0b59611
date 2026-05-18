@@ -1,2 +1,0 @@
-r0 = inotify_init1(0x0)
-fcntl$setstatus(r0, 0x4, 0x2000)

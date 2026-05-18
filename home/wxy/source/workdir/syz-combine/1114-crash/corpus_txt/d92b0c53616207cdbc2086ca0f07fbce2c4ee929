@@ -1,4 +1,0 @@
-r0 = syz_open_dev$evdev(&(0x7f0000000000), 0x0, 0x80002)
-pipe2(&(0x7f0000000540)={0xffffffffffffffff, <r1=>0xffffffffffffffff}, 0x84000)
-r2 = dup2(r0, r1)
-read$eventfd(r2, &(0x7f00000000c0), 0x8)

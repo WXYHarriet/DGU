@@ -1,1 +1,0 @@
-arch_prctl$ARCH_REQ_XCOMP_GUEST_PERM(0x1025, 0x12)

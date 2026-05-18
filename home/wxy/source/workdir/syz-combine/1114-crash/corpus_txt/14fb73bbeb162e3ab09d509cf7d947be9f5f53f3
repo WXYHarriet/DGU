@@ -1,5 +1,0 @@
-r0 = userfaultfd(0x1)
-r1 = epoll_create1(0x0)
-epoll_ctl$EPOLL_CTL_ADD(r1, 0x1, r0, &(0x7f0000000080))
-epoll_ctl$EPOLL_CTL_MOD(r1, 0x3, r0, &(0x7f00000001c0)={0x40000000})
-epoll_pwait(r1, &(0x7f0000000000)=[{}], 0x1, 0x0, 0x0, 0x0)

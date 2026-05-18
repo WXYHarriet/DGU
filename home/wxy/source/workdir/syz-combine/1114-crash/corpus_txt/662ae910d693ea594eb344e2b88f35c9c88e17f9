@@ -1,2 +1,0 @@
-r0 = syz_open_procfs$namespace(0xffffffffffffffff, &(0x7f0000000340)='ns/uts\x00')
-ioctl$F2FS_IOC_MOVE_RANGE(r0, 0xc020f509, 0x0)

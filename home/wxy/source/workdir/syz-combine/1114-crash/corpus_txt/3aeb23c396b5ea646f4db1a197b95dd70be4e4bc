@@ -1,5 +1,0 @@
-openat$sr(0xffffffffffffff9c, &(0x7f0000000080), 0x129e02, 0x0)
-socket$inet_udplite(0x2, 0x2, 0x88)
-close_range(0xffffffffffffffff, 0xffffffffffffffff, 0x2)
-r0 = socket(0x10, 0x3, 0x0)
-write(r0, &(0x7f0000000080)="24000000580025000307f4f9002304000a04f55f08000100020100020800038005000000", 0x24)

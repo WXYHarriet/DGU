@@ -1,4 +1,0 @@
-creat(&(0x7f0000000800)='./control\x00', 0x0)
-r0 = signalfd(0xffffffffffffffff, &(0x7f00007aeff8), 0x8)
-r1 = epoll_create(0x4)
-mount$9p_fd(0x0, &(0x7f0000000040)='./control\x00', &(0x7f0000000000), 0x0, &(0x7f00000003c0)=ANY=[@ANYBLOB='trans=fd,rfdno=', @ANYRESHEX=r0, @ANYBLOB=',wfdno=', @ANYRESHEX=r1])

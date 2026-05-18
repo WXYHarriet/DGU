@@ -1,3 +1,0 @@
-r0 = syz_open_dev$sg(&(0x7f0000000040), 0x0, 0x2)
-write$binfmt_elf64(r0, &(0x7f0000000780)=ANY=[], 0x40)
-read$snapshot(r0, 0x0, 0x0)

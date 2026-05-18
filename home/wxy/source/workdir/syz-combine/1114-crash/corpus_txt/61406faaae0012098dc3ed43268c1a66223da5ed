@@ -1,2 +1,0 @@
-r0 = socket(0x10, 0x3, 0x0)
-sendmsg$nl_xfrm(r0, &(0x7f0000000380)={0x0, 0x0, &(0x7f0000000340)={&(0x7f00000003c0)=ANY=[@ANYBLOB="f00000001a00010000000000000000000a0100fdeeffffffffff"], 0xf0}}, 0x0)

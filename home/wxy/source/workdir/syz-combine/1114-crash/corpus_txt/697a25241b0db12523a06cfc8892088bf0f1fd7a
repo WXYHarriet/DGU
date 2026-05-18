@@ -1,1 +1,0 @@
-clock_nanosleep(0x9, 0xb6d98c8693e4b9fa, &(0x7f0000000040), 0x0)

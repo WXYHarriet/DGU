@@ -1,2 +1,0 @@
-socketpair$unix(0x1, 0x200000005, 0x0, &(0x7f0000000240)={0xffffffffffffffff, <r0=>0xffffffffffffffff})
-ioctl$AUTOFS_IOC_FAIL(r0, 0x541b, 0x23000000000000)

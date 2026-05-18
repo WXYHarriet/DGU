@@ -1,2 +1,0 @@
-r0 = socket$inet6_mptcp(0xa, 0x1, 0x106)
-ioctl$sock_SIOCETHTOOL(r0, 0x8946, &(0x7f0000000540)={'wlan1\x00', &(0x7f00000004c0)=@ethtool_regs})

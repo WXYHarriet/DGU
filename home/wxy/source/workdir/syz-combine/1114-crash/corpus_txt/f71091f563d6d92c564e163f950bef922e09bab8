@@ -1,3 +1,0 @@
-r0 = creat(&(0x7f0000000280)='./file0\x00', 0x0)
-openat$vim2m(0xffffffffffffff9c, &(0x7f0000000240), 0x2, 0x0)
-close_range(r0, 0xffffffffffffffff, 0x0)

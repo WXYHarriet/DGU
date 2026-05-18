@@ -1,3 +1,0 @@
-r0 = socket$can_bcm(0x1d, 0x2, 0x2)
-connect$can_bcm(r0, &(0x7f0000000100), 0x10)
-sendmsg$can_bcm(r0, &(0x7f00000006c0)={0x0, 0x0, &(0x7f0000000680)={&(0x7f0000000600)={0x5, 0x10ffa039a9e1a8f6, 0x0, {}, {}, {}, 0x1, @canfd={{}, 0x0, 0x0, 0x0, 0x0, "e43d0c4f428636bfb5157ea30f466cb11102b6a619185e49bd33d2b8a0c3b7031eee589764c0dc4408d09fafb3b2769f24e99c5e312d4b5ff2cf43d346df6992"}}, 0x80}}, 0x0)

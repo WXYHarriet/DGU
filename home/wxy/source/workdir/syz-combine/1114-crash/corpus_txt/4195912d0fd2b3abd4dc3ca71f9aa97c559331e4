@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x25, &(0x7f0000000040)={@multicast, @broadcast, @void, {@generic={0x17, "7297e4df3296a260e8f56f20ea3e99b4919c73b37c2ab4"}}}, 0x0)

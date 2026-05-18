@@ -1,1 +1,0 @@
-openat$ipvs(0xffffffffffffff9c, &(0x7f0000000100)='/proc/sys/net/ipv4/vs/sync_refresh_period\x00', 0x2, 0x0)

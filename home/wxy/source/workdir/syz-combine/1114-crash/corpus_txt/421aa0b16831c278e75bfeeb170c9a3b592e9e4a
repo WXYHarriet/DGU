@@ -1,4 +1,0 @@
-r0 = socket$inet_icmp_raw(0x2, 0x3, 0x1)
-r1 = getpid()
-fcntl$setown(r0, 0x8, r1)
-ioctl$sock_FIOGETOWN(r0, 0x8903, &(0x7f0000000000))

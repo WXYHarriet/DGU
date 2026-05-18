@@ -1,3 +1,0 @@
-r0 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f00000008c0), 0x40582, 0x0)
-r1 = dup2(r0, r0)
-write$vga_arbiter(r1, &(0x7f0000000080)=@target={'target ', {'PCI:', '0', ':', 'b', ':', '1a', '.', '1b'}}, 0x15)

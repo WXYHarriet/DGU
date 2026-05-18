@@ -1,2 +1,0 @@
-r0 = socket$nl_netfilter(0x10, 0x3, 0xc)
-ioctl$FS_IOC_SETFLAGS(r0, 0x40086602, &(0x7f00000002c0)=0x2000000)

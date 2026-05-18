@@ -1,8 +1,0 @@
-r0 = getpgrp(0xffffffffffffffff)
-ioctl$SW_SYNC_IOC_INC(0xffffffffffffffff, 0x40045701, 0x0)
-fcntl$setown(0xffffffffffffffff, 0x8, 0x0)
-signalfd(0xffffffffffffffff, 0x0, 0x0)
-syz_clone(0x2020000, 0x0, 0x0, &(0x7f0000000540), &(0x7f00000005c0), &(0x7f0000000640)="caf0dc6d9a0f8a8996242cef61bd31c0e149e84ddbdb492f1d15d9ae2d9ce0db7b9e139f859f76819a2612ead18e31")
-fcntl$setown(0xffffffffffffffff, 0x8, r0)
-request_key(&(0x7f0000000440)='id_resolver\x00', &(0x7f0000000000)={'syz', 0x3}, 0x0, 0xfffffffffffffffb)
-socket$nl_netfilter(0x10, 0x3, 0xc)

@@ -1,3 +1,0 @@
-socketpair$unix(0x1, 0x5, 0x0, &(0x7f0000000100)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff})
-bind$unix(r0, &(0x7f00000007c0)=@file={0x1, './file0\x00'}, 0x6e)
-getpeername$unix(r1, 0x0, &(0x7f0000000400))

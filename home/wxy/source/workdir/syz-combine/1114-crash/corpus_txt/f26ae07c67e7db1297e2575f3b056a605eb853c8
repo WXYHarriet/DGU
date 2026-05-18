@@ -1,1 +1,0 @@
-syz_emit_vhci(&(0x7f0000000000)=@HCI_EVENT_PKT={0x4, @hci_ev_conn_request={{0x4, 0xa}, {@none, "19e88f"}}}, 0xd)

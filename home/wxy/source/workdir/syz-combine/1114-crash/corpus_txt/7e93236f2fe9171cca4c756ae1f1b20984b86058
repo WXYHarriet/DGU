@@ -1,3 +1,0 @@
-syz_genetlink_get_family_id$wireguard(&(0x7f0000000000), 0xffffffffffffffff)
-pkey_mprotect(&(0x7f0000ffc000/0x4000)=nil, 0x4000, 0xd, 0xffffffffffffffff)
-pkey_mprotect(&(0x7f0000ffb000/0x4000)=nil, 0x4000, 0x0, 0xffffffffffffffff)

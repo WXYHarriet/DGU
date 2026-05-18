@@ -1,2 +1,0 @@
-setrlimit(0x7, &(0x7f0000005800))
-fsopen(&(0x7f0000000040)='rpc_pipefs\x00', 0x0)

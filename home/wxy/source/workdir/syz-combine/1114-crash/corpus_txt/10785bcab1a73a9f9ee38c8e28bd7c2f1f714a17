@@ -1,2 +1,0 @@
-r0 = socket$netlink(0x10, 0x3, 0x0)
-sendmsg$netlink(r0, &(0x7f0000000040)={0x0, 0x0, &(0x7f0000002ec0)=[{&(0x7f0000000080)=ANY=[@ANYBLOB="240000006600ad05feffffff0000000008000000", @ANYRES32=r0], 0x24}], 0x1}, 0x0)

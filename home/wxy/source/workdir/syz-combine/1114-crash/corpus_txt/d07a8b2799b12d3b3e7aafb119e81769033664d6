@@ -1,1 +1,0 @@
-syz_emit_vhci(&(0x7f0000000080)=@HCI_EVENT_PKT={0x4, @hci_ev_io_capa_request={{0x31, 0x6}, {@fixed={'\xaa\xaa\xaa\xaa\xaa', 0x10}}}}, 0x9)

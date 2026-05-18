@@ -1,2 +1,0 @@
-r0 = openat$rfkill(0xffffffffffffff9c, &(0x7f00000001c0), 0x1, 0x0)
-fremovexattr(r0, &(0x7f0000000200)=@random={'user.', 'nl80211\x00'})

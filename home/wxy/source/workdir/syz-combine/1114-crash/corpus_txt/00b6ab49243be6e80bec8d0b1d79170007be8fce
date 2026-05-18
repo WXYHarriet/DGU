@@ -1,3 +1,0 @@
-r0 = mq_open(&(0x7f0000000040)='!selinuxsel\xad\"\x0e\xabx\xb8\xc9\xa8x\x00', 0x6e93ebbbcc0884f2, 0x2, 0x0)
-mq_notify(r0, &(0x7f0000000200))
-mq_notify(r0, &(0x7f0000000180)={0x0, 0x21})

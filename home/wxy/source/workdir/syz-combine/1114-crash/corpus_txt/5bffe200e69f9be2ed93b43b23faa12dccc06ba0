@@ -1,2 +1,0 @@
-unshare(0x40000000)
-openat$tcp_congestion(0xffffffffffffff9c, &(0x7f0000000000), 0x1, 0x0)

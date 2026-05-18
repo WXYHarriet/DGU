@@ -1,2 +1,0 @@
-r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000000040)='/sys/power/disk', 0x0, 0x0)
-read$FUSE(r0, &(0x7f00000003c0)={0x2020}, 0x2020)

@@ -1,6 +1,0 @@
-mkdir(&(0x7f0000000100)='./file0\x00', 0x0)
-r0 = open(&(0x7f0000021000)='./file0\x00', 0x0, 0x0)
-rmdir(&(0x7f0000000000)='./file0\x00')
-fchdir(r0)
-r1 = open(&(0x7f00000000c0)='.\x00', 0x0, 0x0)
-getdents(r1, 0x0, 0x0)

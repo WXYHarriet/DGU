@@ -1,4 +1,0 @@
-r0 = socket$inet6_tcp(0xa, 0x1, 0x0)
-setsockopt$inet6_tcp_TCP_MD5SIG(r0, 0x6, 0xe, &(0x7f0000000280)={@in6={{0xa, 0x0, 0x0, @loopback}}, 0x0, 0x0, 0x2, 0x0, "856ba593261c9b0c7596daf9b8864235bca1047ab328afd7cf487dfbda0c973eff16089012eb1cc007466a85ceb9645df6c76b5118150dbd1577a381f8fbe69bcd7bf18aa4012763c83b3214f4fa29cd"}, 0xd8)
-setsockopt$inet6_tcp_TCP_MD5SIG(r0, 0x6, 0xe, &(0x7f00000000c0)={@in6={{0xa, 0x0, 0x0, @remote}}, 0x0, 0x0, 0x12, 0x0, "eb50e4f7237b9450e04e4790e3a8f860011760e3298b2cfd8fd8921bc6aedc0d842cbb68b5bd4fef119aee61994a87eef3a44e402d707881155ba63b9550cc9a01da16d654b9e77e25d1577015a999a6"}, 0xd8)
-setsockopt$inet6_tcp_TCP_MD5SIG(r0, 0x6, 0xe, &(0x7f0000000140)={@in6={{0xa, 0x0, 0x0, @ipv4={'\x00', '\xff\xff', @broadcast}}}, 0x0, 0x0, 0x2f, 0x0, "9ecf98bdd524b23ebd42abccea290be6e7c29e4c82324258979b687a0d97512ba749fe0afe69248a7b14c2160181b1b6b653670d1555b4446bb5c094a9d1d058c711fbdb46cd8d3f64690170e1fb702f"}, 0xd8)

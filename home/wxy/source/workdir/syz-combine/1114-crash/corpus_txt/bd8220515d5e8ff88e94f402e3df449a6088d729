@@ -1,4 +1,0 @@
-r0 = request_key(&(0x7f0000000000)='keyring\x00', &(0x7f0000000040)={'syz', 0x1}, &(0x7f0000000080)='comm\x00', 0xfffffffffffffffb)
-keyctl$revoke(0x3, r0)
-r1 = syz_open_procfs(0x0, &(0x7f0000000140)='comm\x00')
-write$P9_RSTATu(r1, &(0x7f0000000380)=ANY=[], 0x59)

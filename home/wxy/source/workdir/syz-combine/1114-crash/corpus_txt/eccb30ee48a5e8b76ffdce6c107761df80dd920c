@@ -1,1 +1,0 @@
-syz_emit_vhci(&(0x7f00000000c0)=ANY=[@ANYBLOB="043e"], 0x22)

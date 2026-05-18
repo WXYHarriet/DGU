@@ -1,6 +1,0 @@
-prctl$PR_SCHED_CORE(0x3e, 0x1, 0x0, 0x2, 0x0)
-r0 = syz_open_dev$sndmidi(&(0x7f0000000040), 0x2, 0x141101)
-r1 = dup(r0)
-write$6lowpan_enable(r1, &(0x7f0000000000)='0', 0xfffffd2c)
-r2 = socket$nl_netfilter(0x10, 0x3, 0xc)
-sendmsg$IPSET_CMD_SAVE(r2, &(0x7f0000000700)={0x0, 0x0, &(0x7f00000006c0)={&(0x7f00000007c0)=ANY=[@ANYBLOB="1c000000080603000000000000000000004000000500010007"], 0x1c}}, 0x0)

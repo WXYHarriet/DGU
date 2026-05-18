@@ -1,4 +1,0 @@
-r0 = socket$nl_generic(0x10, 0x3, 0x10)
-r1 = dup(r0)
-r2 = syz_genetlink_get_family_id$ethtool(&(0x7f0000009740), 0xffffffffffffffff)
-sendmsg$ETHTOOL_MSG_STRSET_GET(r1, &(0x7f0000000300)={0x0, 0x0, &(0x7f00000002c0)={&(0x7f0000000240)=ANY=[@ANYBLOB="14000000", @ANYRES16=r2, @ANYBLOB="110300000000001c7ef220"], 0x14}}, 0x0)

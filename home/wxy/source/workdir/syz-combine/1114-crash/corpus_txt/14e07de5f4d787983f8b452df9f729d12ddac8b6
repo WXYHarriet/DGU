@@ -1,7 +1,0 @@
-r0 = syz_create_resource$binfmt(&(0x7f0000000040)='./file1\x00')
-r1 = openat$binfmt(0xffffffffffffff9c, r0, 0x42, 0x1ff)
-close(r1)
-r2 = openat$binfmt(0xffffffffffffff9c, r0, 0x2, 0x0)
-write(r2, &(0x7f0000000180)="01", 0x1)
-close(r2)
-execveat$binfmt(0xffffffffffffff9c, r0, &(0x7f0000000440)={[&(0x7f0000000000)='\xee;\x89Z\xc4\xe4N\xe5']}, 0x0, 0x0)

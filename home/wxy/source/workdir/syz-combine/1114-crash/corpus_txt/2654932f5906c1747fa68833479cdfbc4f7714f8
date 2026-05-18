@@ -1,5 +1,0 @@
-socketpair$tipc(0x1e, 0x5, 0x0, &(0x7f0000000080)={0xffffffffffffffff, <r0=>0xffffffffffffffff})
-r1 = socket$nl_generic(0x10, 0x3, 0x10)
-ioctl$sock_SIOCGIFINDEX_80211(r0, 0x8933, &(0x7f0000000400)={'wlan1\x00', <r2=>0x0})
-r3 = syz_genetlink_get_family_id$nl80211(&(0x7f0000000480), 0xffffffffffffffff)
-sendmsg$NL80211_CMD_FRAME(r1, &(0x7f0000001280)={0x0, 0x0, &(0x7f0000001240)={&(0x7f0000000140)=ANY=[@ANYBLOB="48040000", @ANYRES16=r3, @ANYBLOB="010000000000000004003b1c210008000300", @ANYRES32=r2, @ANYBLOB="240433"], 0x448}}, 0x0)

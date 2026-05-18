@@ -1,5 +1,0 @@
-r0 = socket$kcm(0x10, 0x400000002, 0x0)
-write$cgroup_subtree(r0, &(0x7f0000001500)=ANY=[@ANYBLOB="13610000120091ef"], 0xfe33)
-r1 = openat$tun(0xffffffffffffff9c, &(0x7f00000002c0), 0x0, 0x0)
-ioctl$TUNSETIFF(r1, 0x400454ca, &(0x7f0000000200)={'rose0\x00', 0x116})
-recvmsg$kcm(r0, &(0x7f00000018c0)={0x0, 0xfffffffffffffff3, 0x0}, 0x0)

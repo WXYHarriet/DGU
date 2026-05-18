@@ -1,4 +1,0 @@
-r0 = syz_open_dev$sndmidi(&(0x7f0000000040), 0x2, 0x141101)
-r1 = dup(r0)
-write$6lowpan_enable(r1, 0x0, 0x0)
-syz_emit_vhci(&(0x7f0000000040)=ANY=[@ANYBLOB="05"], 0xd)

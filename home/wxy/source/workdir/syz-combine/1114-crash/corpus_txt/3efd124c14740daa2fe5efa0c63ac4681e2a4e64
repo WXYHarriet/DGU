@@ -1,3 +1,0 @@
-r0 = userfaultfd(0x801)
-ioctl$UFFDIO_API(r0, 0xc018aa3f, &(0x7f0000000000))
-ioctl$UFFDIO_WAKE(r0, 0x8010aa02, &(0x7f0000000040)={&(0x7f0000ffe000/0x1000)=nil, 0x1000})

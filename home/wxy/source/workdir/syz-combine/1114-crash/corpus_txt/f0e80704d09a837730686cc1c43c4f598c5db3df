@@ -1,2 +1,0 @@
-r0 = syz_open_procfs$namespace(0x0, &(0x7f0000000500)='ns/ipc\x00')
-ioctl$INCFS_IOC_READ_FILE_SIGNATURE(r0, 0xb702, 0x0)

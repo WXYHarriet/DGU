@@ -1,4 +1,0 @@
-r0 = open(&(0x7f00000005c0)='./bus\x00', 0x147842, 0x0)
-r1 = openat$cdrom(0xffffffffffffff9c, &(0x7f0000000000), 0x88840, 0x0)
-r2 = dup2(r1, r0)
-ioctl$CDROMREADRAW(r2, 0x5314, 0x0)

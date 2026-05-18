@@ -1,2 +1,0 @@
-r0 = eventfd2(0x7238, 0x800)
-close_range(r0, r0, 0x6)

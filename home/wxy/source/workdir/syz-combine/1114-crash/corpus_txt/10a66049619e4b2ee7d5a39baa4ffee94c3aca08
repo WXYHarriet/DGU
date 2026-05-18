@@ -1,2 +1,0 @@
-r0 = inotify_init1(0x80800)
-read$watch_queue(r0, 0x0, 0x0)

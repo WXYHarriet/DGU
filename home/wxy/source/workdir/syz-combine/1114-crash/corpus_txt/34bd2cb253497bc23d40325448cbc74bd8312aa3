@@ -1,2 +1,0 @@
-ioctl$DMA_HEAP_IOCTL_ALLOC(0xffffffffffffffff, 0xc0184800, &(0x7f0000000000))
-madvise(&(0x7f0000ffd000/0x3000)=nil, 0x3000, 0x19)

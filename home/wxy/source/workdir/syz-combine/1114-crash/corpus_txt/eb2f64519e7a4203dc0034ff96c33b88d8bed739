@@ -1,2 +1,0 @@
-creat(&(0x7f0000005dc0)='./file0\x00', 0x5618b7c7f91d1cdb)
-lchown(&(0x7f0000006400)='./file0\x00', 0x0, 0x0)

@@ -1,2 +1,0 @@
-r0 = syz_open_dev$sg(&(0x7f0000000040), 0x0, 0x88041)
-write$binfmt_elf64(r0, &(0x7f0000000780)=ANY=[@ANYRES32=r0, @ANYBLOB="19b55a5981a445bd0e5c982cf16155503610b2a2dfc71320ed79ee09d3ffd15ed9"], 0x40)

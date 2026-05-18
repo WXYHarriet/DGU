@@ -1,3 +1,0 @@
-socketpair$unix(0x1, 0x5, 0x0, &(0x7f0000000080)={<r0=>0xffffffffffffffff})
-syz_open_procfs(0x0, &(0x7f0000000040)='net/dev_mcast\x00')
-close_range(r0, 0xffffffffffffffff, 0x0)

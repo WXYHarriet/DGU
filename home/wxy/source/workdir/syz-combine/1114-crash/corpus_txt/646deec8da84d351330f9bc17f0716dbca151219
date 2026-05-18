@@ -1,7 +1,0 @@
-r0 = openat$nvram(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
-lseek(r0, 0x5, 0x4)
-r1 = socket$inet6_tcp(0xa, 0x1, 0x0)
-listen(r1, 0x0)
-r2 = syz_open_procfs(0xffffffffffffffff, &(0x7f00000000c0)='net/tcp6\x00')
-read$snapshot(r2, &(0x7f0000000200)=""/121, 0x9f)
-read$snapshot(r2, &(0x7f0000000100)=""/245, 0xf5)

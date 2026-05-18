@@ -1,4 +1,0 @@
-socketpair$unix(0x1, 0x1, 0x0, &(0x7f0000000000)={<r0=>0xffffffffffffffff})
-pipe2$9p(&(0x7f0000000240)={0xffffffffffffffff, <r1=>0xffffffffffffffff}, 0x0)
-write$P9_RVERSION(r1, &(0x7f0000000080)=ANY=[], 0x15)
-close_range(r0, 0xffffffffffffffff, 0x0)

@@ -1,2 +1,0 @@
-r0 = socket$kcm(0x2, 0x3, 0x2)
-ioctl$SIOCSIFHWADDR(r0, 0x8b26, &(0x7f00000007c0)={'wlan0\x00', @random="000000000100"})

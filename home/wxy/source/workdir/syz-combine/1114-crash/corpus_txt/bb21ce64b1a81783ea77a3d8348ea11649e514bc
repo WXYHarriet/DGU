@@ -1,8 +1,0 @@
-prctl$PR_SCHED_CORE(0x3e, 0x1, 0x0, 0x2, 0x0)
-r0 = syz_open_dev$sndmidi(&(0x7f0000000080), 0x2, 0x141101)
-r1 = dup(r0)
-write$6lowpan_enable(r1, &(0x7f0000000000)='0', 0xfffffd2c)
-openat$audio(0xffffffffffffff9c, 0x0, 0x0, 0x0)
-r2 = add_key$user(&(0x7f0000000200), &(0x7f0000000300)={'syz', 0x2}, &(0x7f00000002c0)="f5", 0x30, 0xfffffffffffffffe)
-r3 = add_key$user(&(0x7f00000003c0), &(0x7f0000000440), &(0x7f0000000480)="2f41b7ae5fa1fd9e8e6ced09f30e456faf7a08b68ab2e6856d87cbed0170f9227d717c2b5250f227e6adb42702e5bfd271d797fb88ee982a4b4f695b9ba4bccaf8b9fc9c65b8e99be3e82bb8e03f703f3d848d2f66c1acbd212c8b1045af42a585d2347435ffb2377dded85f06833f15dde9cba16bb86243f6bfc9bcd9ce61724dcd090ca6e5f127701d11230bf4362af42b2cd8a75885b76e16f970dd18d653004d44185e7a218aa4d008d39dfe7b73f2ca90816e3a4b7c04da5e9e8c3cf073", 0xc0, 0xfffffffffffffffd)
-keyctl$dh_compute(0x17, &(0x7f0000000140)={r2, r3, r2}, &(0x7f00000000c0)=""/83, 0xfffffffffffffe4f, 0x0)

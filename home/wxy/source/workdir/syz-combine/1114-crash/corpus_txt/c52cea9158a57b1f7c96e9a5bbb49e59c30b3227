@@ -1,3 +1,0 @@
-socket$unix(0x1, 0x1, 0x0)
-r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='fdinfo/3\x00')
-read$char_usb(r0, &(0x7f0000000040)=""/241, 0xf1)

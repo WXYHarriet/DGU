@@ -1,2 +1,0 @@
-r0 = syz_init_net_socket$ax25(0x3, 0x5, 0x0)
-ioctl$sock_proto_private(r0, 0x89e8, &(0x7f0000000080)="84174076e5a3a2a8fb9803da641dc678a8a79bb7de8fc146320e22e3dca6737f7217c6811c694e0553")

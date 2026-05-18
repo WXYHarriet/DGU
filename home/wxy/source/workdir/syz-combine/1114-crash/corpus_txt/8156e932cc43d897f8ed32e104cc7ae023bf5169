@@ -1,2 +1,0 @@
-sendmsg(0xffffffffffffffff, 0x0, 0x0)
-sysinfo(&(0x7f0000000000)=""/50)

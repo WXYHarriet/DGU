@@ -1,2 +1,0 @@
-ioctl$SNDRV_CTL_IOCTL_HWDEP_INFO(0xffffffffffffffff, 0x80dc5521, 0x0)
-openat$snapshot(0xffffffffffffff9c, &(0x7f0000000080), 0x40, 0x0)

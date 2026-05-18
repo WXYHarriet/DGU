@@ -1,1 +1,0 @@
-arch_prctl$ARCH_GET_XCOMP_SUPP(0x1021, &(0x7f00000000c0))

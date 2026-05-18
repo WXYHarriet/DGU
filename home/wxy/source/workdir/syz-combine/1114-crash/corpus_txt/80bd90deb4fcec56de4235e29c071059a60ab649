@@ -1,2 +1,0 @@
-r0 = gettid()
-tkill(r0, 0x7)

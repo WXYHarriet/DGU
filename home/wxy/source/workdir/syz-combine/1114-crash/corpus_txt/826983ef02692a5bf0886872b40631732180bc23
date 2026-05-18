@@ -1,2 +1,0 @@
-r0 = add_key$fscrypt_v1(&(0x7f0000000000), &(0x7f0000000040)={'fscrypt:', @desc2}, &(0x7f0000000080)={0x0, "3077493b7a34101648d56edc2ba2d3d6fff7549b36aa494d78c27b2542dff9f95af94119bd359986577be5bf3a403f50ac13ecd0a6770bd66e9efea6f0c54a39"}, 0x48, 0xffffffffffffffff)
-keyctl$update(0x2, r0, &(0x7f0000000100)="ba", 0x1)

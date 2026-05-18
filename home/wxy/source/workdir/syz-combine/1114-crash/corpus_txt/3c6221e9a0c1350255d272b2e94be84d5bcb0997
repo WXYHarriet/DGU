@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x60, &(0x7f00000023c0)={@multicast, @remote, @void, {@ipv6={0x86dd, @icmpv6={0x0, 0x6, "75e700", 0x2a, 0x3a, 0xff, @dev, @mcast2, {[], @ndisc_redir={0x89, 0x0, 0x0, '\x00', @loopback, @dev, [{}]}}}}}}, 0x0)

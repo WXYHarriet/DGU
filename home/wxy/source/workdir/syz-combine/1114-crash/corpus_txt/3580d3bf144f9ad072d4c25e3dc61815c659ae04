@@ -1,2 +1,0 @@
-open$dir(&(0x7f0000000000)='./file0\x00', 0x440, 0x0)
-mount$overlay(0x0, &(0x7f0000000080)='./file0\x00', &(0x7f0000000140), 0x0, &(0x7f0000000180)={[{@lowerdir={'lowerdir', 0x3d, './file0'}}]})

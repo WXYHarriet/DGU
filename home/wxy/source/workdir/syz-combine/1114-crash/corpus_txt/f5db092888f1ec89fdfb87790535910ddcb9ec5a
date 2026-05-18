@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f00000000c0)='smaps_rollup\x00')
-lseek(r0, 0xbf4f, 0x0)

@@ -1,5 +1,0 @@
-r0 = socket$inet_tcp(0x2, 0x1, 0x0)
-setsockopt$inet_tcp_int(r0, 0x6, 0x10000000013, &(0x7f0000000040)=0x2000000000000001, 0x4)
-connect$inet(r0, &(0x7f0000000080), 0x10)
-setsockopt$inet_tcp_TCP_REPAIR_WINDOW(0xffffffffffffffff, 0x6, 0x1d, &(0x7f0000000140)={0x4, 0x7}, 0x14)
-setsockopt$inet_tcp_TCP_REPAIR_OPTIONS(r0, 0x6, 0x16, &(0x7f00000000c0)=[@mss, @mss, @mss, @mss, @timestamp, @sack_perm], 0x154)

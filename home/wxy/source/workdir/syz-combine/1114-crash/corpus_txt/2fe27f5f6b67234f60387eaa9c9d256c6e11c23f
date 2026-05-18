@@ -1,8 +1,0 @@
-syz_mount_image$vfat(&(0x7f00000000c0), &(0x7f0000000480)='./file0\x00', 0x0, &(0x7f0000000000)=ANY=[], 0x8, 0x2cd, &(0x7f00000004c0)="$eJzs3L9PE2EYwPGHUkpbAu1gNJoYnuiiywWqs7ExkBibSJAafyQmB1y16dmSXoOpMaKTq/GPcCCMbCTKP8DipouLG4uJgwzGml7vgEKhBiiH9vtJyD137/vcvS8c5HkvXNfvvX1ayDlGzqxIKKrSIyKyIZKUkPh6vG3IjSOy3Su5PPDj8/k79x/cSmcyY5Oq4+mpKylVHRr+8OxFzOu20i9ryUfr31Pf1k6vnV3/PfUk72je0WKpoqZOl75WzGnb0tm8UzBUJ2zLdCzNFx2r3GgvNdpzdmlurqpmcXYwPle2HEfNYlULVlUrJa2Uq2o+NvNFNQxDB+OCdrKLk5Nm+oDJM0c8GHRIuZw2e0UktqsluxjIgAAAQKB21v+hekl/dPX/0oXVysDd5SGv/l+JtKr/r35pnKup/o+KSMfr/90VUXc5VP2Pk2E4sutQT9Nevf6Pe7+/rtcPl0bcgPofAAAAAAAAAAAAAAAAAAAAAIB/wUatlqjVagl/63/1i0hURPz9oMeJzuDn3922XtwLD4nYb+az89nG1uuwKiK2WDIiCfnl3g+eeuy/eaR1SfloL3j5C/PZXrclnZO8mz8qCUnuzK/Vxm9mxka1oTm/T+Lb81OSkFOt81Mt8yNy6eK2fEMS8mlGSmLLrHtfb+W/HFW9cTuzIz/m9gMAAAAA4H9g6KaW63fD2Ku9kb+5vm75fKCxvh5puT4Py7lwsHMHAAAAAKBbONXnBdO2rfI+QUza9zl4EO7Qmf0Z/m2W/78MnZvpPoF/8aamqHcwgPG0DUJykKzh+mz0sFf3Hxvt1Ucmgvq2nHn3/ufRnfDacrTNTDsW9B3fXyAAAAAAx2Wr6PePXA92QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdKHj+DixoOcIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnBR/AgAA//9vPQ3+")
-r0 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='memory.events.local\x00', 0x275a, 0x0)
-write$binfmt_script(r0, &(0x7f0000003a80), 0x208e24b)
-mmap(&(0x7f0000000000/0xb36000)=nil, 0xb36000, 0x2, 0x28011, r0, 0x0)
-fdatasync(r0)
-madvise(&(0x7f0000000000/0x600000)=nil, 0x600003, 0x15)
-preadv(0xffffffffffffffff, 0x0, 0x0, 0x0, 0x0)
-ftruncate(r0, 0x0)

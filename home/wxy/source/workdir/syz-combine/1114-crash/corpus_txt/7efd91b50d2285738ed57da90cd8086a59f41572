@@ -1,2 +1,0 @@
-r0 = syz_open_dev$loop(&(0x7f0000000000), 0x5, 0x8400)
-ioctl$IOC_PR_RELEASE(r0, 0x401070ca, 0x0)

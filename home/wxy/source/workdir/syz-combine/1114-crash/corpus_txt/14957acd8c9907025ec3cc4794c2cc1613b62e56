@@ -1,6 +1,0 @@
-r0 = openat$kvm(0xffffffffffffff9c, &(0x7f00000001c0), 0x0, 0x0)
-r1 = ioctl$KVM_CREATE_VM(r0, 0xae01, 0x0)
-ioctl$KVM_CREATE_IRQCHIP(r1, 0xae60)
-r2 = ioctl$KVM_CREATE_VCPU(r1, 0xae41, 0x0)
-syz_kvm_setup_cpu$x86(r1, r2, &(0x7f0000fe8000/0x18000)=nil, &(0x7f0000000100)=[@text64={0x40, &(0x7f0000000000)="66baa00066b8410066ef0f20e035000004000f22e0b9800000c00f3235010000000f300f303e3e3e470f01c5c4a295bee7c4a1a1fe678d0f1b2d00f0de1df30f1c9a643e0000b805000000b9c1e300000f01c1", 0x53}], 0x1, 0x0, 0x0, 0x0)
-ioctl$KVM_RUN(r2, 0xae80, 0x0)

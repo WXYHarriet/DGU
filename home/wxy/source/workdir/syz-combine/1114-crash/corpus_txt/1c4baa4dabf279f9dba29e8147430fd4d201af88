@@ -1,2 +1,0 @@
-r0 = openat$selinux_load(0xffffffffffffff9c, &(0x7f0000000140), 0x2, 0x0)
-write$selinux_load(r0, &(0x7f0000000000)=ANY=[@ANYBLOB="8cff7cf9080000005345204c696e75781500000000f6000008"], 0x50)

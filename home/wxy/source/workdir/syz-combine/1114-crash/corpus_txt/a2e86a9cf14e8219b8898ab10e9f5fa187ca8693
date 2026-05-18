@@ -1,3 +1,0 @@
-open(&(0x7f00009e1000)='./file0\x00', 0x8060, 0x0)
-stat(&(0x7f0000002a80)='./file0\x00', 0x0)
-newfstatat(0xffffffffffffff9c, &(0x7f0000001280)='./file0\x00', 0x0, 0x0)

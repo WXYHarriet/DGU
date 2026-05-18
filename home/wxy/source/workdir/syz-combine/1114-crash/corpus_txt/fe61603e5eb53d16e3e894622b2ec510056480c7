@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x12, &(0x7f0000000000)={@broadcast, @empty, @void, {@llc={0x4, {@llc={0xdc, 0x0, "03", 'B'}}}}}, 0x0)

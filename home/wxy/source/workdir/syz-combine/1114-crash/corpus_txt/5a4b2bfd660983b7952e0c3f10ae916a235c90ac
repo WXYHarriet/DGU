@@ -1,2 +1,0 @@
-r0 = socket$inet6_tcp(0xa, 0x1, 0x0)
-ioctl$FS_IOC_GETFSSYSFSPATH(r0, 0x80811501, 0x0)

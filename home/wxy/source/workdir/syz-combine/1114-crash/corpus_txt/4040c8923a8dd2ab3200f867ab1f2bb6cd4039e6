@@ -1,1 +1,0 @@
-openat$ptmx(0xffffffffffffff9c, &(0x7f00000000c0), 0x10d802, 0x0)

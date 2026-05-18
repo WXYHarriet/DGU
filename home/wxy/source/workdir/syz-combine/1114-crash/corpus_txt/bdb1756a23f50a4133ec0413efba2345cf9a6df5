@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000040)='net/ip_mr_vif\x00')
-preadv(r0, &(0x7f00000000c0)=[{&(0x7f00000001c0)=""/183, 0xb7}], 0x1, 0xff, 0x0)

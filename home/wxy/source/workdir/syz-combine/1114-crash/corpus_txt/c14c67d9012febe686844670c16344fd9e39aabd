@@ -1,5 +1,0 @@
-modify_ldt$write2(0x11, &(0x7f00000000c0)={0x1c6, 0x0, 0xffffffffffffffff, 0x0, 0x0, 0x1, 0x1}, 0x10)
-r0 = syz_clone(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
-ptrace(0x10, r0)
-ptrace$setregs(0xd, r0, 0x0, &(0x7f0000000000)="2731f6817e32281ded52f2875f2346c56d5e5cb6ca93e4ccab1b1d263a8a2af43cdae5e11e11100248048734078a5ab5cbe2312abe3e9ece9c7dbfb774fffb89b74781a58d6acd3f45a98f130a7397464f9f5f3f020b4eb67f60b0c7fdbfea0d11fcd850ef8ebdf5637f737ede109129e4de07767b0b9c2a2cd461d984ce28e58aef451f39ea24d987")
-ptrace$cont(0x20, r0, 0x0, 0x0)

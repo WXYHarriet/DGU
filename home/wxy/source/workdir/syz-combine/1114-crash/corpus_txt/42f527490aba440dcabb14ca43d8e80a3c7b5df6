@@ -1,4 +1,0 @@
-r0 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
-r1 = syz_genetlink_get_family_id$netlbl_unlabel(&(0x7f0000000000), r0)
-r2 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
-sendmsg$NLBL_UNLABEL_C_STATICREMOVEDEF(r2, &(0x7f0000000200)={0x0, 0x0, &(0x7f0000000140)={&(0x7f0000000080)={0x3c, r1, 0x1, 0x0, 0x0, {}, [@NLBL_UNLABEL_A_IPV6MASK={0x14, 0x3, @rand_addr=' \x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01'}, @NLBL_UNLABEL_A_IPV6ADDR={0x14, 0x2, @private2}]}, 0x3c}}, 0x0)

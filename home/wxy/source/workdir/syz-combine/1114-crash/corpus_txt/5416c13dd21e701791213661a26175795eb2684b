@@ -1,4 +1,0 @@
-r0 = syz_open_dev$sg(&(0x7f00000060c0), 0x0, 0x8002)
-setsockopt$inet6_tcp_TCP_FASTOPEN_KEY(0xffffffffffffffff, 0x6, 0x21, &(0x7f0000000000)="8f2f3c531ef3222cd1ab0368fc42ce95", 0x10)
-r1 = fcntl$dupfd(r0, 0x0, r0)
-ioctl$SCSI_IOCTL_GET_PCI(r1, 0x5393, &(0x7f0000000000))

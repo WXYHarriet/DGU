@@ -1,5 +1,0 @@
-mkdirat(0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00', 0x0)
-r0 = syz_open_procfs(0x0, &(0x7f00000001c0)='mounts\x00')
-mount(0x0, &(0x7f00000002c0)='./file0\x00', &(0x7f0000000940)='ramfs\x00', 0x0, 0x0)
-r1 = memfd_create(&(0x7f0000000000), 0x0)
-sendfile(r1, r0, 0x0, 0xfffffffe)

@@ -1,2 +1,0 @@
-mkdir(&(0x7f0000005580)='./file0\x00', 0x0)
-setxattr$incfs_metadata(&(0x7f00000055c0)='./file0\x00', &(0x7f0000005600), 0x0, 0x0, 0x0)

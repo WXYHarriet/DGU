@@ -1,2 +1,0 @@
-r0 = syz_open_procfs$namespace(0x0, &(0x7f00000006c0)='ns/net\x00')
-quotactl_fd$Q_GETFMT(r0, 0x1ac9bfb4cb1d1710, 0x0, 0x0)

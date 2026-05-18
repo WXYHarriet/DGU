@@ -1,3 +1,0 @@
-r0 = syz_open_dev$sg(&(0x7f00000060c0), 0x0, 0x8002)
-r1 = fcntl$dupfd(r0, 0x406, r0)
-write$selinux_load(r1, &(0x7f0000000240)=ANY=[@ANYBLOB="8cff7cf9080000005345204c696e7578e19dc89d67bd67d71d3cda97ac3db7f3730bda478f"], 0x7d)

@@ -1,2 +1,0 @@
-pkey_mprotect(&(0x7f0000ffa000/0x3000)=nil, 0x3000, 0xa, 0xffffffffffffffff)
-uname(&(0x7f0000000000)=""/234)

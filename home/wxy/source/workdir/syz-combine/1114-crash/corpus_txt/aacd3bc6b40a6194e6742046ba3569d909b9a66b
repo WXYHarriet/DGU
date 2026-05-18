@@ -1,2 +1,0 @@
-r0 = memfd_create(&(0x7f0000000080)='\xf3e\t\xa9\xff\vty\x01senux\x00', 0x0)
-sendfile(r0, r0, &(0x7f00000001c0)=0xfffffffffffffffc, 0x7fa)

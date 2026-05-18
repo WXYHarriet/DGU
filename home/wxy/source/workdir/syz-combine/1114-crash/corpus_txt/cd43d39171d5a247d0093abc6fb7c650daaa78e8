@@ -1,2 +1,0 @@
-r0 = openat$nvram(0xffffffffffffff9c, &(0x7f0000000000), 0x8000, 0x0)
-read$ptp(r0, &(0x7f0000000140)=""/163, 0xa3)

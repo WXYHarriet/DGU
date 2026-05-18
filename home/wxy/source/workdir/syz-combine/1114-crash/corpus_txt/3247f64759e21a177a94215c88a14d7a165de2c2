@@ -1,1 +1,0 @@
-prctl$PR_CAPBSET_READ(0x17, 0xb)

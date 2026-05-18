@@ -1,4 +1,0 @@
-r0 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
-r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
-r2 = syz_genetlink_get_family_id$netlbl_calipso(&(0x7f0000000040), r1)
-sendmsg$NLBL_CALIPSO_C_ADD(r0, &(0x7f00000002c0)={0x0, 0x0, &(0x7f0000000280)={&(0x7f0000000200)=ANY=[@ANYBLOB='$\x00\x00\x00', @ANYRES16=r2, @ANYBLOB="0100000000000000a5a10100000008000200021e0000080001"], 0x24}}, 0x0)

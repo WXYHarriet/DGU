@@ -1,1 +1,0 @@
-arch_prctl$ARCH_SET_CPUID(0x1012, 0x1)

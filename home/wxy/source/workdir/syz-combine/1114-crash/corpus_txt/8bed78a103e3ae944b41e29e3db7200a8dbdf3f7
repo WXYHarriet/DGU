@@ -1,2 +1,0 @@
-r0 = io_uring_setup(0x5195, &(0x7f0000000000)={0x0, 0x0, 0x40})
-io_uring_register$IORING_REGISTER_RESTRICTIONS(r0, 0xb, &(0x7f00000000c0), 0x0)

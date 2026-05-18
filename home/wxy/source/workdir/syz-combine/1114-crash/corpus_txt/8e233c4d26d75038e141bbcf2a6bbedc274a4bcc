@@ -1,2 +1,0 @@
-r0 = syz_open_dev$floppy(&(0x7f0000000040), 0x1, 0x3)
-ioctl$FLOPPY_FDRAWCMD(r0, 0x258, 0x0)

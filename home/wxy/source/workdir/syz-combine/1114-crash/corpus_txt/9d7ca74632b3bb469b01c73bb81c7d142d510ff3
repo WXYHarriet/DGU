@@ -1,6 +1,0 @@
-r0 = openat$uinput(0xffffffffffffff9c, &(0x7f0000000040), 0x802, 0x0)
-ioctl$UI_SET_EVBIT(r0, 0x40045564, 0x3)
-r1 = dup(r0)
-ioctl$UI_SET_ABSBIT(r0, 0x40045567, 0x4)
-ioctl$UI_SET_ABSBIT(r0, 0x40045567, 0x0)
-write$uinput_user_dev(r1, &(0x7f0000000100)={'syz1\x00'}, 0x45c)

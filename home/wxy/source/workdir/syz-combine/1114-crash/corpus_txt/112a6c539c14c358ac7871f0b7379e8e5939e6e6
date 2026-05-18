@@ -1,4 +1,0 @@
-r0 = open_tree(0xffffffffffffff9c, &(0x7f0000000640)='\x00', 0x89901)
-close(r0)
-r1 = socket$inet_mptcp(0x2, 0x1, 0x106)
-mount$9p_fd(0x0, &(0x7f0000000000)='.\x00', &(0x7f0000000040), 0x0, &(0x7f0000000440)={'trans=fd,', {'rfdno', 0x3d, r0}, 0x2c, {'wfdno', 0x3d, r1}})

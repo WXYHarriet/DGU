@@ -1,2 +1,0 @@
-r0 = openat$selinux_commit_pending_bools(0xffffffffffffff9c, &(0x7f0000000000), 0x1, 0x0)
-write$cgroup_subtree(r0, &(0x7f00000008c0)=ANY=[@ANYBLOB='-0'], 0x6)

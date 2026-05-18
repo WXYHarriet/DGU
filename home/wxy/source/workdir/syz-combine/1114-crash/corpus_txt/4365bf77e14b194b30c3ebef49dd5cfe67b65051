@@ -1,5 +1,0 @@
-socket$inet(0x2, 0x4000000000000001, 0x0)
-r0 = getpid()
-syz_pidfd_open(r0, 0x0)
-r1 = syz_open_procfs(0xffffffffffffffff, &(0x7f00000000c0)='fdinfo/4\x00')
-read$snapshot(r1, &(0x7f0000000080)=""/62, 0x3e)

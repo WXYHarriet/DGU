@@ -1,3 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000200)='net/rt_cache\x00')
-read$FUSE(r0, &(0x7f0000003d80)={0x2020}, 0x2020)
-read$FUSE(r0, &(0x7f0000005dc0)={0x2020}, 0x2020)

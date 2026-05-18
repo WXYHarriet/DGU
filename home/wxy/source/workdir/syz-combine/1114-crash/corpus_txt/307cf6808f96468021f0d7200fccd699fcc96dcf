@@ -1,4 +1,0 @@
-mkdir(&(0x7f0000000300)='./file0\x00', 0xb0)
-mount(0x0, &(0x7f0000db0ff8)='./file0\x00', &(0x7f0000f9cffb)='proc\x00', 0x0, 0x0)
-r0 = open(&(0x7f0000021000)='./file0\x00', 0x0, 0x0)
-getdents(r0, &(0x7f00000010c0)=""/4096, 0x1000)

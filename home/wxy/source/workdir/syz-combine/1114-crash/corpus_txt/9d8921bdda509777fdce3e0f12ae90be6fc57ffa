@@ -1,3 +1,0 @@
-syz_mount_image$bfs(&(0x7f0000000000), &(0x7f0000000100)='./file0\x00', 0x1000000, &(0x7f0000000140)=ANY=[], 0x8, 0x93, &(0x7f0000002280)="$eJzszrGpwmAUBeDzp3pVFniFG/w7OIqk1M5KETKRqzhCNrCwtYlIqthYiCjyfcW9HLgXzul6/E+bjH0yPtju9uvVZprhJzVJSpK/JIt2yufl/Ga4HLqhpLvvT/UEAABe16TOckmtT5/6NxYCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+DK3AAAA//+K8CJb")
-creat(&(0x7f0000000080)='./file0\x00', 0x0)
-openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000040)='blkio.bfq.time\x00', 0x275a, 0x0)

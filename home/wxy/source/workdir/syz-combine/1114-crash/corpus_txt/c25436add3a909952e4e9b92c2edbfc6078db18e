@@ -1,4 +1,0 @@
-mkdir(&(0x7f0000000580)='./bus\x00', 0x0)
-r0 = open(&(0x7f0000000000)='./bus\x00', 0x0, 0x0)
-fcntl$setown(r0, 0x8, 0xffffffffffffffff)
-fcntl$notify(r0, 0x402, 0x80000004)

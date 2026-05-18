@@ -1,2 +1,0 @@
-r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000000100)='/sys/kernel/rcu_expedited', 0x0, 0x0)
-read$nci(r0, &(0x7f0000001300)=""/226, 0xe2)

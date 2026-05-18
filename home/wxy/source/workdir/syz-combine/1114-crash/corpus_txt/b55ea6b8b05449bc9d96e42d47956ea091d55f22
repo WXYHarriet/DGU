@@ -1,3 +1,0 @@
-openat$tcp_mem(0xffffffffffffff9c, &(0x7f00000029c0)='/proc/sys/net/ipv4/tcp_rmem\x00', 0x1, 0x0)
-r0 = syz_open_procfs(0x0, &(0x7f00000000c0)='fd/3\x00')
-read$char_usb(r0, &(0x7f0000000340)=""/130, 0x82)

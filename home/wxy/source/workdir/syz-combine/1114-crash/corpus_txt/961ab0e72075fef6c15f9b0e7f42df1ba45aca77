@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f00000001c0)='oom_score_adj\x00')
-write$cgroup_devices(r0, &(0x7f0000000200)=ANY=[], 0x8)

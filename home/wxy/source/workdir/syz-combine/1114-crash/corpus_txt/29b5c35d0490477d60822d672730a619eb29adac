@@ -1,1 +1,0 @@
-syz_emit_vhci(&(0x7f0000000040)=@HCI_ACLDATA_PKT={0x2, {0xc9}, @l2cap_cid_le_signaling={{}, @l2cap_conn_param_update_req}}, 0x46)

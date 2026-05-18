@@ -1,1 +1,0 @@
-syz_emit_ethernet(0xf, &(0x7f0000000140)={@random="618d37618940", @multicast, @void, {@generic={0x88f5, '2'}}}, 0x0)

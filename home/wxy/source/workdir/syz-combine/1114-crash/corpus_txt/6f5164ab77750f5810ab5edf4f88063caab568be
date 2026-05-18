@@ -1,2 +1,0 @@
-r0 = eventfd(0x46)
-fgetxattr(r0, &(0x7f0000000740)=@random={'os2.', '@--%\x00'}, 0x0, 0x0)

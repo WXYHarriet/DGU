@@ -1,4 +1,0 @@
-r0 = socket$inet(0x2, 0x2, 0x0)
-r1 = socket$inet_udplite(0x2, 0x2, 0x88)
-ioctl$sock_SIOCGIFINDEX(r1, 0x8933, &(0x7f0000000080)={'sit0\x00'})
-ioctl$sock_inet_SIOCGIFBRDADDR(r0, 0x8919, &(0x7f0000000080)={'lo\x00', {0x2, 0x0, @private}})

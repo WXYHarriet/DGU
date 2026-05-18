@@ -1,3 +1,0 @@
-r0 = getpid()
-r1 = syz_pidfd_open(r0, 0x0)
-process_madvise(r1, 0x0, 0x0, 0x4, 0x0)

@@ -1,1 +1,0 @@
-syz_open_dev$video4linux(&(0x7f00000002c0), 0x7fff, 0x4000)

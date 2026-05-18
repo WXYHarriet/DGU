@@ -1,2 +1,0 @@
-r0 = openat$sr(0xffffffffffffff9c, &(0x7f0000000000), 0x40a02, 0x0)
-write$cgroup_subtree(r0, &(0x7f0000000040)={[{0x0, 'io'}]}, 0x4)

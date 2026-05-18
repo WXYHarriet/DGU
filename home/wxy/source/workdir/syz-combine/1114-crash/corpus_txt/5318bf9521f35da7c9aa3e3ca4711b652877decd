@@ -1,3 +1,0 @@
-syz_io_uring_setup(0x4e9b, &(0x7f00000002c0)={0x0, 0xd996, 0x10000}, &(0x7f0000000080), &(0x7f00000000c0))
-r0 = syz_open_procfs(0x0, &(0x7f0000000000)='fdinfo/3\x00')
-read$eventfd(r0, &(0x7f00000001c0), 0x8)

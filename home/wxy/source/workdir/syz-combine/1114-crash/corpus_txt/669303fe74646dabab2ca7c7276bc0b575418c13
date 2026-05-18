@@ -1,2 +1,0 @@
-r0 = syz_open_dev$vbi(&(0x7f0000000080), 0x1, 0x2)
-ioctl$VIDIOC_G_PARM(r0, 0xc0cc5615, &(0x7f0000000100))

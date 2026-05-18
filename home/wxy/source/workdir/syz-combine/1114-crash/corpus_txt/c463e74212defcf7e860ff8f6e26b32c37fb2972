@@ -1,2 +1,0 @@
-mknod$loop(&(0x7f0000000080)='./file0\x00', 0x6000, 0xffffffffffffffff)
-open$dir(&(0x7f0000000000)='./file0\x00', 0x80000, 0x200)

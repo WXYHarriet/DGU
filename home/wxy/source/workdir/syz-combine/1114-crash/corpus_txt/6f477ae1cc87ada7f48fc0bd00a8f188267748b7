@@ -1,6 +1,0 @@
-r0 = openat$tun(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
-ioctl$TUNSETIFF(r0, 0x400454ca, &(0x7f0000000040)={'ip6erspan0\x00', 0x7c2})
-ioctl$TUNSETQUEUE(r0, 0x400454d9, &(0x7f0000000140)={'geneve1\x00', 0x400})
-r1 = openat$tun(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
-ioctl$TUNSETIFF(r1, 0x400454ca, &(0x7f0000000040)={'ip6erspan0\x00', 0x7c2})
-dup2(r0, r1)

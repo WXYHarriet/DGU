@@ -1,3 +1,0 @@
-prlimit64(0x0, 0x7, &(0x7f0000000000), 0x0)
-r0 = getpid()
-syz_pidfd_open(r0, 0x0)

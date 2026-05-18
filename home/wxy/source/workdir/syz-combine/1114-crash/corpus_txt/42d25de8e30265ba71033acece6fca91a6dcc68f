@@ -1,2 +1,0 @@
-creat(&(0x7f0000000080)='./file0\x00', 0x0)
-lsetxattr(&(0x7f0000712ff8)='./file0\x00', &(0x7f0000faffe7)=@known='system.posix_acl_access\x00', &(0x7f0000000100)='\x00\x00\x00\x02\x01\x00\x00\x00\x00\x00\x00\x01\x04\x00\x00\x00\x00\x00\x00\x00', 0x14, 0x0)

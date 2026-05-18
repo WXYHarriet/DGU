@@ -1,2 +1,0 @@
-syz_emit_ethernet(0x15, &(0x7f0000000000)={@random="b42abb6f874a", @remote, @val={@void}, {@llc={0x4, {@llc={0x0, 0x0, "c4"}}}}}, 0x0)
-syz_emit_ethernet(0x1e, &(0x7f0000000080)={@random="f4e3fcd9fbb4", @remote, @void, {@can={0xc, {{}, 0x0, 0x0, 0x0, 0x0, "d3694a6f4868cb32"}}}}, 0x0)

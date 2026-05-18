@@ -1,3 +1,0 @@
-r0 = syz_open_dev$loop(&(0x7f0000000000), 0xff, 0x40800)
-r1 = openat$sr(0xffffffffffffff9c, &(0x7f0000000000), 0x2800, 0x0)
-ioctl$LOOP_SET_FD(r0, 0x4c00, r1)

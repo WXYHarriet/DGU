@@ -1,2 +1,0 @@
-r0 = io_uring_setup(0x2784, &(0x7f00000001c0))
-close_range(r0, 0xffffffffffffffff, 0x0)

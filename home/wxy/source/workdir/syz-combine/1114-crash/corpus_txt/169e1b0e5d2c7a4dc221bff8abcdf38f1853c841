@@ -1,3 +1,0 @@
-r0 = socket$inet_smc(0x2b, 0x1, 0x0)
-setsockopt$inet_tcp_TCP_FASTOPEN_KEY(r0, 0x6, 0x21, &(0x7f00000000c0)="f7fc638d867f46bb9939e600c5fc5bb4", 0x10)
-getsockopt$inet_tcp_int(r0, 0x6, 0x1f, 0x0, &(0x7f0000000140))

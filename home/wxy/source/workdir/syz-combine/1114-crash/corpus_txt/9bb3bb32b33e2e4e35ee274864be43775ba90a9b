@@ -1,3 +1,0 @@
-r0 = socket$nl_generic(0x10, 0x3, 0x10)
-r1 = syz_genetlink_get_family_id$nl80211(&(0x7f00000000c0), 0xffffffffffffffff)
-sendmsg$NL80211_CMD_SET_BEACON(r0, &(0x7f0000000200)={0x0, 0x0, &(0x7f00000001c0)={&(0x7f0000000480)=ANY=[@ANYBLOB='|\x00\x00\x00', @ANYRES16=r1, @ANYBLOB="010000000000000000000e00000008000300", @ANYRES32=0x0, @ANYBLOB="5d000e00ef"], 0x7c}}, 0x0)

@@ -1,4 +1,0 @@
-r0 = openat$rtc(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
-r1 = io_uring_setup(0x2576, &(0x7f0000000140))
-r2 = dup3(r0, r1, 0x0)
-read(r2, &(0x7f0000000280)=""/121, 0x79)

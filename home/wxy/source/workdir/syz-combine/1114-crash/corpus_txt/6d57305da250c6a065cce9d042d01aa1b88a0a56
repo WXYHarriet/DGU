@@ -1,2 +1,0 @@
-r0 = syz_usb_connect$hid(0x0, 0x3f, &(0x7f0000000000)=ANY=[@ANYBLOB="12010102000000206a05ba0040000102030109022d00010103"], &(0x7f0000000280)={0x0, 0x0, 0x0, 0x0})
-syz_usb_control_io$hid(r0, 0x0, 0x0)

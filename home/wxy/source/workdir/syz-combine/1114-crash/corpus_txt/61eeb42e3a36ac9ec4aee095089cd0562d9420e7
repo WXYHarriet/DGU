@@ -1,3 +1,0 @@
-r0 = epoll_create(0x3ff)
-r1 = socket$inet6_sctp(0xa, 0x5, 0x84)
-epoll_ctl$EPOLL_CTL_MOD(r0, 0x3, r1, &(0x7f0000000040)={0x70002009})

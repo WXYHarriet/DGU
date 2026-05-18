@@ -1,2 +1,0 @@
-ioperm(0x0, 0x2, 0x80)
-syz_genetlink_get_family_id$ethtool(&(0x7f0000000000), 0xffffffffffffffff)

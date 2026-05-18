@@ -1,3 +1,0 @@
-mkdirat(0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00', 0x0)
-mount$tmpfs(0x0, &(0x7f00000000c0)='./file0\x00', &(0x7f0000000140), 0x0, &(0x7f0000000080)={[{@mpol={'mpol', 0x3d, {'interleave', '=relative', @void}}}]})
-open$dir(&(0x7f0000000040)='./file0\x00', 0x410681, 0x0)

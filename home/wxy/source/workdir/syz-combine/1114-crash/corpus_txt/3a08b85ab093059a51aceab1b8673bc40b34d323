@@ -1,2 +1,0 @@
-r0 = openat$selinux_attr(0xffffffffffffff9c, &(0x7f0000000040)='/proc/thread-self/attr/current\x00', 0x2, 0x0)
-write$selinux_attr(r0, &(0x7f0000000080)='system_u:object_r:hald_sonypic_exec_t:s0\x00', 0x29)

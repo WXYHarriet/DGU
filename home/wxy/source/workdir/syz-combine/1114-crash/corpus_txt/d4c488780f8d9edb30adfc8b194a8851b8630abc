@@ -1,3 +1,0 @@
-mkdir(&(0x7f00000002c0)='./file0\x00', 0x0)
-mkdir(&(0x7f0000000000)='./bus\x00', 0x0)
-mount$overlay(0x0, &(0x7f00000005c0)='./bus\x00', &(0x7f0000000180), 0x0, &(0x7f00000000c0)={[{@lowerdir={'lowerdir', 0x3d, './file0'}}, {@upperdir={'upperdir', 0x3d, './bus'}}]})

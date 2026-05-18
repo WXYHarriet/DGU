@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x1e, &(0x7f0000000000)={@remote, @empty, @void, {@generic={0x88ca, "6bfba7cdc9cbd824c103a989dffcc69c"}}}, 0x0)

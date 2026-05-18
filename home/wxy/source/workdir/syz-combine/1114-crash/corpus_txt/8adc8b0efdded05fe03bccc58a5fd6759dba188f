@@ -1,2 +1,0 @@
-r0 = syz_open_dev$floppy(&(0x7f0000000100), 0x1, 0x200)
-ioctl$FLOPPY_FDGETDRVTYP(r0, 0x8010020f, &(0x7f0000000140))

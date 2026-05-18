@@ -1,2 +1,0 @@
-r0 = syz_open_dev$tty20(0xc, 0x4, 0x0)
-fsetxattr$trusted_overlay_redirect(r0, &(0x7f0000000000), &(0x7f0000000040)='./file0\x00', 0x8, 0x0)

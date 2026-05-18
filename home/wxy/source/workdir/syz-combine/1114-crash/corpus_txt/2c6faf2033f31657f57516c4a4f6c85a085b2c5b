@@ -1,2 +1,0 @@
-r0 = epoll_create1(0x80000)
-fcntl$setflags(r0, 0x2, 0x0)

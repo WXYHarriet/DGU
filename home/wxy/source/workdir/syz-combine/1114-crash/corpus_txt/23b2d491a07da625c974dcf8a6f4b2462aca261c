@@ -1,3 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000100)='mountinfo\x00')
-r1 = open(&(0x7f0000000a40)='./bus\x00', 0x141a42, 0x0)
-poll(&(0x7f00000000c0)=[{r1, 0x81}, {r0, 0x2400}], 0x2, 0xfffffff8)

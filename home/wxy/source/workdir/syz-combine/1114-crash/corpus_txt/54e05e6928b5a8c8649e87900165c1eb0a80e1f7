@@ -1,2 +1,0 @@
-r0 = socket$nl_sock_diag(0x10, 0x3, 0x4)
-ioctl$sock_SIOCETHTOOL(r0, 0x8946, &(0x7f0000000200)={'sit0\x00', &(0x7f0000000040)=@ethtool_perm_addr={0x20, 0x4, "dfc00288"}})

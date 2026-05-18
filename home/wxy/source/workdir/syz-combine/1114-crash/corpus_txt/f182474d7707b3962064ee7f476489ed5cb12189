@@ -1,2 +1,0 @@
-r0 = syz_open_dev$tty20(0xc, 0x4, 0x0)
-write$binfmt_elf64(r0, &(0x7f0000000600)=ANY=[@ANYBLOB="1b5d509b00000000003f000000000000000000000f0000006e"], 0x137)

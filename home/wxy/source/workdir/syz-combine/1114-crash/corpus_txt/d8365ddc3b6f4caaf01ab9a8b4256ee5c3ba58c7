@@ -1,2 +1,0 @@
-r0 = socket$inet(0x2, 0x3, 0x3)
-ioctl$sock_ifreq(r0, 0x541b, &(0x7f0000000000)={'veth1_macvtap\x00', @ifru_names='lo\x00'})

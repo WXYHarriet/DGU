@@ -1,2 +1,0 @@
-r0 = getpid()
-syz_open_procfs(r0, &(0x7f0000000040)='comm\x00')

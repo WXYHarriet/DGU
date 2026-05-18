@@ -1,2 +1,0 @@
-r0 = syz_io_uring_setup(0x2c20, &(0x7f0000000000), &(0x7f0000000080), &(0x7f0000000100))
-io_uring_register$IORING_REGISTER_BUFFERS(r0, 0x0, &(0x7f0000001140)=[{&(0x7f0000000140)=""/4096, 0x1000}], 0x1)

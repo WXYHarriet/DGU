@@ -1,2 +1,0 @@
-r0 = syz_open_dev$evdev(&(0x7f0000000100), 0x821, 0x183080)
-ioctl$EVIOCGKEYCODE_V2(r0, 0x80284504, &(0x7f0000000100)=""/113)

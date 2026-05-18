@@ -1,5 +1,0 @@
-r0 = socket$inet_tcp(0x2, 0x1, 0x0)
-r1 = socket$nl_generic(0x10, 0x3, 0x10)
-setsockopt$inet_tcp_TCP_MD5SIG(r0, 0x6, 0xe, &(0x7f0000000000)={@in={{0x2, 0x0, @private}}, 0x0, 0x0, 0x5, 0x0, "9f12aa7672a3515cac8ae10ced1065198d879bd0758addd21457688df2eed030d9214e39682855fbde5fc6efc9cae1b811e52674923ffb7e3b6fd5360c71261c689f2230037bee0ba3ad58bd4bad04c9"}, 0xd8)
-setsockopt$inet_tcp_TCP_MD5SIG(r0, 0x6, 0xe, &(0x7f0000000180)={@in={{0x2, 0x0, @initdev={0xac, 0x1e, 0x0, 0x0}}}, 0x0, 0x0, 0x3f, 0x0, "a2c9c75e5fe659e35e7f151e5950ca1ac9343ca96733804c48bb85d0791e5dd3e578f8079ab12f7e229417a5fddc9e6be1b08e5a48a6640c8fe3538e0e6275113092edb010798b99e247fb730a17744c"}, 0xd8)
-dup2(r1, r0)

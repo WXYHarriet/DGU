@@ -1,3 +1,0 @@
-r0 = syz_open_dev$tty1(0xc, 0x4, 0x1)
-r1 = dup(r0)
-shutdown(r1, 0x1)

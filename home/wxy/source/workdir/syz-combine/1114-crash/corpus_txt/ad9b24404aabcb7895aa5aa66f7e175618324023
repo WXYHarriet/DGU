@@ -1,2 +1,0 @@
-r0 = io_uring_setup(0x5ae1, &(0x7f0000000300))
-fstat(r0, &(0x7f0000000240))

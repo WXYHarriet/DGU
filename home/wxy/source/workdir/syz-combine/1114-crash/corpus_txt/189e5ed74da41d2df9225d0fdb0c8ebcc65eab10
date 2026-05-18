@@ -1,4 +1,0 @@
-mkdirat(0xffffffffffffff9c, &(0x7f0000002040)='./file0\x00', 0x0)
-r0 = openat$fuse(0xffffffffffffff9c, &(0x7f0000002080), 0x2, 0x0)
-mount$fuse(0x0, &(0x7f00000020c0)='./file0\x00', &(0x7f0000002100), 0x1, &(0x7f0000000100)=ANY=[@ANYBLOB='fd=', @ANYRESHEX=r0, @ANYBLOB=',rootmode=00000000000000000040000,user_id=', @ANYRESDEC=0x0, @ANYBLOB=',group_id=', @ANYRESDEC=0x0])
-mount$bind(0x0, &(0x7f0000000080)='./file0\x00', 0x0, 0x3e0020, 0x0)

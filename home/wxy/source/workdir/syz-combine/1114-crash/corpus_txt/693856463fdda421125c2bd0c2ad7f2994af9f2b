@@ -1,2 +1,0 @@
-r0 = socket$netlink(0x10, 0x3, 0x6)
-sendmsg$netlink(r0, &(0x7f0000000040)={0x0, 0x0, &(0x7f0000000b00)=[{&(0x7f0000000080)={0x4c, 0x20, 0x1, 0x0, 0x0, "", [@generic="c05b14243b2d1d22bf60be5fcae5eebd3b22bd1d2accb144c46458c3b6251cb39ce9fd7bb2c6c3a3b3904ecc07caba677a928108f91d7906e3"]}, 0x4c}], 0x1}, 0x0)

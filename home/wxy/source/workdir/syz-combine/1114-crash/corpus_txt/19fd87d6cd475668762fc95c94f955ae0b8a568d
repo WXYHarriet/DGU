@@ -1,4 +1,0 @@
-r0 = open(&(0x7f0000007f80)='./bus\x00', 0x1411c2, 0x0)
-ftruncate(r0, 0x2007ffb)
-sendfile(r0, r0, 0x0, 0xffffffff)
-utimes(&(0x7f0000000340)='./bus\x00', 0x0)

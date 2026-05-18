@@ -1,3 +1,0 @@
-r0 = openat2(0xffffffffffffff9c, &(0x7f0000000040)='./file0\x00', &(0x7f0000000080)={0x40}, 0x18)
-truncate(&(0x7f0000000000)='./file0\x00', 0x400)
-read$eventfd(r0, &(0x7f0000000240), 0x8)

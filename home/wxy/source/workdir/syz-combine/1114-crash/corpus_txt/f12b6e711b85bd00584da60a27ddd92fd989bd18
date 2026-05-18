@@ -1,4 +1,0 @@
-sendmsg$inet(0xffffffffffffffff, &(0x7f0000001dc0)={0x0, 0x0, &(0x7f0000001d40)=[{&(0x7f0000000b00)="37726dcc874a8bca149819d14a5999bc8cd78f243d57bae4be03420f0ff8d676de8c3e379164363848f52f0d174c62c7576514c06622538dea666513b40a5d0eb4b161d5d384a84d292c", 0x4a}], 0x1}, 0x0)
-r0 = socket$kcm(0x2, 0x1, 0x84)
-setsockopt$sock_attach_bpf(r0, 0x84, 0x85, &(0x7f0000000ac0), 0x90)
-sendmsg$inet(r0, &(0x7f0000001100)={&(0x7f00000001c0)={0x2, 0x0, @loopback}, 0x10, &(0x7f0000000e40)=[{&(0x7f0000000200)="92", 0x1}], 0x1}, 0x0)

@@ -1,2 +1,0 @@
-r0 = openat$ocfs2_control(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
-landlock_restrict_self(r0, 0x0)

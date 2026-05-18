@@ -1,3 +1,0 @@
-r0 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f00000000c0)='cgroup.controllers\x00', 0x26e1, 0x0)
-r1 = openat$sndtimer(0xffffffffffffff9c, &(0x7f00000005c0), 0x2440)
-dup3(r0, r1, 0x0)

@@ -1,6 +1,0 @@
-r0 = eventfd(0x0)
-r1 = openat$kvm(0xffffffffffffff9c, &(0x7f0000000200), 0x0, 0x0)
-r2 = ioctl$KVM_CREATE_VM(r1, 0xae01, 0x0)
-ioctl$KVM_CREATE_IRQCHIP(r2, 0xae60)
-ioctl$KVM_IRQFD(r2, 0x4020ae76, &(0x7f0000000040)={r0})
-read$eventfd(r0, &(0x7f0000000100), 0x8)

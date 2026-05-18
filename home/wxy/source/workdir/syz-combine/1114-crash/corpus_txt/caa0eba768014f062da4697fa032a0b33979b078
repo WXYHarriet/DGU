@@ -1,2 +1,0 @@
-socketpair$unix(0x1, 0x2, 0x0, &(0x7f0000000280)={0xffffffffffffffff, <r0=>0xffffffffffffffff})
-bind$unix(r0, &(0x7f0000000380)=@file={0x1, './file0/file0\x00'}, 0x6e)

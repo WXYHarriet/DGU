@@ -1,2 +1,0 @@
-r0 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='memory.events.local\x00', 0x275a, 0x0)
-write$binfmt_script(r0, &(0x7f0000003a80), 0x208e24b)

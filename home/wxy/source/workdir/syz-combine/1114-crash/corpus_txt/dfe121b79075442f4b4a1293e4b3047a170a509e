@@ -1,1 +1,0 @@
-arch_prctl$ARCH_GET_FS(0x1003, 0xfffffffffffffffd)

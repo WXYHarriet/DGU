@@ -1,2 +1,0 @@
-r0 = syz_init_net_socket$rose(0xb, 0x5, 0x0)
-ioctl$sock_SIOCADDRT(r0, 0x890b, &(0x7f0000000080)={0x0, @vsock, @can, @ax25={0x3, @null}})

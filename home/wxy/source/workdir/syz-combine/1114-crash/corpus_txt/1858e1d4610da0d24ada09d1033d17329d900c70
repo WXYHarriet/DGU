@@ -1,2 +1,0 @@
-r0 = syz_open_dev$vivid(&(0x7f0000000040), 0x3, 0x2)
-ioctl$VIDIOC_QUERYCAP(r0, 0x80685600, &(0x7f0000000080))

@@ -1,2 +1,0 @@
-r0 = syz_open_dev$loop(&(0x7f00000001c0), 0x800000075f, 0x0)
-ioctl$LOOP_SET_BLOCK_SIZE(r0, 0x4c09, 0x800)

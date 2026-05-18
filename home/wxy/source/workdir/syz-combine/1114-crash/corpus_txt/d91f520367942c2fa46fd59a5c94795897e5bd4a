@@ -1,1 +1,0 @@
-syz_emit_ethernet(0xe, &(0x7f0000000100)={@link_local, @dev, @void, {@generic={0x88f7}}}, 0x0)

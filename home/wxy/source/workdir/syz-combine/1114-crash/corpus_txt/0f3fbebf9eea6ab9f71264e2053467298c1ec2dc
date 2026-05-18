@@ -1,2 +1,0 @@
-r0 = add_key$keyring(&(0x7f0000000040), &(0x7f0000000080)={'syz', 0x3}, 0x0, 0x0, 0xfffffffffffffffc)
-keyctl$KEYCTL_RESTRICT_KEYRING(0x1d, r0, &(0x7f0000000300)='id_legacy\x00', 0xfffffffffffffffe)

@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x50, &(0x7f00000001c0)={@random="f302a0361fa6", @dev, @void, {@ipv6={0x86dd, @icmpv6={0x0, 0x6, "c33c00", 0x1a, 0x3a, 0xff, @rand_addr=' \x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01', @mcast2, {[], @ndisc_na={0x88, 0x0, 0x0, 0x0, '\x00', @local, [{}]}}}}}}, 0x0)

@@ -1,2 +1,0 @@
-r0 = socket(0x2, 0xa, 0x0)
-ioctl$SIOCPNDELRESOURCE(r0, 0x541b, 0xfffffffffffffffd)

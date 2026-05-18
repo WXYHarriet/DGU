@@ -1,2 +1,0 @@
-mkdir(&(0x7f0000000000)='./file0\x00', 0x0)
-bpf$OBJ_GET_PROG(0x7, &(0x7f00000003c0), 0x10)

@@ -1,5 +1,0 @@
-mkdir(&(0x7f0000000300)='./file0\x00', 0xb0)
-r0 = open(&(0x7f0000021000)='./file0\x00', 0x0, 0x0)
-fchdir(r0)
-creat(&(0x7f0000001080)='./bus\x00', 0x0)
-faccessat(r0, &(0x7f0000000000)='./bus\x00', 0x1)

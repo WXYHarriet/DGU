@@ -1,4 +1,0 @@
-r0 = socket$inet6_tcp(0xa, 0x1, 0x0)
-bind$inet6(r0, &(0x7f0000000100)={0xa, 0x4e22}, 0x1c)
-listen(r0, 0x0)
-syz_emit_ethernet(0xde, &(0x7f00000001c0)={@local, @broadcast, @void, {@ipv6={0x86dd, @tcp={0x0, 0x6, "048435", 0x4d, 0x6, 0x0, @remote, @local, {[], {{0x0, 0x4e22, 0x41424344, 0x41424344, 0x0, 0x0, 0x2a, 0x0, 0x0, 0x0, 0x0, {[@mptcp=@remove_addr={0x1e, 0x91, 0x0, 0x0, "bdd667d9d47682a012ee045b34b9d8ad7e29a93562508f49844673cb93ffb373d2f456cddb08c03e492dc99e753dc0209659193ff76290d1b66e094e4bd3842a134fdf36a47c6b2083dcfb7bca57165c13b47609464aa21eda864e9c6edf94d3cce78eab84430b9f60acd6b65a1119da227c49a10d74d29a96c6c72fb58b469491f4a7fde32b1f986d25685bffe8"}]}}}}}}}}, 0x0)

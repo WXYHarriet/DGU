@@ -1,1 +1,0 @@
-openat$binderfs_ctrl(0xffffffffffffff9c, &(0x7f0000000580)='./binderfs/binder-control\x00', 0xabdbcbb4e3124a63, 0x0)

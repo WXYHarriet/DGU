@@ -1,4 +1,0 @@
-r0 = eventfd(0x0)
-pipe(&(0x7f0000000bc0)={0xffffffffffffffff, <r1=>0xffffffffffffffff})
-r2 = dup2(r0, r1)
-write$RDMA_USER_CM_CMD_CREATE_ID(r2, 0x0, 0x8)

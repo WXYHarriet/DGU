@@ -1,5 +1,0 @@
-openat$ppp(0xffffffffffffff9c, &(0x7f0000000080), 0x0, 0x0)
-r0 = syz_open_procfs(0x0, &(0x7f00000000c0)='fd/3\x00')
-ioctl$PPPIOCNEWUNIT(r0, 0xc004743e, &(0x7f0000000040))
-r1 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='clear_refs\x00')
-mount$9p_fd(0x0, &(0x7f0000000300)='.\x00', &(0x7f0000000080), 0x0, &(0x7f0000000240)={'trans=fd,', {'rfdno', 0x3d, r0}, 0x2c, {'wfdno', 0x3d, r1}})

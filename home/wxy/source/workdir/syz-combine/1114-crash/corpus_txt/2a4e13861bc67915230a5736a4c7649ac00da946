@@ -1,3 +1,0 @@
-r0 = syz_open_dev$sg(&(0x7f0000000140), 0x0, 0x88001)
-write$binfmt_elf64(r0, &(0x7f0000000600)=ANY=[], 0x40)
-ioctl$SG_GET_PACK_ID(r0, 0x227c, &(0x7f0000000000))

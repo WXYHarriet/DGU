@@ -1,6 +1,0 @@
-mkdirat(0xffffffffffffff9c, &(0x7f0000000100)='./file1\x00', 0x0)
-mount$fuse(0x0, 0x0, 0x0, 0x0, &(0x7f0000000400)=ANY=[@ANYBLOB='fd=', @ANYRESHEX=0x0])
-mount(0x0, &(0x7f0000000380)='./file1\x00', &(0x7f0000000100)='autofs\x00', 0x0, &(0x7f0000000400))
-chdir(&(0x7f0000000700)='./file1\x00')
-r0 = openat(0xffffffffffffff9c, &(0x7f0000000040)='.\x00', 0x0, 0x0)
-ioctl$AUTOFS_IOC_ASKUMOUNT(r0, 0x80049370, &(0x7f00000001c0))

@@ -1,4 +1,0 @@
-r0 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000280)='cgroup.controllers\x00', 0x275a, 0x0)
-r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000180)='cgroup.controllers\x00', 0x275a, 0x0)
-r2 = dup3(r1, r0, 0x0)
-ioctl$int_out(r2, 0x5460, &(0x7f0000000000))

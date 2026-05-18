@@ -1,4 +1,0 @@
-mkdir(&(0x7f0000000400)='./file1\x00', 0x0)
-mkdir(&(0x7f00000002c0)='./bus\x00', 0x0)
-syz_mount_image$tmpfs(0x0, &(0x7f00000007c0)='./file0\x00', 0x0, 0x0, 0x0, 0x0, &(0x7f0000000000))
-mount$overlay(0x0, &(0x7f0000000140)='./bus\x00', &(0x7f0000000080), 0x0, &(0x7f0000000000)={[{@workdir={'workdir', 0x3d, './file1'}}, {@lowerdir={'lowerdir', 0x3d, './file0'}}, {@upperdir={'upperdir', 0x3d, './file1'}}]})

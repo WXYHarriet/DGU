@@ -1,3 +1,0 @@
-r0 = signalfd(0xffffffffffffffff, &(0x7f0000000180)={[0xfffffffffffffffc]}, 0x8)
-read(r0, &(0x7f0000000040)=""/227, 0xe3)
-signalfd(r0, &(0x7f0000000000)={[0x8001]}, 0x8)

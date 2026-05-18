@@ -1,1 +1,0 @@
-bpf$BPF_GET_PROG_INFO(0xf, 0xfffffffffffffffc, 0x120)

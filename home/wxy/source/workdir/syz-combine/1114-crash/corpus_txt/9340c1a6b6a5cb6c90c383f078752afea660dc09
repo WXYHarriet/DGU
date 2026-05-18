@@ -1,6 +1,0 @@
-close_range(0xffffffffffffffff, 0xffffffffffffffff, 0x2)
-r0 = syz_open_procfs(0x0, &(0x7f0000000100)='status\x00')
-fcntl$lock(r0, 0x7, &(0x7f0000000000)={0x1})
-fcntl$lock(r0, 0x26, &(0x7f0000000080))
-r1 = syz_open_procfs(0x0, &(0x7f0000000100)='status\x00')
-fcntl$lock(r1, 0x7, &(0x7f0000000000)={0x1})

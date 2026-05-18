@@ -1,2 +1,0 @@
-r0 = syz_open_dev$sg(&(0x7f0000000300), 0x0, 0x101881)
-ioctl$SG_NEXT_CMD_LEN(r0, 0x2283, 0xfffffffffffffffc)

@@ -1,2 +1,0 @@
-r0 = signalfd(0xffffffffffffffff, &(0x7f0000000d80), 0x8)
-read$proc_mixer(r0, &(0x7f0000000140)=""/4096, 0x1000)

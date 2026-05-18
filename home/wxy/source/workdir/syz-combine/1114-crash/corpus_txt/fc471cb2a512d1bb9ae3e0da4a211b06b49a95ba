@@ -1,2 +1,0 @@
-r0 = syz_open_dev$dmmidi(&(0x7f00000020c0), 0x84, 0x0)
-ioctl$SNDRV_RAWMIDI_IOCTL_DRAIN(r0, 0x80045702, 0x0)

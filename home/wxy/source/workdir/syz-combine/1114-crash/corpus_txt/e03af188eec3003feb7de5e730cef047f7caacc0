@@ -1,2 +1,0 @@
-r0 = socket(0x2, 0x2, 0x1)
-ioctl$sock_ipv6_tunnel_SIOCCHGPRL(r0, 0x8927, &(0x7f0000000200)={'sit0\x00', 0x0})

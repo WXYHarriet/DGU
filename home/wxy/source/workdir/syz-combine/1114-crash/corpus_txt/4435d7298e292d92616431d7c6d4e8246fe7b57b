@@ -1,2 +1,0 @@
-r0 = openat$iommufd(0xffffffffffffff9c, &(0x7f0000000240), 0x0, 0x0)
-ioctl$IOMMU_DESTROY$hwpt(r0, 0x3b80, &(0x7f0000000600)={0x8})

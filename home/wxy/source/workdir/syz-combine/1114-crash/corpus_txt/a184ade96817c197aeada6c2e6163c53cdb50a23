@@ -1,8 +1,0 @@
-pipe(&(0x7f0000000000))
-r0 = syz_open_procfs(0x0, &(0x7f0000000080)='fd\x00')
-r1 = memfd_create(&(0x7f0000000780)='\x04', 0x0)
-write(r1, &(0x7f00000000c0)="6963e64243ea486da3a74e3deec6fc5bb9650b5de56946c568f95d22467190ba406d59a5958d6f156c9c8a2ac4677b00000000000000000000200000f8bf54da33", 0x41)
-mmap(&(0x7f0000000000/0x2000)=nil, 0x2000, 0x1, 0x11, r1, 0x0)
-r2 = dup3(r0, r1, 0x0)
-fchdir(r2)
-openat$sndtimer(0xffffffffffffff9c, &(0x7f0000000040), 0x0)

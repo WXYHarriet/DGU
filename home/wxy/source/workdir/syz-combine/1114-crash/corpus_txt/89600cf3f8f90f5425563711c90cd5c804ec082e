@@ -1,3 +1,0 @@
-r0 = creat(&(0x7f0000000800)='./control\x00', 0x0)
-setrlimit(0x7, &(0x7f0000005800))
-dup(r0)

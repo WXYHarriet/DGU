@@ -1,3 +1,0 @@
-r0 = fsopen(&(0x7f0000000000)='afs\x00', 0x0)
-fsconfig$FSCONFIG_SET_PATH_EMPTY(r0, 0x4, &(0x7f0000000240)='/dev/fb0\x00', &(0x7f0000000280)='./file0\x00', 0xffffffffffffff9c)
-read$FUSE(r0, &(0x7f00000002c0)={0x2020}, 0x2020)

@@ -1,4 +1,0 @@
-r0 = add_key$fscrypt_v1(&(0x7f0000000000), &(0x7f00000000c0)={'fscrypt:', @desc3}, &(0x7f0000000140)={0x0, "302745822f4f0579d0c8c55048cada57d5b9ac36e1c2f188c396bd9af30c351c1213f941bdd9d67aec222f3fd13e7c68da1663aa59247a8dff358cf8ae469f17", 0x36}, 0x48, 0xfffffffffffffffe)
-openat$ipvs(0xffffffffffffff9c, &(0x7f0000000100)='/proc/sys/net/ipv4/vs/sync_refresh_period\x00', 0x2, 0x0)
-r1 = request_key(&(0x7f00000001c0)='ceph\x00', &(0x7f0000000200)={'syz', 0x1}, &(0x7f0000000240)='e8dab99234bb312e', r0)
-keyctl$unlink(0x9, r1, r0)

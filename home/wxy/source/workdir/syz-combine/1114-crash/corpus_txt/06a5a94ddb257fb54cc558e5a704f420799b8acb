@@ -1,4 +1,0 @@
-socketpair$unix(0x1, 0x2, 0x0, 0x0)
-creat(&(0x7f0000000040)='./bus\x00', 0x0)
-r0 = inotify_init()
-inotify_add_watch(r0, &(0x7f0000000240)='.\x00', 0x400017e)

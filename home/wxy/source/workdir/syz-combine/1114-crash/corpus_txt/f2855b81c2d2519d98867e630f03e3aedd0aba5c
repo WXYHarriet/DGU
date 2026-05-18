@@ -1,2 +1,0 @@
-r0 = openat$binfmt_format(0xffffffffffffff9c, &(0x7f0000000000)='/proc/sys/fs/binfmt_misc/syz1\x00', 0x2, 0x0)
-preadv(r0, &(0x7f0000000440)=[{&(0x7f0000000200)=""/131, 0x14}], 0x1, 0x5, 0x8)

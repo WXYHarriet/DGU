@@ -1,2 +1,0 @@
-r0 = syz_open_dev$vcsu(&(0x7f0000000000), 0x6, 0x100)
-read$snapshot(r0, &(0x7f00000001c0)=""/48, 0x30)

@@ -1,2 +1,0 @@
-r0 = syz_open_dev$usbfs(&(0x7f0000000080), 0x13, 0x183a81)
-ioctl$USBDEVFS_CLAIMINTERFACE(r0, 0xc0105500, &(0x7f0000000000)=0x120)

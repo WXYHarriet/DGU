@@ -1,2 +1,0 @@
-socketpair$unix(0x1, 0x5, 0x0, &(0x7f0000000080)={0xffffffffffffffff, <r0=>0xffffffffffffffff})
-fsetxattr$trusted_overlay_redirect(r0, &(0x7f0000000100), &(0x7f0000000140)='./file0\x00', 0x8, 0x0)

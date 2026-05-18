@@ -1,5 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000200)='task\x00')
-getdents64(r0, &(0x7f0000000140)=""/95, 0x5f)
-seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0xc, &(0x7f00000000c0)={0x1, &(0x7f0000000100)=[{0x6}]})
-ioctl$SECCOMP_IOCTL_NOTIF_RECV(0xffffffffffffffff, 0xc0502100, 0x0)
-getdents64(r0, 0x0, 0x0)

@@ -1,4 +1,0 @@
-r0 = openat$snapshot(0xffffffffffffff9c, &(0x7f0000000000), 0x201, 0x0)
-write$snapshot(r0, &(0x7f0000000040)="bb", 0x1)
-ioctl$SNAPSHOT_FREE(r0, 0x3305)
-write$snapshot(r0, 0x0, 0x0)

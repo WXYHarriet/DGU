@@ -1,4 +1,0 @@
-socket$igmp(0x2, 0x3, 0x2)
-r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000040)='net/raw\x00')
-read$ptp(r0, &(0x7f0000000080)=""/129, 0x81)
-read$ptp(r0, &(0x7f0000000180)=""/4081, 0xff1)

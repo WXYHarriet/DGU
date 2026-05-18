@@ -1,2 +1,0 @@
-setrlimit(0x7, &(0x7f0000005800))
-inotify_init1(0x80800)

@@ -1,1 +1,0 @@
-syz_open_procfs(0x0, &(0x7f00000004c0)='net/ip6_flowlabel\x00')

@@ -1,2 +1,0 @@
-r0 = syz_open_dev$loop(&(0x7f00000001c0), 0x75f, 0x103382)
-ioctl$LOOP_SET_STATUS(r0, 0x4c02, 0x0)

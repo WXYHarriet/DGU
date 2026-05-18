@@ -1,2 +1,0 @@
-r0 = openat2(0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00', &(0x7f0000000080)={0x40241}, 0x1a)
-fremovexattr(r0, &(0x7f00000000c0)=@known='system.posix_acl_access\x00')

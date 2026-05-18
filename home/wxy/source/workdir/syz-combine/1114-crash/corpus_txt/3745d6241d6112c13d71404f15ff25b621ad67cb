@@ -1,4 +1,0 @@
-mkdir(&(0x7f00000001c0)='./file0\x00', 0x0)
-mount(0x0, &(0x7f000001c000)='./file0\x00', &(0x7f0000018ffa)='ramfs\x00', 0x0, 0x0)
-creat(&(0x7f0000000080)='./file0/bus\x00', 0x0)
-truncate(&(0x7f0000000280)='./file0/bus\x00', 0x400)

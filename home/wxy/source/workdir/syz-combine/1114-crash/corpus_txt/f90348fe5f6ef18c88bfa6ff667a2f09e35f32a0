@@ -1,2 +1,0 @@
-r0 = add_key$user(&(0x7f0000000300), &(0x7f0000000340)={'syz', 0x0}, &(0x7f0000000380)="f2f09f7c06", 0x5, 0xfffffffffffffffd)
-keyctl$KEYCTL_PKEY_QUERY(0x18, r0, 0x0, &(0x7f0000000400)='\x00', 0x0)

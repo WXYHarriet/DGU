@@ -1,3 +1,0 @@
-unshare(0x6c060000)
-sendmsg$ETHTOOL_MSG_COALESCE_GET(0xffffffffffffffff, 0x0, 0x4000000)
-unshare(0x60000000)

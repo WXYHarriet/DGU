@@ -1,3 +1,0 @@
-r0 = openat$selinux_checkreqprot(0xffffffffffffff9c, &(0x7f0000000180), 0x2, 0x0)
-read$char_usb(r0, &(0x7f00000001c0)=""/182, 0xb6)
-write$P9_RWRITE(r0, 0x0, 0x0)

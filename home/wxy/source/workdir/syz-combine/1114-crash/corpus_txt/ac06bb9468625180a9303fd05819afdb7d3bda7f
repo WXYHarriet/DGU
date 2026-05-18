@@ -1,2 +1,0 @@
-r0 = open_tree(0xffffffffffffff9c, &(0x7f0000000640)='\x00', 0x89901)
-open_tree(r0, &(0x7f0000000640)='\x00', 0x89901)

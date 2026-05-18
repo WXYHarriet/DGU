@@ -1,2 +1,0 @@
-r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f00000002c0)='/sys/power/pm_wakeup_irq', 0x0, 0x48)
-finit_module(r0, 0x0, 0x0)

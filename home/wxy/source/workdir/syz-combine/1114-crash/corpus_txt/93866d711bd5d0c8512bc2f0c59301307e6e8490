@@ -1,1 +1,0 @@
-fgetxattr(0xffffffffffffffff, &(0x7f0000000000)=@known='security.selinux\x00', 0x0, 0x0)

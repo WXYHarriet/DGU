@@ -1,2 +1,0 @@
-mknodat$null(0xffffffffffffff9c, &(0x7f00000000c0)='./file0\x00', 0xc800, 0x103)
-mount$9p_unix(&(0x7f0000000080)='./file0\x00', &(0x7f0000000100)='./file0\x00', &(0x7f0000000140), 0x0, &(0x7f0000000180))

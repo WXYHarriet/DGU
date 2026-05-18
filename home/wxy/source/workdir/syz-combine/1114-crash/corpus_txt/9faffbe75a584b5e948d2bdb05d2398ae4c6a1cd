@@ -1,2 +1,0 @@
-r0 = openat$binfmt_register(0xffffffffffffff9c, &(0x7f00000000c0), 0x1, 0x0)
-write(r0, &(0x7f0000000100)="80a607b9eb767cc84f2f2408", 0xc)

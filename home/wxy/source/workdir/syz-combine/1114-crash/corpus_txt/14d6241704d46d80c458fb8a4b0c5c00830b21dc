@@ -1,2 +1,0 @@
-r0 = openat$damon_kdamond_pid(0xffffffffffffff9c, &(0x7f0000000800), 0x0, 0x0)
-read$watch_queue(r0, &(0x7f0000000d40)=""/58, 0x3a)

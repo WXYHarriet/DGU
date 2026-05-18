@@ -1,1 +1,0 @@
-set_mempolicy(0x8002, &(0x7f0000000000)=0x40000000fffffdff, 0x9f)

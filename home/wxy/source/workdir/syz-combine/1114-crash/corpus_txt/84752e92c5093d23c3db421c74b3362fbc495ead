@@ -1,4 +1,0 @@
-r0 = creat(&(0x7f0000000100)='./bus\x00', 0x1fb978507dcbbbd6)
-ioctl$FS_IOC_SETFLAGS(r0, 0x40086602, &(0x7f0000000000)=0x20)
-r1 = open(&(0x7f0000000300)='.\x00', 0x0, 0x0)
-renameat2(r1, &(0x7f0000000100)='./bus\x00', r1, &(0x7f00000002c0)='./file0\x00', 0x4)

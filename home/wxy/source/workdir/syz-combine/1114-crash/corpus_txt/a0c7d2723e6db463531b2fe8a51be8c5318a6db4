@@ -1,2 +1,0 @@
-r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000002180)='/sys/kernel/cpu_byteorder', 0x0, 0x0)
-read$FUSE(r0, &(0x7f0000000140)={0x2020}, 0x2020)

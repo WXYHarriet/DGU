@@ -1,2 +1,0 @@
-r0 = openat$vcs(0xffffffffffffff9c, &(0x7f0000000040), 0xa581, 0x0)
-write$UHID_CREATE(r0, &(0x7f0000000280)={0x0, {'syz1\x00', 'syz1\x00', 'syz0\x00', 0x0}}, 0x120)

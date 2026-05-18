@@ -1,4 +1,0 @@
-r0 = openat$ptmx(0xffffffffffffff9c, &(0x7f0000bbfff6), 0x0, 0x0)
-ioctl$TCSETS(r0, 0x40045431, &(0x7f00003b9fdc))
-syz_open_pts(r0, 0x0)
-syz_open_pts(r0, 0x184841)

@@ -1,2 +1,0 @@
-r0 = openat$selinux_validatetrans(0xffffffffffffff9c, &(0x7f0000000000), 0x1, 0x0)
-write$selinux_validatetrans(r0, &(0x7f0000000100)={'system_u:object_r:userio_device_t:s0', 0x20, 'system_u:object_r:apt_var_cache_t:s0', 0x20, 0xe4d, 0x20, 'system_u:system_r:kernel_t:s0\x00'}, 0x7d)

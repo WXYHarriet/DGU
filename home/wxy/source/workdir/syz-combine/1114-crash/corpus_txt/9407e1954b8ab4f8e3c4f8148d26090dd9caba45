@@ -1,4 +1,0 @@
-bpf$BPF_RAW_TRACEPOINT_OPEN(0x11, &(0x7f0000000000)={&(0x7f0000000040)='sys_exit\x00'}, 0x10)
-r0 = openat$ppp(0xffffffffffffff9c, &(0x7f0000000080), 0x0, 0x0)
-ioctl$TUNSETOFFLOAD(r0, 0xc004743e, 0x20001400)
-ioctl$TUNSETOFFLOAD(r0, 0x40047451, 0x20000000)

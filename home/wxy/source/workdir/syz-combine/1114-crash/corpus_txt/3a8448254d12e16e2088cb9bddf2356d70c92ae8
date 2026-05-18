@@ -1,4 +1,0 @@
-r0 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
-r1 = syz_genetlink_get_family_id$nfc(&(0x7f0000002e00), r0)
-r2 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
-sendmsg$NFC_CMD_DEACTIVATE_TARGET(r2, &(0x7f0000000680)={&(0x7f0000000580), 0xc, &(0x7f0000000640)={&(0x7f0000000600)={0x24, r1, 0xba7ecc88d9445625, 0x0, 0x0, {}, [@NFC_ATTR_TARGET_INDEX={0x8}, @NFC_ATTR_DEVICE_INDEX={0x8}]}, 0x24}}, 0x0)

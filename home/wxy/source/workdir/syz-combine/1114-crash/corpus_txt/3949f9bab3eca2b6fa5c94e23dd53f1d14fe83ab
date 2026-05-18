@@ -1,4 +1,0 @@
-r0 = openat$sysctl(0xffffffffffffff9c, &(0x7f0000008780)='/proc/sys/vm/drop_caches\x00', 0x1, 0x0)
-r1 = fsopen(&(0x7f0000000080)='nfsd\x00', 0x0)
-r2 = dup3(r0, r1, 0x0)
-write$6lowpan_enable(r2, 0x0, 0x0)

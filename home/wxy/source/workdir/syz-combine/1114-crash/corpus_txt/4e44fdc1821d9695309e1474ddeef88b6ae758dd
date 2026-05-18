@@ -1,2 +1,0 @@
-r0 = openat$zero(0xffffffffffffff9c, &(0x7f00000000c0), 0xa001, 0x0)
-write$FUSE_IOCTL(r0, &(0x7f0000000100)={0x20}, 0x20)

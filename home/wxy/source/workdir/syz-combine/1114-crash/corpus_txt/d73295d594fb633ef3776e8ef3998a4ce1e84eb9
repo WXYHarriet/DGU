@@ -1,5 +1,0 @@
-mkdir(&(0x7f0000000180)='./file0\x00', 0x0)
-r0 = openat(0xffffffffffffff9c, &(0x7f0000004280)='./file0\x00', 0x0, 0x0)
-r1 = dup2(r0, r0)
-r2 = socket$rxrpc(0x21, 0x2, 0x2)
-mount$9p_fd(0x0, &(0x7f0000000000)='./file0\x00', &(0x7f0000000100), 0x0, &(0x7f0000000440)={'trans=fd,', {'rfdno', 0x3d, r1}, 0x2c, {'wfdno', 0x3d, r2}})

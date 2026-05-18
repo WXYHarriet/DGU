@@ -1,3 +1,0 @@
-r0 = openat$tun(0xffffffffffffff9c, &(0x7f0000000280), 0x0, 0x0)
-ioctl$TUNSETIFF(r0, 0x400454ca, &(0x7f0000000000)={'pim6reg\x00', 0x2})
-ioctl$TUNGETSNDBUF(r0, 0x800454d3, &(0x7f0000000240))

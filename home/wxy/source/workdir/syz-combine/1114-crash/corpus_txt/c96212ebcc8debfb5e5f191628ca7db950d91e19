@@ -1,2 +1,0 @@
-r0 = openat$hwrng(0xffffffffffffff9c, &(0x7f0000000680), 0x200002, 0x0)
-io_uring_register$IORING_REGISTER_FILES(r0, 0x2, 0x0, 0x0)

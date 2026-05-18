@@ -1,2 +1,0 @@
-r0 = add_key$fscrypt_v1(&(0x7f0000000000), &(0x7f00000000c0)={'fscrypt:', @desc3}, &(0x7f0000000140)={0x0, "302745822f4f0579d0c8c55048cada57d5b9ac36e1c2f188c396bd9af30c351c1213f941bdd9d67aec222f3fd13e7c68da1663aa59247a8dff358cf8ae469f17", 0x36}, 0x48, 0xfffffffffffffffe)
-keyctl$unlink(0x9, 0x0, r0)

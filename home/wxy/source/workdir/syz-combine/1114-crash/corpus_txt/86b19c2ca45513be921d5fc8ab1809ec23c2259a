@@ -1,4 +1,0 @@
-mknod$loop(&(0x7f0000000040)='./file0\x00', 0x100000000000600d, 0x1)
-r0 = creat(&(0x7f0000000000)='./file0\x00', 0x0)
-r1 = dup2(r0, r0)
-ioctl$BLKTRACESETUP(r1, 0x4c06, 0x0)

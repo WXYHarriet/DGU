@@ -1,2 +1,0 @@
-unshare(0x22020000)
-unshare(0x2a020400)

@@ -1,4 +1,0 @@
-r0 = creat(&(0x7f0000000080)='./file0\x00', 0x0)
-r1 = syz_open_dev$usbfs(&(0x7f0000000040), 0x12, 0x0)
-r2 = dup2(r0, r1)
-process_mrelease(r2, 0x0)

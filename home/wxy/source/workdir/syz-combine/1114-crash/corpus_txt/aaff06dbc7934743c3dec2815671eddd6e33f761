@@ -1,3 +1,0 @@
-r0 = inotify_init1(0x0)
-r1 = inotify_add_watch(r0, &(0x7f0000000000)='.\x00', 0x2000262)
-inotify_rm_watch(r0, r1)

@@ -1,6 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000180)='pagemap\x00')
-r1 = open(&(0x7f0000007f80)='./bus\x00', 0x1cb042, 0x0)
-open(&(0x7f0000000180)='./bus\x00', 0x14d27e, 0x0)
-ftruncate(r1, 0x2007ffb)
-open(&(0x7f0000008140)='./bus\x00', 0x60142, 0x0)
-pread64(r0, &(0x7f0000001240)=""/102400, 0x200010, 0x0)

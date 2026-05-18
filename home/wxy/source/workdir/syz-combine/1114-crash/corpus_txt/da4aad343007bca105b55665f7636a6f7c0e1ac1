@@ -1,2 +1,0 @@
-r0 = syz_open_dev$video4linux(&(0x7f0000000180), 0x0, 0x0)
-ioctl$VIDIOC_QUERY_EXT_CTRL(r0, 0xc0e85667, &(0x7f00000001c0)={0xc0000000, 0x0, "6cf3d86520aca1e614cc5279951b11b0adc2c9598ce4f643f6afb978e6faf593"})

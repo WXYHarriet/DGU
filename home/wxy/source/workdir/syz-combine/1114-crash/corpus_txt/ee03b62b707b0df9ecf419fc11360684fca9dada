@@ -1,4 +1,0 @@
-sendmmsg$inet6(0xffffffffffffffff, &(0x7f0000004000)=[{{0x0, 0x0, &(0x7f00000013c0)=[{&(0x7f0000000080)="36c16b10c4a4dc1e958c6101b0abc8698a8d743a5150e29ad36de1a1f8a9863167efde3137c398248618a32eca4044ac6a6bdda1340ae41bfa2906de08e8c5921a411fb42536e4c88d88e796472c681d02f70ea00fbfa0221231bdc4cf3f2a07f8", 0x61}], 0x1}}], 0x1, 0x0)
-r0 = socket$nl_generic(0x10, 0x3, 0x10)
-r1 = syz_genetlink_get_family_id$nl80211(&(0x7f0000000040), 0xffffffffffffffff)
-sendmsg$NL80211_CMD_REQ_SET_REG(r0, &(0x7f00000001c0)={0x0, 0x0, &(0x7f0000000180)={&(0x7f00000000c0)={0x58, r1, 0x1, 0x0, 0x0, {{0x1a}}, [@NL80211_ATTR_REG_ALPHA2={0x6, 0x21, 'b\x00'}, @NL80211_ATTR_REG_RULES={0x3c}]}, 0x58}}, 0x0)

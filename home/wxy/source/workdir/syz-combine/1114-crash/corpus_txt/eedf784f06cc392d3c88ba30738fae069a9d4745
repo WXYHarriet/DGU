@@ -1,3 +1,0 @@
-mkdir(&(0x7f0000000080)='./file0\x00', 0x0)
-r0 = creat(&(0x7f0000000000)='./file0/bus\x00', 0x0)
-mq_notify(r0, 0x0)

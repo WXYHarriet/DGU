@@ -1,5 +1,0 @@
-syz_mount_image$fuse(0x0, &(0x7f0000002940)='./file0\x00', 0x0, 0x0, 0x0, 0x0, 0x0)
-r0 = inotify_init()
-r1 = inotify_add_watch(r0, &(0x7f00000000c0)='./file0\x00', 0x92c)
-inotify_rm_watch(r0, r1)
-read$FUSE(r0, &(0x7f0000000100)={0x2020}, 0x2020)

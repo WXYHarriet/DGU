@@ -1,4 +1,0 @@
-pipe(&(0x7f0000000000)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff})
-write$FUSE_DIRENT(r1, &(0x7f0000000040)=ANY=[], 0xfffffe6d)
-write$cgroup_netprio_ifpriomap(r1, 0x0, 0x0)
-read$FUSE(r0, &(0x7f0000001340)={0x2020}, 0x2020)

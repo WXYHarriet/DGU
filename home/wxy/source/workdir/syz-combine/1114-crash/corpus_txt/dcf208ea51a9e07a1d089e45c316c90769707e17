@@ -1,1 +1,0 @@
-renameat(0xffffffffffffffff, 0x0, 0xffffffffffffffff, &(0x7f0000000300)='./file0\x00')

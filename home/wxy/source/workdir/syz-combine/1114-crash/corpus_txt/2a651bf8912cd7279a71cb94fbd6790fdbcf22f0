@@ -1,4 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000080)='fd\x00')
-prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xfd7, 0xfff, &(0x7f0000000040))
-r1 = memfd_create(&(0x7f0000000780)='\x04', 0x0)
-dup3(r0, r1, 0x0)

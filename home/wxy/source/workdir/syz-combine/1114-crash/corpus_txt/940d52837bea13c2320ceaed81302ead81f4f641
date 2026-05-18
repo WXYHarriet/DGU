@@ -1,4 +1,0 @@
-r0 = openat(0xffffffffffffff9c, &(0x7f0000000200)='./cgroup\x00', 0x0, 0x0)
-r1 = openat$tcp_mem(0xffffffffffffff9c, &(0x7f0000000040)='/proc/sys/net/ipv4/tcp_rmem\x00', 0x1, 0x0)
-getdents64(r0, &(0x7f0000000100)=""/97, 0x61)
-dup3(r1, r0, 0x0)

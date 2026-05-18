@@ -1,8 +1,0 @@
-mkdir(&(0x7f0000000140)='./file0\x00', 0x0)
-r0 = epoll_create1(0x0)
-r1 = syz_open_procfs(0x0, &(0x7f0000000100)='mounts\x00')
-mount$9p_fd(0x0, &(0x7f0000001140)='./file0\x00', &(0x7f0000000000), 0x0, &(0x7f0000001340)={'trans=fd,', {'rfdno', 0x3d, r1}, 0x2c, {'wfdno', 0x3d, r0}})
-r2 = epoll_create1(0x0)
-epoll_ctl$EPOLL_CTL_ADD(r2, 0x1, r1, &(0x7f00000000c0))
-mount$9p_fd(0x0, &(0x7f0000000000)='./file0\x00', &(0x7f0000000040), 0x0, &(0x7f0000000080)={'trans=fd,', {'rfdno', 0x3d, r1}, 0x2c, {'wfdno', 0x3d, r2}})
-mount$tmpfs(0x0, &(0x7f00000003c0)='./file0\x00', &(0x7f0000000400), 0x0, 0x0)

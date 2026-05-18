@@ -1,2 +1,0 @@
-r0 = socket$inet(0x2, 0x803, 0x101)
-ioctl$sock_ipv4_tunnel_SIOCCHGTUNNEL(r0, 0x8942, &(0x7f0000000440)={'sit0\x00', 0x0})

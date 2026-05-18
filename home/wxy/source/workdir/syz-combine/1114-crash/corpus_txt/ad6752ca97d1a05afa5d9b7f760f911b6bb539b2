@@ -1,3 +1,0 @@
-r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000040)='net/udplite\x00')
-read$FUSE(r0, &(0x7f0000004500)={0x2020}, 0xffffff4b)
-read$FUSE(r0, &(0x7f0000006540)={0x2020}, 0x2020)

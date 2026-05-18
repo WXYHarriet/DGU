@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x62, &(0x7f0000000500)={@local, @random="3d65f2657db6", @val, {@ipv6}}, 0x0)

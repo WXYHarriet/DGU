@@ -1,2 +1,0 @@
-r0 = openat$damon_target_ids(0xffffffffffffff9c, &(0x7f0000002280), 0x1, 0x0)
-write$damon_target_ids(r0, 0x0, 0x86)

@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000380)='timerslack_ns\x00')
-read$snapshot(r0, &(0x7f0000000100)=""/49, 0x31)

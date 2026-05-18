@@ -1,2 +1,0 @@
-r0 = syz_open_procfs(0x0, &(0x7f0000000240)='clear_refs\x00')
-write$6lowpan_enable(r0, &(0x7f0000000000)='0', 0x1)

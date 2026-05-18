@@ -1,4 +1,0 @@
-r0 = creat(&(0x7f00000001c0)='./bus\x00', 0x0)
-close(r0)
-eventfd2(0x5, 0x0)
-mount$9p_fd(0x0, &(0x7f0000000000)='./bus\x00', &(0x7f0000000080), 0x0, &(0x7f0000000200)={'trans=fd,', {'rfdno', 0x3d, r0}, 0x2c, {'wfdno', 0x3d, r0}})

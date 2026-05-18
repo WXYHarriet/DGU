@@ -1,8 +1,0 @@
-pipe(&(0x7f0000000080)={<r0=>0xffffffffffffffff})
-r1 = socket$inet_udp(0x2, 0x2, 0x0)
-pipe(&(0x7f0000000440)={0xffffffffffffffff, <r2=>0xffffffffffffffff})
-close(r2)
-close(r1)
-openat$nullb(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
-openat$nci(0xffffffffffffff9c, &(0x7f00000003c0), 0x2, 0x0)
-dup3(r0, r2, 0x0)

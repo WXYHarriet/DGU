@@ -1,3 +1,0 @@
-r0 = socket$inet6_sctp(0xa, 0x5, 0x84)
-syz_genetlink_get_family_id$batadv(&(0x7f0000000080), 0xffffffffffffffff)
-getsockopt$bt_hci(r0, 0x84, 0x81, &(0x7f0000000080)=""/4096, &(0x7f0000001200)=0x1000)

@@ -1,1 +1,0 @@
-syz_emit_ethernet(0x15, &(0x7f0000000000)={@local, @local, @val={@void}, {@generic={0x0, "6cee49"}}}, 0x0)

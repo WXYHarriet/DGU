@@ -1,2 +1,0 @@
-r0 = socket$netlink(0x10, 0x3, 0x0)
-sendmsg$nl_route(r0, &(0x7f0000000100)={0x0, 0x0, &(0x7f0000000080)={&(0x7f0000000140)=ANY=[@ANYBLOB="68000000200005032abd", @ANYRES32=0x0, @ANYBLOB="204402"], 0x68}}, 0x0)

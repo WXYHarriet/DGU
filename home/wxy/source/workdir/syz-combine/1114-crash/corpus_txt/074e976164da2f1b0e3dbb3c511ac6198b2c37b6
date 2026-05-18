@@ -1,5 +1,0 @@
-pipe(&(0x7f0000000280)={0xffffffffffffffff, <r0=>0xffffffffffffffff})
-r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000600)='cpuacct.usage_percpu_sys\x00', 0x275a, 0x0)
-write$binfmt_script(r1, &(0x7f00000006c0)={'#! ', './file0'}, 0xb)
-mmap(&(0x7f0000000000/0x3000)=nil, 0x3000, 0x1, 0x10012, r1, 0x0)
-move_mount(r0, 0x0, r1, 0x0, 0x144)
