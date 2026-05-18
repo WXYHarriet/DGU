@@ -1,0 +1,1 @@
+openat$sysfs(0xffffffffffffff9c, &(0x7f0000000100)='/sys/power/pm_trace_dev_match', 0x1634c0, 0x62)

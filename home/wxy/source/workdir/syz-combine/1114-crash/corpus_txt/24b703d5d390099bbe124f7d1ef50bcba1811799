@@ -1,0 +1,4 @@
+openat2(0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00', &(0x7f0000000080)={0x240}, 0x18)
+lsetxattr$security_capability(&(0x7f0000000180)='./file0\x00', &(0x7f00000001c0), &(0x7f0000000200), 0xc, 0x1)
+setxattr$trusted_overlay_origin(&(0x7f0000000040)='./file0\x00', &(0x7f00000000c0), 0x0, 0x0, 0x0)
+setxattr$trusted_overlay_redirect(&(0x7f0000000100)='./file0\x00', &(0x7f0000000140), 0x0, 0x0, 0x0)

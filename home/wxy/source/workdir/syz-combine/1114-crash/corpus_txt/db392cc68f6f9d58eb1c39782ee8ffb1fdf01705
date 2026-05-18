@@ -1,0 +1,3 @@
+mknod(&(0x7f0000002dc0)='./file0\x00', 0x0, 0x0)
+r0 = inotify_init1(0x0)
+inotify_add_watch(r0, &(0x7f0000000080)='./file0\x00', 0x40002b0)

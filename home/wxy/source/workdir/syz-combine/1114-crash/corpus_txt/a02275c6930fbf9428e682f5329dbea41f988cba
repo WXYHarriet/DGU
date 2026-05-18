@@ -1,0 +1,1 @@
+arch_prctl$ARCH_GET_GS(0x1004, &(0x7f0000000040))

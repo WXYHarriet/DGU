@@ -1,0 +1,2 @@
+r0 = openat$selinux_validatetrans(0xffffffffffffff9c, &(0x7f00000003c0), 0x1, 0x0)
+write$selinux_validatetrans(r0, 0x0, 0xffffff1b)

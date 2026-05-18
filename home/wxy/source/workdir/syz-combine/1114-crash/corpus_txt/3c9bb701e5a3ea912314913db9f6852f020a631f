@@ -1,0 +1,4 @@
+syz_usb_connect(0x0, 0x36, &(0x7f0000000080)=ANY=[@ANYBLOB="1a0100005c6b4408070a64006e00010203010902240001a82200000904000002ca743600090503032000ff00ef08058402"], &(0x7f00000007c0)={0x0, 0x0, 0x0, 0x0})
+close(0xffffffffffffffff)
+r0 = syz_open_dev$char_usb(0xc, 0xb4, 0x0)
+write$char_usb(r0, 0x0, 0x0)

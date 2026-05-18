@@ -1,0 +1,4 @@
+socket$inet_tcp(0x2, 0x1, 0x0)
+eventfd(0x0)
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f00000000c0)='fdinfo/4\x00')
+read$snapshot(r0, &(0x7f0000000080)=""/62, 0x3e)

@@ -1,0 +1,4 @@
+r0 = epoll_create(0x3ff)
+r1 = socket$igmp(0x2, 0x3, 0x2)
+epoll_ctl$EPOLL_CTL_ADD(r0, 0x1, r1, &(0x7f00000000c0)={0xb0000000})
+epoll_ctl$EPOLL_CTL_MOD(r0, 0x3, r1, &(0x7f0000000140))

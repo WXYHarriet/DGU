@@ -1,0 +1,2 @@
+r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000000040)='/sys/class/net', 0x0, 0x0)
+fsetxattr$security_selinux(r0, &(0x7f0000000000), &(0x7f0000000080)='system_u:object_r:shell_exec_t:s0\x00', 0xffdf, 0x0)

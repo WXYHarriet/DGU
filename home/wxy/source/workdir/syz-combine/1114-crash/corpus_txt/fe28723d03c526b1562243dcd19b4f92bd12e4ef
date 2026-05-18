@@ -1,0 +1,2 @@
+r0 = openat$damon_target_ids(0xffffffffffffff9c, &(0x7f0000001200), 0x402, 0x0)
+write$damon_target_ids(r0, 0x0, 0x0)

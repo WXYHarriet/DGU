@@ -1,0 +1,4 @@
+pipe(&(0x7f0000000000)={0xffffffffffffffff, <r0=>0xffffffffffffffff})
+r1 = fcntl$dupfd(r0, 0x0, r0)
+r2 = syz_init_net_socket$netrom(0x6, 0x5, 0x0)
+sendfile(r1, r2, 0x0, 0x7ff)

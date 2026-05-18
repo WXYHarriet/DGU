@@ -1,0 +1,2 @@
+r0 = syz_open_dev$loop(&(0x7f0000000000), 0x5, 0x8400)
+ioctl$HDIO_GETGEO(r0, 0x301, &(0x7f00000001c0))

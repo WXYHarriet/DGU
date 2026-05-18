@@ -1,0 +1,2 @@
+r0 = syz_open_dev$video(&(0x7f0000000040), 0x7, 0x0)
+ioctl$VIDIOC_ENUMAUDIO(r0, 0xc0345641, &(0x7f0000000000)={0x0, "09e1f8cdf47eb7aacc6ea64e484a35ca592ffddd05b474a3c29eb36dae4f9199"})

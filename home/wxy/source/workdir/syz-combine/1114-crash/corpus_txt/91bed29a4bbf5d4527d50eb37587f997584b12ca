@@ -1,0 +1,2 @@
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000040)='attr\x00')
+ioctl$FIDEDUPERANGE(r0, 0xc0189436, &(0x7f0000000180)=ANY=[@ANYBLOB="000000000000e6ffff0a8a5ab70b19ffffffdfff"])

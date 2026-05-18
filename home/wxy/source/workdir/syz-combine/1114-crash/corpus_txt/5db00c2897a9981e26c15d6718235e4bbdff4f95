@@ -1,0 +1,3 @@
+r0 = add_key$keyring(&(0x7f0000000000), 0x0, 0x0, 0x0, 0xffffffffffffffff)
+r1 = add_key$fscrypt_v1(&(0x7f0000000080), &(0x7f0000000140)={'fscrypt:', @desc3}, &(0x7f0000000180)={0x0, "56b762930505d705bb40bb4abd68ee8352b68cf0d5937da320a410182f8e50b7d70444f12de7033c6420a3792f6c9d2e8ae8db9606940dd1dc4fd4f2c1572e0e"}, 0x48, 0xfffffffffffffffe)
+keyctl$link(0x8, r1, r0)

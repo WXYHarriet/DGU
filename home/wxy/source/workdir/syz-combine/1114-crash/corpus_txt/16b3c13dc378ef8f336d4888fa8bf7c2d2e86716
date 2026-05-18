@@ -1,0 +1,6 @@
+close_range(0xffffffffffffffff, 0xffffffffffffffff, 0x2)
+mkdirat(0xffffffffffffff9c, &(0x7f0000000040)='./file0\x00', 0x0)
+mount(0x0, &(0x7f0000000180)='./file0\x00', &(0x7f0000000240)='devtmpfs\x00', 0x0, 0x0)
+mount$overlay(0x0, &(0x7f00000000c0)='./file0\x00', &(0x7f0000000380), 0x0, &(0x7f00000003c0)={[{@lowerdir={'lowerdir', 0x3d, './file0'}, 0x3a}], [], 0x2f})
+r0 = open(&(0x7f0000000000)='./file0\x00', 0x0, 0x0)
+ioctl$FS_IOC_FSGETXATTR(r0, 0x801c581f, 0x0)

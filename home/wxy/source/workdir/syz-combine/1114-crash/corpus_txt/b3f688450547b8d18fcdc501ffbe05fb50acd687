@@ -1,0 +1,2 @@
+r0 = socket$igmp(0x2, 0x3, 0x2)
+ioctl$sock_inet_SIOCSIFNETMASK(r0, 0x891c, &(0x7f0000000000)={'lo\x00', {0x2, 0x0, @broadcast}})

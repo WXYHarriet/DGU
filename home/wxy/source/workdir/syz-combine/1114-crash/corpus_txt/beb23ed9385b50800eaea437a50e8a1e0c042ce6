@@ -1,0 +1,5 @@
+ioctl$BTRFS_IOC_GET_SUBVOL_ROOTREF(0xffffffffffffffff, 0xd000943d, &(0x7f0000000300)={0x0, [], 0x7, "2e47ddf4327dff"})
+ioctl$BTRFS_IOC_INO_LOOKUP(0xffffffffffffffff, 0xd0009412, 0x0)
+sendmsg$NL80211_CMD_GET_COALESCE(0xffffffffffffffff, &(0x7f00000023c0)={&(0x7f0000002300), 0xc, &(0x7f0000002380)={0x0}}, 0x4000840)
+syz_genetlink_get_family_id$nl80211(0x0, 0xffffffffffffffff)
+openat$nci(0xffffffffffffff9c, &(0x7f0000003780), 0x2, 0x0)

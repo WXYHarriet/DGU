@@ -1,0 +1,2 @@
+r0 = syz_io_uring_setup(0xb65, &(0x7f0000000000), &(0x7f0000000080), &(0x7f00000000c0))
+fcntl$getflags(r0, 0xb)

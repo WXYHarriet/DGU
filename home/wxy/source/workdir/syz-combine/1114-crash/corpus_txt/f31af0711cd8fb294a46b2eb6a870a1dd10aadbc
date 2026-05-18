@@ -1,0 +1,5 @@
+r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000000480)='/sys/power/mem_sleep', 0x0, 0x0)
+openat$rfkill(0xffffffffffffff9c, &(0x7f0000000080), 0x100000, 0x0)
+read$rfkill(0xffffffffffffffff, &(0x7f00000000c0), 0x8)
+dup3(0xffffffffffffffff, r0, 0x80000)
+getsockname$packet(r0, 0x0, 0x0)

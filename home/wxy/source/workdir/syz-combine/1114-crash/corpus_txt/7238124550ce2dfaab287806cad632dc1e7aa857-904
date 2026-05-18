@@ -1,0 +1,2 @@
+bpf$ENABLE_STATS(0x20, 0x0, 0x0)
+openat$cgroup_root(0xffffffffffffff9c, &(0x7f0000001e00)='./cgroup.net/syz1\x00', 0x200002, 0x0)

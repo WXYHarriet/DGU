@@ -1,0 +1,2 @@
+setrlimit(0x9, &(0x7f0000000000))
+io_setup(0xdbd, &(0x7f0000000000))

@@ -1,0 +1,4 @@
+r0 = userfaultfd(0x80001)
+ioctl$UFFDIO_API(r0, 0xc018aa3f, &(0x7f00000000c0))
+close_range(0xffffffffffffffff, 0xffffffffffffffff, 0x2)
+ioctl$UFFDIO_REGISTER(r0, 0xc028aa03, &(0x7f0000000140)={{&(0x7f0000fff000/0x1000)=nil, 0x1000}})

@@ -1,0 +1,5 @@
+r0 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='blkio.bfq.io_service_time_recursive\x00', 0x275a, 0x0)
+write$binfmt_aout(r0, &(0x7f00000002c0)=ANY=[], 0xc1)
+mmap(&(0x7f0000000000/0x3000)=nil, 0x3000, 0x2000005, 0x12, r0, 0x0)
+r1 = socket$inet6_udplite(0xa, 0x2, 0x88)
+setsockopt$inet6_IPV6_FLOWLABEL_MGR(r1, 0x29, 0x20, &(0x7f0000000040)={@ipv4={'\x00', '\xff\xff', @local}}, 0xffef)

@@ -1,0 +1,2 @@
+r0 = io_uring_setup(0x38dc, &(0x7f0000000600)={0x0, 0x0, 0x40})
+io_uring_register$IORING_REGISTER_RESTRICTIONS(r0, 0xb, &(0x7f00000000c0)=[@ioring_restriction_register_op={0x0, 0x12}], 0xc7)

@@ -1,0 +1,5 @@
+mkdirat(0xffffffffffffff9c, &(0x7f0000002040)='./file0\x00', 0x0)
+r0 = openat(0xffffffffffffff9c, &(0x7f0000004280)='./file0\x00', 0x0, 0x0)
+fcntl$notify(r0, 0x402, 0x80000016)
+mkdir(&(0x7f00000002c0)='./bus\x00', 0x0)
+rename(&(0x7f00000000c0)='./file0\x00', &(0x7f0000000100)='./bus\x00')

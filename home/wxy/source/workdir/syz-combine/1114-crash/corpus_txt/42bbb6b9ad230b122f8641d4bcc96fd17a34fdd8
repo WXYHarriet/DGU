@@ -1,0 +1,5 @@
+r0 = epoll_create(0x1)
+socketpair$unix(0x1, 0x1, 0x0, &(0x7f0000000040)={0xffffffffffffffff, <r1=>0xffffffffffffffff})
+r2 = epoll_create(0x3ff)
+epoll_ctl$EPOLL_CTL_ADD(r2, 0x1, r0, &(0x7f0000000000))
+epoll_ctl$EPOLL_CTL_ADD(r0, 0x1, r1, &(0x7f0000000080)={0xe8002004})

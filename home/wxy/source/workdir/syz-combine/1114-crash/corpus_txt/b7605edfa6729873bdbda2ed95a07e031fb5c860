@@ -1,0 +1,7 @@
+open_by_handle_at(0xffffffffffffffff, &(0x7f0000000080)=ANY=[@ANYBLOB="a70200f80000dfff0400"], 0x14102)
+r0 = openat$ptmx(0xffffffffffffff9c, &(0x7f0000000100), 0x161281, 0x0)
+write$binfmt_aout(r0, &(0x7f0000000080)=ANY=[], 0xff2e)
+ioctl$TCSETS(r0, 0x40045431, &(0x7f0000000080)={0x0, 0x0, 0x0, 0x0, 0x0, "0040001e1d113c81fcf76000"})
+r1 = syz_open_pts(r0, 0x0)
+r2 = dup3(r1, r0, 0x0)
+read$eventfd(r2, &(0x7f0000000100), 0x8)

@@ -1,0 +1,7 @@
+accept4$unix(0xffffffffffffffff, &(0x7f00000001c0)=@abs, &(0x7f0000000240)=0x6e, 0x0)
+bind$unix(0xffffffffffffffff, 0x0, 0x0)
+r0 = syz_open_dev$loop(&(0x7f0000000080), 0x0, 0x0)
+ioctl$LOOP_GET_STATUS(r0, 0x4c03, &(0x7f00000000c0))
+syz_open_dev$loop(&(0x7f0000000000), 0x7, 0x140)
+ioctl$LOOP_CONFIGURE(r0, 0x4c0a, &(0x7f0000000040)={r0, 0x6, {0x0, 0x0, 0x0, 0x4, 0x2000000000000000, 0x0, 0x6, 0x0, 0x0, "6b548e97f8520ef7c5b78e05de4620585ec0a6896dcf6dad9c95aeb51d9d40425ca2c3893204e5d1b0c3484eb84b10ff8c30980b4ee3bee7e6d703fa8f1341df", "184d78a486afa68839034e3ffdee8c3106743d06d9add3937d051c7b440d2fdb769f3b6f7eb9a0a069db247b76bb88ad91a350904407ef622e8310559143c59b", "ee91c6cb079462cb27c0c1e6558bcd8618b46b95911df720150fa4f18ecff4c9"}})
+openat$dir(0xffffffffffffff9c, 0x0, 0x2, 0x1)

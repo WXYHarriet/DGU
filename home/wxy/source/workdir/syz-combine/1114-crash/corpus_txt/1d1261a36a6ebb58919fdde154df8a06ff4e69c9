@@ -1,0 +1,1 @@
+syz_init_net_socket$802154_dgram(0x24, 0xa, 0x0)

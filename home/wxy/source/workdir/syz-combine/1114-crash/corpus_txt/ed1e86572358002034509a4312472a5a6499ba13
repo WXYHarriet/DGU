@@ -1,0 +1,5 @@
+r0 = add_key$user(&(0x7f0000000040), &(0x7f0000000080)={'syz', 0x3}, &(0x7f00000000c0)="a88299ff01", 0x5, 0xfffffffffffffffe)
+r1 = add_key$keyring(&(0x7f0000000380), &(0x7f00000003c0)={'syz', 0x2}, 0x0, 0x0, 0xfffffffffffffffe)
+r2 = add_key$fscrypt_v1(&(0x7f0000000000), &(0x7f0000000340)={'fscrypt:', @desc1}, &(0x7f0000000080)={0x0, "fbbe4f0fcc6f79862563ee9f78a66e97ffd1a265b9d79082720651a9bef5446009a996f1612fb602ff52c49995f7e0c19b5771e037dc3493095c36654d311437", 0x6}, 0x48, r1)
+keyctl$revoke(0x3, r2)
+keyctl$search(0xa, r0, &(0x7f0000000180)='rxrpc\x00', &(0x7f0000000300)={'syz', 0x0}, r2)

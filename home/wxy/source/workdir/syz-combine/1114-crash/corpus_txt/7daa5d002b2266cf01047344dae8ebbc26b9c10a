@@ -1,0 +1,2 @@
+r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f00000002c0)='/sys/power/resume', 0x141a82, 0x0)
+write$cgroup_int(r0, &(0x7f00000000c0), 0x12)

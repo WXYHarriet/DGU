@@ -1,0 +1,6 @@
+mkdirat(0xffffffffffffff9c, &(0x7f0000000100)='./file1\x00', 0x0)
+mount$fuse(0x0, 0x0, 0x0, 0x0, &(0x7f0000000400)=ANY=[@ANYBLOB='fd=', @ANYRESHEX=0x0])
+mount(0x0, &(0x7f0000000380)='./file1\x00', &(0x7f0000000100)='autofs\x00', 0x0, &(0x7f0000000400))
+r0 = syz_open_procfs(0x0, &(0x7f0000000100)='mountinfo\x00')
+r1 = open(&(0x7f0000000a40)='./bus\x00', 0x141a42, 0x0)
+sendfile(r1, r0, 0x0, 0x100801700)

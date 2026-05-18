@@ -1,0 +1,6 @@
+r0 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r1 = syz_genetlink_get_family_id$netlbl_calipso(&(0x7f0000000000), r0)
+write(0xffffffffffffffff, &(0x7f0000000040)="347faf7930e3c966720aa07878500a15b2754854e529f24119e0b9bda51f71585910c20360", 0x25)
+sendmsg$NLBL_CALIPSO_C_LISTALL(0xffffffffffffffff, &(0x7f0000000140)={0x0, 0x0, &(0x7f0000000100)={&(0x7f00000000c0)={0x14, r1}, 0x14}}, 0x0)
+r2 = socket(0x400000000010, 0x3, 0x0)
+write(r2, &(0x7f0000000040)="3a03000018002551075c0165ff0ffc02802000030004000500e1000c0400070080000900", 0x33a)

@@ -1,0 +1,2 @@
+r0 = socket$igmp(0x2, 0x3, 0x2)
+ioctl$ifreq_SIOCGIFINDEX_batadv_hard(r0, 0x89b1, &(0x7f0000000140)={'batadv_slave_0\x00'})

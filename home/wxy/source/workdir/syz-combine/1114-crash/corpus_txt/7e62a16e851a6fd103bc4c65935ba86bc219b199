@@ -1,0 +1,2 @@
+r0 = signalfd4(0xffffffffffffffff, &(0x7f0000000100), 0x8, 0x800)
+read$snapshot(r0, &(0x7f0000002ac0)=""/167, 0xa7)

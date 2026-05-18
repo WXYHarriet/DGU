@@ -1,0 +1,1 @@
+landlock_add_rule$LANDLOCK_RULE_PATH_BENEATH(0xffffffffffffffff, 0x1, 0x0, 0xffff43a40080ffff)

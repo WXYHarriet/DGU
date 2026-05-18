@@ -1,0 +1,2 @@
+r0 = syz_open_procfs(0x0, &(0x7f0000006440)='net/ptype\x00')
+read$FUSE(r0, &(0x7f0000009400)={0x2020}, 0xffffffea)

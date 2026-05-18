@@ -1,0 +1,2 @@
+pipe2$9p(&(0x7f00000000c0)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff}, 0x0)
+mount$9p_fd(0x0, &(0x7f0000000080)='.\x00', &(0x7f0000000040), 0x0, &(0x7f0000000300)=ANY=[@ANYBLOB='trans=fd,rfdno=', @ANYRESHEX=r0, @ANYBLOB=',wfdno=', @ANYRESHEX=r1, @ANYBLOB="2c756e616d653d08232cb6deba7ae3855477b6b56fad4460f319e82eaabbc6d78ca9242c6163636573733d616e79ec6a"])

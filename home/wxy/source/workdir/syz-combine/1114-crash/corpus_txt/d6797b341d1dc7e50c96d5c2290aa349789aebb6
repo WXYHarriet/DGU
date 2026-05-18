@@ -1,0 +1,6 @@
+r0 = memfd_create(&(0x7f0000000140)='y\x105\xfb\xf7u\x83%:r\xc2\xb9x\xa4q\xc1\xea_\x8cZ7\xcda\x9bX\x0e\xa1\xcf\x1a\x98S7\xc9\x00'/47, 0x2)
+ftruncate(r0, 0xffff)
+fcntl$addseals(r0, 0x409, 0x7)
+r1 = openat$udambuf(0xffffffffffffff9c, &(0x7f00000000c0), 0x2)
+r2 = ioctl$UDMABUF_CREATE(r1, 0x40187542, &(0x7f0000000000)={r0, 0x0, 0x0, 0x2000})
+ioctl$DMA_BUF_IOCTL_SYNC(r2, 0x40046201, 0x0)

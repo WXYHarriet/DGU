@@ -1,0 +1,2 @@
+r0 = openat$cachefiles(0xffffffffffffff9c, &(0x7f0000000100), 0x1, 0x0)
+write$FUSE_INIT(r0, &(0x7f0000000140)={0x50}, 0x50)

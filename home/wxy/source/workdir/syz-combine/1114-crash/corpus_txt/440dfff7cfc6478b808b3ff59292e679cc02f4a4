@@ -1,0 +1,3 @@
+r0 = openat$sw_sync(0xffffffffffffff9c, &(0x7f00000000c0), 0x0, 0x0)
+ioctl$SW_SYNC_IOC_CREATE_FENCE(r0, 0xc0285700, &(0x7f0000000140)={0x0, "070e66a34b2fe39320d7c0de6944b720ccf302ccd60c923206f09ab9d9f465cb", <r1=>0xffffffffffffffff})
+ioctl$SYNC_IOC_MERGE(r1, 0xc0303e03, &(0x7f0000000080)={"f730f2d8ef20dc262f08930f7b5db99b03a510155964135526216d6f8d13590f"})

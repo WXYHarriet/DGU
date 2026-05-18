@@ -1,0 +1,1 @@
+syz_emit_vhci(&(0x7f00000001c0)=@HCI_EVENT_PKT={0x4, @hci_ev_user_passkey_notify={{0x3b, 0xa}}}, 0xd)

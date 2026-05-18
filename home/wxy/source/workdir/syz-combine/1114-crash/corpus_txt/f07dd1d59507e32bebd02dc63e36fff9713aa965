@@ -1,0 +1,4 @@
+r0 = socket$inet_udplite(0x2, 0x2, 0x88)
+r1 = syz_open_procfs$namespace(0x0, &(0x7f00000006c0)='ns/net\x00')
+dup2(r1, r0)
+ioctl$sock_inet_SIOCADDRT(r0, 0x890b, 0x0)

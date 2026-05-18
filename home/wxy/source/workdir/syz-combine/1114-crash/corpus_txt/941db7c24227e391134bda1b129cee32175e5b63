@@ -1,0 +1,2 @@
+r0 = syz_open_procfs(0x0, &(0x7f00000003c0)='map_files\x00')
+getdents64(r0, &(0x7f00000006c0)=""/4096, 0x1000)

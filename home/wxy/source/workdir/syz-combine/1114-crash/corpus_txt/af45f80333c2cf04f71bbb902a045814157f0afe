@@ -1,0 +1,2 @@
+r0 = openat$selinux_access(0xffffffffffffff9c, &(0x7f0000000100), 0x2, 0x0)
+write$selinux_access(r0, &(0x7f0000000300)={'system_u:object_r:var_spool_t:s0', 0x20, 'system_u:system_r:kernel_t:s0', 0x20, 0xfffffffffffffff2}, 0x54)

@@ -1,0 +1,1 @@
+syz_emit_ethernet(0x16, &(0x7f0000000080)={@link_local, @empty, @void, {@llc={0x4, {@snap={0xaa, 0x0, "7f", "98f054"}}}}}, 0x0)

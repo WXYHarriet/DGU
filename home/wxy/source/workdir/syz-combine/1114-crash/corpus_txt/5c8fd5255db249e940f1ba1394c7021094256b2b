@@ -1,0 +1,2 @@
+r0 = openat$damon_attrs(0xffffffffffffff9c, &(0x7f0000000000), 0x81, 0x0)
+write$damon_attrs(r0, 0x0, 0x2)

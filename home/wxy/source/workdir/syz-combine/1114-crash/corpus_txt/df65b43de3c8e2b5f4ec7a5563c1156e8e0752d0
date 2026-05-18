@@ -1,0 +1,4 @@
+sendmsg$DEVLINK_CMD_GET(0xffffffffffffffff, 0x0, 0x0)
+r0 = syz_open_dev$sg(&(0x7f00000004c0), 0x0, 0x0)
+ioctl$SG_BLKTRACETEARDOWN(r0, 0x1276, 0x0)
+sendmsg$SEG6_CMD_DUMPHMAC(0xffffffffffffffff, 0x0, 0x0)

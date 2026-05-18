@@ -1,0 +1,6 @@
+r0 = openat$autofs(0xffffffffffffff9c, &(0x7f0000000040), 0x40, 0x0)
+symlinkat(&(0x7f0000000200)='./file0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/file1\x00', 0xffffffffffffff9c, &(0x7f0000000100)='./file0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\x00')
+open$dir(&(0x7f0000000480)='./file0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/file1\x00', 0x8000, 0x80)
+ioctl$AUTOFS_DEV_IOCTL_TIMEOUT(r0, 0xc018937a, &(0x7f0000000000)={{0x1, 0x1, 0x4d}, './file0\x00'})
+r1 = openat$selinux_load(0xffffffffffffff9c, &(0x7f0000000080), 0x2, 0x0)
+write$selinux_load(r1, &(0x7f0000000180)=ANY=[@ANYBLOB="8cff7cf9080000005345204c696e75781500000000f600000800000007000000402c110000000000000000000001040000000000000000000000000000006dbd00601524c9"], 0x50)

@@ -1,0 +1,2 @@
+r0 = socket$inet_udp(0x2, 0x2, 0x0)
+ioctl$sock_ipv4_tunnel_SIOCADDTUNNEL(r0, 0x8923, &(0x7f00000004c0)={'sit0\x00', 0x0})

@@ -1,0 +1,2 @@
+prctl$PR_SET_SYSCALL_USER_DISPATCH_ON(0x3b, 0x1, 0xfd7, 0xfff, &(0x7f0000000040))
+mq_open(&(0x7f000084dff0)='!selinuxselinux\x00', 0x6e93ebbbcc0884f2, 0x148, 0x0)

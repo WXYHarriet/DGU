@@ -1,0 +1,7 @@
+r0 = syz_open_procfs(0x0, &(0x7f0000000100)='net/rt_cache\x00')
+r1 = openat$ptmx(0xffffffffffffff9c, &(0x7f0000bbfff6), 0x0, 0x0)
+r2 = epoll_create(0x5)
+epoll_ctl$EPOLL_CTL_ADD(r2, 0x1, r1, &(0x7f0000000000)={0x80000000})
+ioctl$TCSETS(r1, 0x40045431, &(0x7f00003b9fdc))
+syz_open_pts(r1, 0x0)
+close_range(r0, 0xffffffffffffffff, 0x0)

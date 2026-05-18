@@ -1,0 +1,2 @@
+r0 = socket$nl_sock_diag(0x10, 0x3, 0x4)
+ioctl$sock_SIOCETHTOOL(r0, 0x8946, &(0x7f0000000200)={'sit0\x00', &(0x7f0000000240)=@ethtool_rxnfc={0x2e, 0x0, 0x0, {0x0, @usr_ip6_spec={@mcast2, @mcast1}, {0x0, @broadcast}, @ah_ip4_spec={@empty, @private}, {0x0, @random="50bd9a213341"}}}})

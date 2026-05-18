@@ -1,0 +1,3 @@
+r0 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r1 = syz_genetlink_get_family_id$nfc(&(0x7f0000000080), r0)
+sendmsg$NFC_CMD_LLC_SET_PARAMS(r0, &(0x7f0000000200)={0x0, 0x0, &(0x7f00000000c0)={&(0x7f0000000180)={0x2c, r1, 0x1d4a20e5ce5012a9, 0x0, 0x0, {}, [@NFC_ATTR_LLC_PARAM_LTO={0x5}, @NFC_ATTR_LLC_PARAM_MIUX={0x6}, @NFC_ATTR_DEVICE_INDEX={0x8}]}, 0x2c}}, 0x0)

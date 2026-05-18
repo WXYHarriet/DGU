@@ -1,0 +1,2 @@
+mkdir(0x0, 0x0)
+keyctl$set_reqkey_keyring(0x5, 0xfffffffffffffffe)

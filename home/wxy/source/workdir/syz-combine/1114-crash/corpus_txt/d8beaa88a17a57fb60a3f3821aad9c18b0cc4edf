@@ -1,0 +1,3 @@
+r0 = socket$inet6(0xa, 0x3, 0xff)
+connect$inet6(r0, &(0x7f0000000200)={0xa, 0x0, 0x0, @empty}, 0x1c)
+sendto$inet6(r0, &(0x7f0000000080)="1e4cc0fcb6faadc40dcf324e6a5bfa73e88e715b2bce985e48a32f89ef33b42a9e7a37553590f081", 0x28, 0x36, 0x0, 0x0)

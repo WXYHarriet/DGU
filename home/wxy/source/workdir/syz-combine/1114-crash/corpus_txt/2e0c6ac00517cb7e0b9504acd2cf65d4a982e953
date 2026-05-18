@@ -1,0 +1,2 @@
+r0 = openat$selinux_avc_cache_stats(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+readv(r0, &(0x7f0000001600)=[{&(0x7f00000000c0)=""/160, 0xa0}], 0x1)

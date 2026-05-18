@@ -1,0 +1,2 @@
+r0 = openat$selinux_create(0xffffffffffffff9c, &(0x7f0000000380), 0x2, 0x0)
+write$selinux_create(r0, &(0x7f00000003c0)=@access={'system_u:object_r:dbusd_etc_t:s0', 0x20, 'unconfined', 0x20, 0x4}, 0x41)

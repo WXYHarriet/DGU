@@ -1,0 +1,2 @@
+r0 = openat$damon_attrs(0xffffffffffffff9c, &(0x7f0000000080), 0x101802, 0x0)
+write$damon_attrs(r0, &(0x7f00000000c0)={{}, {}, {}, {' ', 0x3f000000000000}, {' ', 0x8000000000000001}}, 0x69)

@@ -1,0 +1,2 @@
+r0 = add_key$keyring(&(0x7f00000000c0), &(0x7f0000000040)={'syz', 0x2}, 0x0, 0x0, 0xfffffffffffffffc)
+add_key(&(0x7f0000000440)='asymmetric\x00', 0x0, &(0x7f0000001600)="10809083", 0x4, r0)

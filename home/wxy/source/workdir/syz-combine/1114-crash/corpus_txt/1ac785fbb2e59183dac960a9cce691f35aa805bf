@@ -1,0 +1,1 @@
+syz_emit_vhci(&(0x7f0000000100)=@HCI_EVENT_PKT={0x4, @hci_ev_mode_change={{0x14, 0x6}}}, 0x9)

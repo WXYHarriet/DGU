@@ -1,0 +1,4 @@
+r0 = syz_io_uring_setup(0x71c6, &(0x7f0000000000)={0x0, 0xce2d}, &(0x7f0000000080), &(0x7f00000000c0))
+io_uring_register$IORING_REGISTER_BUFFERS(r0, 0x0, &(0x7f00000003c0)=[{0x0}], 0x1)
+r1 = syz_open_procfs(0x0, &(0x7f0000000000)='fdinfo/3\x00')
+read$eventfd(r1, &(0x7f00000001c0), 0x8)

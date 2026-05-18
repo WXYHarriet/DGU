@@ -1,0 +1,2 @@
+r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000000040)='/sys/kernel/kexec_crash_size', 0x0, 0xa287016a65f485e5)
+readv(r0, &(0x7f0000001380)=[{&(0x7f00000002c0)=""/189, 0xbd}], 0x1)

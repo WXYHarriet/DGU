@@ -1,0 +1,5 @@
+r0 = openat$sndseq(0xffffffffffffff9c, &(0x7f0000000000), 0x0)
+ioctl$SNDRV_SEQ_IOCTL_CREATE_QUEUE(r0, 0xc08c5332, &(0x7f0000000140)={0x0, 0x0, 0x0, 'queue1\x00'})
+r1 = socket$inet_sctp(0x2, 0x1, 0x84)
+openat$sndseq(0xffffffffffffff9c, &(0x7f0000000000), 0x0)
+close_range(r1, 0xffffffffffffffff, 0x0)

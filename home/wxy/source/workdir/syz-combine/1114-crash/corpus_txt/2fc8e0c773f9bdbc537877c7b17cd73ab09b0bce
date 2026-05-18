@@ -1,0 +1,5 @@
+socketpair$nbd(0x1, 0x1, 0x0, &(0x7f0000000080)={<r0=>0xffffffffffffffff})
+r1 = socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$ethtool(&(0x7f00000000c0), 0xffffffffffffffff)
+ioctl$sock_SIOCGIFINDEX(r0, 0x8933, &(0x7f0000000380)={'sit0\x00', <r3=>0x0})
+sendmsg$ETHTOOL_MSG_PAUSE_GET(r1, &(0x7f0000000480)={0x0, 0x0, &(0x7f0000000440)={&(0x7f00000003c0)=ANY=[@ANYBLOB=' \x00\x00\x00', @ANYRES16=r2, @ANYBLOB="01e9ffffffffffffff00150000000c00018008000100", @ANYRES32=r3], 0x20}}, 0x0)

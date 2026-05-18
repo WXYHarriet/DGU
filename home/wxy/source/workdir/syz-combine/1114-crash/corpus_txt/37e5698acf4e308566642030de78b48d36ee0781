@@ -1,0 +1,4 @@
+unshare(0x40000400)
+r0 = getpid()
+r1 = syz_pidfd_open(r0, 0x0)
+pidfd_send_signal(r1, 0x20, 0x0, 0x0)

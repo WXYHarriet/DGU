@@ -1,0 +1,2 @@
+r0 = socket$inet(0xa, 0x2, 0x0)
+ioctl$sock_SIOCADDRT(r0, 0x890b, &(0x7f0000000080)={0x0, @qipcrtr, @l2={0x1f, 0x0, @fixed}, @generic={0x0, "c5bf2b7c793281a305df0da488b0"}})

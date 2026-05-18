@@ -1,0 +1,6 @@
+r0 = userfaultfd(0x1)
+ioctl$UFFDIO_API(r0, 0xc018aa3f, &(0x7f0000000080))
+pipe(&(0x7f0000000d40)={0xffffffffffffffff, <r1=>0xffffffffffffffff})
+r2 = io_uring_setup(0x3174, &(0x7f0000000040))
+dup3(r1, r2, 0x0)
+readv(r0, &(0x7f0000000140)=[{&(0x7f0000000780)=""/210, 0xd2}], 0x1)

@@ -1,0 +1,1 @@
+openat$proc_mixer(0xffffffffffffff9c, &(0x7f0000000140)='/proc/asound/card2/oss_mixer\x00', 0xa80, 0x0)

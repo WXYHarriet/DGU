@@ -1,0 +1,1 @@
+bpf$MAP_UPDATE_BATCH(0x18, 0xfffffffffffffffe, 0xb5)

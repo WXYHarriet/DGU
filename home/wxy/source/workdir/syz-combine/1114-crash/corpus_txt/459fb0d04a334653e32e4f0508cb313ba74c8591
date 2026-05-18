@@ -1,0 +1,2 @@
+r0 = creat(&(0x7f0000000100)='./bus\x00', 0x0)
+fcntl$addseals(r0, 0x409, 0x3)

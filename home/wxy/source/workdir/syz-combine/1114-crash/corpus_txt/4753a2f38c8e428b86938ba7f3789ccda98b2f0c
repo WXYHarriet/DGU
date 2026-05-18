@@ -1,0 +1,2 @@
+openat$ndctl0(0xffffffffffffff9c, &(0x7f0000000580), 0x0, 0x0)
+arch_prctl$ARCH_GET_MAX_TAG_BITS(0x4003, &(0x7f0000000500))

@@ -1,0 +1,6 @@
+r0 = openat$sndseq(0xffffffffffffff9c, &(0x7f00000001c0), 0x0)
+r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='memory.events\x00', 0x275a, 0x0)
+r2 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000140)='memory.events\x00', 0x7a05, 0x1700)
+write$cgroup_int(r2, &(0x7f0000000200), 0xf000)
+mmap(&(0x7f0000000000/0xb36000)=nil, 0xb36000, 0x2000009, 0x13, r1, 0x0)
+ioctl$SNDRV_SEQ_IOCTL_CREATE_QUEUE(r0, 0xc08c5332, &(0x7f0000000780)={0x0, 0x0, 0x0, 'queue0\x00'})

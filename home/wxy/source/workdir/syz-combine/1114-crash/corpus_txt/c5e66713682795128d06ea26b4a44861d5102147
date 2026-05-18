@@ -1,0 +1,8 @@
+r0 = openat$ptmx(0xffffffffffffff9c, &(0x7f0000000100), 0x161281, 0x0)
+write$binfmt_aout(r0, &(0x7f0000000080)=ANY=[], 0xff2e)
+ioctl$TCSETS(r0, 0x40045431, &(0x7f0000000000)={0x0, 0x0, 0x0, 0x0, 0x0, "0040001e1d113c81fcf76000"})
+r1 = syz_open_pts(r0, 0x0)
+dup3(r1, r0, 0x0)
+r2 = syz_open_procfs(0x0, &(0x7f00000000c0)='fd/3\x00')
+r3 = syz_open_procfs(0x0, &(0x7f0000000000)='clear_refs\x00')
+mount$9p_fd(0x0, &(0x7f0000000300)='.\x00', &(0x7f0000000080), 0x0, &(0x7f0000000240)={'trans=fd,', {'rfdno', 0x3d, r2}, 0x2c, {'wfdno', 0x3d, r3}})

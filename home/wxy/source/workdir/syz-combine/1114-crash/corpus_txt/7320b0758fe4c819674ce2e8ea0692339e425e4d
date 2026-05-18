@@ -1,0 +1,2 @@
+r0 = openat$sr(0xffffffffffffff9c, &(0x7f0000000000), 0x107b82, 0x0)
+read$snapshot(r0, &(0x7f0000000480)=""/4096, 0x1000)

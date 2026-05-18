@@ -1,0 +1,4 @@
+r0 = socket$can_raw(0x1d, 0x3, 0x1)
+setsockopt$CAN_RAW_ERR_FILTER(r0, 0x65, 0x7, &(0x7f00000001c0)=0x8, 0x4)
+ioctl$sock_SIOCGIFINDEX(r0, 0x8933, &(0x7f0000000040)={'veth0_to_batadv\x00', <r1=>0x0})
+sendmsg$can_raw(r0, &(0x7f0000000180)={&(0x7f0000000000)={0x1d, r1}, 0x10, &(0x7f0000000140)={&(0x7f0000000200)=@canfd={{}, 0x0, 0x0, 0x0, 0x0, "61147e6794a47b862833fda7e19628088343a52e55d93c96c2f1072e83f276c616cc59062c6dc71c4326991fb2056400000000514aaf40d3e3ba2ba49ef33606"}, 0x48}}, 0x0)

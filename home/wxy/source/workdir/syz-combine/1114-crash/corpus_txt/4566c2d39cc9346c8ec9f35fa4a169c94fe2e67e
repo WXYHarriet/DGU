@@ -1,0 +1,2 @@
+unshare(0x64000600)
+syz_genetlink_get_family_id$nl80211(&(0x7f0000000040), 0xffffffffffffffff)

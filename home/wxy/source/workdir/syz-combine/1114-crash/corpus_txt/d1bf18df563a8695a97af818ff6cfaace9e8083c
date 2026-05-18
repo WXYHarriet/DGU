@@ -1,0 +1,4 @@
+r0 = memfd_create(&(0x7f00000000c0)='[\v\xdbX\xae[\x1a\xa9\xfd\xfa\xad\xd1md\xc8\x85HX\xa9%\f\x1ae\xe0\x00\x00\x00\x00\xfb\xff\x00\x00\x81\x9eG\xd9,\xe2\xc6a\x9f\xe8\xf1\xb3\x86\xe2+Op\xd0\xa2\x82\x1eb;(\xb5\xe1jS\xd6\x91%||\xa0\x8ez\xadT\xc8\f\xe5\x89\xbf3:\x99\x1e\xac`\xc3\xcf\xd3\xae\xd2\a\x11\xa9\xa5^\xff\xf5\x95\xd2q#\xc6\xca\x97\x9d\xcb\x1e\x80\xd6\xd5%N&\xf8#\x80z8Z\xd2}\xf5\xe4\x9f5\x9b\x01\xf9t\xbb\x1er\x14\xdb\xd3\xcd\xfd\xbdnC\xec', 0x0)
+write$binfmt_script(r0, &(0x7f0000000180)={'#! ', './file0'}, 0xb)
+pwrite64(r0, &(0x7f00000008c0)="12901d603a7a2bfab7219d48eecc2bc2e6ae616334534c38c365e038d4808ab6a615cd0fdb34306d6277494484b75b4b04a1fd440759028f157d488da58fab3d44c4406d65627d2622acd9c578897ccc560b0c502e1a19edc36ba97f14791c36e9e2c983969c127e898c3981c3980597f1a9ea7a3eb25a571f0e0259b7eaeb12cc6b4197cd68ab29aaaf3372ff0e3491b849a58446c7ec7b113316bffe7bf4d57109cb", 0xa3, 0x6)
+execveat(r0, &(0x7f0000000000)='\x00', 0x0, 0x0, 0x1000)

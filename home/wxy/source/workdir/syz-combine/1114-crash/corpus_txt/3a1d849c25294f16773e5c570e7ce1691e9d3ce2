@@ -1,0 +1,5 @@
+creat(&(0x7f0000000000)='./file0\x00', 0x0)
+r0 = inotify_init1(0x0)
+read$watch_queue(r0, 0x0, 0x0)
+inotify_add_watch(r0, &(0x7f0000000040)='./file0\x00', 0x602)
+creat(&(0x7f0000000000)='./file0\x00', 0x0)

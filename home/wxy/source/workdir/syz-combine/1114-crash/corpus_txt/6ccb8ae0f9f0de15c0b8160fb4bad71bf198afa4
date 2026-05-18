@@ -1,0 +1,2 @@
+mkdirat(0xffffffffffffff9c, &(0x7f0000000080)='./file0\x00', 0x0)
+mount$afs(0x0, &(0x7f0000020240)='./file0\x00', &(0x7f0000020280), 0x0, &(0x7f00000000c0)={[{@dyn}, {@flock_local}]})

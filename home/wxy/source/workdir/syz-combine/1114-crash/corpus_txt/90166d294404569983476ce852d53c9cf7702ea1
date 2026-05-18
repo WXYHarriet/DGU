@@ -1,0 +1,4 @@
+r0 = syz_open_dev$radio(&(0x7f0000000000), 0xffffffffffffffff, 0x2)
+r1 = syz_open_dev$radio(&(0x7f0000000000), 0xffffffffffffffff, 0x2)
+pread64(r1, &(0x7f0000000300)=""/107, 0x6b, 0x0)
+pread64(r0, &(0x7f00000001c0)=""/247, 0xf7, 0x0)

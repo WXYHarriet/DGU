@@ -1,0 +1,1 @@
+syz_emit_vhci(&(0x7f0000000040)=@HCI_EVENT_PKT={0x4, @hci_ev_le_meta={{0x3e, 0x16}, @hci_ev_le_advertising_info={{}, {0x2, [{0x0, 0x0, @fixed}, {}]}}}}, 0x19)

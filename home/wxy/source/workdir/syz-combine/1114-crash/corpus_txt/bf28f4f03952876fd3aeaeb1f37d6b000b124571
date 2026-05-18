@@ -1,0 +1,2 @@
+r0 = socket$inet_udplite(0x2, 0x2, 0x88)
+ioctl$sock_SIOCGIFCONF(r0, 0x8912, &(0x7f0000000140)=@req={0x28, &(0x7f0000000100)={'syzkaller0\x00', @ifru_mtu=0x698}})

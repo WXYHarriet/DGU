@@ -1,0 +1,4 @@
+r0 = io_uring_setup(0x30d1, &(0x7f00000002c0))
+close_range(r0, 0xffffffffffffffff, 0x0)
+pipe(&(0x7f0000000680)={0xffffffffffffffff, <r1=>0xffffffffffffffff})
+write$binfmt_misc(r1, &(0x7f0000000000), 0xfffffecc)

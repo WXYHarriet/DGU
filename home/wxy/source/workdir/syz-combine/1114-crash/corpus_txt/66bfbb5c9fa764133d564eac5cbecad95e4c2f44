@@ -1,0 +1,2 @@
+r0 = syz_open_dev$radio(&(0x7f0000000000), 0xffffffffffffffff, 0x2)
+ioctl$VIDIOC_S_TUNER(r0, 0x4054561e, &(0x7f0000000080)={0x2, "25c252dbe2c39ba875904d8c7dddfca86658ea99fa4fd2ef55a81588e08ab2f3"})

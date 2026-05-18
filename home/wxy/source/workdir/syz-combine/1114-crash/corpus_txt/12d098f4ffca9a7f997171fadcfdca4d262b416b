@@ -1,0 +1,3 @@
+r0 = eventfd(0x0)
+r1 = dup(r0)
+write$P9_RWALK(r1, 0x0, 0x8)

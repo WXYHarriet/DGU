@@ -1,0 +1,2 @@
+r0 = syz_open_dev$media(&(0x7f0000000000), 0x0, 0x0)
+fsetxattr$trusted_overlay_opaque(r0, &(0x7f0000000400), 0x0, 0x0, 0x2)

@@ -1,0 +1,1 @@
+syz_emit_vhci(&(0x7f0000000080)=@HCI_EVENT_PKT={0x4, @hci_ev_role_change={{0x12, 0x8}, {0x0, @fixed={'\xaa\xaa\xaa\xaa\xaa', 0x10}}}}, 0xb)

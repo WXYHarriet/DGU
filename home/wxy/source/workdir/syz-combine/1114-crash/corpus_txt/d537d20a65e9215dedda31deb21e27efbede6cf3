@@ -1,0 +1,2 @@
+r0 = openat$nvram(0xffffffffffffff9c, &(0x7f0000000080), 0x8080, 0x0)
+close$fd_v4l2_buffer(r0)

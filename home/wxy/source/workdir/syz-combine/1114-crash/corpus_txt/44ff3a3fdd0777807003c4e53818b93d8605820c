@@ -1,0 +1,4 @@
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f00000000c0)='smaps_rollup\x00')
+seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0x8, &(0x7f00000002c0)={0x1, &(0x7f0000000040)=[{0x6}]})
+socket(0x200000000000011, 0x4000000000080002, 0x0)
+read$char_usb(r0, &(0x7f0000000100)=""/181, 0xb5)

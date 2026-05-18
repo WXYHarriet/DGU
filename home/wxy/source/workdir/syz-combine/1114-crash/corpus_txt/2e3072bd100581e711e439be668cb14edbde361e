@@ -1,0 +1,1 @@
+syz_open_dev$usbfs(&(0x7f0000000080), 0x3fa, 0x0)

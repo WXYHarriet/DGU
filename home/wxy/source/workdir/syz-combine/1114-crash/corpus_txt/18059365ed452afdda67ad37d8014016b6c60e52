@@ -1,0 +1,1 @@
+memfd_create(&(0x7f00000005c0)='/dev/hwrng\x00', 0x2)

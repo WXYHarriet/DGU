@@ -1,0 +1,2 @@
+r0 = openat$zero(0xffffffffffffff9c, &(0x7f00000002c0), 0x0, 0x0)
+read$ptp(r0, &(0x7f0000001300)=""/4101, 0x1005)

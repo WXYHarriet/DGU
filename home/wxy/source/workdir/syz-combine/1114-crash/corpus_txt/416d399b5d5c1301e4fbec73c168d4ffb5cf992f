@@ -1,0 +1,2 @@
+r0 = socket(0x1d, 0x3, 0x1)
+ioctl$SIOCSIFMTU(r0, 0x8931, &(0x7f0000000000)={'macsec0\x00'})

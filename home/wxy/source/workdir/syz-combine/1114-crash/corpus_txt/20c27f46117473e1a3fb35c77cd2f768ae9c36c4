@@ -1,0 +1,3 @@
+r0 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r1 = syz_genetlink_get_family_id$netlbl_mgmt(&(0x7f0000000040), r0)
+sendmsg$NLBL_MGMT_C_ADD(r0, &(0x7f0000000280)={0x0, 0x0, &(0x7f0000000240)={&(0x7f0000000300)={0xa0, r1, 0x1, 0x0, 0x0, {0x1, 0x0, 0x1400}, [@NLBL_MGMT_A_PROTOCOL={0x8, 0x2, 0x3}, @NLBL_MGMT_A_DOMAIN={0x7b, 0x1, 'N,\x00\x10\x00\x00\x00\x00\x00\x00\xd2\x1c\xfe>\xfc\xd7\x98\r7~\xd2TnC\xe3\xc6^\xa5\x8e\xa9\xb0\"\xfc9\xf6c\x10x[U\xbe\x85\xce\x1ft8!t\x1fE1\xdb\xfbH\xff\xf7\xa8=\x0e\xa9\x83\xe25\xa7h\xeaw\x9a\x87M\xdaj\xb9CV\xb5\xe3\xc4\x9e\xd9\xed\xdfo%?D\x83\x81[\x92a=\xda<v\xfc\x96\xed\xa9\xe7w\xde/ \x99\x00\xf5].\xf5a\xd8\x12\x94\xbb\x19\x12\xde\x94'}, @NLBL_MGMT_A_CV4DOI={0x8, 0x4, 0x3}]}, 0xa0}, 0x9}, 0x0)

@@ -1,0 +1,2 @@
+r0 = openat$selinux_checkreqprot(0xffffffffffffff9c, &(0x7f0000000080), 0x2000, 0x0)
+read$msr(r0, 0x0, 0x0)

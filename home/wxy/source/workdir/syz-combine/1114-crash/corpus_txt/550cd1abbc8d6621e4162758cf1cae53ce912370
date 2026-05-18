@@ -1,0 +1,2 @@
+r0 = syz_open_dev$vcsa(&(0x7f0000000000), 0x100000000, 0x2)
+write$binfmt_misc(r0, &(0x7f00000001c0)="19be38fb51", 0x5)

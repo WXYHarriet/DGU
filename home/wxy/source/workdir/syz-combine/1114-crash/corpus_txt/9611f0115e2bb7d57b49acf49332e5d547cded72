@@ -1,0 +1,7 @@
+mkdir(&(0x7f0000000400)='./file1\x00', 0x0)
+mkdir(&(0x7f0000000580)='./bus\x00', 0x0)
+mkdir(&(0x7f0000000300)='./file0\x00', 0x0)
+r0 = open(&(0x7f0000000000)='./bus\x00', 0x0, 0x0)
+fcntl$setown(r0, 0x8, 0xffffffffffffffff)
+fcntl$notify(r0, 0x402, 0x80000004)
+mount$overlay(0x0, &(0x7f0000000100)='./bus\x00', &(0x7f0000000080), 0x0, &(0x7f0000000140)={[{@workdir={'workdir', 0x3d, './bus'}}, {@lowerdir={'lowerdir', 0x3d, './file0'}}, {@upperdir={'upperdir', 0x3d, './file1'}}]})

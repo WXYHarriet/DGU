@@ -1,0 +1,1 @@
+fsetxattr(0xffffffffffffffff, &(0x7f0000000100)=@known='security.selinux\x00', &(0x7f0000000140)='*){\x00', 0x4, 0x0)

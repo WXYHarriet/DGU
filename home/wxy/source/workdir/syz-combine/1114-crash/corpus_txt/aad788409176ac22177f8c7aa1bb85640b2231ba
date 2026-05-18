@@ -1,0 +1,2 @@
+r0 = syz_open_procfs(0x0, &(0x7f0000002a00)='net/udp6\x00')
+ioctl$SIOCSIFHWADDR(r0, 0x8924, 0x0)

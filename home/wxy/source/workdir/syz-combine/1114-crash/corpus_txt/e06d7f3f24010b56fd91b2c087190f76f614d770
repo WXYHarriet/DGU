@@ -1,0 +1,7 @@
+mkdir(&(0x7f0000000580)='./file0\x00', 0x0)
+creat(&(0x7f00000001c0)='./file0/bus\x00', 0x6857b21ff1155d90)
+r0 = open(&(0x7f0000021000)='./file0\x00', 0x0, 0x0)
+fchdir(r0)
+r1 = open(&(0x7f0000000000)='./bus\x00', 0x141042, 0x0)
+write$P9_RREADLINK(r1, &(0x7f0000000140), 0x1c)
+sendfile(r1, r1, &(0x7f0000000240), 0x7fff)

@@ -1,0 +1,5 @@
+r0 = openat$binfmt_format(0xffffffffffffff9c, &(0x7f0000000000)='/proc/sys/fs/binfmt_misc/syz0\x00', 0x2, 0x0)
+r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='memory.events.local\x00', 0x275a, 0x0)
+mmap(&(0x7f0000000000/0xb36000)=nil, 0xb36000, 0x2, 0x28011, r1, 0x0)
+ftruncate(r1, 0x0)
+write$binfmt_format(r0, &(0x7f0000000040)='1\x00', 0x2)

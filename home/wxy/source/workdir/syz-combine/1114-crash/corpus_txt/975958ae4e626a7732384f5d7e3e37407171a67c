@@ -1,0 +1,2 @@
+r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000000040)='/sys/fs/nfs', 0x0, 0x0)
+getdents(r0, &(0x7f0000000000)=""/61, 0x3d)

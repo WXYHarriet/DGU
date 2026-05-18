@@ -1,0 +1,2 @@
+r0 = syz_open_dev$vbi(&(0x7f0000000000), 0x0, 0x2)
+ioctl$VIDIOC_S_INPUT(r0, 0xc0045627, &(0x7f00000002c0))

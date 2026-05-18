@@ -1,0 +1,2 @@
+r0 = socket$igmp(0x2, 0x3, 0x2)
+fsetxattr$security_selinux(r0, &(0x7f0000000080), &(0x7f0000000140)='system_u:object_r:tetex_data_t:s0\x00', 0x1e, 0x1)

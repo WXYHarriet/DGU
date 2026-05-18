@@ -1,0 +1,2 @@
+r0 = signalfd(0xffffffffffffffff, &(0x7f0000000d80), 0x8)
+connect$bt_rfcomm(r0, 0x0, 0x0)

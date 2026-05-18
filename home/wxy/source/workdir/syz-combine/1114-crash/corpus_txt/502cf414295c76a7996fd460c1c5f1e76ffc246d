@@ -1,0 +1,2 @@
+r0 = memfd_secret(0x80000)
+read$watch_queue(r0, &(0x7f0000000040)=""/234, 0xea)

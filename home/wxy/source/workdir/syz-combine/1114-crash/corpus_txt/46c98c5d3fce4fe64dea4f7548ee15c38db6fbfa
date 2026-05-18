@@ -1,0 +1,2 @@
+r0 = timerfd_create(0x7, 0x800)
+read$ptp(r0, &(0x7f00000005c0)=""/4096, 0x1000)

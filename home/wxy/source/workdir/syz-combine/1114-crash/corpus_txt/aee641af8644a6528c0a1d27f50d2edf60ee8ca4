@@ -1,0 +1,2 @@
+open(&(0x7f0000002000)='./bus\x00', 0x143042, 0x0)
+setxattr$security_selinux(&(0x7f0000000000)='./bus\x00', &(0x7f0000000100), &(0x7f0000000140)='system_u:object_r:sshd_var_run_t:s0\x00', 0x24, 0x1)

@@ -1,0 +1,5 @@
+r0 = inotify_init()
+futex_waitv(0x0, 0x0, 0x0, &(0x7f00000021c0)={0x77359400}, 0x1)
+r1 = openat$tcp_mem(0xffffffffffffff9c, &(0x7f0000001080)='/proc/sys/net/ipv4/tcp_wmem\x00', 0x1, 0x0)
+r2 = dup3(r0, r1, 0x0)
+ioctl$sock_inet_udp_SIOCINQ(r2, 0x541b, &(0x7f00000021c0))

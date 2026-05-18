@@ -1,0 +1,2 @@
+r0 = openat$iommufd(0xffffffffffffff9c, &(0x7f0000000040), 0x0, 0x0)
+ioctl$IOMMU_TEST_OP_ACCESS_PAGES(r0, 0x3ba0, &(0x7f0000000080)={0x38})

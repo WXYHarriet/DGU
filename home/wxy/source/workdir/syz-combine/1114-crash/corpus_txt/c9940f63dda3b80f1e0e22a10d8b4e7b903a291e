@@ -1,0 +1,4 @@
+r0 = open(&(0x7f0000008000)='./bus\x00', 0x8d42, 0x0)
+r1 = dup(r0)
+r2 = syz_open_dev$sndmidi(&(0x7f0000000080), 0x2, 0x141101)
+mount$9p_fd(0x0, &(0x7f0000008040)='./bus\x00', &(0x7f0000008440), 0x0, &(0x7f0000008480)={'trans=fd,', {'rfdno', 0x3d, r1}, 0x2c, {'wfdno', 0x3d, r2}})

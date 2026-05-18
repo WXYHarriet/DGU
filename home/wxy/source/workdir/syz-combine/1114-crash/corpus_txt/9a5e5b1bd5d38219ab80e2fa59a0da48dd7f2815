@@ -1,0 +1,1 @@
+syz_emit_ethernet(0x7e, &(0x7f0000000080)={@multicast, @broadcast, @void, {@ipv6={0x86dd, @udp={0x0, 0x6, "e6dae2", 0x48, 0x11, 0x0, @remote, @mcast2={0xff, 0x5}, {[], {0x0, 0x0, 0x48, 0x0, @wg=@cookie={0x3, 0x0, "fc66d188743a95b767bf10202281892a3a4eba31c879a824", "412f2f70e463d61875e973b4734573bd63f92bb50bf80ace3df66fe62ff654b7"}}}}}}}, 0x0)

@@ -1,0 +1,8 @@
+r0 = openat$kvm(0xffffffffffffff9c, &(0x7f0000000280), 0x0, 0x0)
+r1 = ioctl$KVM_CREATE_VM(r0, 0xae01, 0x0)
+syz_open_dev$sndmidi(&(0x7f0000000040), 0x0, 0x0)
+r2 = ioctl$KVM_CREATE_VCPU(r1, 0xae41, 0x0)
+sendto$inet(0xffffffffffffffff, &(0x7f0000000080)="069345af652b5d30399217ecae5bb7e4182d82dfc7a8d40538b48444d607fd620e8a4103091b6a47dabce31c38bf9c71b9c2cf8d68f34357eb4c56e5b02101d52abe083a09683ca42dc1c7d8b2f10adc33b789626f09e44af5de0d4b722f52749a183060436cc6c57036b88aaa9d6b3ea9e282d7bbd9db63ab9d46912ff359b559e9a3fbf6683fc4a83e65", 0x8b, 0x0, 0x0, 0x0)
+ioctl$KVM_SET_USER_MEMORY_REGION(r1, 0x4020ae46, &(0x7f0000bf7000)={0x0, 0x0, 0x0, 0x2000, &(0x7f0000000000/0x2000)=nil})
+ioctl$KVM_SET_REGS(r2, 0x4090ae82, &(0x7f00000002c0)={[0x3, 0x6, 0x0, 0x0, 0x0, 0x0, 0x1003], 0x10000})
+ioctl$KVM_RUN(r2, 0xae80, 0x0)

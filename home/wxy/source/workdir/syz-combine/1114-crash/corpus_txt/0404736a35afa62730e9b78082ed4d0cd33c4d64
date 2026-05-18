@@ -1,0 +1,5 @@
+keyctl$set_reqkey_keyring(0x5, 0xfffffffffffffffe)
+fcntl$setpipe(0xffffffffffffffff, 0x407, 0x0)
+pipe(0x0)
+write$binfmt_elf64(0xffffffffffffffff, 0x0, 0x0)
+request_key(&(0x7f0000000300)='dns_resolver\x00', &(0x7f0000000340)={'syz', 0x2}, &(0x7f0000000380)='\x00', 0x0)

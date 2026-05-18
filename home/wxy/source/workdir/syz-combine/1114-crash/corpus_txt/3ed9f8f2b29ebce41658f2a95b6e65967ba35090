@@ -1,0 +1,2 @@
+r0 = socket$igmp(0x2, 0x3, 0x2)
+ioctl$sock_SIOCETHTOOL(r0, 0x8946, &(0x7f0000000080)={'lo\x00', &(0x7f0000000000)=@ethtool_cmd={0xa}})

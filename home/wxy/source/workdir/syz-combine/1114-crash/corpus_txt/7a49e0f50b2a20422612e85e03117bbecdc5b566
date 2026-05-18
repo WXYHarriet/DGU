@@ -1,0 +1,6 @@
+socketpair$unix(0x1, 0x2, 0x0, &(0x7f0000000200)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff})
+connect$unix(r0, &(0x7f000057eff8)=@file={0x0, './file0\x00'}, 0x6e)
+r2 = syz_io_uring_setup(0x7c, &(0x7f0000000100), &(0x7f0000000000), &(0x7f0000185000))
+r3 = io_uring_setup(0x28f8, &(0x7f00000002c0))
+dup2(r2, r3)
+sendmmsg$unix(r1, &(0x7f00000bd000), 0x318, 0x0)

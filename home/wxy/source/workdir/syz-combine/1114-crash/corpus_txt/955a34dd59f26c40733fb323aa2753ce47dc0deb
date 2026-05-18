@@ -1,0 +1,3 @@
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000040)='cmdline\x00')
+read$FUSE(r0, &(0x7f0000002440)={0x2020}, 0x2020)
+read$FUSE(r0, &(0x7f0000004480)={0x2020}, 0x2020)

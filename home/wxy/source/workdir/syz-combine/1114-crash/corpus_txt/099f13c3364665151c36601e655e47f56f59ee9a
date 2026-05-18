@@ -1,0 +1,2 @@
+pipe2$9p(&(0x7f0000000ec0)={0xffffffffffffffff, <r0=>0xffffffffffffffff}, 0x0)
+write$P9_RXATTRWALK(r0, &(0x7f0000000f00)={0xf}, 0xf)

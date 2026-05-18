@@ -1,0 +1,2 @@
+prctl$PR_SET_IO_FLUSHER(0x39, 0x1)
+syz_proc_sys_generated_4(0x1, 0x2000000000000003, 0x5)

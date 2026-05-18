@@ -1,0 +1,1 @@
+syz_open_dev$media(&(0x7f0000000080), 0xfffffffffffff38e, 0x0)

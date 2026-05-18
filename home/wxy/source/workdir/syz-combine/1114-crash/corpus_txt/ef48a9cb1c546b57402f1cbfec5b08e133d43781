@@ -1,0 +1,7 @@
+r0 = socket$unix(0x1, 0x1, 0x0)
+r1 = socket$unix(0x1, 0x1, 0x0)
+bind$unix(r1, &(0x7f0000000000)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+listen(r1, 0x0)
+connect$unix(r0, &(0x7f0000000140)=@file={0x1, '\xe9\x1fq\x89Y\x1e\x923aK\x00'}, 0x6e)
+r2 = syz_open_procfs(0xffffffffffffffff, &(0x7f00000000c0)='fdinfo/4\x00')
+read$snapshot(r2, &(0x7f0000000080)=""/62, 0x3e)

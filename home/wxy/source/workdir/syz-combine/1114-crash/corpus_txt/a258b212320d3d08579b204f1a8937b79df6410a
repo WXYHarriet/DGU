@@ -1,0 +1,3 @@
+r0 = socket$inet6(0xa, 0x2, 0x0)
+setsockopt$inet6_IPV6_HOPOPTS(r0, 0x29, 0x36, &(0x7f0000000100)={0x0, 0x7, '\x00', [@enc_lim, @generic={0x7, 0x30, "8305c3432205386b4c1da99c6e7865a4c23bc86845a98efa01f5b96ea2967c7824b699b6dcd5ad9be4db5c5d5848bca5"}, @pad1]}, 0x40)
+setsockopt$inet6_IPV6_HOPOPTS(r0, 0x29, 0x36, 0x0, 0x0)

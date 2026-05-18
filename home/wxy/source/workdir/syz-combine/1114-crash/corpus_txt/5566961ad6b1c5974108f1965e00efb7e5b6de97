@@ -1,0 +1,2 @@
+r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000000000)='/sys/kernel/kexec_crash_size', 0x149a82, 0x5b)
+write$P9_RREADLINK(r0, &(0x7f00000000c0)={0xfffffffffffffe3e, 0x17, 0xa, {0x7, './file1'}}, 0x10)

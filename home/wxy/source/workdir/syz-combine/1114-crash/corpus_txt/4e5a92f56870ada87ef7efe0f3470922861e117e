@@ -1,0 +1,2 @@
+r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000000240)='/sys/power/sync_on_suspend', 0x0, 0x0)
+read$FUSE(r0, &(0x7f0000002380)={0x2020}, 0x2020)

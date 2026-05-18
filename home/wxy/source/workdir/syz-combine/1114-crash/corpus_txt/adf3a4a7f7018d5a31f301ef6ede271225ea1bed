@@ -1,0 +1,2 @@
+r0 = openat$selinux_create(0xffffffffffffff9c, &(0x7f0000000000), 0x2, 0x0)
+write$selinux_create(r0, &(0x7f0000000040)=@objname={'system_u:object_r:printer_device_t:s0', 0x20, 'system_u:system_r:kernel_t:s0', 0x20, 0x26f9, 0x20, './file0\x00'}, 0x61)

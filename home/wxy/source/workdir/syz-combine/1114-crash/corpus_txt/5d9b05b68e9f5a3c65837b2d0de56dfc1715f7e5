@@ -1,0 +1,7 @@
+r0 = bpf$OBJ_GET_PROG(0x7, &(0x7f0000000080)=@generic={&(0x7f0000000040)='./file0\x00'}, 0x18)
+gettid()
+bpf$OBJ_GET_PROG(0x7, &(0x7f0000001380)=@o_path={0x0, 0x0, 0x0, r0}, 0x18)
+ioctl$TUNSETVNETBE(0xffffffffffffffff, 0x400454de, 0x0)
+openat$tun(0xffffffffffffff9c, &(0x7f0000001480), 0x0, 0x0)
+r1 = getpid()
+syz_open_procfs$namespace(r1, 0x0)

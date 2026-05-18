@@ -1,0 +1,2 @@
+ioctl$PPPIOCUNBRIDGECHAN(0xffffffffffffffff, 0x7434)
+syz_open_dev$dri(&(0x7f00000000c0), 0x1, 0x0)

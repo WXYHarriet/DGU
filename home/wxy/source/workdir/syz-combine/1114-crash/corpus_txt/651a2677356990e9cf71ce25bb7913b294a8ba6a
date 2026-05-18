@@ -1,0 +1,5 @@
+socket$unix(0x1, 0x1, 0x0)
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='fdinfo/3\x00')
+seccomp$SECCOMP_SET_MODE_FILTER_LISTENER(0x1, 0xc, &(0x7f00000000c0)={0x1, &(0x7f0000000100)=[{0x6}]})
+ioctl$SECCOMP_IOCTL_NOTIF_RECV(0xffffffffffffffff, 0xc0502100, 0x0)
+read$char_usb(r0, &(0x7f0000000040)=""/241, 0xf1)

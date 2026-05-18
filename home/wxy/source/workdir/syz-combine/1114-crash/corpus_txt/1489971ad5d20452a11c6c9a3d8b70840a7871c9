@@ -1,0 +1,5 @@
+ioctl$TUNGETVNETLE(0xffffffffffffffff, 0x800454dd, &(0x7f00000000c0))
+syz_clone(0x40060000, 0x0, 0x0, &(0x7f0000000040), &(0x7f0000000080), &(0x7f0000000140)="a9acfa80fe5b7493f01d02422eb6af94216cb0c058be487ce12c9c702d49705e4285cd796af26a0fbe7f8db64e9fdece272635483295f61e103f9bf92a9642af7814758a5ee1446579e8d9a4329cfaddf1a600e61280fce1d6e2e02ed395bf86293855836668b5217b9746507b5e1db7a6ffc9ed")
+openat$cgroup_ro(0xffffffffffffffff, &(0x7f00000001c0)='memory.current\x00', 0x0, 0x0)
+r0 = getpid()
+syz_open_procfs$namespace(r0, 0x0)

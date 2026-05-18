@@ -1,0 +1,2 @@
+r0 = syz_open_dev$vivid(&(0x7f0000000000), 0x0, 0x2)
+write$RDMA_USER_CM_CMD_RESOLVE_ROUTE(r0, 0x0, 0x0)

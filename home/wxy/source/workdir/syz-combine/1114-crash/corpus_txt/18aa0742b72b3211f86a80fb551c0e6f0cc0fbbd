@@ -1,0 +1,4 @@
+mkdirat(0xffffffffffffff9c, &(0x7f0000000240)='./file0\x00', 0x0)
+r0 = openat$dir(0xffffffffffffff9c, &(0x7f00000000c0)='./file0\x00', 0x0, 0x0)
+mknodat(r0, &(0x7f00000003c0)='./file0\x00', 0x0, 0x0)
+linkat(r0, &(0x7f0000000200)='./file0\x00', r0, &(0x7f0000000300)='./file1\x00', 0x0)

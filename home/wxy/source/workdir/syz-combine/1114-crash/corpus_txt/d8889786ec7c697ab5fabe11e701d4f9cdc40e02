@@ -1,0 +1,3 @@
+r0 = gettid()
+pipe(&(0x7f0000001000)={0xffffffffffffffff, <r1=>0xffffffffffffffff})
+bpf$BPF_TASK_FD_QUERY(0x14, &(0x7f0000000080)={r0, r1, 0x0, 0x0, 0x0}, 0x30)

@@ -1,0 +1,2 @@
+pipe(&(0x7f0000000480)={<r0=>0xffffffffffffffff})
+read$FUSE(r0, &(0x7f00000004c0)={0x2020}, 0x2020)

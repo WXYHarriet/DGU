@@ -1,0 +1,2 @@
+r0 = openat$sndseq(0xffffffffffffff9c, &(0x7f0000000040), 0xe0c81)
+ioctl$BTRFS_IOC_DEV_REPLACE(r0, 0xca289435, 0x0)

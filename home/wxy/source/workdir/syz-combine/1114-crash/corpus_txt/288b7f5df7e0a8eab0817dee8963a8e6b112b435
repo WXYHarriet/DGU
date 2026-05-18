@@ -1,0 +1,3 @@
+r0 = socket$inet_mptcp(0x2, 0x1, 0x106)
+setsockopt$inet_tcp_TCP_FASTOPEN_KEY(r0, 0x6, 0x21, &(0x7f0000000080)="00090900f34714f6b1fc1e755a4a0080", 0x10)
+getsockopt$inet_tcp_buf(r0, 0x6, 0x21, 0x0, &(0x7f0000000040))

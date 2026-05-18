@@ -1,0 +1,1 @@
+syz_emit_ethernet(0x12, &(0x7f0000000080)={@multicast, @local, @void, {@llc={0x4, {@llc={0x42, 0x42, '\a', '`'}}}}}, 0x0)

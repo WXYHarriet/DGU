@@ -1,0 +1,2 @@
+r0 = openat$selinux_checkreqprot(0xffffffffffffff9c, &(0x7f00000019c0), 0x40481, 0x0)
+writev(r0, &(0x7f0000001b00)=[{&(0x7f0000001a00)="f82ab8101b", 0x5}], 0x1)

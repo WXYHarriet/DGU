@@ -1,0 +1,2 @@
+r0 = timerfd_create(0x0, 0x80800)
+read$FUSE(r0, &(0x7f0000000140)={0x2020}, 0x2020)

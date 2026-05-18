@@ -1,0 +1,1 @@
+syz_emit_ethernet(0xfb, &(0x7f0000000280)={@broadcast, @random="479b46dea4f6", @val, {@ipv6}}, 0x0)

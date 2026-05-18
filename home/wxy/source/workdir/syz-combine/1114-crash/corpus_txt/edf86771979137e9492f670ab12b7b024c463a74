@@ -1,0 +1,4 @@
+syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='oom_score_adj\x00')
+madvise(&(0x7f0000000000/0x600000)=nil, 0x600003, 0x19)
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='numa_maps\x00')
+read$FUSE(r0, &(0x7f0000002140)={0x2020}, 0x2020)

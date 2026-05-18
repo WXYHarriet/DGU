@@ -1,0 +1,3 @@
+r0 = socket$kcm(0x10, 0x400000002, 0x0)
+write$cgroup_subtree(r0, &(0x7f0000000040)=ANY=[@ANYBLOB="1c0000005e000711ebecf22c6f89dc22dee9f535010000d1c7"], 0xfe33)
+recvmsg$kcm(r0, &(0x7f0000002a00)={0x0, 0x0, 0x0}, 0x0)

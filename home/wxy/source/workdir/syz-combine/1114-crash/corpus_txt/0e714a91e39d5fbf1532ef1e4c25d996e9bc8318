@@ -1,0 +1,2 @@
+r0 = fsopen(&(0x7f0000001780)='9p\x00', 0x1)
+fsconfig$FSCONFIG_SET_FLAG(r0, 0x0, &(0x7f00000017c0)='silent\x00', 0x0, 0x0)

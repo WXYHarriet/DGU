@@ -1,0 +1,2 @@
+r0 = openat$qrtrtun(0xffffffffffffff9c, &(0x7f0000000780), 0x28001)
+write$qrtrtun(r0, &(0x7f00000007c0)="03df3db86d28d06b89fb15859aea5b9b55dc785258c1a120508d3117", 0x1c)

@@ -1,0 +1,2 @@
+r0 = openat$selinux_avc_cache_threshold(0xffffffffffffff9c, &(0x7f0000000100), 0x2, 0x0)
+writev(r0, &(0x7f00000002c0)=[{&(0x7f00000007c0)="339a7217", 0x4}], 0x1)

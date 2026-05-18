@@ -1,0 +1,5 @@
+mkdirat$cgroup_root(0xffffffffffffff9c, &(0x7f0000000000)='./cgroup.net/syz1\x00', 0x1ff)
+r0 = openat$cgroup_root(0xffffffffffffff9c, &(0x7f0000000000), 0x200002, 0x0)
+r1 = openat$cgroup_netprio_ifpriomap(r0, &(0x7f0000000040), 0x2, 0x0)
+r2 = dup(r1)
+sendfile(r2, r2, 0x0, 0xa)

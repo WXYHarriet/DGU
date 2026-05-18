@@ -1,0 +1,3 @@
+r0 = syz_init_net_socket$bt_l2cap(0x1f, 0x2, 0x0)
+connect$bt_l2cap(r0, &(0x7f0000000040)={0x1f, 0x21, @fixed={'\xaa\xaa\xaa\xaa\xaa', 0x10}}, 0xe)
+writev(r0, &(0x7f0000000600)=[{}, {&(0x7f0000000080)="b471be5cadcbe6d5c795bed92ce15f15815bb9fe1d85fc691da3de85c4085c395af274b5a0d93f30d93902b53616e06888787bc6f8c001061fd99c51a212d23f32e770a27b860e", 0x47}], 0x2)

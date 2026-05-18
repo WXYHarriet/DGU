@@ -1,0 +1,4 @@
+r0 = socket$nl_generic(0x10, 0x3, 0x10)
+r1 = add_key$fscrypt_v1(&(0x7f0000000380), &(0x7f00000003c0)={'fscrypt:', @desc3}, &(0x7f0000000400)={0x0, "23bf4b7af162ae3c9c9b2219096f2e38b3b2421d4606f629f250cc262bcc5eece4be40f33e63b830dbf13d71f2062ba5cb0fef704e6a9ec3c5355f0be21ef7f0"}, 0x48, 0xffffffffffffffff)
+getsockopt$sock_cred(r0, 0x1, 0x11, &(0x7f0000000480)={0x0, 0x0, <r2=>0x0}, &(0x7f00000004c0)=0xc)
+keyctl$chown(0x4, r1, 0x0, r2)

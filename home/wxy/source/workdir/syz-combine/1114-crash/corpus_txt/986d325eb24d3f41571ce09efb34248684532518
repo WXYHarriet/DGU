@@ -1,0 +1,3 @@
+r0 = userfaultfd(0x80001)
+ioctl$UFFDIO_API(r0, 0xc018aa3f, &(0x7f0000000140))
+ioctl$UFFDIO_API(r0, 0xc018aa3f, &(0x7f0000000040))

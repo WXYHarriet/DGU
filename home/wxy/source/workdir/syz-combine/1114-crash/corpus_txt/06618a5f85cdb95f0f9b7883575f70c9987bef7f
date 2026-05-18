@@ -1,0 +1,4 @@
+r0 = socket$inet6_tcp(0xa, 0x1, 0x0)
+setsockopt$inet6_tcp_TCP_MD5SIG(r0, 0x6, 0xe, &(0x7f0000000200)={@in6={{0xa, 0x0, 0x0, @ipv4={'\x00', '\xff\xff', @empty}}}, 0x0, 0x0, 0x36, 0x0, "8c9e9ae55a2a23023aabe461ddf0d7849046e4303777e0d61f7c6aafb00da59b1a2fdfbc357689b1176f1d80364e0e33374e870e2c0b4f981d301728fcdee1ea49a621476d17fde8901f09a0e9d4ddb4"}, 0xd8)
+setsockopt$inet6_tcp_TCP_MD5SIG(r0, 0x6, 0xe, &(0x7f0000000100)={@in6={{0xa, 0x0, 0x0, @empty}}, 0x0, 0x0, 0x13, 0x0, "d86ac46a073843d9f8060941f3d77262614c3cd1ba8b023fc00414f10c2b7974289520ce79fef70f5a2483620aef97999c7e0f07caa2360fa1374ae1dea4978f54b437d900"}, 0x120)
+setsockopt$inet6_tcp_int(r0, 0x6, 0x2000000000000020, &(0x7f0000000040)=0xa, 0x1959cc36)

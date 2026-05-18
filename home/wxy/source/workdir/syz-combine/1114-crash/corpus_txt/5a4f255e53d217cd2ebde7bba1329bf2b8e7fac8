@@ -1,0 +1,2 @@
+r0 = signalfd(0xffffffffffffffff, &(0x7f0000000040)={[0xe6a3]}, 0x8)
+fremovexattr(r0, &(0x7f0000000240)=ANY=[@ANYBLOB="62747210735dc0"])

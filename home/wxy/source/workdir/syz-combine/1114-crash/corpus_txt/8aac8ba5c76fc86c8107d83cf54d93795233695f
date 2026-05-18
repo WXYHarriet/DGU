@@ -1,0 +1,5 @@
+r0 = openat$rtc(0xffffffffffffff9c, &(0x7f0000000140), 0x0, 0x0)
+r1 = dup(r0)
+mkdirat(0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00', 0x0)
+r2 = socket$inet_udplite(0x2, 0x2, 0x88)
+mount$9p_fd(0x0, &(0x7f0000000040)='./file0\x00', &(0x7f0000000080), 0x0, &(0x7f00000000c0)={'trans=fd,', {'rfdno', 0x3d, r1}, 0x2c, {'wfdno', 0x3d, r2}})

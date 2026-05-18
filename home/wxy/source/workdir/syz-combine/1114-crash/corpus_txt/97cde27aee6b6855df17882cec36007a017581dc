@@ -1,0 +1,2 @@
+mknod(&(0x7f00000000c0)='./file0\x00', 0x1040, 0x0)
+execve(&(0x7f0000f8aff8)='./file0\x00', 0x0, 0x0)

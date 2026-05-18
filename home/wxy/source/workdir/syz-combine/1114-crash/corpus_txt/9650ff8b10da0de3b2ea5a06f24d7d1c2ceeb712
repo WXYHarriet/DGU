@@ -1,0 +1,2 @@
+r0 = syz_open_dev$vbi(&(0x7f0000000040), 0x1, 0x2)
+ioctl$VIDIOC_G_STD(r0, 0x80085617, &(0x7f0000000140))

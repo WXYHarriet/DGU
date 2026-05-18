@@ -1,0 +1,3 @@
+r0 = syz_open_procfs(0x0, &(0x7f0000000000)='map_files\x00')
+getdents64(r0, &(0x7f0000001500)=""/27, 0x1b)
+getdents64(r0, &(0x7f0000000080)=""/192, 0xc0)

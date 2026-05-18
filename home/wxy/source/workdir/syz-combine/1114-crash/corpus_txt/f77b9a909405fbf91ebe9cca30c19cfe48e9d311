@@ -1,0 +1,1 @@
+syz_emit_ethernet(0x1f, &(0x7f0000000040)={@multicast, @random="9223dce7214c", @void, {@llc_tr={0x11, {@snap={0x0, 0xab, "0f", "9ec947", 0x0, "7f43531e8a0e7c7624"}}}}}, 0x0)

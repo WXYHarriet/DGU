@@ -1,0 +1,2 @@
+r0 = io_uring_setup(0x3a3b, &(0x7f00000004c0))
+io_uring_register$IORING_REGISTER_RING_FDS(r0, 0x14, 0x0, 0x0)

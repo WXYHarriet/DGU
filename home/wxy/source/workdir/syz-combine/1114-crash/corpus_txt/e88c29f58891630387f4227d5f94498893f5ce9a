@@ -1,0 +1,4 @@
+r0 = openat$adsp1(0xffffffffffffff9c, &(0x7f0000000040), 0x189901, 0x0)
+ioctl$SNDCTL_DSP_SETFRAGMENT(r0, 0xc004500a, &(0x7f00000000c0))
+ioctl$SNDCTL_DSP_SPEED(r0, 0xc0045005, &(0x7f0000000100)=0x2000)
+write$dsp(r0, &(0x7f0000000140)="966d77b65ed01abe8b8684aed2dcf16a094f1ee04c21093b5aeacdf2f8d57d7ef22c1dc7d2a8b817ad563bb5bfeb400be68ae0b236af172f02d2457afc80cf8e", 0x40)

@@ -1,0 +1,2 @@
+r0 = syz_open_dev$vim2m(&(0x7f0000000100), 0x0, 0x2)
+ioctl$BTRFS_IOC_GET_SUBVOL_INFO(r0, 0xffffff7f, 0x0)

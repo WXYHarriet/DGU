@@ -1,0 +1,2 @@
+setrlimit(0x7, &(0x7f0000005800))
+memfd_secret(0x0)

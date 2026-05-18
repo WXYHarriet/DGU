@@ -1,0 +1,1 @@
+syz_emit_ethernet(0xfdef, &(0x7f0000000000)={@remote, @dev, @val={@val={0x8100}}, {@llc_tr={0x11, {@snap={0x0, 0x0, "14", "25a255"}}}}}, 0x0)

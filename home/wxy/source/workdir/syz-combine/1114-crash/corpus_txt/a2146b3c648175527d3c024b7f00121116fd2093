@@ -1,0 +1,1 @@
+mount$binderfs(0x0, &(0x7f00000000c0)='./binderfs\x00', &(0x7f0000000100), 0x0, &(0x7f0000000140)={[{@max={'max', 0x3d, 0x5de3df3c}}], [{@seclabel}, {@fsmagic}]})

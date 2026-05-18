@@ -1,0 +1,6 @@
+r0 = syz_clone(0x40200100, 0x0, 0x0, 0x0, 0x0, 0x0)
+r1 = syz_open_procfs$namespace(r0, 0x0)
+r2 = socket$netlink(0x10, 0x3, 0x0)
+sendmsg$nl_generic(r2, &(0x7f0000000040)={0x0, 0x0, &(0x7f0000000080)={&(0x7f0000000100)=ANY=[@ANYBLOB="421200452a001c0100000000f4e3b11309f19377"], 0x14}}, 0x0)
+kcmp(r0, r0, 0x4, r1, r2)
+pwrite64(r2, &(0x7f0000000140)="2965eed15cab229e1da8b038b59f12a141cdb8c5d9a6b20710818d305e5bfb913ba0760ca06b48eecf580602ed9ba8ce2d5469c1edb36b4656561f099e80654b5f25e42136f23efe", 0x48, 0x4)

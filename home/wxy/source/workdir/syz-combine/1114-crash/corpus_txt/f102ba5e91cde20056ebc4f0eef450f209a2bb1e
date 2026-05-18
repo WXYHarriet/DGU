@@ -1,0 +1,2 @@
+pipe2$9p(&(0x7f0000000000)={<r0=>0xffffffffffffffff}, 0x0)
+fcntl$getflags(r0, 0x408)

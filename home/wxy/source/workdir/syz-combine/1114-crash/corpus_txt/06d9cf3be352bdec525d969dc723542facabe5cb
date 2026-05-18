@@ -1,0 +1,1 @@
+syz_open_dev$vcsu(&(0x7f00000003c0), 0x1, 0x1d9eeb79dbdc03ad)

@@ -1,0 +1,1 @@
+clock_settime(0xfffffffffffffff9, &(0x7f0000000000)={0x77359400})

@@ -1,0 +1,2 @@
+r0 = memfd_secret(0x0)
+ftruncate(r0, 0x3)

@@ -1,0 +1,2 @@
+syz_mount_image$vfat(&(0x7f0000000180), &(0x7f0000000400)='./file0\x00', 0xc1005, 0x0, 0x1, 0x0, &(0x7f0000000180))
+mount$9p_fd(0x0, &(0x7f0000000500)='./file0\x00', &(0x7f0000000540), 0x800000, &(0x7f00000005c0)={'trans=fd,', {}, 0x2c, {}, 0x2c, {[], [{@context={'context', 0x3d, 'staff_u'}}]}})

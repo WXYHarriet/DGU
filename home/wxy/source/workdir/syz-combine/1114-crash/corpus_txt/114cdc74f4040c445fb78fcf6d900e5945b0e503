@@ -1,0 +1,2 @@
+r0 = syz_open_procfs$namespace(0xffffffffffffffff, &(0x7f0000000000)='ns/time\x00')
+ioctl$F2FS_IOC_GET_FEATURES(r0, 0x8004f50c, 0x0)

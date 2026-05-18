@@ -1,0 +1,4 @@
+r0 = syz_init_net_socket$nfc_llcp(0x27, 0x3, 0x1)
+fcntl$setstatus(r0, 0x4, 0x2000)
+r1 = epoll_create1(0x0)
+epoll_ctl$EPOLL_CTL_ADD(r1, 0x1, r0, &(0x7f0000000200))

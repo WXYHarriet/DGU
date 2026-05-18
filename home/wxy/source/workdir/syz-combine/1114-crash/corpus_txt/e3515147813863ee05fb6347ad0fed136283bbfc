@@ -1,0 +1,7 @@
+r0 = openat$kvm(0xffffffffffffff9c, &(0x7f0000000200), 0x0, 0x0)
+r1 = ioctl$KVM_CREATE_VM(r0, 0xae01, 0x0)
+ioctl$KVM_CREATE_IRQCHIP(r1, 0xae60)
+r2 = ioctl$KVM_CREATE_VCPU(r1, 0xae41, 0x0)
+syz_kvm_setup_cpu$x86(0xffffffffffffffff, 0xffffffffffffffff, &(0x7f0000fe6000/0x18000)=nil, &(0x7f0000000100)=[@text64={0x40, &(0x7f0000000140)="66440f38801c11420f06c422a10a32b805000000b9040000000f01c13667640f01cff30fa7d82e26470fc7bd52d10000440f20c0350a000000440f22c0470f4b87e1370000b8010000000f01c1", 0x4d}], 0x1, 0x0, 0x0, 0x0)
+ioctl$KVM_GET_VCPU_EVENTS(r2, 0x4400ae8f, &(0x7f0000000080))
+ioctl$KVM_SET_IRQCHIP(r1, 0x8208ae63, &(0x7f0000000380)={0x2, 0x0, @ioapic={0x0, 0x0, 0x0, 0x3ff, 0x0, [{0x0, 0x3f}]}})

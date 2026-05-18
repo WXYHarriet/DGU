@@ -1,0 +1,2 @@
+r0 = syz_open_dev$usbfs(&(0x7f0000000080), 0x1ff, 0x1)
+ioctl$BTRFS_IOC_BALANCE_PROGRESS(r0, 0x84009422, 0x0)

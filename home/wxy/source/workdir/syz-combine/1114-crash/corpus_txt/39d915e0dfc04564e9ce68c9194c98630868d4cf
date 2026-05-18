@@ -1,0 +1,8 @@
+write$binfmt_script(0xffffffffffffffff, &(0x7f0000000900)={'#! ', './file0', [], 0xa, "663cab6d1c35efd69c2ee4a3c9cd9028fc4e"}, 0x1d)
+r0 = socket$unix(0x1, 0x1, 0x0)
+sendmsg$can_bcm(0xffffffffffffffff, &(0x7f0000000480)={0x0, 0x0, &(0x7f0000000040)={&(0x7f0000000580)=ANY=[@ANYBLOB="01000000d7fe68dd7e4d5d5bdbe70000", @ANYRES64=0x0, @ANYRES64=0x0, @ANYRES64=0x0, @ANYRES64=r0, @ANYBLOB="3bf81bb9f1"], 0x20000600}}, 0x0)
+r1 = socket$unix(0x1, 0x1, 0x0)
+ioctl$ifreq_SIOCGIFINDEX_vcan(r1, 0x8933, &(0x7f0000000100)={'vcan0\x00', <r2=>0x0})
+r3 = socket$can_bcm(0x1d, 0x2, 0x2)
+connect$can_bcm(r3, &(0x7f0000000200)={0x1d, r2}, 0x10)
+sendmsg$sock(r3, &(0x7f0000001940)={&(0x7f00000002c0)=@sco={0x1f, @none}, 0x80, &(0x7f0000000000), 0x5, &(0x7f00000008c0)=[@timestamping={{0x14}}], 0x18}, 0x0)

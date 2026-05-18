@@ -1,0 +1,4 @@
+r0 = creat(&(0x7f0000000040)='./file1\x00', 0x0)
+open_by_handle_at(r0, 0x0, 0x100)
+r1 = open(&(0x7f00009e1000)='./file1\x00', 0x102440, 0x0)
+fcntl$setlease(r1, 0x400, 0x0)

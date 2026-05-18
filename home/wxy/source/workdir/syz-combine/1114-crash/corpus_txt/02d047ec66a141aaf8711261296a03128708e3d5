@@ -1,0 +1,5 @@
+r0 = add_key$fscrypt_v1(&(0x7f0000000000), 0x0, &(0x7f0000000080)={0x0, "c3462df484837ad2e35a53a188a7740d5fe7be9fb80a81bbdb7ddd80bc6d7766d7e8dc27144603dd9a31b851af68d2dde516213b0a010c7ee0d0cc64578466aa"}, 0x48, 0xfffffffffffffff9)
+keyctl$setperm(0x5, r0, 0x110a20)
+syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+sendmsg$NLBL_MGMT_C_ADDDEF(0xffffffffffffffff, &(0x7f0000000380)={0x0, 0x0, 0x0}, 0x20000000)
+syz_genetlink_get_family_id$nbd(&(0x7f0000000440), 0xffffffffffffffff)

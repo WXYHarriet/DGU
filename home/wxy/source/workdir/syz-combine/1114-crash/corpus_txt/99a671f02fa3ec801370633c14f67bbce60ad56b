@@ -1,0 +1,2 @@
+ioctl$sock_ipv4_tunnel_SIOCCHGTUNNEL(0xffffffffffffffff, 0x89f3, 0x0)
+getrusage(0x1, &(0x7f0000000000))

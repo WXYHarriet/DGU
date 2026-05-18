@@ -1,0 +1,2 @@
+personality(0x400000)
+io_setup(0x7, &(0x7f0000000280))

@@ -1,0 +1,5 @@
+r0 = openat$procfs(0xffffffffffffff9c, &(0x7f0000000000)='/proc/key-users\x00', 0x0, 0x0)
+r1 = socket$inet6_udplite(0xa, 0x2, 0x88)
+close(r1)
+openat$sr(0xffffffffffffff9c, &(0x7f0000000040), 0x0, 0x0)
+dup2(r0, r1)

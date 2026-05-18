@@ -1,0 +1,4 @@
+mlockall(0x2)
+shmat(0x0, &(0x7f0000244000/0xc000)=nil, 0x4000)
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='numa_maps\x00')
+read$snapshot(r0, &(0x7f00000000c0)=""/90, 0xffffffa9)

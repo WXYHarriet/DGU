@@ -1,0 +1,2 @@
+r0 = syz_open_dev$swradio(&(0x7f0000000040), 0x0, 0x2)
+ioctl$VIDIOC_ENUM_FMT(r0, 0xc0405602, &(0x7f0000000100)={0x6c2, 0xb, 0x0, "f4095790f7ac79c1ef7f5786ad6eee5d33384a2fb46fe298d9756fd8b6511477"})

@@ -1,0 +1,4 @@
+r0 = openat$rtc(0xffffffffffffff9c, &(0x7f00000000c0), 0x2, 0x0)
+r1 = openat$nvram(0xffffffffffffff9c, &(0x7f0000000080), 0x28002, 0x0)
+r2 = dup2(r0, r1)
+ioctl$sock_inet6_tcp_SIOCINQ(r2, 0x541b, 0x0)

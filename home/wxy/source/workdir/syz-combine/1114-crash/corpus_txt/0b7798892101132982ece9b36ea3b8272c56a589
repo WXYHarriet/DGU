@@ -1,0 +1,7 @@
+inotify_init1(0x0)
+creat(&(0x7f0000000000)='./file0\x00', 0x0)
+r0 = syz_open_dev$tty1(0xc, 0x4, 0x1)
+r1 = dup(r0)
+r2 = socket$inet_udplite(0x2, 0x2, 0x88)
+mount$9p_fd(0x0, &(0x7f0000000040)='./file0\x00', &(0x7f0000000080), 0x0, &(0x7f00000000c0)={'trans=fd,', {'rfdno', 0x3d, r1}, 0x2c, {'wfdno', 0x3d, r2}})
+read$watch_queue(r1, &(0x7f0000000080)=""/78, 0x4e)

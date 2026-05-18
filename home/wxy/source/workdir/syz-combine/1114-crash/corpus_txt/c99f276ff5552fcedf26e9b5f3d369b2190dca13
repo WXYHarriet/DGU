@@ -1,0 +1,4 @@
+mkdir(&(0x7f0000000000)='./file0\x00', 0x0)
+r0 = syz_open_dev$vcsa(&(0x7f0000000080), 0x3f, 0x0)
+r1 = syz_open_procfs(0x0, &(0x7f0000000180)='mountinfo\x00')
+mount$9p_fd(0x0, &(0x7f0000000140)='./file0\x00', &(0x7f0000000240), 0x0, &(0x7f00000001c0)={'trans=fd,', {'rfdno', 0x3d, r0}, 0x2c, {'wfdno', 0x3d, r1}})

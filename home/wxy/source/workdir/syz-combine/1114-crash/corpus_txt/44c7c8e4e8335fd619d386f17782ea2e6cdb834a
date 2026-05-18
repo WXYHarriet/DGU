@@ -1,0 +1,6 @@
+r0 = memfd_create(&(0x7f0000000080)='\xf3e\t\xa9\xff\vty\x01senux\x00', 0x0)
+pwrite64(r0, &(0x7f0000000300)='/', 0x1, 0x0)
+mmap(&(0x7f0000001000/0x1000)=nil, 0x1000, 0x4, 0x11, r0, 0x0)
+symlink(&(0x7f0000001000)='./file0\x00', &(0x7f00000000c0)='./file0\x00')
+mount(0x0, &(0x7f0000000080)='./file0\x00', &(0x7f0000000140)='cgroup2\x00', 0x4000, 0x0)
+pivot_root(&(0x7f0000000280)='./file0\x00', &(0x7f00000000c0)='./file0\x00')

@@ -1,0 +1,4 @@
+r0 = syz_init_net_socket$bt_hci(0x1f, 0x3, 0x1)
+r1 = syz_init_net_socket$bt_l2cap(0x1f, 0x1, 0x0)
+r2 = fcntl$dupfd(r0, 0x0, r1)
+getsockname$packet(r2, 0x0, 0x0)

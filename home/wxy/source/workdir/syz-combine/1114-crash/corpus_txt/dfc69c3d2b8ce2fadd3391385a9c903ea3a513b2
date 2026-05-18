@@ -1,0 +1,3 @@
+r0 = syz_open_dev$vivid(&(0x7f0000000000), 0x3, 0x2)
+ioctl$BTRFS_IOC_TREE_SEARCH_V2(0xffffffffffffffff, 0xc0709411, 0x0)
+ioctl$BTRFS_IOC_INO_LOOKUP_USER(r0, 0xd000943e, 0x0)

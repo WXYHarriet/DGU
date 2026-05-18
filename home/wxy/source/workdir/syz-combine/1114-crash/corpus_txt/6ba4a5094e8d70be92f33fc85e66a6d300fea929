@@ -1,0 +1,1 @@
+syz_emit_ethernet(0x3e, &(0x7f0000000040)={@local, @random="be87aac3e7af", @void, {@ipv6={0x86dd, @generic={0x0, 0x6, "0b1788", 0x8, 0x0, 0x0, @local, @rand_addr=' \x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01', {[@fragment={0x87}]}}}}}, 0x0)

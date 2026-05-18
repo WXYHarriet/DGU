@@ -1,0 +1,4 @@
+r0 = open(&(0x7f0000000000)='./file0\x00', 0x80042, 0x0)
+write(r0, &(0x7f0000000040)=']', 0x1)
+r1 = dup(r0)
+sync_file_range(r1, 0x10001, 0x0, 0x7)

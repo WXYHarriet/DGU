@@ -1,0 +1,6 @@
+r0 = socket$nl_generic(0x10, 0x3, 0x10)
+ioctl$ifreq_SIOCGIFINDEX_batadv_hard(r0, 0x8933, &(0x7f0000000000)={'batadv_slave_0\x00', <r1=>0x0})
+r2 = socket$inet(0x2, 0x1, 0x0)
+setsockopt$inet_mreqn(r2, 0x0, 0x27, &(0x7f0000000000)={@multicast1, @local}, 0xc)
+setsockopt$inet_msfilter(r2, 0x0, 0x29, &(0x7f0000000140)=ANY=[@ANYBLOB="e0000001ac1414aa0000000003"], 0x1c)
+setsockopt$inet_mreqn(r2, 0x0, 0x26, &(0x7f0000000080)={@multicast1, @local, r1}, 0xc)

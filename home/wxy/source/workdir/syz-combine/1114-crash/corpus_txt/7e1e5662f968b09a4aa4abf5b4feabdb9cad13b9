@@ -1,0 +1,5 @@
+r0 = socket$inet6_tcp(0xa, 0x1, 0x0)
+bind$inet6(r0, &(0x7f0000d84000)={0xa, 0x2, 0x0, @ipv4={'\x00', '\xff\xff', @loopback}}, 0x1c)
+setsockopt$inet6_tcp_TCP_MD5SIG(r0, 0x6, 0xe, &(0x7f0000000300)={@in6={{0xa, 0x0, 0x0, @empty}}, 0x0, 0x0, 0x1c, 0x0, "3f114438efdaca16d374b49a365be44d5e860ea3ba676c0b5047b80e2c3535d5bd9db3c8572560f4d1be5cd41f7716082ee3589f099942e6f1c395ddb8160381baadf27900"}, 0xd8)
+setsockopt$inet6_tcp_TCP_MD5SIG(r0, 0x6, 0xe, &(0x7f0000000100)={@in6={{0xa, 0x0, 0x0, @ipv4={'\x00', '\xff\xff', @private}}}, 0x0, 0x0, 0x1e, 0x0, "ddfd3b7ed7c6a1c172a987ae5ce3cafd64c9a736831a5912d606798fb75c9981c4b3ac0e06891ff18bc5543ed57215a3c45f9154dfa319e52a15a2b9acf80c07fb1a854dad742eef6187f2304844c296"}, 0xd8)
+sendto$inet6(r0, 0x0, 0x0, 0x20000004, &(0x7f0000b63fe4)={0xa, 0x2, 0xf5, @rand_addr, 0x1}, 0x1c)

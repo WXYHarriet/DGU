@@ -1,0 +1,4 @@
+r0 = socket$inet_udp(0x2, 0x2, 0x0)
+sendmsg$NL80211_CMD_FLUSH_PMKSA(r0, &(0x7f00000001c0)={0x0, 0x0, &(0x7f0000000180)={0x0}}, 0x0)
+r1 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='net/udp\x00')
+read$watch_queue(r1, &(0x7f0000000040)=""/241, 0xf1)

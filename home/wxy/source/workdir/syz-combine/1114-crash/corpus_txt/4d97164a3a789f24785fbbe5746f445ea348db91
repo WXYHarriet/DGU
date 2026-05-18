@@ -1,0 +1,1 @@
+openat$cdrom(0xffffffffffffff9c, &(0x7f0000000040), 0x8280, 0x0)

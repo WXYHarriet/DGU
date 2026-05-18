@@ -1,0 +1,2 @@
+r0 = openat$proc_mixer(0xffffffffffffff9c, &(0x7f0000000000)='/proc/asound/card1/oss_mixer\x00', 0x0, 0x0)
+read$proc_mixer(r0, &(0x7f00000000c0)=""/83, 0xfff5)

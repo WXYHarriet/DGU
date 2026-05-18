@@ -1,0 +1,5 @@
+r0 = fsopen(&(0x7f0000000180)='ramfs\x00', 0x0)
+r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='blkio.bfq.io_service_time_recursive\x00', 0x275a, 0x0)
+write$binfmt_aout(r1, &(0x7f00000002c0)=ANY=[], 0xc1)
+mmap(&(0x7f0000000000/0x3000)=nil, 0x3000, 0x2000005, 0x12, r1, 0x0)
+fsconfig$FSCONFIG_SET_BINARY(r0, 0x2, &(0x7f0000000000)='.\xb0\xc5\x00\x00\x00\x00\x00\x00\x00\xfeO+ \xac\xad\xcb\x8f\xacbn\xceX\x819c(\x8au\x00\x00\x00\x00', &(0x7f0000000080)="69d896504b18ffffe92e5402f3ec312f3f77def03057cf7a8dde691983bb17ca9a53a0cb4af30bd9b88176e545562fb0549a0eaff8bdfa329a20fec07b4b6299ae3020d35d7e3b9dec93e496f02ae07346d47514bdd9d86fd39b60b87e1c93b393fc364c60644b3cc36295311b0607000000e33aa69686de5ae7", 0xff07)

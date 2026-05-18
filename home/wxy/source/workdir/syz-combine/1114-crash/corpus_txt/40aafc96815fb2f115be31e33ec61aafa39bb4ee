@@ -1,0 +1,2 @@
+gettid()
+setfsgid(0xffffffffffffffff)

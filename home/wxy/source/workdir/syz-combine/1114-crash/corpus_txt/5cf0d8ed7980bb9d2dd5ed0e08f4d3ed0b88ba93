@@ -1,0 +1,2 @@
+r0 = socket$inet_udplite(0x2, 0x2, 0x88)
+ioctl$sock_proto_private(r0, 0x8934, &(0x7f00000002c0)="1a3291ad080175e4604e3a")

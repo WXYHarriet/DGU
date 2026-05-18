@@ -1,0 +1,2 @@
+r0 = socket$netlink(0x10, 0x3, 0x0)
+sendmsg$netlink(r0, &(0x7f0000000040)={0x0, 0x0, &(0x7f0000000000)=[{&(0x7f0000000200)={0x90, 0x12, 0x321, 0x0, 0x0, "", [@nested={0x80, 0x0, 0x0, 0x1, [@generic="8e2618b51cfc43f0f5dd7e1504afa201eb27ca630c1a088ebd8ef0beaf8a4b149e668ccdf4b3d7a3e33d789a339e10c82e3a74afe4e4b6774ed1bfa3dba2f4ac9c084e6d2029ac1bfffffffffffffff89afc2429cf98f29aa2750608ab22617c19dbab2108000000000000006d1c7596f6634fe62f0cfec80cda06d3"]}]}, 0x90}], 0x1}, 0x0)

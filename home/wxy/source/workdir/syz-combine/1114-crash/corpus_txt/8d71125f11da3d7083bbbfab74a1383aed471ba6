@@ -1,0 +1,2 @@
+r0 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f0000000680), 0x101301, 0x0)
+write$vga_arbiter(r0, &(0x7f00000006c0)=@target={'target ', {'PCI:', '18', ':', '1a', ':', '1f', '.', '1e'}}, 0x17)

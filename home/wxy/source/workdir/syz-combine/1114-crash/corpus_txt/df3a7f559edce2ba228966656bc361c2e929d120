@@ -1,0 +1,2 @@
+r0 = syz_open_procfs$namespace(0xffffffffffffffff, &(0x7f0000000040)='ns/cgroup\x00')
+open_by_handle_at(r0, &(0x7f0000000080)=@FILEID_UDF_WITHOUT_PARENT={0xc, 0x51, {0xe, 0x1, 0x5, 0x3807a797}}, 0x101000)

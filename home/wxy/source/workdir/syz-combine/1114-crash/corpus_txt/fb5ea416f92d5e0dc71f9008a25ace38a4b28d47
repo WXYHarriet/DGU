@@ -1,0 +1,3 @@
+r0 = signalfd(0xffffffffffffffff, &(0x7f0000000040), 0x8)
+read$FUSE(r0, &(0x7f0000000000)={0x2020}, 0x2020)
+signalfd(r0, &(0x7f0000002040), 0x8)

@@ -1,0 +1,3 @@
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000040)='attr\x00')
+getdents64(r0, &(0x7f0000000000)=""/125, 0x7d)
+getdents64(r0, &(0x7f0000000180)=""/208, 0xd0)

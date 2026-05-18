@@ -1,0 +1,2 @@
+r0 = getpgrp(0x0)
+setpriority(0x0, r0, 0xffff)

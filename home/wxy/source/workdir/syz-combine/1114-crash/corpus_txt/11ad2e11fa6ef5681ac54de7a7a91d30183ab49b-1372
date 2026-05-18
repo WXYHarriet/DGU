@@ -1,0 +1,1 @@
+bpf$ENABLE_STATS(0x20, 0xfffffffffffffffc, 0x0)

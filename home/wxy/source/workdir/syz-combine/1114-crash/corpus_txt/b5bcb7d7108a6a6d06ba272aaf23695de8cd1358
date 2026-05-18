@@ -1,0 +1,2 @@
+r0 = openat2(0xffffffffffffff9c, &(0x7f0000000400)='./file0\x00', &(0x7f0000000440)={0x40}, 0x18)
+mount$9p_fd(0x0, &(0x7f0000000040)='./file0\x00', &(0x7f0000000080), 0x0, &(0x7f00000000c0)={'trans=fd,', {'rfdno', 0x3d, r0}, 0x2c, {}, 0x39})

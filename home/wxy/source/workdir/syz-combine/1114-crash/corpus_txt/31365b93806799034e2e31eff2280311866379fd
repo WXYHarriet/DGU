@@ -1,0 +1,5 @@
+r0 = syz_io_uring_setup(0x4333, &(0x7f0000000000), &(0x7f0000ff5000), &(0x7f0000ff4000))
+io_uring_register$IORING_REGISTER_BUFFERS(r0, 0x0, &(0x7f0000002300)=[{&(0x7f0000000140)=""/4096, 0x1000}], 0x3100)
+r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000080)='cpu.stat\x00', 0x275a, 0x0)
+mmap(&(0x7f0000000000/0x3000)=nil, 0x3000, 0x0, 0x12, r1, 0x0)
+io_uring_register$IORING_UNREGISTER_BUFFERS(r0, 0x1, 0x0, 0x0)

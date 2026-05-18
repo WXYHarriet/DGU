@@ -1,0 +1,2 @@
+r0 = syz_open_dev$evdev(&(0x7f0000000140), 0xc0, 0x100)
+ioctl$EVIOCGNAME(r0, 0x80404506, &(0x7f00000001c0)=""/156)

@@ -1,0 +1,1 @@
+syz_emit_vhci(&(0x7f0000000580)=@HCI_EVENT_PKT={0x4, @hci_ev_channel_selected={{0x41, 0x1}, {0xc8}}}, 0x4)

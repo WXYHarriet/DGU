@@ -1,0 +1,4 @@
+pipe(&(0x7f0000000080)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff})
+r2 = epoll_create(0x111)
+read$eventfd(r0, &(0x7f0000000000), 0x8)
+dup2(r2, r1)

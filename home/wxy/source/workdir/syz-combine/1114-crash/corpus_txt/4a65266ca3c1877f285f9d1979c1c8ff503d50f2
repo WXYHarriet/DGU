@@ -1,0 +1,7 @@
+syz_open_dev$sg(&(0x7f0000000300), 0x0, 0x101881)
+r0 = syz_open_procfs$userns(0xffffffffffffffff, 0x0)
+syz_open_procfs$namespace(0x0, &(0x7f0000000000)='ns/mnt\x00')
+setns(r0, 0x2000000)
+r1 = openat$loop_ctrl(0xffffffffffffff9c, &(0x7f0000000100), 0x0, 0x0)
+ioctl$LOOP_CTL_REMOVE(r1, 0x4c81, 0x0)
+ioctl$LOOP_CTL_ADD(r1, 0x4c80, 0x0)

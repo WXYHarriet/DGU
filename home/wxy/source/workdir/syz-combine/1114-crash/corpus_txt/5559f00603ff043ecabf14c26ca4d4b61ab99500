@@ -1,0 +1,2 @@
+openat$dir(0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00', 0x40140, 0x0)
+lgetxattr(&(0x7f00000000c0)='./file0\x00', &(0x7f0000000100)=@random={'user.', '-!+&\xa2(,\x88\x00'}, &(0x7f0000000140)=""/251, 0xfb)

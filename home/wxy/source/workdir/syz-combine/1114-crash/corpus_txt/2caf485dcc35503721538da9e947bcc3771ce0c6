@@ -1,0 +1,2 @@
+keyctl$join(0x1, 0x0)
+keyctl$session_to_parent(0x12)

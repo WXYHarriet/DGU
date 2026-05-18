@@ -1,0 +1,2 @@
+r0 = openat$proc_capi20ncci(0xffffffffffffff9c, &(0x7f0000000e00), 0x2, 0x0)
+writev(r0, &(0x7f0000000100)=[{&(0x7f0000000040)="ae", 0x1}], 0x1)

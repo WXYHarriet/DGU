@@ -1,0 +1,2 @@
+r0 = socket$igmp(0x2, 0x3, 0x2)
+setsockopt$MRT_ADD_MFC(r0, 0x0, 0xcc, &(0x7f0000001c40)={@multicast1, @local, 0x0, "53a7a858f8907108c5ab089e132b9a61f68c2a2f15508a7ed26c426b1128748b"}, 0x3c)

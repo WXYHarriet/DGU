@@ -1,0 +1,2 @@
+r0 = socket$caif_stream(0x25, 0x1, 0x0)
+connect$caif(r0, &(0x7f0000000040)=@rfm={0x25, 0x0, "b05ba0a746692499ce59ab76a9f84196"}, 0x2a)

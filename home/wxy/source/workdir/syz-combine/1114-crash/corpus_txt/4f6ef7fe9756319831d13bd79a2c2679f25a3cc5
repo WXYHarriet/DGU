@@ -1,0 +1,1 @@
+syz_open_dev$evdev(0xfffffffffffffffc, 0x0, 0x40381)

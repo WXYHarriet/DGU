@@ -1,0 +1,2 @@
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000040)='loginuid\x00')
+write$6lowpan_enable(r0, &(0x7f0000000000)='1', 0x1)

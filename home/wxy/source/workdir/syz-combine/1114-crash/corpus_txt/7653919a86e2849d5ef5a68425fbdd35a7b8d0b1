@@ -1,0 +1,2 @@
+r0 = syz_open_dev$radio(&(0x7f0000000000), 0x1, 0x2)
+ioctl$VIDIOC_S_MODULATOR(r0, 0x40445637, &(0x7f0000000040)={0x0, "565d96fdd068546a482490ccf016cab309581c12dfdf2d00cf7dd51ef2dc4694"})

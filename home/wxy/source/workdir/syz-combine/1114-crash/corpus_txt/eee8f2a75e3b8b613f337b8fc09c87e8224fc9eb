@@ -1,0 +1,1 @@
+syz_emit_vhci(&(0x7f0000000000)=@HCI_EVENT_PKT={0x4, @hci_ev_cmd_complete={{0xe, 0xb}, @hci_rp_read_buffer_size}}, 0xe)

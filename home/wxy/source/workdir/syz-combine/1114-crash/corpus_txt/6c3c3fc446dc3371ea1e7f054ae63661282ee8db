@@ -1,0 +1,2 @@
+r0 = getpid()
+kcmp$KCMP_EPOLL_TFD(r0, r0, 0x7, 0xffffffffffffffff, &(0x7f0000000700))

@@ -1,0 +1,2 @@
+bpf$MAP_LOOKUP_BATCH(0x18, &(0x7f0000000280)={&(0x7f0000000000)="4cd55a9a9da8ad390ea856e64cbbaa9c53e96c9d57c9860b3253de0ac03327bc", 0x0, 0x0, 0x0}, 0x38)
+keyctl$get_security(0xa, 0x0, &(0x7f0000000000), 0x0)

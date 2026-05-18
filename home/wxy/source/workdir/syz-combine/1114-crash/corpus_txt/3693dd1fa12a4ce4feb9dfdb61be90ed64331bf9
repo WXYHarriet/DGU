@@ -1,0 +1,2 @@
+r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f00000000c0)='/sys/kernel/address_bits', 0x28000, 0x113)
+read$ptp(r0, &(0x7f0000000080)=""/10, 0xa)

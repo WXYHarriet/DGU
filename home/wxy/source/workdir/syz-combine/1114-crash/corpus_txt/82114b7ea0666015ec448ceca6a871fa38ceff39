@@ -1,0 +1,2 @@
+r0 = openat$binfmt_register(0xffffffffffffff9c, &(0x7f0000000080), 0x1, 0x0)
+write(r0, &(0x7f00000000c0)="4d03aa6840d8719e6f7e4c", 0xb)

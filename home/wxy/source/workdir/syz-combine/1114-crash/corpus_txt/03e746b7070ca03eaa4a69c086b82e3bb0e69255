@@ -1,0 +1,4 @@
+openat$cgroup_ro(0xffffffffffffff9c, &(0x7f00000000c0)='memory.events\x00', 0x26e1, 0x0)
+r0 = landlock_create_ruleset(&(0x7f0000000040)={0x7064}, 0x8, 0x0)
+landlock_restrict_self(r0, 0x0)
+openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000140)='memory.events\x00', 0x7a05, 0x1700)

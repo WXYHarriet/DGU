@@ -1,0 +1,8 @@
+openat$pfkey(0xffffffffffffff9c, 0x0, 0x0, 0x0)
+r0 = openat$pfkey(0xffffffffffffff9c, &(0x7f00000012c0), 0x0, 0x0)
+getsockopt$inet_tcp_TCP_REPAIR_WINDOW(r0, 0x6, 0x1d, &(0x7f0000001300), 0x0)
+ioctl$TIOCGSID(0xffffffffffffffff, 0x5429, &(0x7f0000000040))
+getpgid(0x0)
+fcntl$getownex(0xffffffffffffffff, 0x10, 0x0)
+syz_clone(0xc0020000, &(0x7f00000000c0), 0x0, 0x0, &(0x7f00000001c0), &(0x7f0000000200)="d3c41b0d3a8b8ae0aeb85a1d02fea6b74adbfab0332e9490fb4ea2b6675428bee5f7032549f65761ea08359bd407d97c1a68aa5ef6857314b0ced7ad023fb99f5d7d2721ac0ae4ce039a3003ba8b1c24fe95250145bce4d1e009f93530fb535dddda8b9b18bde0c1702ca5e3ca07a6c322de8d1b511ece50")
+syz_open_procfs$userns(0x0, &(0x7f0000000300))

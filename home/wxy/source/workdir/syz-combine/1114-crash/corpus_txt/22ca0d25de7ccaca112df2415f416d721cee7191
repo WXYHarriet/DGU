@@ -1,0 +1,6 @@
+ioctl$VIDIOC_G_EXT_CTRLS(0xffffffffffffffff, 0xc0205647, &(0x7f00000008c0)={0x9b0000, 0x0, 0x0, 0xffffffffffffffff, 0x0, 0x0})
+setxattr$trusted_overlay_upper(0x0, 0x0, &(0x7f0000000700)=ANY=[@ANYBLOB="00fb8800002cf141297903863e1557351c28930d2288a70d55305a90cfbd4e24d1bb81c86a90505faa9d8400cc9f2c2b22d36979e39be708f67ba0ec36e64db4886e54aa9836d3f48f097b7916f444b8b880d5cb28ba027d5c0316c8373f562b5df2a22390674bf5"], 0x88, 0x0)
+sendmsg$BATADV_CMD_GET_GATEWAYS(0xffffffffffffffff, &(0x7f00000007c0)={0x0, 0x0, &(0x7f0000000340)={&(0x7f0000000540)={0x14}, 0x14}}, 0x0)
+r0 = add_key$user(&(0x7f0000000280), &(0x7f0000000000), &(0x7f00000000c0)="b8", 0x1, 0xfffffffffffffffe)
+r1 = add_key$user(&(0x7f0000000200), &(0x7f00000005c0), &(0x7f0000000340), 0x584, 0xfffffffffffffffd)
+keyctl$dh_compute(0x17, &(0x7f0000000080)={r0, r1, r1}, 0x0, 0x0, &(0x7f00000001c0)={&(0x7f0000000040)={'crct10dif\x00'}})

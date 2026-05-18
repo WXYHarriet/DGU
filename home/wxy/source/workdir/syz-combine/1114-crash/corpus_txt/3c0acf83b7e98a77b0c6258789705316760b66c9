@@ -1,0 +1,1 @@
+arch_prctl$ARCH_MAP_VDSO_X32(0x2001, 0x0)

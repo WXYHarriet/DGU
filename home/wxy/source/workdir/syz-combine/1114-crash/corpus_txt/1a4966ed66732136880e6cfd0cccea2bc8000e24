@@ -1,0 +1,2 @@
+mkdirat(0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00', 0x0)
+mount$tmpfs(0x0, &(0x7f0000000040)='./file0\x00', &(0x7f00000000c0), 0x80, &(0x7f0000000140)=ANY=[@ANYBLOB="6d706f6c3d64656659756c74c1c2a4a761742976653a39362c33"])

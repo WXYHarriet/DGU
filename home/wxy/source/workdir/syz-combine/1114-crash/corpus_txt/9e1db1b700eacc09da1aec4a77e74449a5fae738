@@ -1,0 +1,2 @@
+r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f0000000040)='/sys/kernel/kexec_crash_size', 0x40b02, 0x159)
+write$cgroup_int(r0, &(0x7f0000000000)=0xfffffffffffffffd, 0x12)

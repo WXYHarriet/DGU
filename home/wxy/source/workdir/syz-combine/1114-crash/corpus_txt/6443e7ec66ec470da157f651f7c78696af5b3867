@@ -1,0 +1,2 @@
+r0 = socket$inet6_icmp_raw(0xa, 0x3, 0x3a)
+ioctl$sock_inet6_SIOCADDRT(r0, 0x890b, &(0x7f0000000000)={@ipv4={'\x00', '\xff\xff', @multicast2}, @mcast2, @remote})

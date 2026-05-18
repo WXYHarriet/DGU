@@ -1,0 +1,5 @@
+mkdir(&(0x7f0000000100)='./file0\x00', 0x0)
+mount(0x0, &(0x7f0000000000)='./file0\x00', &(0x7f0000000040)='devtmpfs\x00', 0x0, 0x0)
+r0 = open_tree(0xffffffffffffff9c, &(0x7f0000000640)='\x00', 0x89901)
+umount2(&(0x7f0000000080)='./file0\x00', 0x0)
+close(r0)

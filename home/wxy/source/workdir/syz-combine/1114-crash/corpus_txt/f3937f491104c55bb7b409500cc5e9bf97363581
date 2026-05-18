@@ -1,0 +1,4 @@
+r0 = eventfd(0x0)
+r1 = openat$sysfs(0xffffffffffffff9c, &(0x7f00000001c0)='/sys/kernel/software_nodes', 0x0, 0x0)
+r2 = dup2(r1, r0)
+getdents64(r2, &(0x7f0000000240)=""/239, 0xef)

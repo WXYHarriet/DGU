@@ -1,0 +1,4 @@
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='net/tcp6\x00')
+r1 = socket$inet6_tcp(0xa, 0x1, 0x0)
+listen(r1, 0x0)
+pread64(r0, &(0x7f0000000140)=""/162, 0xa2, 0x0)

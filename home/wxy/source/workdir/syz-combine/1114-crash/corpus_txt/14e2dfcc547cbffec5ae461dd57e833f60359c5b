@@ -1,0 +1,1 @@
+prctl$PR_GET_IO_FLUSHER(0x3a)

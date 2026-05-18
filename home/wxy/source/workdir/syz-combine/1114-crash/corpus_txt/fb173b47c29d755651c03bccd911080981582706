@@ -1,0 +1,2 @@
+r0 = openat$autofs(0xffffffffffffff9c, &(0x7f0000007840), 0x0, 0x0)
+ioctl$AUTOFS_DEV_IOCTL_ISMOUNTPOINT(r0, 0xc018937e, 0x0)

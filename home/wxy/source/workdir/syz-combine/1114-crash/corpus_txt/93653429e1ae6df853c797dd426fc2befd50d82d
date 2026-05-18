@@ -1,0 +1,2 @@
+r0 = openat$iommufd(0xffffffffffffff9c, &(0x7f0000000040), 0x0, 0x0)
+ioctl$IOMMU_TEST_OP_ADD_RESERVED(r0, 0x3b70, &(0x7f0000000080)={0xf})

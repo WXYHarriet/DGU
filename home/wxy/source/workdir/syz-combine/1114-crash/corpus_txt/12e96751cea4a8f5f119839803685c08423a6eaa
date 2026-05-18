@@ -1,0 +1,1 @@
+sched_setattr(0x0, &(0x7f0000000040)={0xffffffffffffffc5}, 0x0)

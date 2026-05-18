@@ -1,0 +1,2 @@
+creat(&(0x7f0000000d00)='./file0\x00', 0x0)
+mount$bpf(0x0, &(0x7f0000000600)='./file0\x00', &(0x7f0000000640), 0x0, &(0x7f0000000680)={[{}, {@mode={'mode', 0x3d, 0xfffffffffffff141}}]})

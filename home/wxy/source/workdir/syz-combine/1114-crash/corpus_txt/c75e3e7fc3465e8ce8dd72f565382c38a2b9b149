@@ -1,0 +1,2 @@
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='clear_refs\x00')
+write$P9_RREAD(r0, &(0x7f00000004c0)={0x33, 0x75, 0x1, {0x28, "9c72d46ed70d835d44f8453ee313b6e574de306b26e530efb6a678d0319eceacbdae4aa2a3462564"}}, 0x33)

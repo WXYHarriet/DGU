@@ -1,0 +1,4 @@
+openat$sw_sync_info(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+r0 = io_uring_setup(0x1de0, &(0x7f0000000440))
+r1 = io_uring_register$IORING_REGISTER_PERSONALITY(r0, 0x9, 0x0, 0x0)
+io_uring_register$IORING_UNREGISTER_PERSONALITY(r0, 0x16, 0x20000000, r1)

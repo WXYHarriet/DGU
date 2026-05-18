@@ -1,0 +1,2 @@
+r0 = openat$incfs(0xffffffffffffff9c, &(0x7f0000000080)='.pending_reads\x00', 0x1c29c2, 0x0)
+write$cgroup_freezer_state(r0, &(0x7f0000000000)='THAWED\x00', 0x555d6235b01c2ab3)

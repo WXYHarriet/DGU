@@ -1,0 +1,6 @@
+r0 = socket$nl_generic(0x10, 0x3, 0x10)
+sendmsg$SMC_PNETID_GET(r0, &(0x7f0000000400)={0x0, 0x0, &(0x7f0000000300)={&(0x7f0000000380)={0x14, 0x0, 0x4}, 0x14}}, 0x0)
+syz_genetlink_get_family_id$nl80211(&(0x7f0000000080), r0)
+r1 = syz_genetlink_get_family_id$nl80211(&(0x7f0000000240), 0xffffffffffffffff)
+sendmsg$NL80211_CMD_SET_MPATH(r0, &(0x7f0000000340)={0x0, 0x0, &(0x7f00000002c0)={&(0x7f0000000000)=ANY=[@ANYBLOB='(\x00\x00\x00', @ANYRES16=r1, @ANYBLOB="01e79d3295ca2f3c9d811f"], 0x28}}, 0x0)
+syz_genetlink_get_family_id$ethtool(&(0x7f0000000180), r0)

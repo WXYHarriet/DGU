@@ -1,0 +1,2 @@
+r0 = fsopen(&(0x7f0000000a00)='cgroup2\x00', 0x0)
+fcntl$F_SET_RW_HINT(r0, 0x40c, &(0x7f0000000000))

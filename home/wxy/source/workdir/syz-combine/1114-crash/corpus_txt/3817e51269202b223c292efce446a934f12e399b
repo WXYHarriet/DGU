@@ -1,0 +1,2 @@
+r0 = socket$inet6(0xa, 0x2, 0x3a)
+ioctl$sock_SIOCGIFINDEX(r0, 0x8933, &(0x7f0000002a80)={'lo\x00'})

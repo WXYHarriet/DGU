@@ -1,0 +1,2 @@
+r0 = socket$inet6_tcp(0xa, 0x1, 0x0)
+setsockopt$inet6_tcp_TLS_TX(r0, 0x6, 0x1, &(0x7f0000001440)=@gcm_128={{}, "ae91249cdeb300e4", "4fd40a4b971a0e75655171cd4921b805", "b6dc3701", "8cc608addc11d6b0"}, 0x28)

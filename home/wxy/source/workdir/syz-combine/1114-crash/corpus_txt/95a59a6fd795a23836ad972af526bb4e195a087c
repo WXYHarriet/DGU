@@ -1,0 +1,5 @@
+r0 = epoll_create(0x8)
+r1 = openat$vhost_vsock(0xffffffffffffff9c, &(0x7f0000000ac0), 0x2, 0x0)
+epoll_ctl$EPOLL_CTL_ADD(r0, 0x1, r1, &(0x7f0000000b00))
+r2 = openat$vhost_vsock(0xffffffffffffff9c, &(0x7f0000000ac0), 0x2, 0x0)
+epoll_ctl$EPOLL_CTL_ADD(r0, 0x1, r2, &(0x7f0000000000))

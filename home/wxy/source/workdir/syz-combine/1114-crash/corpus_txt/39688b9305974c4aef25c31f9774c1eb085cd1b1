@@ -1,0 +1,2 @@
+r0 = syz_open_dev$usbfs(&(0x7f00000001c0), 0xb, 0x2)
+ioctl$USBDEVFS_IOCTL(r0, 0xc0105512, &(0x7f0000000000)=@usbdevfs_driver={0x7fffffff, 0x0, 0x0})

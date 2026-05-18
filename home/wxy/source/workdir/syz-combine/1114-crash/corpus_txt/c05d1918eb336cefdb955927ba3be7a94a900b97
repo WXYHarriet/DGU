@@ -1,0 +1,2 @@
+r0 = syz_open_procfs$pagemap(0xffffffffffffffff, &(0x7f0000000080))
+lseek(r0, 0x4001, 0x0)

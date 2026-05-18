@@ -1,0 +1,2 @@
+r0 = syz_open_dev$vbi(&(0x7f0000000340), 0x3, 0x2)
+ioctl$VIDIOC_G_FMT(r0, 0xc0d05604, &(0x7f0000000040)={0x5, @pix_mp})

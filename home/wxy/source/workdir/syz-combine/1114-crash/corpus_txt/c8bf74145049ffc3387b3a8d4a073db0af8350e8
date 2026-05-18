@@ -1,0 +1,2 @@
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='net/ptype\x00')
+preadv(r0, &(0x7f0000000140)=[{&(0x7f0000000080)=""/153, 0x99}], 0x1, 0x7cb16791, 0x0)

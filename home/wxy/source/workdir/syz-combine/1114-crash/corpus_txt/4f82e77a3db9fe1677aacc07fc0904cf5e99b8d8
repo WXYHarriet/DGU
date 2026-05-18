@@ -1,0 +1,2 @@
+r0 = io_uring_setup(0x17ba, &(0x7f00000004c0))
+writev(r0, 0x0, 0x0)

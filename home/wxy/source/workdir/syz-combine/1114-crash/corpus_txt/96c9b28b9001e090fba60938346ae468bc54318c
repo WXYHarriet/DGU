@@ -1,0 +1,4 @@
+r0 = syz_open_dev$evdev(&(0x7f0000001140), 0x2, 0x929301)
+r1 = syz_open_procfs(0x0, &(0x7f0000002100)='ns\x00')
+getdents64(r1, &(0x7f00000000c0)=""/228, 0xe4)
+write$char_usb(r0, &(0x7f0000000040)="e2", 0x35000)

@@ -1,0 +1,2 @@
+r0 = syz_open_dev$midi(&(0x7f00000000c0), 0x93fa, 0x103042)
+ioctl$SNDRV_RAWMIDI_IOCTL_INFO(r0, 0x810c5701, &(0x7f0000000100))

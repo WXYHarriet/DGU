@@ -1,0 +1,1 @@
+io_uring_register$IORING_REGISTER_BUFFERS(0xffffffffffffffff, 0x2400, 0x0, 0x0)

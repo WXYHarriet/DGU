@@ -1,0 +1,2 @@
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000040)='net/ip_vs_stats_percpu\x00')
+read$fb(r0, &(0x7f0000000100)=""/131, 0x83)

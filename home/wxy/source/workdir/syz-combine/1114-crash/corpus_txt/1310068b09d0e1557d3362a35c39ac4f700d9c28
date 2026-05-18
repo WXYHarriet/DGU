@@ -1,0 +1,1 @@
+epoll_ctl$EPOLL_CTL_DEL(0xffffffffffffffff, 0x2, 0xffffffffffffffff)

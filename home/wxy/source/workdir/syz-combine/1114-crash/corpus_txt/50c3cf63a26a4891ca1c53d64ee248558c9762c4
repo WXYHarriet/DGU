@@ -1,0 +1,5 @@
+close_range(0xffffffffffffffff, 0xffffffffffffffff, 0x2)
+r0 = creat(&(0x7f0000000300)='./bus\x00', 0x0)
+r1 = open(&(0x7f0000000040)='./file0\x00', 0x147042, 0x0)
+fallocate(r1, 0x0, 0x0, 0x401)
+ioctl$EXT4_IOC_MOVE_EXT(r1, 0xc028660f, &(0x7f0000000140)={0x0, r0})

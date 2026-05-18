@@ -1,0 +1,2 @@
+r0 = syz_open_dev$evdev(&(0x7f0000000200), 0x3, 0x1)
+ioctl$EVIOCGREP(r0, 0x80084503, 0x0)

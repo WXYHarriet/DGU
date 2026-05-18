@@ -1,0 +1,4 @@
+close_range(0xffffffffffffffff, 0xffffffffffffffff, 0x2)
+r0 = userfaultfd(0x80001)
+ioctl$UFFDIO_API(r0, 0xc018aa3f, &(0x7f0000000000))
+ioctl$BTRFS_IOC_SNAP_DESTROY_V2(r0, 0x5000943f, 0x0)

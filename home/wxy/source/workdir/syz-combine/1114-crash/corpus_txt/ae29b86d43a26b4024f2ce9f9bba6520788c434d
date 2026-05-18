@@ -1,0 +1,2 @@
+r0 = openat$sndseq(0xffffffffffffff9c, &(0x7f0000000340), 0x0)
+ioctl$SNDRV_SEQ_IOCTL_SET_CLIENT_INFO(r0, 0x40bc5311, &(0x7f0000000380)={0x80, 0x1, 'client1\x00', 0x0, "09952be30bc57a11", "4cbc2afde7fa7bc724f3d7b83d837bbcd6009e02b4040b37f13cd68b44b0a1d1"})

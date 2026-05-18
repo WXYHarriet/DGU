@@ -1,0 +1,5 @@
+r0 = openat$kvm(0xffffffffffffff9c, &(0x7f0000000200), 0x0, 0x0)
+sendmmsg$unix(0xffffffffffffffff, &(0x7f0000002700)=[{{0x0, 0x0, &(0x7f0000000500)=[{&(0x7f0000000400)="598e4f7d9da01d977b52f7caa19a32f3e286f22fcfce4c42df747df048550411702f2fd030cbbea34593add350c61958011c468ad869a67bc1f7645b428fc51d52eab2994a77b905c17d", 0x4a}], 0x1}}], 0x1, 0x0)
+r1 = ioctl$KVM_CREATE_VM(r0, 0xae01, 0x0)
+r2 = ioctl$KVM_CREATE_VCPU(r1, 0xae41, 0x0)
+ioctl$KVM_SET_VAPIC_ADDR(r2, 0x4140aecd, &(0x7f0000000340))

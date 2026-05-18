@@ -1,0 +1,2 @@
+r0 = syz_open_dev$vcsa(&(0x7f0000000000), 0x70, 0x40800)
+open_by_handle_at(r0, &(0x7f0000000080)=ANY=[@ANYBLOB="0c000000000002"], 0x0)

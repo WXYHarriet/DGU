@@ -1,0 +1,2 @@
+r0 = openat2(0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00', &(0x7f0000000080)={0x40241}, 0x1a)
+write$P9_RMKDIR(r0, &(0x7f00000000c0)={0x14}, 0xfffffd30)

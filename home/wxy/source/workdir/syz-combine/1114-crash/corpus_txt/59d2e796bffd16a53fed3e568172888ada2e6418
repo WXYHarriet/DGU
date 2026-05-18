@@ -1,0 +1,1 @@
+openat$random(0xffffffffffffff9c, &(0x7f0000000100), 0xae103, 0x0)

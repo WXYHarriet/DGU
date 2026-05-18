@@ -1,0 +1,1 @@
+syz_emit_vhci(&(0x7f0000000080)=@HCI_EVENT_PKT={0x4, @hci_ev_link_key_notify={{0x18, 0x17}, {@any, "0c4cc607cb5d021198f911e1a150d2b9"}}}, 0x1a)

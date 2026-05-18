@@ -1,0 +1,4 @@
+pipe(&(0x7f0000002180)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff})
+write$FUSE_IOCTL(r1, &(0x7f0000000040)={0x9}, 0xfffffc6a)
+write$FUSE_INIT(r1, 0x0, 0x0)
+read$FUSE(r0, &(0x7f0000000100)={0x2020}, 0x2020)

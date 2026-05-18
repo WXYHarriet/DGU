@@ -1,0 +1,2 @@
+r0 = openat$binfmt_register(0xffffffffffffff9c, &(0x7f0000000000), 0x1, 0x0)
+write$binfmt_register(r0, &(0x7f0000000080)={0x3a, 'syz2', 0x3a, 'E', 0x3a, 0xfffffffffffffff3, 0x3a, '/proc/sys/fs/binfmt_misc/register\x00', 0x3a, '/proc/sys/fs/binfmt_misc/register\x00', 0x3a, './file0'}, 0x6b)

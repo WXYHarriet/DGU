@@ -1,0 +1,3 @@
+r0 = syz_init_net_socket$nl_rdma(0x10, 0x3, 0x10)
+r1 = syz_genetlink_get_family_id$smc(&(0x7f0000000200), 0xffffffffffffffff)
+sendmsg$SMC_PNETID_DEL(r0, &(0x7f0000000000)={0x0, 0x0, &(0x7f0000000080)={&(0x7f0000000240)=ANY=[@ANYBLOB='4\x00\x00\x00', @ANYRES16=r1, @ANYBLOB="0d0600000000000000f601020200090001"], 0x34}, 0x1, 0x40030000000000}, 0x0)

@@ -1,0 +1,3 @@
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000400)='net/ip6_tables_matches\x00')
+read$FUSE(r0, &(0x7f00000035c0)={0x2020}, 0x2020)
+read$FUSE(r0, &(0x7f0000001480)={0x2020}, 0x2020)

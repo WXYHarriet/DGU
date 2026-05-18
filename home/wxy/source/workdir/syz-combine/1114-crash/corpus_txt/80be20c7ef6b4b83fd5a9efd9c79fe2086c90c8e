@@ -1,0 +1,2 @@
+r0 = socket$inet6(0xa, 0x3, 0xff)
+close(r0)

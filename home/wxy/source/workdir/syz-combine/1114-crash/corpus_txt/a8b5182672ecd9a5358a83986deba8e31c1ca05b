@@ -1,0 +1,2 @@
+r0 = syz_open_procfs$namespace(0x0, &(0x7f0000000000)='ns/time\x00')
+ioctl$BTRFS_IOC_ADD_DEV(r0, 0x5000940a, 0x0)

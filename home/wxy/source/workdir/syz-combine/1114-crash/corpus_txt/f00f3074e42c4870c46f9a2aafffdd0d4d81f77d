@@ -1,0 +1,1 @@
+syz_emit_ethernet(0x5e, &(0x7f0000000100)={@link_local, @broadcast, @void, {@ipv6={0x86dd, @icmpv6={0x0, 0x6, "30a6db", 0x28, 0x3c, 0x0, @local, @mcast2, {[@hopopts={0x0, 0x3, '\x00', [@hao={0xc9, 0x10, @loopback}, @pad1, @enc_lim]}], @ndisc_rs}}}}}, 0x0)

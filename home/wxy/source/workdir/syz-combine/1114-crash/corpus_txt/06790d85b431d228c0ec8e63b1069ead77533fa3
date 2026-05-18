@@ -1,0 +1,4 @@
+r0 = getuid()
+ioprio_set$uid(0x3, r0, 0x0)
+r1 = syz_open_procfs(0x0, &(0x7f0000000000)='net/unix\x00')
+preadv(r1, &(0x7f0000000240)=[{&(0x7f0000000100)=""/236, 0xec}], 0x1, 0x73, 0x0)

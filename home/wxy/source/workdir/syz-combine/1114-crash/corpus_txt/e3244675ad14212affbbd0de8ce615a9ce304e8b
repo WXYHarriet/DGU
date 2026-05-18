@@ -1,0 +1,5 @@
+r0 = add_key$keyring(&(0x7f0000000100), &(0x7f00000000c0)={'syz', 0x0}, 0x0, 0x0, 0xfffffffffffffffd)
+r1 = add_key$keyring(&(0x7f0000000000), &(0x7f0000000040)={'syz', 0x2}, 0x0, 0x0, r0)
+r2 = add_key$fscrypt_v1(&(0x7f0000000080), &(0x7f0000000140)={'fscrypt:', @desc3}, &(0x7f0000000180)={0x0, "7731e30f3ae90b5c1c6f99164b9af797ab9a725f709e14778086fae7e0baaf9e50c7d51cda890f02bfdcdde1c45b52ad514bf456c1465e2fb867eeb054f5c9b6", 0x30}, 0x48, r1)
+r3 = add_key$keyring(&(0x7f0000000280), &(0x7f00000002c0)={'syz', 0x0}, 0x0, 0x0, r1)
+keyctl$KEYCTL_MOVE(0x1e, r1, r2, r3, 0x0)

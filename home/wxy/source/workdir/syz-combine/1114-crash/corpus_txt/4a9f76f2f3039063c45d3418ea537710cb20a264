@@ -1,0 +1,1 @@
+fsetxattr$trusted_overlay_opaque(0xffffffffffffffff, 0x0, 0x0, 0x0, 0x69daca1765e68124)

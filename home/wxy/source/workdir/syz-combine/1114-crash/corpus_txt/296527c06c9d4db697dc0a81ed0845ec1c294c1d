@@ -1,0 +1,4 @@
+r0 = inotify_init1(0x0)
+r1 = open(&(0x7f0000000000)='./bus\x00', 0x60142, 0x0)
+fcntl$setstatus(r0, 0x4, 0x2000)
+dup3(r1, r0, 0x0)

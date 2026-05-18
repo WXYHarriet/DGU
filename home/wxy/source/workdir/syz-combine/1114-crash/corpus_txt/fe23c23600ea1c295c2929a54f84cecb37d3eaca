@@ -1,0 +1,2 @@
+r0 = socket$alg(0x26, 0x5, 0x0)
+fsetxattr(r0, &(0x7f0000000100)=@known='security.selinux\x00', &(0x7f0000000140)='*){\x00', 0x4, 0x0)

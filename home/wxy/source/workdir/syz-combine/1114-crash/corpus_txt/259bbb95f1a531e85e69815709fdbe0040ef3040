@@ -1,0 +1,2 @@
+r0 = memfd_secret(0x0)
+read$proc_mixer(r0, 0x0, 0x0)

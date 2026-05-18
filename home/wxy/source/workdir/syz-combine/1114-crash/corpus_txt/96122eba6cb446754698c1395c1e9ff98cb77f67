@@ -1,0 +1,2 @@
+add_key$keyring(&(0x7f0000000180), &(0x7f00000001c0)={'syz', 0x1}, 0x0, 0x0, 0xfffffffffffffffc)
+request_key(&(0x7f0000000040)='id_resolver\x00', &(0x7f0000000080)={'syz', 0x2}, &(0x7f00000000c0)='\x00', 0x0)

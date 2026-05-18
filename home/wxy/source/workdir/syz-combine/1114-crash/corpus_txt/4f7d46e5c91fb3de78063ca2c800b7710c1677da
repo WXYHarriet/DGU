@@ -1,0 +1,1 @@
+syz_emit_vhci(&(0x7f0000000000)=@HCI_EVENT_PKT={0x4, @hci_ev_remote_features={{0xb, 0xb}, {0x4, 0xc8, "ebf5eb09864035ee"}}}, 0xe)

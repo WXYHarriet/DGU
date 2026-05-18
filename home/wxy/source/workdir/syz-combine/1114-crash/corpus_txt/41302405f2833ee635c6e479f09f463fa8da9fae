@@ -1,0 +1,4 @@
+r0 = socket$can_raw(0x1d, 0x3, 0x1)
+setsockopt$CAN_RAW_FD_FRAMES(r0, 0x65, 0x5, &(0x7f0000000000)=0x1, 0x4)
+ioctl$ifreq_SIOCGIFINDEX_vcan(r0, 0x8933, &(0x7f0000000140)={'vxcan0\x00', <r1=>0x0})
+sendmsg$can_raw(r0, &(0x7f0000000180)={&(0x7f0000000040)={0x1d, r1}, 0x10, &(0x7f0000000100)={&(0x7f00000001c0)=@canfd={{}, 0x0, 0x0, 0x0, 0x0, "d13ed676972e24f247f3e0d9be8dae05c6313b3bc342da052f9b8f63a015c84edfb61f58076279453c438a95a809062e1bd1c2267891d691016ce212e24897ce"}, 0x48}}, 0x0)

@@ -1,0 +1,4 @@
+r0 = syz_open_dev$tty20(0xc, 0x4, 0x1)
+r1 = signalfd(0xffffffffffffffff, &(0x7f00007aeff8), 0x8)
+r2 = dup(r0)
+mount$9p_fd(0x0, &(0x7f0000000000)='.\x00', &(0x7f0000000040), 0x0, &(0x7f00000001c0)=ANY=[@ANYBLOB='trans=fd,rfdno=', @ANYRESHEX=r2, @ANYBLOB=',wfdno=', @ANYRESHEX=r1])

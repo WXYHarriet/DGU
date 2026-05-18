@@ -1,0 +1,2 @@
+mknod$loop(&(0x7f0000000080)='./file0\x00', 0x0, 0xffffffffffffffff)
+mount(&(0x7f0000000100), &(0x7f0000343ff8)='./file0\x00', &(0x7f0000fb5ffc)='nfs\x00', 0x0, 0x0)

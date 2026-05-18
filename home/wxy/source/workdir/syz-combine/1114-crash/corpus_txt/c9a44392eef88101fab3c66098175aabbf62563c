@@ -1,0 +1,1 @@
+syz_emit_vhci(&(0x7f0000000140)=@HCI_EVENT_PKT={0x4, @hci_ev_pscan_rep_mode={{0x20, 0x7}, {@fixed}}}, 0xa)

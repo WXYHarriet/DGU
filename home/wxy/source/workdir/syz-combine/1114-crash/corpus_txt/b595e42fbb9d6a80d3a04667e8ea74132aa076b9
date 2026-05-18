@@ -1,0 +1,1 @@
+syz_open_dev$vcsa(&(0x7f00000001c0), 0x29d, 0x450020)

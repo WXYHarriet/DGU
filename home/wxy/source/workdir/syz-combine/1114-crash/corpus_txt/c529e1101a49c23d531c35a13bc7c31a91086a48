@@ -1,0 +1,1 @@
+syz_emit_ethernet(0x46, &(0x7f00000003c0)={@multicast, @random="c0bcf9e868ec", @val={@void}, {@arp={0x806, @ether_ipv6={0x1, 0x86dd, 0x6, 0x10, 0x0, @remote, @remote, @multicast, @dev}}}}, 0x0)

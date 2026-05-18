@@ -1,0 +1,1 @@
+syz_emit_ethernet(0xa2, &(0x7f0000000040)={@link_local, @empty, @void, {@ipv6={0x86dd, @gre_packet={0x0, 0x6, "46ece0", 0x6c, 0x2b, 0x0, @dev, @rand_addr=' \x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01', {[@dstopts={0x0, 0x3, '\x00', [@pad1, @ra, @calipso={0x7, 0x8}, @enc_lim, @enc_lim, @pad1]}]}}}}}, 0x0)

@@ -1,0 +1,2 @@
+r0 = syz_open_procfs$namespace(0xffffffffffffffff, &(0x7f0000000080)='ns/cgroup\x00')
+ioctl$EXT4_IOC_ALLOC_DA_BLKS(r0, 0x660c)

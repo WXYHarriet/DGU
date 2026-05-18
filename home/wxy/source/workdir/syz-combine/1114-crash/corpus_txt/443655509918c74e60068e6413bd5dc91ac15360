@@ -1,0 +1,2 @@
+r0 = openat$sndtimer(0xffffffffffffff9c, &(0x7f0000000000), 0x101000)
+ioctl$SNDRV_TIMER_IOCTL_STATUS64(r0, 0x80605414, 0x0)

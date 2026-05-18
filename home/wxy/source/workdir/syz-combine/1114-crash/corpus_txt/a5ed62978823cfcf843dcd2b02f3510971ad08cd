@@ -1,0 +1,2 @@
+r0 = userfaultfd(0x80001)
+ioctl$UFFDIO_WAKE(r0, 0x541b, 0x0)

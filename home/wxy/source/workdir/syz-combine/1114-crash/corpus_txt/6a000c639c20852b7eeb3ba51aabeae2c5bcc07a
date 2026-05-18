@@ -1,0 +1,4 @@
+r0 = syz_open_procfs(0x0, &(0x7f0000000040)='stat\x00')
+io_setup(0x6, &(0x7f00000000c0)=<r1=>0x0)
+io_destroy(r1)
+read$FUSE(r0, &(0x7f00000006c0)={0x2020}, 0xcf)

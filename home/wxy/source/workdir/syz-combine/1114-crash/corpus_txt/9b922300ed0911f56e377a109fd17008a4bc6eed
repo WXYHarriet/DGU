@@ -1,0 +1,6 @@
+openat$snapshot(0xffffffffffffff9c, &(0x7f0000000040), 0x0, 0x0)
+r0 = epoll_create(0x3ff)
+setsockopt$inet_mreqn(0xffffffffffffffff, 0x0, 0x0, &(0x7f0000001740)={@multicast2, @remote}, 0xc)
+r1 = socket$igmp(0x2, 0x3, 0x2)
+epoll_ctl$EPOLL_CTL_ADD(r0, 0x1, r1, &(0x7f00000000c0)={0xa0000000})
+epoll_ctl$EPOLL_CTL_MOD(r0, 0x3, r1, &(0x7f0000000140))

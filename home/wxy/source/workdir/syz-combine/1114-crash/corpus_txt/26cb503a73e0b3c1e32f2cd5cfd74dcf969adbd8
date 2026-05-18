@@ -1,0 +1,2 @@
+mknod$loop(&(0x7f0000000700)='./file0\x00', 0x8, 0x0)
+mount$cgroup(0x0, &(0x7f00000007c0)='./file0\x00', &(0x7f0000000800), 0x10452, &(0x7f0000000840)={[{@subsystem='cpuset'}]})

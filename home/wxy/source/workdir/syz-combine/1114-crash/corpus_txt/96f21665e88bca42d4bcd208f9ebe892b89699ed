@@ -1,0 +1,2 @@
+r0 = socket(0x11, 0x2, 0x0)
+ioctl$sock_ipv6_tunnel_SIOCCHGTUNNEL(r0, 0x894a, &(0x7f0000000440)={'syztnl1\x00', 0x0})

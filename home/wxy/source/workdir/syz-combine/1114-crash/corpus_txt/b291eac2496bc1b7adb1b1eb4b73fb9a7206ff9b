@@ -1,0 +1,2 @@
+r0 = socket$inet_mptcp(0x2, 0x1, 0x106)
+ioctl$sock_SIOCGIFINDEX(r0, 0x8927, &(0x7f0000000040)={'xfrm0\x00'})

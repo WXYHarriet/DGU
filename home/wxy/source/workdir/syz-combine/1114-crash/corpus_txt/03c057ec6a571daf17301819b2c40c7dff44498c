@@ -1,0 +1,5 @@
+r0 = open(&(0x7f0000000180)='./bus\x00', 0x14d27e, 0x0)
+mmap(&(0x7f0000000000/0x600000)=nil, 0x600000, 0x37ffffe, 0x4002011, r0, 0x0)
+fallocate(r0, 0x0, 0x0, 0x7)
+r1 = socket$inet_tcp(0x2, 0x1, 0x0)
+setsockopt$inet_tcp_TCP_MD5SIG(r1, 0x6, 0xe, &(0x7f0000000fc0)={@in6={{0xa, 0x4e24, 0x0, @rand_addr=' \x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02', 0x10}}, 0x0, 0x0, 0x5, 0x0, "79377ec24b3d0cd1ff1ec5fbc82b85adc5f815dd3a692c56cc7022ff5725c54099575d4b62fc447da9b1458d4da34568e7e88fc6843bfa66e5b873037d997f4086e789daaf0e58075d7c00"}, 0xd8)

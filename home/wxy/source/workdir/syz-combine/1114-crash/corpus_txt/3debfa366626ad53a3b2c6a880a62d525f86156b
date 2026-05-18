@@ -1,0 +1,2 @@
+r0 = syz_open_dev$media(&(0x7f00000001c0), 0x0, 0x2001)
+write$binfmt_script(r0, 0x0, 0x0)

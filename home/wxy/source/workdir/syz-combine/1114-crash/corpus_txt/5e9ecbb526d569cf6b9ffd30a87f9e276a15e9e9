@@ -1,0 +1,1 @@
+syz_open_dev$audion(&(0x7f0000000240), 0x1, 0x165a40)

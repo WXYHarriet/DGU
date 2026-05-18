@@ -1,0 +1,1 @@
+syz_open_dev$admmidi(&(0x7f0000000000), 0x20, 0xd00)

@@ -1,0 +1,2 @@
+r0 = socket$igmp(0x2, 0x3, 0x2)
+setsockopt$MRT_ADD_MFC(r0, 0x0, 0xcc, &(0x7f0000000100)={@empty, @empty, 0x0, "d924a351b95578a0a04a93f67d1e5b112ae8bc59769bb9775b257db2835241c8"}, 0x3c)

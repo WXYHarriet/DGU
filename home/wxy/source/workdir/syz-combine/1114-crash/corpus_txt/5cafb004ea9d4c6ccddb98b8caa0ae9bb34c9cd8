@@ -1,0 +1,2 @@
+r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f00000001c0)='/sys/power/wakeup_count', 0x109a82, 0x0)
+write$cgroup_int(r0, &(0x7f0000000000), 0xb)

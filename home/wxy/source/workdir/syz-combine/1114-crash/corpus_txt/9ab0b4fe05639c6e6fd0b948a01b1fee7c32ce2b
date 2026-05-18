@@ -1,0 +1,4 @@
+r0 = landlock_create_ruleset(&(0x7f0000000000)={0x84}, 0x8, 0x0)
+landlock_restrict_self(r0, 0x0)
+landlock_restrict_self(r0, 0x0)
+openat$damon_attrs(0xffffffffffffff9c, &(0x7f0000000080), 0x8441, 0x0)

@@ -1,0 +1,2 @@
+r0 = socket$vsock_stream(0x28, 0x1, 0x0)
+fsetxattr(r0, &(0x7f0000000500)=@known='system.sockprotoname\x00', 0x0, 0x0, 0x0)

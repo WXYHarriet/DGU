@@ -1,0 +1,3 @@
+r0 = io_uring_setup(0x7a52, &(0x7f0000000500)={0x0, 0x0, 0x2})
+io_uring_register$IORING_REGISTER_IOWQ_AFF(r0, 0x11, &(0x7f0000000080)="90", 0x1)
+io_uring_register$IORING_UNREGISTER_IOWQ_AFF(r0, 0x12, 0x0, 0x0)

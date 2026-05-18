@@ -1,0 +1,2 @@
+r0 = syz_io_uring_setup(0x18a, &(0x7f0000000440), &(0x7f00006d5000), &(0x7f00000003c0))
+io_uring_register$IORING_REGISTER_BUFFERS_UPDATE(r0, 0x10, 0x0, 0x0)

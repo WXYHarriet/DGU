@@ -1,0 +1,1 @@
+syz_emit_ethernet(0x2a, &(0x7f0000000040)=ANY=[@ANYBLOB="aaaaaaaaaaaabe87aac3e7af08060001080006040001aaaaaaaaaabb00000000aaaaaaaaaa11ac1414"], 0x0)

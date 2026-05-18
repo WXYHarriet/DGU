@@ -1,0 +1,4 @@
+r0 = syz_open_dev$sndctrl(&(0x7f0000000040), 0x0, 0x0)
+r1 = fcntl$dupfd(r0, 0x0, r0)
+ioctl$SNDRV_CTL_IOCTL_SUBSCRIBE_EVENTS(r0, 0xc0045516, &(0x7f00000001c0)=0xffff)
+readv(r1, &(0x7f0000000540)=[{&(0x7f0000000080)=""/218, 0xda}], 0x1)

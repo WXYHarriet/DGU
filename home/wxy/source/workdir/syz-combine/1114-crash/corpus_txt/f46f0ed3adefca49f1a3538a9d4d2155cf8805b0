@@ -1,0 +1,4 @@
+r0 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$nfc(&(0x7f0000000480), r1)
+sendmsg$NFC_CMD_GET_DEVICE(r0, &(0x7f0000000540)={0x0, 0x0, &(0x7f0000000500)={&(0x7f00000004c0)={0x14, r2, 0x161511ab30a91739}, 0x14}}, 0x0)

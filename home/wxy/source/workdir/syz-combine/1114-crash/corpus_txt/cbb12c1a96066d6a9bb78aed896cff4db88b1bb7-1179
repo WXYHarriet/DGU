@@ -1,0 +1,2 @@
+bpf$BPF_BTF_GET_NEXT_ID(0x17, 0x0, 0x0)
+openat$cgroup_root(0xffffffffffffff9c, &(0x7f00000004c0)='./cgroup.net/syz0\x00', 0x200002, 0x0)

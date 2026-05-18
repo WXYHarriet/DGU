@@ -1,0 +1,2 @@
+r0 = memfd_create(&(0x7f0000000200)='@,[]*-#)[.)%$}\x00', 0x4)
+fcntl$getflags(r0, 0x40a)

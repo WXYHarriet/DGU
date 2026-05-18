@@ -1,0 +1,1 @@
+syz_open_dev$vim2m(&(0x7f00000003c0), 0x29, 0x2)

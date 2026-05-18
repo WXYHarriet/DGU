@@ -1,0 +1,3 @@
+pkey_mprotect(&(0x7f0000000000/0x4000)=nil, 0x4000, 0x0, 0xffffffffffffffff)
+r0 = socket$inet6_tcp(0xa, 0x1, 0x0)
+setsockopt$inet6_tcp_TLS_TX(r0, 0x6, 0x1, &(0x7f00000005c0)=@gcm_128={{}, "e0e90250f78a8f2a", "da6467366ed42c0c9e56fd7ae94cba8b", "63e54401", "fb12ad41da05fdf1"}, 0x28)

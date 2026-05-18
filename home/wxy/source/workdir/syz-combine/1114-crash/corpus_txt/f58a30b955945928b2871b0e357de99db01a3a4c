@@ -1,0 +1,2 @@
+mkdir(&(0x7f000053bff8)='./file0\x00', 0x0)
+mount(&(0x7f0000b79ff8), &(0x7f0000db0ff8)='./file0\x00', &(0x7f0000f9cffb)='proc\x00', 0x0, 0x0)

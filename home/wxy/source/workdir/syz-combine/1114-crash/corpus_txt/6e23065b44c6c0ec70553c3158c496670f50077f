@@ -1,0 +1,2 @@
+r0 = socket$nl_xfrm(0x10, 0x3, 0x6)
+open_by_handle_at(r0, &(0x7f0000000080)=ANY=[@ANYBLOB="14000000010001"], 0x14102)

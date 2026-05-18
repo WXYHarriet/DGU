@@ -1,0 +1,5 @@
+r0 = mq_open(&(0x7f0000000040)='!selinuxsel\xad\"\x0e\xabx\xb8\xc9\xa8x\x00', 0x6e93ebbbcc0884f2, 0x2, 0x0)
+mq_notify(r0, &(0x7f0000000200))
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f00000008c0), 0x40582, 0x0)
+r2 = dup2(r0, r1)
+read$usbmon(r2, 0x0, 0x0)

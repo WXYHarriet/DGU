@@ -1,0 +1,2 @@
+r0 = socket$igmp(0x2, 0x3, 0x2)
+ioctl$sock_inet_SIOCSIFDSTADDR(r0, 0x8918, &(0x7f0000000180)={'sit0\x00', {0x2, 0x0, @empty}})

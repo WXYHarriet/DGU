@@ -1,0 +1,2 @@
+r0 = openat$vicodec0(0xffffffffffffff9c, &(0x7f0000000440), 0x2, 0x0)
+ioctl$VIDIOC_S_AUDOUT(r0, 0x40345632, &(0x7f0000000000)={0x0, "7a16523b2135c944e503e203c4bf2028c13f45ca91e7a59f3b8bbc6c38d4d86d"})

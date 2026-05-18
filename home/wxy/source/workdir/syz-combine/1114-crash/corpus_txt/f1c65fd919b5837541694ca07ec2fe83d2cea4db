@@ -1,0 +1,2 @@
+r0 = socket$packet(0x11, 0x2, 0x300)
+ioctl$FS_IOC_FSGETXATTR(r0, 0x801c581f, 0x0)

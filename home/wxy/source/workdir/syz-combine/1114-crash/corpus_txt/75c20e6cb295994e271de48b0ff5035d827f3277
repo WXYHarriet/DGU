@@ -1,0 +1,4 @@
+r0 = msgget$private(0x0, 0x0)
+msgsnd(r0, &(0x7f0000001280)=ANY=[@ANYBLOB="0100"], 0x401, 0x0)
+msgsnd(r0, &(0x7f0000001940)=ANY=[@ANYBLOB="0100"], 0x1008, 0x0)
+msgctl$IPC_RMID(r0, 0x0)

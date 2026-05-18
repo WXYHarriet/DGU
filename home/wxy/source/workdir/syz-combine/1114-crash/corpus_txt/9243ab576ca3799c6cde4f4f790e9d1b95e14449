@@ -1,0 +1,2 @@
+r0 = syz_open_dev$sndpcmc(&(0x7f0000001680), 0x0, 0xa800)
+close(r0)

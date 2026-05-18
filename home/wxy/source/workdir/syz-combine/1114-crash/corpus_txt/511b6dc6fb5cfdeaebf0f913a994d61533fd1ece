@@ -1,0 +1,3 @@
+r0 = syz_open_dev$hidraw(&(0x7f0000000200), 0x0, 0x0)
+syz_open_dev$hidraw(&(0x7f0000000000), 0x0, 0x0)
+ioctl$HIDIOCGFEATURE(r0, 0xc0404807, 0x0)

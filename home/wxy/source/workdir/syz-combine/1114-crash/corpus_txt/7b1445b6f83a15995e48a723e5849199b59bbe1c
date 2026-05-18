@@ -1,0 +1,8 @@
+r0 = openat$ptmx(0xffffffffffffff9c, &(0x7f0000000040), 0x41, 0x0)
+r1 = epoll_create1(0x80000)
+epoll_ctl$EPOLL_CTL_ADD(r1, 0x1, r0, &(0x7f0000000100)={0x3})
+write$binfmt_aout(r0, &(0x7f00000021c0)=ANY=[], 0xff2e)
+ioctl$TCSETS(r0, 0x40045431, &(0x7f0000000000)={0x0, 0x0, 0x0, 0x0, 0x0, "df3f0400000000000000000000000609000040"})
+r2 = syz_open_pts(r0, 0x2a800)
+r3 = dup3(r2, r0, 0x0)
+ioctl$TIOCSTI(r3, 0x5412, &(0x7f0000000080)=0x13)

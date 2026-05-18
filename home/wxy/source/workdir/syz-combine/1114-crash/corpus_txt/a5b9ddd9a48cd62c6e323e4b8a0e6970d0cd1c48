@@ -1,0 +1,2 @@
+pipe(&(0x7f0000001700)={0xffffffffffffffff, <r0=>0xffffffffffffffff})
+ioctl$FIONREAD(r0, 0x541b, &(0x7f0000000180))

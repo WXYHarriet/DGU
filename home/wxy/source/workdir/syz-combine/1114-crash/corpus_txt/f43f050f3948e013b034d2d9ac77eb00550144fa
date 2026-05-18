@@ -1,0 +1,4 @@
+ioctl$RTC_VL_CLR(0xffffffffffffffff, 0x7014)
+r0 = epoll_create1(0x80000)
+sendmsg$BATADV_CMD_GET_DAT_CACHE(0xffffffffffffffff, 0x0, 0x0)
+epoll_pwait(r0, &(0x7f0000001940)=[{}], 0x1, 0x44, &(0x7f0000001980), 0x8)

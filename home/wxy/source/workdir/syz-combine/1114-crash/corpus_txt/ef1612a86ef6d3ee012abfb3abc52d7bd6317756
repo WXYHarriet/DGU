@@ -1,0 +1,2 @@
+mkdirat(0xffffffffffffff9c, &(0x7f0000000100)='./file0\x00', 0x0)
+landlock_create_ruleset(&(0x7f00000000c0), 0x66, 0x0)

@@ -1,0 +1,2 @@
+r0 = syz_open_dev$loop(&(0x7f00000000c0), 0xffff, 0x40400)
+ioctl$BLKROSET(r0, 0x125d, &(0x7f0000000100)=0x2)

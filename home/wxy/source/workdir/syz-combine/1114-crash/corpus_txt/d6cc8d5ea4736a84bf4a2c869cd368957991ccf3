@@ -1,0 +1,2 @@
+keyctl$link(0x8, 0x0, 0xffffffffffffffff)
+request_key(&(0x7f0000000000)='id_legacy\x00', &(0x7f0000000040)={'syz', 0x0}, &(0x7f0000000080)='\x00', 0x0)

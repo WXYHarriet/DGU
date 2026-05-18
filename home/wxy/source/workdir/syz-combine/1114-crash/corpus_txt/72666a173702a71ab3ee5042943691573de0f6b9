@@ -1,0 +1,3 @@
+add_key(&(0x7f0000000000)='blacklist\x00', &(0x7f00000000c0)={'syz', 0x2}, &(0x7f0000000100)="6a3c28b718e10f8ea4bff5846db5d4f6fda1b483556d9e0403cc1bfbe4ac831a912c4459b8d871eeeb1f964d17ef3d19f7da59ddd2066db158059c917fc073300fc79ad23cdc8fe7443ad2", 0x4b, 0xfffffffffffffffe)
+r0 = socket$inet6_udp(0xa, 0x2, 0x0)
+ioctl$sock_inet6_SIOCDELRT(r0, 0x890c, &(0x7f0000000500)={@dev={0xfe, 0x80, '\x00', 0x16}, @remote, @ipv4={'\x00', '\xff\xff', @broadcast}, 0x0, 0x0, 0x0, 0x0, 0x0, 0x910000})

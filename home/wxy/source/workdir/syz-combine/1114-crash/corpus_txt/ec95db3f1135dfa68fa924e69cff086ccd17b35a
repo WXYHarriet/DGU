@@ -1,0 +1,2 @@
+r0 = syz_open_dev$sg(&(0x7f0000000080), 0x0, 0xc0002)
+ioctl$SCSI_IOCTL_DOORUNLOCK(r0, 0x5381)

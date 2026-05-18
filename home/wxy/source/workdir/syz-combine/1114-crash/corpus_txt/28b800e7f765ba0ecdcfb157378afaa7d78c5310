@@ -1,0 +1,2 @@
+r0 = add_key$fscrypt_v1(&(0x7f0000000000), &(0x7f0000000040)={'fscrypt:', @desc4}, &(0x7f0000000080)={0x0, "51fdf6b8477c9ef649a1967796e574e6e980d76a67cb49b39bfd14f3f84e4db48f904858eb1d0b209b15fb4381fadc63d8da58dabff7d264189319f30a4a04c8", 0x3f}, 0x48, 0xfffffffffffffffe)
+keyctl$get_security(0x11, r0, &(0x7f0000000340)=""/85, 0x55)

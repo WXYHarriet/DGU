@@ -1,0 +1,5 @@
+mkdir(&(0x7f0000000000)='./file0\x00', 0x0)
+mount(0x0, &(0x7f0000000080)='./file0\x00', &(0x7f0000000040)='hugetlbfs\x00', 0x0, 0x0)
+chdir(&(0x7f0000000300)='./file0\x00')
+r0 = fspick(0xffffffffffffff9c, &(0x7f0000000000)='.\x00', 0x0)
+fsconfig$FSCONFIG_CMD_RECONFIGURE(r0, 0x7, 0x0, 0x0, 0x0)

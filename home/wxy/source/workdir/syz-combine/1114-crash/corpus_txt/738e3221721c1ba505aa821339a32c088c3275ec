@@ -1,0 +1,3 @@
+r0 = openat$tun(0xffffffffffffff9c, &(0x7f0000000140), 0x8002, 0x0)
+ioctl$TUNSETIFF(r0, 0x400454ca, &(0x7f00000002c0)={'pimreg0\x00', 0x2})
+writev(r0, &(0x7f00000000c0)=[{&(0x7f0000000080)="35a5c1e9a613cc30077ee6", 0x7ffff000}, {&(0x7f0000000040)='`\x00\x00', 0x3}], 0x2)

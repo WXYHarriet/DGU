@@ -1,0 +1,2 @@
+r0 = syz_init_net_socket$bt_sco(0x1f, 0x5, 0x2)
+ioctl$ifreq_SIOCGIFINDEX_batadv_hard(r0, 0x5411, &(0x7f0000000080)={'batadv_slave_1\x00'})

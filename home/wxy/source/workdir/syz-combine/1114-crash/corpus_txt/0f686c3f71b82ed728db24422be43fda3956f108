@@ -1,0 +1,4 @@
+r0 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000100)='net_prio.prioidx\x00', 0x275a, 0x0)
+write$binfmt_script(r0, &(0x7f0000001280)={'#! ', './file1', [], 0xa, "633dbf6fdd71e4629fe9f750abecefb662181ecf91086436e1f181dfc57b24a0830d38d608a1bde75b4bd8cb081f4816d43e78591fdf60c7bbf005e4bb"}, 0x48)
+mmap(&(0x7f0000000000/0x1000)=nil, 0x1000, 0x1, 0x10012, r0, 0x0)
+timerfd_settime(0xffffffffffffffff, 0x3, &(0x7f0000000040)={{0x0, 0x989680}}, 0x0)

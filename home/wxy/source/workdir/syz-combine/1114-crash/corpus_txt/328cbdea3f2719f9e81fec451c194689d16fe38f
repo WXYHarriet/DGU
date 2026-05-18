@@ -1,0 +1,2 @@
+r0 = openat$sysfs(0xffffffffffffff9c, &(0x7f00000000c0)='/sys/power/freeze_filesystems', 0x141a82, 0x0)
+write$cgroup_int(r0, &(0x7f0000000040)=0x700, 0x12)

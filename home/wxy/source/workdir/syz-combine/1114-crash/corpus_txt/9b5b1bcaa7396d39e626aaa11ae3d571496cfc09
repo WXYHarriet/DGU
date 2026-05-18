@@ -1,0 +1,3 @@
+pipe(&(0x7f0000000280)={0xffffffffffffffff, <r0=>0xffffffffffffffff})
+write$binfmt_elf64(r0, &(0x7f0000000000)=ANY=[], 0xfffffd88)
+vmsplice(r0, &(0x7f0000000600)=[{&(0x7f0000000580)="cca3a42d", 0x4}], 0x1, 0xa)

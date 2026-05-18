@@ -1,0 +1,5 @@
+socketpair$unix(0x1, 0x3, 0x0, &(0x7f0000000080)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff})
+r2 = epoll_create1(0x0)
+epoll_ctl$EPOLL_CTL_ADD(r2, 0x1, r0, &(0x7f0000000000))
+epoll_ctl$EPOLL_CTL_ADD(r2, 0x1, r1, &(0x7f0000000040))
+close_range(r0, 0xffffffffffffffff, 0x0)

@@ -1,0 +1,4 @@
+r0 = socket(0x2, 0x803, 0xff)
+connect$inet(r0, &(0x7f0000000480)={0x2, 0x0, @empty}, 0x10)
+r1 = dup(r0)
+write$tun(r1, &(0x7f0000000300)={@val={0x6}, @val, @eth={@multicast, @random='^6\b`\fl', @void, {@mpls_mc={0x8848, {[], @llc={@snap={0x0, 0x0, "d6", 'lcH'}}}}}}}, 0x24)

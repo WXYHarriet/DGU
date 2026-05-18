@@ -1,0 +1,7 @@
+openat$ttyS3(0xffffffffffffff9c, 0x0, 0x0, 0x0)
+r0 = mq_open(&(0x7f0000000040)='!selinuxsel\xad\"\x0e\xabx\xb8\xc9\xa8x\x00', 0x6e93ebbbcc0884f2, 0x2, 0x0)
+mq_notify(r0, &(0x7f0000000200))
+r1 = openat$vga_arbiter(0xffffffffffffff9c, &(0x7f00000008c0), 0x40582, 0x0)
+write$vga_arbiter(r1, &(0x7f0000000000)=@other={'lock', ' ', 'mem'}, 0x9)
+syz_mount_image$msdos(&(0x7f0000000040), &(0x7f0000000080)='./file0\x00', 0x2, &(0x7f00000000c0)={[{@dots}, {@nodots}, {@fat=@nfs_nostale_ro}, {@dots}, {@nodots}, {@nodots}, {@dots}, {@nodots}, {@fat=@usefree}, {@fat=@discard}, {}, {@dots}, {@dots}, {@nodots}, {@fat=@quiet}, {@fat=@discard}, {@fat=@nocase}, {@dots}, {@dots}, {@fat=@tz_utc}, {@fat=@gid}, {@fat=@flush}]}, 0x4, 0x18e, &(0x7f0000002380)="$eJzs3bFq21AUBuBj17VNJ29dOgi6dDJtX6AuxYVSQaHFQzs14GSxQyBelEx+jDxgHiB48uaQyLES42QIWCL29y068Ouie5C4mnT1/93xaHgyObp8exHtdi3qvejFvBadqMedaQAAu2S+WMTVIlf1XACAcnj/A8D++fP338+vadr/nSTtiNk0G2SD/Jjn33+k/Y/JrU4xapZlg1er/FOeJw/z1/FmmX/emDfjw/s8v8m+/UrX8lYMt98+AAAAAAAAAAAAAAAAAAAAAABUopusbNzfp9t9LM+re/sDre3f04hGaV0AAAAAAAAAAAAAAAAAAADAyzY5Ox8djMeHpwpFOcWX7V8ieeKc1vLJL6PleN7wZkRUfpuKNaJV1eIEAAAAAAAAAAAAAAAAAAB7pvjot+qZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEB1iv//b6+oukcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB233UAAAD//+WtMYQ=")
+dup2(r0, r1)

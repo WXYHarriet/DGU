@@ -1,0 +1,2 @@
+r0 = syz_open_dev$evdev(&(0x7f0000002300), 0x0, 0x189040)
+ioctl$EVIOCREVOKE(r0, 0x40044591, &(0x7f0000002340)=0xca1)

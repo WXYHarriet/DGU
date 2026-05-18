@@ -1,0 +1,2 @@
+r0 = syz_open_dev$loop(&(0x7f00000001c0), 0x4, 0x103382)
+sendfile(r0, r0, 0x0, 0x24002da8)

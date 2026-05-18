@@ -1,0 +1,1 @@
+syz_emit_vhci(&(0x7f0000000040)=@HCI_EVENT_PKT={0x4, @inquiry_info_with_rssi_and_pscan_mode={{0x22, 0x1}}}, 0x4)

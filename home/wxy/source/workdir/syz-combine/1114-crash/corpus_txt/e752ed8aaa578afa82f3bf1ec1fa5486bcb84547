@@ -1,0 +1,5 @@
+r0 = open(&(0x7f0000000300)='./file0\x00', 0x10b042, 0x0)
+write$cgroup_devices(r0, &(0x7f0000000000)=ANY=[], 0xffffff8d)
+r1 = open(&(0x7f0000000140)='./file0\x00', 0x10f042, 0x0)
+write$cgroup_devices(r1, 0x0, 0x8)
+write$cgroup_devices(r1, &(0x7f0000000280)={'b', ' *:* ', 'wm\x00'}, 0x9)

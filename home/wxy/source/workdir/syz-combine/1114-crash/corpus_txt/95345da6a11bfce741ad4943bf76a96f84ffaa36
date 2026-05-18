@@ -1,0 +1,2 @@
+r0 = openat$null(0xffffffffffffff9c, &(0x7f0000000000), 0x48003, 0x0)
+flock(r0, 0x5)

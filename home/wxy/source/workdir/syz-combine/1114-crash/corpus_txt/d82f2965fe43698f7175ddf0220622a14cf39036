@@ -1,0 +1,1 @@
+syz_emit_ethernet(0x7e, &(0x7f0000000000)={@multicast, @link_local, @void, {@ipv6={0x86dd, @icmpv6={0x0, 0x6, "75e700", 0x48, 0x3a, 0xff, @dev, @mcast2, {[], @ndisc_redir={0x89, 0x0, 0x0, '\x00', @local, @private2, [{0x4, 0x4, "a873e98b1dfdb620563f6fac7e597da26e6b27ff8e4b5caadaf11e734e10"}]}}}}}}, 0x0)

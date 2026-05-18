@@ -1,0 +1,1 @@
+openat$snapshot(0xffffffffffffff9c, &(0x7f0000000100), 0x105181, 0x0)

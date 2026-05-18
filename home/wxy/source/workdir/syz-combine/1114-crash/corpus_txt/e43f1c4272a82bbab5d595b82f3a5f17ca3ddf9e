@@ -1,0 +1,4 @@
+r0 = socket$igmp(0x2, 0x3, 0x2)
+setsockopt$MRT_INIT(r0, 0x0, 0xc8, &(0x7f0000003d00), 0x4)
+setsockopt$MRT_ADD_MFC_PROXY(r0, 0x0, 0xd2, &(0x7f0000000100)={@multicast2, @multicast1, 0x0, "e56dd4faf2eb7e2073c6d432b2deb044e7b34113f4b67337308f5743bbf9ff82"}, 0x3c)
+setsockopt$MRT_FLUSH(r0, 0x0, 0xd4, &(0x7f00000005c0)=0xe, 0x4)

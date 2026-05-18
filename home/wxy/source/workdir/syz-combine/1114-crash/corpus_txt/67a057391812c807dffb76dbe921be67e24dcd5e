@@ -1,0 +1,2 @@
+r0 = socket$igmp6(0xa, 0x3, 0x2)
+setsockopt$inet6_opts(r0, 0x29, 0x39, &(0x7f0000000080)=ANY=[@ANYBLOB="000404000000004020016d3f2d9e35d509fd82175ba8e79e03ca"], 0x28)

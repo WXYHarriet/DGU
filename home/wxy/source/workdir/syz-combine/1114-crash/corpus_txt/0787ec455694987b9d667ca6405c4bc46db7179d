@@ -1,0 +1,2 @@
+r0 = syz_open_dev$loop(&(0x7f0000000080), 0xffff, 0x121801)
+ioctl$BLKSECDISCARD(r0, 0x127d, 0x0)

@@ -1,0 +1,2 @@
+r0 = socket$inet(0x2, 0x3, 0x1)
+ioctl$AUTOFS_IOC_FAIL(r0, 0x541b, 0x23000000000000)

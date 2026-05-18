@@ -1,0 +1,3 @@
+setrlimit(0x1, &(0x7f0000000100)={0xffffffffffffffff, 0xffffffffffffffff})
+r0 = open(&(0x7f0000002000)='./bus\x00', 0x143042, 0x0)
+ftruncate(r0, 0x100000000000000)

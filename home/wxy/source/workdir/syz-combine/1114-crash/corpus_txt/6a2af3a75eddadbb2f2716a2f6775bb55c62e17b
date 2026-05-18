@@ -1,0 +1,5 @@
+syz_usb_control_io(0xffffffffffffffff, &(0x7f0000000500)={0x2c, 0x0, &(0x7f0000000200)={0x0, 0x3, 0xc, @string={0xc, 0x3, "759c487e0b542f10ccd9"}}, 0x0, 0x0, 0x0}, 0x0)
+syz_genetlink_get_family_id$nl80211(&(0x7f0000000200), 0xffffffffffffffff)
+mount$fuseblk(0x0, 0x0, 0x0, 0x0, &(0x7f00000001c0)=ANY=[@ANYBLOB="0420eb00000000000100090000007fe708000000b4f1a0930136388520a54a95a0a1094ada47f103d4a9e0a1e40300bb7c0d1832120bb29b66c45420de69658b4a042d06"])
+r0 = add_key$keyring(&(0x7f00000000c0), &(0x7f0000000040)={'syz', 0x1}, 0x0, 0x0, 0xffffffffffffffff)
+add_key(&(0x7f0000000080)='pkcs7_test\x00', 0x0, &(0x7f0000000200)="3081a3", 0x1001, r0)

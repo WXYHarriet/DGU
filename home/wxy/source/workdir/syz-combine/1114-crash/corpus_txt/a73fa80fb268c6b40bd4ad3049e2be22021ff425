@@ -1,0 +1,1 @@
+open$dir(&(0x7f0000000000)='./cgroup/pids.max/file0\x00', 0x800, 0x58)

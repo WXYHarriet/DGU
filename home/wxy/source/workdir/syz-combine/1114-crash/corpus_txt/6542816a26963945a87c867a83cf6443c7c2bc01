@@ -1,0 +1,2 @@
+mknodat$loop(0xffffffffffffff9c, &(0x7f0000000000)='./file0\x00', 0x0, 0x1)
+mount$afs(&(0x7f0000000040)=@cell={0x23, 'syz0:', 'syz1'}, &(0x7f0000000080)='./file0\x00', &(0x7f00000000c0), 0x0, &(0x7f0000000100)={[{@dyn}]})

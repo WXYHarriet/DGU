@@ -1,0 +1,2 @@
+r0 = syz_open_procfs(0x0, &(0x7f0000001800)='net/unix\x00')
+mmap$binder(&(0x7f0000ffd000/0x3000)=nil, 0x3000, 0x1, 0x11, r0, 0x8000000000000000)

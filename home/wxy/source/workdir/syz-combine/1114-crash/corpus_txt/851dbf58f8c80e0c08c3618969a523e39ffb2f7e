@@ -1,0 +1,2 @@
+r0 = mq_open(&(0x7f0000000040)='!sglinuxsel\xad\"\x0e\xabx\xb8\xc9\xa8x\x00', 0x40, 0x42, 0x0)
+readv(r0, &(0x7f0000000340)=[{&(0x7f00000001c0)=""/42, 0x2a}], 0x1)

@@ -1,0 +1,2 @@
+r0 = fanotify_init(0x0, 0x0)
+writev(r0, &(0x7f0000000740)=[{&(0x7f0000000200)="70a1cbffe2ad973a", 0x8}], 0x1)

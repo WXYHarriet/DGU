@@ -1,0 +1,2 @@
+r0 = open_tree(0xffffffffffffff9c, &(0x7f0000000640)='\x00', 0x89901)
+ioctl$BTRFS_IOC_ADD_DEV(r0, 0x5000940a, 0x0)

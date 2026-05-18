@@ -1,0 +1,2 @@
+r0 = syz_open_dev$dmmidi(&(0x7f00000001c0), 0x2, 0x1)
+ioctl$SNDRV_RAWMIDI_IOCTL_STATUS64(r0, 0xc0385720, &(0x7f0000000200)={0x1})

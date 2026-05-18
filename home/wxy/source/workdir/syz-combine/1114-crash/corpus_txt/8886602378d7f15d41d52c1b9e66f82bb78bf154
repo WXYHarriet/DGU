@@ -1,0 +1,2 @@
+r0 = openat$binfmt_register(0xffffffffffffff9c, &(0x7f0000000040), 0x1, 0x0)
+write$binfmt_register(r0, &(0x7f0000000140)={0x3a, 'syz2', 0x3a, 'E', 0x3a, 0xe00000000000, 0x3a, '\xb0e\xa5\x93Y\xcf\xe9\xa2\x97_=X\xd9\x93(\xf9\xb9\x9e!\xa0\xe7\xfa1\xe8\x81\x90\xdf\xe6\xe5pt~\xd7\x8f\x1f\v\xde\x19n', 0x3a, '\x00\x00\x00\x00\xa2RTY\x17.\x95\xcc\xe7}`\x9a|b}\xf5\x85\xcb\x03\xdf\"\xb3', 0x3a, './file0'}, 0x68)

@@ -1,0 +1,6 @@
+r0 = socket$alg(0x26, 0x5, 0x0)
+bind$alg(r0, &(0x7f00000000c0)={0x26, 'skcipher\x00', 0x0, 0x0, 'cbc-twofish-avx\x00'}, 0x58)
+setsockopt$ALG_SET_KEY(r0, 0x117, 0x1, &(0x7f0000001280)="b7f2288a911993f08d3aaea2bc0000de", 0x10)
+r1 = accept$alg(r0, 0x0, 0x0)
+recvmmsg(r1, &(0x7f0000005f80)=[{{0x0, 0x0, &(0x7f0000000440)=[{&(0x7f0000000140)=""/63, 0x3f}], 0x1}}, {{0x0, 0x0, &(0x7f0000000a80)=[{&(0x7f00000005c0)=""/135, 0x87}], 0x1}}], 0x2, 0x0, 0x0)
+sendmsg$alg(r1, &(0x7f0000004d00)={0x0, 0x0, &(0x7f0000004c80)=[{&(0x7f0000004ac0)="b76b30d50d58e6ec07c30dabe52dd82f815dfca8237985563c9d4d01f56e87696ec6e462cc8e6530b004a530ad8b84fa5d1c33df87a513ea0359a6a4a88e330068ec7d0d2a78e17ffd7e4712086953093a0ea9491cb262011cc2eb4b0bfa3fa57a3cb4c3ca9399b387af8f479ebe0f6495ff8ba93ecf40e2d15eb700659ac2ef0ae0a78adaef99e087c000d00fec11ac2d", 0x91}], 0x1}, 0x0)

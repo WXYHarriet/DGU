@@ -1,0 +1,4 @@
+r0 = syz_open_dev$sg(&(0x7f00000060c0), 0x0, 0x8002)
+r1 = fcntl$dupfd(r0, 0x0, r0)
+write$FUSE_INIT(r1, &(0x7f0000000240)={0x50}, 0x50)
+write$binfmt_elf64(r1, &(0x7f0000000600)=ANY=[], 0x34c)

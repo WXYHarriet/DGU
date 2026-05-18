@@ -1,0 +1,4 @@
+pipe(&(0x7f0000008d40)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff})
+read$FUSE(r0, &(0x7f0000002040)={0x2020}, 0x2020)
+write$FUSE_DIRENTPLUS(r1, &(0x7f0000008280)={0x10}, 0x10)
+write$FUSE_ATTR(r1, &(0x7f0000008640)={0x78}, 0x78)

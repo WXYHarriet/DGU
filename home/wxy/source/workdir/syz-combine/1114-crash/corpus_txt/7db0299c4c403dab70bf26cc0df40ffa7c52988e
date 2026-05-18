@@ -1,0 +1,2 @@
+close_range(0xffffffffffffffff, 0xffffffffffffffff, 0x2)
+close_range(0xffffffffffffffff, 0xffffffffffffffff, 0x2)
